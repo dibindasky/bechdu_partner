@@ -11,7 +11,7 @@ class ScreenSplash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Timer(const Duration(seconds: 1), () {
-      Navigator.pushNamed(context, Routes.pickUpProfilePage);
+      Navigator.pushNamed(context, Routes.orderScreen);
     });
     return Scaffold(
       backgroundColor: kBluePrimary,

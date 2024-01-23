@@ -25,9 +25,9 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (ctx) => const ScreenAddPickUpPartner());
       case Routes.partnersList:
         return MaterialPageRoute(builder: (ctx) => const ScreenPickUpPartnersList());
-      case Routes.pointsPage:
-        return MaterialPageRoute(builder: (ctx) => const ScreenSettings());
       case Routes.settingsPage:
+        return MaterialPageRoute(builder: (ctx) => const ScreenSettings());
+      case Routes.pointsPage:
         return MaterialPageRoute(builder: (ctx) => const ScreenPoints());
       case Routes.pickUpProfilePage:
         return MaterialPageRoute(builder: (ctx) => const ScreenPickUpPartnerProfile());

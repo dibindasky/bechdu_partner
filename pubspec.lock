@@ -313,13 +313,21 @@ packages:
     source: hosted
     version: "0.7.0"
   json_annotation:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: json_annotation
       sha256: b10a7b2ff83d83c777edba3c6a0f97045ddadd56c944e1a23a3fdf43a1bf4467
       url: "https://pub.dev"
     source: hosted
     version: "4.8.1"
+  json_serializer:
+    dependency: "direct main"
+    description:
+      name: json_serializer
+      sha256: "6997fad6f93177e66c0d38c9317a10ce16851eb5bfe1a2bead753b0259e3d7eb"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.0"
   lints:
     dependency: transitive
     description:
