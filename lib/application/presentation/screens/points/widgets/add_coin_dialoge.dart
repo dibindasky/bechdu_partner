@@ -4,12 +4,22 @@ import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:flutter/material.dart';
 
 final TextEditingController priceController = TextEditingController();
+final TextEditingController upiController = TextEditingController();
 
-class AddCoinsDialoge extends StatelessWidget {
+enum PaymentMethod { epayment, cash }
+
+PaymentMethod paymentMethod = PaymentMethod.epayment;
+
+class AddCoinsDialoge extends StatefulWidget {
   const AddCoinsDialoge({
     super.key,
   });
 
+  @override
+  State<AddCoinsDialoge> createState() => _AddCoinsDialogeState();
+}
+
+class _AddCoinsDialogeState extends State<AddCoinsDialoge> {
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -69,6 +79,106 @@ class AddCoinsDialoge extends StatelessWidget {
                     ],
                   ),
                   kHeight20,
+                  Text(
+                    'Select Payment Mode',
+                    style: textHeadBold1.copyWith(color: kWhite),
+                  ),
+                  kHeight10,
+                  Row(
+                    children: [
+                      Radio(
+                          activeColor: kWhite,
+                          fillColor: MaterialStateProperty.all(kWhite),
+                          value: PaymentMethod.epayment,
+                          groupValue: paymentMethod,
+                          onChanged: (value) {
+                            setState(() {
+                              paymentMethod = value!;
+                            });
+                          }),
+                      Text(
+                        'E-Payment',
+                        style: textHeadBold1.copyWith(color: kWhite),
+                      ),
+                      Radio(
+                          activeColor: kWhite,
+                          fillColor: MaterialStateProperty.all(kWhite),
+                          value: PaymentMethod.cash,
+                          groupValue: paymentMethod,
+                          onChanged: (value) {
+                            setState(() {
+                              paymentMethod = value!;
+                            });
+                          }),
+                      Text(
+                        'Cash',
+                        style: textHeadBold1.copyWith(color: kWhite),
+                      ),
+                    ],
+                  ),
+                  kHeight20,
+                  TextField(
+                    controller: upiController,
+                    keyboardType: TextInputType.number,
+                    cursorColor: kBluePrimary,
+                    style: textHeadRegular1.copyWith(color: kWhite),
+                    decoration: InputDecoration(
+                      hintText: paymentMethod == PaymentMethod.epayment
+                          ? 'Enter UPI ID'
+                          : 'Upload The Receipt here',
+                      hintStyle: textHeadRegular1.copyWith(color: kWhite),
+                      suffixIcon: paymentMethod == PaymentMethod.epayment
+                          ? Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text('Verify',
+                                    style:
+                                        textHeadBold1.copyWith(color: kWhite)),
+                              ],
+                            )
+                          : IconButton(
+                              onPressed: () {},
+                              icon: const Icon(
+                                Icons.file_upload_outlined,
+                                color: kWhite,
+                              )),
+                      enabledBorder: const OutlineInputBorder(
+                          borderSide: BorderSide(color: kWhite)),
+                      focusedBorder: const OutlineInputBorder(
+                          borderSide: BorderSide(color: kWhite)),
+                      border: const OutlineInputBorder(
+                          borderSide: BorderSide(color: kWhite)),
+                      contentPadding: const EdgeInsets.only(left: 10),
+                    ),
+                  ),
+                  kHeight5,
+                  Text(
+                    'Payment link will be sent to the given UPI ID app. please comeback after completing the payment.',
+                    style: TextStyle(
+                        fontFamily: gilroyRegular,
+                        color: kWhite,
+                        fontSize: sWidth * 0.03),
+                  ),
+                  Row(
+                    children: [
+                      kWidth10,
+                      Checkbox(
+                        value: false,
+                        onChanged: (value) {},
+                        checkColor: kBluePrimary,
+                        activeColor: kWhite,
+                        side: const BorderSide(color: kWhite),
+                      ),
+                      Text(
+                        'By signing up I agree to the INC and GST taxes.',
+                        style: TextStyle(
+                            fontFamily: gilroyRegular,
+                            color: kWhite,
+                            fontSize: sWidth * 0.03),
+                      ),
+                    ],
+                  ),
+                  kHeight10,
                   Center(
                     child: InkWell(
                       child: ClipRRect(
@@ -79,7 +189,9 @@ class AddCoinsDialoge extends StatelessWidget {
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 30, vertical: 10),
                             child: Text(
-                              'Pay ₹5,000',
+                              paymentMethod == PaymentMethod.epayment
+                                  ? 'Pay ₹5,000'
+                                  : 'Proceed',
                               style: textHeadBoldBig,
                             ),
                           ),
@@ -96,4 +208,3 @@ class AddCoinsDialoge extends StatelessWidget {
     );
   }
 }
-

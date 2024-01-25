@@ -1,3 +1,4 @@
+import 'package:bechdu_partner/application/presentation/screens/auth/widgets/custom_button_auth.dart';
 import 'package:bechdu_partner/application/presentation/screens/order/requote/requote_price_session.dart';
 import 'package:bechdu_partner/application/presentation/screens/order/widgets/order_detail_top_potion.dart';
 import 'package:bechdu_partner/application/presentation/screens/order/widgets/tab_bar_order_detail.dart';
@@ -17,6 +18,7 @@ class ScreenOrderDetail extends StatelessWidget {
         'Order 11250',
         style: textHeadBoldBig2,
       )),
+      backgroundColor: kWhite,
       body: Stack(
         children: [
           ClipPath(
@@ -32,10 +34,10 @@ class ScreenOrderDetail extends StatelessWidget {
               children: [OrderDetailTopPart(), TabBarOrderDetail()],
             ),
           ),
-          RequotePriceSession(),
+          // need to add slide to top animation on requote
+          // const RequotePriceSession(),
         ],
       ),
     );
   }
 }
-

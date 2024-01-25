@@ -1,4 +1,3 @@
-import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +18,7 @@ class TextFieldMaker extends StatelessWidget {
       children: [
         Text(
           headline,
-          style: textHeadMediumBig.copyWith(color: kGreyDark),
+          style: textHeadMedium1,
         ),
         kHeight10,
         child,

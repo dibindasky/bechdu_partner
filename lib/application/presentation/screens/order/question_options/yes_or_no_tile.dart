@@ -3,11 +3,9 @@ import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:flutter/material.dart';
 
 class YesOrNoTile extends StatefulWidget {
-  const YesOrNoTile({
-    super.key,required this.map
-  });
+  const YesOrNoTile({super.key, required this.map});
 
-  final Map<String,dynamic> map;
+  final Map<String, dynamic> map;
 
   @override
   State<YesOrNoTile> createState() => _YesOrNoTileState();

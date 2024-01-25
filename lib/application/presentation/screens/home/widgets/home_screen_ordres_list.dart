@@ -8,17 +8,12 @@ class HomeScreenOrdersList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-      child: Column(
-        children: [
-          ListView.builder(
-            padding: EdgeInsets.zero,
-            shrinkWrap: true,
-            itemBuilder: (context, index) => const OrdersListTileHome(),
-          ),
-        ],
+    return Expanded(
+      child: ListView.builder(
+        padding: EdgeInsets.zero,
+        shrinkWrap: true,
+        itemBuilder: (context, index) => const OrdersListTileHome(),
       ),
     );
   }
 }
-

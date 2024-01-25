@@ -26,9 +26,15 @@ class HomeScreenAppBar extends StatelessWidget {
                       style: textHeadBoldBig2,
                     ),
                     const Spacer(),
-                    const Icon(Icons.notifications, color: kBluePrimary),
+                    InkWell(
+                        onTap: () => Navigator.pushNamed(
+                            context, Routes.notificationPage),
+                        child: const Icon(Icons.notifications,
+                            color: kBluePrimary)),
                     kWidth10,
-                    InkWell(onTap: () => Navigator.pushNamed(context, Routes.pointsPage),
+                    InkWell(
+                      onTap: () =>
+                          Navigator.pushNamed(context, Routes.pointsPage),
                       child: ClipRRect(
                         borderRadius: kRadius50,
                         child: ColoredBox(
@@ -47,7 +53,8 @@ class HomeScreenAppBar extends StatelessWidget {
                                 CircleAvatar(
                                   radius: sWidth * 0.04,
                                   backgroundColor: kBluePrimary,
-                                  backgroundImage: const AssetImage(iconNottoCoin),
+                                  backgroundImage:
+                                      const AssetImage(iconNottoCoin),
                                 )
                               ],
                             ),
@@ -110,4 +117,3 @@ class HomeScreenAppBar extends StatelessWidget {
     );
   }
 }
-

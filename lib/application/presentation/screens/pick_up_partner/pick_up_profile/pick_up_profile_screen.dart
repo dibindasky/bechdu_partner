@@ -14,9 +14,12 @@ class ScreenPickUpPartnerProfile extends StatelessWidget {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            CircleAvatar(
-              radius: sWidth * 0.20,
-              backgroundImage: const AssetImage(phoneImage),
+            CircleAvatar(radius: sWidth * 0.21,backgroundColor: kGreenPrimary,
+              child: CircleAvatar(
+                radius: sWidth * 0.20,
+                backgroundColor: kBluePrimary,
+                child: Text('KA',style: textHeadBoldBig2.copyWith(color: kWhite,fontSize: sWidth * 0.20),),
+              ),
             ),
             kHeight10,
             Text(
@@ -37,14 +40,11 @@ class ScreenPickUpPartnerProfile extends StatelessWidget {
                     leading: kWidth10,
                     title: const Text('Mobile'),
                     subtitle: const Text('+2332471729'),
-                    titleTextStyle: textHeadBold1,
+                    titleTextStyle: textHeadMedium1.copyWith(fontWeight: FontWeight.w600),
                     subtitleTextStyle:
                         textHeadMedium1.copyWith(color: kGreyLight),
                     trailing: Wrap(
                       children: [
-                        CircleIconTrailingProfile(
-                            icon: Icons.message, onTap: () {}),
-                        kWidth10,
                         CircleIconTrailingProfile(
                             icon: Icons.phone, onTap: () {}),
                         kWidth20
@@ -55,7 +55,7 @@ class ScreenPickUpPartnerProfile extends StatelessWidget {
                     leading: kWidth10,
                     title: const Text('Email'),
                     subtitle: const Text('asamoahgodfred42@gmail.com'),
-                    titleTextStyle: textHeadBold1,
+                    titleTextStyle: textHeadMedium1.copyWith(fontWeight: FontWeight.w600),
                     subtitleTextStyle:
                         textHeadMedium1.copyWith(color: kGreyLight),
                     trailing: Wrap(
@@ -68,36 +68,17 @@ class ScreenPickUpPartnerProfile extends StatelessWidget {
                   ),
                   ListTile(
                     leading: kWidth10,
-                    title: const Text('Group'),
-                    subtitle: const Text('Uni Friends'),
-                    titleTextStyle: textHeadBold1,
+                    title: Text('Address'),
+                    subtitle: const Text('#23, jayanagar 9th block, bangalore.'),
+                    titleTextStyle: textHeadMedium1.copyWith(fontWeight: FontWeight.w600),
                     subtitleTextStyle:
                         textHeadMedium1.copyWith(color: kGreyLight),
                   ),
                 ],
               ),
             ),
-            kHeight20,
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: ClipRRect(
-                borderRadius: kRadius10,
-                child: ColoredBox(
-                  color: kBluePrimary,
-                  child: SizedBox(
-                      width: double.infinity,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 15),
-                        child: Center(
-                            child: Text('Assign Pickup',
-                                style:
-                                    textHeadBoldBig2.copyWith(color: kWhite))),
-                      )),
-                ),
-              ),
-            )
           ],
-        ));
+        ),);
   }
 }
 
@@ -120,7 +101,7 @@ class CircleIconTrailingProfile extends StatelessWidget {
         borderRadius: kRadius50,
         child: CircleAvatar(
           backgroundColor: kWhite,
-          child: Icon(icon),
+          child: Icon(icon,color: kGreyDark),
         ),
       ),
     );

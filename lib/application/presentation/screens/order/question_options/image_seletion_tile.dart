@@ -21,6 +21,7 @@ class _GridTileQuestionState extends State<GridTileQuestion> {
     return InkWell(
       onTap: () {
         setState(() {
+          // change it to block now auto selection bug
           selected = !selected;
         });
       },

@@ -1,4 +1,5 @@
 import 'package:bechdu_partner/application/business_logic/auth/auth_bloc.dart';
+import 'package:bechdu_partner/application/business_logic/order/requote/requote_bloc.dart';
 import 'package:bechdu_partner/application/presentation/routes/routes_generator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -20,7 +21,10 @@ class Beachdu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [BlocProvider(create: (context) => AuthBloc(),)],
+      providers: [
+        BlocProvider(create: (context) => AuthBloc(),),
+        BlocProvider(create: (context) => RequoteBloc(),),
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         onGenerateRoute: routeGenerator.onGenerateRoute,

@@ -12,12 +12,15 @@ const iconHome = 'assets/images/carbon_home.png';
 const iconSettings = 'assets/images/solar_settings-linear.png';
 const iconPeople = 'assets/images/octicon_people-16.png';
 const iconMoney = 'assets/images/ph_money-fill.png';
+const iconPickHand = 'assets/images/pick2 2.png';
 const iconNottoCoin = 'assets/images/noto_coin.png';
-const phoneImage = 'assets/images/Rectangle 1785.png';
 const iconCancel = 'assets/images/cancel.png';
 const iconShedule = 'assets/images/calender_shedule.png';
 const iconRedo = 'assets/images/redo.png';
 const iconCompleteCheck = 'assets/images/check_completed.png';
+
+const phoneImage = 'assets/images/Rectangle 1785.png';
+const phoneImageNetwork = 'https://rukminim2.flixcart.com/image/416/416/kg8avm80/mobile/y/7/n/apple-iphone-12-dummyapplefsn-original-imafwg8dpyjvgg3j.jpeg?q=70&crop=false';
 
 double sHeight = 900;
 double sWidth = 400;
@@ -156,7 +159,7 @@ var testQuestionMap =[
 
     {
       "sectionType": "image",
-      "sectionCriteria": "none",
+      "sectionCriteria": "some",
       "sectionHeading": "Functionality",
       "data": [
         {

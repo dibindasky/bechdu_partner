@@ -2,6 +2,7 @@ import 'package:bechdu_partner/application/presentation/routes/routes.dart';
 import 'package:bechdu_partner/application/presentation/screens/auth/login_screen.dart';
 import 'package:bechdu_partner/application/presentation/screens/auth/otp_screen.dart';
 import 'package:bechdu_partner/application/presentation/screens/bottom_bar/bottom_bar_screen.dart';
+import 'package:bechdu_partner/application/presentation/screens/notification/notificaton_screen.dart';
 import 'package:bechdu_partner/application/presentation/screens/order/order_detail_screen.dart';
 import 'package:bechdu_partner/application/presentation/screens/pick_up_partner/add_pick_up/add_pick_up_screen.dart';
 import 'package:bechdu_partner/application/presentation/screens/pick_up_partner/pick_up_list/pick_up_list_screen.dart';
@@ -35,6 +36,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (ctx) => const ScreenBottomBar());
       case Routes.orderScreen:
         return MaterialPageRoute(builder: (ctx) => const ScreenOrderDetail());
+      case Routes.notificationPage:
+        return MaterialPageRoute(builder: (ctx) => const ScreenNotification());
       default:
         return _errorScreen();
     }

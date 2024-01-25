@@ -11,7 +11,8 @@ class CustomBottomBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Align(alignment: Alignment.bottomCenter,
+    return Align(
+      alignment: Alignment.bottomCenter,
       child: Container(
         height: sWidth * 0.15,
         padding: const EdgeInsets.only(top: 20),
@@ -19,14 +20,13 @@ class CustomBottomBar extends StatelessWidget {
             color: kWhite,
             boxShadow: [
               BoxShadow(
-                color:kGreyLight.withOpacity(0.3),
+                color: kGreyLight.withOpacity(0.3),
                 blurRadius: 5.0,
                 offset: const Offset(-5.0, -5.0),
               ),
             ],
             borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(150),
-                topRight: Radius.circular(150))),
+                topLeft: Radius.circular(150), topRight: Radius.circular(150))),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,17 +44,23 @@ class CustomBottomBar extends StatelessWidget {
                 )
               ],
             ),
-            const BottomIconMaker(image: iconMoney),
+            BottomIconMaker(
+                image: iconMoney,
+                ontap: () {
+                  Navigator.pushNamed(context, Routes.pointsPage);
+                }),
             BottomIconMaker(
                 image: iconPeople,
                 ontap: () {
                   Navigator.pushNamed(context, Routes.partnersList);
                 }),
-            const BottomIconMaker(image: iconSettings),
+            BottomIconMaker(
+              image: iconSettings,
+              ontap: () => Navigator.pushNamed(context, Routes.settingsPage),
+            ),
           ],
         ),
       ),
     );
   }
 }
-
