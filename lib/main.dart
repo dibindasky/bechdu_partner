@@ -1,15 +1,18 @@
 import 'package:bechdu_partner/application/business_logic/auth/auth_bloc.dart';
+import 'package:bechdu_partner/application/business_logic/order/orders/orders_bloc.dart';
 import 'package:bechdu_partner/application/business_logic/order/requote/requote_bloc.dart';
 import 'package:bechdu_partner/application/presentation/routes/routes_generator.dart';
+import 'package:bechdu_partner/domain/di/dipendency_injection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations(
     [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown],
   );
+  await configuteInjection();
   runApp(Beachdu());
 }
 
@@ -22,8 +25,9 @@ class Beachdu extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => AuthBloc(),),
-        BlocProvider(create: (context) => RequoteBloc(),),
+        BlocProvider(create: (context) => getIt<AuthBloc>()),
+        BlocProvider(create: (context) => getIt<RequoteBloc>()),
+        BlocProvider(create: (context) => getIt<OrdersBloc>()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

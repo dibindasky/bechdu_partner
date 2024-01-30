@@ -14,7 +14,7 @@ import 'package:flutter/material.dart';
 
 class RouteGenerator {
   Route onGenerateRoute(RouteSettings settings) {
-    // final arguments = settings.arguments;
+    final arguments = settings.arguments;
     switch (settings.name) {
       case Routes.initial:
         return MaterialPageRoute(builder: (ctx) => const ScreenSplash());
@@ -23,19 +23,27 @@ class RouteGenerator {
       case Routes.otpPage:
         return MaterialPageRoute(builder: (ctx) => const ScreenOTP());
       case Routes.addPickUpPage:
-        return MaterialPageRoute(builder: (ctx) => const ScreenAddPickUpPartner());
+        return MaterialPageRoute(
+            builder: (ctx) => const ScreenAddPickUpPartner());
       case Routes.partnersList:
-        return MaterialPageRoute(builder: (ctx) => const ScreenPickUpPartnersList());
+        return MaterialPageRoute(
+            builder: (ctx) => const ScreenPickUpPartnersList());
       case Routes.settingsPage:
         return MaterialPageRoute(builder: (ctx) => const ScreenSettings());
       case Routes.pointsPage:
         return MaterialPageRoute(builder: (ctx) => const ScreenPoints());
       case Routes.pickUpProfilePage:
-        return MaterialPageRoute(builder: (ctx) => const ScreenPickUpPartnerProfile());
+        return MaterialPageRoute(
+            builder: (ctx) => const ScreenPickUpPartnerProfile());
       case Routes.bottomBar:
         return MaterialPageRoute(builder: (ctx) => const ScreenBottomBar());
       case Routes.orderScreen:
-        return MaterialPageRoute(builder: (ctx) => const ScreenOrderDetail());
+        return arguments is Map<String, bool> &&
+            arguments['newOrder'] != null &&
+            arguments['detail'] != null ? MaterialPageRoute(
+              builder: (ctx) => ScreenOrderDetail(
+                  newOrder: arguments['newOrder']!,
+                  detail: arguments['detail']!)) : _errorScreen();
       case Routes.notificationPage:
         return MaterialPageRoute(builder: (ctx) => const ScreenNotification());
       default:

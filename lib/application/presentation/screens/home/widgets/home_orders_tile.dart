@@ -2,6 +2,7 @@ import 'package:bechdu_partner/application/presentation/screens/home/widgets/pho
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:bechdu_partner/application/presentation/widgets/custom_expansion_tile.dart';
+import 'package:bechdu_partner/application/presentation/widgets/pickup_detail_order_tile.dart';
 import 'package:bechdu_partner/application/presentation/widgets/status_colored_box.dart';
 import 'package:flutter/material.dart';
 
@@ -51,7 +52,7 @@ class OrdersListTileHome extends StatelessWidget {
             const PhoneDetailTile(),
           ],
         ),
-        children: const [PickUpDetailOrderTile()],
+        children: const [PickUpDetailOrderTile(isUser: false)],
       ),
     );
   }

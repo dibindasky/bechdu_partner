@@ -29,10 +29,12 @@ class StatusColoredBox extends StatelessWidget {
             padding:
                 EdgeInsets.symmetric(horizontal: 10, vertical: verticalPadding),
             child: Center(
-              child: Text(
-                text,
-                style: textHeadRegular1.copyWith(
-                    color: textColor, fontWeight: fontWeight),
+              child: FittedBox(
+                child: Text(
+                  text,
+                  style: textHeadRegular1.copyWith(
+                      color: textColor, fontWeight: fontWeight),
+                ),
               ),
             ),
           ),
