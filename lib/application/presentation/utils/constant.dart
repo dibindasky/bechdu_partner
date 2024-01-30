@@ -5,13 +5,21 @@ const gilroyBold = 'Gilroy-Bold';
 const gilroyMedium = 'Gilroy-Medium';
 const gilroyRegular = 'Gilroy-Regular';
 const gilroySemiBold = 'Gilroy-SemiBold';
+
 const loginPageImage = 'assets/images/login_page.png';
-const homeIcon = 'assets/images/carbon_home.png';
-const settingsIcon = 'assets/images/solar_settings-linear.png';
-const peopleIcon = 'assets/images/octicon_people-16.png';
-const moneyIcon = 'assets/images/ph_money-fill.png';
-const nottoCoin = 'assets/images/noto_coin.png';
+const imageDiffectedPhone = 'assets/images/diffectImage.png';
+const iconHome = 'assets/images/carbon_home.png';
+const iconSettings = 'assets/images/solar_settings-linear.png';
+const iconPeople = 'assets/images/octicon_people-16.png';
+const iconMoney = 'assets/images/ph_money-fill.png';
+const iconPickHand = 'assets/images/pick2 2.png';
+const iconNottoCoin = 'assets/images/noto_coin.png';
+const iconCancel = 'assets/images/cancel.png';
+const iconShedule = 'assets/images/calender_shedule.png';
+const iconRedo = 'assets/images/redo.png';
+const iconCompleteCheck = 'assets/images/check_completed.png';
 const phoneImage = 'assets/images/Rectangle 1785.png';
+const phoneImageNetwork = 'https://rukminim2.flixcart.com/image/416/416/kg8avm80/mobile/y/7/n/apple-iphone-12-dummyapplefsn-original-imafwg8dpyjvgg3j.jpeg?q=70&crop=false';
 
 double sHeight = 900;
 double sWidth = 400;
@@ -49,6 +57,7 @@ final textHeadBoldBig = TextStyle(
   fontWeight: FontWeight.w400,
   fontSize: sWidth < 400 ? sWidth * 0.056 : sWidth * 0.045,
 );
+
 final textHeadBoldBig2 = TextStyle(
   color: kBlack,
   fontFamily: gilroyBold,
@@ -63,11 +72,25 @@ final textHeadMedium1 = TextStyle(
   fontSize: sWidth < 400 ? sWidth * 0.040 : sWidth * 0.035,
 );
 
+final textHeadMediumBig = TextStyle(
+  color: kBlack,
+  fontFamily: gilroyMedium,
+  fontWeight: FontWeight.w400,
+  fontSize: sWidth < 400 ? sWidth * 0.056 : sWidth * 0.045,
+);
+
 final textHeadRegular1 = TextStyle(
   color: kBlack,
   fontFamily: gilroyRegular,
   fontWeight: FontWeight.w400,
   fontSize: sWidth < 400 ? sWidth * 0.040 : sWidth * 0.035,
+);
+
+final textHeadRegularBig = TextStyle(
+  color: kBlack,
+  fontFamily: gilroyRegular,
+  fontWeight: FontWeight.w400,
+  fontSize: sWidth < 400 ? sWidth * 0.056 : sWidth * 0.045,
 );
 
 final textHeadSemiBold1 = TextStyle(
@@ -84,3 +107,118 @@ void sizeFinder(BuildContext context) {
   sHeight = size.height > 900 ? 900 : size.height;
   sWidth = size.width > 450 ? 450 : size.width;
 }
+
+
+var testQuestionMap =[
+    {
+      "sectionType": "yes/no",
+      "sectionCriteria": "all",
+      "sectionHeading": "Device",
+      "data": [
+        {
+          "description": "Are you able to make and receive calls?",
+        },
+        {
+          "description": "Is your device's touch screen working properly?",
+        },
+        {
+          "description": "Is your phone's screen original?",
+        },
+        {
+          "description": "Is your device under manufacturer warranty?",
+        },
+        {
+          "description": "Do you have GST val id bill with the same IMEI?",
+        },
+      ],
+    },
+    {
+      "sectionType": "image",
+      "sectionCriteria": "none",
+      "sectionHeading": "Display",
+      "data": [
+        {
+          "description": "Broken/Scratch on device screen",
+          "img": "imageDiffectedPhone",
+        },
+        {
+          "description": "Dead Spot/Visible lines on screen",
+          "img": "imageDiffectedPhone",
+        },
+        {
+          "description": "Scratch/Dent on device body",
+          "img": "imageDiffectedPhone",
+        },
+        {
+          "description": "Device panel missing/broken",
+          "img": "imageDiffectedPhone",
+        },
+      ],
+    },
+
+    {
+      "sectionType": "image",
+      "sectionCriteria": "some",
+      "sectionHeading": "Functionality",
+      "data": [
+        {
+          "description": "Front Camera not working",
+          "img": "imageDiffectedPhone",
+        },
+        {
+          "description": "Back Camera not working",
+          "img": "imageDiffectedPhone",
+        },
+        {
+          "description": "Volume Button not working",
+          "img": "imageDiffectedPhone",
+        },
+        {
+          "description": "Finger Touch not working",
+          "img": "imageDiffectedPhone",
+        },
+      ],
+    },
+    {
+      "sectionType": "image",
+      "sectionCriteria": "none",
+      "sectionHeading": "Accessories",
+      "data": [
+        {
+          "description": "Box",
+          "img": "imageDiffectedPhone",
+        },
+        {
+          "description": "Bill",
+          "img": "imageDiffectedPhone",
+        },
+        {
+          "description": "Charger",
+          "img": "imageDiffectedPhone",
+        },
+        {
+          "description": "Headset",
+          "img": "imageDiffectedPhone",
+        },
+      ],
+    },
+    {
+      "sectionType": "grid",
+      "sectionCriteria": "one",
+      "sectionHeading": "Device Age",
+      "data": [
+        {
+          "description": "0-3 Months",
+        },
+        {
+          "description": "3-6 Months",
+        },
+        {
+          "description": "6-11 Months",
+        },
+        {
+          "description": "Above 11 Months",
+        },
+      ],
+    },
+  ];

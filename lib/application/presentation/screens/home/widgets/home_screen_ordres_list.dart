@@ -8,7 +8,7 @@ class HomeScreenOrdersList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Flexible(
+    return Expanded(
       child: ListView.builder(
         padding: EdgeInsets.zero,
         shrinkWrap: true,
@@ -17,4 +17,3 @@ class HomeScreenOrdersList extends StatelessWidget {
     );
   }
 }
-

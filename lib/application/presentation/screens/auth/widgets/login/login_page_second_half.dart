@@ -41,8 +41,7 @@ class LoginPageSecondHalf extends StatelessWidget {
                       onTap: () {},
                       child: Text(
                         'Terms of use ',
-                        style: textHeadMedium1.copyWith(
-                            color: kBluePrimary),
+                        style: textHeadMedium1.copyWith(color: kBluePrimary),
                       ),
                     ),
                     Text('and ', style: textHeadMedium1),
@@ -50,8 +49,7 @@ class LoginPageSecondHalf extends StatelessWidget {
                       onTap: () {},
                       child: Text(
                         'Privacy Policy.',
-                        style: textHeadMedium1.copyWith(
-                            color: kBluePrimary),
+                        style: textHeadMedium1.copyWith(color: kBluePrimary),
                       ),
                     )
                   ],
@@ -61,12 +59,11 @@ class LoginPageSecondHalf extends StatelessWidget {
           ),
           kHeight20,
           AuthCustomButtom(
-            backgroundColor: kBluePrimary,
-            text: 'Send OTP',
-            onTap: () {
-              Navigator.pushNamed(context, Routes.otpPage);
-            } 
-          )
+              backgroundColor: kBluePrimary,
+              text: 'Send OTP',
+              onTap: () {
+                Navigator.pushReplacementNamed(context, Routes.otpPage);
+              })
         ],
       ),
     );
@@ -88,10 +85,11 @@ class _CheckBoxState extends State<CheckBox> {
   Widget build(BuildContext context) {
     return Checkbox(
       value: mark,
-      onChanged: (value) {setState(() {
-        mark=value!;
-      });},
+      onChanged: (value) {
+        setState(() {
+          mark = value!;
+        });
+      },
     );
   }
 }
-

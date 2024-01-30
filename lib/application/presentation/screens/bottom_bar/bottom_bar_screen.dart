@@ -10,8 +10,13 @@ class ScreenBottomBar extends StatelessWidget {
   Widget build(BuildContext context) {
     sizeFinder(context);
     return const Scaffold(
-        body: ScreenHome(),
-        bottomNavigationBar: CustomBottomBar());
+        body: Stack(
+          children: [
+            ScreenHome(),
+            CustomBottomBar()
+          ],
+        ),
+        );
   }
 }
 

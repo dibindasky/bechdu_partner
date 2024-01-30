@@ -80,8 +80,8 @@ class _ScreenOTPState extends State<ScreenOTP> {
             AuthCustomButtom(
                 backgroundColor: kGreenPrimary,
                 text: 'Verify OTP',
-                onTap: () {
-                  Navigator.pushNamed(context, Routes.bottomBar);
+                onTap: () {print('verify otp');
+                  Navigator.pushReplacementNamed(context, Routes.bottomBar);
                 })
           ],
         ),
