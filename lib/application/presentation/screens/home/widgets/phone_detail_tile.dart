@@ -12,7 +12,7 @@ class PhoneDetailTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () => Navigator.pushNamed(context, Routes.orderScreen,
-          arguments: <String, bool>{'newOrder': false, 'detail': false}),
+          arguments: <String, bool>{'newOrder': false, 'detail': true}),
       child: ClipRRect(
         borderRadius: kRadius5,
         child: ColoredBox(

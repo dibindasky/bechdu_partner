@@ -11,17 +11,18 @@ class ScreenSplash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Timer(const Duration(seconds: 1), () {
-      // Navigator.pushNamed(context, Routes.bottomBar);
-      Navigator.pushNamed(context, Routes.orderScreen, arguments:  <String,bool>{'newOrder': true,'detail':true});
+      Navigator.pushNamed(context, Routes.signInPage);
     });
     return Scaffold(
-      backgroundColor: kBluePrimary,
-      body: Center(
-        child: Text(
-          'BECHDU',
-          style: textHeadBoldBig.copyWith(color: kWhite),
-        ),
-      ),
-    );
+        backgroundColor: kBluePrimary,
+        body: Center(
+          child: ClipRRect(
+            borderRadius: kRadius5,
+            child: Text(
+              'BECHDU',
+              style: textHeadBoldBig.copyWith(color: kWhite),
+            ),
+          ),
+        ),);
   }
 }
