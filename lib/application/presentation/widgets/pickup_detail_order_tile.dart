@@ -2,6 +2,7 @@ import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:bechdu_partner/application/presentation/widgets/custom_blur_maker.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart' as url_launcher;
 
 class PickUpDetailOrderTile extends StatelessWidget {
   const PickUpDetailOrderTile(
@@ -41,22 +42,37 @@ class PickUpDetailOrderTile extends StatelessWidget {
                     ],
                   ),
                 ),
-                trailing: _circleIconMaker(icon: Icons.phone),
+                trailing: _circleIconMaker(
+                    icon: Icons.phone,
+                    onTap: () {
+                      url_launcher.launchUrl(Uri.parse("tel://0000000000"));
+                    }),
               ),
               ListTile(
-                  leading: SizedBox(
-                      height: 25, width: 25, child: Image.asset(iconPickHand)),
-                  title: BlurerMaker(
-                      show: isBlurred,
-                      child: Text('Pickup Location ', style: textHeadRegular1)),
-                  subtitle: BlurerMaker(
+                leading: SizedBox(
+                    height: 25, width: 25, child: Image.asset(iconPickHand)),
+                title: BlurerMaker(
                     show: isBlurred,
-                    child: Text(
-                        'Nikhita Stores, 201/B, Nirant Apts, Andheri East 400069',
-                        style: textHeadBold1),
-                  ),
-                  trailing: _circleIconMaker(
-                      icon: Icons.navigation_outlined, quarterTurns: 1)),
+                    child: Text('Pickup Location ', style: textHeadRegular1)),
+                subtitle: BlurerMaker(
+                  show: isBlurred,
+                  child: Text(
+                      'Nikhita Stores, 201/B, Nirant Apts, Andheri East 400069',
+                      style: textHeadBold1),
+                ),
+                trailing: _circleIconMaker(
+                  icon: Icons.navigation_outlined,
+                  quarterTurns: 1,
+                  onTap: () {
+                    try {
+                      url_launcher.launchUrl(Uri.parse(urlMapTest));
+                    } catch (e) {
+                      print('cannot launch url');
+                      print(e);
+                    }
+                  },
+                ),
+              ),
               ListTile(
                 leading: const Icon(
                   Icons.alarm_rounded,
@@ -72,12 +88,15 @@ class PickUpDetailOrderTile extends StatelessWidget {
     );
   }
 
-  CircleAvatar _circleIconMaker(
-      {required IconData icon, int quarterTurns = 0}) {
-    return CircleAvatar(
-        backgroundColor: kGreyLight.withOpacity(0.3),
-        child: RotatedBox(
-            quarterTurns: quarterTurns,
-            child: Icon(icon, color: kGreenPrimary)));
+  Widget _circleIconMaker(
+      {required IconData icon, int quarterTurns = 0, VoidCallback? onTap}) {
+    return InkWell(
+      onTap: onTap,
+      child: CircleAvatar(
+          backgroundColor: kGreyLight.withOpacity(0.3),
+          child: RotatedBox(
+              quarterTurns: quarterTurns,
+              child: Icon(icon, color: kGreenPrimary))),
+    );
   }
 }

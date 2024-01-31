@@ -1,5 +1,6 @@
+import 'package:bechdu_partner/application/presentation/screens/order/dialoges/show_dialog_cancel_order.dart';
+import 'package:bechdu_partner/application/presentation/screens/order/dialoges/show_dialoge_reschedule.dart';
 import 'package:bechdu_partner/application/presentation/screens/order/requote/requote_price_session.dart';
-import 'package:bechdu_partner/application/presentation/screens/order/requote/show_dialoge.dart';
 import 'package:bechdu_partner/application/presentation/screens/order/widgets/order_custom_buttom.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
@@ -27,7 +28,11 @@ class OrderDetailTopPart extends StatelessWidget {
                   }),
               kWidth5,
               OrdersCustomButton(
-                  text: 'Reschedule', image: iconShedule, onTap: () {}),
+                  text: 'Reschedule',
+                  image: iconShedule,
+                  onTap: () {
+                    showDialogeReschedule(context);
+                  }),
               kWidth5,
               OrdersCustomButton(
                   text: 'Complete', image: iconCompleteCheck, onTap: () {})

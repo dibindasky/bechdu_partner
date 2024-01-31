@@ -47,7 +47,7 @@ class CustomBottomBar extends StatelessWidget {
             BottomIconMaker(
                 image: iconMoney,
                 ontap: () {
-                  Navigator.pushNamed(context, Routes.pointsPage);
+                  Navigator.pushNamed(context, Routes.transcationPage);
                 }),
             BottomIconMaker(
                 image: iconPeople,

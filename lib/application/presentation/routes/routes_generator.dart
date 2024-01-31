@@ -10,6 +10,7 @@ import 'package:bechdu_partner/application/presentation/screens/pick_up_partner/
 import 'package:bechdu_partner/application/presentation/screens/points/points_screen.dart';
 import 'package:bechdu_partner/application/presentation/screens/settings/settings_screen.dart';
 import 'package:bechdu_partner/application/presentation/screens/splash/splash_screen.dart';
+import 'package:bechdu_partner/application/presentation/screens/transcations/transcations_screen.dart';
 import 'package:flutter/material.dart';
 
 class RouteGenerator {
@@ -32,6 +33,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (ctx) => const ScreenSettings());
       case Routes.pointsPage:
         return MaterialPageRoute(builder: (ctx) => const ScreenPoints());
+      case Routes.transcationPage:
+        return MaterialPageRoute(builder: (ctx) => const ScreenTranscations());
       case Routes.pickUpProfilePage:
         return MaterialPageRoute(
             builder: (ctx) => const ScreenPickUpPartnerProfile());

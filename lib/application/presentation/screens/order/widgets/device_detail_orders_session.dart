@@ -46,7 +46,6 @@ class OrderDetailDiviceDetailsSession extends StatelessWidget {
                                     (position) => Row(
                                       children: [
                                         Expanded(
-                                          flex: 2,
                                           child: Text(
                                               data[position]['description']!,
                                               style: textHeadBold1),

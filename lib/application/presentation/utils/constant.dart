@@ -20,6 +20,7 @@ const iconRedo = 'assets/images/redo.png';
 const iconCompleteCheck = 'assets/images/check_completed.png';
 const phoneImage = 'assets/images/Rectangle 1785.png';
 const phoneImageNetwork = 'https://rukminim2.flixcart.com/image/416/416/kg8avm80/mobile/y/7/n/apple-iphone-12-dummyapplefsn-original-imafwg8dpyjvgg3j.jpeg?q=70&crop=false';
+const urlMapTest ='https://www.google.com/maps/place/J.+P.+Nagar,+Bengaluru,+Karnataka+560078/@12.8897786,77.5368745,13z/data=!3m1!4b1!4m6!3m5!1s0x3bae150d7349a72b:0xf3d03ea1e1dd3d46!8m2!3d12.9063433!4d77.5856825!16zL20vMGg1bjJ4?entry=ttu';
 
 double sHeight = 900;
 double sWidth = 400;

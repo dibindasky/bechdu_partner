@@ -9,5 +9,6 @@ class Routes {
   static const String orderScreen = '/order_screen';
   static const String addPickUpPage = '/add_pick_up_page';
   static const String settingsPage = '/settings_page';
+  static const String transcationPage = '/transcations_page';
   static const String pickUpProfilePage = '/pick_up_profile_page';
 }

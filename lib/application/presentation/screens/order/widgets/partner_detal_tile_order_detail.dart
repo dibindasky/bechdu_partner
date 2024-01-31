@@ -1,4 +1,4 @@
-import 'package:bechdu_partner/application/presentation/screens/order/widgets/show_bottom_sheet_assign_partner.dart';
+import 'package:bechdu_partner/application/presentation/screens/order/dialoges/show_bottom_sheet_assign_partner.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:bechdu_partner/application/presentation/widgets/status_colored_box.dart';
