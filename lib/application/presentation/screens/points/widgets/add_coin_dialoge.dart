@@ -117,40 +117,7 @@ class _AddCoinsDialogeState extends State<AddCoinsDialoge> {
                     ],
                   ),
                   kHeight20,
-                  TextField(
-                    controller: upiController,
-                    keyboardType: TextInputType.number,
-                    cursorColor: kBluePrimary,
-                    style: textHeadRegular1.copyWith(color: kWhite),
-                    decoration: InputDecoration(
-                      hintText: paymentMethod == PaymentMethod.epayment
-                          ? 'Enter UPI ID'
-                          : 'Upload The Receipt here',
-                      hintStyle: textHeadRegular1.copyWith(color: kWhite),
-                      suffixIcon: paymentMethod == PaymentMethod.epayment
-                          ? Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text('Verify',
-                                    style:
-                                        textHeadBold1.copyWith(color: kWhite)),
-                              ],
-                            )
-                          : IconButton(
-                              onPressed: () {},
-                              icon: const Icon(
-                                Icons.file_upload_outlined,
-                                color: kWhite,
-                              )),
-                      enabledBorder: const OutlineInputBorder(
-                          borderSide: BorderSide(color: kWhite)),
-                      focusedBorder: const OutlineInputBorder(
-                          borderSide: BorderSide(color: kWhite)),
-                      border: const OutlineInputBorder(
-                          borderSide: BorderSide(color: kWhite)),
-                      contentPadding: const EdgeInsets.only(left: 10),
-                    ),
-                  ),
+                  CustomTextFileldPaymnet(paymentMethod: paymentMethod),
                   kHeight5,
                   Text(
                     'Payment link will be sent to the given UPI ID app. please comeback after completing the payment.',
@@ -159,25 +126,7 @@ class _AddCoinsDialogeState extends State<AddCoinsDialoge> {
                         color: kWhite,
                         fontSize: sWidth * 0.03),
                   ),
-                  Row(
-                    children: [
-                      kWidth10,
-                      Checkbox(
-                        value: false,
-                        onChanged: (value) {},
-                        checkColor: kBluePrimary,
-                        activeColor: kWhite,
-                        side: const BorderSide(color: kWhite),
-                      ),
-                      Text(
-                        'By signing up I agree to the INC and GST taxes.',
-                        style: TextStyle(
-                            fontFamily: gilroyRegular,
-                            color: kWhite,
-                            fontSize: sWidth * 0.03),
-                      ),
-                    ],
-                  ),
+                  const UserAgrementPaymnetChekBox(),
                   kHeight10,
                   Center(
                     child: InkWell(
@@ -205,6 +154,99 @@ class _AddCoinsDialogeState extends State<AddCoinsDialoge> {
           ),
         ),
       ),
+    );
+  }
+}
+
+class CustomTextFileldPaymnet extends StatelessWidget {
+  const CustomTextFileldPaymnet({
+    super.key, required this.paymentMethod,
+  });
+
+  final PaymentMethod paymentMethod;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(onTap: () {
+      if(paymentMethod == PaymentMethod.cash){
+        // upload receipt here
+      }
+    },
+      child: TextField(
+        enabled: paymentMethod == PaymentMethod.epayment,
+        controller: upiController,
+        cursorColor: kBluePrimary,
+        style: textHeadRegular1.copyWith(color: kWhite),
+        decoration: InputDecoration(
+          hintText: paymentMethod == PaymentMethod.epayment
+              ? 'Enter UPI ID'
+              : 'Upload The Receipt here',
+          hintStyle: textHeadRegular1.copyWith(color: kWhite),
+          suffixIcon: paymentMethod == PaymentMethod.epayment
+              ? Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    InkWell(onTap: () {
+                      // verify upi id here;
+                    },
+                      child: Text('Verify',
+                          style:
+                              textHeadBold1.copyWith(color: kWhite)),
+                    ),
+                  ],
+                )
+              : const Icon(
+                    Icons.file_upload_outlined,
+                    color: kWhite,
+                  ),
+          enabledBorder: const OutlineInputBorder(
+              borderSide: BorderSide(color: kWhite)),
+          focusedBorder: const OutlineInputBorder(
+              borderSide: BorderSide(color: kWhite)),
+          border: const OutlineInputBorder(
+              borderSide: BorderSide(color: kWhite)),
+          contentPadding: const EdgeInsets.only(left: 10),
+        ),
+      ),
+    );
+  }
+}
+
+class UserAgrementPaymnetChekBox extends StatefulWidget {
+  const UserAgrementPaymnetChekBox({
+    super.key,
+  });
+
+  @override
+  State<UserAgrementPaymnetChekBox> createState() => _UserAgrementPaymnetChekBoxState();
+}
+
+class _UserAgrementPaymnetChekBoxState extends State<UserAgrementPaymnetChekBox> {
+
+  bool marked=false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        kWidth10,
+        Checkbox(
+          value: marked,
+          onChanged: (value) {setState(() {
+            marked=!marked;
+          });},
+          checkColor: kBluePrimary,
+          activeColor: kWhite,
+          side: const BorderSide(color: kWhite),
+        ),
+        Text(
+          'By signing up I agree to the INC and GST taxes.',
+          style: TextStyle(
+              fontFamily: gilroyRegular,
+              color: kWhite,
+              fontSize: sWidth * 0.03),
+        ),
+      ],
     );
   }
 }
