@@ -28,4 +28,3 @@ class ScreenPickUpPartnersList extends StatelessWidget {
     );
   }
 }
-

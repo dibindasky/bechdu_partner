@@ -9,7 +9,8 @@ class StatusColoredBox extends StatelessWidget {
       required this.color,
       this.fontWeight = FontWeight.w400,
       this.textColor = kWhite,
-      this.verticalPadding = 5,this.onTap});
+      this.verticalPadding = 5,
+      this.onTap});
 
   final String text;
   final Color color;
@@ -20,7 +21,8 @@ class StatusColoredBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(onTap: onTap,
+    return InkWell(
+      onTap: onTap,
       child: ClipRRect(
         borderRadius: kRadius5,
         child: ColoredBox(

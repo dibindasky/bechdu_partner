@@ -23,7 +23,8 @@ class PendingTranscationSession extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('500 Points', style: textHeadMediumBig.copyWith(fontSize: sWidth * 0.06)),
+                Text('500 Points',
+                    style: textHeadMediumBig.copyWith(fontSize: sWidth * 0.06)),
                 Text('₹ 5,000',
                     style: textHeadBoldBig2.copyWith(color: kRedDark))
               ],
@@ -81,7 +82,8 @@ class PendingTranscationSession extends StatelessWidget {
             ),
             kHeight20
           ]),
-        ),kHeight20
+        ),
+        kHeight20
       ],
     );
   }

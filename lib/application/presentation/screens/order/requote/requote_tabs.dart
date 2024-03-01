@@ -15,7 +15,8 @@ class RequoteTabs extends StatelessWidget {
       buildWhen: (previous, current) =>
           previous.requoteIndex != current.requoteIndex,
       builder: (context, state) {
-        return SizedBox(width: sWidth,
+        return SizedBox(
+          width: sWidth,
           child: FittedBox(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -26,12 +27,13 @@ class RequoteTabs extends StatelessWidget {
                   child: ColoredBox(
                     color: index == state.requoteIndex ? kGreenPrimary : knill,
                     child: Padding(
-                      padding:
-                          const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 3),
                       child: Text(
                         state.map[index]['sectionHeading'] as String,
                         style: textHeadSemiBold1.copyWith(
-                            color: index == state.requoteIndex ? kWhite : kBlack),
+                            color:
+                                index == state.requoteIndex ? kWhite : kBlack),
                       ),
                     ),
                   ),

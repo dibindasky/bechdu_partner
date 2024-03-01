@@ -14,15 +14,16 @@ class ScreenSplash extends StatelessWidget {
       Navigator.pushNamed(context, Routes.signInPage);
     });
     return Scaffold(
-        backgroundColor: kBluePrimary,
-        body: Center(
-          child: ClipRRect(
-            borderRadius: kRadius5,
-            child: Text(
-              'BECHDU',
-              style: textHeadBoldBig.copyWith(color: kWhite),
-            ),
+      backgroundColor: kBluePrimary,
+      body: Center(
+        child: ClipRRect(
+          borderRadius: kRadius5,
+          child: Text(
+            'BECHDU',
+            style: textHeadBoldBig.copyWith(color: kWhite),
           ),
-        ),);
+        ),
+      ),
+    );
   }
 }

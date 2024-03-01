@@ -90,7 +90,8 @@ class _UserDetailTileState extends State<UserDetailTile> {
             style: textHeadMedium1.copyWith(color: kGreyLight)),
         kHeight10,
         showEdit
-            ? TextField(controller: widget.controller,
+            ? TextField(
+                controller: widget.controller,
                 style: textHeadBoldBig,
                 decoration: const InputDecoration(border: InputBorder.none),
               )

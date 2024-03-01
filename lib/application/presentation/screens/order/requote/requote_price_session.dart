@@ -14,8 +14,7 @@ class RequotePriceSession extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        const Material(elevation: 10,
-          child: CustomCircleShape()),
+        const Material(elevation: 10, child: CustomCircleShape()),
         Column(
           children: [
             CircleAvatar(
@@ -50,7 +49,7 @@ class CustomCircleShape extends StatelessWidget {
             color: kWhite,
             boxShadow: [
               BoxShadow(
-                color:kBlack,
+                color: kBlack,
                 blurRadius: 5.0,
                 offset: Offset(-5.0, -5.0),
               ),

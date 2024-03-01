@@ -14,7 +14,8 @@ class VerticalCurvesClipper extends CustomClipper<Path> {
     path.lineTo(0, size.height);
     path.lineTo(size.width, size.height);
     path.lineTo(size.width, size.height - size.height * 0.85);
-    final secondStart = Offset(size.width - size.width * 0.50, size.height - size.height * 0.95);
+    final secondStart = Offset(
+        size.width - size.width * 0.50, size.height - size.height * 0.95);
     final secondEnd = Offset(0, size.height - size.height * 0.85);
     path.quadraticBezierTo(
         secondStart.dx, secondStart.dy, secondEnd.dx, secondEnd.dy);

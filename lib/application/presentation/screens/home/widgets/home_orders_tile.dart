@@ -46,9 +46,11 @@ class OrdersListTileHome extends StatelessWidget {
         ),
         subTitle: Column(
           children: [
-            Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: List.generate(30, (index) => const Text('_')),),
-              kHeight5,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: List.generate(30, (index) => const Text('_')),
+            ),
+            kHeight5,
             const PhoneDetailTile(),
           ],
         ),

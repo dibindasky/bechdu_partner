@@ -42,20 +42,20 @@ class ScreenOrderDetail extends StatelessWidget {
               builder: (context, state) {
                 return newOrder
                     ? const Stack(
-                      children: [
-                        SingleChildScrollView(
-                          child: Column(children: [
+                        children: [
+                          SingleChildScrollView(
+                            child: Column(children: [
                               OrdersDetailImageAndPriceSession(),
                               PickUpDetailOrderTile(isBlurred: true),
                               kHeight10,
                               OrderDetailDiviceDetailsSession(isBlurred: true)
                             ]),
-                        ),
+                          ),
                           SliderOrderAccepting()
-                      ],
-                    )
+                        ],
+                      )
                     : SingleChildScrollView(
-                      child: Column(
+                        child: Column(
                           children: [
                             const OrdersDetailImageAndPriceSession(),
                             detail ? const OrderDetailTopPart() : kEmpty,
@@ -68,7 +68,7 @@ class ScreenOrderDetail extends StatelessWidget {
                                 isBlurred: false)
                           ],
                         ),
-                    );
+                      );
               },
             ),
           ),

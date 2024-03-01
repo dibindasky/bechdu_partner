@@ -42,11 +42,13 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (ctx) => const ScreenBottomBar());
       case Routes.orderScreen:
         return arguments is Map<String, bool> &&
-            arguments['newOrder'] != null &&
-            arguments['detail'] != null ? MaterialPageRoute(
-              builder: (ctx) => ScreenOrderDetail(
-                  newOrder: arguments['newOrder']!,
-                  detail: arguments['detail']!)) : _errorScreen();
+                arguments['newOrder'] != null &&
+                arguments['detail'] != null
+            ? MaterialPageRoute(
+                builder: (ctx) => ScreenOrderDetail(
+                    newOrder: arguments['newOrder']!,
+                    detail: arguments['detail']!))
+            : _errorScreen();
       case Routes.notificationPage:
         return MaterialPageRoute(builder: (ctx) => const ScreenNotification());
       default:

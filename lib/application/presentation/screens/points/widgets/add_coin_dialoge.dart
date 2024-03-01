@@ -160,18 +160,20 @@ class _AddCoinsDialogeState extends State<AddCoinsDialoge> {
 
 class CustomTextFileldPaymnet extends StatelessWidget {
   const CustomTextFileldPaymnet({
-    super.key, required this.paymentMethod,
+    super.key,
+    required this.paymentMethod,
   });
 
   final PaymentMethod paymentMethod;
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(onTap: () {
-      if(paymentMethod == PaymentMethod.cash){
-        // upload receipt here
-      }
-    },
+    return InkWell(
+      onTap: () {
+        if (paymentMethod == PaymentMethod.cash) {
+          // upload receipt here
+        }
+      },
       child: TextField(
         enabled: paymentMethod == PaymentMethod.epayment,
         controller: upiController,
@@ -186,25 +188,25 @@ class CustomTextFileldPaymnet extends StatelessWidget {
               ? Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    InkWell(onTap: () {
-                      // verify upi id here;
-                    },
+                    InkWell(
+                      onTap: () {
+                        // verify upi id here;
+                      },
                       child: Text('Verify',
-                          style:
-                              textHeadBold1.copyWith(color: kWhite)),
+                          style: textHeadBold1.copyWith(color: kWhite)),
                     ),
                   ],
                 )
               : const Icon(
-                    Icons.file_upload_outlined,
-                    color: kWhite,
-                  ),
-          enabledBorder: const OutlineInputBorder(
-              borderSide: BorderSide(color: kWhite)),
-          focusedBorder: const OutlineInputBorder(
-              borderSide: BorderSide(color: kWhite)),
-          border: const OutlineInputBorder(
-              borderSide: BorderSide(color: kWhite)),
+                  Icons.file_upload_outlined,
+                  color: kWhite,
+                ),
+          enabledBorder:
+              const OutlineInputBorder(borderSide: BorderSide(color: kWhite)),
+          focusedBorder:
+              const OutlineInputBorder(borderSide: BorderSide(color: kWhite)),
+          border:
+              const OutlineInputBorder(borderSide: BorderSide(color: kWhite)),
           contentPadding: const EdgeInsets.only(left: 10),
         ),
       ),
@@ -218,12 +220,13 @@ class UserAgrementPaymnetChekBox extends StatefulWidget {
   });
 
   @override
-  State<UserAgrementPaymnetChekBox> createState() => _UserAgrementPaymnetChekBoxState();
+  State<UserAgrementPaymnetChekBox> createState() =>
+      _UserAgrementPaymnetChekBoxState();
 }
 
-class _UserAgrementPaymnetChekBoxState extends State<UserAgrementPaymnetChekBox> {
-
-  bool marked=false;
+class _UserAgrementPaymnetChekBoxState
+    extends State<UserAgrementPaymnetChekBox> {
+  bool marked = false;
 
   @override
   Widget build(BuildContext context) {
@@ -232,9 +235,11 @@ class _UserAgrementPaymnetChekBoxState extends State<UserAgrementPaymnetChekBox>
         kWidth10,
         Checkbox(
           value: marked,
-          onChanged: (value) {setState(() {
-            marked=!marked;
-          });},
+          onChanged: (value) {
+            setState(() {
+              marked = !marked;
+            });
+          },
           checkColor: kBluePrimary,
           activeColor: kWhite,
           side: const BorderSide(color: kWhite),

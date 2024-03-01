@@ -36,14 +36,10 @@ class RequoteBloc extends Bloc<RequoteEvent, RequoteState> {
       return emit(
         state.copyWith(requoteIndex: state.requoteIndex + 1, message: null),
       );
-    }else{
-      
-    }
+    } else {}
   }
 
-  markAnswer(event, emit) {
-
-  }
+  markAnswer(event, emit) {}
 
   int getCount() {
     int count = 0;

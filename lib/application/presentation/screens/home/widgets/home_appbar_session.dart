@@ -87,7 +87,10 @@ class HomeScreenAppBar extends StatelessWidget {
             builder: (context, state) {
               return InkWell(
                 onTap: () => Navigator.pushNamed(context, Routes.orderScreen,
-                    arguments: <String,bool>{'newOrder': true,'detail':false}),
+                    arguments: <String, bool>{
+                      'newOrder': true,
+                      'detail': false
+                    }),
                 child: ColoredBox(
                   color: kBluePrimary,
                   child: SizedBox(

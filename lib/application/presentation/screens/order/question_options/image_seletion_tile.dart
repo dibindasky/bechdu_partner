@@ -3,11 +3,9 @@ import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:flutter/material.dart';
 
 class GridTileQuestion extends StatefulWidget {
-  const GridTileQuestion({
-    super.key,required this.map
-  });
+  const GridTileQuestion({super.key, required this.map});
 
-  final Map<String,dynamic> map;
+  final Map<String, dynamic> map;
 
   @override
   State<GridTileQuestion> createState() => _GridTileQuestionState();
@@ -35,7 +33,8 @@ class _GridTileQuestionState extends State<GridTileQuestion> {
               borderRadius: kRadius10),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Column(mainAxisAlignment: MainAxisAlignment.spaceAround,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 AspectRatio(
                   aspectRatio: 1,
