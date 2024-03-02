@@ -21,9 +21,17 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc(this.authRepo) : super(AuthState.initial()) {
     on<SendOtp>(sendOtp);
     on<VerifyOtp>(verifyOtp);
+    on<AgreePolicy>(agreePolicy);
+    on<Log>(log);
+    on<LogOut>(logOut);
   }
 
   FutureOr<void> sendOtp(SendOtp event, emit) async {
+    if (!state.agreePolicy) {
+      return emit(state.copyWith(
+          message: 'with out agree to our policy user cant signup',
+          agreePolicyError: true));
+    }
     emit(AuthState.initial().copyWith(isLoading: true));
     final result =
         await authRepo.sendOtp(phoneNumberModel: event.phoneNumberModel);
@@ -32,6 +40,19 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             message: l.message, hasError: true, isLoading: false)),
         (r) => emit(state.copyWith(
             message: r.message, isLoading: false, otpSend: true)));
+  }
+
+  FutureOr<void> agreePolicy(AgreePolicy event, emit) {
+    emit(state.copyWith(agreePolicy: !state.agreePolicy, message: null));
+  }
+
+  FutureOr<void> log(Log event, emit) async {
+    final log = await SecureStorage.getLogin();
+    emit(state.copyWith(isLogin: log));
+  }
+
+  FutureOr<void> logOut(LogOut event, emit) async {
+    await SecureStorage.clearLogin();
   }
 
   FutureOr<void> verifyOtp(VerifyOtp event, emit) async {

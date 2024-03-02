@@ -11,13 +11,17 @@ import 'package:bechdu_partner/domain/model/commen/success_response_model/succes
 import 'package:bechdu_partner/domain/repository/service/auth_repo.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:injectable/injectable.dart';
 
+@LazySingleton(as: AuthRepo)
+@injectable
 class AuthService implements AuthRepo {
   final Dio _dio = Dio(BaseOptions(baseUrl: ApiEndPoints.baseUrl));
   @override
   Future<Either<Failure, SuccessResponseModel>> sendOtp(
       {required PhoneNumberModel phoneNumberModel}) async {
     try {
+      log('send otp dio exception => ${phoneNumberModel.toJson()}');
       final response = await _dio.post(ApiEndPoints.sendOtp,
           data: phoneNumberModel.toJson());
       return Right(SuccessResponseModel.fromJson(response.data));
@@ -35,15 +39,20 @@ class AuthService implements AuthRepo {
   Future<Either<Failure, VerifyOtpResponseModel>> verifyOtp(
       {required VerifyOtpModel verifyOtpModel}) async {
     try {
-      final response =
-          await _dio.post(ApiEndPoints.sendOtp, data: verifyOtpModel.toJson());
+      log('verify otp  => ${verifyOtpModel.toJson()}');
+      // _dio.options.headers['user-agent']='PocoM2Pro';
+      _dio.options.headers.addAll(
+          {'user-agent': 'PocoM2Pro', 'content-Type': 'application/json'});
+      log(_dio.options.headers.toString());
+      final response = await _dio.post(ApiEndPoints.verifyOtp,
+          data: verifyOtpModel.toJson());
       return Right(VerifyOtpResponseModel.fromJson(response.data));
     } on DioException catch (e) {
-      log('send otp dio exception => $e');
+      log('verify otp dio exception => $e');
       return Left(Failure(
           message: ErrorResponseModel.fromJson(e.response?.data).error));
     } catch (e) {
-      log('send otp exception => $e');
+      log('verify otp exception => $e');
       return Left(Failure(message: errorMessage));
     }
   }

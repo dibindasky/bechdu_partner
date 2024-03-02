@@ -35,18 +35,18 @@ class ApiService {
           await SecureStorage.getToken().then((token) => token.accessToken);
       _dio.options.headers.addAll(
         {
-          'Authorization': "Bearer $accessToken",
+          'authorization': "Bearer $accessToken",
           ...headers ?? {'content-Type': 'application/json'}
         },
       );
       log('api uri ==>  ${_dio.options.baseUrl + url}');
-      log('accessToken ==>  ${_dio.options.headers['Authorization']}');
+      log('accessToken ==>  ${_dio.options.headers['authorization']}');
       final response =
           await _dio.get(url, data: data, queryParameters: queryParameters);
       return response;
     } on DioException catch (exception) {
       log('Dio exception code => ${exception.response?.statusCode}');
-      log('Dio exception => ${exception.response?.statusCode}');
+      log('Dio exception => ${exception.response}');
       rethrow;
     } catch (e) {
       log('Exception => $e');
@@ -65,7 +65,7 @@ class ApiService {
           await SecureStorage.getToken().then((token) => token.accessToken);
       _dio.options.headers.addAll(
         {
-          'Authorization': "Bearer $accessToken",
+          'authorization': "Bearer $accessToken",
           ...headers ?? {'content-Type': 'application/json'}
         },
       );
@@ -97,7 +97,7 @@ class ApiService {
           await SecureStorage.getToken().then((token) => token.accessToken);
       _dio.options.headers.addAll(
         {
-          'Authorization': "Bearer $accessToken",
+          'authorization': "Bearer $accessToken",
           ...headers ?? {'content-Type': 'application/json'}
         },
       );
@@ -127,7 +127,7 @@ class ApiService {
           await SecureStorage.getToken().then((token) => token.accessToken);
       _dio.options.headers.addAll(
         {
-          'Authorization': "Bearer $accessToken",
+          'authorization': "Bearer $accessToken",
           ...headers ?? {'content-Type': 'application/json'}
         },
       );
@@ -156,7 +156,7 @@ class ApiService {
           await SecureStorage.getToken().then((token) => token.accessToken);
       _dio.options.headers.addAll(
         {
-          'Authorization': "Bearer $accessToken",
+          'authorization': "Bearer $accessToken",
           ...headers ?? {'content-Type': 'application/json'}
         },
       );

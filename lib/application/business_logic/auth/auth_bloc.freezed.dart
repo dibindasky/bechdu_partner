@@ -20,18 +20,27 @@ mixin _$AuthEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(PhoneNumberModel phoneNumberModel) sendOtp,
     required TResult Function(VerifyOtpModel verifyOtpModel) verifyOtp,
+    required TResult Function() agreePolicy,
+    required TResult Function() log,
+    required TResult Function() logOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(PhoneNumberModel phoneNumberModel)? sendOtp,
     TResult? Function(VerifyOtpModel verifyOtpModel)? verifyOtp,
+    TResult? Function()? agreePolicy,
+    TResult? Function()? log,
+    TResult? Function()? logOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(PhoneNumberModel phoneNumberModel)? sendOtp,
     TResult Function(VerifyOtpModel verifyOtpModel)? verifyOtp,
+    TResult Function()? agreePolicy,
+    TResult Function()? log,
+    TResult Function()? logOut,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +48,27 @@ mixin _$AuthEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(SendOtp value) sendOtp,
     required TResult Function(VerifyOtp value) verifyOtp,
+    required TResult Function(AgreePolicy value) agreePolicy,
+    required TResult Function(Log value) log,
+    required TResult Function(LogOut value) logOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SendOtp value)? sendOtp,
     TResult? Function(VerifyOtp value)? verifyOtp,
+    TResult? Function(AgreePolicy value)? agreePolicy,
+    TResult? Function(Log value)? log,
+    TResult? Function(LogOut value)? logOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SendOtp value)? sendOtp,
     TResult Function(VerifyOtp value)? verifyOtp,
+    TResult Function(AgreePolicy value)? agreePolicy,
+    TResult Function(Log value)? log,
+    TResult Function(LogOut value)? logOut,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -140,6 +158,9 @@ class _$SendOtpImpl implements SendOtp {
   TResult when<TResult extends Object?>({
     required TResult Function(PhoneNumberModel phoneNumberModel) sendOtp,
     required TResult Function(VerifyOtpModel verifyOtpModel) verifyOtp,
+    required TResult Function() agreePolicy,
+    required TResult Function() log,
+    required TResult Function() logOut,
   }) {
     return sendOtp(phoneNumberModel);
   }
@@ -149,6 +170,9 @@ class _$SendOtpImpl implements SendOtp {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(PhoneNumberModel phoneNumberModel)? sendOtp,
     TResult? Function(VerifyOtpModel verifyOtpModel)? verifyOtp,
+    TResult? Function()? agreePolicy,
+    TResult? Function()? log,
+    TResult? Function()? logOut,
   }) {
     return sendOtp?.call(phoneNumberModel);
   }
@@ -158,6 +182,9 @@ class _$SendOtpImpl implements SendOtp {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(PhoneNumberModel phoneNumberModel)? sendOtp,
     TResult Function(VerifyOtpModel verifyOtpModel)? verifyOtp,
+    TResult Function()? agreePolicy,
+    TResult Function()? log,
+    TResult Function()? logOut,
     required TResult orElse(),
   }) {
     if (sendOtp != null) {
@@ -171,6 +198,9 @@ class _$SendOtpImpl implements SendOtp {
   TResult map<TResult extends Object?>({
     required TResult Function(SendOtp value) sendOtp,
     required TResult Function(VerifyOtp value) verifyOtp,
+    required TResult Function(AgreePolicy value) agreePolicy,
+    required TResult Function(Log value) log,
+    required TResult Function(LogOut value) logOut,
   }) {
     return sendOtp(this);
   }
@@ -180,6 +210,9 @@ class _$SendOtpImpl implements SendOtp {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SendOtp value)? sendOtp,
     TResult? Function(VerifyOtp value)? verifyOtp,
+    TResult? Function(AgreePolicy value)? agreePolicy,
+    TResult? Function(Log value)? log,
+    TResult? Function(LogOut value)? logOut,
   }) {
     return sendOtp?.call(this);
   }
@@ -189,6 +222,9 @@ class _$SendOtpImpl implements SendOtp {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SendOtp value)? sendOtp,
     TResult Function(VerifyOtp value)? verifyOtp,
+    TResult Function(AgreePolicy value)? agreePolicy,
+    TResult Function(Log value)? log,
+    TResult Function(LogOut value)? logOut,
     required TResult orElse(),
   }) {
     if (sendOtp != null) {
@@ -275,6 +311,9 @@ class _$VerifyOtpImpl implements VerifyOtp {
   TResult when<TResult extends Object?>({
     required TResult Function(PhoneNumberModel phoneNumberModel) sendOtp,
     required TResult Function(VerifyOtpModel verifyOtpModel) verifyOtp,
+    required TResult Function() agreePolicy,
+    required TResult Function() log,
+    required TResult Function() logOut,
   }) {
     return verifyOtp(verifyOtpModel);
   }
@@ -284,6 +323,9 @@ class _$VerifyOtpImpl implements VerifyOtp {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(PhoneNumberModel phoneNumberModel)? sendOtp,
     TResult? Function(VerifyOtpModel verifyOtpModel)? verifyOtp,
+    TResult? Function()? agreePolicy,
+    TResult? Function()? log,
+    TResult? Function()? logOut,
   }) {
     return verifyOtp?.call(verifyOtpModel);
   }
@@ -293,6 +335,9 @@ class _$VerifyOtpImpl implements VerifyOtp {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(PhoneNumberModel phoneNumberModel)? sendOtp,
     TResult Function(VerifyOtpModel verifyOtpModel)? verifyOtp,
+    TResult Function()? agreePolicy,
+    TResult Function()? log,
+    TResult Function()? logOut,
     required TResult orElse(),
   }) {
     if (verifyOtp != null) {
@@ -306,6 +351,9 @@ class _$VerifyOtpImpl implements VerifyOtp {
   TResult map<TResult extends Object?>({
     required TResult Function(SendOtp value) sendOtp,
     required TResult Function(VerifyOtp value) verifyOtp,
+    required TResult Function(AgreePolicy value) agreePolicy,
+    required TResult Function(Log value) log,
+    required TResult Function(LogOut value) logOut,
   }) {
     return verifyOtp(this);
   }
@@ -315,6 +363,9 @@ class _$VerifyOtpImpl implements VerifyOtp {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SendOtp value)? sendOtp,
     TResult? Function(VerifyOtp value)? verifyOtp,
+    TResult? Function(AgreePolicy value)? agreePolicy,
+    TResult? Function(Log value)? log,
+    TResult? Function(LogOut value)? logOut,
   }) {
     return verifyOtp?.call(this);
   }
@@ -324,6 +375,9 @@ class _$VerifyOtpImpl implements VerifyOtp {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SendOtp value)? sendOtp,
     TResult Function(VerifyOtp value)? verifyOtp,
+    TResult Function(AgreePolicy value)? agreePolicy,
+    TResult Function(Log value)? log,
+    TResult Function(LogOut value)? logOut,
     required TResult orElse(),
   }) {
     if (verifyOtp != null) {
@@ -344,12 +398,372 @@ abstract class VerifyOtp implements AuthEvent {
 }
 
 /// @nodoc
+abstract class _$$AgreePolicyImplCopyWith<$Res> {
+  factory _$$AgreePolicyImplCopyWith(
+          _$AgreePolicyImpl value, $Res Function(_$AgreePolicyImpl) then) =
+      __$$AgreePolicyImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AgreePolicyImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$AgreePolicyImpl>
+    implements _$$AgreePolicyImplCopyWith<$Res> {
+  __$$AgreePolicyImplCopyWithImpl(
+      _$AgreePolicyImpl _value, $Res Function(_$AgreePolicyImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$AgreePolicyImpl implements AgreePolicy {
+  const _$AgreePolicyImpl();
+
+  @override
+  String toString() {
+    return 'AuthEvent.agreePolicy()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$AgreePolicyImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(PhoneNumberModel phoneNumberModel) sendOtp,
+    required TResult Function(VerifyOtpModel verifyOtpModel) verifyOtp,
+    required TResult Function() agreePolicy,
+    required TResult Function() log,
+    required TResult Function() logOut,
+  }) {
+    return agreePolicy();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(PhoneNumberModel phoneNumberModel)? sendOtp,
+    TResult? Function(VerifyOtpModel verifyOtpModel)? verifyOtp,
+    TResult? Function()? agreePolicy,
+    TResult? Function()? log,
+    TResult? Function()? logOut,
+  }) {
+    return agreePolicy?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(PhoneNumberModel phoneNumberModel)? sendOtp,
+    TResult Function(VerifyOtpModel verifyOtpModel)? verifyOtp,
+    TResult Function()? agreePolicy,
+    TResult Function()? log,
+    TResult Function()? logOut,
+    required TResult orElse(),
+  }) {
+    if (agreePolicy != null) {
+      return agreePolicy();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SendOtp value) sendOtp,
+    required TResult Function(VerifyOtp value) verifyOtp,
+    required TResult Function(AgreePolicy value) agreePolicy,
+    required TResult Function(Log value) log,
+    required TResult Function(LogOut value) logOut,
+  }) {
+    return agreePolicy(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SendOtp value)? sendOtp,
+    TResult? Function(VerifyOtp value)? verifyOtp,
+    TResult? Function(AgreePolicy value)? agreePolicy,
+    TResult? Function(Log value)? log,
+    TResult? Function(LogOut value)? logOut,
+  }) {
+    return agreePolicy?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SendOtp value)? sendOtp,
+    TResult Function(VerifyOtp value)? verifyOtp,
+    TResult Function(AgreePolicy value)? agreePolicy,
+    TResult Function(Log value)? log,
+    TResult Function(LogOut value)? logOut,
+    required TResult orElse(),
+  }) {
+    if (agreePolicy != null) {
+      return agreePolicy(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AgreePolicy implements AuthEvent {
+  const factory AgreePolicy() = _$AgreePolicyImpl;
+}
+
+/// @nodoc
+abstract class _$$LogImplCopyWith<$Res> {
+  factory _$$LogImplCopyWith(_$LogImpl value, $Res Function(_$LogImpl) then) =
+      __$$LogImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LogImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$LogImpl>
+    implements _$$LogImplCopyWith<$Res> {
+  __$$LogImplCopyWithImpl(_$LogImpl _value, $Res Function(_$LogImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LogImpl implements Log {
+  const _$LogImpl();
+
+  @override
+  String toString() {
+    return 'AuthEvent.log()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LogImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(PhoneNumberModel phoneNumberModel) sendOtp,
+    required TResult Function(VerifyOtpModel verifyOtpModel) verifyOtp,
+    required TResult Function() agreePolicy,
+    required TResult Function() log,
+    required TResult Function() logOut,
+  }) {
+    return log();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(PhoneNumberModel phoneNumberModel)? sendOtp,
+    TResult? Function(VerifyOtpModel verifyOtpModel)? verifyOtp,
+    TResult? Function()? agreePolicy,
+    TResult? Function()? log,
+    TResult? Function()? logOut,
+  }) {
+    return log?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(PhoneNumberModel phoneNumberModel)? sendOtp,
+    TResult Function(VerifyOtpModel verifyOtpModel)? verifyOtp,
+    TResult Function()? agreePolicy,
+    TResult Function()? log,
+    TResult Function()? logOut,
+    required TResult orElse(),
+  }) {
+    if (log != null) {
+      return log();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SendOtp value) sendOtp,
+    required TResult Function(VerifyOtp value) verifyOtp,
+    required TResult Function(AgreePolicy value) agreePolicy,
+    required TResult Function(Log value) log,
+    required TResult Function(LogOut value) logOut,
+  }) {
+    return log(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SendOtp value)? sendOtp,
+    TResult? Function(VerifyOtp value)? verifyOtp,
+    TResult? Function(AgreePolicy value)? agreePolicy,
+    TResult? Function(Log value)? log,
+    TResult? Function(LogOut value)? logOut,
+  }) {
+    return log?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SendOtp value)? sendOtp,
+    TResult Function(VerifyOtp value)? verifyOtp,
+    TResult Function(AgreePolicy value)? agreePolicy,
+    TResult Function(Log value)? log,
+    TResult Function(LogOut value)? logOut,
+    required TResult orElse(),
+  }) {
+    if (log != null) {
+      return log(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Log implements AuthEvent {
+  const factory Log() = _$LogImpl;
+}
+
+/// @nodoc
+abstract class _$$LogOutImplCopyWith<$Res> {
+  factory _$$LogOutImplCopyWith(
+          _$LogOutImpl value, $Res Function(_$LogOutImpl) then) =
+      __$$LogOutImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LogOutImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$LogOutImpl>
+    implements _$$LogOutImplCopyWith<$Res> {
+  __$$LogOutImplCopyWithImpl(
+      _$LogOutImpl _value, $Res Function(_$LogOutImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LogOutImpl implements LogOut {
+  const _$LogOutImpl();
+
+  @override
+  String toString() {
+    return 'AuthEvent.logOut()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LogOutImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(PhoneNumberModel phoneNumberModel) sendOtp,
+    required TResult Function(VerifyOtpModel verifyOtpModel) verifyOtp,
+    required TResult Function() agreePolicy,
+    required TResult Function() log,
+    required TResult Function() logOut,
+  }) {
+    return logOut();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(PhoneNumberModel phoneNumberModel)? sendOtp,
+    TResult? Function(VerifyOtpModel verifyOtpModel)? verifyOtp,
+    TResult? Function()? agreePolicy,
+    TResult? Function()? log,
+    TResult? Function()? logOut,
+  }) {
+    return logOut?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(PhoneNumberModel phoneNumberModel)? sendOtp,
+    TResult Function(VerifyOtpModel verifyOtpModel)? verifyOtp,
+    TResult Function()? agreePolicy,
+    TResult Function()? log,
+    TResult Function()? logOut,
+    required TResult orElse(),
+  }) {
+    if (logOut != null) {
+      return logOut();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SendOtp value) sendOtp,
+    required TResult Function(VerifyOtp value) verifyOtp,
+    required TResult Function(AgreePolicy value) agreePolicy,
+    required TResult Function(Log value) log,
+    required TResult Function(LogOut value) logOut,
+  }) {
+    return logOut(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SendOtp value)? sendOtp,
+    TResult? Function(VerifyOtp value)? verifyOtp,
+    TResult? Function(AgreePolicy value)? agreePolicy,
+    TResult? Function(Log value)? log,
+    TResult? Function(LogOut value)? logOut,
+  }) {
+    return logOut?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SendOtp value)? sendOtp,
+    TResult Function(VerifyOtp value)? verifyOtp,
+    TResult Function(AgreePolicy value)? agreePolicy,
+    TResult Function(Log value)? log,
+    TResult Function(LogOut value)? logOut,
+    required TResult orElse(),
+  }) {
+    if (logOut != null) {
+      return logOut(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LogOut implements AuthEvent {
+  const factory LogOut() = _$LogOutImpl;
+}
+
+/// @nodoc
 mixin _$AuthState {
   bool get isLoading => throw _privateConstructorUsedError;
   bool get hasError => throw _privateConstructorUsedError;
   bool get otpSend => throw _privateConstructorUsedError;
   bool get otpVerificationError => throw _privateConstructorUsedError;
   bool get isLogin => throw _privateConstructorUsedError;
+  bool get agreePolicy => throw _privateConstructorUsedError;
+  bool get agreePolicyError => throw _privateConstructorUsedError;
   String? get message => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -368,6 +782,8 @@ abstract class $AuthStateCopyWith<$Res> {
       bool otpSend,
       bool otpVerificationError,
       bool isLogin,
+      bool agreePolicy,
+      bool agreePolicyError,
       String? message});
 }
 
@@ -389,6 +805,8 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
     Object? otpSend = null,
     Object? otpVerificationError = null,
     Object? isLogin = null,
+    Object? agreePolicy = null,
+    Object? agreePolicyError = null,
     Object? message = freezed,
   }) {
     return _then(_value.copyWith(
@@ -412,6 +830,14 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
           ? _value.isLogin
           : isLogin // ignore: cast_nullable_to_non_nullable
               as bool,
+      agreePolicy: null == agreePolicy
+          ? _value.agreePolicy
+          : agreePolicy // ignore: cast_nullable_to_non_nullable
+              as bool,
+      agreePolicyError: null == agreePolicyError
+          ? _value.agreePolicyError
+          : agreePolicyError // ignore: cast_nullable_to_non_nullable
+              as bool,
       message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -434,6 +860,8 @@ abstract class _$$InitialImplCopyWith<$Res>
       bool otpSend,
       bool otpVerificationError,
       bool isLogin,
+      bool agreePolicy,
+      bool agreePolicyError,
       String? message});
 }
 
@@ -453,6 +881,8 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? otpSend = null,
     Object? otpVerificationError = null,
     Object? isLogin = null,
+    Object? agreePolicy = null,
+    Object? agreePolicyError = null,
     Object? message = freezed,
   }) {
     return _then(_$InitialImpl(
@@ -476,6 +906,14 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.isLogin
           : isLogin // ignore: cast_nullable_to_non_nullable
               as bool,
+      agreePolicy: null == agreePolicy
+          ? _value.agreePolicy
+          : agreePolicy // ignore: cast_nullable_to_non_nullable
+              as bool,
+      agreePolicyError: null == agreePolicyError
+          ? _value.agreePolicyError
+          : agreePolicyError // ignore: cast_nullable_to_non_nullable
+              as bool,
       message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -493,6 +931,8 @@ class _$InitialImpl implements _Initial {
       required this.otpSend,
       required this.otpVerificationError,
       required this.isLogin,
+      required this.agreePolicy,
+      required this.agreePolicyError,
       this.message});
 
   @override
@@ -506,11 +946,15 @@ class _$InitialImpl implements _Initial {
   @override
   final bool isLogin;
   @override
+  final bool agreePolicy;
+  @override
+  final bool agreePolicyError;
+  @override
   final String? message;
 
   @override
   String toString() {
-    return 'AuthState(isLoading: $isLoading, hasError: $hasError, otpSend: $otpSend, otpVerificationError: $otpVerificationError, isLogin: $isLogin, message: $message)';
+    return 'AuthState(isLoading: $isLoading, hasError: $hasError, otpSend: $otpSend, otpVerificationError: $otpVerificationError, isLogin: $isLogin, agreePolicy: $agreePolicy, agreePolicyError: $agreePolicyError, message: $message)';
   }
 
   @override
@@ -526,12 +970,16 @@ class _$InitialImpl implements _Initial {
             (identical(other.otpVerificationError, otpVerificationError) ||
                 other.otpVerificationError == otpVerificationError) &&
             (identical(other.isLogin, isLogin) || other.isLogin == isLogin) &&
+            (identical(other.agreePolicy, agreePolicy) ||
+                other.agreePolicy == agreePolicy) &&
+            (identical(other.agreePolicyError, agreePolicyError) ||
+                other.agreePolicyError == agreePolicyError) &&
             (identical(other.message, message) || other.message == message));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, isLoading, hasError, otpSend,
-      otpVerificationError, isLogin, message);
+      otpVerificationError, isLogin, agreePolicy, agreePolicyError, message);
 
   @JsonKey(ignore: true)
   @override
@@ -547,6 +995,8 @@ abstract class _Initial implements AuthState {
       required final bool otpSend,
       required final bool otpVerificationError,
       required final bool isLogin,
+      required final bool agreePolicy,
+      required final bool agreePolicyError,
       final String? message}) = _$InitialImpl;
 
   @override
@@ -559,6 +1009,10 @@ abstract class _Initial implements AuthState {
   bool get otpVerificationError;
   @override
   bool get isLogin;
+  @override
+  bool get agreePolicy;
+  @override
+  bool get agreePolicyError;
   @override
   String? get message;
   @override

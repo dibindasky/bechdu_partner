@@ -1,7 +1,10 @@
+import 'package:bechdu_partner/application/business_logic/auth/auth_bloc.dart';
+import 'package:bechdu_partner/application/presentation/routes/routes.dart';
 import 'package:bechdu_partner/application/presentation/screens/auth/widgets/custom_button_auth.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ScreenSettings extends StatelessWidget {
   const ScreenSettings({super.key});
@@ -11,6 +14,16 @@ class ScreenSettings extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Settings', style: textHeadBoldBig2),
+        actions: [
+          IconButton(
+              onPressed: () {
+                context.read<AuthBloc>().add(const AuthEvent.logOut());
+                Navigator.pushNamedAndRemoveUntil(
+                    context, Routes.signInPage, (route) => false);
+              },
+              icon: const Icon(Icons.logout)),
+          kWidth20
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),

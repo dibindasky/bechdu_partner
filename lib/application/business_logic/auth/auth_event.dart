@@ -6,4 +6,7 @@ class AuthEvent with _$AuthEvent {
       {required PhoneNumberModel phoneNumberModel}) = SendOtp;
   const factory AuthEvent.verifyOtp({required VerifyOtpModel verifyOtpModel}) =
       VerifyOtp;
+  const factory AuthEvent.agreePolicy() = AgreePolicy;
+  const factory AuthEvent.log() = Log;
+  const factory AuthEvent.logOut() = LogOut;
 }
