@@ -21,6 +21,8 @@ mixin _$PickupPartnerEvent {
     required TResult Function(AddPickupPartnerModel addPickupPartnerModel)
         addPickupPartner,
     required TResult Function() getPickupPartners,
+    required TResult Function(String id) blocPickupPartners,
+    required TResult Function(String id) unBlocPickupPartners,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +30,8 @@ mixin _$PickupPartnerEvent {
     TResult? Function(AddPickupPartnerModel addPickupPartnerModel)?
         addPickupPartner,
     TResult? Function()? getPickupPartners,
+    TResult? Function(String id)? blocPickupPartners,
+    TResult? Function(String id)? unBlocPickupPartners,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +39,8 @@ mixin _$PickupPartnerEvent {
     TResult Function(AddPickupPartnerModel addPickupPartnerModel)?
         addPickupPartner,
     TResult Function()? getPickupPartners,
+    TResult Function(String id)? blocPickupPartners,
+    TResult Function(String id)? unBlocPickupPartners,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -42,18 +48,24 @@ mixin _$PickupPartnerEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(AddPickupPartner value) addPickupPartner,
     required TResult Function(GetPickupPartners value) getPickupPartners,
+    required TResult Function(BlocPickupPartners value) blocPickupPartners,
+    required TResult Function(UnBlocPickupPartners value) unBlocPickupPartners,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AddPickupPartner value)? addPickupPartner,
     TResult? Function(GetPickupPartners value)? getPickupPartners,
+    TResult? Function(BlocPickupPartners value)? blocPickupPartners,
+    TResult? Function(UnBlocPickupPartners value)? unBlocPickupPartners,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddPickupPartner value)? addPickupPartner,
     TResult Function(GetPickupPartners value)? getPickupPartners,
+    TResult Function(BlocPickupPartners value)? blocPickupPartners,
+    TResult Function(UnBlocPickupPartners value)? unBlocPickupPartners,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -146,6 +158,8 @@ class _$AddPickupPartnerImpl implements AddPickupPartner {
     required TResult Function(AddPickupPartnerModel addPickupPartnerModel)
         addPickupPartner,
     required TResult Function() getPickupPartners,
+    required TResult Function(String id) blocPickupPartners,
+    required TResult Function(String id) unBlocPickupPartners,
   }) {
     return addPickupPartner(addPickupPartnerModel);
   }
@@ -156,6 +170,8 @@ class _$AddPickupPartnerImpl implements AddPickupPartner {
     TResult? Function(AddPickupPartnerModel addPickupPartnerModel)?
         addPickupPartner,
     TResult? Function()? getPickupPartners,
+    TResult? Function(String id)? blocPickupPartners,
+    TResult? Function(String id)? unBlocPickupPartners,
   }) {
     return addPickupPartner?.call(addPickupPartnerModel);
   }
@@ -166,6 +182,8 @@ class _$AddPickupPartnerImpl implements AddPickupPartner {
     TResult Function(AddPickupPartnerModel addPickupPartnerModel)?
         addPickupPartner,
     TResult Function()? getPickupPartners,
+    TResult Function(String id)? blocPickupPartners,
+    TResult Function(String id)? unBlocPickupPartners,
     required TResult orElse(),
   }) {
     if (addPickupPartner != null) {
@@ -179,6 +197,8 @@ class _$AddPickupPartnerImpl implements AddPickupPartner {
   TResult map<TResult extends Object?>({
     required TResult Function(AddPickupPartner value) addPickupPartner,
     required TResult Function(GetPickupPartners value) getPickupPartners,
+    required TResult Function(BlocPickupPartners value) blocPickupPartners,
+    required TResult Function(UnBlocPickupPartners value) unBlocPickupPartners,
   }) {
     return addPickupPartner(this);
   }
@@ -188,6 +208,8 @@ class _$AddPickupPartnerImpl implements AddPickupPartner {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AddPickupPartner value)? addPickupPartner,
     TResult? Function(GetPickupPartners value)? getPickupPartners,
+    TResult? Function(BlocPickupPartners value)? blocPickupPartners,
+    TResult? Function(UnBlocPickupPartners value)? unBlocPickupPartners,
   }) {
     return addPickupPartner?.call(this);
   }
@@ -197,6 +219,8 @@ class _$AddPickupPartnerImpl implements AddPickupPartner {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddPickupPartner value)? addPickupPartner,
     TResult Function(GetPickupPartners value)? getPickupPartners,
+    TResult Function(BlocPickupPartners value)? blocPickupPartners,
+    TResult Function(UnBlocPickupPartners value)? unBlocPickupPartners,
     required TResult orElse(),
   }) {
     if (addPickupPartner != null) {
@@ -258,6 +282,8 @@ class _$GetPickupPartnersImpl implements GetPickupPartners {
     required TResult Function(AddPickupPartnerModel addPickupPartnerModel)
         addPickupPartner,
     required TResult Function() getPickupPartners,
+    required TResult Function(String id) blocPickupPartners,
+    required TResult Function(String id) unBlocPickupPartners,
   }) {
     return getPickupPartners();
   }
@@ -268,6 +294,8 @@ class _$GetPickupPartnersImpl implements GetPickupPartners {
     TResult? Function(AddPickupPartnerModel addPickupPartnerModel)?
         addPickupPartner,
     TResult? Function()? getPickupPartners,
+    TResult? Function(String id)? blocPickupPartners,
+    TResult? Function(String id)? unBlocPickupPartners,
   }) {
     return getPickupPartners?.call();
   }
@@ -278,6 +306,8 @@ class _$GetPickupPartnersImpl implements GetPickupPartners {
     TResult Function(AddPickupPartnerModel addPickupPartnerModel)?
         addPickupPartner,
     TResult Function()? getPickupPartners,
+    TResult Function(String id)? blocPickupPartners,
+    TResult Function(String id)? unBlocPickupPartners,
     required TResult orElse(),
   }) {
     if (getPickupPartners != null) {
@@ -291,6 +321,8 @@ class _$GetPickupPartnersImpl implements GetPickupPartners {
   TResult map<TResult extends Object?>({
     required TResult Function(AddPickupPartner value) addPickupPartner,
     required TResult Function(GetPickupPartners value) getPickupPartners,
+    required TResult Function(BlocPickupPartners value) blocPickupPartners,
+    required TResult Function(UnBlocPickupPartners value) unBlocPickupPartners,
   }) {
     return getPickupPartners(this);
   }
@@ -300,6 +332,8 @@ class _$GetPickupPartnersImpl implements GetPickupPartners {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AddPickupPartner value)? addPickupPartner,
     TResult? Function(GetPickupPartners value)? getPickupPartners,
+    TResult? Function(BlocPickupPartners value)? blocPickupPartners,
+    TResult? Function(UnBlocPickupPartners value)? unBlocPickupPartners,
   }) {
     return getPickupPartners?.call(this);
   }
@@ -309,6 +343,8 @@ class _$GetPickupPartnersImpl implements GetPickupPartners {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddPickupPartner value)? addPickupPartner,
     TResult Function(GetPickupPartners value)? getPickupPartners,
+    TResult Function(BlocPickupPartners value)? blocPickupPartners,
+    TResult Function(UnBlocPickupPartners value)? unBlocPickupPartners,
     required TResult orElse(),
   }) {
     if (getPickupPartners != null) {
@@ -320,6 +356,307 @@ class _$GetPickupPartnersImpl implements GetPickupPartners {
 
 abstract class GetPickupPartners implements PickupPartnerEvent {
   const factory GetPickupPartners() = _$GetPickupPartnersImpl;
+}
+
+/// @nodoc
+abstract class _$$BlocPickupPartnersImplCopyWith<$Res> {
+  factory _$$BlocPickupPartnersImplCopyWith(_$BlocPickupPartnersImpl value,
+          $Res Function(_$BlocPickupPartnersImpl) then) =
+      __$$BlocPickupPartnersImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String id});
+}
+
+/// @nodoc
+class __$$BlocPickupPartnersImplCopyWithImpl<$Res>
+    extends _$PickupPartnerEventCopyWithImpl<$Res, _$BlocPickupPartnersImpl>
+    implements _$$BlocPickupPartnersImplCopyWith<$Res> {
+  __$$BlocPickupPartnersImplCopyWithImpl(_$BlocPickupPartnersImpl _value,
+      $Res Function(_$BlocPickupPartnersImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$BlocPickupPartnersImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$BlocPickupPartnersImpl implements BlocPickupPartners {
+  const _$BlocPickupPartnersImpl({required this.id});
+
+  @override
+  final String id;
+
+  @override
+  String toString() {
+    return 'PickupPartnerEvent.blocPickupPartners(id: $id)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BlocPickupPartnersImpl &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$BlocPickupPartnersImplCopyWith<_$BlocPickupPartnersImpl> get copyWith =>
+      __$$BlocPickupPartnersImplCopyWithImpl<_$BlocPickupPartnersImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(AddPickupPartnerModel addPickupPartnerModel)
+        addPickupPartner,
+    required TResult Function() getPickupPartners,
+    required TResult Function(String id) blocPickupPartners,
+    required TResult Function(String id) unBlocPickupPartners,
+  }) {
+    return blocPickupPartners(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(AddPickupPartnerModel addPickupPartnerModel)?
+        addPickupPartner,
+    TResult? Function()? getPickupPartners,
+    TResult? Function(String id)? blocPickupPartners,
+    TResult? Function(String id)? unBlocPickupPartners,
+  }) {
+    return blocPickupPartners?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(AddPickupPartnerModel addPickupPartnerModel)?
+        addPickupPartner,
+    TResult Function()? getPickupPartners,
+    TResult Function(String id)? blocPickupPartners,
+    TResult Function(String id)? unBlocPickupPartners,
+    required TResult orElse(),
+  }) {
+    if (blocPickupPartners != null) {
+      return blocPickupPartners(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddPickupPartner value) addPickupPartner,
+    required TResult Function(GetPickupPartners value) getPickupPartners,
+    required TResult Function(BlocPickupPartners value) blocPickupPartners,
+    required TResult Function(UnBlocPickupPartners value) unBlocPickupPartners,
+  }) {
+    return blocPickupPartners(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddPickupPartner value)? addPickupPartner,
+    TResult? Function(GetPickupPartners value)? getPickupPartners,
+    TResult? Function(BlocPickupPartners value)? blocPickupPartners,
+    TResult? Function(UnBlocPickupPartners value)? unBlocPickupPartners,
+  }) {
+    return blocPickupPartners?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddPickupPartner value)? addPickupPartner,
+    TResult Function(GetPickupPartners value)? getPickupPartners,
+    TResult Function(BlocPickupPartners value)? blocPickupPartners,
+    TResult Function(UnBlocPickupPartners value)? unBlocPickupPartners,
+    required TResult orElse(),
+  }) {
+    if (blocPickupPartners != null) {
+      return blocPickupPartners(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BlocPickupPartners implements PickupPartnerEvent {
+  const factory BlocPickupPartners({required final String id}) =
+      _$BlocPickupPartnersImpl;
+
+  String get id;
+  @JsonKey(ignore: true)
+  _$$BlocPickupPartnersImplCopyWith<_$BlocPickupPartnersImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UnBlocPickupPartnersImplCopyWith<$Res> {
+  factory _$$UnBlocPickupPartnersImplCopyWith(_$UnBlocPickupPartnersImpl value,
+          $Res Function(_$UnBlocPickupPartnersImpl) then) =
+      __$$UnBlocPickupPartnersImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String id});
+}
+
+/// @nodoc
+class __$$UnBlocPickupPartnersImplCopyWithImpl<$Res>
+    extends _$PickupPartnerEventCopyWithImpl<$Res, _$UnBlocPickupPartnersImpl>
+    implements _$$UnBlocPickupPartnersImplCopyWith<$Res> {
+  __$$UnBlocPickupPartnersImplCopyWithImpl(_$UnBlocPickupPartnersImpl _value,
+      $Res Function(_$UnBlocPickupPartnersImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$UnBlocPickupPartnersImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UnBlocPickupPartnersImpl implements UnBlocPickupPartners {
+  const _$UnBlocPickupPartnersImpl({required this.id});
+
+  @override
+  final String id;
+
+  @override
+  String toString() {
+    return 'PickupPartnerEvent.unBlocPickupPartners(id: $id)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UnBlocPickupPartnersImpl &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UnBlocPickupPartnersImplCopyWith<_$UnBlocPickupPartnersImpl>
+      get copyWith =>
+          __$$UnBlocPickupPartnersImplCopyWithImpl<_$UnBlocPickupPartnersImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(AddPickupPartnerModel addPickupPartnerModel)
+        addPickupPartner,
+    required TResult Function() getPickupPartners,
+    required TResult Function(String id) blocPickupPartners,
+    required TResult Function(String id) unBlocPickupPartners,
+  }) {
+    return unBlocPickupPartners(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(AddPickupPartnerModel addPickupPartnerModel)?
+        addPickupPartner,
+    TResult? Function()? getPickupPartners,
+    TResult? Function(String id)? blocPickupPartners,
+    TResult? Function(String id)? unBlocPickupPartners,
+  }) {
+    return unBlocPickupPartners?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(AddPickupPartnerModel addPickupPartnerModel)?
+        addPickupPartner,
+    TResult Function()? getPickupPartners,
+    TResult Function(String id)? blocPickupPartners,
+    TResult Function(String id)? unBlocPickupPartners,
+    required TResult orElse(),
+  }) {
+    if (unBlocPickupPartners != null) {
+      return unBlocPickupPartners(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddPickupPartner value) addPickupPartner,
+    required TResult Function(GetPickupPartners value) getPickupPartners,
+    required TResult Function(BlocPickupPartners value) blocPickupPartners,
+    required TResult Function(UnBlocPickupPartners value) unBlocPickupPartners,
+  }) {
+    return unBlocPickupPartners(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddPickupPartner value)? addPickupPartner,
+    TResult? Function(GetPickupPartners value)? getPickupPartners,
+    TResult? Function(BlocPickupPartners value)? blocPickupPartners,
+    TResult? Function(UnBlocPickupPartners value)? unBlocPickupPartners,
+  }) {
+    return unBlocPickupPartners?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddPickupPartner value)? addPickupPartner,
+    TResult Function(GetPickupPartners value)? getPickupPartners,
+    TResult Function(BlocPickupPartners value)? blocPickupPartners,
+    TResult Function(UnBlocPickupPartners value)? unBlocPickupPartners,
+    required TResult orElse(),
+  }) {
+    if (unBlocPickupPartners != null) {
+      return unBlocPickupPartners(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UnBlocPickupPartners implements PickupPartnerEvent {
+  const factory UnBlocPickupPartners({required final String id}) =
+      _$UnBlocPickupPartnersImpl;
+
+  String get id;
+  @JsonKey(ignore: true)
+  _$$UnBlocPickupPartnersImplCopyWith<_$UnBlocPickupPartnersImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc

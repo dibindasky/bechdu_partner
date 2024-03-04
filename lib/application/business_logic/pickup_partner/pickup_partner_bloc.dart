@@ -21,6 +21,8 @@ class PickupPartnerBloc extends Bloc<PickupPartnerEvent, PickupPartnerState> {
       : super(PickupPartnerState.initial()) {
     on<AddPickupPartner>(addPickupPartner);
     on<GetPickupPartners>(getPickupPartners);
+    on<BlocPickupPartners>(blocPickupPartners);
+    on<UnBlocPickupPartners>(unBlocPickupPartners);
   }
 
   FutureOr<void> addPickupPartner(AddPickupPartner event, emit) async {
@@ -64,7 +66,7 @@ class PickupPartnerBloc extends Bloc<PickupPartnerEvent, PickupPartnerState> {
       return emit(state.copyWith(
           isLoading: false,
           hasError: true,
-          message: 'failed to connect with server, please try again'));
+          message: 'failed to connect, please try again'));
     }
     final result = await pickupPartnerRepo.getPickupPartner(phone: phone);
     result.fold(
@@ -72,5 +74,51 @@ class PickupPartnerBloc extends Bloc<PickupPartnerEvent, PickupPartnerState> {
             isLoading: false, hasError: true, message: l.message)),
         (r) => emit(
             state.copyWith(isLoading: false, pickUpPersons: r.pickUpPersons)));
+  }
+
+  FutureOr<void> blocPickupPartners(BlocPickupPartners event, emit) async {
+    emit(state.copyWith(
+        isLoading: true,
+        message: null,
+        hasError: false,
+        pickupPersonAdded: false));
+    final phone = await SecureStorage.getPhone();
+    if (phone == null) {
+      return emit(state.copyWith(
+          isLoading: false,
+          hasError: true,
+          message: 'failed to connect, please try again'));
+    }
+    final result = await pickupPartnerRepo.blockPickupPartner(
+        phone: phone, pickupPartnerId: event.id);
+    result.fold(
+        (l) => emit(state.copyWith(
+            isLoading: false, hasError: true, message: l.message)), (r) {
+      emit(state.copyWith(isLoading: false, message: r.message));
+      add(const PickupPartnerEvent.getPickupPartners());
+    });
+  }
+
+  FutureOr<void> unBlocPickupPartners(UnBlocPickupPartners event, emit) async {
+    emit(state.copyWith(
+        isLoading: true,
+        message: null,
+        hasError: false,
+        pickupPersonAdded: false));
+    final phone = await SecureStorage.getPhone();
+    if (phone == null) {
+      return emit(state.copyWith(
+          isLoading: false,
+          hasError: true,
+          message: 'failed to connect, please try again'));
+    }
+    final result = await pickupPartnerRepo.unBlockPickupPartner(
+        phone: phone, pickupPartnerId: event.id);
+    result.fold(
+        (l) => emit(state.copyWith(
+            isLoading: false, hasError: true, message: l.message)), (r) {
+      emit(state.copyWith(isLoading: false, message: r.message));
+      add(const PickupPartnerEvent.getPickupPartners());
+    });
   }
 }

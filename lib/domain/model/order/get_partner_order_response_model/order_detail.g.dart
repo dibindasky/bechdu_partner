@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'order.dart';
+part of 'order_detail.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-Order _$OrderFromJson(Map<String, dynamic> json) => Order(
+OrderDetail _$OrderDetailFromJson(Map<String, dynamic> json) => OrderDetail(
       user: json['user'] == null
           ? null
           : User.fromJson(json['user'] as Map<String, dynamic>),
@@ -43,7 +43,8 @@ Order _$OrderFromJson(Map<String, dynamic> json) => Order(
           : DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$OrderToJson(Order instance) => <String, dynamic>{
+Map<String, dynamic> _$OrderDetailToJson(OrderDetail instance) =>
+    <String, dynamic>{
       'user': instance.user,
       'payment': instance.payment,
       'pickUpDetails': instance.pickUpDetails,

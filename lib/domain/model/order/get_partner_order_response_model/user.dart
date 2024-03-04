@@ -23,4 +23,22 @@ class User {
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 
   Map<String, dynamic> toJson() => _$UserToJson(this);
+
+  User copyWith({
+    String? name,
+    String? email,
+    String? phone,
+    String? addPhone,
+    String? address,
+    String? orderpincode,
+  }) {
+    return User(
+      name: name ?? this.name,
+      email: email ?? this.email,
+      phone: phone ?? this.phone,
+      addPhone: addPhone ?? this.addPhone,
+      address: address ?? this.address,
+      orderpincode: orderpincode ?? this.orderpincode,
+    );
+  }
 }

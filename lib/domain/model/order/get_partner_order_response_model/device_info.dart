@@ -13,4 +13,12 @@ class DeviceInfo {
   }
 
   Map<String, dynamic> toJson() => _$DeviceInfoToJson(this);
+
+  DeviceInfo copyWith({
+    List<dynamic>? deviceImages,
+  }) {
+    return DeviceInfo(
+      deviceImages: deviceImages ?? this.deviceImages,
+    );
+  }
 }

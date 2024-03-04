@@ -4,12 +4,18 @@ import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:bechdu_partner/application/presentation/widgets/custom_expansion_tile.dart';
 import 'package:bechdu_partner/application/presentation/widgets/pickup_detail_order_tile.dart';
 import 'package:bechdu_partner/application/presentation/widgets/status_colored_box.dart';
+import 'package:bechdu_partner/domain/model/order/get_partner_order_response_model/order_detail.dart';
 import 'package:flutter/material.dart';
 
 class OrdersListTileHome extends StatelessWidget {
   const OrdersListTileHome({
     super.key,
+    required this.orderDetail,
+    required this.newOrder,
   });
+
+  final OrderDetail orderDetail;
+  final bool newOrder;
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +26,7 @@ class OrdersListTileHome extends StatelessWidget {
           color: kBluelight,
           border: Border.all(color: kBlack)),
       child: CustomExpansionTile(
+        isExpandable: !newOrder,
         title: Row(
           children: [
             kWidth10,
@@ -31,15 +38,15 @@ class OrdersListTileHome extends StatelessWidget {
                   style: textHeadMedium1,
                 ),
                 Text(
-                  '#11250',
+                  orderDetail.orderId ?? '',
                   style: textHeadRegular1,
                 )
               ],
             ),
             const Spacer(),
-            const StatusColoredBox(
+            StatusColoredBox(
               color: kBluePrimary,
-              text: 'Pickup Pending',
+              text: orderDetail.status ?? '',
             ),
             kWidth10
           ],
@@ -51,10 +58,24 @@ class OrdersListTileHome extends StatelessWidget {
               children: List.generate(30, (index) => const Text('_')),
             ),
             kHeight5,
-            const PhoneDetailTile(),
+            PhoneDetailTile(orderDetail: orderDetail),
           ],
         ),
-        children: const [PickUpDetailOrderTile(isUser: false)],
+        children: newOrder
+            ? []
+            : [
+                PickUpDetailOrderTile(
+                  isUser: false,
+                  name: orderDetail.partner!.pickUpPersonName != null &&
+                          orderDetail.partner!.pickUpPersonName!.isNotEmpty
+                      ? orderDetail.partner!.pickUpPersonName!
+                      : orderDetail.partner!.partnerName ?? '-----',
+                  dateTime:
+                      '${orderDetail.pickUpDetails?.time ?? '--,--'} ${orderDetail.pickUpDetails?.date ?? '--/--/--'}',
+                  address: orderDetail.user?.address ?? '----- ------- -------',
+                  phone: orderDetail.user?.phone ?? '',
+                )
+              ],
       ),
     );
   }

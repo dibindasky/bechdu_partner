@@ -10,4 +10,8 @@ abstract class PickupPartnerRepo {
       required String phone});
   Future<Either<Failure, GetPickupPartnerResponseModel>> getPickupPartner(
       {required String phone});
+  Future<Either<Failure, SuccessResponseModel>> blockPickupPartner(
+      {required String pickupPartnerId, required String phone});
+  Future<Either<Failure, SuccessResponseModel>> unBlockPickupPartner(
+      {required String pickupPartnerId, required String phone});
 }

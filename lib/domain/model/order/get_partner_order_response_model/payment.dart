@@ -14,4 +14,14 @@ class Payment {
   }
 
   Map<String, dynamic> toJson() => _$PaymentToJson(this);
+
+  Payment copyWith({
+    String? type,
+    String? id,
+  }) {
+    return Payment(
+      type: type ?? this.type,
+      id: id ?? this.id,
+    );
+  }
 }

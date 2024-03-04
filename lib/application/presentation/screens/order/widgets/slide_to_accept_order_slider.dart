@@ -1,11 +1,11 @@
-import 'package:bechdu_partner/application/presentation/screens/auth/widgets/custom_button_auth.dart';
 import 'package:bechdu_partner/application/presentation/screens/order/dialoges/show_dialoge_accept_math.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:flutter/material.dart';
 
 class SliderOrderAccepting extends StatefulWidget {
-  const SliderOrderAccepting({super.key});
+  const SliderOrderAccepting({super.key, required this.orderId});
+  final String orderId;
 
   @override
   State<SliderOrderAccepting> createState() => _SliderOrderAcceptingState();
@@ -36,7 +36,7 @@ class _SliderOrderAcceptingState extends State<SliderOrderAccepting> {
                 onChanged: (newValue) => setState(() {
                   progress = newValue;
                   if (progress > 0.9) {
-                    showDialogAcceptMathCalc(context);
+                    showDialogAcceptMathCalc(context,widget.orderId);
                     progress = 0;
                   }
                 }),

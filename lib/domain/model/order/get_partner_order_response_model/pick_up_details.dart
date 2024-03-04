@@ -14,4 +14,14 @@ class PickUpDetails {
   }
 
   Map<String, dynamic> toJson() => _$PickUpDetailsToJson(this);
+
+  PickUpDetails copyWith({
+    String? time,
+    String? date,
+  }) {
+    return PickUpDetails(
+      time: time ?? this.time,
+      date: date ?? this.date,
+    );
+  }
 }

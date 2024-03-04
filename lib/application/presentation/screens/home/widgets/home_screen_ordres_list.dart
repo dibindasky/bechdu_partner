@@ -1,5 +1,8 @@
-import 'package:bechdu_partner/application/presentation/screens/home/widgets/home_orders_tile.dart';
+import 'package:bechdu_partner/application/business_logic/order/orders/orders_bloc.dart';
+import 'package:bechdu_partner/application/presentation/screens/home/widgets/orders_list_tab/new_orders_tab.dart';
+import 'package:bechdu_partner/application/presentation/screens/home/widgets/orders_list_tab/partner_accepted_orders_list_tab.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeScreenOrdersList extends StatelessWidget {
   const HomeScreenOrdersList({
@@ -8,11 +11,19 @@ class HomeScreenOrdersList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      context.read<OrdersBloc>().add(const OrdersEvent.getNewOrder());
+      context.read<OrdersBloc>().add(const OrdersEvent.getPartnerOrders());
+    });
     return Expanded(
-      child: ListView.builder(
-        padding: EdgeInsets.zero,
-        shrinkWrap: true,
-        itemBuilder: (context, index) => const OrdersListTileHome(),
+      child: BlocBuilder<OrdersBloc, OrdersState>(
+        builder: (context, state) {
+          if (state.orderTab == 0) {
+            return const NewOrdersList();
+          } else {
+            return const OrdersHistoryList();
+          }
+        },
       ),
     );
   }

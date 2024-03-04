@@ -6,4 +6,8 @@ class PickupPartnerEvent with _$PickupPartnerEvent {
           {required AddPickupPartnerModel addPickupPartnerModel}) =
       AddPickupPartner;
   const factory PickupPartnerEvent.getPickupPartners() = GetPickupPartners;
+  const factory PickupPartnerEvent.blocPickupPartners({required String id}) =
+      BlocPickupPartners;
+  const factory PickupPartnerEvent.unBlocPickupPartners({required String id}) =
+      UnBlocPickupPartners;
 }

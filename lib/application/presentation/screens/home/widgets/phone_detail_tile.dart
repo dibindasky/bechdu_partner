@@ -1,18 +1,22 @@
 import 'package:bechdu_partner/application/presentation/routes/routes.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
+import 'package:bechdu_partner/domain/model/order/get_partner_order_response_model/order_detail.dart';
 import 'package:flutter/material.dart';
 
 class PhoneDetailTile extends StatelessWidget {
   const PhoneDetailTile({
     super.key,
+    required this.orderDetail,
   });
+
+  final OrderDetail orderDetail;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () => Navigator.pushNamed(context, Routes.orderScreen,
-          arguments: <String, bool>{'newOrder': false, 'detail': true}),
+          arguments: orderDetail),
       child: ClipRRect(
         borderRadius: kRadius5,
         child: ColoredBox(
@@ -26,9 +30,12 @@ class PhoneDetailTile extends StatelessWidget {
                   height: sWidth * 0.17,
                   width: sWidth * 0.22,
                   child: FittedBox(
-                      child: Image.asset(
-                    phoneImage,
+                      child: Image.network(
+                    orderDetail.productDetails!.image!,
                     fit: BoxFit.cover,
+                    errorBuilder: (context, error, stackTrace) => const Icon(
+                        Icons.broken_image_outlined,
+                        color: kGreyLight),
                   )),
                 ),
                 kWidth20,
@@ -36,16 +43,16 @@ class PhoneDetailTile extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Iphone 11',
+                      orderDetail.productDetails?.name??'-----------',
                       style: textHeadRegular1,
                     ),
                     Text(
-                      '₹ 11,999',
+                      '₹ ${orderDetail.productDetails?.price??'----'}',
                       style: textHeadRegular1.copyWith(color: kGreyLight),
                     ),
                     Row(
                       children: [
-                        Text('15', style: textHeadBold1),
+                        Text(orderDetail.coins??'--', style: textHeadBold1),
                         kWidth5,
                         CircleAvatar(
                           radius: sWidth * 0.02,

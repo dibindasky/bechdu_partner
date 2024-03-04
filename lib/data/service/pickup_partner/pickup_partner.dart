@@ -49,16 +49,63 @@ class PickupPartnerService implements PickupPartnerRepo {
     } on DioException catch (e) {
       try {
         log('getPickupPartner dio exception => $e');
-        log(e.response.toString()); 
+        log(e.response.toString());
         ErrorResponseModel error =
             ErrorResponseModel.fromJson(e.response?.data);
         return Left(Failure(message: error.error ?? errorMessage));
       } catch (e) {
-        print('exception ==================> $e');
         return Left(Failure(message: errorMessage));
       }
     } catch (e) {
       log('getPickupPartner exception => $e');
+      return Left(Failure(message: errorMessage));
+    }
+  }
+
+  @override
+  Future<Either<Failure, SuccessResponseModel>> blockPickupPartner(
+      {required String pickupPartnerId, required String phone}) async {
+    try {
+      final response = await _apiService.put(ApiEndPoints.blockPickupPartner
+          .replaceFirst('{partnerPhone}', phone)
+          .replaceFirst('{pickUpGuyId}', pickupPartnerId));
+      return Right(SuccessResponseModel.fromJson(response.data));
+    } on DioException catch (e) {
+      try {
+        log('blockPickupPartner dio exception => $e');
+        log(e.response.toString());
+        ErrorResponseModel error =
+            ErrorResponseModel.fromJson(e.response?.data);
+        return Left(Failure(message: error.error ?? errorMessage));
+      } catch (e) {
+        return Left(Failure(message: errorMessage));
+      }
+    } catch (e) {
+      log('blockPickupPartner exception => $e');
+      return Left(Failure(message: errorMessage));
+    }
+  }
+
+  @override
+  Future<Either<Failure, SuccessResponseModel>> unBlockPickupPartner(
+      {required String pickupPartnerId, required String phone}) async {
+    try {
+      final response = await _apiService.put(ApiEndPoints.unBlockPickupPartner
+          .replaceFirst('{partnerPhone}', phone)
+          .replaceFirst('{pickUpGuyId}', pickupPartnerId));
+      return Right(SuccessResponseModel.fromJson(response.data));
+    } on DioException catch (e) {
+      try {
+        log('unBlockPickupPartner dio exception => $e');
+        log(e.response.toString());
+        ErrorResponseModel error =
+            ErrorResponseModel.fromJson(e.response?.data);
+        return Left(Failure(message: error.error ?? errorMessage));
+      } catch (e) {
+        return Left(Failure(message: errorMessage));
+      }
+    } catch (e) {
+      log('unBlockPickupPartner exception => $e');
       return Left(Failure(message: errorMessage));
     }
   }

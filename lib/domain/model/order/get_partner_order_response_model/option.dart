@@ -16,4 +16,18 @@ class Option {
   }
 
   Map<String, dynamic> toJson() => _$OptionToJson(this);
+
+  Option copyWith({
+    String? heading,
+    String? description,
+    bool? value,
+    String? type,
+  }) {
+    return Option(
+      heading: heading ?? this.heading,
+      description: description ?? this.description,
+      value: value ?? this.value,
+      type: type ?? this.type,
+    );
+  }
 }

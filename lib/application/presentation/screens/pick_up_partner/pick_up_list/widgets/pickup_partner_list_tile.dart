@@ -1,8 +1,10 @@
+import 'package:bechdu_partner/application/business_logic/pickup_partner/pickup_partner_bloc.dart';
 import 'package:bechdu_partner/application/presentation/routes/routes.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:bechdu_partner/domain/model/pickup_partner/get_pickup_partner_response_model/pick_up_person.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class PickupPartnerListTile extends StatelessWidget {
   const PickupPartnerListTile({
@@ -57,7 +59,8 @@ class PickupPartnerListTile extends StatelessWidget {
             ),
           ],
         ),
-        trailing: PopupMenuButton(color: kWhite,
+        trailing: PopupMenuButton(
+            color: kWhite,
             icon: const RotatedBox(
               quarterTurns: 1,
               child: Icon(
@@ -67,6 +70,15 @@ class PickupPartnerListTile extends StatelessWidget {
             ),
             itemBuilder: (context) => ([
                   PopupMenuItem(
+                      onTap: () {
+                        pickUpPerson.status == 'active'
+                            ? context.read<PickupPartnerBloc>().add(
+                                PickupPartnerEvent.blocPickupPartners(
+                                    id: pickUpPerson.id!))
+                            : context.read<PickupPartnerBloc>().add(
+                                PickupPartnerEvent.unBlocPickupPartners(
+                                    id: pickUpPerson.id!));
+                      },
                       child: Text(pickUpPerson.status == 'active'
                           ? 'Block'
                           : 'UnBlock'))

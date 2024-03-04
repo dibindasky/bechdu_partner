@@ -5,7 +5,8 @@ import 'package:bechdu_partner/data/service/api_service.dart';
 import 'package:bechdu_partner/domain/core/api_endpoints/api_endpoints.dart';
 import 'package:bechdu_partner/domain/core/failure/failute.dart';
 import 'package:bechdu_partner/domain/model/commen/error_response_model/error_response_model.dart';
-import 'package:bechdu_partner/domain/model/order/get_partner_new_orders_response_model/get_partner_new_orders_response_model.dart';
+import 'package:bechdu_partner/domain/model/commen/success_response_model/success_response_model.dart';
+import 'package:bechdu_partner/domain/model/order/get_partner_order_response_model/get_partner_order_response_model.dart';
 import 'package:bechdu_partner/domain/repository/service/order_repo.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
@@ -19,35 +20,71 @@ class OrderService implements OrderRepo {
   OrderService(this._apiService);
 
   @override
-  Future<Either<Failure, GetPartnerNewOrdersResponseModel>> getPartnerNewOrders(
+  Future<Either<Failure, GetPartnerOrderResponseModel>> getPartnerNewOrders(
       {required String phone}) async {
     try {
       final response = await _apiService
           .get(ApiEndPoints.getNewOrders.replaceFirst('{phone}', phone));
-      return Right(GetPartnerNewOrdersResponseModel.fromJson(response.data));
+      return Right(GetPartnerOrderResponseModel.fromJson(response.data));
     } on DioException catch (e) {
-      log('send otp dio exception => $e');
-      return Left(Failure(
-          message: ErrorResponseModel.fromJson(e.response?.data).error));
+      try {
+        log('getPartnerNewOrders dio exception => $e');
+        log(e.response.toString());
+        ErrorResponseModel error =
+            ErrorResponseModel.fromJson(e.response?.data);
+        return Left(Failure(message: error.error ?? errorMessage));
+      } catch (e) {
+        return Left(Failure(message: errorMessage));
+      }
     } catch (e) {
-      log('send otp exception => $e');
+      log('getPartnerNewOrders exception => $e');
       return Left(Failure(message: errorMessage));
     }
   }
 
   @override
-  Future<Either<Failure, GetPartnerNewOrdersResponseModel>>
+  Future<Either<Failure, GetPartnerOrderResponseModel>>
       getPartnerAssignedOrders({required String phone}) async {
     try {
       final response = await _apiService
-          .get(ApiEndPoints.getNewOrders.replaceFirst('{phone}', phone));
-      return Right(GetPartnerNewOrdersResponseModel.fromJson(response.data));
+          .get(ApiEndPoints.getAssignedOrders.replaceFirst('{phone}', phone));
+      return Right(GetPartnerOrderResponseModel.fromJson(response.data));
     } on DioException catch (e) {
-      log('send otp dio exception => $e');
-      return Left(Failure(
-          message: ErrorResponseModel.fromJson(e.response?.data).error));
+      try {
+        log('getPartnerAssignedOrders dio exception => $e');
+        log(e.response.toString());
+        ErrorResponseModel error =
+            ErrorResponseModel.fromJson(e.response?.data);
+        return Left(Failure(message: error.error ?? errorMessage));
+      } catch (e) {
+        return Left(Failure(message: errorMessage));
+      }
     } catch (e) {
-      log('send otp exception => $e');
+      log('getPartnerAssignedOrders exception => $e');
+      return Left(Failure(message: errorMessage));
+    }
+  }
+
+  @override
+  Future<Either<Failure, SuccessResponseModel>> acceptOrder(
+      {required String phone, required String orderId}) async {
+    try {
+      final response = await _apiService.post(ApiEndPoints.acceptOrder
+          .replaceFirst('{partnerPhone}', phone)
+          .replaceFirst('{orderID}', orderId));
+      return Right(SuccessResponseModel.fromJson(response.data));
+    } on DioException catch (e) {
+      try {
+        log('acceptOrder dio exception => $e');
+        log(e.response.toString());
+        ErrorResponseModel error =
+            ErrorResponseModel.fromJson(e.response?.data);
+        return Left(Failure(message: error.error ?? errorMessage));
+      } catch (e) {
+        return Left(Failure(message: errorMessage));
+      }
+    } catch (e) {
+      log('acceptOrder exception => $e');
       return Left(Failure(message: errorMessage));
     }
   }

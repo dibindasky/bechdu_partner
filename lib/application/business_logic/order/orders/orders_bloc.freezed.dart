@@ -18,39 +18,51 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$OrdersEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() acceptOrder,
-    required TResult Function() makeNewOrder,
+    required TResult Function(String orderId) acceptOrder,
+    required TResult Function() getNewOrder,
+    required TResult Function() getPartnerOrders,
+    required TResult Function(int tab) changeTab,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? acceptOrder,
-    TResult? Function()? makeNewOrder,
+    TResult? Function(String orderId)? acceptOrder,
+    TResult? Function()? getNewOrder,
+    TResult? Function()? getPartnerOrders,
+    TResult? Function(int tab)? changeTab,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? acceptOrder,
-    TResult Function()? makeNewOrder,
+    TResult Function(String orderId)? acceptOrder,
+    TResult Function()? getNewOrder,
+    TResult Function()? getPartnerOrders,
+    TResult Function(int tab)? changeTab,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_AcceptOrder value) acceptOrder,
-    required TResult Function(_MakeNewOrder value) makeNewOrder,
+    required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(GetNewOrder value) getNewOrder,
+    required TResult Function(GetPartnerOrders value) getPartnerOrders,
+    required TResult Function(ChangeTab value) changeTab,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_AcceptOrder value)? acceptOrder,
-    TResult? Function(_MakeNewOrder value)? makeNewOrder,
+    TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(GetNewOrder value)? getNewOrder,
+    TResult? Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult? Function(ChangeTab value)? changeTab,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_AcceptOrder value)? acceptOrder,
-    TResult Function(_MakeNewOrder value)? makeNewOrder,
+    TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(GetNewOrder value)? getNewOrder,
+    TResult Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult Function(ChangeTab value)? changeTab,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -79,6 +91,8 @@ abstract class _$$AcceptOrderImplCopyWith<$Res> {
   factory _$$AcceptOrderImplCopyWith(
           _$AcceptOrderImpl value, $Res Function(_$AcceptOrderImpl) then) =
       __$$AcceptOrderImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String orderId});
 }
 
 /// @nodoc
@@ -88,54 +102,84 @@ class __$$AcceptOrderImplCopyWithImpl<$Res>
   __$$AcceptOrderImplCopyWithImpl(
       _$AcceptOrderImpl _value, $Res Function(_$AcceptOrderImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? orderId = null,
+  }) {
+    return _then(_$AcceptOrderImpl(
+      orderId: null == orderId
+          ? _value.orderId
+          : orderId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$AcceptOrderImpl implements _AcceptOrder {
-  const _$AcceptOrderImpl();
+class _$AcceptOrderImpl implements AcceptOrder {
+  const _$AcceptOrderImpl({required this.orderId});
+
+  @override
+  final String orderId;
 
   @override
   String toString() {
-    return 'OrdersEvent.acceptOrder()';
+    return 'OrdersEvent.acceptOrder(orderId: $orderId)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$AcceptOrderImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$AcceptOrderImpl &&
+            (identical(other.orderId, orderId) || other.orderId == orderId));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, orderId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AcceptOrderImplCopyWith<_$AcceptOrderImpl> get copyWith =>
+      __$$AcceptOrderImplCopyWithImpl<_$AcceptOrderImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() acceptOrder,
-    required TResult Function() makeNewOrder,
+    required TResult Function(String orderId) acceptOrder,
+    required TResult Function() getNewOrder,
+    required TResult Function() getPartnerOrders,
+    required TResult Function(int tab) changeTab,
   }) {
-    return acceptOrder();
+    return acceptOrder(orderId);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? acceptOrder,
-    TResult? Function()? makeNewOrder,
+    TResult? Function(String orderId)? acceptOrder,
+    TResult? Function()? getNewOrder,
+    TResult? Function()? getPartnerOrders,
+    TResult? Function(int tab)? changeTab,
   }) {
-    return acceptOrder?.call();
+    return acceptOrder?.call(orderId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? acceptOrder,
-    TResult Function()? makeNewOrder,
+    TResult Function(String orderId)? acceptOrder,
+    TResult Function()? getNewOrder,
+    TResult Function()? getPartnerOrders,
+    TResult Function(int tab)? changeTab,
     required TResult orElse(),
   }) {
     if (acceptOrder != null) {
-      return acceptOrder();
+      return acceptOrder(orderId);
     }
     return orElse();
   }
@@ -143,8 +187,10 @@ class _$AcceptOrderImpl implements _AcceptOrder {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_AcceptOrder value) acceptOrder,
-    required TResult Function(_MakeNewOrder value) makeNewOrder,
+    required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(GetNewOrder value) getNewOrder,
+    required TResult Function(GetPartnerOrders value) getPartnerOrders,
+    required TResult Function(ChangeTab value) changeTab,
   }) {
     return acceptOrder(this);
   }
@@ -152,8 +198,10 @@ class _$AcceptOrderImpl implements _AcceptOrder {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_AcceptOrder value)? acceptOrder,
-    TResult? Function(_MakeNewOrder value)? makeNewOrder,
+    TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(GetNewOrder value)? getNewOrder,
+    TResult? Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult? Function(ChangeTab value)? changeTab,
   }) {
     return acceptOrder?.call(this);
   }
@@ -161,8 +209,10 @@ class _$AcceptOrderImpl implements _AcceptOrder {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_AcceptOrder value)? acceptOrder,
-    TResult Function(_MakeNewOrder value)? makeNewOrder,
+    TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(GetNewOrder value)? getNewOrder,
+    TResult Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult Function(ChangeTab value)? changeTab,
     required TResult orElse(),
   }) {
     if (acceptOrder != null) {
@@ -172,40 +222,46 @@ class _$AcceptOrderImpl implements _AcceptOrder {
   }
 }
 
-abstract class _AcceptOrder implements OrdersEvent {
-  const factory _AcceptOrder() = _$AcceptOrderImpl;
+abstract class AcceptOrder implements OrdersEvent {
+  const factory AcceptOrder({required final String orderId}) =
+      _$AcceptOrderImpl;
+
+  String get orderId;
+  @JsonKey(ignore: true)
+  _$$AcceptOrderImplCopyWith<_$AcceptOrderImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$MakeNewOrderImplCopyWith<$Res> {
-  factory _$$MakeNewOrderImplCopyWith(
-          _$MakeNewOrderImpl value, $Res Function(_$MakeNewOrderImpl) then) =
-      __$$MakeNewOrderImplCopyWithImpl<$Res>;
+abstract class _$$GetNewOrderImplCopyWith<$Res> {
+  factory _$$GetNewOrderImplCopyWith(
+          _$GetNewOrderImpl value, $Res Function(_$GetNewOrderImpl) then) =
+      __$$GetNewOrderImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$MakeNewOrderImplCopyWithImpl<$Res>
-    extends _$OrdersEventCopyWithImpl<$Res, _$MakeNewOrderImpl>
-    implements _$$MakeNewOrderImplCopyWith<$Res> {
-  __$$MakeNewOrderImplCopyWithImpl(
-      _$MakeNewOrderImpl _value, $Res Function(_$MakeNewOrderImpl) _then)
+class __$$GetNewOrderImplCopyWithImpl<$Res>
+    extends _$OrdersEventCopyWithImpl<$Res, _$GetNewOrderImpl>
+    implements _$$GetNewOrderImplCopyWith<$Res> {
+  __$$GetNewOrderImplCopyWithImpl(
+      _$GetNewOrderImpl _value, $Res Function(_$GetNewOrderImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$MakeNewOrderImpl implements _MakeNewOrder {
-  const _$MakeNewOrderImpl();
+class _$GetNewOrderImpl implements GetNewOrder {
+  const _$GetNewOrderImpl();
 
   @override
   String toString() {
-    return 'OrdersEvent.makeNewOrder()';
+    return 'OrdersEvent.getNewOrder()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$MakeNewOrderImpl);
+        (other.runtimeType == runtimeType && other is _$GetNewOrderImpl);
   }
 
   @override
@@ -214,30 +270,36 @@ class _$MakeNewOrderImpl implements _MakeNewOrder {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() acceptOrder,
-    required TResult Function() makeNewOrder,
+    required TResult Function(String orderId) acceptOrder,
+    required TResult Function() getNewOrder,
+    required TResult Function() getPartnerOrders,
+    required TResult Function(int tab) changeTab,
   }) {
-    return makeNewOrder();
+    return getNewOrder();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? acceptOrder,
-    TResult? Function()? makeNewOrder,
+    TResult? Function(String orderId)? acceptOrder,
+    TResult? Function()? getNewOrder,
+    TResult? Function()? getPartnerOrders,
+    TResult? Function(int tab)? changeTab,
   }) {
-    return makeNewOrder?.call();
+    return getNewOrder?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? acceptOrder,
-    TResult Function()? makeNewOrder,
+    TResult Function(String orderId)? acceptOrder,
+    TResult Function()? getNewOrder,
+    TResult Function()? getPartnerOrders,
+    TResult Function(int tab)? changeTab,
     required TResult orElse(),
   }) {
-    if (makeNewOrder != null) {
-      return makeNewOrder();
+    if (getNewOrder != null) {
+      return getNewOrder();
     }
     return orElse();
   }
@@ -245,46 +307,315 @@ class _$MakeNewOrderImpl implements _MakeNewOrder {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_AcceptOrder value) acceptOrder,
-    required TResult Function(_MakeNewOrder value) makeNewOrder,
+    required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(GetNewOrder value) getNewOrder,
+    required TResult Function(GetPartnerOrders value) getPartnerOrders,
+    required TResult Function(ChangeTab value) changeTab,
   }) {
-    return makeNewOrder(this);
+    return getNewOrder(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_AcceptOrder value)? acceptOrder,
-    TResult? Function(_MakeNewOrder value)? makeNewOrder,
+    TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(GetNewOrder value)? getNewOrder,
+    TResult? Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult? Function(ChangeTab value)? changeTab,
   }) {
-    return makeNewOrder?.call(this);
+    return getNewOrder?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_AcceptOrder value)? acceptOrder,
-    TResult Function(_MakeNewOrder value)? makeNewOrder,
+    TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(GetNewOrder value)? getNewOrder,
+    TResult Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult Function(ChangeTab value)? changeTab,
     required TResult orElse(),
   }) {
-    if (makeNewOrder != null) {
-      return makeNewOrder(this);
+    if (getNewOrder != null) {
+      return getNewOrder(this);
     }
     return orElse();
   }
 }
 
-abstract class _MakeNewOrder implements OrdersEvent {
-  const factory _MakeNewOrder() = _$MakeNewOrderImpl;
+abstract class GetNewOrder implements OrdersEvent {
+  const factory GetNewOrder() = _$GetNewOrderImpl;
+}
+
+/// @nodoc
+abstract class _$$GetPartnerOrdersImplCopyWith<$Res> {
+  factory _$$GetPartnerOrdersImplCopyWith(_$GetPartnerOrdersImpl value,
+          $Res Function(_$GetPartnerOrdersImpl) then) =
+      __$$GetPartnerOrdersImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetPartnerOrdersImplCopyWithImpl<$Res>
+    extends _$OrdersEventCopyWithImpl<$Res, _$GetPartnerOrdersImpl>
+    implements _$$GetPartnerOrdersImplCopyWith<$Res> {
+  __$$GetPartnerOrdersImplCopyWithImpl(_$GetPartnerOrdersImpl _value,
+      $Res Function(_$GetPartnerOrdersImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetPartnerOrdersImpl implements GetPartnerOrders {
+  const _$GetPartnerOrdersImpl();
+
+  @override
+  String toString() {
+    return 'OrdersEvent.getPartnerOrders()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetPartnerOrdersImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String orderId) acceptOrder,
+    required TResult Function() getNewOrder,
+    required TResult Function() getPartnerOrders,
+    required TResult Function(int tab) changeTab,
+  }) {
+    return getPartnerOrders();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String orderId)? acceptOrder,
+    TResult? Function()? getNewOrder,
+    TResult? Function()? getPartnerOrders,
+    TResult? Function(int tab)? changeTab,
+  }) {
+    return getPartnerOrders?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String orderId)? acceptOrder,
+    TResult Function()? getNewOrder,
+    TResult Function()? getPartnerOrders,
+    TResult Function(int tab)? changeTab,
+    required TResult orElse(),
+  }) {
+    if (getPartnerOrders != null) {
+      return getPartnerOrders();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(GetNewOrder value) getNewOrder,
+    required TResult Function(GetPartnerOrders value) getPartnerOrders,
+    required TResult Function(ChangeTab value) changeTab,
+  }) {
+    return getPartnerOrders(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(GetNewOrder value)? getNewOrder,
+    TResult? Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult? Function(ChangeTab value)? changeTab,
+  }) {
+    return getPartnerOrders?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(GetNewOrder value)? getNewOrder,
+    TResult Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult Function(ChangeTab value)? changeTab,
+    required TResult orElse(),
+  }) {
+    if (getPartnerOrders != null) {
+      return getPartnerOrders(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetPartnerOrders implements OrdersEvent {
+  const factory GetPartnerOrders() = _$GetPartnerOrdersImpl;
+}
+
+/// @nodoc
+abstract class _$$ChangeTabImplCopyWith<$Res> {
+  factory _$$ChangeTabImplCopyWith(
+          _$ChangeTabImpl value, $Res Function(_$ChangeTabImpl) then) =
+      __$$ChangeTabImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int tab});
+}
+
+/// @nodoc
+class __$$ChangeTabImplCopyWithImpl<$Res>
+    extends _$OrdersEventCopyWithImpl<$Res, _$ChangeTabImpl>
+    implements _$$ChangeTabImplCopyWith<$Res> {
+  __$$ChangeTabImplCopyWithImpl(
+      _$ChangeTabImpl _value, $Res Function(_$ChangeTabImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? tab = null,
+  }) {
+    return _then(_$ChangeTabImpl(
+      tab: null == tab
+          ? _value.tab
+          : tab // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ChangeTabImpl implements ChangeTab {
+  const _$ChangeTabImpl({required this.tab});
+
+  @override
+  final int tab;
+
+  @override
+  String toString() {
+    return 'OrdersEvent.changeTab(tab: $tab)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChangeTabImpl &&
+            (identical(other.tab, tab) || other.tab == tab));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, tab);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChangeTabImplCopyWith<_$ChangeTabImpl> get copyWith =>
+      __$$ChangeTabImplCopyWithImpl<_$ChangeTabImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String orderId) acceptOrder,
+    required TResult Function() getNewOrder,
+    required TResult Function() getPartnerOrders,
+    required TResult Function(int tab) changeTab,
+  }) {
+    return changeTab(tab);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String orderId)? acceptOrder,
+    TResult? Function()? getNewOrder,
+    TResult? Function()? getPartnerOrders,
+    TResult? Function(int tab)? changeTab,
+  }) {
+    return changeTab?.call(tab);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String orderId)? acceptOrder,
+    TResult Function()? getNewOrder,
+    TResult Function()? getPartnerOrders,
+    TResult Function(int tab)? changeTab,
+    required TResult orElse(),
+  }) {
+    if (changeTab != null) {
+      return changeTab(tab);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(GetNewOrder value) getNewOrder,
+    required TResult Function(GetPartnerOrders value) getPartnerOrders,
+    required TResult Function(ChangeTab value) changeTab,
+  }) {
+    return changeTab(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(GetNewOrder value)? getNewOrder,
+    TResult? Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult? Function(ChangeTab value)? changeTab,
+  }) {
+    return changeTab?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(GetNewOrder value)? getNewOrder,
+    TResult Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult Function(ChangeTab value)? changeTab,
+    required TResult orElse(),
+  }) {
+    if (changeTab != null) {
+      return changeTab(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChangeTab implements OrdersEvent {
+  const factory ChangeTab({required final int tab}) = _$ChangeTabImpl;
+
+  int get tab;
+  @JsonKey(ignore: true)
+  _$$ChangeTabImplCopyWith<_$ChangeTabImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 mixin _$OrdersState {
   bool get isLoading => throw _privateConstructorUsedError;
   bool get hasError => throw _privateConstructorUsedError;
+  bool get acceptOrderLoading => throw _privateConstructorUsedError;
+  bool get acceptOrderError => throw _privateConstructorUsedError;
+  bool get acceptOrder => throw _privateConstructorUsedError;
   String? get message => throw _privateConstructorUsedError;
-  bool get showNewNotification => throw _privateConstructorUsedError;
-  bool get newOrder => throw _privateConstructorUsedError;
+  List<OrderDetail>? get partnerOrders => throw _privateConstructorUsedError;
+  List<OrderDetail>? get newOrders => throw _privateConstructorUsedError;
+  int get orderTab => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $OrdersStateCopyWith<OrdersState> get copyWith =>
@@ -300,9 +631,13 @@ abstract class $OrdersStateCopyWith<$Res> {
   $Res call(
       {bool isLoading,
       bool hasError,
+      bool acceptOrderLoading,
+      bool acceptOrderError,
+      bool acceptOrder,
       String? message,
-      bool showNewNotification,
-      bool newOrder});
+      List<OrderDetail>? partnerOrders,
+      List<OrderDetail>? newOrders,
+      int orderTab});
 }
 
 /// @nodoc
@@ -320,9 +655,13 @@ class _$OrdersStateCopyWithImpl<$Res, $Val extends OrdersState>
   $Res call({
     Object? isLoading = null,
     Object? hasError = null,
+    Object? acceptOrderLoading = null,
+    Object? acceptOrderError = null,
+    Object? acceptOrder = null,
     Object? message = freezed,
-    Object? showNewNotification = null,
-    Object? newOrder = null,
+    Object? partnerOrders = freezed,
+    Object? newOrders = freezed,
+    Object? orderTab = null,
   }) {
     return _then(_value.copyWith(
       isLoading: null == isLoading
@@ -333,18 +672,34 @@ class _$OrdersStateCopyWithImpl<$Res, $Val extends OrdersState>
           ? _value.hasError
           : hasError // ignore: cast_nullable_to_non_nullable
               as bool,
+      acceptOrderLoading: null == acceptOrderLoading
+          ? _value.acceptOrderLoading
+          : acceptOrderLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      acceptOrderError: null == acceptOrderError
+          ? _value.acceptOrderError
+          : acceptOrderError // ignore: cast_nullable_to_non_nullable
+              as bool,
+      acceptOrder: null == acceptOrder
+          ? _value.acceptOrder
+          : acceptOrder // ignore: cast_nullable_to_non_nullable
+              as bool,
       message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String?,
-      showNewNotification: null == showNewNotification
-          ? _value.showNewNotification
-          : showNewNotification // ignore: cast_nullable_to_non_nullable
-              as bool,
-      newOrder: null == newOrder
-          ? _value.newOrder
-          : newOrder // ignore: cast_nullable_to_non_nullable
-              as bool,
+      partnerOrders: freezed == partnerOrders
+          ? _value.partnerOrders
+          : partnerOrders // ignore: cast_nullable_to_non_nullable
+              as List<OrderDetail>?,
+      newOrders: freezed == newOrders
+          ? _value.newOrders
+          : newOrders // ignore: cast_nullable_to_non_nullable
+              as List<OrderDetail>?,
+      orderTab: null == orderTab
+          ? _value.orderTab
+          : orderTab // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
@@ -360,9 +715,13 @@ abstract class _$$InitialImplCopyWith<$Res>
   $Res call(
       {bool isLoading,
       bool hasError,
+      bool acceptOrderLoading,
+      bool acceptOrderError,
+      bool acceptOrder,
       String? message,
-      bool showNewNotification,
-      bool newOrder});
+      List<OrderDetail>? partnerOrders,
+      List<OrderDetail>? newOrders,
+      int orderTab});
 }
 
 /// @nodoc
@@ -378,9 +737,13 @@ class __$$InitialImplCopyWithImpl<$Res>
   $Res call({
     Object? isLoading = null,
     Object? hasError = null,
+    Object? acceptOrderLoading = null,
+    Object? acceptOrderError = null,
+    Object? acceptOrder = null,
     Object? message = freezed,
-    Object? showNewNotification = null,
-    Object? newOrder = null,
+    Object? partnerOrders = freezed,
+    Object? newOrders = freezed,
+    Object? orderTab = null,
   }) {
     return _then(_$InitialImpl(
       isLoading: null == isLoading
@@ -391,18 +754,34 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.hasError
           : hasError // ignore: cast_nullable_to_non_nullable
               as bool,
+      acceptOrderLoading: null == acceptOrderLoading
+          ? _value.acceptOrderLoading
+          : acceptOrderLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      acceptOrderError: null == acceptOrderError
+          ? _value.acceptOrderError
+          : acceptOrderError // ignore: cast_nullable_to_non_nullable
+              as bool,
+      acceptOrder: null == acceptOrder
+          ? _value.acceptOrder
+          : acceptOrder // ignore: cast_nullable_to_non_nullable
+              as bool,
       message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String?,
-      showNewNotification: null == showNewNotification
-          ? _value.showNewNotification
-          : showNewNotification // ignore: cast_nullable_to_non_nullable
-              as bool,
-      newOrder: null == newOrder
-          ? _value.newOrder
-          : newOrder // ignore: cast_nullable_to_non_nullable
-              as bool,
+      partnerOrders: freezed == partnerOrders
+          ? _value._partnerOrders
+          : partnerOrders // ignore: cast_nullable_to_non_nullable
+              as List<OrderDetail>?,
+      newOrders: freezed == newOrders
+          ? _value._newOrders
+          : newOrders // ignore: cast_nullable_to_non_nullable
+              as List<OrderDetail>?,
+      orderTab: null == orderTab
+          ? _value.orderTab
+          : orderTab // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -413,24 +792,54 @@ class _$InitialImpl implements _Initial {
   const _$InitialImpl(
       {required this.isLoading,
       required this.hasError,
+      required this.acceptOrderLoading,
+      required this.acceptOrderError,
+      required this.acceptOrder,
       this.message,
-      required this.showNewNotification,
-      required this.newOrder});
+      final List<OrderDetail>? partnerOrders,
+      final List<OrderDetail>? newOrders,
+      required this.orderTab})
+      : _partnerOrders = partnerOrders,
+        _newOrders = newOrders;
 
   @override
   final bool isLoading;
   @override
   final bool hasError;
   @override
+  final bool acceptOrderLoading;
+  @override
+  final bool acceptOrderError;
+  @override
+  final bool acceptOrder;
+  @override
   final String? message;
+  final List<OrderDetail>? _partnerOrders;
   @override
-  final bool showNewNotification;
+  List<OrderDetail>? get partnerOrders {
+    final value = _partnerOrders;
+    if (value == null) return null;
+    if (_partnerOrders is EqualUnmodifiableListView) return _partnerOrders;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<OrderDetail>? _newOrders;
   @override
-  final bool newOrder;
+  List<OrderDetail>? get newOrders {
+    final value = _newOrders;
+    if (value == null) return null;
+    if (_newOrders is EqualUnmodifiableListView) return _newOrders;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  final int orderTab;
 
   @override
   String toString() {
-    return 'OrdersState(isLoading: $isLoading, hasError: $hasError, message: $message, showNewNotification: $showNewNotification, newOrder: $newOrder)';
+    return 'OrdersState(isLoading: $isLoading, hasError: $hasError, acceptOrderLoading: $acceptOrderLoading, acceptOrderError: $acceptOrderError, acceptOrder: $acceptOrder, message: $message, partnerOrders: $partnerOrders, newOrders: $newOrders, orderTab: $orderTab)';
   }
 
   @override
@@ -442,16 +851,33 @@ class _$InitialImpl implements _Initial {
                 other.isLoading == isLoading) &&
             (identical(other.hasError, hasError) ||
                 other.hasError == hasError) &&
+            (identical(other.acceptOrderLoading, acceptOrderLoading) ||
+                other.acceptOrderLoading == acceptOrderLoading) &&
+            (identical(other.acceptOrderError, acceptOrderError) ||
+                other.acceptOrderError == acceptOrderError) &&
+            (identical(other.acceptOrder, acceptOrder) ||
+                other.acceptOrder == acceptOrder) &&
             (identical(other.message, message) || other.message == message) &&
-            (identical(other.showNewNotification, showNewNotification) ||
-                other.showNewNotification == showNewNotification) &&
-            (identical(other.newOrder, newOrder) ||
-                other.newOrder == newOrder));
+            const DeepCollectionEquality()
+                .equals(other._partnerOrders, _partnerOrders) &&
+            const DeepCollectionEquality()
+                .equals(other._newOrders, _newOrders) &&
+            (identical(other.orderTab, orderTab) ||
+                other.orderTab == orderTab));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, isLoading, hasError, message, showNewNotification, newOrder);
+      runtimeType,
+      isLoading,
+      hasError,
+      acceptOrderLoading,
+      acceptOrderError,
+      acceptOrder,
+      message,
+      const DeepCollectionEquality().hash(_partnerOrders),
+      const DeepCollectionEquality().hash(_newOrders),
+      orderTab);
 
   @JsonKey(ignore: true)
   @override
@@ -464,20 +890,32 @@ abstract class _Initial implements OrdersState {
   const factory _Initial(
       {required final bool isLoading,
       required final bool hasError,
+      required final bool acceptOrderLoading,
+      required final bool acceptOrderError,
+      required final bool acceptOrder,
       final String? message,
-      required final bool showNewNotification,
-      required final bool newOrder}) = _$InitialImpl;
+      final List<OrderDetail>? partnerOrders,
+      final List<OrderDetail>? newOrders,
+      required final int orderTab}) = _$InitialImpl;
 
   @override
   bool get isLoading;
   @override
   bool get hasError;
   @override
+  bool get acceptOrderLoading;
+  @override
+  bool get acceptOrderError;
+  @override
+  bool get acceptOrder;
+  @override
   String? get message;
   @override
-  bool get showNewNotification;
+  List<OrderDetail>? get partnerOrders;
   @override
-  bool get newOrder;
+  List<OrderDetail>? get newOrders;
+  @override
+  int get orderTab;
   @override
   @JsonKey(ignore: true)
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>

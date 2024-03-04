@@ -67,15 +67,31 @@ class HomeScreenAppBar extends StatelessWidget {
                   ],
                 ),
                 kHeight20,
-                const Row(
+                Row(
                   children: [
-                    Expanded(
+                    const Expanded(
                       flex: 8,
                       child: CustomSearchFieldHomePage(),
                     ),
                     kWidth20,
                     Expanded(
-                      child: Icon(Icons.filter_alt),
+                      child: PopupMenuButton(
+                          color: kWhite,
+                          icon: const Icon(Icons.filter_alt),
+                          itemBuilder: (context) => ([
+                                PopupMenuItem(
+                                    onTap: () {
+                                      context.read<OrdersBloc>().add(
+                                          const OrdersEvent.changeTab(tab: 0));
+                                    },
+                                    child: const Text('New Orders')),
+                                PopupMenuItem(
+                                    onTap: () {
+                                      context.read<OrdersBloc>().add(
+                                          const OrdersEvent.changeTab(tab: 1));
+                                    },
+                                    child: const Text('Accepted Orders'))
+                              ])),
                     )
                   ],
                 )
@@ -86,11 +102,10 @@ class HomeScreenAppBar extends StatelessWidget {
           BlocBuilder<OrdersBloc, OrdersState>(
             builder: (context, state) {
               return InkWell(
-                onTap: () => Navigator.pushNamed(context, Routes.orderScreen,
-                    arguments: <String, bool>{
-                      'newOrder': true,
-                      'detail': false
-                    }),
+                // onTap: () => Navigator.pushNamed(context, Routes.orderScreen,
+                //     arguments: <String, bool>{
+                //       'newOrder': true,
+                //     }),
                 child: ColoredBox(
                   color: kBluePrimary,
                   child: SizedBox(

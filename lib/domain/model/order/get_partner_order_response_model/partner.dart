@@ -21,4 +21,18 @@ class Partner {
   }
 
   Map<String, dynamic> toJson() => _$PartnerToJson(this);
+
+  Partner copyWith({
+    String? partnerName,
+    String? partnerPhone,
+    String? pickUpPersonName,
+    String? pickUpPersonPhone,
+  }) {
+    return Partner(
+      partnerName: partnerName ?? this.partnerName,
+      partnerPhone: partnerPhone ?? this.partnerPhone,
+      pickUpPersonName: pickUpPersonName ?? this.pickUpPersonName,
+      pickUpPersonPhone: pickUpPersonPhone ?? this.pickUpPersonPhone,
+    );
+  }
 }

@@ -9,4 +9,9 @@ class ApiEndPoints {
       '/partner/get-assigned-partner-orders/{phone}';
   static String addPickupPartner = '/partner/add-pickup-person/{phone}';
   static String getPickupPartner = '/partner/get-pickup-persons/{phone}';
+  static String blockPickupPartner =
+      '/partner/block-pickup-person/{partnerPhone}/{pickUpGuyId}';
+  static String unBlockPickupPartner =
+      '/partner/unblock-pickup-person/{partnerPhone}/{pickUpGuyId}';
+  static String acceptOrder = '/partner/accept-order/{partnerPhone}/{orderID}';
 }
