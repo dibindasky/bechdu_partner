@@ -11,35 +11,57 @@ class OrdersHistoryList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<OrdersBloc, OrdersState>(
-      builder: (context, state) {
-        if (state.isLoading) {
-          return const Center(
-              child: CircularProgressIndicator(color: kBluePrimary));
-        }
-        if (state.partnerOrders != null) {
-          if (state.partnerOrders!.isNotEmpty) {
-            return ListView.builder(
-              itemCount: state.partnerOrders!.isNotEmpty
-                  ? state.partnerOrders!.length + 1
-                  : state.partnerOrders!.length,
-              padding: EdgeInsets.zero,
-              shrinkWrap: true,
-              itemBuilder: (context, index) =>
-                  state.partnerOrders!.length == index
-                      ? const SizedBox(height: 100)
-                      : OrdersListTileHome(
-                          orderDetail: state.partnerOrders![index],
-                          newOrder: false),
-            );
-          } else {
-            return const Center(child: Text('Your orders list is empty'));
-          }
+    return BlocBuilder<OrdersBloc, OrdersState>(builder: (context, state) {
+      if (state.isLoading) {
+        return const Center(
+            child: CircularProgressIndicator(color: kBluePrimary));
+      }
+      if (state.partnerOrders != null) {
+        if (state.partnerOrders!.isNotEmpty) {
+          return ListView.builder(
+            itemCount: state.partnerOrders!.isNotEmpty
+                ? state.partnerOrders!.length + 1
+                : state.partnerOrders!.length,
+            padding: EdgeInsets.zero,
+            shrinkWrap: true,
+            itemBuilder: (context, index) =>
+                state.partnerOrders!.length == index
+                    ? const SizedBox(height: 100)
+                    : OrdersListTileHome(
+                        orderDetail: state.partnerOrders![index],
+                        newOrder: false),
+          );
         } else {
-          return const Center(
-              child: Text('Something went worng, pull to refresh'));
+          return const Center(child: Text('Your orders list is empty'));
         }
-      },
-    );
+      } else {
+        return Center(
+            child: InkWell(
+              onTap: () {
+                context.read<OrdersBloc>().add(const OrdersEvent.getNewOrder());
+                context
+                    .read<OrdersBloc>()
+                    .add(const OrdersEvent.getPartnerOrders());
+              },
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  IconButton(
+                      onPressed: () {
+                        context
+                            .read<OrdersBloc>()
+                            .add(const OrdersEvent.getNewOrder());
+                        context
+                            .read<OrdersBloc>()
+                            .add(const OrdersEvent.getPartnerOrders());
+                      },
+                      icon: const Icon(Icons.refresh_sharp)),
+                  const Text('Something went worng, tap to refresh'),
+                  const SizedBox(width: double.infinity)
+                ],
+              ),
+            ));
+      }
+    });
   }
 }

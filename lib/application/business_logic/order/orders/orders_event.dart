@@ -5,6 +5,8 @@ class OrdersEvent with _$OrdersEvent {
   const factory OrdersEvent.acceptOrder({required String orderId}) =
       AcceptOrder;
   const factory OrdersEvent.getNewOrder() = GetNewOrder;
+  const factory OrdersEvent.refreshNewOrder() = RefreshNewOrder;
   const factory OrdersEvent.getPartnerOrders() = GetPartnerOrders;
+  const factory OrdersEvent.refresPartnerOrders() = RefresPartnerOrders;
   const factory OrdersEvent.changeTab({required int tab}) = ChangeTab;
 }

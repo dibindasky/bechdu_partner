@@ -20,7 +20,9 @@ mixin _$OrdersEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
     required TResult Function() getNewOrder,
+    required TResult Function() refreshNewOrder,
     required TResult Function() getPartnerOrders,
+    required TResult Function() refresPartnerOrders,
     required TResult Function(int tab) changeTab,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,7 +30,9 @@ mixin _$OrdersEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
     TResult? Function()? getNewOrder,
+    TResult? Function()? refreshNewOrder,
     TResult? Function()? getPartnerOrders,
+    TResult? Function()? refresPartnerOrders,
     TResult? Function(int tab)? changeTab,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,7 +40,9 @@ mixin _$OrdersEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
     TResult Function()? getNewOrder,
+    TResult Function()? refreshNewOrder,
     TResult Function()? getPartnerOrders,
+    TResult Function()? refresPartnerOrders,
     TResult Function(int tab)? changeTab,
     required TResult orElse(),
   }) =>
@@ -45,7 +51,9 @@ mixin _$OrdersEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
+    required TResult Function(RefreshNewOrder value) refreshNewOrder,
     required TResult Function(GetPartnerOrders value) getPartnerOrders,
+    required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
     required TResult Function(ChangeTab value) changeTab,
   }) =>
       throw _privateConstructorUsedError;
@@ -53,7 +61,9 @@ mixin _$OrdersEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
+    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
     TResult? Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
     TResult? Function(ChangeTab value)? changeTab,
   }) =>
       throw _privateConstructorUsedError;
@@ -61,7 +71,9 @@ mixin _$OrdersEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
+    TResult Function(RefreshNewOrder value)? refreshNewOrder,
     TResult Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
     TResult Function(ChangeTab value)? changeTab,
     required TResult orElse(),
   }) =>
@@ -152,7 +164,9 @@ class _$AcceptOrderImpl implements AcceptOrder {
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
     required TResult Function() getNewOrder,
+    required TResult Function() refreshNewOrder,
     required TResult Function() getPartnerOrders,
+    required TResult Function() refresPartnerOrders,
     required TResult Function(int tab) changeTab,
   }) {
     return acceptOrder(orderId);
@@ -163,7 +177,9 @@ class _$AcceptOrderImpl implements AcceptOrder {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
     TResult? Function()? getNewOrder,
+    TResult? Function()? refreshNewOrder,
     TResult? Function()? getPartnerOrders,
+    TResult? Function()? refresPartnerOrders,
     TResult? Function(int tab)? changeTab,
   }) {
     return acceptOrder?.call(orderId);
@@ -174,7 +190,9 @@ class _$AcceptOrderImpl implements AcceptOrder {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
     TResult Function()? getNewOrder,
+    TResult Function()? refreshNewOrder,
     TResult Function()? getPartnerOrders,
+    TResult Function()? refresPartnerOrders,
     TResult Function(int tab)? changeTab,
     required TResult orElse(),
   }) {
@@ -189,7 +207,9 @@ class _$AcceptOrderImpl implements AcceptOrder {
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
+    required TResult Function(RefreshNewOrder value) refreshNewOrder,
     required TResult Function(GetPartnerOrders value) getPartnerOrders,
+    required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
     required TResult Function(ChangeTab value) changeTab,
   }) {
     return acceptOrder(this);
@@ -200,7 +220,9 @@ class _$AcceptOrderImpl implements AcceptOrder {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
+    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
     TResult? Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
     TResult? Function(ChangeTab value)? changeTab,
   }) {
     return acceptOrder?.call(this);
@@ -211,7 +233,9 @@ class _$AcceptOrderImpl implements AcceptOrder {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
+    TResult Function(RefreshNewOrder value)? refreshNewOrder,
     TResult Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
     TResult Function(ChangeTab value)? changeTab,
     required TResult orElse(),
   }) {
@@ -272,7 +296,9 @@ class _$GetNewOrderImpl implements GetNewOrder {
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
     required TResult Function() getNewOrder,
+    required TResult Function() refreshNewOrder,
     required TResult Function() getPartnerOrders,
+    required TResult Function() refresPartnerOrders,
     required TResult Function(int tab) changeTab,
   }) {
     return getNewOrder();
@@ -283,7 +309,9 @@ class _$GetNewOrderImpl implements GetNewOrder {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
     TResult? Function()? getNewOrder,
+    TResult? Function()? refreshNewOrder,
     TResult? Function()? getPartnerOrders,
+    TResult? Function()? refresPartnerOrders,
     TResult? Function(int tab)? changeTab,
   }) {
     return getNewOrder?.call();
@@ -294,7 +322,9 @@ class _$GetNewOrderImpl implements GetNewOrder {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
     TResult Function()? getNewOrder,
+    TResult Function()? refreshNewOrder,
     TResult Function()? getPartnerOrders,
+    TResult Function()? refresPartnerOrders,
     TResult Function(int tab)? changeTab,
     required TResult orElse(),
   }) {
@@ -309,7 +339,9 @@ class _$GetNewOrderImpl implements GetNewOrder {
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
+    required TResult Function(RefreshNewOrder value) refreshNewOrder,
     required TResult Function(GetPartnerOrders value) getPartnerOrders,
+    required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
     required TResult Function(ChangeTab value) changeTab,
   }) {
     return getNewOrder(this);
@@ -320,7 +352,9 @@ class _$GetNewOrderImpl implements GetNewOrder {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
+    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
     TResult? Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
     TResult? Function(ChangeTab value)? changeTab,
   }) {
     return getNewOrder?.call(this);
@@ -331,7 +365,9 @@ class _$GetNewOrderImpl implements GetNewOrder {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
+    TResult Function(RefreshNewOrder value)? refreshNewOrder,
     TResult Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
     TResult Function(ChangeTab value)? changeTab,
     required TResult orElse(),
   }) {
@@ -344,6 +380,132 @@ class _$GetNewOrderImpl implements GetNewOrder {
 
 abstract class GetNewOrder implements OrdersEvent {
   const factory GetNewOrder() = _$GetNewOrderImpl;
+}
+
+/// @nodoc
+abstract class _$$RefreshNewOrderImplCopyWith<$Res> {
+  factory _$$RefreshNewOrderImplCopyWith(_$RefreshNewOrderImpl value,
+          $Res Function(_$RefreshNewOrderImpl) then) =
+      __$$RefreshNewOrderImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$RefreshNewOrderImplCopyWithImpl<$Res>
+    extends _$OrdersEventCopyWithImpl<$Res, _$RefreshNewOrderImpl>
+    implements _$$RefreshNewOrderImplCopyWith<$Res> {
+  __$$RefreshNewOrderImplCopyWithImpl(
+      _$RefreshNewOrderImpl _value, $Res Function(_$RefreshNewOrderImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$RefreshNewOrderImpl implements RefreshNewOrder {
+  const _$RefreshNewOrderImpl();
+
+  @override
+  String toString() {
+    return 'OrdersEvent.refreshNewOrder()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$RefreshNewOrderImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String orderId) acceptOrder,
+    required TResult Function() getNewOrder,
+    required TResult Function() refreshNewOrder,
+    required TResult Function() getPartnerOrders,
+    required TResult Function() refresPartnerOrders,
+    required TResult Function(int tab) changeTab,
+  }) {
+    return refreshNewOrder();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String orderId)? acceptOrder,
+    TResult? Function()? getNewOrder,
+    TResult? Function()? refreshNewOrder,
+    TResult? Function()? getPartnerOrders,
+    TResult? Function()? refresPartnerOrders,
+    TResult? Function(int tab)? changeTab,
+  }) {
+    return refreshNewOrder?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String orderId)? acceptOrder,
+    TResult Function()? getNewOrder,
+    TResult Function()? refreshNewOrder,
+    TResult Function()? getPartnerOrders,
+    TResult Function()? refresPartnerOrders,
+    TResult Function(int tab)? changeTab,
+    required TResult orElse(),
+  }) {
+    if (refreshNewOrder != null) {
+      return refreshNewOrder();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(GetNewOrder value) getNewOrder,
+    required TResult Function(RefreshNewOrder value) refreshNewOrder,
+    required TResult Function(GetPartnerOrders value) getPartnerOrders,
+    required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
+    required TResult Function(ChangeTab value) changeTab,
+  }) {
+    return refreshNewOrder(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(GetNewOrder value)? getNewOrder,
+    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
+    TResult? Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult? Function(ChangeTab value)? changeTab,
+  }) {
+    return refreshNewOrder?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(GetNewOrder value)? getNewOrder,
+    TResult Function(RefreshNewOrder value)? refreshNewOrder,
+    TResult Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult Function(ChangeTab value)? changeTab,
+    required TResult orElse(),
+  }) {
+    if (refreshNewOrder != null) {
+      return refreshNewOrder(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RefreshNewOrder implements OrdersEvent {
+  const factory RefreshNewOrder() = _$RefreshNewOrderImpl;
 }
 
 /// @nodoc
@@ -386,7 +548,9 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
     required TResult Function() getNewOrder,
+    required TResult Function() refreshNewOrder,
     required TResult Function() getPartnerOrders,
+    required TResult Function() refresPartnerOrders,
     required TResult Function(int tab) changeTab,
   }) {
     return getPartnerOrders();
@@ -397,7 +561,9 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
     TResult? Function()? getNewOrder,
+    TResult? Function()? refreshNewOrder,
     TResult? Function()? getPartnerOrders,
+    TResult? Function()? refresPartnerOrders,
     TResult? Function(int tab)? changeTab,
   }) {
     return getPartnerOrders?.call();
@@ -408,7 +574,9 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
     TResult Function()? getNewOrder,
+    TResult Function()? refreshNewOrder,
     TResult Function()? getPartnerOrders,
+    TResult Function()? refresPartnerOrders,
     TResult Function(int tab)? changeTab,
     required TResult orElse(),
   }) {
@@ -423,7 +591,9 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
+    required TResult Function(RefreshNewOrder value) refreshNewOrder,
     required TResult Function(GetPartnerOrders value) getPartnerOrders,
+    required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
     required TResult Function(ChangeTab value) changeTab,
   }) {
     return getPartnerOrders(this);
@@ -434,7 +604,9 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
+    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
     TResult? Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
     TResult? Function(ChangeTab value)? changeTab,
   }) {
     return getPartnerOrders?.call(this);
@@ -445,7 +617,9 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
+    TResult Function(RefreshNewOrder value)? refreshNewOrder,
     TResult Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
     TResult Function(ChangeTab value)? changeTab,
     required TResult orElse(),
   }) {
@@ -458,6 +632,133 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
 
 abstract class GetPartnerOrders implements OrdersEvent {
   const factory GetPartnerOrders() = _$GetPartnerOrdersImpl;
+}
+
+/// @nodoc
+abstract class _$$RefresPartnerOrdersImplCopyWith<$Res> {
+  factory _$$RefresPartnerOrdersImplCopyWith(_$RefresPartnerOrdersImpl value,
+          $Res Function(_$RefresPartnerOrdersImpl) then) =
+      __$$RefresPartnerOrdersImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$RefresPartnerOrdersImplCopyWithImpl<$Res>
+    extends _$OrdersEventCopyWithImpl<$Res, _$RefresPartnerOrdersImpl>
+    implements _$$RefresPartnerOrdersImplCopyWith<$Res> {
+  __$$RefresPartnerOrdersImplCopyWithImpl(_$RefresPartnerOrdersImpl _value,
+      $Res Function(_$RefresPartnerOrdersImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
+  const _$RefresPartnerOrdersImpl();
+
+  @override
+  String toString() {
+    return 'OrdersEvent.refresPartnerOrders()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RefresPartnerOrdersImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String orderId) acceptOrder,
+    required TResult Function() getNewOrder,
+    required TResult Function() refreshNewOrder,
+    required TResult Function() getPartnerOrders,
+    required TResult Function() refresPartnerOrders,
+    required TResult Function(int tab) changeTab,
+  }) {
+    return refresPartnerOrders();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String orderId)? acceptOrder,
+    TResult? Function()? getNewOrder,
+    TResult? Function()? refreshNewOrder,
+    TResult? Function()? getPartnerOrders,
+    TResult? Function()? refresPartnerOrders,
+    TResult? Function(int tab)? changeTab,
+  }) {
+    return refresPartnerOrders?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String orderId)? acceptOrder,
+    TResult Function()? getNewOrder,
+    TResult Function()? refreshNewOrder,
+    TResult Function()? getPartnerOrders,
+    TResult Function()? refresPartnerOrders,
+    TResult Function(int tab)? changeTab,
+    required TResult orElse(),
+  }) {
+    if (refresPartnerOrders != null) {
+      return refresPartnerOrders();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(GetNewOrder value) getNewOrder,
+    required TResult Function(RefreshNewOrder value) refreshNewOrder,
+    required TResult Function(GetPartnerOrders value) getPartnerOrders,
+    required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
+    required TResult Function(ChangeTab value) changeTab,
+  }) {
+    return refresPartnerOrders(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(GetNewOrder value)? getNewOrder,
+    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
+    TResult? Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult? Function(ChangeTab value)? changeTab,
+  }) {
+    return refresPartnerOrders?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(GetNewOrder value)? getNewOrder,
+    TResult Function(RefreshNewOrder value)? refreshNewOrder,
+    TResult Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult Function(ChangeTab value)? changeTab,
+    required TResult orElse(),
+  }) {
+    if (refresPartnerOrders != null) {
+      return refresPartnerOrders(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RefresPartnerOrders implements OrdersEvent {
+  const factory RefresPartnerOrders() = _$RefresPartnerOrdersImpl;
 }
 
 /// @nodoc
@@ -526,7 +827,9 @@ class _$ChangeTabImpl implements ChangeTab {
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
     required TResult Function() getNewOrder,
+    required TResult Function() refreshNewOrder,
     required TResult Function() getPartnerOrders,
+    required TResult Function() refresPartnerOrders,
     required TResult Function(int tab) changeTab,
   }) {
     return changeTab(tab);
@@ -537,7 +840,9 @@ class _$ChangeTabImpl implements ChangeTab {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
     TResult? Function()? getNewOrder,
+    TResult? Function()? refreshNewOrder,
     TResult? Function()? getPartnerOrders,
+    TResult? Function()? refresPartnerOrders,
     TResult? Function(int tab)? changeTab,
   }) {
     return changeTab?.call(tab);
@@ -548,7 +853,9 @@ class _$ChangeTabImpl implements ChangeTab {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
     TResult Function()? getNewOrder,
+    TResult Function()? refreshNewOrder,
     TResult Function()? getPartnerOrders,
+    TResult Function()? refresPartnerOrders,
     TResult Function(int tab)? changeTab,
     required TResult orElse(),
   }) {
@@ -563,7 +870,9 @@ class _$ChangeTabImpl implements ChangeTab {
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
+    required TResult Function(RefreshNewOrder value) refreshNewOrder,
     required TResult Function(GetPartnerOrders value) getPartnerOrders,
+    required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
     required TResult Function(ChangeTab value) changeTab,
   }) {
     return changeTab(this);
@@ -574,7 +883,9 @@ class _$ChangeTabImpl implements ChangeTab {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
+    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
     TResult? Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
     TResult? Function(ChangeTab value)? changeTab,
   }) {
     return changeTab?.call(this);
@@ -585,7 +896,9 @@ class _$ChangeTabImpl implements ChangeTab {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
+    TResult Function(RefreshNewOrder value)? refreshNewOrder,
     TResult Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
     TResult Function(ChangeTab value)? changeTab,
     required TResult orElse(),
   }) {

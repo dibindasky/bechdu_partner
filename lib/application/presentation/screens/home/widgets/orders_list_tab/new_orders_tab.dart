@@ -1,7 +1,6 @@
 import 'package:bechdu_partner/application/business_logic/order/orders/orders_bloc.dart';
 import 'package:bechdu_partner/application/presentation/screens/home/widgets/home_orders_tile.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
-import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -33,8 +32,32 @@ class NewOrdersList extends StatelessWidget {
           return const Center(child: Text('You have no new orders'));
         }
       } else {
-        return const Center(
-            child: Text('Something went worng, pull to refresh'));
+        return Center(
+            child: InkWell(
+              onTap: () {
+                context.read<OrdersBloc>().add(const OrdersEvent.getNewOrder());
+                context
+                    .read<OrdersBloc>()
+                    .add(const OrdersEvent.getPartnerOrders());
+              },
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  IconButton(
+                      onPressed: () {
+                        context
+                            .read<OrdersBloc>()
+                            .add(const OrdersEvent.getNewOrder());
+                        context
+                            .read<OrdersBloc>()
+                            .add(const OrdersEvent.getPartnerOrders());
+                      },
+                      icon: const Icon(Icons.refresh_sharp)),
+                  const Text('Something went worng, tap to refresh'),
+                  const SizedBox(width: double.infinity)
+                ],
+              ),
+            ));
       }
     });
   }

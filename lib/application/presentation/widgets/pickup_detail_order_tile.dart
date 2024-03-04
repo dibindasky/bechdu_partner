@@ -1,5 +1,6 @@
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
+import 'package:bechdu_partner/application/presentation/utils/snackbar/snack_show.dart';
 import 'package:bechdu_partner/application/presentation/widgets/custom_blur_maker.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart' as url_launcher;
@@ -69,6 +70,22 @@ class PickUpDetailOrderTile extends StatelessWidget {
                 subtitle: BlurerMaker(
                   show: isBlurred,
                   child: Text(address, style: textHeadBold1),
+                ),
+                trailing:isBlurred?kEmpty: _circleIconMaker(
+                  icon: Icons.navigation_outlined,
+                  quarterTurns: 1,
+                  onTap: () {
+                    try {
+                      url_launcher.launchUrl(Uri.parse(urlMapTest + address));
+                    } catch (e) {
+                      print('cannot launch url');
+                      print(e);
+                      showSnackBar(
+                          context: context,
+                          message: errorMessage,
+                          color: kBluePrimary);
+                    }
+                  },
                 ),
               ),
               ListTile(

@@ -18,6 +18,8 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
     on<GetNewOrder>(getNewOrder);
     on<GetPartnerOrders>(getPartnerOrders);
     on<ChangeTab>(changeTab);
+    on<RefreshNewOrder>(refreshNewOrder);
+    on<RefresPartnerOrders>(refresPartnerOrders);
   }
 
   FutureOr<void> getPartnerOrders(GetPartnerOrders event, emit) async {
@@ -60,6 +62,40 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
         (r) => emit(state.copyWith(isLoading: false, newOrders: r.orders)));
   }
 
+  FutureOr<void> refresPartnerOrders(RefresPartnerOrders event, emit) async {
+    emit(state.copyWith(
+        message: null,
+        acceptOrder: false,
+        acceptOrderError: false));
+    final phone = await SecureStorage.getPhone();
+    if (phone == null) {
+      return emit(state.copyWith(
+          hasError: true,
+          message: 'failed to connect, please try again'));
+    }
+    final result = await _orderRepo.getPartnerAssignedOrders(phone: phone);
+    result.fold(
+        (l) => emit(state.copyWith(hasError: true, message: l.message)),
+        (r) => emit(state.copyWith(partnerOrders: r.orders)));
+  }
+
+  FutureOr<void> refreshNewOrder(RefreshNewOrder event, emit) async {
+    emit(state.copyWith(
+        message: null,
+        acceptOrder: false,
+        acceptOrderError: false));
+    final phone = await SecureStorage.getPhone();
+    if (phone == null) {
+      return emit(state.copyWith(
+          hasError: true,
+          message: 'failed to connect, please try again'));
+    }
+    final result = await _orderRepo.getPartnerNewOrders(phone: phone);
+    result.fold(
+        (l) => emit(state.copyWith(hasError: true, message: l.message)),
+        (r) => emit(state.copyWith(newOrders: r.orders)));
+  }
+
   FutureOr<void> changeTab(ChangeTab event, emit) async {
     emit(state.copyWith(
         orderTab: event.tab,
@@ -73,7 +109,7 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
     emit(state.copyWith(
         acceptOrder: false,
         acceptOrderError: false,
-        acceptOrderLoading: false,
+        acceptOrderLoading: true,
         message: null));
     final phone = await SecureStorage.getPhone();
     if (phone == null) {

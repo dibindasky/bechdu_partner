@@ -57,84 +57,100 @@ class ScreenOrderDetail extends StatelessWidget {
                 }
               },
               builder: (context, state) {
-                if(state.acceptOrderLoading){
-                  return const Center(child: CircularProgressIndicator(color: kGreenPrimary));
+                if (state.acceptOrderLoading) {
+                  return const Center(
+                      child: CircularProgressIndicator(color: kGreenPrimary));
                 }
                 return orderDetail.status == 'new'
-                    ? Stack(
-                        children: [
-                          SingleChildScrollView(
-                            child: Column(children: [
-                              OrdersDetailImageAndPriceSession(
-                                  coin: orderDetail.coins ?? '--',
-                                  deviceName:
-                                      orderDetail.productDetails?.name ??
-                                          '----',
-                                  image:
-                                      orderDetail.productDetails?.image ?? '',
-                                  price: orderDetail.productDetails?.price ??
-                                      '--'),
-                              PickUpDetailOrderTile(
-                                isBlurred: true,
-                                isUser: true,
-                                name: orderDetail.partner?.pickUpPersonName ??
-                                    orderDetail.partner?.partnerName ??
-                                    '',
-                                dateTime:
-                                    '${orderDetail.pickUpDetails?.time ?? '--,--'} ${orderDetail.pickUpDetails?.date ?? '--/--/--'}',
-                                address: orderDetail.user?.address ??
-                                    '----- ------- -------',
-                                phone: orderDetail.user?.phone ?? '',
-                              ),
-                              kHeight10,
-                              OrderDetailDiviceDetailsSession(
-                                  isBlurred: true,
-                                  productDetails: orderDetail.productDetails)
-                            ]),
-                          ),
-                          SliderOrderAccepting(orderId: orderDetail.id!)
-                        ],
-                      )
-                    : SingleChildScrollView(
-                        child: Column(
-                          children: [
-                            OrdersDetailImageAndPriceSession(
-                                coin: orderDetail.coins ?? '--',
-                                deviceName:
-                                    orderDetail.productDetails?.name ?? '----',
-                                image: orderDetail.productDetails?.image ?? '',
-                                price:
-                                    orderDetail.productDetails?.price ?? '--'),
-                            orderDetail.status == 'new'
-                                ? const OrderDetailTopPart()
-                                : kEmpty,
-                            kHeight20,
-                            const PartnerDetailTile(),
-                            kHeight20,
-                            PickUpDetailOrderTile(
-                              isBlurred: false,
-                              isUser: true,
-                              name: orderDetail.partner?.pickUpPersonName ??
-                                  orderDetail.partner?.partnerName ??
-                                  '',
-                              dateTime:
-                                  '${orderDetail.pickUpDetails?.time ?? '--,--'} ${orderDetail.pickUpDetails?.date ?? '--/--/--'}',
-                              address: orderDetail.user?.address ??
-                                  '----- ------- -------',
-                              phone: orderDetail.user?.phone ?? '',
-                            ),
-                            kHeight10,
-                            OrderDetailDiviceDetailsSession(
-                                isBlurred: false,
-                                productDetails: orderDetail.productDetails)
-                          ],
-                        ),
-                      );
+                    ? BlurredOrderDetails(orderDetail: orderDetail)
+                    : OrderDetailWithoutBlur(orderDetail: orderDetail);
               },
             ),
           ),
         ],
       ),
+    );
+  }
+}
+
+class OrderDetailWithoutBlur extends StatelessWidget {
+  const OrderDetailWithoutBlur({
+    super.key,
+    required this.orderDetail,
+  });
+
+  final OrderDetail orderDetail;
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          OrdersDetailImageAndPriceSession(
+              coin: orderDetail.coins ?? '--',
+              deviceName: orderDetail.productDetails?.name ?? '----',
+              image: orderDetail.productDetails?.image ?? '',
+              price: orderDetail.productDetails?.price ?? '--'),
+          const OrderDetailTopPart(),
+          kHeight20,
+          PartnerDetailTile(partner: orderDetail.partner),
+          kHeight20,
+          PickUpDetailOrderTile(
+            isBlurred: false,
+            isUser: true,
+            name: orderDetail.user?.name ??
+                '',
+            dateTime:
+                '${orderDetail.pickUpDetails?.time ?? '--,--'} ${orderDetail.pickUpDetails?.date ?? '--/--/--'}',
+            address: orderDetail.user?.address ?? '----- ------- -------',
+            phone: orderDetail.user?.phone ?? '',
+          ),
+          kHeight10,
+          OrderDetailDiviceDetailsSession(
+              isBlurred: false, productDetails: orderDetail.productDetails)
+        ],
+      ),
+    );
+  }
+}
+
+class BlurredOrderDetails extends StatelessWidget {
+  const BlurredOrderDetails({
+    super.key,
+    required this.orderDetail,
+  });
+
+  final OrderDetail orderDetail;
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        SingleChildScrollView(
+          child: Column(children: [
+            OrdersDetailImageAndPriceSession(
+                coin: orderDetail.coins ?? '--',
+                deviceName: orderDetail.productDetails?.name ?? '----',
+                image: orderDetail.productDetails?.image ?? '',
+                price: orderDetail.productDetails?.price ?? '--'),
+            PickUpDetailOrderTile(
+              isBlurred: true,
+              isUser: true,
+              name: orderDetail.partner?.pickUpPersonName ??
+                  orderDetail.partner?.partnerName ??
+                  '',
+              dateTime:
+                  '${orderDetail.pickUpDetails?.time ?? '--,--'} ${orderDetail.pickUpDetails?.date ?? '--/--/--'}',
+              address: orderDetail.user?.address ?? '----- ------- -------',
+              phone: orderDetail.user?.phone ?? '',
+            ),
+            kHeight10,
+            OrderDetailDiviceDetailsSession(
+                isBlurred: true, productDetails: orderDetail.productDetails)
+          ]),
+        ),
+        SliderOrderAccepting(orderId: orderDetail.id!)
+      ],
     );
   }
 }

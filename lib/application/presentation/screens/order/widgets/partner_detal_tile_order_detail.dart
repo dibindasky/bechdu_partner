@@ -2,10 +2,13 @@ import 'package:bechdu_partner/application/presentation/screens/order/dialoges/s
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:bechdu_partner/application/presentation/widgets/status_colored_box.dart';
+import 'package:bechdu_partner/domain/model/order/get_partner_order_response_model/partner.dart';
 import 'package:flutter/material.dart';
 
 class PartnerDetailTile extends StatelessWidget {
-  const PartnerDetailTile({super.key});
+  const PartnerDetailTile({super.key, required this.partner});
+
+  final Partner? partner;
 
   @override
   Widget build(BuildContext context) {
@@ -24,9 +27,11 @@ class PartnerDetailTile extends StatelessWidget {
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Kwame', style: textHeadBold1),
+                  Text(partner?.pickUpPersonName=='' ? 'Assign pickup':partner?.pickUpPersonName??'', style: textHeadBold1),
                   StatusColoredBox(
-                    text: 'Change Partner',
+                    text: partner?.pickUpPersonName != ''
+                        ? 'Change Partner'
+                        : 'Assign Partner',
                     color: kBluePrimary,
                     onTap: () {
                       showBottomSheetAssignPartner(context);
@@ -34,17 +39,17 @@ class PartnerDetailTile extends StatelessWidget {
                   )
                 ],
               ),
-              subtitle: SizedBox(
-                width: sWidth * 0.2,
-                child: Row(
-                  children: [
-                    Text('25 Orders',
-                        style: textHeadSemiBold1.copyWith(color: kGreyLight)),
-                    kWidth10,
-                    Text('Out For Pickup', style: textHeadSemiBold1)
-                  ],
-                ),
-              ),
+              // subtitle: SizedBox(
+              //   width: sWidth * 0.2,
+              //   child: Row(
+              //     children: [
+              //       Text('25 Orders',
+              //           style: textHeadSemiBold1.copyWith(color: kGreyLight)),
+              //       kWidth10,
+              //       Text('Out For Pickup', style: textHeadSemiBold1)
+              //     ],
+              //   ),
+              // ),
             ),
           ),
         ),
