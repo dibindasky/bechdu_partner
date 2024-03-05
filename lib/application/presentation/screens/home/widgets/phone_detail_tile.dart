@@ -39,34 +39,38 @@ class PhoneDetailTile extends StatelessWidget {
                   )),
                 ),
                 kWidth20,
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      orderDetail.productDetails?.name??'-----------',
-                      style: textHeadRegular1,
-                    ),
-                    Text(
-                      '₹ ${orderDetail.productDetails?.price??'----'}',
-                      style: textHeadRegular1.copyWith(color: kGreyLight),
-                    ),
-                    Row(
-                      children: [
-                        Text(orderDetail.coins??'--', style: textHeadBold1),
-                        kWidth5,
-                        CircleAvatar(
-                          radius: sWidth * 0.02,
-                          backgroundColor: kWhite,
-                          backgroundImage: const AssetImage(iconNottoCoin),
-                        )
-                      ],
-                    )
-                  ],
+                Expanded(
+                  flex: 5,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        orderDetail.productDetails?.name??'-----------',
+                        style: textHeadRegular1,
+                      ),
+                      Text(
+                        '₹ ${orderDetail.productDetails?.price??'----'}',
+                        style: textHeadRegular1.copyWith(color: kGreyLight),
+                      ),
+                      Row(
+                        children: [
+                          Text(orderDetail.coins??'--', style: textHeadBold1),
+                          kWidth5,
+                          CircleAvatar(
+                            radius: sWidth * 0.02,
+                            backgroundColor: kWhite,
+                            backgroundImage: const AssetImage(iconNottoCoin),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
                 ),
-                const Spacer(),
-                const Icon(
-                  Icons.arrow_circle_right_rounded,
-                  color: kBluePrimary,
+                Expanded(
+                  child: const Icon(
+                    Icons.arrow_circle_right_rounded,
+                    color: kBluePrimary,
+                  ),
                 ),
                 kWidth10
               ],

@@ -43,7 +43,7 @@ class OrdersCustomButton extends StatelessWidget {
                   kWidth10,
                   Text(
                     text,
-                    style: textHeadBold1,
+                    style: textHeadBold1.copyWith(fontSize: 14),
                   )
                 ],
               ),

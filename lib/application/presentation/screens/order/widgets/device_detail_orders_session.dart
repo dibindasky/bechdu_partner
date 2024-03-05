@@ -16,18 +16,21 @@ class OrderDetailDiviceDetailsSession extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (productDetails != null) {
+    if (productDetails != null && productDetails!.options != null) {
       for (Option opt in productDetails!.options!) {
+        print(opt.toJson());
         if (!deviceQuestions.containsKey(opt.heading)) {
-          deviceQuestions[opt.heading!] = [];
+          deviceQuestions[opt.heading??'----'] = [];
         }
-        deviceQuestions[opt.heading!] = [
-          ...deviceQuestions[opt.heading!]!,
+        deviceQuestions[opt.heading??'----'] = [
+          ...deviceQuestions[opt.heading??'----']!,
           opt
         ];
       }
     }
-    return productDetails == null || deviceQuestions.isEmpty
+    return productDetails == null ||
+            productDetails?.options == null ||
+            deviceQuestions.isEmpty
         ? kEmpty
         : Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15),
