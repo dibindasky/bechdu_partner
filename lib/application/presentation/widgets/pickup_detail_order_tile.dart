@@ -1,15 +1,27 @@
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
+import 'package:bechdu_partner/application/presentation/utils/snackbar/snack_show.dart';
 import 'package:bechdu_partner/application/presentation/widgets/custom_blur_maker.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart' as url_launcher;
 
 class PickUpDetailOrderTile extends StatelessWidget {
-  const PickUpDetailOrderTile(
-      {super.key, this.isBlurred = false, this.isUser = true});
+  const PickUpDetailOrderTile({
+    super.key,
+    this.isBlurred = false,
+    required this.name,
+    required this.address,
+    required this.phone,
+    required this.dateTime,
+    required this.isUser,
+  });
 
   final bool isBlurred;
   final bool isUser;
+  final String name;
+  final String address;
+  final String phone;
+  final String dateTime;
 
   @override
   Widget build(BuildContext context) {
@@ -37,16 +49,17 @@ class PickUpDetailOrderTile extends StatelessWidget {
                     children: [
                       Text(isUser ? 'Device Owner  ' : 'Pickup partner  ',
                           style: textHeadRegular1),
-                      Text(isUser ? '00000 00000' : 'Aman Sharma',
-                          style: textHeadBold1),
+                      Text(name, style: textHeadBold1),
                     ],
                   ),
                 ),
-                trailing: _circleIconMaker(
-                    icon: Icons.phone,
-                    onTap: () {
-                      url_launcher.launchUrl(Uri.parse("tel://0000000000"));
-                    }),
+                trailing: isBlurred
+                    ? null
+                    : _circleIconMaker(
+                        icon: Icons.phone,
+                        onTap: () {
+                          url_launcher.launchUrl(Uri.parse("tel://$phone"));
+                        }),
               ),
               ListTile(
                 leading: SizedBox(
@@ -56,19 +69,21 @@ class PickUpDetailOrderTile extends StatelessWidget {
                     child: Text('Pickup Location ', style: textHeadRegular1)),
                 subtitle: BlurerMaker(
                   show: isBlurred,
-                  child: Text(
-                      'Nikhita Stores, 201/B, Nirant Apts, Andheri East 400069',
-                      style: textHeadBold1),
+                  child: Text(address, style: textHeadBold1),
                 ),
-                trailing: _circleIconMaker(
+                trailing:isBlurred?kEmpty: _circleIconMaker(
                   icon: Icons.navigation_outlined,
                   quarterTurns: 1,
                   onTap: () {
                     try {
-                      url_launcher.launchUrl(Uri.parse(urlMapTest));
+                      url_launcher.launchUrl(Uri.parse(urlMapTest + address));
                     } catch (e) {
                       print('cannot launch url');
                       print(e);
+                      showSnackBar(
+                          context: context,
+                          message: errorMessage,
+                          color: kBluePrimary);
                     }
                   },
                 ),
@@ -79,7 +94,7 @@ class PickUpDetailOrderTile extends StatelessWidget {
                   color: kGreenPrimary,
                 ),
                 title: Text('Pickup Time', style: textHeadRegular1),
-                subtitle: Text('04:30 12/01/24', style: textHeadBold1),
+                subtitle: Text(dateTime, style: textHeadBold1),
               )
             ]),
           ),

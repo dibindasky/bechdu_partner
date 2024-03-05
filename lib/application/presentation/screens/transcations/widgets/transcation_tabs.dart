@@ -41,8 +41,7 @@ class _TranscationTabBarState extends State<TranscationTabBar> {
     );
   }
 
-  Widget selectionContainer(
-      {required String text, required bool isSelected}) {
+  Widget selectionContainer({required String text, required bool isSelected}) {
     return Expanded(
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 200),

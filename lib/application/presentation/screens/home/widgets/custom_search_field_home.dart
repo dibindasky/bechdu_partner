@@ -12,19 +12,16 @@ class CustomSearchFieldHomePage extends StatelessWidget {
     return TextField(
       decoration: InputDecoration(
         hintText: 'Search for order here',
-        hintStyle:
-            textHeadRegular1.copyWith(color: kBluePrimary),
+        hintStyle: textHeadRegular1.copyWith(color: kBluePrimary),
         suffixIcon: const Icon(Icons.search),
         contentPadding: const EdgeInsets.only(left: 10),
         border: OutlineInputBorder(
           borderRadius: kRadius5,
-          borderSide: const BorderSide(
-              color: kBluePrimary, width: 2),
+          borderSide: const BorderSide(color: kBluePrimary, width: 2),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: kRadius5,
-          borderSide:
-              const BorderSide(color: kGreenPrimary),
+          borderSide: const BorderSide(color: kGreenPrimary),
         ),
       ),
     );

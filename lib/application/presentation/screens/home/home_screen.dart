@@ -9,10 +9,7 @@ class ScreenHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Column(
       mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        HomeScreenAppBar(),
-        HomeScreenOrdersList()
-      ],
+      children: [HomeScreenAppBar(), HomeScreenOrdersList()],
     );
   }
 }

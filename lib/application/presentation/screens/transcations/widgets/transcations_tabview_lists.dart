@@ -15,8 +15,10 @@ class TranscationsTabViewList extends StatelessWidget {
       builder: (context, state) {
         return ListView.builder(
           itemBuilder: (context, index) => Padding(
-            padding: const EdgeInsets.symmetric(vertical: 5,horizontal: 4),
-            child: Material(elevation: 5,borderRadius: kRadius15,
+            padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 4),
+            child: Material(
+              elevation: 5,
+              borderRadius: kRadius15,
               child: ListTile(
                 title: Text('Iphone 11', style: textHeadBold1),
                 subtitle: Row(
@@ -28,7 +30,8 @@ class TranscationsTabViewList extends StatelessWidget {
                         style: textHeadMedium1.copyWith(color: kGreyLight))
                   ],
                 ),
-                trailing: Text(state.isCreditedTab ?'+500 points':'-120 points',
+                trailing: Text(
+                    state.isCreditedTab ? '+500 points' : '-120 points',
                     style: textHeadBoldBig.copyWith(
                         color: state.isCreditedTab ? kGreenPrimary : kRedDark)),
               ),

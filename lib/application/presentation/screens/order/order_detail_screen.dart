@@ -1,4 +1,5 @@
 import 'package:bechdu_partner/application/business_logic/order/orders/orders_bloc.dart';
+import 'package:bechdu_partner/application/presentation/routes/routes.dart';
 import 'package:bechdu_partner/application/presentation/screens/order/widgets/device_detail_orders_session.dart';
 import 'package:bechdu_partner/application/presentation/screens/order/widgets/order_detail_image_and_price_session.dart';
 import 'package:bechdu_partner/application/presentation/screens/order/widgets/order_detail_top_potion.dart';
@@ -7,23 +8,23 @@ import 'package:bechdu_partner/application/presentation/screens/order/widgets/sl
 import 'package:bechdu_partner/application/presentation/utils/clipper/vertical_curves.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
+import 'package:bechdu_partner/application/presentation/utils/snackbar/snack_show.dart';
 import 'package:bechdu_partner/application/presentation/widgets/pickup_detail_order_tile.dart';
+import 'package:bechdu_partner/domain/model/order/get_partner_order_response_model/order_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ScreenOrderDetail extends StatelessWidget {
-  const ScreenOrderDetail(
-      {super.key, required this.newOrder, required this.detail});
+  const ScreenOrderDetail({super.key, required this.orderDetail});
 
-  final bool newOrder;
-  final bool detail;
+  final OrderDetail orderDetail;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
           title: Text(
-        'Order 11250',
+        orderDetail.orderId ?? '------',
         style: textHeadBoldBig2,
       )),
       backgroundColor: kWhite,
@@ -38,42 +39,118 @@ class ScreenOrderDetail extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: BlocBuilder<OrdersBloc, OrdersState>(
+            child: BlocConsumer<OrdersBloc, OrdersState>(
+              listener: (context, state) {
+                if (state.message != null) {
+                  showSnackBar(
+                      context: context,
+                      message: state.message!,
+                      color: state.acceptOrderError ? kRed : kGreenPrimary);
+                }
+                if (state.acceptOrderError) {
+                  Navigator.of(context).pop();
+                }
+                if (state.acceptOrder) {
+                  var orderModel = orderDetail.copyWith(status: 'processing');
+                  Navigator.pushReplacementNamed(context, Routes.orderScreen,
+                      arguments: orderModel);
+                }
+              },
               builder: (context, state) {
-                return newOrder
-                    ? const Stack(
-                      children: [
-                        SingleChildScrollView(
-                          child: Column(children: [
-                              OrdersDetailImageAndPriceSession(),
-                              PickUpDetailOrderTile(isBlurred: true),
-                              kHeight10,
-                              OrderDetailDiviceDetailsSession(isBlurred: true)
-                            ]),
-                        ),
-                          SliderOrderAccepting()
-                      ],
-                    )
-                    : SingleChildScrollView(
-                      child: Column(
-                          children: [
-                            const OrdersDetailImageAndPriceSession(),
-                            detail ? const OrderDetailTopPart() : kEmpty,
-                            kHeight20,
-                            const PartnerDetailTile(),
-                            kHeight20,
-                            const PickUpDetailOrderTile(isBlurred: false),
-                            kHeight10,
-                            const OrderDetailDiviceDetailsSession(
-                                isBlurred: false)
-                          ],
-                        ),
-                    );
+                if (state.acceptOrderLoading) {
+                  return const Center(
+                      child: CircularProgressIndicator(color: kGreenPrimary));
+                }
+                return orderDetail.status == 'new'
+                    ? BlurredOrderDetails(orderDetail: orderDetail)
+                    : OrderDetailWithoutBlur(orderDetail: orderDetail);
               },
             ),
           ),
         ],
       ),
+    );
+  }
+}
+
+class OrderDetailWithoutBlur extends StatelessWidget {
+  const OrderDetailWithoutBlur({
+    super.key,
+    required this.orderDetail,
+  });
+
+  final OrderDetail orderDetail;
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          OrdersDetailImageAndPriceSession(
+              coin: orderDetail.coins ?? '--',
+              deviceName: orderDetail.productDetails?.name ?? '----',
+              image: orderDetail.productDetails?.image ?? '',
+              price: orderDetail.productDetails?.price ?? '--'),
+          const OrderDetailTopPart(),
+          kHeight20,
+          PartnerDetailTile(partner: orderDetail.partner),
+          kHeight20,
+          PickUpDetailOrderTile(
+            isBlurred: false,
+            isUser: true,
+            name: orderDetail.user?.name ??
+                '',
+            dateTime:
+                '${orderDetail.pickUpDetails?.time ?? '--,--'} ${orderDetail.pickUpDetails?.date ?? '--/--/--'}',
+            address: orderDetail.user?.address ?? '----- ------- -------',
+            phone: orderDetail.user?.phone ?? '',
+          ),
+          kHeight10,
+          OrderDetailDiviceDetailsSession(
+              isBlurred: false, productDetails: orderDetail.productDetails)
+        ],
+      ),
+    );
+  }
+}
+
+class BlurredOrderDetails extends StatelessWidget {
+  const BlurredOrderDetails({
+    super.key,
+    required this.orderDetail,
+  });
+
+  final OrderDetail orderDetail;
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        SingleChildScrollView(
+          child: Column(children: [
+            OrdersDetailImageAndPriceSession(
+                coin: orderDetail.coins ?? '--',
+                deviceName: orderDetail.productDetails?.name ?? '----',
+                image: orderDetail.productDetails?.image ?? '',
+                price: orderDetail.productDetails?.price ?? '--'),
+            PickUpDetailOrderTile(
+              isBlurred: true,
+              isUser: true,
+              name: orderDetail.partner?.pickUpPersonName ??
+                  orderDetail.partner?.partnerName ??
+                  '',
+              dateTime:
+                  '${orderDetail.pickUpDetails?.time ?? '--,--'} ${orderDetail.pickUpDetails?.date ?? '--/--/--'}',
+              address: orderDetail.user?.address ?? '----- ------- -------',
+              phone: orderDetail.user?.phone ?? '',
+            ),
+            kHeight10,
+            OrderDetailDiviceDetailsSession(
+                isBlurred: true, productDetails: orderDetail.productDetails)
+          ]),
+        ),
+        SliderOrderAccepting(orderId: orderDetail.id!)
+      ],
     );
   }
 }

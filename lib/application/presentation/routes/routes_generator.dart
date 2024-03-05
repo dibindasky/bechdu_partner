@@ -11,6 +11,7 @@ import 'package:bechdu_partner/application/presentation/screens/points/points_sc
 import 'package:bechdu_partner/application/presentation/screens/settings/settings_screen.dart';
 import 'package:bechdu_partner/application/presentation/screens/splash/splash_screen.dart';
 import 'package:bechdu_partner/application/presentation/screens/transcations/transcations_screen.dart';
+import 'package:bechdu_partner/domain/model/order/get_partner_order_response_model/order_detail.dart';
 import 'package:flutter/material.dart';
 
 class RouteGenerator {
@@ -41,12 +42,10 @@ class RouteGenerator {
       case Routes.bottomBar:
         return MaterialPageRoute(builder: (ctx) => const ScreenBottomBar());
       case Routes.orderScreen:
-        return arguments is Map<String, bool> &&
-            arguments['newOrder'] != null &&
-            arguments['detail'] != null ? MaterialPageRoute(
-              builder: (ctx) => ScreenOrderDetail(
-                  newOrder: arguments['newOrder']!,
-                  detail: arguments['detail']!)) : _errorScreen();
+        return arguments is OrderDetail
+            ? MaterialPageRoute(
+                builder: (ctx) => ScreenOrderDetail(orderDetail: arguments))
+            : _errorScreen();
       case Routes.notificationPage:
         return MaterialPageRoute(builder: (ctx) => const ScreenNotification());
       default:

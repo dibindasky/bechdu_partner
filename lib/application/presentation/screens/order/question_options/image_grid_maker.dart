@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class ImageGridMaker extends StatelessWidget {
   const ImageGridMaker({super.key, required this.map});
 
-  final Map<String,dynamic> map;
+  final Map<String, dynamic> map;
 
   @override
   Widget build(BuildContext context) {

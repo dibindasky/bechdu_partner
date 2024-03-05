@@ -62,7 +62,8 @@ class CoinPointTable extends StatelessWidget {
                             children: [
                               CircleAvatar(
                                 radius: sWidth * 0.03,
-                                backgroundImage: const AssetImage(iconNottoCoin),
+                                backgroundImage:
+                                    const AssetImage(iconNottoCoin),
                               ),
                               kWidth10,
                               Text(

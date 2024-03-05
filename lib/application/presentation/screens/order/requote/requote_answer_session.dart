@@ -16,7 +16,7 @@ class RequoteAnswerSession extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<RequoteBloc, RequoteState>(
       listener: (context, state) {
-        if(state.message != null){
+        if (state.message != null) {
           print('emit message');
           showSnackBar(context: context, message: state.message!);
         }
@@ -34,4 +34,3 @@ class RequoteAnswerSession extends StatelessWidget {
     );
   }
 }
-
