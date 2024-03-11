@@ -20,10 +20,10 @@ class OrderDetailDiviceDetailsSession extends StatelessWidget {
       for (Option opt in productDetails!.options!) {
         print(opt.toJson());
         if (!deviceQuestions.containsKey(opt.heading)) {
-          deviceQuestions[opt.heading??'----'] = [];
+          deviceQuestions[opt.heading ?? '----'] = [];
         }
-        deviceQuestions[opt.heading??'----'] = [
-          ...deviceQuestions[opt.heading??'----']!,
+        deviceQuestions[opt.heading ?? '----'] = [
+          ...deviceQuestions[opt.heading ?? '----']!,
           opt
         ];
       }

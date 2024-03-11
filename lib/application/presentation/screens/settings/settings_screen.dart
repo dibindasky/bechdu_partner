@@ -1,4 +1,5 @@
 import 'package:bechdu_partner/application/business_logic/auth/auth_bloc.dart';
+import 'package:bechdu_partner/application/business_logic/pickup_partner/pickup_partner_bloc.dart';
 import 'package:bechdu_partner/application/presentation/routes/routes.dart';
 import 'package:bechdu_partner/application/presentation/screens/auth/widgets/custom_button_auth.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
@@ -28,39 +29,48 @@ class ScreenSettings extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: SingleChildScrollView(
-          child: Column(
-            children: [
-              CircleAvatar(
-                radius: sWidth * 0.16,
-                backgroundColor: kGreenPrimary,
-                child: CircleAvatar(
-                  radius: sWidth * 0.15,
-                  backgroundColor: kBluePrimary,
-                  child: Text(
-                    'JG',
-                    style: textHeadBoldBig2.copyWith(
-                        color: kWhite, fontSize: sWidth * 0.15),
+          child: BlocBuilder<PickupPartnerBloc, PickupPartnerState>(
+            builder: (context, state) {
+              return Column(
+                children: [
+                  CircleAvatar(
+                    radius: sWidth * 0.16,
+                    backgroundColor: kGreenPrimary,
+                    child: CircleAvatar(
+                      radius: sWidth * 0.15,
+                      backgroundColor: kBluePrimary,
+                      child: Text(
+                        state.partnerProfile?.name
+                                ?.substring(0, 2)
+                                .toUpperCase() ??
+                            'BD',
+                        style: textHeadBoldBig2.copyWith(
+                            color: kWhite, fontSize: sWidth * 0.15),
+                      ),
+                    ),
                   ),
-                ),
-              ),
-              kHeight40,
-              UserDetailTile(
-                  controller: TextEditingController(),
-                  headline: 'Username',
-                  text: 'Jaisai gopisetty'),
-              UserDetailTile(
-                  controller: TextEditingController(),
-                  headline: 'Email',
-                  text: 'Jaisai@gmail.com'),
-              UserDetailTile(
-                  controller: TextEditingController(),
-                  headline: 'Mobile Number',
-                  text: '0000 000 000'),
-              const SizedBox(height: 100),
-              AuthCustomButtom(
-                  onTap: () {}, text: 'Save', backgroundColor: kGreenPrimary),
-              kHeight50
-            ],
+                  kHeight40,
+                  UserDetailTile(
+                      controller: TextEditingController(),
+                      headline: 'Username',
+                      text: state.partnerProfile?.name ?? ''),
+                  UserDetailTile(
+                      controller: TextEditingController(),
+                      headline: 'Email',
+                      text: state.partnerProfile?.email ?? ''),
+                  UserDetailTile(
+                      controller: TextEditingController(),
+                      headline: 'Mobile Number',
+                      text: state.partnerProfile?.phone ?? ''),
+                  const SizedBox(height: 100),
+                  AuthCustomButtom(
+                      onTap: () {},
+                      text: 'Save',
+                      backgroundColor: kGreenPrimary),
+                  kHeight50
+                ],
+              );
+            },
           ),
         ),
       ),

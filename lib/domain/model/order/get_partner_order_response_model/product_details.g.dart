@@ -15,6 +15,7 @@ ProductDetails _$ProductDetailsFromJson(Map<String, dynamic> json) =>
       options: (json['options'] as List<dynamic>?)
           ?.map((e) => Option.fromJson(e as Map<String, dynamic>))
           .toList(),
+      category: json['category'] as String?,
     );
 
 Map<String, dynamic> _$ProductDetailsToJson(ProductDetails instance) =>
@@ -23,5 +24,6 @@ Map<String, dynamic> _$ProductDetailsToJson(ProductDetails instance) =>
       'slug': instance.slug,
       'image': instance.image,
       'price': instance.price,
+      'category': instance.category,
       'options': instance.options,
     };

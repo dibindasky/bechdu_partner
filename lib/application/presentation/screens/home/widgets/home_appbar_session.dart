@@ -1,4 +1,5 @@
 import 'package:bechdu_partner/application/business_logic/order/orders/orders_bloc.dart';
+import 'package:bechdu_partner/application/business_logic/pickup_partner/pickup_partner_bloc.dart';
 import 'package:bechdu_partner/application/presentation/routes/routes.dart';
 import 'package:bechdu_partner/application/presentation/screens/home/widgets/custom_search_field_home.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
@@ -13,6 +14,11 @@ class HomeScreenAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      context
+          .read<PickupPartnerBloc>()
+          .add(const PickupPartnerEvent.getPartnerProfile());
+    });
     return SafeArea(
       child: Column(
         children: [
@@ -37,31 +43,37 @@ class HomeScreenAppBar extends StatelessWidget {
                     InkWell(
                       onTap: () =>
                           Navigator.pushNamed(context, Routes.pointsPage),
-                      child: ClipRRect(
-                        borderRadius: kRadius50,
-                        child: ColoredBox(
-                          color: kBluePrimary,
-                          child: Padding(
-                            padding: const EdgeInsets.only(left: 10, right: 2),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  '0',
-                                  style:
-                                      textHeadBoldBig2.copyWith(color: kWhite),
+                      child: BlocBuilder<PickupPartnerBloc, PickupPartnerState>(
+                        builder: (context, state) {
+                          return ClipRRect(
+                            borderRadius: kRadius50,
+                            child: ColoredBox(
+                              color: kBluePrimary,
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 10, right: 2),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      state.partnerProfile?.coins ?? '0',
+                                      style: textHeadBoldBig2.copyWith(
+                                          color: kWhite),
+                                    ),
+                                    kWidth5,
+                                    CircleAvatar(
+                                      radius: sWidth * 0.04,
+                                      backgroundColor: kBluePrimary,
+                                      backgroundImage:
+                                          const AssetImage(iconNottoCoin),
+                                    )
+                                  ],
                                 ),
-                                kWidth5,
-                                CircleAvatar(
-                                  radius: sWidth * 0.04,
-                                  backgroundColor: kBluePrimary,
-                                  backgroundImage:
-                                      const AssetImage(iconNottoCoin),
-                                )
-                              ],
+                              ),
                             ),
-                          ),
-                        ),
+                          );
+                        },
                       ),
                     )
                   ],

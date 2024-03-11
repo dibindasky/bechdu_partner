@@ -21,7 +21,9 @@ class HomeScreenOrdersList extends StatelessWidget {
         color: kBluePrimary,
         onRefresh: () async {
           context.read<OrdersBloc>().add(const OrdersEvent.refreshNewOrder());
-          context.read<OrdersBloc>().add(const OrdersEvent.refresPartnerOrders());
+          context
+              .read<OrdersBloc>()
+              .add(const OrdersEvent.refresPartnerOrders());
           await Future.delayed(const Duration(seconds: 2));
         },
         child: BlocBuilder<OrdersBloc, OrdersState>(

@@ -4,12 +4,16 @@ import 'package:bechdu_partner/application/presentation/screens/order/requote/re
 import 'package:bechdu_partner/application/presentation/screens/order/widgets/order_custom_buttom.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
+import 'package:bechdu_partner/domain/model/order/get_partner_order_response_model/order_detail.dart';
 import 'package:flutter/material.dart';
 
 class OrderDetailTopPart extends StatelessWidget {
   const OrderDetailTopPart({
     super.key,
+    required this.orderDetail,
   });
+
+  final OrderDetail orderDetail;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +28,7 @@ class OrderDetailTopPart extends StatelessWidget {
                   text: 'Cancel',
                   image: iconCancel,
                   onTap: () {
-                    showDialogeCancel(context);
+                    showDialogeCancel(context, orderDetail.id);
                   }),
               kWidth5,
               OrdersCustomButton(

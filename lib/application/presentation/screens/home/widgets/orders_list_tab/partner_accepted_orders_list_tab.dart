@@ -29,7 +29,7 @@ class OrdersHistoryList extends StatelessWidget {
                     ? const SizedBox(height: 100)
                     : OrdersListTileHome(
                         orderDetail: state.partnerOrders![index],
-                        newOrder: false),
+                        showExpansion: false),
           );
         } else {
           return const Center(child: Text('Your orders list is empty'));
@@ -37,30 +37,30 @@ class OrdersHistoryList extends StatelessWidget {
       } else {
         return Center(
             child: InkWell(
-              onTap: () {
-                context.read<OrdersBloc>().add(const OrdersEvent.getNewOrder());
-                context
-                    .read<OrdersBloc>()
-                    .add(const OrdersEvent.getPartnerOrders());
-              },
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  IconButton(
-                      onPressed: () {
-                        context
-                            .read<OrdersBloc>()
-                            .add(const OrdersEvent.getNewOrder());
-                        context
-                            .read<OrdersBloc>()
-                            .add(const OrdersEvent.getPartnerOrders());
-                      },
-                      icon: const Icon(Icons.refresh_sharp)),
-                  const Text('Something went worng, tap to refresh'),
-                  const SizedBox(width: double.infinity)
-                ],
-              ),
-            ));
+          onTap: () {
+            context.read<OrdersBloc>().add(const OrdersEvent.getNewOrder());
+            context
+                .read<OrdersBloc>()
+                .add(const OrdersEvent.getPartnerOrders());
+          },
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              IconButton(
+                  onPressed: () {
+                    context
+                        .read<OrdersBloc>()
+                        .add(const OrdersEvent.getNewOrder());
+                    context
+                        .read<OrdersBloc>()
+                        .add(const OrdersEvent.getPartnerOrders());
+                  },
+                  icon: const Icon(Icons.refresh_sharp)),
+              const Text('Something went worng, tap to refresh'),
+              const SizedBox(width: double.infinity)
+            ],
+          ),
+        ));
       }
     });
   }

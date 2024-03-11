@@ -1,4 +1,5 @@
 import 'package:bechdu_partner/application/business_logic/order/orders/orders_bloc.dart';
+import 'package:bechdu_partner/application/business_logic/pickup_partner/pickup_partner_bloc.dart';
 import 'package:bechdu_partner/application/presentation/routes/routes.dart';
 import 'package:bechdu_partner/application/presentation/screens/order/widgets/device_detail_orders_session.dart';
 import 'package:bechdu_partner/application/presentation/screens/order/widgets/order_detail_image_and_price_session.dart';
@@ -8,9 +9,11 @@ import 'package:bechdu_partner/application/presentation/screens/order/widgets/sl
 import 'package:bechdu_partner/application/presentation/utils/clipper/vertical_curves.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
+import 'package:bechdu_partner/application/presentation/utils/shimmer/shimmer_loader.dart';
 import 'package:bechdu_partner/application/presentation/utils/snackbar/snack_show.dart';
 import 'package:bechdu_partner/application/presentation/widgets/pickup_detail_order_tile.dart';
 import 'package:bechdu_partner/domain/model/order/get_partner_order_response_model/order_detail.dart';
+import 'package:bechdu_partner/domain/model/order/get_partner_order_response_model/partner.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -21,6 +24,7 @@ class ScreenOrderDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    OrderDetail orderDetail = this.orderDetail;
     return Scaffold(
       appBar: AppBar(
           title: Text(
@@ -39,32 +43,53 @@ class ScreenOrderDetail extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: BlocConsumer<OrdersBloc, OrdersState>(
+            child: BlocListener<PickupPartnerBloc, PickupPartnerState>(
+              listenWhen: (previous, current) =>
+                  previous.assigningOrderLoader &&
+                  (current.orderAssigned || current.orderDeAssigned),
               listener: (context, state) {
                 if (state.message != null) {
                   showSnackBar(
                       context: context,
                       message: state.message!,
-                      color: state.acceptOrderError ? kRed : kGreenPrimary);
+                      color: kGreenPrimary);
                 }
-                if (state.acceptOrderError) {
-                  Navigator.of(context).pop();
-                }
-                if (state.acceptOrder) {
-                  var orderModel = orderDetail.copyWith(status: 'processing');
-                  Navigator.pushReplacementNamed(context, Routes.orderScreen,
-                      arguments: orderModel);
-                }
+                Partner pickup = orderDetail.partner!.copyWith(
+                    pickUpPersonName:
+                        state.orderAssigned ? state.selectedPickup?.name : '',
+                    pickUpPersonPhone:
+                        state.orderAssigned ? state.selectedPickup?.phone : '');
+                orderDetail = orderDetail.copyWith(partner: pickup);
+                Navigator.pushReplacementNamed(context, Routes.orderScreen,
+                    arguments: orderDetail);
               },
-              builder: (context, state) {
-                if (state.acceptOrderLoading) {
-                  return const Center(
-                      child: CircularProgressIndicator(color: kGreenPrimary));
-                }
-                return orderDetail.status == 'new'
-                    ? BlurredOrderDetails(orderDetail: orderDetail)
-                    : OrderDetailWithoutBlur(orderDetail: orderDetail);
-              },
+              child: BlocConsumer<OrdersBloc, OrdersState>(
+                listener: (context, state) {
+                  if (state.message != null) {
+                    showSnackBar(
+                        context: context,
+                        message: state.message!,
+                        color: state.acceptOrderError ? kRed : kGreenPrimary);
+                  }
+                  if (state.acceptOrderError || state.cancelOrder) {
+                    Navigator.of(context).pop();
+                  }
+                  if (state.acceptOrder) {
+                    var orderModel = orderDetail.copyWith(status: 'processing');
+                    Navigator.pushReplacementNamed(context, Routes.orderScreen,
+                        arguments: orderModel);
+                  }
+                },
+                builder: (context, state) {
+                  if (state.acceptOrderLoading) {
+                    return const Center(
+                        child: CircularProgressIndicator(color: kGreenPrimary));
+                  }
+                  return orderDetail.status == 'new'
+                      ? BlurredOrderDetails(orderDetail: orderDetail)
+                      : OrderDetailWithoutBlur(orderDetail: orderDetail);
+                },
+              ),
             ),
           ),
         ],
@@ -83,6 +108,11 @@ class OrderDetailWithoutBlur extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      context
+          .read<PickupPartnerBloc>()
+          .add(const PickupPartnerEvent.getPickupPartners());
+    });
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -91,15 +121,33 @@ class OrderDetailWithoutBlur extends StatelessWidget {
               deviceName: orderDetail.productDetails?.name ?? '----',
               image: orderDetail.productDetails?.image ?? '',
               price: orderDetail.productDetails?.price ?? '--'),
-          const OrderDetailTopPart(),
+          orderDetail.status == 'cancelled'
+              ? kEmpty
+              : OrderDetailTopPart(orderDetail: orderDetail),
           kHeight20,
-          PartnerDetailTile(partner: orderDetail.partner),
+          BlocBuilder<PickupPartnerBloc, PickupPartnerState>(
+            builder: (context, state) {
+              if (state.assigningOrderLoader) {
+                return const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: ShimmerLoader(
+                      itemCount: 1,
+                      height: 50,
+                      scrollDirection: Axis.vertical,
+                      width: double.infinity),
+                );
+              }
+              return PartnerDetailTile(
+                  status: orderDetail.status!,
+                  partner: orderDetail.partner,
+                  orderId: orderDetail.id!);
+            },
+          ),
           kHeight20,
           PickUpDetailOrderTile(
             isBlurred: false,
             isUser: true,
-            name: orderDetail.user?.name ??
-                '',
+            name: orderDetail.user?.name ?? '',
             dateTime:
                 '${orderDetail.pickUpDetails?.time ?? '--,--'} ${orderDetail.pickUpDetails?.date ?? '--/--/--'}',
             address: orderDetail.user?.address ?? '----- ------- -------',

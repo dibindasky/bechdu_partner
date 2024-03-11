@@ -88,4 +88,28 @@ class OrderService implements OrderRepo {
       return Left(Failure(message: errorMessage));
     }
   }
+
+  @override
+  Future<Either<Failure, SuccessResponseModel>> cancelOrder(
+      {required String phone, required String orderId}) async {
+    try {
+      final response = await _apiService.put(ApiEndPoints.cancelOrder
+          .replaceFirst('{partnerPhone}', phone)
+          .replaceFirst('{orderId}', orderId));
+      return Right(SuccessResponseModel.fromJson(response.data));
+    } on DioException catch (e) {
+      try {
+        log('acceptOrder dio exception => $e');
+        log(e.response.toString());
+        ErrorResponseModel error =
+            ErrorResponseModel.fromJson(e.response?.data);
+        return Left(Failure(message: error.error ?? errorMessage));
+      } catch (e) {
+        return Left(Failure(message: errorMessage));
+      }
+    } catch (e) {
+      log('acceptOrder exception => $e');
+      return Left(Failure(message: errorMessage));
+    }
+  }
 }

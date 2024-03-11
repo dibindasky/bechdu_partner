@@ -11,14 +11,16 @@ class OrdersListTileHome extends StatelessWidget {
   const OrdersListTileHome({
     super.key,
     required this.orderDetail,
-    required this.newOrder,
+    required this.showExpansion,
   });
 
   final OrderDetail orderDetail;
-  final bool newOrder;
+  final bool showExpansion;
 
   @override
   Widget build(BuildContext context) {
+    print(orderDetail.orderId);
+    print(orderDetail.productDetails?.options?.map((e) => e.heading).toList());
     return Container(
       margin: const EdgeInsets.only(left: 15, right: 15, top: 10),
       decoration: BoxDecoration(
@@ -26,7 +28,7 @@ class OrdersListTileHome extends StatelessWidget {
           color: kBluelight,
           border: Border.all(color: kBlack)),
       child: CustomExpansionTile(
-        isExpandable: !newOrder,
+        isExpandable: !showExpansion,
         title: Row(
           children: [
             kWidth10,
@@ -61,7 +63,7 @@ class OrdersListTileHome extends StatelessWidget {
             PhoneDetailTile(orderDetail: orderDetail),
           ],
         ),
-        children: newOrder
+        children: showExpansion
             ? []
             : [
                 PickUpDetailOrderTile(

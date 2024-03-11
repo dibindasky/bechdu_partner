@@ -10,4 +10,10 @@ class PickupPartnerEvent with _$PickupPartnerEvent {
       BlocPickupPartners;
   const factory PickupPartnerEvent.unBlocPickupPartners({required String id}) =
       UnBlocPickupPartners;
+  const factory PickupPartnerEvent.getPartnerProfile() = GetPartnerProfile;
+  const factory PickupPartnerEvent.assignOrderToPickupPartner(
+      {required String partnerId,
+      required String orderId}) = AssignOrderToPickupPartner;
+  const factory PickupPartnerEvent.deAssignOrderFromPickupPartner(
+      {required String orderId}) = DeAssignOrderFromPickupPartner;
 }

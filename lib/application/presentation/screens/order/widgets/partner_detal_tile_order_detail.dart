@@ -1,17 +1,26 @@
+import 'package:bechdu_partner/application/business_logic/pickup_partner/pickup_partner_bloc.dart';
 import 'package:bechdu_partner/application/presentation/screens/order/dialoges/show_bottom_sheet_assign_partner.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:bechdu_partner/application/presentation/widgets/status_colored_box.dart';
 import 'package:bechdu_partner/domain/model/order/get_partner_order_response_model/partner.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class PartnerDetailTile extends StatelessWidget {
-  const PartnerDetailTile({super.key, required this.partner});
+  const PartnerDetailTile(
+      {super.key,
+      required this.partner,
+      required this.orderId,
+      required this.status});
 
   final Partner? partner;
+  final String orderId;
+  final String status;
 
   @override
   Widget build(BuildContext context) {
+    Partner? pickup = partner;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Material(
@@ -27,29 +36,37 @@ class PartnerDetailTile extends StatelessWidget {
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(partner?.pickUpPersonName=='' ? 'Assign pickup':partner?.pickUpPersonName??'', style: textHeadBold1),
-                  StatusColoredBox(
-                    text: partner?.pickUpPersonName != ''
-                        ? 'Change Partner'
-                        : 'Assign Partner',
-                    color: kBluePrimary,
-                    onTap: () {
-                      showBottomSheetAssignPartner(context);
-                    },
+                  Expanded(
+                    child: Text(
+                        pickup?.pickUpPersonName == ''
+                            ? 'Assign pickup'
+                            : pickup?.pickUpPersonName ?? '',
+                        style: textHeadBold1),
+                  ),
+                  kWidth20,
+                  Expanded(
+                    child: status == 'cancelled'
+                        ? const StatusColoredBox(
+                            text: 'cancelled', color: kRedLight)
+                        : StatusColoredBox(
+                            text: pickup?.pickUpPersonName != ''
+                                ? 'DeAssign Partner'
+                                : 'Assign Partner',
+                            color: kBluePrimary,
+                            onTap: () {
+                              if (pickup?.pickUpPersonName != '') {
+                                context.read<PickupPartnerBloc>().add(
+                                    PickupPartnerEvent
+                                        .deAssignOrderFromPickupPartner(
+                                            orderId: orderId));
+                              } else {
+                                showBottomSheetAssignPartner(context, orderId);
+                              }
+                            },
+                          ),
                   )
                 ],
               ),
-              // subtitle: SizedBox(
-              //   width: sWidth * 0.2,
-              //   child: Row(
-              //     children: [
-              //       Text('25 Orders',
-              //           style: textHeadSemiBold1.copyWith(color: kGreyLight)),
-              //       kWidth10,
-              //       Text('Out For Pickup', style: textHeadSemiBold1)
-              //     ],
-              //   ),
-              // ),
             ),
           ),
         ),

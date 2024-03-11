@@ -10,4 +10,6 @@ abstract class OrderRepo {
       getPartnerAssignedOrders({required String phone});
   Future<Either<Failure, SuccessResponseModel>> acceptOrder(
       {required String phone, required String orderId});
+  Future<Either<Failure, SuccessResponseModel>> cancelOrder(
+      {required String phone, required String orderId});
 }

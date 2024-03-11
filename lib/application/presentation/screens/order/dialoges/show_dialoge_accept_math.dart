@@ -8,7 +8,7 @@ import 'package:bechdu_partner/application/presentation/utils/snackbar/snack_sho
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-Future<dynamic> showDialogAcceptMathCalc(BuildContext context,String orderId) {
+Future<dynamic> showDialogAcceptMathCalc(BuildContext context, String orderId) {
   final random = Random();
   return showDialog(
     context: context,
@@ -63,7 +63,8 @@ Future<dynamic> showDialogAcceptMathCalc(BuildContext context,String orderId) {
                           onTap: () {
                             try {
                               if (num1 + num2 == int.parse(sum)) {
-                                context.read<OrdersBloc>().add(OrdersEvent.acceptOrder(orderId: orderId));
+                                context.read<OrdersBloc>().add(
+                                    OrdersEvent.acceptOrder(orderId: orderId));
                                 Navigator.of(context).pop();
                               } else {
                                 Navigator.of(context).pop();

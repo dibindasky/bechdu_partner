@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:bechdu_partner/data/secure_storage/secure_storage.dart';
+import 'package:bechdu_partner/domain/model/partner_profile/partner_profile.dart';
 import 'package:bechdu_partner/domain/model/pickup_partner/add_pickup_partner_model/add_pickup_partner_model.dart';
 import 'package:bechdu_partner/domain/model/pickup_partner/get_pickup_partner_response_model/pick_up_person.dart';
 import 'package:bechdu_partner/domain/repository/service/pickup_partner_repo.dart';
@@ -23,6 +24,9 @@ class PickupPartnerBloc extends Bloc<PickupPartnerEvent, PickupPartnerState> {
     on<GetPickupPartners>(getPickupPartners);
     on<BlocPickupPartners>(blocPickupPartners);
     on<UnBlocPickupPartners>(unBlocPickupPartners);
+    on<GetPartnerProfile>(getPartnerProfile);
+    on<AssignOrderToPickupPartner>(assignOrderToPickupPartner);
+    on<DeAssignOrderFromPickupPartner>(deAssignOrderFromPickupPartner);
   }
 
   FutureOr<void> addPickupPartner(AddPickupPartner event, emit) async {
@@ -30,7 +34,9 @@ class PickupPartnerBloc extends Bloc<PickupPartnerEvent, PickupPartnerState> {
         partnerAddingLoader: true,
         message: null,
         hasError: false,
-        pickupPersonAdded: false));
+        pickupPersonAdded: false,
+        orderAssigned: false,
+        orderDeAssigned: false));
     final phone = await SecureStorage.getPhone();
     if (phone == null) {
       return emit(state.copyWith(
@@ -60,7 +66,9 @@ class PickupPartnerBloc extends Bloc<PickupPartnerEvent, PickupPartnerState> {
         isLoading: true,
         message: null,
         hasError: false,
-        pickupPersonAdded: false));
+        pickupPersonAdded: false,
+        orderAssigned: false,
+        orderDeAssigned: false));
     final phone = await SecureStorage.getPhone();
     if (phone == null) {
       return emit(state.copyWith(
@@ -81,7 +89,9 @@ class PickupPartnerBloc extends Bloc<PickupPartnerEvent, PickupPartnerState> {
         isLoading: true,
         message: null,
         hasError: false,
-        pickupPersonAdded: false));
+        pickupPersonAdded: false,
+        orderAssigned: false,
+        orderDeAssigned: false));
     final phone = await SecureStorage.getPhone();
     if (phone == null) {
       return emit(state.copyWith(
@@ -104,7 +114,9 @@ class PickupPartnerBloc extends Bloc<PickupPartnerEvent, PickupPartnerState> {
         isLoading: true,
         message: null,
         hasError: false,
-        pickupPersonAdded: false));
+        pickupPersonAdded: false,
+        orderAssigned: false,
+        orderDeAssigned: false));
     final phone = await SecureStorage.getPhone();
     if (phone == null) {
       return emit(state.copyWith(
@@ -119,6 +131,97 @@ class PickupPartnerBloc extends Bloc<PickupPartnerEvent, PickupPartnerState> {
             isLoading: false, hasError: true, message: l.message)), (r) {
       emit(state.copyWith(isLoading: false, message: r.message));
       add(const PickupPartnerEvent.getPickupPartners());
+    });
+  }
+
+  FutureOr<void> getPartnerProfile(GetPartnerProfile event, emit) async {
+    emit(state.copyWith(
+        isLoading: true,
+        message: null,
+        hasError: false,
+        orderDeAssigned: false,
+        orderAssigned: false,
+        pickupPersonAdded: false));
+    final phone = await SecureStorage.getPhone();
+    if (phone == null) {
+      return emit(state.copyWith(
+          isLoading: false,
+          hasError: true,
+          message: 'failed to connect, please try again'));
+    }
+    final result = await pickupPartnerRepo.getPartnerProfile(phone: phone);
+    result.fold(
+        (l) => emit(state.copyWith(
+            isLoading: false, hasError: true, message: l.message)), (r) {
+      emit(state.copyWith(isLoading: false, partnerProfile: r));
+    });
+  }
+
+  FutureOr<void> assignOrderToPickupPartner(
+      AssignOrderToPickupPartner event, emit) async {
+    emit(state.copyWith(
+        isLoading: true,
+        assigningOrderLoader: true,
+        orderAssigned: false,
+        orderDeAssigned: false,
+        message: null,
+        hasError: false,
+        pickupPersonAdded: false));
+    final phone = await SecureStorage.getPhone();
+    if (phone == null) {
+      return emit(state.copyWith(
+          isLoading: false,
+          hasError: true,
+          message: 'failed to connect, please try again'));
+    }
+    final result = await pickupPartnerRepo.assignOrderToPickupPartner(
+        phone: phone, orderId: event.orderId, pickupId: event.partnerId);
+    result.fold(
+        (l) => emit(state.copyWith(
+            isLoading: false,
+            hasError: true,
+            message: l.message,
+            assigningOrderLoader: false)), (r) {
+      emit(state.copyWith(
+          isLoading: false,
+          message: r.message,
+          assigningOrderLoader: false,
+          orderAssigned: true,
+          selectedPickup: state.pickUpPersons!
+              .firstWhere((element) => element.id == event.partnerId)));
+    });
+  }
+
+  FutureOr<void> deAssignOrderFromPickupPartner(
+      DeAssignOrderFromPickupPartner event, emit) async {
+    emit(state.copyWith(
+        isLoading: true,
+        assigningOrderLoader: true,
+        orderDeAssigned: false,
+        message: null,
+        hasError: false,
+        pickupPersonAdded: false));
+    final phone = await SecureStorage.getPhone();
+    if (phone == null) {
+      return emit(state.copyWith(
+          isLoading: false,
+          hasError: true,
+          message: 'failed to connect, please try again'));
+    }
+    final result = await pickupPartnerRepo.deAssignOrderFromPickupPartner(
+        phone: phone, orderId: event.orderId);
+    result.fold(
+        (l) => emit(state.copyWith(
+            isLoading: false,
+            hasError: true,
+            message: l.message,
+            assigningOrderLoader: false)), (r) {
+      emit(state.copyWith(
+          isLoading: false,
+          message: r.message,
+          assigningOrderLoader: false,
+          orderDeAssigned: true,
+          selectedPickup: null));
     });
   }
 }
