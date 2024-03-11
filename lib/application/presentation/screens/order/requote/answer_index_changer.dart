@@ -37,7 +37,7 @@ class AnswerIndexChanger extends StatelessWidget {
                     } else {
                       context
                           .read<RequoteBloc>()
-                          .add(const RequoteEvent.changeIndex());
+                          .add( RequoteEvent.changeIndex(index: state.requoteIndex+1));
                     }
                   },
                   text: 'Continue',

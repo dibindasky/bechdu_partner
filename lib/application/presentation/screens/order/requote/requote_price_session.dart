@@ -3,12 +3,16 @@ import 'package:bechdu_partner/application/presentation/screens/order/requote/re
 import 'package:bechdu_partner/application/presentation/utils/clipper/vertical_curves.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
+import 'package:bechdu_partner/domain/model/order/get_partner_order_response_model/order_detail.dart';
 import 'package:flutter/material.dart';
 
 class RequotePriceSession extends StatelessWidget {
   const RequotePriceSession({
     super.key,
+    required this.orderDetail,
   });
+
+  final OrderDetail orderDetail;
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +22,15 @@ class RequotePriceSession extends StatelessWidget {
         Column(
           children: [
             CircleAvatar(
-                radius: sWidth * 0.20,
-                backgroundImage: const AssetImage(phoneImage)),
+              backgroundColor: kWhite,
+              radius: sWidth * 0.20,
+              child: Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: orderDetail.productDetails?.image != null
+                    ? Image.network(orderDetail.productDetails!.image!)
+                    : const Icon(Icons.image),
+              ),
+            ),
             kHeight30,
             const RequoteTabs(),
             kHeight20,

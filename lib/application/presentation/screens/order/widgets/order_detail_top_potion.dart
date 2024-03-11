@@ -1,3 +1,4 @@
+import 'package:bechdu_partner/application/business_logic/order/requote/requote_bloc.dart';
 import 'package:bechdu_partner/application/presentation/screens/order/dialoges/show_dialog_cancel_order.dart';
 import 'package:bechdu_partner/application/presentation/screens/order/dialoges/show_dialoge_reschedule.dart';
 import 'package:bechdu_partner/application/presentation/screens/order/requote/requote_price_session.dart';
@@ -6,6 +7,7 @@ import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:bechdu_partner/domain/model/order/get_partner_order_response_model/order_detail.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class OrderDetailTopPart extends StatelessWidget {
   const OrderDetailTopPart({
@@ -43,10 +45,11 @@ class OrderDetailTopPart extends StatelessWidget {
             ],
           ),
           kHeight10,
-          OrdersCustomButton(
-              text: 'Requote Price',
-              image: iconRedo,
-              onTap: () {
+          BlocConsumer<RequoteBloc, RequoteState>(
+            listenWhen: (previous, current) =>
+                previous.questionLoading && current.sections != null,
+            listener: (context, state) {
+              if (state.sections!.isNotEmpty) {
                 showBottomSheet(
                     clipBehavior: Clip.none,
                     backgroundColor: kWhite,
@@ -54,10 +57,27 @@ class OrderDetailTopPart extends StatelessWidget {
                     builder: (context) => BottomSheet(
                           backgroundColor: kWhite,
                           onClosing: () {},
-                          builder: (context) => const RequotePriceSession(),
+                          builder: (context) =>
+                              RequotePriceSession(orderDetail: orderDetail),
                         ));
-              },
-              expnded: false),
+              }
+            },
+            builder: (context, state) => state.questionLoading
+                ? LinearProgressIndicator(
+                    minHeight: 30,
+                    backgroundColor: kGreyLight,
+                    color: kBluePrimary,
+                    borderRadius: kRadius10,
+                  )
+                : OrdersCustomButton(
+                    text: 'Requote Price',
+                    image: iconRedo,
+                    onTap: () {
+                      context.read<RequoteBloc>().add(RequoteEvent.getQuestions(
+                          category: orderDetail.productDetails!.category!));
+                    },
+                    expnded: false),
+          ),
         ],
       ),
     );

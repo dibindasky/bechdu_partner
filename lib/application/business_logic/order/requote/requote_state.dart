@@ -6,7 +6,9 @@ class RequoteState with _$RequoteState {
     required bool isLoading,
     required bool hasError,
     String? message,
+    required bool questionLoading,
     required int requoteIndex,
+    List<Section>? sections,
     required List<Map<String, dynamic>> map,
     required List<Map<String, dynamic>> markedanswer,
   }) = _Initial;
@@ -16,5 +18,6 @@ class RequoteState with _$RequoteState {
       hasError: false,
       map: testQuestionMap,
       requoteIndex: 0,
+      questionLoading: false,
       markedanswer: []);
 }

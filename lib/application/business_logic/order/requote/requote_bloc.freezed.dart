@@ -19,21 +19,24 @@ mixin _$RequoteEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String category) getQuestions,
-    required TResult Function() changeIndex,
+    required TResult Function(int index) changeIndex,
+    required TResult Function(int index) goBackIndex,
     required TResult Function(Map<String, dynamic> answer) markAnswer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String category)? getQuestions,
-    TResult? Function()? changeIndex,
+    TResult? Function(int index)? changeIndex,
+    TResult? Function(int index)? goBackIndex,
     TResult? Function(Map<String, dynamic> answer)? markAnswer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String category)? getQuestions,
-    TResult Function()? changeIndex,
+    TResult Function(int index)? changeIndex,
+    TResult Function(int index)? goBackIndex,
     TResult Function(Map<String, dynamic> answer)? markAnswer,
     required TResult orElse(),
   }) =>
@@ -41,22 +44,25 @@ mixin _$RequoteEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetQuestions value) getQuestions,
-    required TResult Function(_ChangeIndex value) changeIndex,
-    required TResult Function(_MarkAnswer value) markAnswer,
+    required TResult Function(ChangeIndex value) changeIndex,
+    required TResult Function(GoBackIndex value) goBackIndex,
+    required TResult Function(MarkAnswer value) markAnswer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetQuestions value)? getQuestions,
-    TResult? Function(_ChangeIndex value)? changeIndex,
-    TResult? Function(_MarkAnswer value)? markAnswer,
+    TResult? Function(ChangeIndex value)? changeIndex,
+    TResult? Function(GoBackIndex value)? goBackIndex,
+    TResult? Function(MarkAnswer value)? markAnswer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetQuestions value)? getQuestions,
-    TResult Function(_ChangeIndex value)? changeIndex,
-    TResult Function(_MarkAnswer value)? markAnswer,
+    TResult Function(ChangeIndex value)? changeIndex,
+    TResult Function(GoBackIndex value)? goBackIndex,
+    TResult Function(MarkAnswer value)? markAnswer,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -146,7 +152,8 @@ class _$GetQuestionsImpl implements GetQuestions {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String category) getQuestions,
-    required TResult Function() changeIndex,
+    required TResult Function(int index) changeIndex,
+    required TResult Function(int index) goBackIndex,
     required TResult Function(Map<String, dynamic> answer) markAnswer,
   }) {
     return getQuestions(category);
@@ -156,7 +163,8 @@ class _$GetQuestionsImpl implements GetQuestions {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String category)? getQuestions,
-    TResult? Function()? changeIndex,
+    TResult? Function(int index)? changeIndex,
+    TResult? Function(int index)? goBackIndex,
     TResult? Function(Map<String, dynamic> answer)? markAnswer,
   }) {
     return getQuestions?.call(category);
@@ -166,7 +174,8 @@ class _$GetQuestionsImpl implements GetQuestions {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String category)? getQuestions,
-    TResult Function()? changeIndex,
+    TResult Function(int index)? changeIndex,
+    TResult Function(int index)? goBackIndex,
     TResult Function(Map<String, dynamic> answer)? markAnswer,
     required TResult orElse(),
   }) {
@@ -180,8 +189,9 @@ class _$GetQuestionsImpl implements GetQuestions {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetQuestions value) getQuestions,
-    required TResult Function(_ChangeIndex value) changeIndex,
-    required TResult Function(_MarkAnswer value) markAnswer,
+    required TResult Function(ChangeIndex value) changeIndex,
+    required TResult Function(GoBackIndex value) goBackIndex,
+    required TResult Function(MarkAnswer value) markAnswer,
   }) {
     return getQuestions(this);
   }
@@ -190,8 +200,9 @@ class _$GetQuestionsImpl implements GetQuestions {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetQuestions value)? getQuestions,
-    TResult? Function(_ChangeIndex value)? changeIndex,
-    TResult? Function(_MarkAnswer value)? markAnswer,
+    TResult? Function(ChangeIndex value)? changeIndex,
+    TResult? Function(GoBackIndex value)? goBackIndex,
+    TResult? Function(MarkAnswer value)? markAnswer,
   }) {
     return getQuestions?.call(this);
   }
@@ -200,8 +211,9 @@ class _$GetQuestionsImpl implements GetQuestions {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetQuestions value)? getQuestions,
-    TResult Function(_ChangeIndex value)? changeIndex,
-    TResult Function(_MarkAnswer value)? markAnswer,
+    TResult Function(ChangeIndex value)? changeIndex,
+    TResult Function(GoBackIndex value)? goBackIndex,
+    TResult Function(MarkAnswer value)? markAnswer,
     required TResult orElse(),
   }) {
     if (getQuestions != null) {
@@ -226,6 +238,8 @@ abstract class _$$ChangeIndexImplCopyWith<$Res> {
   factory _$$ChangeIndexImplCopyWith(
           _$ChangeIndexImpl value, $Res Function(_$ChangeIndexImpl) then) =
       __$$ChangeIndexImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int index});
 }
 
 /// @nodoc
@@ -235,57 +249,84 @@ class __$$ChangeIndexImplCopyWithImpl<$Res>
   __$$ChangeIndexImplCopyWithImpl(
       _$ChangeIndexImpl _value, $Res Function(_$ChangeIndexImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? index = null,
+  }) {
+    return _then(_$ChangeIndexImpl(
+      index: null == index
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$ChangeIndexImpl implements _ChangeIndex {
-  const _$ChangeIndexImpl();
+class _$ChangeIndexImpl implements ChangeIndex {
+  const _$ChangeIndexImpl({required this.index});
+
+  @override
+  final int index;
 
   @override
   String toString() {
-    return 'RequoteEvent.changeIndex()';
+    return 'RequoteEvent.changeIndex(index: $index)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ChangeIndexImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$ChangeIndexImpl &&
+            (identical(other.index, index) || other.index == index));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, index);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChangeIndexImplCopyWith<_$ChangeIndexImpl> get copyWith =>
+      __$$ChangeIndexImplCopyWithImpl<_$ChangeIndexImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String category) getQuestions,
-    required TResult Function() changeIndex,
+    required TResult Function(int index) changeIndex,
+    required TResult Function(int index) goBackIndex,
     required TResult Function(Map<String, dynamic> answer) markAnswer,
   }) {
-    return changeIndex();
+    return changeIndex(index);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String category)? getQuestions,
-    TResult? Function()? changeIndex,
+    TResult? Function(int index)? changeIndex,
+    TResult? Function(int index)? goBackIndex,
     TResult? Function(Map<String, dynamic> answer)? markAnswer,
   }) {
-    return changeIndex?.call();
+    return changeIndex?.call(index);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String category)? getQuestions,
-    TResult Function()? changeIndex,
+    TResult Function(int index)? changeIndex,
+    TResult Function(int index)? goBackIndex,
     TResult Function(Map<String, dynamic> answer)? markAnswer,
     required TResult orElse(),
   }) {
     if (changeIndex != null) {
-      return changeIndex();
+      return changeIndex(index);
     }
     return orElse();
   }
@@ -294,8 +335,9 @@ class _$ChangeIndexImpl implements _ChangeIndex {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetQuestions value) getQuestions,
-    required TResult Function(_ChangeIndex value) changeIndex,
-    required TResult Function(_MarkAnswer value) markAnswer,
+    required TResult Function(ChangeIndex value) changeIndex,
+    required TResult Function(GoBackIndex value) goBackIndex,
+    required TResult Function(MarkAnswer value) markAnswer,
   }) {
     return changeIndex(this);
   }
@@ -304,8 +346,9 @@ class _$ChangeIndexImpl implements _ChangeIndex {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetQuestions value)? getQuestions,
-    TResult? Function(_ChangeIndex value)? changeIndex,
-    TResult? Function(_MarkAnswer value)? markAnswer,
+    TResult? Function(ChangeIndex value)? changeIndex,
+    TResult? Function(GoBackIndex value)? goBackIndex,
+    TResult? Function(MarkAnswer value)? markAnswer,
   }) {
     return changeIndex?.call(this);
   }
@@ -314,8 +357,9 @@ class _$ChangeIndexImpl implements _ChangeIndex {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetQuestions value)? getQuestions,
-    TResult Function(_ChangeIndex value)? changeIndex,
-    TResult Function(_MarkAnswer value)? markAnswer,
+    TResult Function(ChangeIndex value)? changeIndex,
+    TResult Function(GoBackIndex value)? goBackIndex,
+    TResult Function(MarkAnswer value)? markAnswer,
     required TResult orElse(),
   }) {
     if (changeIndex != null) {
@@ -325,8 +369,158 @@ class _$ChangeIndexImpl implements _ChangeIndex {
   }
 }
 
-abstract class _ChangeIndex implements RequoteEvent {
-  const factory _ChangeIndex() = _$ChangeIndexImpl;
+abstract class ChangeIndex implements RequoteEvent {
+  const factory ChangeIndex({required final int index}) = _$ChangeIndexImpl;
+
+  int get index;
+  @JsonKey(ignore: true)
+  _$$ChangeIndexImplCopyWith<_$ChangeIndexImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GoBackIndexImplCopyWith<$Res> {
+  factory _$$GoBackIndexImplCopyWith(
+          _$GoBackIndexImpl value, $Res Function(_$GoBackIndexImpl) then) =
+      __$$GoBackIndexImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int index});
+}
+
+/// @nodoc
+class __$$GoBackIndexImplCopyWithImpl<$Res>
+    extends _$RequoteEventCopyWithImpl<$Res, _$GoBackIndexImpl>
+    implements _$$GoBackIndexImplCopyWith<$Res> {
+  __$$GoBackIndexImplCopyWithImpl(
+      _$GoBackIndexImpl _value, $Res Function(_$GoBackIndexImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? index = null,
+  }) {
+    return _then(_$GoBackIndexImpl(
+      index: null == index
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GoBackIndexImpl implements GoBackIndex {
+  const _$GoBackIndexImpl({required this.index});
+
+  @override
+  final int index;
+
+  @override
+  String toString() {
+    return 'RequoteEvent.goBackIndex(index: $index)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GoBackIndexImpl &&
+            (identical(other.index, index) || other.index == index));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, index);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GoBackIndexImplCopyWith<_$GoBackIndexImpl> get copyWith =>
+      __$$GoBackIndexImplCopyWithImpl<_$GoBackIndexImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String category) getQuestions,
+    required TResult Function(int index) changeIndex,
+    required TResult Function(int index) goBackIndex,
+    required TResult Function(Map<String, dynamic> answer) markAnswer,
+  }) {
+    return goBackIndex(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String category)? getQuestions,
+    TResult? Function(int index)? changeIndex,
+    TResult? Function(int index)? goBackIndex,
+    TResult? Function(Map<String, dynamic> answer)? markAnswer,
+  }) {
+    return goBackIndex?.call(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String category)? getQuestions,
+    TResult Function(int index)? changeIndex,
+    TResult Function(int index)? goBackIndex,
+    TResult Function(Map<String, dynamic> answer)? markAnswer,
+    required TResult orElse(),
+  }) {
+    if (goBackIndex != null) {
+      return goBackIndex(index);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetQuestions value) getQuestions,
+    required TResult Function(ChangeIndex value) changeIndex,
+    required TResult Function(GoBackIndex value) goBackIndex,
+    required TResult Function(MarkAnswer value) markAnswer,
+  }) {
+    return goBackIndex(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetQuestions value)? getQuestions,
+    TResult? Function(ChangeIndex value)? changeIndex,
+    TResult? Function(GoBackIndex value)? goBackIndex,
+    TResult? Function(MarkAnswer value)? markAnswer,
+  }) {
+    return goBackIndex?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetQuestions value)? getQuestions,
+    TResult Function(ChangeIndex value)? changeIndex,
+    TResult Function(GoBackIndex value)? goBackIndex,
+    TResult Function(MarkAnswer value)? markAnswer,
+    required TResult orElse(),
+  }) {
+    if (goBackIndex != null) {
+      return goBackIndex(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GoBackIndex implements RequoteEvent {
+  const factory GoBackIndex({required final int index}) = _$GoBackIndexImpl;
+
+  int get index;
+  @JsonKey(ignore: true)
+  _$$GoBackIndexImplCopyWith<_$GoBackIndexImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -362,7 +556,7 @@ class __$$MarkAnswerImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$MarkAnswerImpl implements _MarkAnswer {
+class _$MarkAnswerImpl implements MarkAnswer {
   const _$MarkAnswerImpl({required final Map<String, dynamic> answer})
       : _answer = answer;
 
@@ -401,7 +595,8 @@ class _$MarkAnswerImpl implements _MarkAnswer {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String category) getQuestions,
-    required TResult Function() changeIndex,
+    required TResult Function(int index) changeIndex,
+    required TResult Function(int index) goBackIndex,
     required TResult Function(Map<String, dynamic> answer) markAnswer,
   }) {
     return markAnswer(answer);
@@ -411,7 +606,8 @@ class _$MarkAnswerImpl implements _MarkAnswer {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String category)? getQuestions,
-    TResult? Function()? changeIndex,
+    TResult? Function(int index)? changeIndex,
+    TResult? Function(int index)? goBackIndex,
     TResult? Function(Map<String, dynamic> answer)? markAnswer,
   }) {
     return markAnswer?.call(answer);
@@ -421,7 +617,8 @@ class _$MarkAnswerImpl implements _MarkAnswer {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String category)? getQuestions,
-    TResult Function()? changeIndex,
+    TResult Function(int index)? changeIndex,
+    TResult Function(int index)? goBackIndex,
     TResult Function(Map<String, dynamic> answer)? markAnswer,
     required TResult orElse(),
   }) {
@@ -435,8 +632,9 @@ class _$MarkAnswerImpl implements _MarkAnswer {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetQuestions value) getQuestions,
-    required TResult Function(_ChangeIndex value) changeIndex,
-    required TResult Function(_MarkAnswer value) markAnswer,
+    required TResult Function(ChangeIndex value) changeIndex,
+    required TResult Function(GoBackIndex value) goBackIndex,
+    required TResult Function(MarkAnswer value) markAnswer,
   }) {
     return markAnswer(this);
   }
@@ -445,8 +643,9 @@ class _$MarkAnswerImpl implements _MarkAnswer {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetQuestions value)? getQuestions,
-    TResult? Function(_ChangeIndex value)? changeIndex,
-    TResult? Function(_MarkAnswer value)? markAnswer,
+    TResult? Function(ChangeIndex value)? changeIndex,
+    TResult? Function(GoBackIndex value)? goBackIndex,
+    TResult? Function(MarkAnswer value)? markAnswer,
   }) {
     return markAnswer?.call(this);
   }
@@ -455,8 +654,9 @@ class _$MarkAnswerImpl implements _MarkAnswer {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetQuestions value)? getQuestions,
-    TResult Function(_ChangeIndex value)? changeIndex,
-    TResult Function(_MarkAnswer value)? markAnswer,
+    TResult Function(ChangeIndex value)? changeIndex,
+    TResult Function(GoBackIndex value)? goBackIndex,
+    TResult Function(MarkAnswer value)? markAnswer,
     required TResult orElse(),
   }) {
     if (markAnswer != null) {
@@ -466,8 +666,8 @@ class _$MarkAnswerImpl implements _MarkAnswer {
   }
 }
 
-abstract class _MarkAnswer implements RequoteEvent {
-  const factory _MarkAnswer({required final Map<String, dynamic> answer}) =
+abstract class MarkAnswer implements RequoteEvent {
+  const factory MarkAnswer({required final Map<String, dynamic> answer}) =
       _$MarkAnswerImpl;
 
   Map<String, dynamic> get answer;
@@ -481,7 +681,9 @@ mixin _$RequoteState {
   bool get isLoading => throw _privateConstructorUsedError;
   bool get hasError => throw _privateConstructorUsedError;
   String? get message => throw _privateConstructorUsedError;
+  bool get questionLoading => throw _privateConstructorUsedError;
   int get requoteIndex => throw _privateConstructorUsedError;
+  List<Section>? get sections => throw _privateConstructorUsedError;
   List<Map<String, dynamic>> get map => throw _privateConstructorUsedError;
   List<Map<String, dynamic>> get markedanswer =>
       throw _privateConstructorUsedError;
@@ -501,7 +703,9 @@ abstract class $RequoteStateCopyWith<$Res> {
       {bool isLoading,
       bool hasError,
       String? message,
+      bool questionLoading,
       int requoteIndex,
+      List<Section>? sections,
       List<Map<String, dynamic>> map,
       List<Map<String, dynamic>> markedanswer});
 }
@@ -522,7 +726,9 @@ class _$RequoteStateCopyWithImpl<$Res, $Val extends RequoteState>
     Object? isLoading = null,
     Object? hasError = null,
     Object? message = freezed,
+    Object? questionLoading = null,
     Object? requoteIndex = null,
+    Object? sections = freezed,
     Object? map = null,
     Object? markedanswer = null,
   }) {
@@ -539,10 +745,18 @@ class _$RequoteStateCopyWithImpl<$Res, $Val extends RequoteState>
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String?,
+      questionLoading: null == questionLoading
+          ? _value.questionLoading
+          : questionLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
       requoteIndex: null == requoteIndex
           ? _value.requoteIndex
           : requoteIndex // ignore: cast_nullable_to_non_nullable
               as int,
+      sections: freezed == sections
+          ? _value.sections
+          : sections // ignore: cast_nullable_to_non_nullable
+              as List<Section>?,
       map: null == map
           ? _value.map
           : map // ignore: cast_nullable_to_non_nullable
@@ -567,7 +781,9 @@ abstract class _$$InitialImplCopyWith<$Res>
       {bool isLoading,
       bool hasError,
       String? message,
+      bool questionLoading,
       int requoteIndex,
+      List<Section>? sections,
       List<Map<String, dynamic>> map,
       List<Map<String, dynamic>> markedanswer});
 }
@@ -586,7 +802,9 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? isLoading = null,
     Object? hasError = null,
     Object? message = freezed,
+    Object? questionLoading = null,
     Object? requoteIndex = null,
+    Object? sections = freezed,
     Object? map = null,
     Object? markedanswer = null,
   }) {
@@ -603,10 +821,18 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String?,
+      questionLoading: null == questionLoading
+          ? _value.questionLoading
+          : questionLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
       requoteIndex: null == requoteIndex
           ? _value.requoteIndex
           : requoteIndex // ignore: cast_nullable_to_non_nullable
               as int,
+      sections: freezed == sections
+          ? _value._sections
+          : sections // ignore: cast_nullable_to_non_nullable
+              as List<Section>?,
       map: null == map
           ? _value._map
           : map // ignore: cast_nullable_to_non_nullable
@@ -626,10 +852,13 @@ class _$InitialImpl implements _Initial {
       {required this.isLoading,
       required this.hasError,
       this.message,
+      required this.questionLoading,
       required this.requoteIndex,
+      final List<Section>? sections,
       required final List<Map<String, dynamic>> map,
       required final List<Map<String, dynamic>> markedanswer})
-      : _map = map,
+      : _sections = sections,
+        _map = map,
         _markedanswer = markedanswer;
 
   @override
@@ -639,7 +868,19 @@ class _$InitialImpl implements _Initial {
   @override
   final String? message;
   @override
+  final bool questionLoading;
+  @override
   final int requoteIndex;
+  final List<Section>? _sections;
+  @override
+  List<Section>? get sections {
+    final value = _sections;
+    if (value == null) return null;
+    if (_sections is EqualUnmodifiableListView) return _sections;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   final List<Map<String, dynamic>> _map;
   @override
   List<Map<String, dynamic>> get map {
@@ -658,7 +899,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'RequoteState(isLoading: $isLoading, hasError: $hasError, message: $message, requoteIndex: $requoteIndex, map: $map, markedanswer: $markedanswer)';
+    return 'RequoteState(isLoading: $isLoading, hasError: $hasError, message: $message, questionLoading: $questionLoading, requoteIndex: $requoteIndex, sections: $sections, map: $map, markedanswer: $markedanswer)';
   }
 
   @override
@@ -671,8 +912,11 @@ class _$InitialImpl implements _Initial {
             (identical(other.hasError, hasError) ||
                 other.hasError == hasError) &&
             (identical(other.message, message) || other.message == message) &&
+            (identical(other.questionLoading, questionLoading) ||
+                other.questionLoading == questionLoading) &&
             (identical(other.requoteIndex, requoteIndex) ||
                 other.requoteIndex == requoteIndex) &&
+            const DeepCollectionEquality().equals(other._sections, _sections) &&
             const DeepCollectionEquality().equals(other._map, _map) &&
             const DeepCollectionEquality()
                 .equals(other._markedanswer, _markedanswer));
@@ -684,7 +928,9 @@ class _$InitialImpl implements _Initial {
       isLoading,
       hasError,
       message,
+      questionLoading,
       requoteIndex,
+      const DeepCollectionEquality().hash(_sections),
       const DeepCollectionEquality().hash(_map),
       const DeepCollectionEquality().hash(_markedanswer));
 
@@ -700,7 +946,9 @@ abstract class _Initial implements RequoteState {
       {required final bool isLoading,
       required final bool hasError,
       final String? message,
+      required final bool questionLoading,
       required final int requoteIndex,
+      final List<Section>? sections,
       required final List<Map<String, dynamic>> map,
       required final List<Map<String, dynamic>> markedanswer}) = _$InitialImpl;
 
@@ -711,7 +959,11 @@ abstract class _Initial implements RequoteState {
   @override
   String? get message;
   @override
+  bool get questionLoading;
+  @override
   int get requoteIndex;
+  @override
+  List<Section>? get sections;
   @override
   List<Map<String, dynamic>> get map;
   @override
