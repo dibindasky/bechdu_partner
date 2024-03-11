@@ -23,6 +23,10 @@ mixin _$PickupPartnerEvent {
     required TResult Function() getPickupPartners,
     required TResult Function(String id) blocPickupPartners,
     required TResult Function(String id) unBlocPickupPartners,
+    required TResult Function() getPartnerProfile,
+    required TResult Function(String partnerId, String orderId)
+        assignOrderToPickupPartner,
+    required TResult Function(String orderId) deAssignOrderFromPickupPartner,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,6 +36,10 @@ mixin _$PickupPartnerEvent {
     TResult? Function()? getPickupPartners,
     TResult? Function(String id)? blocPickupPartners,
     TResult? Function(String id)? unBlocPickupPartners,
+    TResult? Function()? getPartnerProfile,
+    TResult? Function(String partnerId, String orderId)?
+        assignOrderToPickupPartner,
+    TResult? Function(String orderId)? deAssignOrderFromPickupPartner,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,6 +49,10 @@ mixin _$PickupPartnerEvent {
     TResult Function()? getPickupPartners,
     TResult Function(String id)? blocPickupPartners,
     TResult Function(String id)? unBlocPickupPartners,
+    TResult Function()? getPartnerProfile,
+    TResult Function(String partnerId, String orderId)?
+        assignOrderToPickupPartner,
+    TResult Function(String orderId)? deAssignOrderFromPickupPartner,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -50,6 +62,11 @@ mixin _$PickupPartnerEvent {
     required TResult Function(GetPickupPartners value) getPickupPartners,
     required TResult Function(BlocPickupPartners value) blocPickupPartners,
     required TResult Function(UnBlocPickupPartners value) unBlocPickupPartners,
+    required TResult Function(GetPartnerProfile value) getPartnerProfile,
+    required TResult Function(AssignOrderToPickupPartner value)
+        assignOrderToPickupPartner,
+    required TResult Function(DeAssignOrderFromPickupPartner value)
+        deAssignOrderFromPickupPartner,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -58,6 +75,11 @@ mixin _$PickupPartnerEvent {
     TResult? Function(GetPickupPartners value)? getPickupPartners,
     TResult? Function(BlocPickupPartners value)? blocPickupPartners,
     TResult? Function(UnBlocPickupPartners value)? unBlocPickupPartners,
+    TResult? Function(GetPartnerProfile value)? getPartnerProfile,
+    TResult? Function(AssignOrderToPickupPartner value)?
+        assignOrderToPickupPartner,
+    TResult? Function(DeAssignOrderFromPickupPartner value)?
+        deAssignOrderFromPickupPartner,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -66,6 +88,11 @@ mixin _$PickupPartnerEvent {
     TResult Function(GetPickupPartners value)? getPickupPartners,
     TResult Function(BlocPickupPartners value)? blocPickupPartners,
     TResult Function(UnBlocPickupPartners value)? unBlocPickupPartners,
+    TResult Function(GetPartnerProfile value)? getPartnerProfile,
+    TResult Function(AssignOrderToPickupPartner value)?
+        assignOrderToPickupPartner,
+    TResult Function(DeAssignOrderFromPickupPartner value)?
+        deAssignOrderFromPickupPartner,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -160,6 +187,10 @@ class _$AddPickupPartnerImpl implements AddPickupPartner {
     required TResult Function() getPickupPartners,
     required TResult Function(String id) blocPickupPartners,
     required TResult Function(String id) unBlocPickupPartners,
+    required TResult Function() getPartnerProfile,
+    required TResult Function(String partnerId, String orderId)
+        assignOrderToPickupPartner,
+    required TResult Function(String orderId) deAssignOrderFromPickupPartner,
   }) {
     return addPickupPartner(addPickupPartnerModel);
   }
@@ -172,6 +203,10 @@ class _$AddPickupPartnerImpl implements AddPickupPartner {
     TResult? Function()? getPickupPartners,
     TResult? Function(String id)? blocPickupPartners,
     TResult? Function(String id)? unBlocPickupPartners,
+    TResult? Function()? getPartnerProfile,
+    TResult? Function(String partnerId, String orderId)?
+        assignOrderToPickupPartner,
+    TResult? Function(String orderId)? deAssignOrderFromPickupPartner,
   }) {
     return addPickupPartner?.call(addPickupPartnerModel);
   }
@@ -184,6 +219,10 @@ class _$AddPickupPartnerImpl implements AddPickupPartner {
     TResult Function()? getPickupPartners,
     TResult Function(String id)? blocPickupPartners,
     TResult Function(String id)? unBlocPickupPartners,
+    TResult Function()? getPartnerProfile,
+    TResult Function(String partnerId, String orderId)?
+        assignOrderToPickupPartner,
+    TResult Function(String orderId)? deAssignOrderFromPickupPartner,
     required TResult orElse(),
   }) {
     if (addPickupPartner != null) {
@@ -199,6 +238,11 @@ class _$AddPickupPartnerImpl implements AddPickupPartner {
     required TResult Function(GetPickupPartners value) getPickupPartners,
     required TResult Function(BlocPickupPartners value) blocPickupPartners,
     required TResult Function(UnBlocPickupPartners value) unBlocPickupPartners,
+    required TResult Function(GetPartnerProfile value) getPartnerProfile,
+    required TResult Function(AssignOrderToPickupPartner value)
+        assignOrderToPickupPartner,
+    required TResult Function(DeAssignOrderFromPickupPartner value)
+        deAssignOrderFromPickupPartner,
   }) {
     return addPickupPartner(this);
   }
@@ -210,6 +254,11 @@ class _$AddPickupPartnerImpl implements AddPickupPartner {
     TResult? Function(GetPickupPartners value)? getPickupPartners,
     TResult? Function(BlocPickupPartners value)? blocPickupPartners,
     TResult? Function(UnBlocPickupPartners value)? unBlocPickupPartners,
+    TResult? Function(GetPartnerProfile value)? getPartnerProfile,
+    TResult? Function(AssignOrderToPickupPartner value)?
+        assignOrderToPickupPartner,
+    TResult? Function(DeAssignOrderFromPickupPartner value)?
+        deAssignOrderFromPickupPartner,
   }) {
     return addPickupPartner?.call(this);
   }
@@ -221,6 +270,11 @@ class _$AddPickupPartnerImpl implements AddPickupPartner {
     TResult Function(GetPickupPartners value)? getPickupPartners,
     TResult Function(BlocPickupPartners value)? blocPickupPartners,
     TResult Function(UnBlocPickupPartners value)? unBlocPickupPartners,
+    TResult Function(GetPartnerProfile value)? getPartnerProfile,
+    TResult Function(AssignOrderToPickupPartner value)?
+        assignOrderToPickupPartner,
+    TResult Function(DeAssignOrderFromPickupPartner value)?
+        deAssignOrderFromPickupPartner,
     required TResult orElse(),
   }) {
     if (addPickupPartner != null) {
@@ -284,6 +338,10 @@ class _$GetPickupPartnersImpl implements GetPickupPartners {
     required TResult Function() getPickupPartners,
     required TResult Function(String id) blocPickupPartners,
     required TResult Function(String id) unBlocPickupPartners,
+    required TResult Function() getPartnerProfile,
+    required TResult Function(String partnerId, String orderId)
+        assignOrderToPickupPartner,
+    required TResult Function(String orderId) deAssignOrderFromPickupPartner,
   }) {
     return getPickupPartners();
   }
@@ -296,6 +354,10 @@ class _$GetPickupPartnersImpl implements GetPickupPartners {
     TResult? Function()? getPickupPartners,
     TResult? Function(String id)? blocPickupPartners,
     TResult? Function(String id)? unBlocPickupPartners,
+    TResult? Function()? getPartnerProfile,
+    TResult? Function(String partnerId, String orderId)?
+        assignOrderToPickupPartner,
+    TResult? Function(String orderId)? deAssignOrderFromPickupPartner,
   }) {
     return getPickupPartners?.call();
   }
@@ -308,6 +370,10 @@ class _$GetPickupPartnersImpl implements GetPickupPartners {
     TResult Function()? getPickupPartners,
     TResult Function(String id)? blocPickupPartners,
     TResult Function(String id)? unBlocPickupPartners,
+    TResult Function()? getPartnerProfile,
+    TResult Function(String partnerId, String orderId)?
+        assignOrderToPickupPartner,
+    TResult Function(String orderId)? deAssignOrderFromPickupPartner,
     required TResult orElse(),
   }) {
     if (getPickupPartners != null) {
@@ -323,6 +389,11 @@ class _$GetPickupPartnersImpl implements GetPickupPartners {
     required TResult Function(GetPickupPartners value) getPickupPartners,
     required TResult Function(BlocPickupPartners value) blocPickupPartners,
     required TResult Function(UnBlocPickupPartners value) unBlocPickupPartners,
+    required TResult Function(GetPartnerProfile value) getPartnerProfile,
+    required TResult Function(AssignOrderToPickupPartner value)
+        assignOrderToPickupPartner,
+    required TResult Function(DeAssignOrderFromPickupPartner value)
+        deAssignOrderFromPickupPartner,
   }) {
     return getPickupPartners(this);
   }
@@ -334,6 +405,11 @@ class _$GetPickupPartnersImpl implements GetPickupPartners {
     TResult? Function(GetPickupPartners value)? getPickupPartners,
     TResult? Function(BlocPickupPartners value)? blocPickupPartners,
     TResult? Function(UnBlocPickupPartners value)? unBlocPickupPartners,
+    TResult? Function(GetPartnerProfile value)? getPartnerProfile,
+    TResult? Function(AssignOrderToPickupPartner value)?
+        assignOrderToPickupPartner,
+    TResult? Function(DeAssignOrderFromPickupPartner value)?
+        deAssignOrderFromPickupPartner,
   }) {
     return getPickupPartners?.call(this);
   }
@@ -345,6 +421,11 @@ class _$GetPickupPartnersImpl implements GetPickupPartners {
     TResult Function(GetPickupPartners value)? getPickupPartners,
     TResult Function(BlocPickupPartners value)? blocPickupPartners,
     TResult Function(UnBlocPickupPartners value)? unBlocPickupPartners,
+    TResult Function(GetPartnerProfile value)? getPartnerProfile,
+    TResult Function(AssignOrderToPickupPartner value)?
+        assignOrderToPickupPartner,
+    TResult Function(DeAssignOrderFromPickupPartner value)?
+        deAssignOrderFromPickupPartner,
     required TResult orElse(),
   }) {
     if (getPickupPartners != null) {
@@ -428,6 +509,10 @@ class _$BlocPickupPartnersImpl implements BlocPickupPartners {
     required TResult Function() getPickupPartners,
     required TResult Function(String id) blocPickupPartners,
     required TResult Function(String id) unBlocPickupPartners,
+    required TResult Function() getPartnerProfile,
+    required TResult Function(String partnerId, String orderId)
+        assignOrderToPickupPartner,
+    required TResult Function(String orderId) deAssignOrderFromPickupPartner,
   }) {
     return blocPickupPartners(id);
   }
@@ -440,6 +525,10 @@ class _$BlocPickupPartnersImpl implements BlocPickupPartners {
     TResult? Function()? getPickupPartners,
     TResult? Function(String id)? blocPickupPartners,
     TResult? Function(String id)? unBlocPickupPartners,
+    TResult? Function()? getPartnerProfile,
+    TResult? Function(String partnerId, String orderId)?
+        assignOrderToPickupPartner,
+    TResult? Function(String orderId)? deAssignOrderFromPickupPartner,
   }) {
     return blocPickupPartners?.call(id);
   }
@@ -452,6 +541,10 @@ class _$BlocPickupPartnersImpl implements BlocPickupPartners {
     TResult Function()? getPickupPartners,
     TResult Function(String id)? blocPickupPartners,
     TResult Function(String id)? unBlocPickupPartners,
+    TResult Function()? getPartnerProfile,
+    TResult Function(String partnerId, String orderId)?
+        assignOrderToPickupPartner,
+    TResult Function(String orderId)? deAssignOrderFromPickupPartner,
     required TResult orElse(),
   }) {
     if (blocPickupPartners != null) {
@@ -467,6 +560,11 @@ class _$BlocPickupPartnersImpl implements BlocPickupPartners {
     required TResult Function(GetPickupPartners value) getPickupPartners,
     required TResult Function(BlocPickupPartners value) blocPickupPartners,
     required TResult Function(UnBlocPickupPartners value) unBlocPickupPartners,
+    required TResult Function(GetPartnerProfile value) getPartnerProfile,
+    required TResult Function(AssignOrderToPickupPartner value)
+        assignOrderToPickupPartner,
+    required TResult Function(DeAssignOrderFromPickupPartner value)
+        deAssignOrderFromPickupPartner,
   }) {
     return blocPickupPartners(this);
   }
@@ -478,6 +576,11 @@ class _$BlocPickupPartnersImpl implements BlocPickupPartners {
     TResult? Function(GetPickupPartners value)? getPickupPartners,
     TResult? Function(BlocPickupPartners value)? blocPickupPartners,
     TResult? Function(UnBlocPickupPartners value)? unBlocPickupPartners,
+    TResult? Function(GetPartnerProfile value)? getPartnerProfile,
+    TResult? Function(AssignOrderToPickupPartner value)?
+        assignOrderToPickupPartner,
+    TResult? Function(DeAssignOrderFromPickupPartner value)?
+        deAssignOrderFromPickupPartner,
   }) {
     return blocPickupPartners?.call(this);
   }
@@ -489,6 +592,11 @@ class _$BlocPickupPartnersImpl implements BlocPickupPartners {
     TResult Function(GetPickupPartners value)? getPickupPartners,
     TResult Function(BlocPickupPartners value)? blocPickupPartners,
     TResult Function(UnBlocPickupPartners value)? unBlocPickupPartners,
+    TResult Function(GetPartnerProfile value)? getPartnerProfile,
+    TResult Function(AssignOrderToPickupPartner value)?
+        assignOrderToPickupPartner,
+    TResult Function(DeAssignOrderFromPickupPartner value)?
+        deAssignOrderFromPickupPartner,
     required TResult orElse(),
   }) {
     if (blocPickupPartners != null) {
@@ -579,6 +687,10 @@ class _$UnBlocPickupPartnersImpl implements UnBlocPickupPartners {
     required TResult Function() getPickupPartners,
     required TResult Function(String id) blocPickupPartners,
     required TResult Function(String id) unBlocPickupPartners,
+    required TResult Function() getPartnerProfile,
+    required TResult Function(String partnerId, String orderId)
+        assignOrderToPickupPartner,
+    required TResult Function(String orderId) deAssignOrderFromPickupPartner,
   }) {
     return unBlocPickupPartners(id);
   }
@@ -591,6 +703,10 @@ class _$UnBlocPickupPartnersImpl implements UnBlocPickupPartners {
     TResult? Function()? getPickupPartners,
     TResult? Function(String id)? blocPickupPartners,
     TResult? Function(String id)? unBlocPickupPartners,
+    TResult? Function()? getPartnerProfile,
+    TResult? Function(String partnerId, String orderId)?
+        assignOrderToPickupPartner,
+    TResult? Function(String orderId)? deAssignOrderFromPickupPartner,
   }) {
     return unBlocPickupPartners?.call(id);
   }
@@ -603,6 +719,10 @@ class _$UnBlocPickupPartnersImpl implements UnBlocPickupPartners {
     TResult Function()? getPickupPartners,
     TResult Function(String id)? blocPickupPartners,
     TResult Function(String id)? unBlocPickupPartners,
+    TResult Function()? getPartnerProfile,
+    TResult Function(String partnerId, String orderId)?
+        assignOrderToPickupPartner,
+    TResult Function(String orderId)? deAssignOrderFromPickupPartner,
     required TResult orElse(),
   }) {
     if (unBlocPickupPartners != null) {
@@ -618,6 +738,11 @@ class _$UnBlocPickupPartnersImpl implements UnBlocPickupPartners {
     required TResult Function(GetPickupPartners value) getPickupPartners,
     required TResult Function(BlocPickupPartners value) blocPickupPartners,
     required TResult Function(UnBlocPickupPartners value) unBlocPickupPartners,
+    required TResult Function(GetPartnerProfile value) getPartnerProfile,
+    required TResult Function(AssignOrderToPickupPartner value)
+        assignOrderToPickupPartner,
+    required TResult Function(DeAssignOrderFromPickupPartner value)
+        deAssignOrderFromPickupPartner,
   }) {
     return unBlocPickupPartners(this);
   }
@@ -629,6 +754,11 @@ class _$UnBlocPickupPartnersImpl implements UnBlocPickupPartners {
     TResult? Function(GetPickupPartners value)? getPickupPartners,
     TResult? Function(BlocPickupPartners value)? blocPickupPartners,
     TResult? Function(UnBlocPickupPartners value)? unBlocPickupPartners,
+    TResult? Function(GetPartnerProfile value)? getPartnerProfile,
+    TResult? Function(AssignOrderToPickupPartner value)?
+        assignOrderToPickupPartner,
+    TResult? Function(DeAssignOrderFromPickupPartner value)?
+        deAssignOrderFromPickupPartner,
   }) {
     return unBlocPickupPartners?.call(this);
   }
@@ -640,6 +770,11 @@ class _$UnBlocPickupPartnersImpl implements UnBlocPickupPartners {
     TResult Function(GetPickupPartners value)? getPickupPartners,
     TResult Function(BlocPickupPartners value)? blocPickupPartners,
     TResult Function(UnBlocPickupPartners value)? unBlocPickupPartners,
+    TResult Function(GetPartnerProfile value)? getPartnerProfile,
+    TResult Function(AssignOrderToPickupPartner value)?
+        assignOrderToPickupPartner,
+    TResult Function(DeAssignOrderFromPickupPartner value)?
+        deAssignOrderFromPickupPartner,
     required TResult orElse(),
   }) {
     if (unBlocPickupPartners != null) {
@@ -660,12 +795,536 @@ abstract class UnBlocPickupPartners implements PickupPartnerEvent {
 }
 
 /// @nodoc
+abstract class _$$GetPartnerProfileImplCopyWith<$Res> {
+  factory _$$GetPartnerProfileImplCopyWith(_$GetPartnerProfileImpl value,
+          $Res Function(_$GetPartnerProfileImpl) then) =
+      __$$GetPartnerProfileImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetPartnerProfileImplCopyWithImpl<$Res>
+    extends _$PickupPartnerEventCopyWithImpl<$Res, _$GetPartnerProfileImpl>
+    implements _$$GetPartnerProfileImplCopyWith<$Res> {
+  __$$GetPartnerProfileImplCopyWithImpl(_$GetPartnerProfileImpl _value,
+      $Res Function(_$GetPartnerProfileImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetPartnerProfileImpl implements GetPartnerProfile {
+  const _$GetPartnerProfileImpl();
+
+  @override
+  String toString() {
+    return 'PickupPartnerEvent.getPartnerProfile()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetPartnerProfileImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(AddPickupPartnerModel addPickupPartnerModel)
+        addPickupPartner,
+    required TResult Function() getPickupPartners,
+    required TResult Function(String id) blocPickupPartners,
+    required TResult Function(String id) unBlocPickupPartners,
+    required TResult Function() getPartnerProfile,
+    required TResult Function(String partnerId, String orderId)
+        assignOrderToPickupPartner,
+    required TResult Function(String orderId) deAssignOrderFromPickupPartner,
+  }) {
+    return getPartnerProfile();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(AddPickupPartnerModel addPickupPartnerModel)?
+        addPickupPartner,
+    TResult? Function()? getPickupPartners,
+    TResult? Function(String id)? blocPickupPartners,
+    TResult? Function(String id)? unBlocPickupPartners,
+    TResult? Function()? getPartnerProfile,
+    TResult? Function(String partnerId, String orderId)?
+        assignOrderToPickupPartner,
+    TResult? Function(String orderId)? deAssignOrderFromPickupPartner,
+  }) {
+    return getPartnerProfile?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(AddPickupPartnerModel addPickupPartnerModel)?
+        addPickupPartner,
+    TResult Function()? getPickupPartners,
+    TResult Function(String id)? blocPickupPartners,
+    TResult Function(String id)? unBlocPickupPartners,
+    TResult Function()? getPartnerProfile,
+    TResult Function(String partnerId, String orderId)?
+        assignOrderToPickupPartner,
+    TResult Function(String orderId)? deAssignOrderFromPickupPartner,
+    required TResult orElse(),
+  }) {
+    if (getPartnerProfile != null) {
+      return getPartnerProfile();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddPickupPartner value) addPickupPartner,
+    required TResult Function(GetPickupPartners value) getPickupPartners,
+    required TResult Function(BlocPickupPartners value) blocPickupPartners,
+    required TResult Function(UnBlocPickupPartners value) unBlocPickupPartners,
+    required TResult Function(GetPartnerProfile value) getPartnerProfile,
+    required TResult Function(AssignOrderToPickupPartner value)
+        assignOrderToPickupPartner,
+    required TResult Function(DeAssignOrderFromPickupPartner value)
+        deAssignOrderFromPickupPartner,
+  }) {
+    return getPartnerProfile(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddPickupPartner value)? addPickupPartner,
+    TResult? Function(GetPickupPartners value)? getPickupPartners,
+    TResult? Function(BlocPickupPartners value)? blocPickupPartners,
+    TResult? Function(UnBlocPickupPartners value)? unBlocPickupPartners,
+    TResult? Function(GetPartnerProfile value)? getPartnerProfile,
+    TResult? Function(AssignOrderToPickupPartner value)?
+        assignOrderToPickupPartner,
+    TResult? Function(DeAssignOrderFromPickupPartner value)?
+        deAssignOrderFromPickupPartner,
+  }) {
+    return getPartnerProfile?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddPickupPartner value)? addPickupPartner,
+    TResult Function(GetPickupPartners value)? getPickupPartners,
+    TResult Function(BlocPickupPartners value)? blocPickupPartners,
+    TResult Function(UnBlocPickupPartners value)? unBlocPickupPartners,
+    TResult Function(GetPartnerProfile value)? getPartnerProfile,
+    TResult Function(AssignOrderToPickupPartner value)?
+        assignOrderToPickupPartner,
+    TResult Function(DeAssignOrderFromPickupPartner value)?
+        deAssignOrderFromPickupPartner,
+    required TResult orElse(),
+  }) {
+    if (getPartnerProfile != null) {
+      return getPartnerProfile(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetPartnerProfile implements PickupPartnerEvent {
+  const factory GetPartnerProfile() = _$GetPartnerProfileImpl;
+}
+
+/// @nodoc
+abstract class _$$AssignOrderToPickupPartnerImplCopyWith<$Res> {
+  factory _$$AssignOrderToPickupPartnerImplCopyWith(
+          _$AssignOrderToPickupPartnerImpl value,
+          $Res Function(_$AssignOrderToPickupPartnerImpl) then) =
+      __$$AssignOrderToPickupPartnerImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String partnerId, String orderId});
+}
+
+/// @nodoc
+class __$$AssignOrderToPickupPartnerImplCopyWithImpl<$Res>
+    extends _$PickupPartnerEventCopyWithImpl<$Res,
+        _$AssignOrderToPickupPartnerImpl>
+    implements _$$AssignOrderToPickupPartnerImplCopyWith<$Res> {
+  __$$AssignOrderToPickupPartnerImplCopyWithImpl(
+      _$AssignOrderToPickupPartnerImpl _value,
+      $Res Function(_$AssignOrderToPickupPartnerImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? partnerId = null,
+    Object? orderId = null,
+  }) {
+    return _then(_$AssignOrderToPickupPartnerImpl(
+      partnerId: null == partnerId
+          ? _value.partnerId
+          : partnerId // ignore: cast_nullable_to_non_nullable
+              as String,
+      orderId: null == orderId
+          ? _value.orderId
+          : orderId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AssignOrderToPickupPartnerImpl implements AssignOrderToPickupPartner {
+  const _$AssignOrderToPickupPartnerImpl(
+      {required this.partnerId, required this.orderId});
+
+  @override
+  final String partnerId;
+  @override
+  final String orderId;
+
+  @override
+  String toString() {
+    return 'PickupPartnerEvent.assignOrderToPickupPartner(partnerId: $partnerId, orderId: $orderId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AssignOrderToPickupPartnerImpl &&
+            (identical(other.partnerId, partnerId) ||
+                other.partnerId == partnerId) &&
+            (identical(other.orderId, orderId) || other.orderId == orderId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, partnerId, orderId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AssignOrderToPickupPartnerImplCopyWith<_$AssignOrderToPickupPartnerImpl>
+      get copyWith => __$$AssignOrderToPickupPartnerImplCopyWithImpl<
+          _$AssignOrderToPickupPartnerImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(AddPickupPartnerModel addPickupPartnerModel)
+        addPickupPartner,
+    required TResult Function() getPickupPartners,
+    required TResult Function(String id) blocPickupPartners,
+    required TResult Function(String id) unBlocPickupPartners,
+    required TResult Function() getPartnerProfile,
+    required TResult Function(String partnerId, String orderId)
+        assignOrderToPickupPartner,
+    required TResult Function(String orderId) deAssignOrderFromPickupPartner,
+  }) {
+    return assignOrderToPickupPartner(partnerId, orderId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(AddPickupPartnerModel addPickupPartnerModel)?
+        addPickupPartner,
+    TResult? Function()? getPickupPartners,
+    TResult? Function(String id)? blocPickupPartners,
+    TResult? Function(String id)? unBlocPickupPartners,
+    TResult? Function()? getPartnerProfile,
+    TResult? Function(String partnerId, String orderId)?
+        assignOrderToPickupPartner,
+    TResult? Function(String orderId)? deAssignOrderFromPickupPartner,
+  }) {
+    return assignOrderToPickupPartner?.call(partnerId, orderId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(AddPickupPartnerModel addPickupPartnerModel)?
+        addPickupPartner,
+    TResult Function()? getPickupPartners,
+    TResult Function(String id)? blocPickupPartners,
+    TResult Function(String id)? unBlocPickupPartners,
+    TResult Function()? getPartnerProfile,
+    TResult Function(String partnerId, String orderId)?
+        assignOrderToPickupPartner,
+    TResult Function(String orderId)? deAssignOrderFromPickupPartner,
+    required TResult orElse(),
+  }) {
+    if (assignOrderToPickupPartner != null) {
+      return assignOrderToPickupPartner(partnerId, orderId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddPickupPartner value) addPickupPartner,
+    required TResult Function(GetPickupPartners value) getPickupPartners,
+    required TResult Function(BlocPickupPartners value) blocPickupPartners,
+    required TResult Function(UnBlocPickupPartners value) unBlocPickupPartners,
+    required TResult Function(GetPartnerProfile value) getPartnerProfile,
+    required TResult Function(AssignOrderToPickupPartner value)
+        assignOrderToPickupPartner,
+    required TResult Function(DeAssignOrderFromPickupPartner value)
+        deAssignOrderFromPickupPartner,
+  }) {
+    return assignOrderToPickupPartner(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddPickupPartner value)? addPickupPartner,
+    TResult? Function(GetPickupPartners value)? getPickupPartners,
+    TResult? Function(BlocPickupPartners value)? blocPickupPartners,
+    TResult? Function(UnBlocPickupPartners value)? unBlocPickupPartners,
+    TResult? Function(GetPartnerProfile value)? getPartnerProfile,
+    TResult? Function(AssignOrderToPickupPartner value)?
+        assignOrderToPickupPartner,
+    TResult? Function(DeAssignOrderFromPickupPartner value)?
+        deAssignOrderFromPickupPartner,
+  }) {
+    return assignOrderToPickupPartner?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddPickupPartner value)? addPickupPartner,
+    TResult Function(GetPickupPartners value)? getPickupPartners,
+    TResult Function(BlocPickupPartners value)? blocPickupPartners,
+    TResult Function(UnBlocPickupPartners value)? unBlocPickupPartners,
+    TResult Function(GetPartnerProfile value)? getPartnerProfile,
+    TResult Function(AssignOrderToPickupPartner value)?
+        assignOrderToPickupPartner,
+    TResult Function(DeAssignOrderFromPickupPartner value)?
+        deAssignOrderFromPickupPartner,
+    required TResult orElse(),
+  }) {
+    if (assignOrderToPickupPartner != null) {
+      return assignOrderToPickupPartner(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AssignOrderToPickupPartner implements PickupPartnerEvent {
+  const factory AssignOrderToPickupPartner(
+      {required final String partnerId,
+      required final String orderId}) = _$AssignOrderToPickupPartnerImpl;
+
+  String get partnerId;
+  String get orderId;
+  @JsonKey(ignore: true)
+  _$$AssignOrderToPickupPartnerImplCopyWith<_$AssignOrderToPickupPartnerImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DeAssignOrderFromPickupPartnerImplCopyWith<$Res> {
+  factory _$$DeAssignOrderFromPickupPartnerImplCopyWith(
+          _$DeAssignOrderFromPickupPartnerImpl value,
+          $Res Function(_$DeAssignOrderFromPickupPartnerImpl) then) =
+      __$$DeAssignOrderFromPickupPartnerImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String orderId});
+}
+
+/// @nodoc
+class __$$DeAssignOrderFromPickupPartnerImplCopyWithImpl<$Res>
+    extends _$PickupPartnerEventCopyWithImpl<$Res,
+        _$DeAssignOrderFromPickupPartnerImpl>
+    implements _$$DeAssignOrderFromPickupPartnerImplCopyWith<$Res> {
+  __$$DeAssignOrderFromPickupPartnerImplCopyWithImpl(
+      _$DeAssignOrderFromPickupPartnerImpl _value,
+      $Res Function(_$DeAssignOrderFromPickupPartnerImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? orderId = null,
+  }) {
+    return _then(_$DeAssignOrderFromPickupPartnerImpl(
+      orderId: null == orderId
+          ? _value.orderId
+          : orderId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeAssignOrderFromPickupPartnerImpl
+    implements DeAssignOrderFromPickupPartner {
+  const _$DeAssignOrderFromPickupPartnerImpl({required this.orderId});
+
+  @override
+  final String orderId;
+
+  @override
+  String toString() {
+    return 'PickupPartnerEvent.deAssignOrderFromPickupPartner(orderId: $orderId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeAssignOrderFromPickupPartnerImpl &&
+            (identical(other.orderId, orderId) || other.orderId == orderId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, orderId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeAssignOrderFromPickupPartnerImplCopyWith<
+          _$DeAssignOrderFromPickupPartnerImpl>
+      get copyWith => __$$DeAssignOrderFromPickupPartnerImplCopyWithImpl<
+          _$DeAssignOrderFromPickupPartnerImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(AddPickupPartnerModel addPickupPartnerModel)
+        addPickupPartner,
+    required TResult Function() getPickupPartners,
+    required TResult Function(String id) blocPickupPartners,
+    required TResult Function(String id) unBlocPickupPartners,
+    required TResult Function() getPartnerProfile,
+    required TResult Function(String partnerId, String orderId)
+        assignOrderToPickupPartner,
+    required TResult Function(String orderId) deAssignOrderFromPickupPartner,
+  }) {
+    return deAssignOrderFromPickupPartner(orderId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(AddPickupPartnerModel addPickupPartnerModel)?
+        addPickupPartner,
+    TResult? Function()? getPickupPartners,
+    TResult? Function(String id)? blocPickupPartners,
+    TResult? Function(String id)? unBlocPickupPartners,
+    TResult? Function()? getPartnerProfile,
+    TResult? Function(String partnerId, String orderId)?
+        assignOrderToPickupPartner,
+    TResult? Function(String orderId)? deAssignOrderFromPickupPartner,
+  }) {
+    return deAssignOrderFromPickupPartner?.call(orderId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(AddPickupPartnerModel addPickupPartnerModel)?
+        addPickupPartner,
+    TResult Function()? getPickupPartners,
+    TResult Function(String id)? blocPickupPartners,
+    TResult Function(String id)? unBlocPickupPartners,
+    TResult Function()? getPartnerProfile,
+    TResult Function(String partnerId, String orderId)?
+        assignOrderToPickupPartner,
+    TResult Function(String orderId)? deAssignOrderFromPickupPartner,
+    required TResult orElse(),
+  }) {
+    if (deAssignOrderFromPickupPartner != null) {
+      return deAssignOrderFromPickupPartner(orderId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddPickupPartner value) addPickupPartner,
+    required TResult Function(GetPickupPartners value) getPickupPartners,
+    required TResult Function(BlocPickupPartners value) blocPickupPartners,
+    required TResult Function(UnBlocPickupPartners value) unBlocPickupPartners,
+    required TResult Function(GetPartnerProfile value) getPartnerProfile,
+    required TResult Function(AssignOrderToPickupPartner value)
+        assignOrderToPickupPartner,
+    required TResult Function(DeAssignOrderFromPickupPartner value)
+        deAssignOrderFromPickupPartner,
+  }) {
+    return deAssignOrderFromPickupPartner(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddPickupPartner value)? addPickupPartner,
+    TResult? Function(GetPickupPartners value)? getPickupPartners,
+    TResult? Function(BlocPickupPartners value)? blocPickupPartners,
+    TResult? Function(UnBlocPickupPartners value)? unBlocPickupPartners,
+    TResult? Function(GetPartnerProfile value)? getPartnerProfile,
+    TResult? Function(AssignOrderToPickupPartner value)?
+        assignOrderToPickupPartner,
+    TResult? Function(DeAssignOrderFromPickupPartner value)?
+        deAssignOrderFromPickupPartner,
+  }) {
+    return deAssignOrderFromPickupPartner?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddPickupPartner value)? addPickupPartner,
+    TResult Function(GetPickupPartners value)? getPickupPartners,
+    TResult Function(BlocPickupPartners value)? blocPickupPartners,
+    TResult Function(UnBlocPickupPartners value)? unBlocPickupPartners,
+    TResult Function(GetPartnerProfile value)? getPartnerProfile,
+    TResult Function(AssignOrderToPickupPartner value)?
+        assignOrderToPickupPartner,
+    TResult Function(DeAssignOrderFromPickupPartner value)?
+        deAssignOrderFromPickupPartner,
+    required TResult orElse(),
+  }) {
+    if (deAssignOrderFromPickupPartner != null) {
+      return deAssignOrderFromPickupPartner(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeAssignOrderFromPickupPartner implements PickupPartnerEvent {
+  const factory DeAssignOrderFromPickupPartner(
+      {required final String orderId}) = _$DeAssignOrderFromPickupPartnerImpl;
+
+  String get orderId;
+  @JsonKey(ignore: true)
+  _$$DeAssignOrderFromPickupPartnerImplCopyWith<
+          _$DeAssignOrderFromPickupPartnerImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$PickupPartnerState {
   bool get isLoading => throw _privateConstructorUsedError;
   bool get hasError => throw _privateConstructorUsedError;
   bool get partnerAddingLoader => throw _privateConstructorUsedError;
-  List<PickUpPerson>? get pickUpPersons => throw _privateConstructorUsedError;
   bool get pickupPersonAdded => throw _privateConstructorUsedError;
+  bool get assigningOrderLoader => throw _privateConstructorUsedError;
+  bool get orderAssigned => throw _privateConstructorUsedError;
+  bool get orderDeAssigned => throw _privateConstructorUsedError;
+  PickUpPerson? get selectedPickup => throw _privateConstructorUsedError;
+  List<PickUpPerson>? get pickUpPersons => throw _privateConstructorUsedError;
+  PartnerProfile? get partnerProfile => throw _privateConstructorUsedError;
   String? get message => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -683,8 +1342,13 @@ abstract class $PickupPartnerStateCopyWith<$Res> {
       {bool isLoading,
       bool hasError,
       bool partnerAddingLoader,
-      List<PickUpPerson>? pickUpPersons,
       bool pickupPersonAdded,
+      bool assigningOrderLoader,
+      bool orderAssigned,
+      bool orderDeAssigned,
+      PickUpPerson? selectedPickup,
+      List<PickUpPerson>? pickUpPersons,
+      PartnerProfile? partnerProfile,
       String? message});
 }
 
@@ -704,8 +1368,13 @@ class _$PickupPartnerStateCopyWithImpl<$Res, $Val extends PickupPartnerState>
     Object? isLoading = null,
     Object? hasError = null,
     Object? partnerAddingLoader = null,
-    Object? pickUpPersons = freezed,
     Object? pickupPersonAdded = null,
+    Object? assigningOrderLoader = null,
+    Object? orderAssigned = null,
+    Object? orderDeAssigned = null,
+    Object? selectedPickup = freezed,
+    Object? pickUpPersons = freezed,
+    Object? partnerProfile = freezed,
     Object? message = freezed,
   }) {
     return _then(_value.copyWith(
@@ -721,14 +1390,34 @@ class _$PickupPartnerStateCopyWithImpl<$Res, $Val extends PickupPartnerState>
           ? _value.partnerAddingLoader
           : partnerAddingLoader // ignore: cast_nullable_to_non_nullable
               as bool,
-      pickUpPersons: freezed == pickUpPersons
-          ? _value.pickUpPersons
-          : pickUpPersons // ignore: cast_nullable_to_non_nullable
-              as List<PickUpPerson>?,
       pickupPersonAdded: null == pickupPersonAdded
           ? _value.pickupPersonAdded
           : pickupPersonAdded // ignore: cast_nullable_to_non_nullable
               as bool,
+      assigningOrderLoader: null == assigningOrderLoader
+          ? _value.assigningOrderLoader
+          : assigningOrderLoader // ignore: cast_nullable_to_non_nullable
+              as bool,
+      orderAssigned: null == orderAssigned
+          ? _value.orderAssigned
+          : orderAssigned // ignore: cast_nullable_to_non_nullable
+              as bool,
+      orderDeAssigned: null == orderDeAssigned
+          ? _value.orderDeAssigned
+          : orderDeAssigned // ignore: cast_nullable_to_non_nullable
+              as bool,
+      selectedPickup: freezed == selectedPickup
+          ? _value.selectedPickup
+          : selectedPickup // ignore: cast_nullable_to_non_nullable
+              as PickUpPerson?,
+      pickUpPersons: freezed == pickUpPersons
+          ? _value.pickUpPersons
+          : pickUpPersons // ignore: cast_nullable_to_non_nullable
+              as List<PickUpPerson>?,
+      partnerProfile: freezed == partnerProfile
+          ? _value.partnerProfile
+          : partnerProfile // ignore: cast_nullable_to_non_nullable
+              as PartnerProfile?,
       message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -749,8 +1438,13 @@ abstract class _$$InitialImplCopyWith<$Res>
       {bool isLoading,
       bool hasError,
       bool partnerAddingLoader,
-      List<PickUpPerson>? pickUpPersons,
       bool pickupPersonAdded,
+      bool assigningOrderLoader,
+      bool orderAssigned,
+      bool orderDeAssigned,
+      PickUpPerson? selectedPickup,
+      List<PickUpPerson>? pickUpPersons,
+      PartnerProfile? partnerProfile,
       String? message});
 }
 
@@ -768,8 +1462,13 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? isLoading = null,
     Object? hasError = null,
     Object? partnerAddingLoader = null,
-    Object? pickUpPersons = freezed,
     Object? pickupPersonAdded = null,
+    Object? assigningOrderLoader = null,
+    Object? orderAssigned = null,
+    Object? orderDeAssigned = null,
+    Object? selectedPickup = freezed,
+    Object? pickUpPersons = freezed,
+    Object? partnerProfile = freezed,
     Object? message = freezed,
   }) {
     return _then(_$InitialImpl(
@@ -785,14 +1484,34 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.partnerAddingLoader
           : partnerAddingLoader // ignore: cast_nullable_to_non_nullable
               as bool,
-      pickUpPersons: freezed == pickUpPersons
-          ? _value._pickUpPersons
-          : pickUpPersons // ignore: cast_nullable_to_non_nullable
-              as List<PickUpPerson>?,
       pickupPersonAdded: null == pickupPersonAdded
           ? _value.pickupPersonAdded
           : pickupPersonAdded // ignore: cast_nullable_to_non_nullable
               as bool,
+      assigningOrderLoader: null == assigningOrderLoader
+          ? _value.assigningOrderLoader
+          : assigningOrderLoader // ignore: cast_nullable_to_non_nullable
+              as bool,
+      orderAssigned: null == orderAssigned
+          ? _value.orderAssigned
+          : orderAssigned // ignore: cast_nullable_to_non_nullable
+              as bool,
+      orderDeAssigned: null == orderDeAssigned
+          ? _value.orderDeAssigned
+          : orderDeAssigned // ignore: cast_nullable_to_non_nullable
+              as bool,
+      selectedPickup: freezed == selectedPickup
+          ? _value.selectedPickup
+          : selectedPickup // ignore: cast_nullable_to_non_nullable
+              as PickUpPerson?,
+      pickUpPersons: freezed == pickUpPersons
+          ? _value._pickUpPersons
+          : pickUpPersons // ignore: cast_nullable_to_non_nullable
+              as List<PickUpPerson>?,
+      partnerProfile: freezed == partnerProfile
+          ? _value.partnerProfile
+          : partnerProfile // ignore: cast_nullable_to_non_nullable
+              as PartnerProfile?,
       message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -808,8 +1527,13 @@ class _$InitialImpl implements _Initial {
       {required this.isLoading,
       required this.hasError,
       required this.partnerAddingLoader,
-      final List<PickUpPerson>? pickUpPersons,
       required this.pickupPersonAdded,
+      required this.assigningOrderLoader,
+      required this.orderAssigned,
+      required this.orderDeAssigned,
+      this.selectedPickup,
+      final List<PickUpPerson>? pickUpPersons,
+      this.partnerProfile,
       this.message})
       : _pickUpPersons = pickUpPersons;
 
@@ -819,6 +1543,16 @@ class _$InitialImpl implements _Initial {
   final bool hasError;
   @override
   final bool partnerAddingLoader;
+  @override
+  final bool pickupPersonAdded;
+  @override
+  final bool assigningOrderLoader;
+  @override
+  final bool orderAssigned;
+  @override
+  final bool orderDeAssigned;
+  @override
+  final PickUpPerson? selectedPickup;
   final List<PickUpPerson>? _pickUpPersons;
   @override
   List<PickUpPerson>? get pickUpPersons {
@@ -830,13 +1564,13 @@ class _$InitialImpl implements _Initial {
   }
 
   @override
-  final bool pickupPersonAdded;
+  final PartnerProfile? partnerProfile;
   @override
   final String? message;
 
   @override
   String toString() {
-    return 'PickupPartnerState(isLoading: $isLoading, hasError: $hasError, partnerAddingLoader: $partnerAddingLoader, pickUpPersons: $pickUpPersons, pickupPersonAdded: $pickupPersonAdded, message: $message)';
+    return 'PickupPartnerState(isLoading: $isLoading, hasError: $hasError, partnerAddingLoader: $partnerAddingLoader, pickupPersonAdded: $pickupPersonAdded, assigningOrderLoader: $assigningOrderLoader, orderAssigned: $orderAssigned, orderDeAssigned: $orderDeAssigned, selectedPickup: $selectedPickup, pickUpPersons: $pickUpPersons, partnerProfile: $partnerProfile, message: $message)';
   }
 
   @override
@@ -850,10 +1584,20 @@ class _$InitialImpl implements _Initial {
                 other.hasError == hasError) &&
             (identical(other.partnerAddingLoader, partnerAddingLoader) ||
                 other.partnerAddingLoader == partnerAddingLoader) &&
-            const DeepCollectionEquality()
-                .equals(other._pickUpPersons, _pickUpPersons) &&
             (identical(other.pickupPersonAdded, pickupPersonAdded) ||
                 other.pickupPersonAdded == pickupPersonAdded) &&
+            (identical(other.assigningOrderLoader, assigningOrderLoader) ||
+                other.assigningOrderLoader == assigningOrderLoader) &&
+            (identical(other.orderAssigned, orderAssigned) ||
+                other.orderAssigned == orderAssigned) &&
+            (identical(other.orderDeAssigned, orderDeAssigned) ||
+                other.orderDeAssigned == orderDeAssigned) &&
+            (identical(other.selectedPickup, selectedPickup) ||
+                other.selectedPickup == selectedPickup) &&
+            const DeepCollectionEquality()
+                .equals(other._pickUpPersons, _pickUpPersons) &&
+            (identical(other.partnerProfile, partnerProfile) ||
+                other.partnerProfile == partnerProfile) &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -863,8 +1607,13 @@ class _$InitialImpl implements _Initial {
       isLoading,
       hasError,
       partnerAddingLoader,
-      const DeepCollectionEquality().hash(_pickUpPersons),
       pickupPersonAdded,
+      assigningOrderLoader,
+      orderAssigned,
+      orderDeAssigned,
+      selectedPickup,
+      const DeepCollectionEquality().hash(_pickUpPersons),
+      partnerProfile,
       message);
 
   @JsonKey(ignore: true)
@@ -879,8 +1628,13 @@ abstract class _Initial implements PickupPartnerState {
       {required final bool isLoading,
       required final bool hasError,
       required final bool partnerAddingLoader,
-      final List<PickUpPerson>? pickUpPersons,
       required final bool pickupPersonAdded,
+      required final bool assigningOrderLoader,
+      required final bool orderAssigned,
+      required final bool orderDeAssigned,
+      final PickUpPerson? selectedPickup,
+      final List<PickUpPerson>? pickUpPersons,
+      final PartnerProfile? partnerProfile,
       final String? message}) = _$InitialImpl;
 
   @override
@@ -890,9 +1644,19 @@ abstract class _Initial implements PickupPartnerState {
   @override
   bool get partnerAddingLoader;
   @override
+  bool get pickupPersonAdded;
+  @override
+  bool get assigningOrderLoader;
+  @override
+  bool get orderAssigned;
+  @override
+  bool get orderDeAssigned;
+  @override
+  PickUpPerson? get selectedPickup;
+  @override
   List<PickUpPerson>? get pickUpPersons;
   @override
-  bool get pickupPersonAdded;
+  PartnerProfile? get partnerProfile;
   @override
   String? get message;
   @override

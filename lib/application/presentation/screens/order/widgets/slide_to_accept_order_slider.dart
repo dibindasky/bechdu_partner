@@ -36,7 +36,7 @@ class _SliderOrderAcceptingState extends State<SliderOrderAccepting> {
                 onChanged: (newValue) => setState(() {
                   progress = newValue;
                   if (progress > 0.9) {
-                    showDialogAcceptMathCalc(context,widget.orderId);
+                    showDialogAcceptMathCalc(context, widget.orderId);
                     progress = 0;
                   }
                 }),

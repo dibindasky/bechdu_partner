@@ -19,7 +19,8 @@ class AnswerIndexChanger extends StatelessWidget {
         kWidth20,
         Expanded(
           child: StatusColoredBox(
-              onTap: () => showDialogeCancel(context),
+              // order id need to pass for cancelation
+              onTap: () => showDialogeCancel(context, ''),
               text: 'Cancel',
               color: kRed,
               fontWeight: FontWeight.w700,
@@ -36,7 +37,7 @@ class AnswerIndexChanger extends StatelessWidget {
                     } else {
                       context
                           .read<RequoteBloc>()
-                          .add(const RequoteEvent.changeIndex());
+                          .add( RequoteEvent.changeIndex(index: state.requoteIndex+1));
                     }
                   },
                   text: 'Continue',

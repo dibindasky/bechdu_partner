@@ -11,15 +11,16 @@ class ProductDetails {
   String? slug;
   String? image;
   String? price;
+  String? category;
   List<Option>? options;
 
-  ProductDetails({
-    this.name,
-    this.slug,
-    this.image,
-    this.price,
-    this.options,
-  }) {
+  ProductDetails(
+      {this.name,
+      this.slug,
+      this.image,
+      this.price,
+      this.options,
+      this.category}) {
     image = ApiEndPoints.baseUrlImage + image!.replaceAll(' ', '%20');
   }
 
@@ -34,6 +35,7 @@ class ProductDetails {
     String? slug,
     String? image,
     String? price,
+    String? category,
     List<Option>? options,
   }) {
     return ProductDetails(
@@ -42,6 +44,7 @@ class ProductDetails {
       image: image ?? this.image,
       price: price ?? this.price,
       options: options ?? this.options,
+      category: category ?? this.category,
     );
   }
 }

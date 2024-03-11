@@ -6,12 +6,20 @@ class PickupPartnerState with _$PickupPartnerState {
       {required bool isLoading,
       required bool hasError,
       required bool partnerAddingLoader,
-      List<PickUpPerson>? pickUpPersons,
       required bool pickupPersonAdded,
+      required bool assigningOrderLoader,
+      required bool orderAssigned,
+      required bool orderDeAssigned,
+      PickUpPerson? selectedPickup,
+      List<PickUpPerson>? pickUpPersons,
+      PartnerProfile? partnerProfile,
       String? message}) = _Initial;
   factory PickupPartnerState.initial() => const PickupPartnerState(
       isLoading: false,
       hasError: false,
       partnerAddingLoader: false,
-      pickupPersonAdded: false);
+      pickupPersonAdded: false,
+      orderDeAssigned: false,
+      assigningOrderLoader: false,
+      orderAssigned: false);
 }

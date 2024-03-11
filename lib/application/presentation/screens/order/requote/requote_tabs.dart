@@ -15,25 +15,44 @@ class RequoteTabs extends StatelessWidget {
       buildWhen: (previous, current) =>
           previous.requoteIndex != current.requoteIndex,
       builder: (context, state) {
-        return SizedBox(
-          width: sWidth,
-          child: FittedBox(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: List.generate(
-                state.map.length,
-                (index) => ClipRRect(
-                  borderRadius: kRadius15,
-                  child: ColoredBox(
-                    color: index == state.requoteIndex ? kGreenPrimary : knill,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 10, vertical: 3),
-                      child: Text(
-                        state.map[index]['sectionHeading'] as String,
-                        style: textHeadSemiBold1.copyWith(
-                            color:
-                                index == state.requoteIndex ? kWhite : kBlack),
+        return PopScope(
+          canPop: state.requoteIndex == 0,
+          onPopInvoked: (didPop) {
+            if (state.requoteIndex > 0) {
+              context
+                  .read<RequoteBloc>()
+                  .add(RequoteEvent.goBackIndex(index: state.requoteIndex - 1));
+            }
+          },
+          child: SizedBox(
+            width: sWidth,
+            child: FittedBox(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: List.generate(
+                  state.map.length,
+                  (index) => InkWell(
+                    onTap: () {
+                      context
+                          .read<RequoteBloc>()
+                          .add(RequoteEvent.goBackIndex(index: index));
+                    },
+                    child: ClipRRect(
+                      borderRadius: kRadius15,
+                      child: ColoredBox(
+                        color:
+                            index == state.requoteIndex ? kGreenPrimary : knill,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 3),
+                          child: Text(
+                            state.sections![index].heading ?? '',
+                            style: textHeadSemiBold1.copyWith(
+                                color: index == state.requoteIndex
+                                    ? kWhite
+                                    : kBlack),
+                          ),
+                        ),
                       ),
                     ),
                   ),

@@ -8,6 +8,7 @@ class OrdersState with _$OrdersState {
       required bool acceptOrderLoading,
       required bool acceptOrderError,
       required bool acceptOrder,
+      required bool cancelOrder,
       String? message,
       List<OrderDetail>? partnerOrders,
       List<OrderDetail>? newOrders,
@@ -17,7 +18,8 @@ class OrdersState with _$OrdersState {
       isLoading: false,
       hasError: false,
       orderTab: 0,
-      acceptOrder:false,
+      acceptOrder: false,
+      cancelOrder: false,
       acceptOrderError: false,
       acceptOrderLoading: false);
 }

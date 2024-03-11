@@ -45,16 +45,16 @@ class PhoneDetailTile extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        orderDetail.productDetails?.name??'-----------',
+                        orderDetail.productDetails?.name ?? '-----------',
                         style: textHeadRegular1,
                       ),
                       Text(
-                        '₹ ${orderDetail.productDetails?.price??'----'}',
+                        '₹ ${orderDetail.productDetails?.price ?? '----'}',
                         style: textHeadRegular1.copyWith(color: kGreyLight),
                       ),
                       Row(
                         children: [
-                          Text(orderDetail.coins??'--', style: textHeadBold1),
+                          Text(orderDetail.coins ?? '--', style: textHeadBold1),
                           kWidth5,
                           CircleAvatar(
                             radius: sWidth * 0.02,

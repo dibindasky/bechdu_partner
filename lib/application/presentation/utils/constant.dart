@@ -23,8 +23,7 @@ const iconCompleteCheck = 'assets/images/check_completed.png';
 const phoneImage = 'assets/images/Rectangle 1785.png';
 const phoneImageNetwork =
     'https://rukminim2.flixcart.com/image/416/416/kg8avm80/mobile/y/7/n/apple-iphone-12-dummyapplefsn-original-imafwg8dpyjvgg3j.jpeg?q=70&crop=false';
-const urlMapTest =
-    'https://www.google.com/maps?q=';
+const urlMapTest = 'https://www.google.com/maps?q=';
 
 double sHeight = 900;
 double sWidth = 400;

@@ -29,16 +29,21 @@ class ApiService {
     Map<String, dynamic>? queryParameters,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? data,
+    bool addHeader = true,
   }) async {
     try {
-      final accessToken =
-          await SecureStorage.getToken().then((token) => token.accessToken);
-      _dio.options.headers.addAll(
-        {
-          'authorization': "Bearer $accessToken",
-          ...headers ?? {'content-Type': 'application/json'}
-        },
-      );
+      if (addHeader) {
+        final accessToken =
+            await SecureStorage.getToken().then((token) => token.accessToken);
+        _dio.options.headers.addAll(
+          {
+            'authorization': "Bearer $accessToken",
+            ...headers ?? {'content-Type': 'application/json'}
+          },
+        );
+      } else {
+        _dio.options.headers['content-Type'] = 'application/json';
+      }
       log('api uri ==>  ${_dio.options.baseUrl + url}');
       log('accessToken ==>  ${_dio.options.headers['authorization']}');
       final response =
@@ -59,16 +64,21 @@ class ApiService {
     Map<String, dynamic>? queryParameters,
     Map<String, dynamic>? headers,
     dynamic data,
+    bool addHeader = true,
   }) async {
     try {
-      final accessToken =
-          await SecureStorage.getToken().then((token) => token.accessToken);
-      _dio.options.headers.addAll(
-        {
-          'authorization': "Bearer $accessToken",
-          ...headers ?? {'content-Type': 'application/json'}
-        },
-      );
+      if (addHeader) {
+        final accessToken =
+            await SecureStorage.getToken().then((token) => token.accessToken);
+        _dio.options.headers.addAll(
+          {
+            'authorization': "Bearer $accessToken",
+            ...headers ?? {'content-Type': 'application/json'}
+          },
+        );
+      } else {
+        _dio.options.headers['content-Type'] = 'application/json';
+      }
       log('api uri ==>  ${_dio.options.baseUrl + url}');
       final response = await _dio.post(
         url,
@@ -91,16 +101,21 @@ class ApiService {
     Map<String, dynamic>? queryParameters,
     Map<String, dynamic>? headers,
     dynamic data,
+    bool addHeader = true,
   }) async {
     try {
-      final accessToken =
-          await SecureStorage.getToken().then((token) => token.accessToken);
-      _dio.options.headers.addAll(
-        {
-          'authorization': "Bearer $accessToken",
-          ...headers ?? {'content-Type': 'application/json'}
-        },
-      );
+      if (addHeader) {
+        final accessToken =
+            await SecureStorage.getToken().then((token) => token.accessToken);
+        _dio.options.headers.addAll(
+          {
+            'authorization': "Bearer $accessToken",
+            ...headers ?? {'content-Type': 'application/json'}
+          },
+        );
+      } else {
+        _dio.options.headers['content-Type'] = 'application/json';
+      }
       log('api uri ==>  ${_dio.options.baseUrl + url}');
       final response = await _dio.put(url,
           data: data is FormData ? data : data as Map<String, dynamic>?,
@@ -121,16 +136,21 @@ class ApiService {
     Map<String, dynamic>? queryParameters,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? data,
+    bool addHeader = true,
   }) async {
     try {
-      final accessToken =
-          await SecureStorage.getToken().then((token) => token.accessToken);
-      _dio.options.headers.addAll(
-        {
-          'authorization': "Bearer $accessToken",
-          ...headers ?? {'content-Type': 'application/json'}
-        },
-      );
+      if (addHeader) {
+        final accessToken =
+            await SecureStorage.getToken().then((token) => token.accessToken);
+        _dio.options.headers.addAll(
+          {
+            'authorization': "Bearer $accessToken",
+            ...headers ?? {'content-Type': 'application/json'}
+          },
+        );
+      } else {
+        _dio.options.headers['content-Type'] = 'application/json';
+      }
       log('api uri ==>  ${_dio.options.baseUrl + url}');
       final response =
           await _dio.delete(url, data: data, queryParameters: queryParameters);
@@ -150,16 +170,21 @@ class ApiService {
     Map<String, dynamic>? queryParameters,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? data,
+    bool addHeader = true,
   }) async {
     try {
-      final accessToken =
-          await SecureStorage.getToken().then((token) => token.accessToken);
-      _dio.options.headers.addAll(
-        {
-          'authorization': "Bearer $accessToken",
-          ...headers ?? {'content-Type': 'application/json'}
-        },
-      );
+      if (addHeader) {
+        final accessToken =
+            await SecureStorage.getToken().then((token) => token.accessToken);
+        _dio.options.headers.addAll(
+          {
+            'authorization': "Bearer $accessToken",
+            ...headers ?? {'content-Type': 'application/json'}
+          },
+        );
+      } else {
+        _dio.options.headers['content-Type'] = 'application/json';
+      }
       log('api uri ==>  ${_dio.options.baseUrl + url}');
       final response =
           await _dio.patch(url, data: data, queryParameters: queryParameters);

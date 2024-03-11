@@ -4,7 +4,11 @@ import 'package:flutter/material.dart';
 
 class OrdersDetailImageAndPriceSession extends StatelessWidget {
   const OrdersDetailImageAndPriceSession({
-    super.key, required this.image, required this.price, required this.coin, required this.deviceName,
+    super.key,
+    required this.image,
+    required this.price,
+    required this.coin,
+    required this.deviceName,
   });
 
   final String image;
