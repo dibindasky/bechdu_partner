@@ -9,13 +9,9 @@ class Option {
   String? image;
   String? heading;
   bool? value;
-  Option({
-    this.description,
-    this.type,
-    this.image,
-    this.heading,
-    this.value
-  });
+  Option({this.description, this.type, this.image, this.heading, this.value}) {
+    image = image?.replaceFirst(RegExp(r'data:image/[^;]+;base64,'), '');
+  }
 
   factory Option.fromJson(Map<String, dynamic> json) {
     return _$OptionFromJson(json);

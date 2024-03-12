@@ -32,12 +32,12 @@ class AnswerIndexChanger extends StatelessWidget {
             builder: (context, state) {
               return StatusColoredBox(
                   onTap: () {
-                    if (state.requoteIndex >= state.map.length - 1) {
+                    if (state.requoteIndex >=
+                        (state.sections?.length ?? 0) - 1) {
                       showDialogeRequote(context);
                     } else {
-                      context
-                          .read<RequoteBloc>()
-                          .add( RequoteEvent.changeIndex(index: state.requoteIndex+1));
+                      context.read<RequoteBloc>().add(RequoteEvent.changeIndex(
+                          index: state.requoteIndex + 1));
                     }
                   },
                   text: 'Continue',

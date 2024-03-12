@@ -108,7 +108,7 @@ class OrderDetailWithoutBlur extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       context
           .read<PickupPartnerBloc>()
           .add(const PickupPartnerEvent.getPickupPartners());

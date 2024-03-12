@@ -44,7 +44,7 @@ class ApiService {
       } else {
         _dio.options.headers['content-Type'] = 'application/json';
       }
-      log('api uri ==>  ${_dio.options.baseUrl + url}');
+      log('api uri ==>get  ${_dio.options.baseUrl + url}');
       log('accessToken ==>  ${_dio.options.headers['authorization']}');
       final response =
           await _dio.get(url, data: data, queryParameters: queryParameters);
@@ -79,7 +79,7 @@ class ApiService {
       } else {
         _dio.options.headers['content-Type'] = 'application/json';
       }
-      log('api uri ==>  ${_dio.options.baseUrl + url}');
+      log('api uri ==>post  ${_dio.options.baseUrl + url}');
       final response = await _dio.post(
         url,
         data: data is FormData ? data : data as Map<String, dynamic>?,
@@ -116,7 +116,7 @@ class ApiService {
       } else {
         _dio.options.headers['content-Type'] = 'application/json';
       }
-      log('api uri ==>  ${_dio.options.baseUrl + url}');
+      log('api uri ==>put  ${_dio.options.baseUrl + url}');
       final response = await _dio.put(url,
           data: data is FormData ? data : data as Map<String, dynamic>?,
           queryParameters: queryParameters);
@@ -151,7 +151,7 @@ class ApiService {
       } else {
         _dio.options.headers['content-Type'] = 'application/json';
       }
-      log('api uri ==>  ${_dio.options.baseUrl + url}');
+      log('api uri ==>delete  ${_dio.options.baseUrl + url}');
       final response =
           await _dio.delete(url, data: data, queryParameters: queryParameters);
       return response;
@@ -185,7 +185,7 @@ class ApiService {
       } else {
         _dio.options.headers['content-Type'] = 'application/json';
       }
-      log('api uri ==>  ${_dio.options.baseUrl + url}');
+      log('api uri ==>patch  ${_dio.options.baseUrl + url}');
       final response =
           await _dio.patch(url, data: data, queryParameters: queryParameters);
       return response;

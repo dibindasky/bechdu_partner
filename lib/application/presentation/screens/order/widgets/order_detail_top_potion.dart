@@ -27,7 +27,7 @@ class OrderDetailTopPart extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               OrdersCustomButton(
-                  text: 'Cancel',
+                  text: '  Cancel  ',
                   image: iconCancel,
                   onTap: () {
                     showDialogeCancel(context, orderDetail.id);
@@ -37,11 +37,15 @@ class OrderDetailTopPart extends StatelessWidget {
                   text: 'Reschedule',
                   image: iconShedule,
                   onTap: () {
-                    showDialogeReschedule(context);
+                    // Navigator.pushNamed(context, Routes.reshedulePage);
+                    context
+                        .read<RequoteBloc>()
+                        .add(const RequoteEvent.getDateAndTime());
+                    showDialogeReschedule(context, orderDetail.id!);
                   }),
               kWidth5,
               OrdersCustomButton(
-                  text: 'Complete', image: iconCompleteCheck, onTap: () {})
+                  text: ' Complete ', image: iconCompleteCheck, onTap: () {})
             ],
           ),
           kHeight10,
@@ -49,6 +53,7 @@ class OrderDetailTopPart extends StatelessWidget {
             listenWhen: (previous, current) =>
                 previous.questionLoading && current.sections != null,
             listener: (context, state) {
+              // on requote price
               if (state.sections!.isNotEmpty) {
                 showBottomSheet(
                     clipBehavior: Clip.none,
@@ -64,19 +69,20 @@ class OrderDetailTopPart extends StatelessWidget {
             },
             builder: (context, state) => state.questionLoading
                 ? LinearProgressIndicator(
-                    minHeight: 30,
-                    backgroundColor: kGreyLight,
-                    color: kBluePrimary,
+                    minHeight: 35,
+                    backgroundColor: kWhite,
+                    color: kGreyLighter,
                     borderRadius: kRadius10,
                   )
                 : OrdersCustomButton(
                     text: 'Requote Price',
                     image: iconRedo,
+                    expnded: false,
                     onTap: () {
                       context.read<RequoteBloc>().add(RequoteEvent.getQuestions(
                           category: orderDetail.productDetails!.category!));
                     },
-                    expnded: false),
+                  ),
           ),
         ],
       ),

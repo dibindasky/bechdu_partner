@@ -6,18 +6,24 @@ class RequoteState with _$RequoteState {
     required bool isLoading,
     required bool hasError,
     String? message,
+    required List<String> dates,
+    required List<String> time,
     required bool questionLoading,
+    required bool resheduleLoading,
+    required bool resheduleDone,
     required int requoteIndex,
     List<Section>? sections,
-    required List<Map<String, dynamic>> map,
-    required List<Map<String, dynamic>> markedanswer,
+    required Map<String, List<SelectedOption>> selectedAnswers,
   }) = _Initial;
 
-  factory RequoteState.initial() => RequoteState(
+  factory RequoteState.initial() => const RequoteState(
       isLoading: false,
       hasError: false,
-      map: testQuestionMap,
       requoteIndex: 0,
+      resheduleDone: false,
+      resheduleLoading: false,
       questionLoading: false,
-      markedanswer: []);
+      selectedAnswers: {},
+      dates: [],
+      time: []);
 }
