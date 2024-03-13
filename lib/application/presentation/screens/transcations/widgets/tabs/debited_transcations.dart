@@ -1,7 +1,9 @@
 import 'package:bechdu_partner/application/business_logic/transcation/transcation_bloc.dart';
 import 'package:bechdu_partner/application/presentation/screens/transcations/widgets/tabs/transcations_tile.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
+import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:bechdu_partner/application/presentation/utils/refresh_indicator/refresh_indicator.dart';
+import 'package:bechdu_partner/application/presentation/utils/shimmer/shimmer_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -23,10 +25,16 @@ class _DebitedTranscationsListState extends State<DebitedTranscationsList> {
       if (controller.position.pixels == controller.position.maxScrollExtent) {
         context
             .read<TranscationBloc>()
-            .add(const TranscationEvent.getCreditedTranscationsNextPage());
+            .add(const TranscationEvent.getDebitedTranscationsNextPage());
       }
     });
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
   }
 
   @override
@@ -46,15 +54,35 @@ class _DebitedTranscationsListState extends State<DebitedTranscationsList> {
                   .add(const TranscationEvent.getDebitedTranscations());
             },
             child: ListView.builder(
-              itemCount: state.debitedTranscations?.length ?? 0,
+              itemCount: state.debitedLoading
+                  ? state.debitedTranscations!.length + 1
+                  : state.debitedTranscations!.length,
               controller: controller,
-              itemBuilder: (context, index) => TranscationListTile(
-                  credited: false,
-                  transcation: state.debitedTranscations![index]),
+              itemBuilder: (context, index) {
+                if (index == state.debitedTranscations!.length) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    child: ShimmerLoader(
+                        itemCount: 1,
+                        height: 60,
+                        width: sWidth,
+                        seprator: kHeight10),
+                  );
+                }
+                return TranscationListTile(
+                    credited: false,
+                    transcation: state.debitedTranscations![index]);
+              },
             ),
           );
-        } else {
+        } else if (state.debitedTranscations == null) {
           return ErrorRefreshIndicator(
+              onRefresh: () => context
+                  .read<TranscationBloc>()
+                  .add(const TranscationEvent.getDebitedTranscations()));
+        }else{
+          return ErrorRefreshIndicator(
+            errorMessage: 'No Transcations yet',
               onRefresh: () => context
                   .read<TranscationBloc>()
                   .add(const TranscationEvent.getDebitedTranscations()));

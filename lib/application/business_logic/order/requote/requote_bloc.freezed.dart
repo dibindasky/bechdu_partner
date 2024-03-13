@@ -27,6 +27,7 @@ mixin _$RequoteEvent {
     required TResult Function(SelectedOption selectedOption) markYesOrNo,
     required TResult Function(SelectedOption selectedOption) markGrid,
     required TResult Function(SelectedOption selectedOption) markAnswer,
+    required TResult Function() getPrice,
     required TResult Function() reset,
   }) =>
       throw _privateConstructorUsedError;
@@ -41,6 +42,7 @@ mixin _$RequoteEvent {
     TResult? Function(SelectedOption selectedOption)? markYesOrNo,
     TResult? Function(SelectedOption selectedOption)? markGrid,
     TResult? Function(SelectedOption selectedOption)? markAnswer,
+    TResult? Function()? getPrice,
     TResult? Function()? reset,
   }) =>
       throw _privateConstructorUsedError;
@@ -55,6 +57,7 @@ mixin _$RequoteEvent {
     TResult Function(SelectedOption selectedOption)? markYesOrNo,
     TResult Function(SelectedOption selectedOption)? markGrid,
     TResult Function(SelectedOption selectedOption)? markAnswer,
+    TResult Function()? getPrice,
     TResult Function()? reset,
     required TResult orElse(),
   }) =>
@@ -69,6 +72,7 @@ mixin _$RequoteEvent {
     required TResult Function(MarkYesOrNo value) markYesOrNo,
     required TResult Function(MarkGrid value) markGrid,
     required TResult Function(MarkAnswer value) markAnswer,
+    required TResult Function(GetPrice value) getPrice,
     required TResult Function(Reset value) reset,
   }) =>
       throw _privateConstructorUsedError;
@@ -82,6 +86,7 @@ mixin _$RequoteEvent {
     TResult? Function(MarkYesOrNo value)? markYesOrNo,
     TResult? Function(MarkGrid value)? markGrid,
     TResult? Function(MarkAnswer value)? markAnswer,
+    TResult? Function(GetPrice value)? getPrice,
     TResult? Function(Reset value)? reset,
   }) =>
       throw _privateConstructorUsedError;
@@ -95,6 +100,7 @@ mixin _$RequoteEvent {
     TResult Function(MarkYesOrNo value)? markYesOrNo,
     TResult Function(MarkGrid value)? markGrid,
     TResult Function(MarkAnswer value)? markAnswer,
+    TResult Function(GetPrice value)? getPrice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) =>
@@ -193,6 +199,7 @@ class _$GetQuestionsImpl implements GetQuestions {
     required TResult Function(SelectedOption selectedOption) markYesOrNo,
     required TResult Function(SelectedOption selectedOption) markGrid,
     required TResult Function(SelectedOption selectedOption) markAnswer,
+    required TResult Function() getPrice,
     required TResult Function() reset,
   }) {
     return getQuestions(category);
@@ -210,6 +217,7 @@ class _$GetQuestionsImpl implements GetQuestions {
     TResult? Function(SelectedOption selectedOption)? markYesOrNo,
     TResult? Function(SelectedOption selectedOption)? markGrid,
     TResult? Function(SelectedOption selectedOption)? markAnswer,
+    TResult? Function()? getPrice,
     TResult? Function()? reset,
   }) {
     return getQuestions?.call(category);
@@ -227,6 +235,7 @@ class _$GetQuestionsImpl implements GetQuestions {
     TResult Function(SelectedOption selectedOption)? markYesOrNo,
     TResult Function(SelectedOption selectedOption)? markGrid,
     TResult Function(SelectedOption selectedOption)? markAnswer,
+    TResult Function()? getPrice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -247,6 +256,7 @@ class _$GetQuestionsImpl implements GetQuestions {
     required TResult Function(MarkYesOrNo value) markYesOrNo,
     required TResult Function(MarkGrid value) markGrid,
     required TResult Function(MarkAnswer value) markAnswer,
+    required TResult Function(GetPrice value) getPrice,
     required TResult Function(Reset value) reset,
   }) {
     return getQuestions(this);
@@ -263,6 +273,7 @@ class _$GetQuestionsImpl implements GetQuestions {
     TResult? Function(MarkYesOrNo value)? markYesOrNo,
     TResult? Function(MarkGrid value)? markGrid,
     TResult? Function(MarkAnswer value)? markAnswer,
+    TResult? Function(GetPrice value)? getPrice,
     TResult? Function(Reset value)? reset,
   }) {
     return getQuestions?.call(this);
@@ -279,6 +290,7 @@ class _$GetQuestionsImpl implements GetQuestions {
     TResult Function(MarkYesOrNo value)? markYesOrNo,
     TResult Function(MarkGrid value)? markGrid,
     TResult Function(MarkAnswer value)? markAnswer,
+    TResult Function(GetPrice value)? getPrice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -346,6 +358,7 @@ class _$GetDateAndTimeImpl implements GetDateAndTime {
     required TResult Function(SelectedOption selectedOption) markYesOrNo,
     required TResult Function(SelectedOption selectedOption) markGrid,
     required TResult Function(SelectedOption selectedOption) markAnswer,
+    required TResult Function() getPrice,
     required TResult Function() reset,
   }) {
     return getDateAndTime();
@@ -363,6 +376,7 @@ class _$GetDateAndTimeImpl implements GetDateAndTime {
     TResult? Function(SelectedOption selectedOption)? markYesOrNo,
     TResult? Function(SelectedOption selectedOption)? markGrid,
     TResult? Function(SelectedOption selectedOption)? markAnswer,
+    TResult? Function()? getPrice,
     TResult? Function()? reset,
   }) {
     return getDateAndTime?.call();
@@ -380,6 +394,7 @@ class _$GetDateAndTimeImpl implements GetDateAndTime {
     TResult Function(SelectedOption selectedOption)? markYesOrNo,
     TResult Function(SelectedOption selectedOption)? markGrid,
     TResult Function(SelectedOption selectedOption)? markAnswer,
+    TResult Function()? getPrice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -400,6 +415,7 @@ class _$GetDateAndTimeImpl implements GetDateAndTime {
     required TResult Function(MarkYesOrNo value) markYesOrNo,
     required TResult Function(MarkGrid value) markGrid,
     required TResult Function(MarkAnswer value) markAnswer,
+    required TResult Function(GetPrice value) getPrice,
     required TResult Function(Reset value) reset,
   }) {
     return getDateAndTime(this);
@@ -416,6 +432,7 @@ class _$GetDateAndTimeImpl implements GetDateAndTime {
     TResult? Function(MarkYesOrNo value)? markYesOrNo,
     TResult? Function(MarkGrid value)? markGrid,
     TResult? Function(MarkAnswer value)? markAnswer,
+    TResult? Function(GetPrice value)? getPrice,
     TResult? Function(Reset value)? reset,
   }) {
     return getDateAndTime?.call(this);
@@ -432,6 +449,7 @@ class _$GetDateAndTimeImpl implements GetDateAndTime {
     TResult Function(MarkYesOrNo value)? markYesOrNo,
     TResult Function(MarkGrid value)? markGrid,
     TResult Function(MarkAnswer value)? markAnswer,
+    TResult Function(GetPrice value)? getPrice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -530,6 +548,7 @@ class _$ResheduleOrderImpl implements ResheduleOrder {
     required TResult Function(SelectedOption selectedOption) markYesOrNo,
     required TResult Function(SelectedOption selectedOption) markGrid,
     required TResult Function(SelectedOption selectedOption) markAnswer,
+    required TResult Function() getPrice,
     required TResult Function() reset,
   }) {
     return resheduleOrder(resheduleModel, orderId);
@@ -547,6 +566,7 @@ class _$ResheduleOrderImpl implements ResheduleOrder {
     TResult? Function(SelectedOption selectedOption)? markYesOrNo,
     TResult? Function(SelectedOption selectedOption)? markGrid,
     TResult? Function(SelectedOption selectedOption)? markAnswer,
+    TResult? Function()? getPrice,
     TResult? Function()? reset,
   }) {
     return resheduleOrder?.call(resheduleModel, orderId);
@@ -564,6 +584,7 @@ class _$ResheduleOrderImpl implements ResheduleOrder {
     TResult Function(SelectedOption selectedOption)? markYesOrNo,
     TResult Function(SelectedOption selectedOption)? markGrid,
     TResult Function(SelectedOption selectedOption)? markAnswer,
+    TResult Function()? getPrice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -584,6 +605,7 @@ class _$ResheduleOrderImpl implements ResheduleOrder {
     required TResult Function(MarkYesOrNo value) markYesOrNo,
     required TResult Function(MarkGrid value) markGrid,
     required TResult Function(MarkAnswer value) markAnswer,
+    required TResult Function(GetPrice value) getPrice,
     required TResult Function(Reset value) reset,
   }) {
     return resheduleOrder(this);
@@ -600,6 +622,7 @@ class _$ResheduleOrderImpl implements ResheduleOrder {
     TResult? Function(MarkYesOrNo value)? markYesOrNo,
     TResult? Function(MarkGrid value)? markGrid,
     TResult? Function(MarkAnswer value)? markAnswer,
+    TResult? Function(GetPrice value)? getPrice,
     TResult? Function(Reset value)? reset,
   }) {
     return resheduleOrder?.call(this);
@@ -616,6 +639,7 @@ class _$ResheduleOrderImpl implements ResheduleOrder {
     TResult Function(MarkYesOrNo value)? markYesOrNo,
     TResult Function(MarkGrid value)? markGrid,
     TResult Function(MarkAnswer value)? markAnswer,
+    TResult Function(GetPrice value)? getPrice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -711,6 +735,7 @@ class _$ChangeIndexImpl implements ChangeIndex {
     required TResult Function(SelectedOption selectedOption) markYesOrNo,
     required TResult Function(SelectedOption selectedOption) markGrid,
     required TResult Function(SelectedOption selectedOption) markAnswer,
+    required TResult Function() getPrice,
     required TResult Function() reset,
   }) {
     return changeIndex(index);
@@ -728,6 +753,7 @@ class _$ChangeIndexImpl implements ChangeIndex {
     TResult? Function(SelectedOption selectedOption)? markYesOrNo,
     TResult? Function(SelectedOption selectedOption)? markGrid,
     TResult? Function(SelectedOption selectedOption)? markAnswer,
+    TResult? Function()? getPrice,
     TResult? Function()? reset,
   }) {
     return changeIndex?.call(index);
@@ -745,6 +771,7 @@ class _$ChangeIndexImpl implements ChangeIndex {
     TResult Function(SelectedOption selectedOption)? markYesOrNo,
     TResult Function(SelectedOption selectedOption)? markGrid,
     TResult Function(SelectedOption selectedOption)? markAnswer,
+    TResult Function()? getPrice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -765,6 +792,7 @@ class _$ChangeIndexImpl implements ChangeIndex {
     required TResult Function(MarkYesOrNo value) markYesOrNo,
     required TResult Function(MarkGrid value) markGrid,
     required TResult Function(MarkAnswer value) markAnswer,
+    required TResult Function(GetPrice value) getPrice,
     required TResult Function(Reset value) reset,
   }) {
     return changeIndex(this);
@@ -781,6 +809,7 @@ class _$ChangeIndexImpl implements ChangeIndex {
     TResult? Function(MarkYesOrNo value)? markYesOrNo,
     TResult? Function(MarkGrid value)? markGrid,
     TResult? Function(MarkAnswer value)? markAnswer,
+    TResult? Function(GetPrice value)? getPrice,
     TResult? Function(Reset value)? reset,
   }) {
     return changeIndex?.call(this);
@@ -797,6 +826,7 @@ class _$ChangeIndexImpl implements ChangeIndex {
     TResult Function(MarkYesOrNo value)? markYesOrNo,
     TResult Function(MarkGrid value)? markGrid,
     TResult Function(MarkAnswer value)? markAnswer,
+    TResult Function(GetPrice value)? getPrice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -889,6 +919,7 @@ class _$GoBackIndexImpl implements GoBackIndex {
     required TResult Function(SelectedOption selectedOption) markYesOrNo,
     required TResult Function(SelectedOption selectedOption) markGrid,
     required TResult Function(SelectedOption selectedOption) markAnswer,
+    required TResult Function() getPrice,
     required TResult Function() reset,
   }) {
     return goBackIndex(index);
@@ -906,6 +937,7 @@ class _$GoBackIndexImpl implements GoBackIndex {
     TResult? Function(SelectedOption selectedOption)? markYesOrNo,
     TResult? Function(SelectedOption selectedOption)? markGrid,
     TResult? Function(SelectedOption selectedOption)? markAnswer,
+    TResult? Function()? getPrice,
     TResult? Function()? reset,
   }) {
     return goBackIndex?.call(index);
@@ -923,6 +955,7 @@ class _$GoBackIndexImpl implements GoBackIndex {
     TResult Function(SelectedOption selectedOption)? markYesOrNo,
     TResult Function(SelectedOption selectedOption)? markGrid,
     TResult Function(SelectedOption selectedOption)? markAnswer,
+    TResult Function()? getPrice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -943,6 +976,7 @@ class _$GoBackIndexImpl implements GoBackIndex {
     required TResult Function(MarkYesOrNo value) markYesOrNo,
     required TResult Function(MarkGrid value) markGrid,
     required TResult Function(MarkAnswer value) markAnswer,
+    required TResult Function(GetPrice value) getPrice,
     required TResult Function(Reset value) reset,
   }) {
     return goBackIndex(this);
@@ -959,6 +993,7 @@ class _$GoBackIndexImpl implements GoBackIndex {
     TResult? Function(MarkYesOrNo value)? markYesOrNo,
     TResult? Function(MarkGrid value)? markGrid,
     TResult? Function(MarkAnswer value)? markAnswer,
+    TResult? Function(GetPrice value)? getPrice,
     TResult? Function(Reset value)? reset,
   }) {
     return goBackIndex?.call(this);
@@ -975,6 +1010,7 @@ class _$GoBackIndexImpl implements GoBackIndex {
     TResult Function(MarkYesOrNo value)? markYesOrNo,
     TResult Function(MarkGrid value)? markGrid,
     TResult Function(MarkAnswer value)? markAnswer,
+    TResult Function(GetPrice value)? getPrice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -1068,6 +1104,7 @@ class _$MarkYesOrNoImpl implements MarkYesOrNo {
     required TResult Function(SelectedOption selectedOption) markYesOrNo,
     required TResult Function(SelectedOption selectedOption) markGrid,
     required TResult Function(SelectedOption selectedOption) markAnswer,
+    required TResult Function() getPrice,
     required TResult Function() reset,
   }) {
     return markYesOrNo(selectedOption);
@@ -1085,6 +1122,7 @@ class _$MarkYesOrNoImpl implements MarkYesOrNo {
     TResult? Function(SelectedOption selectedOption)? markYesOrNo,
     TResult? Function(SelectedOption selectedOption)? markGrid,
     TResult? Function(SelectedOption selectedOption)? markAnswer,
+    TResult? Function()? getPrice,
     TResult? Function()? reset,
   }) {
     return markYesOrNo?.call(selectedOption);
@@ -1102,6 +1140,7 @@ class _$MarkYesOrNoImpl implements MarkYesOrNo {
     TResult Function(SelectedOption selectedOption)? markYesOrNo,
     TResult Function(SelectedOption selectedOption)? markGrid,
     TResult Function(SelectedOption selectedOption)? markAnswer,
+    TResult Function()? getPrice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -1122,6 +1161,7 @@ class _$MarkYesOrNoImpl implements MarkYesOrNo {
     required TResult Function(MarkYesOrNo value) markYesOrNo,
     required TResult Function(MarkGrid value) markGrid,
     required TResult Function(MarkAnswer value) markAnswer,
+    required TResult Function(GetPrice value) getPrice,
     required TResult Function(Reset value) reset,
   }) {
     return markYesOrNo(this);
@@ -1138,6 +1178,7 @@ class _$MarkYesOrNoImpl implements MarkYesOrNo {
     TResult? Function(MarkYesOrNo value)? markYesOrNo,
     TResult? Function(MarkGrid value)? markGrid,
     TResult? Function(MarkAnswer value)? markAnswer,
+    TResult? Function(GetPrice value)? getPrice,
     TResult? Function(Reset value)? reset,
   }) {
     return markYesOrNo?.call(this);
@@ -1154,6 +1195,7 @@ class _$MarkYesOrNoImpl implements MarkYesOrNo {
     TResult Function(MarkYesOrNo value)? markYesOrNo,
     TResult Function(MarkGrid value)? markGrid,
     TResult Function(MarkAnswer value)? markAnswer,
+    TResult Function(GetPrice value)? getPrice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -1248,6 +1290,7 @@ class _$MarkGridImpl implements MarkGrid {
     required TResult Function(SelectedOption selectedOption) markYesOrNo,
     required TResult Function(SelectedOption selectedOption) markGrid,
     required TResult Function(SelectedOption selectedOption) markAnswer,
+    required TResult Function() getPrice,
     required TResult Function() reset,
   }) {
     return markGrid(selectedOption);
@@ -1265,6 +1308,7 @@ class _$MarkGridImpl implements MarkGrid {
     TResult? Function(SelectedOption selectedOption)? markYesOrNo,
     TResult? Function(SelectedOption selectedOption)? markGrid,
     TResult? Function(SelectedOption selectedOption)? markAnswer,
+    TResult? Function()? getPrice,
     TResult? Function()? reset,
   }) {
     return markGrid?.call(selectedOption);
@@ -1282,6 +1326,7 @@ class _$MarkGridImpl implements MarkGrid {
     TResult Function(SelectedOption selectedOption)? markYesOrNo,
     TResult Function(SelectedOption selectedOption)? markGrid,
     TResult Function(SelectedOption selectedOption)? markAnswer,
+    TResult Function()? getPrice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -1302,6 +1347,7 @@ class _$MarkGridImpl implements MarkGrid {
     required TResult Function(MarkYesOrNo value) markYesOrNo,
     required TResult Function(MarkGrid value) markGrid,
     required TResult Function(MarkAnswer value) markAnswer,
+    required TResult Function(GetPrice value) getPrice,
     required TResult Function(Reset value) reset,
   }) {
     return markGrid(this);
@@ -1318,6 +1364,7 @@ class _$MarkGridImpl implements MarkGrid {
     TResult? Function(MarkYesOrNo value)? markYesOrNo,
     TResult? Function(MarkGrid value)? markGrid,
     TResult? Function(MarkAnswer value)? markAnswer,
+    TResult? Function(GetPrice value)? getPrice,
     TResult? Function(Reset value)? reset,
   }) {
     return markGrid?.call(this);
@@ -1334,6 +1381,7 @@ class _$MarkGridImpl implements MarkGrid {
     TResult Function(MarkYesOrNo value)? markYesOrNo,
     TResult Function(MarkGrid value)? markGrid,
     TResult Function(MarkAnswer value)? markAnswer,
+    TResult Function(GetPrice value)? getPrice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -1428,6 +1476,7 @@ class _$MarkAnswerImpl implements MarkAnswer {
     required TResult Function(SelectedOption selectedOption) markYesOrNo,
     required TResult Function(SelectedOption selectedOption) markGrid,
     required TResult Function(SelectedOption selectedOption) markAnswer,
+    required TResult Function() getPrice,
     required TResult Function() reset,
   }) {
     return markAnswer(selectedOption);
@@ -1445,6 +1494,7 @@ class _$MarkAnswerImpl implements MarkAnswer {
     TResult? Function(SelectedOption selectedOption)? markYesOrNo,
     TResult? Function(SelectedOption selectedOption)? markGrid,
     TResult? Function(SelectedOption selectedOption)? markAnswer,
+    TResult? Function()? getPrice,
     TResult? Function()? reset,
   }) {
     return markAnswer?.call(selectedOption);
@@ -1462,6 +1512,7 @@ class _$MarkAnswerImpl implements MarkAnswer {
     TResult Function(SelectedOption selectedOption)? markYesOrNo,
     TResult Function(SelectedOption selectedOption)? markGrid,
     TResult Function(SelectedOption selectedOption)? markAnswer,
+    TResult Function()? getPrice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -1482,6 +1533,7 @@ class _$MarkAnswerImpl implements MarkAnswer {
     required TResult Function(MarkYesOrNo value) markYesOrNo,
     required TResult Function(MarkGrid value) markGrid,
     required TResult Function(MarkAnswer value) markAnswer,
+    required TResult Function(GetPrice value) getPrice,
     required TResult Function(Reset value) reset,
   }) {
     return markAnswer(this);
@@ -1498,6 +1550,7 @@ class _$MarkAnswerImpl implements MarkAnswer {
     TResult? Function(MarkYesOrNo value)? markYesOrNo,
     TResult? Function(MarkGrid value)? markGrid,
     TResult? Function(MarkAnswer value)? markAnswer,
+    TResult? Function(GetPrice value)? getPrice,
     TResult? Function(Reset value)? reset,
   }) {
     return markAnswer?.call(this);
@@ -1514,6 +1567,7 @@ class _$MarkAnswerImpl implements MarkAnswer {
     TResult Function(MarkYesOrNo value)? markYesOrNo,
     TResult Function(MarkGrid value)? markGrid,
     TResult Function(MarkAnswer value)? markAnswer,
+    TResult Function(GetPrice value)? getPrice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -1532,6 +1586,159 @@ abstract class MarkAnswer implements RequoteEvent {
   @JsonKey(ignore: true)
   _$$MarkAnswerImplCopyWith<_$MarkAnswerImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetPriceImplCopyWith<$Res> {
+  factory _$$GetPriceImplCopyWith(
+          _$GetPriceImpl value, $Res Function(_$GetPriceImpl) then) =
+      __$$GetPriceImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetPriceImplCopyWithImpl<$Res>
+    extends _$RequoteEventCopyWithImpl<$Res, _$GetPriceImpl>
+    implements _$$GetPriceImplCopyWith<$Res> {
+  __$$GetPriceImplCopyWithImpl(
+      _$GetPriceImpl _value, $Res Function(_$GetPriceImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetPriceImpl implements GetPrice {
+  const _$GetPriceImpl();
+
+  @override
+  String toString() {
+    return 'RequoteEvent.getPrice()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetPriceImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String category) getQuestions,
+    required TResult Function() getDateAndTime,
+    required TResult Function(ResheduleModel resheduleModel, String orderId)
+        resheduleOrder,
+    required TResult Function(int index) changeIndex,
+    required TResult Function(int index) goBackIndex,
+    required TResult Function(SelectedOption selectedOption) markYesOrNo,
+    required TResult Function(SelectedOption selectedOption) markGrid,
+    required TResult Function(SelectedOption selectedOption) markAnswer,
+    required TResult Function() getPrice,
+    required TResult Function() reset,
+  }) {
+    return getPrice();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String category)? getQuestions,
+    TResult? Function()? getDateAndTime,
+    TResult? Function(ResheduleModel resheduleModel, String orderId)?
+        resheduleOrder,
+    TResult? Function(int index)? changeIndex,
+    TResult? Function(int index)? goBackIndex,
+    TResult? Function(SelectedOption selectedOption)? markYesOrNo,
+    TResult? Function(SelectedOption selectedOption)? markGrid,
+    TResult? Function(SelectedOption selectedOption)? markAnswer,
+    TResult? Function()? getPrice,
+    TResult? Function()? reset,
+  }) {
+    return getPrice?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String category)? getQuestions,
+    TResult Function()? getDateAndTime,
+    TResult Function(ResheduleModel resheduleModel, String orderId)?
+        resheduleOrder,
+    TResult Function(int index)? changeIndex,
+    TResult Function(int index)? goBackIndex,
+    TResult Function(SelectedOption selectedOption)? markYesOrNo,
+    TResult Function(SelectedOption selectedOption)? markGrid,
+    TResult Function(SelectedOption selectedOption)? markAnswer,
+    TResult Function()? getPrice,
+    TResult Function()? reset,
+    required TResult orElse(),
+  }) {
+    if (getPrice != null) {
+      return getPrice();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetQuestions value) getQuestions,
+    required TResult Function(GetDateAndTime value) getDateAndTime,
+    required TResult Function(ResheduleOrder value) resheduleOrder,
+    required TResult Function(ChangeIndex value) changeIndex,
+    required TResult Function(GoBackIndex value) goBackIndex,
+    required TResult Function(MarkYesOrNo value) markYesOrNo,
+    required TResult Function(MarkGrid value) markGrid,
+    required TResult Function(MarkAnswer value) markAnswer,
+    required TResult Function(GetPrice value) getPrice,
+    required TResult Function(Reset value) reset,
+  }) {
+    return getPrice(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetQuestions value)? getQuestions,
+    TResult? Function(GetDateAndTime value)? getDateAndTime,
+    TResult? Function(ResheduleOrder value)? resheduleOrder,
+    TResult? Function(ChangeIndex value)? changeIndex,
+    TResult? Function(GoBackIndex value)? goBackIndex,
+    TResult? Function(MarkYesOrNo value)? markYesOrNo,
+    TResult? Function(MarkGrid value)? markGrid,
+    TResult? Function(MarkAnswer value)? markAnswer,
+    TResult? Function(GetPrice value)? getPrice,
+    TResult? Function(Reset value)? reset,
+  }) {
+    return getPrice?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetQuestions value)? getQuestions,
+    TResult Function(GetDateAndTime value)? getDateAndTime,
+    TResult Function(ResheduleOrder value)? resheduleOrder,
+    TResult Function(ChangeIndex value)? changeIndex,
+    TResult Function(GoBackIndex value)? goBackIndex,
+    TResult Function(MarkYesOrNo value)? markYesOrNo,
+    TResult Function(MarkGrid value)? markGrid,
+    TResult Function(MarkAnswer value)? markAnswer,
+    TResult Function(GetPrice value)? getPrice,
+    TResult Function(Reset value)? reset,
+    required TResult orElse(),
+  }) {
+    if (getPrice != null) {
+      return getPrice(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetPrice implements RequoteEvent {
+  const factory GetPrice() = _$GetPriceImpl;
 }
 
 /// @nodoc
@@ -1581,6 +1788,7 @@ class _$ResetImpl implements Reset {
     required TResult Function(SelectedOption selectedOption) markYesOrNo,
     required TResult Function(SelectedOption selectedOption) markGrid,
     required TResult Function(SelectedOption selectedOption) markAnswer,
+    required TResult Function() getPrice,
     required TResult Function() reset,
   }) {
     return reset();
@@ -1598,6 +1806,7 @@ class _$ResetImpl implements Reset {
     TResult? Function(SelectedOption selectedOption)? markYesOrNo,
     TResult? Function(SelectedOption selectedOption)? markGrid,
     TResult? Function(SelectedOption selectedOption)? markAnswer,
+    TResult? Function()? getPrice,
     TResult? Function()? reset,
   }) {
     return reset?.call();
@@ -1615,6 +1824,7 @@ class _$ResetImpl implements Reset {
     TResult Function(SelectedOption selectedOption)? markYesOrNo,
     TResult Function(SelectedOption selectedOption)? markGrid,
     TResult Function(SelectedOption selectedOption)? markAnswer,
+    TResult Function()? getPrice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -1635,6 +1845,7 @@ class _$ResetImpl implements Reset {
     required TResult Function(MarkYesOrNo value) markYesOrNo,
     required TResult Function(MarkGrid value) markGrid,
     required TResult Function(MarkAnswer value) markAnswer,
+    required TResult Function(GetPrice value) getPrice,
     required TResult Function(Reset value) reset,
   }) {
     return reset(this);
@@ -1651,6 +1862,7 @@ class _$ResetImpl implements Reset {
     TResult? Function(MarkYesOrNo value)? markYesOrNo,
     TResult? Function(MarkGrid value)? markGrid,
     TResult? Function(MarkAnswer value)? markAnswer,
+    TResult? Function(GetPrice value)? getPrice,
     TResult? Function(Reset value)? reset,
   }) {
     return reset?.call(this);
@@ -1667,6 +1879,7 @@ class _$ResetImpl implements Reset {
     TResult Function(MarkYesOrNo value)? markYesOrNo,
     TResult Function(MarkGrid value)? markGrid,
     TResult Function(MarkAnswer value)? markAnswer,
+    TResult Function(GetPrice value)? getPrice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {

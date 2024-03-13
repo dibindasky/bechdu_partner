@@ -16,5 +16,6 @@ class RequoteEvent with _$RequoteEvent {
       {required SelectedOption selectedOption}) = MarkGrid;
   const factory RequoteEvent.markAnswer(
       {required SelectedOption selectedOption}) = MarkAnswer;
+  const factory RequoteEvent.getPrice() = GetPrice;
   const factory RequoteEvent.reset() = Reset;
 }

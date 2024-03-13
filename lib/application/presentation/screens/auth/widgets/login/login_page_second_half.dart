@@ -20,115 +20,118 @@ class LoginPageSecondHalf extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Enter Mobile Number',
-            style: textHeadMedium1.copyWith(fontSize: sWidth * 0.045),
-          ),
-          kHeight20,
-          Form(
-            key: mobileKey,
-            child: CustomTextFormField(
-                validate: Validate.phone,
-                maxlength: 10,
-                controller: context.read<AuthBloc>().phoneController,
-                keyboardType: TextInputType.number,
-                hintText: '9999988888'),
-          ),
-          kHeight20,
-          Row(
-            children: [
-              BlocBuilder<AuthBloc, AuthState>(
-                builder: (context, state) {
-                  return Checkbox(
-                    value: state.agreePolicy,
-                    activeColor: kBluePrimary,
-                    onChanged: (value) {
-                      context
-                          .read<AuthBloc>()
-                          .add(const AuthEvent.agreePolicy());
-                    },
-                  );
-                },
-              ),
-              Expanded(
-                child: Wrap(
-                  children: [
-                    Text('By signing up I agree to the ',
-                        style: textHeadMedium1),
-                    InkWell(
-                      onTap: () {},
-                      child: Text(
-                        'Terms of use ',
-                        style: textHeadMedium1.copyWith(color: kBluePrimary),
-                      ),
-                    ),
-                    Text('and ', style: textHeadMedium1),
-                    InkWell(
-                      onTap: () {},
-                      child: Text(
-                        'Privacy Policy.',
-                        style: textHeadMedium1.copyWith(color: kBluePrimary),
-                      ),
-                    )
-                  ],
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Enter Mobile Number',
+              style: textHeadMedium1.copyWith(fontSize: sWidth * 0.045),
+            ),
+            kHeight20,
+            Form(
+              key: mobileKey,
+              child: CustomTextFormField(
+                  validate: Validate.phone,
+                  maxlength: 10,
+                  controller: context.read<AuthBloc>().phoneController,
+                  keyboardType: TextInputType.number,
+                  hintText: '9999988888'),
+            ),
+            kHeight20,
+            Row(
+              children: [
+                BlocBuilder<AuthBloc, AuthState>(
+                  builder: (context, state) {
+                    return Checkbox(
+                      value: state.agreePolicy,
+                      activeColor: kBluePrimary,
+                      onChanged: (value) {
+                        context
+                            .read<AuthBloc>()
+                            .add(const AuthEvent.agreePolicy());
+                      },
+                    );
+                  },
                 ),
-              )
-            ],
-          ),
-          kHeight20,
-          BlocConsumer<AuthBloc, AuthState>(
-            listener: (context, state) {
-              if (state.isLoading) {
-                showDialog(
-                  context: context,
-                  builder: (context) => const Center(
-                    child: CircularProgressIndicator(color: kBluePrimary),
+                Expanded(
+                  child: Wrap(
+                    children: [
+                      Text('By signing up I agree to the ',
+                          style: textHeadMedium1),
+                      InkWell(
+                        onTap: () {},
+                        child: Text(
+                          'Terms of use ',
+                          style: textHeadMedium1.copyWith(color: kBluePrimary),
+                        ),
+                      ),
+                      Text('and ', style: textHeadMedium1),
+                      InkWell(
+                        onTap: () {},
+                        child: Text(
+                          'Privacy Policy.',
+                          style: textHeadMedium1.copyWith(color: kBluePrimary),
+                        ),
+                      )
+                    ],
                   ),
-                );
-              }
-              if (state.otpVerificationError || state.hasError) {
-                Navigator.pop(context);
-              }
-              if (state.otpSend) {
-                Navigator.pop(context);
-                Navigator.pushNamed(context, Routes.otpPage);
-              }
-              if (state.message != null) {
-                showSnackBar(
+                )
+              ],
+            ),
+            kHeight20,
+            BlocConsumer<AuthBloc, AuthState>(
+              listener: (context, state) {
+                if (state.isLoading) {
+                  showDialog(
                     context: context,
-                    message: state.message!,
-                    color: state.hasError ||
-                            !state.agreePolicy ||
-                            state.otpVerificationError
-                        ? kRed
-                        : kGreenPrimary);
-              }
-            },
-            builder: (context, state) {
-              return AuthCustomButtom(
-                  backgroundColor: kBluePrimary,
-                  text: 'Send OTP',
-                  onTap: () {
-                    if (mobileKey.currentState!.validate()) {
-                      context.read<AuthBloc>().add(
-                            AuthEvent.sendOtp(
-                              phoneNumberModel: PhoneNumberModel(
-                                mobileNumber: context
-                                    .read<AuthBloc>()
-                                    .phoneController
-                                    .text
-                                    .trim(),
+                    builder: (context) => const Center(
+                      child: CircularProgressIndicator(color: kBluePrimary),
+                    ),
+                  );
+                }
+                if (state.otpVerificationError || state.hasError) {
+                  Navigator.pop(context);
+                }
+                if (state.otpSend) {
+                  Navigator.pop(context);
+                  Navigator.pushNamed(context, Routes.otpPage);
+                }
+                if (state.message != null) {
+                  showSnackBar(
+                      context: context,
+                      message: state.message!,
+                      color: state.hasError ||
+                              !state.agreePolicy ||
+                              state.otpVerificationError
+                          ? kRed
+                          : kGreenPrimary);
+                }
+              },
+              builder: (context, state) {
+                return AuthCustomButtom(
+                    backgroundColor: kBluePrimary,
+                    text: 'Send OTP',
+                    onTap: () {
+                      if (mobileKey.currentState!.validate()) {
+                        context.read<AuthBloc>().add(
+                              AuthEvent.sendOtp(
+                                phoneNumberModel: PhoneNumberModel(
+                                  mobileNumber: context
+                                      .read<AuthBloc>()
+                                      .phoneController
+                                      .text
+                                      .trim(),
+                                ),
                               ),
-                            ),
-                          );
-                    }
-                  });
-            },
-          )
-        ],
+                            );
+                      }
+                    });
+              },
+            ),
+            kHeight30
+          ],
+        ),
       ),
     );
   }

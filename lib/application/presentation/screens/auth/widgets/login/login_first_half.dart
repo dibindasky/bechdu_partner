@@ -15,7 +15,7 @@ class LoginPageFirstHalfContainer extends StatelessWidget {
       child: ColoredBox(
         color: kBluePrimary,
         child: SizedBox(
-          height: sWidth * 1.4,
+          height: sWidth * 1.3,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
@@ -24,7 +24,7 @@ class LoginPageFirstHalfContainer extends StatelessWidget {
                 Align(
                   alignment: Alignment.topLeft,
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 50, right: 50),
+                    padding: const EdgeInsets.only(top: 30, right: 50),
                     child: Image.asset(loginPageImage),
                   ),
                 ),

@@ -19,45 +19,73 @@ mixin _$OrdersEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
-    required TResult Function(String orderId) cancelOrder,
-    required TResult Function() getNewOrder,
-    required TResult Function() refreshNewOrder,
-    required TResult Function() getPartnerOrders,
+    required TResult Function(String orderId, String reason) cancelOrder,
+    required TResult Function(
+            String orderId, CompleteOrderModel completeOrderModel)
+        completeOrder,
+    required TResult Function(bool call) getNewOrder,
+    required TResult Function(bool call) getPartnerOrders,
     required TResult Function(String orderId) removePickupPartner,
     required TResult Function() refresPartnerOrders,
+    required TResult Function() refreshNewOrder,
     required TResult Function(int tab) changeTab,
     required TResult Function(PickUpPerson pickUpPerson, String orderId)
         changePickupPartner,
+    required TResult Function() checkErrorCompleteOrder,
+    required TResult Function() addDiviceBill,
+    required TResult Function() removeDiviceBill,
+    required TResult Function() addIdCardImage,
+    required TResult Function() removeIdCardImage,
+    required TResult Function() addDeviceImages,
+    required TResult Function(int index) removeDeviceImage,
     required TResult Function() reset,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
-    TResult? Function(String orderId)? cancelOrder,
-    TResult? Function()? getNewOrder,
-    TResult? Function()? refreshNewOrder,
-    TResult? Function()? getPartnerOrders,
+    TResult? Function(String orderId, String reason)? cancelOrder,
+    TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult? Function(bool call)? getNewOrder,
+    TResult? Function(bool call)? getPartnerOrders,
     TResult? Function(String orderId)? removePickupPartner,
     TResult? Function()? refresPartnerOrders,
+    TResult? Function()? refreshNewOrder,
     TResult? Function(int tab)? changeTab,
     TResult? Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult? Function()? checkErrorCompleteOrder,
+    TResult? Function()? addDiviceBill,
+    TResult? Function()? removeDiviceBill,
+    TResult? Function()? addIdCardImage,
+    TResult? Function()? removeIdCardImage,
+    TResult? Function()? addDeviceImages,
+    TResult? Function(int index)? removeDeviceImage,
     TResult? Function()? reset,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
-    TResult Function(String orderId)? cancelOrder,
-    TResult Function()? getNewOrder,
-    TResult Function()? refreshNewOrder,
-    TResult Function()? getPartnerOrders,
+    TResult Function(String orderId, String reason)? cancelOrder,
+    TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult Function(bool call)? getNewOrder,
+    TResult Function(bool call)? getPartnerOrders,
     TResult Function(String orderId)? removePickupPartner,
     TResult Function()? refresPartnerOrders,
+    TResult Function()? refreshNewOrder,
     TResult Function(int tab)? changeTab,
     TResult Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult Function()? checkErrorCompleteOrder,
+    TResult Function()? addDiviceBill,
+    TResult Function()? removeDiviceBill,
+    TResult Function()? addIdCardImage,
+    TResult Function()? removeIdCardImage,
+    TResult Function()? addDeviceImages,
+    TResult Function(int index)? removeDeviceImage,
     TResult Function()? reset,
     required TResult orElse(),
   }) =>
@@ -66,13 +94,22 @@ mixin _$OrdersEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
     required TResult Function(CancelOrder value) cancelOrder,
+    required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
-    required TResult Function(RefreshNewOrder value) refreshNewOrder,
     required TResult Function(GetPartnerOrders value) getPartnerOrders,
     required TResult Function(RemovePickupPartner value) removePickupPartner,
     required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
+    required TResult Function(RefreshNewOrder value) refreshNewOrder,
     required TResult Function(ChangeTab value) changeTab,
     required TResult Function(ChangePickupPartner value) changePickupPartner,
+    required TResult Function(CheckErrorCompleteOrder value)
+        checkErrorCompleteOrder,
+    required TResult Function(AddDiviceBill value) addDiviceBill,
+    required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddIdCardImage value) addIdCardImage,
+    required TResult Function(RemoveIdCardImage value) removeIdCardImage,
+    required TResult Function(AddDeviceImages value) addDeviceImages,
+    required TResult Function(RemoveDeviceImage value) removeDeviceImage,
     required TResult Function(Reset value) reset,
   }) =>
       throw _privateConstructorUsedError;
@@ -80,13 +117,21 @@ mixin _$OrdersEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
     TResult? Function(CancelOrder value)? cancelOrder,
+    TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
-    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
     TResult? Function(GetPartnerOrders value)? getPartnerOrders,
     TResult? Function(RemovePickupPartner value)? removePickupPartner,
     TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
     TResult? Function(ChangeTab value)? changeTab,
     TResult? Function(ChangePickupPartner value)? changePickupPartner,
+    TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult? Function(AddDiviceBill value)? addDiviceBill,
+    TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddIdCardImage value)? addIdCardImage,
+    TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult? Function(AddDeviceImages value)? addDeviceImages,
+    TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult? Function(Reset value)? reset,
   }) =>
       throw _privateConstructorUsedError;
@@ -94,13 +139,21 @@ mixin _$OrdersEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
     TResult Function(CancelOrder value)? cancelOrder,
+    TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
-    TResult Function(RefreshNewOrder value)? refreshNewOrder,
     TResult Function(GetPartnerOrders value)? getPartnerOrders,
     TResult Function(RemovePickupPartner value)? removePickupPartner,
     TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult Function(RefreshNewOrder value)? refreshNewOrder,
     TResult Function(ChangeTab value)? changeTab,
     TResult Function(ChangePickupPartner value)? changePickupPartner,
+    TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult Function(AddDiviceBill value)? addDiviceBill,
+    TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddIdCardImage value)? addIdCardImage,
+    TResult Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult Function(AddDeviceImages value)? addDeviceImages,
+    TResult Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) =>
@@ -190,15 +243,25 @@ class _$AcceptOrderImpl implements AcceptOrder {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
-    required TResult Function(String orderId) cancelOrder,
-    required TResult Function() getNewOrder,
-    required TResult Function() refreshNewOrder,
-    required TResult Function() getPartnerOrders,
+    required TResult Function(String orderId, String reason) cancelOrder,
+    required TResult Function(
+            String orderId, CompleteOrderModel completeOrderModel)
+        completeOrder,
+    required TResult Function(bool call) getNewOrder,
+    required TResult Function(bool call) getPartnerOrders,
     required TResult Function(String orderId) removePickupPartner,
     required TResult Function() refresPartnerOrders,
+    required TResult Function() refreshNewOrder,
     required TResult Function(int tab) changeTab,
     required TResult Function(PickUpPerson pickUpPerson, String orderId)
         changePickupPartner,
+    required TResult Function() checkErrorCompleteOrder,
+    required TResult Function() addDiviceBill,
+    required TResult Function() removeDiviceBill,
+    required TResult Function() addIdCardImage,
+    required TResult Function() removeIdCardImage,
+    required TResult Function() addDeviceImages,
+    required TResult Function(int index) removeDeviceImage,
     required TResult Function() reset,
   }) {
     return acceptOrder(orderId);
@@ -208,15 +271,24 @@ class _$AcceptOrderImpl implements AcceptOrder {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
-    TResult? Function(String orderId)? cancelOrder,
-    TResult? Function()? getNewOrder,
-    TResult? Function()? refreshNewOrder,
-    TResult? Function()? getPartnerOrders,
+    TResult? Function(String orderId, String reason)? cancelOrder,
+    TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult? Function(bool call)? getNewOrder,
+    TResult? Function(bool call)? getPartnerOrders,
     TResult? Function(String orderId)? removePickupPartner,
     TResult? Function()? refresPartnerOrders,
+    TResult? Function()? refreshNewOrder,
     TResult? Function(int tab)? changeTab,
     TResult? Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult? Function()? checkErrorCompleteOrder,
+    TResult? Function()? addDiviceBill,
+    TResult? Function()? removeDiviceBill,
+    TResult? Function()? addIdCardImage,
+    TResult? Function()? removeIdCardImage,
+    TResult? Function()? addDeviceImages,
+    TResult? Function(int index)? removeDeviceImage,
     TResult? Function()? reset,
   }) {
     return acceptOrder?.call(orderId);
@@ -226,15 +298,24 @@ class _$AcceptOrderImpl implements AcceptOrder {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
-    TResult Function(String orderId)? cancelOrder,
-    TResult Function()? getNewOrder,
-    TResult Function()? refreshNewOrder,
-    TResult Function()? getPartnerOrders,
+    TResult Function(String orderId, String reason)? cancelOrder,
+    TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult Function(bool call)? getNewOrder,
+    TResult Function(bool call)? getPartnerOrders,
     TResult Function(String orderId)? removePickupPartner,
     TResult Function()? refresPartnerOrders,
+    TResult Function()? refreshNewOrder,
     TResult Function(int tab)? changeTab,
     TResult Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult Function()? checkErrorCompleteOrder,
+    TResult Function()? addDiviceBill,
+    TResult Function()? removeDiviceBill,
+    TResult Function()? addIdCardImage,
+    TResult Function()? removeIdCardImage,
+    TResult Function()? addDeviceImages,
+    TResult Function(int index)? removeDeviceImage,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -249,13 +330,22 @@ class _$AcceptOrderImpl implements AcceptOrder {
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
     required TResult Function(CancelOrder value) cancelOrder,
+    required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
-    required TResult Function(RefreshNewOrder value) refreshNewOrder,
     required TResult Function(GetPartnerOrders value) getPartnerOrders,
     required TResult Function(RemovePickupPartner value) removePickupPartner,
     required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
+    required TResult Function(RefreshNewOrder value) refreshNewOrder,
     required TResult Function(ChangeTab value) changeTab,
     required TResult Function(ChangePickupPartner value) changePickupPartner,
+    required TResult Function(CheckErrorCompleteOrder value)
+        checkErrorCompleteOrder,
+    required TResult Function(AddDiviceBill value) addDiviceBill,
+    required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddIdCardImage value) addIdCardImage,
+    required TResult Function(RemoveIdCardImage value) removeIdCardImage,
+    required TResult Function(AddDeviceImages value) addDeviceImages,
+    required TResult Function(RemoveDeviceImage value) removeDeviceImage,
     required TResult Function(Reset value) reset,
   }) {
     return acceptOrder(this);
@@ -266,13 +356,21 @@ class _$AcceptOrderImpl implements AcceptOrder {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
     TResult? Function(CancelOrder value)? cancelOrder,
+    TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
-    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
     TResult? Function(GetPartnerOrders value)? getPartnerOrders,
     TResult? Function(RemovePickupPartner value)? removePickupPartner,
     TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
     TResult? Function(ChangeTab value)? changeTab,
     TResult? Function(ChangePickupPartner value)? changePickupPartner,
+    TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult? Function(AddDiviceBill value)? addDiviceBill,
+    TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddIdCardImage value)? addIdCardImage,
+    TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult? Function(AddDeviceImages value)? addDeviceImages,
+    TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult? Function(Reset value)? reset,
   }) {
     return acceptOrder?.call(this);
@@ -283,13 +381,21 @@ class _$AcceptOrderImpl implements AcceptOrder {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
     TResult Function(CancelOrder value)? cancelOrder,
+    TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
-    TResult Function(RefreshNewOrder value)? refreshNewOrder,
     TResult Function(GetPartnerOrders value)? getPartnerOrders,
     TResult Function(RemovePickupPartner value)? removePickupPartner,
     TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult Function(RefreshNewOrder value)? refreshNewOrder,
     TResult Function(ChangeTab value)? changeTab,
     TResult Function(ChangePickupPartner value)? changePickupPartner,
+    TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult Function(AddDiviceBill value)? addDiviceBill,
+    TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddIdCardImage value)? addIdCardImage,
+    TResult Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult Function(AddDeviceImages value)? addDeviceImages,
+    TResult Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -316,7 +422,7 @@ abstract class _$$CancelOrderImplCopyWith<$Res> {
           _$CancelOrderImpl value, $Res Function(_$CancelOrderImpl) then) =
       __$$CancelOrderImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String orderId});
+  $Res call({String orderId, String reason});
 }
 
 /// @nodoc
@@ -331,11 +437,16 @@ class __$$CancelOrderImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? orderId = null,
+    Object? reason = null,
   }) {
     return _then(_$CancelOrderImpl(
       orderId: null == orderId
           ? _value.orderId
           : orderId // ignore: cast_nullable_to_non_nullable
+              as String,
+      reason: null == reason
+          ? _value.reason
+          : reason // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -344,14 +455,16 @@ class __$$CancelOrderImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$CancelOrderImpl implements CancelOrder {
-  const _$CancelOrderImpl({required this.orderId});
+  const _$CancelOrderImpl({required this.orderId, required this.reason});
 
   @override
   final String orderId;
+  @override
+  final String reason;
 
   @override
   String toString() {
-    return 'OrdersEvent.cancelOrder(orderId: $orderId)';
+    return 'OrdersEvent.cancelOrder(orderId: $orderId, reason: $reason)';
   }
 
   @override
@@ -359,11 +472,12 @@ class _$CancelOrderImpl implements CancelOrder {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CancelOrderImpl &&
-            (identical(other.orderId, orderId) || other.orderId == orderId));
+            (identical(other.orderId, orderId) || other.orderId == orderId) &&
+            (identical(other.reason, reason) || other.reason == reason));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, orderId);
+  int get hashCode => Object.hash(runtimeType, orderId, reason);
 
   @JsonKey(ignore: true)
   @override
@@ -375,56 +489,84 @@ class _$CancelOrderImpl implements CancelOrder {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
-    required TResult Function(String orderId) cancelOrder,
-    required TResult Function() getNewOrder,
-    required TResult Function() refreshNewOrder,
-    required TResult Function() getPartnerOrders,
+    required TResult Function(String orderId, String reason) cancelOrder,
+    required TResult Function(
+            String orderId, CompleteOrderModel completeOrderModel)
+        completeOrder,
+    required TResult Function(bool call) getNewOrder,
+    required TResult Function(bool call) getPartnerOrders,
     required TResult Function(String orderId) removePickupPartner,
     required TResult Function() refresPartnerOrders,
+    required TResult Function() refreshNewOrder,
     required TResult Function(int tab) changeTab,
     required TResult Function(PickUpPerson pickUpPerson, String orderId)
         changePickupPartner,
+    required TResult Function() checkErrorCompleteOrder,
+    required TResult Function() addDiviceBill,
+    required TResult Function() removeDiviceBill,
+    required TResult Function() addIdCardImage,
+    required TResult Function() removeIdCardImage,
+    required TResult Function() addDeviceImages,
+    required TResult Function(int index) removeDeviceImage,
     required TResult Function() reset,
   }) {
-    return cancelOrder(orderId);
+    return cancelOrder(orderId, reason);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
-    TResult? Function(String orderId)? cancelOrder,
-    TResult? Function()? getNewOrder,
-    TResult? Function()? refreshNewOrder,
-    TResult? Function()? getPartnerOrders,
+    TResult? Function(String orderId, String reason)? cancelOrder,
+    TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult? Function(bool call)? getNewOrder,
+    TResult? Function(bool call)? getPartnerOrders,
     TResult? Function(String orderId)? removePickupPartner,
     TResult? Function()? refresPartnerOrders,
+    TResult? Function()? refreshNewOrder,
     TResult? Function(int tab)? changeTab,
     TResult? Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult? Function()? checkErrorCompleteOrder,
+    TResult? Function()? addDiviceBill,
+    TResult? Function()? removeDiviceBill,
+    TResult? Function()? addIdCardImage,
+    TResult? Function()? removeIdCardImage,
+    TResult? Function()? addDeviceImages,
+    TResult? Function(int index)? removeDeviceImage,
     TResult? Function()? reset,
   }) {
-    return cancelOrder?.call(orderId);
+    return cancelOrder?.call(orderId, reason);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
-    TResult Function(String orderId)? cancelOrder,
-    TResult Function()? getNewOrder,
-    TResult Function()? refreshNewOrder,
-    TResult Function()? getPartnerOrders,
+    TResult Function(String orderId, String reason)? cancelOrder,
+    TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult Function(bool call)? getNewOrder,
+    TResult Function(bool call)? getPartnerOrders,
     TResult Function(String orderId)? removePickupPartner,
     TResult Function()? refresPartnerOrders,
+    TResult Function()? refreshNewOrder,
     TResult Function(int tab)? changeTab,
     TResult Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult Function()? checkErrorCompleteOrder,
+    TResult Function()? addDiviceBill,
+    TResult Function()? removeDiviceBill,
+    TResult Function()? addIdCardImage,
+    TResult Function()? removeIdCardImage,
+    TResult Function()? addDeviceImages,
+    TResult Function(int index)? removeDeviceImage,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
     if (cancelOrder != null) {
-      return cancelOrder(orderId);
+      return cancelOrder(orderId, reason);
     }
     return orElse();
   }
@@ -434,13 +576,22 @@ class _$CancelOrderImpl implements CancelOrder {
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
     required TResult Function(CancelOrder value) cancelOrder,
+    required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
-    required TResult Function(RefreshNewOrder value) refreshNewOrder,
     required TResult Function(GetPartnerOrders value) getPartnerOrders,
     required TResult Function(RemovePickupPartner value) removePickupPartner,
     required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
+    required TResult Function(RefreshNewOrder value) refreshNewOrder,
     required TResult Function(ChangeTab value) changeTab,
     required TResult Function(ChangePickupPartner value) changePickupPartner,
+    required TResult Function(CheckErrorCompleteOrder value)
+        checkErrorCompleteOrder,
+    required TResult Function(AddDiviceBill value) addDiviceBill,
+    required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddIdCardImage value) addIdCardImage,
+    required TResult Function(RemoveIdCardImage value) removeIdCardImage,
+    required TResult Function(AddDeviceImages value) addDeviceImages,
+    required TResult Function(RemoveDeviceImage value) removeDeviceImage,
     required TResult Function(Reset value) reset,
   }) {
     return cancelOrder(this);
@@ -451,13 +602,21 @@ class _$CancelOrderImpl implements CancelOrder {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
     TResult? Function(CancelOrder value)? cancelOrder,
+    TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
-    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
     TResult? Function(GetPartnerOrders value)? getPartnerOrders,
     TResult? Function(RemovePickupPartner value)? removePickupPartner,
     TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
     TResult? Function(ChangeTab value)? changeTab,
     TResult? Function(ChangePickupPartner value)? changePickupPartner,
+    TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult? Function(AddDiviceBill value)? addDiviceBill,
+    TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddIdCardImage value)? addIdCardImage,
+    TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult? Function(AddDeviceImages value)? addDeviceImages,
+    TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult? Function(Reset value)? reset,
   }) {
     return cancelOrder?.call(this);
@@ -468,13 +627,21 @@ class _$CancelOrderImpl implements CancelOrder {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
     TResult Function(CancelOrder value)? cancelOrder,
+    TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
-    TResult Function(RefreshNewOrder value)? refreshNewOrder,
     TResult Function(GetPartnerOrders value)? getPartnerOrders,
     TResult Function(RemovePickupPartner value)? removePickupPartner,
     TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult Function(RefreshNewOrder value)? refreshNewOrder,
     TResult Function(ChangeTab value)? changeTab,
     TResult Function(ChangePickupPartner value)? changePickupPartner,
+    TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult Function(AddDiviceBill value)? addDiviceBill,
+    TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddIdCardImage value)? addIdCardImage,
+    TResult Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult Function(AddDeviceImages value)? addDeviceImages,
+    TResult Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -486,104 +653,170 @@ class _$CancelOrderImpl implements CancelOrder {
 }
 
 abstract class CancelOrder implements OrdersEvent {
-  const factory CancelOrder({required final String orderId}) =
-      _$CancelOrderImpl;
+  const factory CancelOrder(
+      {required final String orderId,
+      required final String reason}) = _$CancelOrderImpl;
 
   String get orderId;
+  String get reason;
   @JsonKey(ignore: true)
   _$$CancelOrderImplCopyWith<_$CancelOrderImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$GetNewOrderImplCopyWith<$Res> {
-  factory _$$GetNewOrderImplCopyWith(
-          _$GetNewOrderImpl value, $Res Function(_$GetNewOrderImpl) then) =
-      __$$GetNewOrderImplCopyWithImpl<$Res>;
+abstract class _$$CompleteOrderImplCopyWith<$Res> {
+  factory _$$CompleteOrderImplCopyWith(
+          _$CompleteOrderImpl value, $Res Function(_$CompleteOrderImpl) then) =
+      __$$CompleteOrderImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String orderId, CompleteOrderModel completeOrderModel});
 }
 
 /// @nodoc
-class __$$GetNewOrderImplCopyWithImpl<$Res>
-    extends _$OrdersEventCopyWithImpl<$Res, _$GetNewOrderImpl>
-    implements _$$GetNewOrderImplCopyWith<$Res> {
-  __$$GetNewOrderImplCopyWithImpl(
-      _$GetNewOrderImpl _value, $Res Function(_$GetNewOrderImpl) _then)
+class __$$CompleteOrderImplCopyWithImpl<$Res>
+    extends _$OrdersEventCopyWithImpl<$Res, _$CompleteOrderImpl>
+    implements _$$CompleteOrderImplCopyWith<$Res> {
+  __$$CompleteOrderImplCopyWithImpl(
+      _$CompleteOrderImpl _value, $Res Function(_$CompleteOrderImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? orderId = null,
+    Object? completeOrderModel = null,
+  }) {
+    return _then(_$CompleteOrderImpl(
+      orderId: null == orderId
+          ? _value.orderId
+          : orderId // ignore: cast_nullable_to_non_nullable
+              as String,
+      completeOrderModel: null == completeOrderModel
+          ? _value.completeOrderModel
+          : completeOrderModel // ignore: cast_nullable_to_non_nullable
+              as CompleteOrderModel,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$GetNewOrderImpl implements GetNewOrder {
-  const _$GetNewOrderImpl();
+class _$CompleteOrderImpl implements CompleteOrder {
+  const _$CompleteOrderImpl(
+      {required this.orderId, required this.completeOrderModel});
+
+  @override
+  final String orderId;
+  @override
+  final CompleteOrderModel completeOrderModel;
 
   @override
   String toString() {
-    return 'OrdersEvent.getNewOrder()';
+    return 'OrdersEvent.completeOrder(orderId: $orderId, completeOrderModel: $completeOrderModel)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetNewOrderImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$CompleteOrderImpl &&
+            (identical(other.orderId, orderId) || other.orderId == orderId) &&
+            (identical(other.completeOrderModel, completeOrderModel) ||
+                other.completeOrderModel == completeOrderModel));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, orderId, completeOrderModel);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CompleteOrderImplCopyWith<_$CompleteOrderImpl> get copyWith =>
+      __$$CompleteOrderImplCopyWithImpl<_$CompleteOrderImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
-    required TResult Function(String orderId) cancelOrder,
-    required TResult Function() getNewOrder,
-    required TResult Function() refreshNewOrder,
-    required TResult Function() getPartnerOrders,
+    required TResult Function(String orderId, String reason) cancelOrder,
+    required TResult Function(
+            String orderId, CompleteOrderModel completeOrderModel)
+        completeOrder,
+    required TResult Function(bool call) getNewOrder,
+    required TResult Function(bool call) getPartnerOrders,
     required TResult Function(String orderId) removePickupPartner,
     required TResult Function() refresPartnerOrders,
+    required TResult Function() refreshNewOrder,
     required TResult Function(int tab) changeTab,
     required TResult Function(PickUpPerson pickUpPerson, String orderId)
         changePickupPartner,
+    required TResult Function() checkErrorCompleteOrder,
+    required TResult Function() addDiviceBill,
+    required TResult Function() removeDiviceBill,
+    required TResult Function() addIdCardImage,
+    required TResult Function() removeIdCardImage,
+    required TResult Function() addDeviceImages,
+    required TResult Function(int index) removeDeviceImage,
     required TResult Function() reset,
   }) {
-    return getNewOrder();
+    return completeOrder(orderId, completeOrderModel);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
-    TResult? Function(String orderId)? cancelOrder,
-    TResult? Function()? getNewOrder,
-    TResult? Function()? refreshNewOrder,
-    TResult? Function()? getPartnerOrders,
+    TResult? Function(String orderId, String reason)? cancelOrder,
+    TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult? Function(bool call)? getNewOrder,
+    TResult? Function(bool call)? getPartnerOrders,
     TResult? Function(String orderId)? removePickupPartner,
     TResult? Function()? refresPartnerOrders,
+    TResult? Function()? refreshNewOrder,
     TResult? Function(int tab)? changeTab,
     TResult? Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult? Function()? checkErrorCompleteOrder,
+    TResult? Function()? addDiviceBill,
+    TResult? Function()? removeDiviceBill,
+    TResult? Function()? addIdCardImage,
+    TResult? Function()? removeIdCardImage,
+    TResult? Function()? addDeviceImages,
+    TResult? Function(int index)? removeDeviceImage,
     TResult? Function()? reset,
   }) {
-    return getNewOrder?.call();
+    return completeOrder?.call(orderId, completeOrderModel);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
-    TResult Function(String orderId)? cancelOrder,
-    TResult Function()? getNewOrder,
-    TResult Function()? refreshNewOrder,
-    TResult Function()? getPartnerOrders,
+    TResult Function(String orderId, String reason)? cancelOrder,
+    TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult Function(bool call)? getNewOrder,
+    TResult Function(bool call)? getPartnerOrders,
     TResult Function(String orderId)? removePickupPartner,
     TResult Function()? refresPartnerOrders,
+    TResult Function()? refreshNewOrder,
     TResult Function(int tab)? changeTab,
     TResult Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult Function()? checkErrorCompleteOrder,
+    TResult Function()? addDiviceBill,
+    TResult Function()? removeDiviceBill,
+    TResult Function()? addIdCardImage,
+    TResult Function()? removeIdCardImage,
+    TResult Function()? addDeviceImages,
+    TResult Function(int index)? removeDeviceImage,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
-    if (getNewOrder != null) {
-      return getNewOrder();
+    if (completeOrder != null) {
+      return completeOrder(orderId, completeOrderModel);
     }
     return orElse();
   }
@@ -593,13 +826,263 @@ class _$GetNewOrderImpl implements GetNewOrder {
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
     required TResult Function(CancelOrder value) cancelOrder,
+    required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
-    required TResult Function(RefreshNewOrder value) refreshNewOrder,
     required TResult Function(GetPartnerOrders value) getPartnerOrders,
     required TResult Function(RemovePickupPartner value) removePickupPartner,
     required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
+    required TResult Function(RefreshNewOrder value) refreshNewOrder,
     required TResult Function(ChangeTab value) changeTab,
     required TResult Function(ChangePickupPartner value) changePickupPartner,
+    required TResult Function(CheckErrorCompleteOrder value)
+        checkErrorCompleteOrder,
+    required TResult Function(AddDiviceBill value) addDiviceBill,
+    required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddIdCardImage value) addIdCardImage,
+    required TResult Function(RemoveIdCardImage value) removeIdCardImage,
+    required TResult Function(AddDeviceImages value) addDeviceImages,
+    required TResult Function(RemoveDeviceImage value) removeDeviceImage,
+    required TResult Function(Reset value) reset,
+  }) {
+    return completeOrder(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(CancelOrder value)? cancelOrder,
+    TResult? Function(CompleteOrder value)? completeOrder,
+    TResult? Function(GetNewOrder value)? getNewOrder,
+    TResult? Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult? Function(RemovePickupPartner value)? removePickupPartner,
+    TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
+    TResult? Function(ChangeTab value)? changeTab,
+    TResult? Function(ChangePickupPartner value)? changePickupPartner,
+    TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult? Function(AddDiviceBill value)? addDiviceBill,
+    TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddIdCardImage value)? addIdCardImage,
+    TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult? Function(AddDeviceImages value)? addDeviceImages,
+    TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult? Function(Reset value)? reset,
+  }) {
+    return completeOrder?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(CancelOrder value)? cancelOrder,
+    TResult Function(CompleteOrder value)? completeOrder,
+    TResult Function(GetNewOrder value)? getNewOrder,
+    TResult Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult Function(RemovePickupPartner value)? removePickupPartner,
+    TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult Function(RefreshNewOrder value)? refreshNewOrder,
+    TResult Function(ChangeTab value)? changeTab,
+    TResult Function(ChangePickupPartner value)? changePickupPartner,
+    TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult Function(AddDiviceBill value)? addDiviceBill,
+    TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddIdCardImage value)? addIdCardImage,
+    TResult Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult Function(AddDeviceImages value)? addDeviceImages,
+    TResult Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult Function(Reset value)? reset,
+    required TResult orElse(),
+  }) {
+    if (completeOrder != null) {
+      return completeOrder(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CompleteOrder implements OrdersEvent {
+  const factory CompleteOrder(
+          {required final String orderId,
+          required final CompleteOrderModel completeOrderModel}) =
+      _$CompleteOrderImpl;
+
+  String get orderId;
+  CompleteOrderModel get completeOrderModel;
+  @JsonKey(ignore: true)
+  _$$CompleteOrderImplCopyWith<_$CompleteOrderImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetNewOrderImplCopyWith<$Res> {
+  factory _$$GetNewOrderImplCopyWith(
+          _$GetNewOrderImpl value, $Res Function(_$GetNewOrderImpl) then) =
+      __$$GetNewOrderImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool call});
+}
+
+/// @nodoc
+class __$$GetNewOrderImplCopyWithImpl<$Res>
+    extends _$OrdersEventCopyWithImpl<$Res, _$GetNewOrderImpl>
+    implements _$$GetNewOrderImplCopyWith<$Res> {
+  __$$GetNewOrderImplCopyWithImpl(
+      _$GetNewOrderImpl _value, $Res Function(_$GetNewOrderImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? call = null,
+  }) {
+    return _then(_$GetNewOrderImpl(
+      call: null == call
+          ? _value.call
+          : call // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetNewOrderImpl implements GetNewOrder {
+  const _$GetNewOrderImpl({required this.call});
+
+  @override
+  final bool call;
+
+  @override
+  String toString() {
+    return 'OrdersEvent.getNewOrder(call: $call)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetNewOrderImpl &&
+            (identical(other.call, call) || other.call == call));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, call);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetNewOrderImplCopyWith<_$GetNewOrderImpl> get copyWith =>
+      __$$GetNewOrderImplCopyWithImpl<_$GetNewOrderImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String orderId) acceptOrder,
+    required TResult Function(String orderId, String reason) cancelOrder,
+    required TResult Function(
+            String orderId, CompleteOrderModel completeOrderModel)
+        completeOrder,
+    required TResult Function(bool call) getNewOrder,
+    required TResult Function(bool call) getPartnerOrders,
+    required TResult Function(String orderId) removePickupPartner,
+    required TResult Function() refresPartnerOrders,
+    required TResult Function() refreshNewOrder,
+    required TResult Function(int tab) changeTab,
+    required TResult Function(PickUpPerson pickUpPerson, String orderId)
+        changePickupPartner,
+    required TResult Function() checkErrorCompleteOrder,
+    required TResult Function() addDiviceBill,
+    required TResult Function() removeDiviceBill,
+    required TResult Function() addIdCardImage,
+    required TResult Function() removeIdCardImage,
+    required TResult Function() addDeviceImages,
+    required TResult Function(int index) removeDeviceImage,
+    required TResult Function() reset,
+  }) {
+    return getNewOrder(call);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String orderId)? acceptOrder,
+    TResult? Function(String orderId, String reason)? cancelOrder,
+    TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult? Function(bool call)? getNewOrder,
+    TResult? Function(bool call)? getPartnerOrders,
+    TResult? Function(String orderId)? removePickupPartner,
+    TResult? Function()? refresPartnerOrders,
+    TResult? Function()? refreshNewOrder,
+    TResult? Function(int tab)? changeTab,
+    TResult? Function(PickUpPerson pickUpPerson, String orderId)?
+        changePickupPartner,
+    TResult? Function()? checkErrorCompleteOrder,
+    TResult? Function()? addDiviceBill,
+    TResult? Function()? removeDiviceBill,
+    TResult? Function()? addIdCardImage,
+    TResult? Function()? removeIdCardImage,
+    TResult? Function()? addDeviceImages,
+    TResult? Function(int index)? removeDeviceImage,
+    TResult? Function()? reset,
+  }) {
+    return getNewOrder?.call(call);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String orderId)? acceptOrder,
+    TResult Function(String orderId, String reason)? cancelOrder,
+    TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult Function(bool call)? getNewOrder,
+    TResult Function(bool call)? getPartnerOrders,
+    TResult Function(String orderId)? removePickupPartner,
+    TResult Function()? refresPartnerOrders,
+    TResult Function()? refreshNewOrder,
+    TResult Function(int tab)? changeTab,
+    TResult Function(PickUpPerson pickUpPerson, String orderId)?
+        changePickupPartner,
+    TResult Function()? checkErrorCompleteOrder,
+    TResult Function()? addDiviceBill,
+    TResult Function()? removeDiviceBill,
+    TResult Function()? addIdCardImage,
+    TResult Function()? removeIdCardImage,
+    TResult Function()? addDeviceImages,
+    TResult Function(int index)? removeDeviceImage,
+    TResult Function()? reset,
+    required TResult orElse(),
+  }) {
+    if (getNewOrder != null) {
+      return getNewOrder(call);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(CancelOrder value) cancelOrder,
+    required TResult Function(CompleteOrder value) completeOrder,
+    required TResult Function(GetNewOrder value) getNewOrder,
+    required TResult Function(GetPartnerOrders value) getPartnerOrders,
+    required TResult Function(RemovePickupPartner value) removePickupPartner,
+    required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
+    required TResult Function(RefreshNewOrder value) refreshNewOrder,
+    required TResult Function(ChangeTab value) changeTab,
+    required TResult Function(ChangePickupPartner value) changePickupPartner,
+    required TResult Function(CheckErrorCompleteOrder value)
+        checkErrorCompleteOrder,
+    required TResult Function(AddDiviceBill value) addDiviceBill,
+    required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddIdCardImage value) addIdCardImage,
+    required TResult Function(RemoveIdCardImage value) removeIdCardImage,
+    required TResult Function(AddDeviceImages value) addDeviceImages,
+    required TResult Function(RemoveDeviceImage value) removeDeviceImage,
     required TResult Function(Reset value) reset,
   }) {
     return getNewOrder(this);
@@ -610,13 +1093,21 @@ class _$GetNewOrderImpl implements GetNewOrder {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
     TResult? Function(CancelOrder value)? cancelOrder,
+    TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
-    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
     TResult? Function(GetPartnerOrders value)? getPartnerOrders,
     TResult? Function(RemovePickupPartner value)? removePickupPartner,
     TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
     TResult? Function(ChangeTab value)? changeTab,
     TResult? Function(ChangePickupPartner value)? changePickupPartner,
+    TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult? Function(AddDiviceBill value)? addDiviceBill,
+    TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddIdCardImage value)? addIdCardImage,
+    TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult? Function(AddDeviceImages value)? addDeviceImages,
+    TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult? Function(Reset value)? reset,
   }) {
     return getNewOrder?.call(this);
@@ -627,13 +1118,21 @@ class _$GetNewOrderImpl implements GetNewOrder {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
     TResult Function(CancelOrder value)? cancelOrder,
+    TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
-    TResult Function(RefreshNewOrder value)? refreshNewOrder,
     TResult Function(GetPartnerOrders value)? getPartnerOrders,
     TResult Function(RemovePickupPartner value)? removePickupPartner,
     TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult Function(RefreshNewOrder value)? refreshNewOrder,
     TResult Function(ChangeTab value)? changeTab,
     TResult Function(ChangePickupPartner value)? changePickupPartner,
+    TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult Function(AddDiviceBill value)? addDiviceBill,
+    TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddIdCardImage value)? addIdCardImage,
+    TResult Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult Function(AddDeviceImages value)? addDeviceImages,
+    TResult Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -645,160 +1144,12 @@ class _$GetNewOrderImpl implements GetNewOrder {
 }
 
 abstract class GetNewOrder implements OrdersEvent {
-  const factory GetNewOrder() = _$GetNewOrderImpl;
-}
+  const factory GetNewOrder({required final bool call}) = _$GetNewOrderImpl;
 
-/// @nodoc
-abstract class _$$RefreshNewOrderImplCopyWith<$Res> {
-  factory _$$RefreshNewOrderImplCopyWith(_$RefreshNewOrderImpl value,
-          $Res Function(_$RefreshNewOrderImpl) then) =
-      __$$RefreshNewOrderImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$RefreshNewOrderImplCopyWithImpl<$Res>
-    extends _$OrdersEventCopyWithImpl<$Res, _$RefreshNewOrderImpl>
-    implements _$$RefreshNewOrderImplCopyWith<$Res> {
-  __$$RefreshNewOrderImplCopyWithImpl(
-      _$RefreshNewOrderImpl _value, $Res Function(_$RefreshNewOrderImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$RefreshNewOrderImpl implements RefreshNewOrder {
-  const _$RefreshNewOrderImpl();
-
-  @override
-  String toString() {
-    return 'OrdersEvent.refreshNewOrder()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$RefreshNewOrderImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String orderId) acceptOrder,
-    required TResult Function(String orderId) cancelOrder,
-    required TResult Function() getNewOrder,
-    required TResult Function() refreshNewOrder,
-    required TResult Function() getPartnerOrders,
-    required TResult Function(String orderId) removePickupPartner,
-    required TResult Function() refresPartnerOrders,
-    required TResult Function(int tab) changeTab,
-    required TResult Function(PickUpPerson pickUpPerson, String orderId)
-        changePickupPartner,
-    required TResult Function() reset,
-  }) {
-    return refreshNewOrder();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String orderId)? acceptOrder,
-    TResult? Function(String orderId)? cancelOrder,
-    TResult? Function()? getNewOrder,
-    TResult? Function()? refreshNewOrder,
-    TResult? Function()? getPartnerOrders,
-    TResult? Function(String orderId)? removePickupPartner,
-    TResult? Function()? refresPartnerOrders,
-    TResult? Function(int tab)? changeTab,
-    TResult? Function(PickUpPerson pickUpPerson, String orderId)?
-        changePickupPartner,
-    TResult? Function()? reset,
-  }) {
-    return refreshNewOrder?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String orderId)? acceptOrder,
-    TResult Function(String orderId)? cancelOrder,
-    TResult Function()? getNewOrder,
-    TResult Function()? refreshNewOrder,
-    TResult Function()? getPartnerOrders,
-    TResult Function(String orderId)? removePickupPartner,
-    TResult Function()? refresPartnerOrders,
-    TResult Function(int tab)? changeTab,
-    TResult Function(PickUpPerson pickUpPerson, String orderId)?
-        changePickupPartner,
-    TResult Function()? reset,
-    required TResult orElse(),
-  }) {
-    if (refreshNewOrder != null) {
-      return refreshNewOrder();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AcceptOrder value) acceptOrder,
-    required TResult Function(CancelOrder value) cancelOrder,
-    required TResult Function(GetNewOrder value) getNewOrder,
-    required TResult Function(RefreshNewOrder value) refreshNewOrder,
-    required TResult Function(GetPartnerOrders value) getPartnerOrders,
-    required TResult Function(RemovePickupPartner value) removePickupPartner,
-    required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
-    required TResult Function(ChangeTab value) changeTab,
-    required TResult Function(ChangePickupPartner value) changePickupPartner,
-    required TResult Function(Reset value) reset,
-  }) {
-    return refreshNewOrder(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AcceptOrder value)? acceptOrder,
-    TResult? Function(CancelOrder value)? cancelOrder,
-    TResult? Function(GetNewOrder value)? getNewOrder,
-    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
-    TResult? Function(GetPartnerOrders value)? getPartnerOrders,
-    TResult? Function(RemovePickupPartner value)? removePickupPartner,
-    TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
-    TResult? Function(ChangeTab value)? changeTab,
-    TResult? Function(ChangePickupPartner value)? changePickupPartner,
-    TResult? Function(Reset value)? reset,
-  }) {
-    return refreshNewOrder?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AcceptOrder value)? acceptOrder,
-    TResult Function(CancelOrder value)? cancelOrder,
-    TResult Function(GetNewOrder value)? getNewOrder,
-    TResult Function(RefreshNewOrder value)? refreshNewOrder,
-    TResult Function(GetPartnerOrders value)? getPartnerOrders,
-    TResult Function(RemovePickupPartner value)? removePickupPartner,
-    TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
-    TResult Function(ChangeTab value)? changeTab,
-    TResult Function(ChangePickupPartner value)? changePickupPartner,
-    TResult Function(Reset value)? reset,
-    required TResult orElse(),
-  }) {
-    if (refreshNewOrder != null) {
-      return refreshNewOrder(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class RefreshNewOrder implements OrdersEvent {
-  const factory RefreshNewOrder() = _$RefreshNewOrderImpl;
+  bool get call;
+  @JsonKey(ignore: true)
+  _$$GetNewOrderImplCopyWith<_$GetNewOrderImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -806,6 +1157,8 @@ abstract class _$$GetPartnerOrdersImplCopyWith<$Res> {
   factory _$$GetPartnerOrdersImplCopyWith(_$GetPartnerOrdersImpl value,
           $Res Function(_$GetPartnerOrdersImpl) then) =
       __$$GetPartnerOrdersImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool call});
 }
 
 /// @nodoc
@@ -815,81 +1168,134 @@ class __$$GetPartnerOrdersImplCopyWithImpl<$Res>
   __$$GetPartnerOrdersImplCopyWithImpl(_$GetPartnerOrdersImpl _value,
       $Res Function(_$GetPartnerOrdersImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? call = null,
+  }) {
+    return _then(_$GetPartnerOrdersImpl(
+      call: null == call
+          ? _value.call
+          : call // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$GetPartnerOrdersImpl implements GetPartnerOrders {
-  const _$GetPartnerOrdersImpl();
+  const _$GetPartnerOrdersImpl({required this.call});
+
+  @override
+  final bool call;
 
   @override
   String toString() {
-    return 'OrdersEvent.getPartnerOrders()';
+    return 'OrdersEvent.getPartnerOrders(call: $call)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetPartnerOrdersImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$GetPartnerOrdersImpl &&
+            (identical(other.call, call) || other.call == call));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, call);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetPartnerOrdersImplCopyWith<_$GetPartnerOrdersImpl> get copyWith =>
+      __$$GetPartnerOrdersImplCopyWithImpl<_$GetPartnerOrdersImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
-    required TResult Function(String orderId) cancelOrder,
-    required TResult Function() getNewOrder,
-    required TResult Function() refreshNewOrder,
-    required TResult Function() getPartnerOrders,
+    required TResult Function(String orderId, String reason) cancelOrder,
+    required TResult Function(
+            String orderId, CompleteOrderModel completeOrderModel)
+        completeOrder,
+    required TResult Function(bool call) getNewOrder,
+    required TResult Function(bool call) getPartnerOrders,
     required TResult Function(String orderId) removePickupPartner,
     required TResult Function() refresPartnerOrders,
+    required TResult Function() refreshNewOrder,
     required TResult Function(int tab) changeTab,
     required TResult Function(PickUpPerson pickUpPerson, String orderId)
         changePickupPartner,
+    required TResult Function() checkErrorCompleteOrder,
+    required TResult Function() addDiviceBill,
+    required TResult Function() removeDiviceBill,
+    required TResult Function() addIdCardImage,
+    required TResult Function() removeIdCardImage,
+    required TResult Function() addDeviceImages,
+    required TResult Function(int index) removeDeviceImage,
     required TResult Function() reset,
   }) {
-    return getPartnerOrders();
+    return getPartnerOrders(call);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
-    TResult? Function(String orderId)? cancelOrder,
-    TResult? Function()? getNewOrder,
-    TResult? Function()? refreshNewOrder,
-    TResult? Function()? getPartnerOrders,
+    TResult? Function(String orderId, String reason)? cancelOrder,
+    TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult? Function(bool call)? getNewOrder,
+    TResult? Function(bool call)? getPartnerOrders,
     TResult? Function(String orderId)? removePickupPartner,
     TResult? Function()? refresPartnerOrders,
+    TResult? Function()? refreshNewOrder,
     TResult? Function(int tab)? changeTab,
     TResult? Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult? Function()? checkErrorCompleteOrder,
+    TResult? Function()? addDiviceBill,
+    TResult? Function()? removeDiviceBill,
+    TResult? Function()? addIdCardImage,
+    TResult? Function()? removeIdCardImage,
+    TResult? Function()? addDeviceImages,
+    TResult? Function(int index)? removeDeviceImage,
     TResult? Function()? reset,
   }) {
-    return getPartnerOrders?.call();
+    return getPartnerOrders?.call(call);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
-    TResult Function(String orderId)? cancelOrder,
-    TResult Function()? getNewOrder,
-    TResult Function()? refreshNewOrder,
-    TResult Function()? getPartnerOrders,
+    TResult Function(String orderId, String reason)? cancelOrder,
+    TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult Function(bool call)? getNewOrder,
+    TResult Function(bool call)? getPartnerOrders,
     TResult Function(String orderId)? removePickupPartner,
     TResult Function()? refresPartnerOrders,
+    TResult Function()? refreshNewOrder,
     TResult Function(int tab)? changeTab,
     TResult Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult Function()? checkErrorCompleteOrder,
+    TResult Function()? addDiviceBill,
+    TResult Function()? removeDiviceBill,
+    TResult Function()? addIdCardImage,
+    TResult Function()? removeIdCardImage,
+    TResult Function()? addDeviceImages,
+    TResult Function(int index)? removeDeviceImage,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
     if (getPartnerOrders != null) {
-      return getPartnerOrders();
+      return getPartnerOrders(call);
     }
     return orElse();
   }
@@ -899,13 +1305,22 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
     required TResult Function(CancelOrder value) cancelOrder,
+    required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
-    required TResult Function(RefreshNewOrder value) refreshNewOrder,
     required TResult Function(GetPartnerOrders value) getPartnerOrders,
     required TResult Function(RemovePickupPartner value) removePickupPartner,
     required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
+    required TResult Function(RefreshNewOrder value) refreshNewOrder,
     required TResult Function(ChangeTab value) changeTab,
     required TResult Function(ChangePickupPartner value) changePickupPartner,
+    required TResult Function(CheckErrorCompleteOrder value)
+        checkErrorCompleteOrder,
+    required TResult Function(AddDiviceBill value) addDiviceBill,
+    required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddIdCardImage value) addIdCardImage,
+    required TResult Function(RemoveIdCardImage value) removeIdCardImage,
+    required TResult Function(AddDeviceImages value) addDeviceImages,
+    required TResult Function(RemoveDeviceImage value) removeDeviceImage,
     required TResult Function(Reset value) reset,
   }) {
     return getPartnerOrders(this);
@@ -916,13 +1331,21 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
     TResult? Function(CancelOrder value)? cancelOrder,
+    TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
-    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
     TResult? Function(GetPartnerOrders value)? getPartnerOrders,
     TResult? Function(RemovePickupPartner value)? removePickupPartner,
     TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
     TResult? Function(ChangeTab value)? changeTab,
     TResult? Function(ChangePickupPartner value)? changePickupPartner,
+    TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult? Function(AddDiviceBill value)? addDiviceBill,
+    TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddIdCardImage value)? addIdCardImage,
+    TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult? Function(AddDeviceImages value)? addDeviceImages,
+    TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult? Function(Reset value)? reset,
   }) {
     return getPartnerOrders?.call(this);
@@ -933,13 +1356,21 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
     TResult Function(CancelOrder value)? cancelOrder,
+    TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
-    TResult Function(RefreshNewOrder value)? refreshNewOrder,
     TResult Function(GetPartnerOrders value)? getPartnerOrders,
     TResult Function(RemovePickupPartner value)? removePickupPartner,
     TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult Function(RefreshNewOrder value)? refreshNewOrder,
     TResult Function(ChangeTab value)? changeTab,
     TResult Function(ChangePickupPartner value)? changePickupPartner,
+    TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult Function(AddDiviceBill value)? addDiviceBill,
+    TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddIdCardImage value)? addIdCardImage,
+    TResult Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult Function(AddDeviceImages value)? addDeviceImages,
+    TResult Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -951,7 +1382,13 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
 }
 
 abstract class GetPartnerOrders implements OrdersEvent {
-  const factory GetPartnerOrders() = _$GetPartnerOrdersImpl;
+  const factory GetPartnerOrders({required final bool call}) =
+      _$GetPartnerOrdersImpl;
+
+  bool get call;
+  @JsonKey(ignore: true)
+  _$$GetPartnerOrdersImplCopyWith<_$GetPartnerOrdersImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1020,15 +1457,25 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
-    required TResult Function(String orderId) cancelOrder,
-    required TResult Function() getNewOrder,
-    required TResult Function() refreshNewOrder,
-    required TResult Function() getPartnerOrders,
+    required TResult Function(String orderId, String reason) cancelOrder,
+    required TResult Function(
+            String orderId, CompleteOrderModel completeOrderModel)
+        completeOrder,
+    required TResult Function(bool call) getNewOrder,
+    required TResult Function(bool call) getPartnerOrders,
     required TResult Function(String orderId) removePickupPartner,
     required TResult Function() refresPartnerOrders,
+    required TResult Function() refreshNewOrder,
     required TResult Function(int tab) changeTab,
     required TResult Function(PickUpPerson pickUpPerson, String orderId)
         changePickupPartner,
+    required TResult Function() checkErrorCompleteOrder,
+    required TResult Function() addDiviceBill,
+    required TResult Function() removeDiviceBill,
+    required TResult Function() addIdCardImage,
+    required TResult Function() removeIdCardImage,
+    required TResult Function() addDeviceImages,
+    required TResult Function(int index) removeDeviceImage,
     required TResult Function() reset,
   }) {
     return removePickupPartner(orderId);
@@ -1038,15 +1485,24 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
-    TResult? Function(String orderId)? cancelOrder,
-    TResult? Function()? getNewOrder,
-    TResult? Function()? refreshNewOrder,
-    TResult? Function()? getPartnerOrders,
+    TResult? Function(String orderId, String reason)? cancelOrder,
+    TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult? Function(bool call)? getNewOrder,
+    TResult? Function(bool call)? getPartnerOrders,
     TResult? Function(String orderId)? removePickupPartner,
     TResult? Function()? refresPartnerOrders,
+    TResult? Function()? refreshNewOrder,
     TResult? Function(int tab)? changeTab,
     TResult? Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult? Function()? checkErrorCompleteOrder,
+    TResult? Function()? addDiviceBill,
+    TResult? Function()? removeDiviceBill,
+    TResult? Function()? addIdCardImage,
+    TResult? Function()? removeIdCardImage,
+    TResult? Function()? addDeviceImages,
+    TResult? Function(int index)? removeDeviceImage,
     TResult? Function()? reset,
   }) {
     return removePickupPartner?.call(orderId);
@@ -1056,15 +1512,24 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
-    TResult Function(String orderId)? cancelOrder,
-    TResult Function()? getNewOrder,
-    TResult Function()? refreshNewOrder,
-    TResult Function()? getPartnerOrders,
+    TResult Function(String orderId, String reason)? cancelOrder,
+    TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult Function(bool call)? getNewOrder,
+    TResult Function(bool call)? getPartnerOrders,
     TResult Function(String orderId)? removePickupPartner,
     TResult Function()? refresPartnerOrders,
+    TResult Function()? refreshNewOrder,
     TResult Function(int tab)? changeTab,
     TResult Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult Function()? checkErrorCompleteOrder,
+    TResult Function()? addDiviceBill,
+    TResult Function()? removeDiviceBill,
+    TResult Function()? addIdCardImage,
+    TResult Function()? removeIdCardImage,
+    TResult Function()? addDeviceImages,
+    TResult Function(int index)? removeDeviceImage,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -1079,13 +1544,22 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
     required TResult Function(CancelOrder value) cancelOrder,
+    required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
-    required TResult Function(RefreshNewOrder value) refreshNewOrder,
     required TResult Function(GetPartnerOrders value) getPartnerOrders,
     required TResult Function(RemovePickupPartner value) removePickupPartner,
     required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
+    required TResult Function(RefreshNewOrder value) refreshNewOrder,
     required TResult Function(ChangeTab value) changeTab,
     required TResult Function(ChangePickupPartner value) changePickupPartner,
+    required TResult Function(CheckErrorCompleteOrder value)
+        checkErrorCompleteOrder,
+    required TResult Function(AddDiviceBill value) addDiviceBill,
+    required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddIdCardImage value) addIdCardImage,
+    required TResult Function(RemoveIdCardImage value) removeIdCardImage,
+    required TResult Function(AddDeviceImages value) addDeviceImages,
+    required TResult Function(RemoveDeviceImage value) removeDeviceImage,
     required TResult Function(Reset value) reset,
   }) {
     return removePickupPartner(this);
@@ -1096,13 +1570,21 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
     TResult? Function(CancelOrder value)? cancelOrder,
+    TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
-    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
     TResult? Function(GetPartnerOrders value)? getPartnerOrders,
     TResult? Function(RemovePickupPartner value)? removePickupPartner,
     TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
     TResult? Function(ChangeTab value)? changeTab,
     TResult? Function(ChangePickupPartner value)? changePickupPartner,
+    TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult? Function(AddDiviceBill value)? addDiviceBill,
+    TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddIdCardImage value)? addIdCardImage,
+    TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult? Function(AddDeviceImages value)? addDeviceImages,
+    TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult? Function(Reset value)? reset,
   }) {
     return removePickupPartner?.call(this);
@@ -1113,13 +1595,21 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
     TResult Function(CancelOrder value)? cancelOrder,
+    TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
-    TResult Function(RefreshNewOrder value)? refreshNewOrder,
     TResult Function(GetPartnerOrders value)? getPartnerOrders,
     TResult Function(RemovePickupPartner value)? removePickupPartner,
     TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult Function(RefreshNewOrder value)? refreshNewOrder,
     TResult Function(ChangeTab value)? changeTab,
     TResult Function(ChangePickupPartner value)? changePickupPartner,
+    TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult Function(AddDiviceBill value)? addDiviceBill,
+    TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddIdCardImage value)? addIdCardImage,
+    TResult Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult Function(AddDeviceImages value)? addDeviceImages,
+    TResult Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -1180,15 +1670,25 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
-    required TResult Function(String orderId) cancelOrder,
-    required TResult Function() getNewOrder,
-    required TResult Function() refreshNewOrder,
-    required TResult Function() getPartnerOrders,
+    required TResult Function(String orderId, String reason) cancelOrder,
+    required TResult Function(
+            String orderId, CompleteOrderModel completeOrderModel)
+        completeOrder,
+    required TResult Function(bool call) getNewOrder,
+    required TResult Function(bool call) getPartnerOrders,
     required TResult Function(String orderId) removePickupPartner,
     required TResult Function() refresPartnerOrders,
+    required TResult Function() refreshNewOrder,
     required TResult Function(int tab) changeTab,
     required TResult Function(PickUpPerson pickUpPerson, String orderId)
         changePickupPartner,
+    required TResult Function() checkErrorCompleteOrder,
+    required TResult Function() addDiviceBill,
+    required TResult Function() removeDiviceBill,
+    required TResult Function() addIdCardImage,
+    required TResult Function() removeIdCardImage,
+    required TResult Function() addDeviceImages,
+    required TResult Function(int index) removeDeviceImage,
     required TResult Function() reset,
   }) {
     return refresPartnerOrders();
@@ -1198,15 +1698,24 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
-    TResult? Function(String orderId)? cancelOrder,
-    TResult? Function()? getNewOrder,
-    TResult? Function()? refreshNewOrder,
-    TResult? Function()? getPartnerOrders,
+    TResult? Function(String orderId, String reason)? cancelOrder,
+    TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult? Function(bool call)? getNewOrder,
+    TResult? Function(bool call)? getPartnerOrders,
     TResult? Function(String orderId)? removePickupPartner,
     TResult? Function()? refresPartnerOrders,
+    TResult? Function()? refreshNewOrder,
     TResult? Function(int tab)? changeTab,
     TResult? Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult? Function()? checkErrorCompleteOrder,
+    TResult? Function()? addDiviceBill,
+    TResult? Function()? removeDiviceBill,
+    TResult? Function()? addIdCardImage,
+    TResult? Function()? removeIdCardImage,
+    TResult? Function()? addDeviceImages,
+    TResult? Function(int index)? removeDeviceImage,
     TResult? Function()? reset,
   }) {
     return refresPartnerOrders?.call();
@@ -1216,15 +1725,24 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
-    TResult Function(String orderId)? cancelOrder,
-    TResult Function()? getNewOrder,
-    TResult Function()? refreshNewOrder,
-    TResult Function()? getPartnerOrders,
+    TResult Function(String orderId, String reason)? cancelOrder,
+    TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult Function(bool call)? getNewOrder,
+    TResult Function(bool call)? getPartnerOrders,
     TResult Function(String orderId)? removePickupPartner,
     TResult Function()? refresPartnerOrders,
+    TResult Function()? refreshNewOrder,
     TResult Function(int tab)? changeTab,
     TResult Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult Function()? checkErrorCompleteOrder,
+    TResult Function()? addDiviceBill,
+    TResult Function()? removeDiviceBill,
+    TResult Function()? addIdCardImage,
+    TResult Function()? removeIdCardImage,
+    TResult Function()? addDeviceImages,
+    TResult Function(int index)? removeDeviceImage,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -1239,13 +1757,22 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
     required TResult Function(CancelOrder value) cancelOrder,
+    required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
-    required TResult Function(RefreshNewOrder value) refreshNewOrder,
     required TResult Function(GetPartnerOrders value) getPartnerOrders,
     required TResult Function(RemovePickupPartner value) removePickupPartner,
     required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
+    required TResult Function(RefreshNewOrder value) refreshNewOrder,
     required TResult Function(ChangeTab value) changeTab,
     required TResult Function(ChangePickupPartner value) changePickupPartner,
+    required TResult Function(CheckErrorCompleteOrder value)
+        checkErrorCompleteOrder,
+    required TResult Function(AddDiviceBill value) addDiviceBill,
+    required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddIdCardImage value) addIdCardImage,
+    required TResult Function(RemoveIdCardImage value) removeIdCardImage,
+    required TResult Function(AddDeviceImages value) addDeviceImages,
+    required TResult Function(RemoveDeviceImage value) removeDeviceImage,
     required TResult Function(Reset value) reset,
   }) {
     return refresPartnerOrders(this);
@@ -1256,13 +1783,21 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
     TResult? Function(CancelOrder value)? cancelOrder,
+    TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
-    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
     TResult? Function(GetPartnerOrders value)? getPartnerOrders,
     TResult? Function(RemovePickupPartner value)? removePickupPartner,
     TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
     TResult? Function(ChangeTab value)? changeTab,
     TResult? Function(ChangePickupPartner value)? changePickupPartner,
+    TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult? Function(AddDiviceBill value)? addDiviceBill,
+    TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddIdCardImage value)? addIdCardImage,
+    TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult? Function(AddDeviceImages value)? addDeviceImages,
+    TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult? Function(Reset value)? reset,
   }) {
     return refresPartnerOrders?.call(this);
@@ -1273,13 +1808,21 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
     TResult Function(CancelOrder value)? cancelOrder,
+    TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
-    TResult Function(RefreshNewOrder value)? refreshNewOrder,
     TResult Function(GetPartnerOrders value)? getPartnerOrders,
     TResult Function(RemovePickupPartner value)? removePickupPartner,
     TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult Function(RefreshNewOrder value)? refreshNewOrder,
     TResult Function(ChangeTab value)? changeTab,
     TResult Function(ChangePickupPartner value)? changePickupPartner,
+    TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult Function(AddDiviceBill value)? addDiviceBill,
+    TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddIdCardImage value)? addIdCardImage,
+    TResult Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult Function(AddDeviceImages value)? addDeviceImages,
+    TResult Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -1292,6 +1835,212 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
 
 abstract class RefresPartnerOrders implements OrdersEvent {
   const factory RefresPartnerOrders() = _$RefresPartnerOrdersImpl;
+}
+
+/// @nodoc
+abstract class _$$RefreshNewOrderImplCopyWith<$Res> {
+  factory _$$RefreshNewOrderImplCopyWith(_$RefreshNewOrderImpl value,
+          $Res Function(_$RefreshNewOrderImpl) then) =
+      __$$RefreshNewOrderImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$RefreshNewOrderImplCopyWithImpl<$Res>
+    extends _$OrdersEventCopyWithImpl<$Res, _$RefreshNewOrderImpl>
+    implements _$$RefreshNewOrderImplCopyWith<$Res> {
+  __$$RefreshNewOrderImplCopyWithImpl(
+      _$RefreshNewOrderImpl _value, $Res Function(_$RefreshNewOrderImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$RefreshNewOrderImpl implements RefreshNewOrder {
+  const _$RefreshNewOrderImpl();
+
+  @override
+  String toString() {
+    return 'OrdersEvent.refreshNewOrder()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$RefreshNewOrderImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String orderId) acceptOrder,
+    required TResult Function(String orderId, String reason) cancelOrder,
+    required TResult Function(
+            String orderId, CompleteOrderModel completeOrderModel)
+        completeOrder,
+    required TResult Function(bool call) getNewOrder,
+    required TResult Function(bool call) getPartnerOrders,
+    required TResult Function(String orderId) removePickupPartner,
+    required TResult Function() refresPartnerOrders,
+    required TResult Function() refreshNewOrder,
+    required TResult Function(int tab) changeTab,
+    required TResult Function(PickUpPerson pickUpPerson, String orderId)
+        changePickupPartner,
+    required TResult Function() checkErrorCompleteOrder,
+    required TResult Function() addDiviceBill,
+    required TResult Function() removeDiviceBill,
+    required TResult Function() addIdCardImage,
+    required TResult Function() removeIdCardImage,
+    required TResult Function() addDeviceImages,
+    required TResult Function(int index) removeDeviceImage,
+    required TResult Function() reset,
+  }) {
+    return refreshNewOrder();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String orderId)? acceptOrder,
+    TResult? Function(String orderId, String reason)? cancelOrder,
+    TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult? Function(bool call)? getNewOrder,
+    TResult? Function(bool call)? getPartnerOrders,
+    TResult? Function(String orderId)? removePickupPartner,
+    TResult? Function()? refresPartnerOrders,
+    TResult? Function()? refreshNewOrder,
+    TResult? Function(int tab)? changeTab,
+    TResult? Function(PickUpPerson pickUpPerson, String orderId)?
+        changePickupPartner,
+    TResult? Function()? checkErrorCompleteOrder,
+    TResult? Function()? addDiviceBill,
+    TResult? Function()? removeDiviceBill,
+    TResult? Function()? addIdCardImage,
+    TResult? Function()? removeIdCardImage,
+    TResult? Function()? addDeviceImages,
+    TResult? Function(int index)? removeDeviceImage,
+    TResult? Function()? reset,
+  }) {
+    return refreshNewOrder?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String orderId)? acceptOrder,
+    TResult Function(String orderId, String reason)? cancelOrder,
+    TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult Function(bool call)? getNewOrder,
+    TResult Function(bool call)? getPartnerOrders,
+    TResult Function(String orderId)? removePickupPartner,
+    TResult Function()? refresPartnerOrders,
+    TResult Function()? refreshNewOrder,
+    TResult Function(int tab)? changeTab,
+    TResult Function(PickUpPerson pickUpPerson, String orderId)?
+        changePickupPartner,
+    TResult Function()? checkErrorCompleteOrder,
+    TResult Function()? addDiviceBill,
+    TResult Function()? removeDiviceBill,
+    TResult Function()? addIdCardImage,
+    TResult Function()? removeIdCardImage,
+    TResult Function()? addDeviceImages,
+    TResult Function(int index)? removeDeviceImage,
+    TResult Function()? reset,
+    required TResult orElse(),
+  }) {
+    if (refreshNewOrder != null) {
+      return refreshNewOrder();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(CancelOrder value) cancelOrder,
+    required TResult Function(CompleteOrder value) completeOrder,
+    required TResult Function(GetNewOrder value) getNewOrder,
+    required TResult Function(GetPartnerOrders value) getPartnerOrders,
+    required TResult Function(RemovePickupPartner value) removePickupPartner,
+    required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
+    required TResult Function(RefreshNewOrder value) refreshNewOrder,
+    required TResult Function(ChangeTab value) changeTab,
+    required TResult Function(ChangePickupPartner value) changePickupPartner,
+    required TResult Function(CheckErrorCompleteOrder value)
+        checkErrorCompleteOrder,
+    required TResult Function(AddDiviceBill value) addDiviceBill,
+    required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddIdCardImage value) addIdCardImage,
+    required TResult Function(RemoveIdCardImage value) removeIdCardImage,
+    required TResult Function(AddDeviceImages value) addDeviceImages,
+    required TResult Function(RemoveDeviceImage value) removeDeviceImage,
+    required TResult Function(Reset value) reset,
+  }) {
+    return refreshNewOrder(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(CancelOrder value)? cancelOrder,
+    TResult? Function(CompleteOrder value)? completeOrder,
+    TResult? Function(GetNewOrder value)? getNewOrder,
+    TResult? Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult? Function(RemovePickupPartner value)? removePickupPartner,
+    TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
+    TResult? Function(ChangeTab value)? changeTab,
+    TResult? Function(ChangePickupPartner value)? changePickupPartner,
+    TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult? Function(AddDiviceBill value)? addDiviceBill,
+    TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddIdCardImage value)? addIdCardImage,
+    TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult? Function(AddDeviceImages value)? addDeviceImages,
+    TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult? Function(Reset value)? reset,
+  }) {
+    return refreshNewOrder?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(CancelOrder value)? cancelOrder,
+    TResult Function(CompleteOrder value)? completeOrder,
+    TResult Function(GetNewOrder value)? getNewOrder,
+    TResult Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult Function(RemovePickupPartner value)? removePickupPartner,
+    TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult Function(RefreshNewOrder value)? refreshNewOrder,
+    TResult Function(ChangeTab value)? changeTab,
+    TResult Function(ChangePickupPartner value)? changePickupPartner,
+    TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult Function(AddDiviceBill value)? addDiviceBill,
+    TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddIdCardImage value)? addIdCardImage,
+    TResult Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult Function(AddDeviceImages value)? addDeviceImages,
+    TResult Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult Function(Reset value)? reset,
+    required TResult orElse(),
+  }) {
+    if (refreshNewOrder != null) {
+      return refreshNewOrder(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RefreshNewOrder implements OrdersEvent {
+  const factory RefreshNewOrder() = _$RefreshNewOrderImpl;
 }
 
 /// @nodoc
@@ -1359,15 +2108,25 @@ class _$ChangeTabImpl implements ChangeTab {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
-    required TResult Function(String orderId) cancelOrder,
-    required TResult Function() getNewOrder,
-    required TResult Function() refreshNewOrder,
-    required TResult Function() getPartnerOrders,
+    required TResult Function(String orderId, String reason) cancelOrder,
+    required TResult Function(
+            String orderId, CompleteOrderModel completeOrderModel)
+        completeOrder,
+    required TResult Function(bool call) getNewOrder,
+    required TResult Function(bool call) getPartnerOrders,
     required TResult Function(String orderId) removePickupPartner,
     required TResult Function() refresPartnerOrders,
+    required TResult Function() refreshNewOrder,
     required TResult Function(int tab) changeTab,
     required TResult Function(PickUpPerson pickUpPerson, String orderId)
         changePickupPartner,
+    required TResult Function() checkErrorCompleteOrder,
+    required TResult Function() addDiviceBill,
+    required TResult Function() removeDiviceBill,
+    required TResult Function() addIdCardImage,
+    required TResult Function() removeIdCardImage,
+    required TResult Function() addDeviceImages,
+    required TResult Function(int index) removeDeviceImage,
     required TResult Function() reset,
   }) {
     return changeTab(tab);
@@ -1377,15 +2136,24 @@ class _$ChangeTabImpl implements ChangeTab {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
-    TResult? Function(String orderId)? cancelOrder,
-    TResult? Function()? getNewOrder,
-    TResult? Function()? refreshNewOrder,
-    TResult? Function()? getPartnerOrders,
+    TResult? Function(String orderId, String reason)? cancelOrder,
+    TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult? Function(bool call)? getNewOrder,
+    TResult? Function(bool call)? getPartnerOrders,
     TResult? Function(String orderId)? removePickupPartner,
     TResult? Function()? refresPartnerOrders,
+    TResult? Function()? refreshNewOrder,
     TResult? Function(int tab)? changeTab,
     TResult? Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult? Function()? checkErrorCompleteOrder,
+    TResult? Function()? addDiviceBill,
+    TResult? Function()? removeDiviceBill,
+    TResult? Function()? addIdCardImage,
+    TResult? Function()? removeIdCardImage,
+    TResult? Function()? addDeviceImages,
+    TResult? Function(int index)? removeDeviceImage,
     TResult? Function()? reset,
   }) {
     return changeTab?.call(tab);
@@ -1395,15 +2163,24 @@ class _$ChangeTabImpl implements ChangeTab {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
-    TResult Function(String orderId)? cancelOrder,
-    TResult Function()? getNewOrder,
-    TResult Function()? refreshNewOrder,
-    TResult Function()? getPartnerOrders,
+    TResult Function(String orderId, String reason)? cancelOrder,
+    TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult Function(bool call)? getNewOrder,
+    TResult Function(bool call)? getPartnerOrders,
     TResult Function(String orderId)? removePickupPartner,
     TResult Function()? refresPartnerOrders,
+    TResult Function()? refreshNewOrder,
     TResult Function(int tab)? changeTab,
     TResult Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult Function()? checkErrorCompleteOrder,
+    TResult Function()? addDiviceBill,
+    TResult Function()? removeDiviceBill,
+    TResult Function()? addIdCardImage,
+    TResult Function()? removeIdCardImage,
+    TResult Function()? addDeviceImages,
+    TResult Function(int index)? removeDeviceImage,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -1418,13 +2195,22 @@ class _$ChangeTabImpl implements ChangeTab {
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
     required TResult Function(CancelOrder value) cancelOrder,
+    required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
-    required TResult Function(RefreshNewOrder value) refreshNewOrder,
     required TResult Function(GetPartnerOrders value) getPartnerOrders,
     required TResult Function(RemovePickupPartner value) removePickupPartner,
     required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
+    required TResult Function(RefreshNewOrder value) refreshNewOrder,
     required TResult Function(ChangeTab value) changeTab,
     required TResult Function(ChangePickupPartner value) changePickupPartner,
+    required TResult Function(CheckErrorCompleteOrder value)
+        checkErrorCompleteOrder,
+    required TResult Function(AddDiviceBill value) addDiviceBill,
+    required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddIdCardImage value) addIdCardImage,
+    required TResult Function(RemoveIdCardImage value) removeIdCardImage,
+    required TResult Function(AddDeviceImages value) addDeviceImages,
+    required TResult Function(RemoveDeviceImage value) removeDeviceImage,
     required TResult Function(Reset value) reset,
   }) {
     return changeTab(this);
@@ -1435,13 +2221,21 @@ class _$ChangeTabImpl implements ChangeTab {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
     TResult? Function(CancelOrder value)? cancelOrder,
+    TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
-    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
     TResult? Function(GetPartnerOrders value)? getPartnerOrders,
     TResult? Function(RemovePickupPartner value)? removePickupPartner,
     TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
     TResult? Function(ChangeTab value)? changeTab,
     TResult? Function(ChangePickupPartner value)? changePickupPartner,
+    TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult? Function(AddDiviceBill value)? addDiviceBill,
+    TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddIdCardImage value)? addIdCardImage,
+    TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult? Function(AddDeviceImages value)? addDeviceImages,
+    TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult? Function(Reset value)? reset,
   }) {
     return changeTab?.call(this);
@@ -1452,13 +2246,21 @@ class _$ChangeTabImpl implements ChangeTab {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
     TResult Function(CancelOrder value)? cancelOrder,
+    TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
-    TResult Function(RefreshNewOrder value)? refreshNewOrder,
     TResult Function(GetPartnerOrders value)? getPartnerOrders,
     TResult Function(RemovePickupPartner value)? removePickupPartner,
     TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult Function(RefreshNewOrder value)? refreshNewOrder,
     TResult Function(ChangeTab value)? changeTab,
     TResult Function(ChangePickupPartner value)? changePickupPartner,
+    TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult Function(AddDiviceBill value)? addDiviceBill,
+    TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddIdCardImage value)? addIdCardImage,
+    TResult Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult Function(AddDeviceImages value)? addDeviceImages,
+    TResult Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -1554,15 +2356,25 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
-    required TResult Function(String orderId) cancelOrder,
-    required TResult Function() getNewOrder,
-    required TResult Function() refreshNewOrder,
-    required TResult Function() getPartnerOrders,
+    required TResult Function(String orderId, String reason) cancelOrder,
+    required TResult Function(
+            String orderId, CompleteOrderModel completeOrderModel)
+        completeOrder,
+    required TResult Function(bool call) getNewOrder,
+    required TResult Function(bool call) getPartnerOrders,
     required TResult Function(String orderId) removePickupPartner,
     required TResult Function() refresPartnerOrders,
+    required TResult Function() refreshNewOrder,
     required TResult Function(int tab) changeTab,
     required TResult Function(PickUpPerson pickUpPerson, String orderId)
         changePickupPartner,
+    required TResult Function() checkErrorCompleteOrder,
+    required TResult Function() addDiviceBill,
+    required TResult Function() removeDiviceBill,
+    required TResult Function() addIdCardImage,
+    required TResult Function() removeIdCardImage,
+    required TResult Function() addDeviceImages,
+    required TResult Function(int index) removeDeviceImage,
     required TResult Function() reset,
   }) {
     return changePickupPartner(pickUpPerson, orderId);
@@ -1572,15 +2384,24 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
-    TResult? Function(String orderId)? cancelOrder,
-    TResult? Function()? getNewOrder,
-    TResult? Function()? refreshNewOrder,
-    TResult? Function()? getPartnerOrders,
+    TResult? Function(String orderId, String reason)? cancelOrder,
+    TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult? Function(bool call)? getNewOrder,
+    TResult? Function(bool call)? getPartnerOrders,
     TResult? Function(String orderId)? removePickupPartner,
     TResult? Function()? refresPartnerOrders,
+    TResult? Function()? refreshNewOrder,
     TResult? Function(int tab)? changeTab,
     TResult? Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult? Function()? checkErrorCompleteOrder,
+    TResult? Function()? addDiviceBill,
+    TResult? Function()? removeDiviceBill,
+    TResult? Function()? addIdCardImage,
+    TResult? Function()? removeIdCardImage,
+    TResult? Function()? addDeviceImages,
+    TResult? Function(int index)? removeDeviceImage,
     TResult? Function()? reset,
   }) {
     return changePickupPartner?.call(pickUpPerson, orderId);
@@ -1590,15 +2411,24 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
-    TResult Function(String orderId)? cancelOrder,
-    TResult Function()? getNewOrder,
-    TResult Function()? refreshNewOrder,
-    TResult Function()? getPartnerOrders,
+    TResult Function(String orderId, String reason)? cancelOrder,
+    TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult Function(bool call)? getNewOrder,
+    TResult Function(bool call)? getPartnerOrders,
     TResult Function(String orderId)? removePickupPartner,
     TResult Function()? refresPartnerOrders,
+    TResult Function()? refreshNewOrder,
     TResult Function(int tab)? changeTab,
     TResult Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult Function()? checkErrorCompleteOrder,
+    TResult Function()? addDiviceBill,
+    TResult Function()? removeDiviceBill,
+    TResult Function()? addIdCardImage,
+    TResult Function()? removeIdCardImage,
+    TResult Function()? addDeviceImages,
+    TResult Function(int index)? removeDeviceImage,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -1613,13 +2443,22 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
     required TResult Function(CancelOrder value) cancelOrder,
+    required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
-    required TResult Function(RefreshNewOrder value) refreshNewOrder,
     required TResult Function(GetPartnerOrders value) getPartnerOrders,
     required TResult Function(RemovePickupPartner value) removePickupPartner,
     required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
+    required TResult Function(RefreshNewOrder value) refreshNewOrder,
     required TResult Function(ChangeTab value) changeTab,
     required TResult Function(ChangePickupPartner value) changePickupPartner,
+    required TResult Function(CheckErrorCompleteOrder value)
+        checkErrorCompleteOrder,
+    required TResult Function(AddDiviceBill value) addDiviceBill,
+    required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddIdCardImage value) addIdCardImage,
+    required TResult Function(RemoveIdCardImage value) removeIdCardImage,
+    required TResult Function(AddDeviceImages value) addDeviceImages,
+    required TResult Function(RemoveDeviceImage value) removeDeviceImage,
     required TResult Function(Reset value) reset,
   }) {
     return changePickupPartner(this);
@@ -1630,13 +2469,21 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
     TResult? Function(CancelOrder value)? cancelOrder,
+    TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
-    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
     TResult? Function(GetPartnerOrders value)? getPartnerOrders,
     TResult? Function(RemovePickupPartner value)? removePickupPartner,
     TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
     TResult? Function(ChangeTab value)? changeTab,
     TResult? Function(ChangePickupPartner value)? changePickupPartner,
+    TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult? Function(AddDiviceBill value)? addDiviceBill,
+    TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddIdCardImage value)? addIdCardImage,
+    TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult? Function(AddDeviceImages value)? addDeviceImages,
+    TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult? Function(Reset value)? reset,
   }) {
     return changePickupPartner?.call(this);
@@ -1647,13 +2494,21 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
     TResult Function(CancelOrder value)? cancelOrder,
+    TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
-    TResult Function(RefreshNewOrder value)? refreshNewOrder,
     TResult Function(GetPartnerOrders value)? getPartnerOrders,
     TResult Function(RemovePickupPartner value)? removePickupPartner,
     TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult Function(RefreshNewOrder value)? refreshNewOrder,
     TResult Function(ChangeTab value)? changeTab,
     TResult Function(ChangePickupPartner value)? changePickupPartner,
+    TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult Function(AddDiviceBill value)? addDiviceBill,
+    TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddIdCardImage value)? addIdCardImage,
+    TResult Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult Function(AddDeviceImages value)? addDeviceImages,
+    TResult Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -1673,6 +2528,1484 @@ abstract class ChangePickupPartner implements OrdersEvent {
   String get orderId;
   @JsonKey(ignore: true)
   _$$ChangePickupPartnerImplCopyWith<_$ChangePickupPartnerImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CheckErrorCompleteOrderImplCopyWith<$Res> {
+  factory _$$CheckErrorCompleteOrderImplCopyWith(
+          _$CheckErrorCompleteOrderImpl value,
+          $Res Function(_$CheckErrorCompleteOrderImpl) then) =
+      __$$CheckErrorCompleteOrderImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$CheckErrorCompleteOrderImplCopyWithImpl<$Res>
+    extends _$OrdersEventCopyWithImpl<$Res, _$CheckErrorCompleteOrderImpl>
+    implements _$$CheckErrorCompleteOrderImplCopyWith<$Res> {
+  __$$CheckErrorCompleteOrderImplCopyWithImpl(
+      _$CheckErrorCompleteOrderImpl _value,
+      $Res Function(_$CheckErrorCompleteOrderImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$CheckErrorCompleteOrderImpl implements CheckErrorCompleteOrder {
+  const _$CheckErrorCompleteOrderImpl();
+
+  @override
+  String toString() {
+    return 'OrdersEvent.checkErrorCompleteOrder()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CheckErrorCompleteOrderImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String orderId) acceptOrder,
+    required TResult Function(String orderId, String reason) cancelOrder,
+    required TResult Function(
+            String orderId, CompleteOrderModel completeOrderModel)
+        completeOrder,
+    required TResult Function(bool call) getNewOrder,
+    required TResult Function(bool call) getPartnerOrders,
+    required TResult Function(String orderId) removePickupPartner,
+    required TResult Function() refresPartnerOrders,
+    required TResult Function() refreshNewOrder,
+    required TResult Function(int tab) changeTab,
+    required TResult Function(PickUpPerson pickUpPerson, String orderId)
+        changePickupPartner,
+    required TResult Function() checkErrorCompleteOrder,
+    required TResult Function() addDiviceBill,
+    required TResult Function() removeDiviceBill,
+    required TResult Function() addIdCardImage,
+    required TResult Function() removeIdCardImage,
+    required TResult Function() addDeviceImages,
+    required TResult Function(int index) removeDeviceImage,
+    required TResult Function() reset,
+  }) {
+    return checkErrorCompleteOrder();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String orderId)? acceptOrder,
+    TResult? Function(String orderId, String reason)? cancelOrder,
+    TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult? Function(bool call)? getNewOrder,
+    TResult? Function(bool call)? getPartnerOrders,
+    TResult? Function(String orderId)? removePickupPartner,
+    TResult? Function()? refresPartnerOrders,
+    TResult? Function()? refreshNewOrder,
+    TResult? Function(int tab)? changeTab,
+    TResult? Function(PickUpPerson pickUpPerson, String orderId)?
+        changePickupPartner,
+    TResult? Function()? checkErrorCompleteOrder,
+    TResult? Function()? addDiviceBill,
+    TResult? Function()? removeDiviceBill,
+    TResult? Function()? addIdCardImage,
+    TResult? Function()? removeIdCardImage,
+    TResult? Function()? addDeviceImages,
+    TResult? Function(int index)? removeDeviceImage,
+    TResult? Function()? reset,
+  }) {
+    return checkErrorCompleteOrder?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String orderId)? acceptOrder,
+    TResult Function(String orderId, String reason)? cancelOrder,
+    TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult Function(bool call)? getNewOrder,
+    TResult Function(bool call)? getPartnerOrders,
+    TResult Function(String orderId)? removePickupPartner,
+    TResult Function()? refresPartnerOrders,
+    TResult Function()? refreshNewOrder,
+    TResult Function(int tab)? changeTab,
+    TResult Function(PickUpPerson pickUpPerson, String orderId)?
+        changePickupPartner,
+    TResult Function()? checkErrorCompleteOrder,
+    TResult Function()? addDiviceBill,
+    TResult Function()? removeDiviceBill,
+    TResult Function()? addIdCardImage,
+    TResult Function()? removeIdCardImage,
+    TResult Function()? addDeviceImages,
+    TResult Function(int index)? removeDeviceImage,
+    TResult Function()? reset,
+    required TResult orElse(),
+  }) {
+    if (checkErrorCompleteOrder != null) {
+      return checkErrorCompleteOrder();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(CancelOrder value) cancelOrder,
+    required TResult Function(CompleteOrder value) completeOrder,
+    required TResult Function(GetNewOrder value) getNewOrder,
+    required TResult Function(GetPartnerOrders value) getPartnerOrders,
+    required TResult Function(RemovePickupPartner value) removePickupPartner,
+    required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
+    required TResult Function(RefreshNewOrder value) refreshNewOrder,
+    required TResult Function(ChangeTab value) changeTab,
+    required TResult Function(ChangePickupPartner value) changePickupPartner,
+    required TResult Function(CheckErrorCompleteOrder value)
+        checkErrorCompleteOrder,
+    required TResult Function(AddDiviceBill value) addDiviceBill,
+    required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddIdCardImage value) addIdCardImage,
+    required TResult Function(RemoveIdCardImage value) removeIdCardImage,
+    required TResult Function(AddDeviceImages value) addDeviceImages,
+    required TResult Function(RemoveDeviceImage value) removeDeviceImage,
+    required TResult Function(Reset value) reset,
+  }) {
+    return checkErrorCompleteOrder(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(CancelOrder value)? cancelOrder,
+    TResult? Function(CompleteOrder value)? completeOrder,
+    TResult? Function(GetNewOrder value)? getNewOrder,
+    TResult? Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult? Function(RemovePickupPartner value)? removePickupPartner,
+    TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
+    TResult? Function(ChangeTab value)? changeTab,
+    TResult? Function(ChangePickupPartner value)? changePickupPartner,
+    TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult? Function(AddDiviceBill value)? addDiviceBill,
+    TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddIdCardImage value)? addIdCardImage,
+    TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult? Function(AddDeviceImages value)? addDeviceImages,
+    TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult? Function(Reset value)? reset,
+  }) {
+    return checkErrorCompleteOrder?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(CancelOrder value)? cancelOrder,
+    TResult Function(CompleteOrder value)? completeOrder,
+    TResult Function(GetNewOrder value)? getNewOrder,
+    TResult Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult Function(RemovePickupPartner value)? removePickupPartner,
+    TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult Function(RefreshNewOrder value)? refreshNewOrder,
+    TResult Function(ChangeTab value)? changeTab,
+    TResult Function(ChangePickupPartner value)? changePickupPartner,
+    TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult Function(AddDiviceBill value)? addDiviceBill,
+    TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddIdCardImage value)? addIdCardImage,
+    TResult Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult Function(AddDeviceImages value)? addDeviceImages,
+    TResult Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult Function(Reset value)? reset,
+    required TResult orElse(),
+  }) {
+    if (checkErrorCompleteOrder != null) {
+      return checkErrorCompleteOrder(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CheckErrorCompleteOrder implements OrdersEvent {
+  const factory CheckErrorCompleteOrder() = _$CheckErrorCompleteOrderImpl;
+}
+
+/// @nodoc
+abstract class _$$AddDiviceBillImplCopyWith<$Res> {
+  factory _$$AddDiviceBillImplCopyWith(
+          _$AddDiviceBillImpl value, $Res Function(_$AddDiviceBillImpl) then) =
+      __$$AddDiviceBillImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AddDiviceBillImplCopyWithImpl<$Res>
+    extends _$OrdersEventCopyWithImpl<$Res, _$AddDiviceBillImpl>
+    implements _$$AddDiviceBillImplCopyWith<$Res> {
+  __$$AddDiviceBillImplCopyWithImpl(
+      _$AddDiviceBillImpl _value, $Res Function(_$AddDiviceBillImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$AddDiviceBillImpl implements AddDiviceBill {
+  const _$AddDiviceBillImpl();
+
+  @override
+  String toString() {
+    return 'OrdersEvent.addDiviceBill()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$AddDiviceBillImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String orderId) acceptOrder,
+    required TResult Function(String orderId, String reason) cancelOrder,
+    required TResult Function(
+            String orderId, CompleteOrderModel completeOrderModel)
+        completeOrder,
+    required TResult Function(bool call) getNewOrder,
+    required TResult Function(bool call) getPartnerOrders,
+    required TResult Function(String orderId) removePickupPartner,
+    required TResult Function() refresPartnerOrders,
+    required TResult Function() refreshNewOrder,
+    required TResult Function(int tab) changeTab,
+    required TResult Function(PickUpPerson pickUpPerson, String orderId)
+        changePickupPartner,
+    required TResult Function() checkErrorCompleteOrder,
+    required TResult Function() addDiviceBill,
+    required TResult Function() removeDiviceBill,
+    required TResult Function() addIdCardImage,
+    required TResult Function() removeIdCardImage,
+    required TResult Function() addDeviceImages,
+    required TResult Function(int index) removeDeviceImage,
+    required TResult Function() reset,
+  }) {
+    return addDiviceBill();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String orderId)? acceptOrder,
+    TResult? Function(String orderId, String reason)? cancelOrder,
+    TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult? Function(bool call)? getNewOrder,
+    TResult? Function(bool call)? getPartnerOrders,
+    TResult? Function(String orderId)? removePickupPartner,
+    TResult? Function()? refresPartnerOrders,
+    TResult? Function()? refreshNewOrder,
+    TResult? Function(int tab)? changeTab,
+    TResult? Function(PickUpPerson pickUpPerson, String orderId)?
+        changePickupPartner,
+    TResult? Function()? checkErrorCompleteOrder,
+    TResult? Function()? addDiviceBill,
+    TResult? Function()? removeDiviceBill,
+    TResult? Function()? addIdCardImage,
+    TResult? Function()? removeIdCardImage,
+    TResult? Function()? addDeviceImages,
+    TResult? Function(int index)? removeDeviceImage,
+    TResult? Function()? reset,
+  }) {
+    return addDiviceBill?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String orderId)? acceptOrder,
+    TResult Function(String orderId, String reason)? cancelOrder,
+    TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult Function(bool call)? getNewOrder,
+    TResult Function(bool call)? getPartnerOrders,
+    TResult Function(String orderId)? removePickupPartner,
+    TResult Function()? refresPartnerOrders,
+    TResult Function()? refreshNewOrder,
+    TResult Function(int tab)? changeTab,
+    TResult Function(PickUpPerson pickUpPerson, String orderId)?
+        changePickupPartner,
+    TResult Function()? checkErrorCompleteOrder,
+    TResult Function()? addDiviceBill,
+    TResult Function()? removeDiviceBill,
+    TResult Function()? addIdCardImage,
+    TResult Function()? removeIdCardImage,
+    TResult Function()? addDeviceImages,
+    TResult Function(int index)? removeDeviceImage,
+    TResult Function()? reset,
+    required TResult orElse(),
+  }) {
+    if (addDiviceBill != null) {
+      return addDiviceBill();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(CancelOrder value) cancelOrder,
+    required TResult Function(CompleteOrder value) completeOrder,
+    required TResult Function(GetNewOrder value) getNewOrder,
+    required TResult Function(GetPartnerOrders value) getPartnerOrders,
+    required TResult Function(RemovePickupPartner value) removePickupPartner,
+    required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
+    required TResult Function(RefreshNewOrder value) refreshNewOrder,
+    required TResult Function(ChangeTab value) changeTab,
+    required TResult Function(ChangePickupPartner value) changePickupPartner,
+    required TResult Function(CheckErrorCompleteOrder value)
+        checkErrorCompleteOrder,
+    required TResult Function(AddDiviceBill value) addDiviceBill,
+    required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddIdCardImage value) addIdCardImage,
+    required TResult Function(RemoveIdCardImage value) removeIdCardImage,
+    required TResult Function(AddDeviceImages value) addDeviceImages,
+    required TResult Function(RemoveDeviceImage value) removeDeviceImage,
+    required TResult Function(Reset value) reset,
+  }) {
+    return addDiviceBill(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(CancelOrder value)? cancelOrder,
+    TResult? Function(CompleteOrder value)? completeOrder,
+    TResult? Function(GetNewOrder value)? getNewOrder,
+    TResult? Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult? Function(RemovePickupPartner value)? removePickupPartner,
+    TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
+    TResult? Function(ChangeTab value)? changeTab,
+    TResult? Function(ChangePickupPartner value)? changePickupPartner,
+    TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult? Function(AddDiviceBill value)? addDiviceBill,
+    TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddIdCardImage value)? addIdCardImage,
+    TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult? Function(AddDeviceImages value)? addDeviceImages,
+    TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult? Function(Reset value)? reset,
+  }) {
+    return addDiviceBill?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(CancelOrder value)? cancelOrder,
+    TResult Function(CompleteOrder value)? completeOrder,
+    TResult Function(GetNewOrder value)? getNewOrder,
+    TResult Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult Function(RemovePickupPartner value)? removePickupPartner,
+    TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult Function(RefreshNewOrder value)? refreshNewOrder,
+    TResult Function(ChangeTab value)? changeTab,
+    TResult Function(ChangePickupPartner value)? changePickupPartner,
+    TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult Function(AddDiviceBill value)? addDiviceBill,
+    TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddIdCardImage value)? addIdCardImage,
+    TResult Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult Function(AddDeviceImages value)? addDeviceImages,
+    TResult Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult Function(Reset value)? reset,
+    required TResult orElse(),
+  }) {
+    if (addDiviceBill != null) {
+      return addDiviceBill(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddDiviceBill implements OrdersEvent {
+  const factory AddDiviceBill() = _$AddDiviceBillImpl;
+}
+
+/// @nodoc
+abstract class _$$RemoveDiviceBillImplCopyWith<$Res> {
+  factory _$$RemoveDiviceBillImplCopyWith(_$RemoveDiviceBillImpl value,
+          $Res Function(_$RemoveDiviceBillImpl) then) =
+      __$$RemoveDiviceBillImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$RemoveDiviceBillImplCopyWithImpl<$Res>
+    extends _$OrdersEventCopyWithImpl<$Res, _$RemoveDiviceBillImpl>
+    implements _$$RemoveDiviceBillImplCopyWith<$Res> {
+  __$$RemoveDiviceBillImplCopyWithImpl(_$RemoveDiviceBillImpl _value,
+      $Res Function(_$RemoveDiviceBillImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$RemoveDiviceBillImpl implements RemoveDiviceBill {
+  const _$RemoveDiviceBillImpl();
+
+  @override
+  String toString() {
+    return 'OrdersEvent.removeDiviceBill()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$RemoveDiviceBillImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String orderId) acceptOrder,
+    required TResult Function(String orderId, String reason) cancelOrder,
+    required TResult Function(
+            String orderId, CompleteOrderModel completeOrderModel)
+        completeOrder,
+    required TResult Function(bool call) getNewOrder,
+    required TResult Function(bool call) getPartnerOrders,
+    required TResult Function(String orderId) removePickupPartner,
+    required TResult Function() refresPartnerOrders,
+    required TResult Function() refreshNewOrder,
+    required TResult Function(int tab) changeTab,
+    required TResult Function(PickUpPerson pickUpPerson, String orderId)
+        changePickupPartner,
+    required TResult Function() checkErrorCompleteOrder,
+    required TResult Function() addDiviceBill,
+    required TResult Function() removeDiviceBill,
+    required TResult Function() addIdCardImage,
+    required TResult Function() removeIdCardImage,
+    required TResult Function() addDeviceImages,
+    required TResult Function(int index) removeDeviceImage,
+    required TResult Function() reset,
+  }) {
+    return removeDiviceBill();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String orderId)? acceptOrder,
+    TResult? Function(String orderId, String reason)? cancelOrder,
+    TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult? Function(bool call)? getNewOrder,
+    TResult? Function(bool call)? getPartnerOrders,
+    TResult? Function(String orderId)? removePickupPartner,
+    TResult? Function()? refresPartnerOrders,
+    TResult? Function()? refreshNewOrder,
+    TResult? Function(int tab)? changeTab,
+    TResult? Function(PickUpPerson pickUpPerson, String orderId)?
+        changePickupPartner,
+    TResult? Function()? checkErrorCompleteOrder,
+    TResult? Function()? addDiviceBill,
+    TResult? Function()? removeDiviceBill,
+    TResult? Function()? addIdCardImage,
+    TResult? Function()? removeIdCardImage,
+    TResult? Function()? addDeviceImages,
+    TResult? Function(int index)? removeDeviceImage,
+    TResult? Function()? reset,
+  }) {
+    return removeDiviceBill?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String orderId)? acceptOrder,
+    TResult Function(String orderId, String reason)? cancelOrder,
+    TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult Function(bool call)? getNewOrder,
+    TResult Function(bool call)? getPartnerOrders,
+    TResult Function(String orderId)? removePickupPartner,
+    TResult Function()? refresPartnerOrders,
+    TResult Function()? refreshNewOrder,
+    TResult Function(int tab)? changeTab,
+    TResult Function(PickUpPerson pickUpPerson, String orderId)?
+        changePickupPartner,
+    TResult Function()? checkErrorCompleteOrder,
+    TResult Function()? addDiviceBill,
+    TResult Function()? removeDiviceBill,
+    TResult Function()? addIdCardImage,
+    TResult Function()? removeIdCardImage,
+    TResult Function()? addDeviceImages,
+    TResult Function(int index)? removeDeviceImage,
+    TResult Function()? reset,
+    required TResult orElse(),
+  }) {
+    if (removeDiviceBill != null) {
+      return removeDiviceBill();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(CancelOrder value) cancelOrder,
+    required TResult Function(CompleteOrder value) completeOrder,
+    required TResult Function(GetNewOrder value) getNewOrder,
+    required TResult Function(GetPartnerOrders value) getPartnerOrders,
+    required TResult Function(RemovePickupPartner value) removePickupPartner,
+    required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
+    required TResult Function(RefreshNewOrder value) refreshNewOrder,
+    required TResult Function(ChangeTab value) changeTab,
+    required TResult Function(ChangePickupPartner value) changePickupPartner,
+    required TResult Function(CheckErrorCompleteOrder value)
+        checkErrorCompleteOrder,
+    required TResult Function(AddDiviceBill value) addDiviceBill,
+    required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddIdCardImage value) addIdCardImage,
+    required TResult Function(RemoveIdCardImage value) removeIdCardImage,
+    required TResult Function(AddDeviceImages value) addDeviceImages,
+    required TResult Function(RemoveDeviceImage value) removeDeviceImage,
+    required TResult Function(Reset value) reset,
+  }) {
+    return removeDiviceBill(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(CancelOrder value)? cancelOrder,
+    TResult? Function(CompleteOrder value)? completeOrder,
+    TResult? Function(GetNewOrder value)? getNewOrder,
+    TResult? Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult? Function(RemovePickupPartner value)? removePickupPartner,
+    TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
+    TResult? Function(ChangeTab value)? changeTab,
+    TResult? Function(ChangePickupPartner value)? changePickupPartner,
+    TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult? Function(AddDiviceBill value)? addDiviceBill,
+    TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddIdCardImage value)? addIdCardImage,
+    TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult? Function(AddDeviceImages value)? addDeviceImages,
+    TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult? Function(Reset value)? reset,
+  }) {
+    return removeDiviceBill?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(CancelOrder value)? cancelOrder,
+    TResult Function(CompleteOrder value)? completeOrder,
+    TResult Function(GetNewOrder value)? getNewOrder,
+    TResult Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult Function(RemovePickupPartner value)? removePickupPartner,
+    TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult Function(RefreshNewOrder value)? refreshNewOrder,
+    TResult Function(ChangeTab value)? changeTab,
+    TResult Function(ChangePickupPartner value)? changePickupPartner,
+    TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult Function(AddDiviceBill value)? addDiviceBill,
+    TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddIdCardImage value)? addIdCardImage,
+    TResult Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult Function(AddDeviceImages value)? addDeviceImages,
+    TResult Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult Function(Reset value)? reset,
+    required TResult orElse(),
+  }) {
+    if (removeDiviceBill != null) {
+      return removeDiviceBill(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RemoveDiviceBill implements OrdersEvent {
+  const factory RemoveDiviceBill() = _$RemoveDiviceBillImpl;
+}
+
+/// @nodoc
+abstract class _$$AddIdCardImageImplCopyWith<$Res> {
+  factory _$$AddIdCardImageImplCopyWith(_$AddIdCardImageImpl value,
+          $Res Function(_$AddIdCardImageImpl) then) =
+      __$$AddIdCardImageImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AddIdCardImageImplCopyWithImpl<$Res>
+    extends _$OrdersEventCopyWithImpl<$Res, _$AddIdCardImageImpl>
+    implements _$$AddIdCardImageImplCopyWith<$Res> {
+  __$$AddIdCardImageImplCopyWithImpl(
+      _$AddIdCardImageImpl _value, $Res Function(_$AddIdCardImageImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$AddIdCardImageImpl implements AddIdCardImage {
+  const _$AddIdCardImageImpl();
+
+  @override
+  String toString() {
+    return 'OrdersEvent.addIdCardImage()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$AddIdCardImageImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String orderId) acceptOrder,
+    required TResult Function(String orderId, String reason) cancelOrder,
+    required TResult Function(
+            String orderId, CompleteOrderModel completeOrderModel)
+        completeOrder,
+    required TResult Function(bool call) getNewOrder,
+    required TResult Function(bool call) getPartnerOrders,
+    required TResult Function(String orderId) removePickupPartner,
+    required TResult Function() refresPartnerOrders,
+    required TResult Function() refreshNewOrder,
+    required TResult Function(int tab) changeTab,
+    required TResult Function(PickUpPerson pickUpPerson, String orderId)
+        changePickupPartner,
+    required TResult Function() checkErrorCompleteOrder,
+    required TResult Function() addDiviceBill,
+    required TResult Function() removeDiviceBill,
+    required TResult Function() addIdCardImage,
+    required TResult Function() removeIdCardImage,
+    required TResult Function() addDeviceImages,
+    required TResult Function(int index) removeDeviceImage,
+    required TResult Function() reset,
+  }) {
+    return addIdCardImage();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String orderId)? acceptOrder,
+    TResult? Function(String orderId, String reason)? cancelOrder,
+    TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult? Function(bool call)? getNewOrder,
+    TResult? Function(bool call)? getPartnerOrders,
+    TResult? Function(String orderId)? removePickupPartner,
+    TResult? Function()? refresPartnerOrders,
+    TResult? Function()? refreshNewOrder,
+    TResult? Function(int tab)? changeTab,
+    TResult? Function(PickUpPerson pickUpPerson, String orderId)?
+        changePickupPartner,
+    TResult? Function()? checkErrorCompleteOrder,
+    TResult? Function()? addDiviceBill,
+    TResult? Function()? removeDiviceBill,
+    TResult? Function()? addIdCardImage,
+    TResult? Function()? removeIdCardImage,
+    TResult? Function()? addDeviceImages,
+    TResult? Function(int index)? removeDeviceImage,
+    TResult? Function()? reset,
+  }) {
+    return addIdCardImage?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String orderId)? acceptOrder,
+    TResult Function(String orderId, String reason)? cancelOrder,
+    TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult Function(bool call)? getNewOrder,
+    TResult Function(bool call)? getPartnerOrders,
+    TResult Function(String orderId)? removePickupPartner,
+    TResult Function()? refresPartnerOrders,
+    TResult Function()? refreshNewOrder,
+    TResult Function(int tab)? changeTab,
+    TResult Function(PickUpPerson pickUpPerson, String orderId)?
+        changePickupPartner,
+    TResult Function()? checkErrorCompleteOrder,
+    TResult Function()? addDiviceBill,
+    TResult Function()? removeDiviceBill,
+    TResult Function()? addIdCardImage,
+    TResult Function()? removeIdCardImage,
+    TResult Function()? addDeviceImages,
+    TResult Function(int index)? removeDeviceImage,
+    TResult Function()? reset,
+    required TResult orElse(),
+  }) {
+    if (addIdCardImage != null) {
+      return addIdCardImage();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(CancelOrder value) cancelOrder,
+    required TResult Function(CompleteOrder value) completeOrder,
+    required TResult Function(GetNewOrder value) getNewOrder,
+    required TResult Function(GetPartnerOrders value) getPartnerOrders,
+    required TResult Function(RemovePickupPartner value) removePickupPartner,
+    required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
+    required TResult Function(RefreshNewOrder value) refreshNewOrder,
+    required TResult Function(ChangeTab value) changeTab,
+    required TResult Function(ChangePickupPartner value) changePickupPartner,
+    required TResult Function(CheckErrorCompleteOrder value)
+        checkErrorCompleteOrder,
+    required TResult Function(AddDiviceBill value) addDiviceBill,
+    required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddIdCardImage value) addIdCardImage,
+    required TResult Function(RemoveIdCardImage value) removeIdCardImage,
+    required TResult Function(AddDeviceImages value) addDeviceImages,
+    required TResult Function(RemoveDeviceImage value) removeDeviceImage,
+    required TResult Function(Reset value) reset,
+  }) {
+    return addIdCardImage(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(CancelOrder value)? cancelOrder,
+    TResult? Function(CompleteOrder value)? completeOrder,
+    TResult? Function(GetNewOrder value)? getNewOrder,
+    TResult? Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult? Function(RemovePickupPartner value)? removePickupPartner,
+    TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
+    TResult? Function(ChangeTab value)? changeTab,
+    TResult? Function(ChangePickupPartner value)? changePickupPartner,
+    TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult? Function(AddDiviceBill value)? addDiviceBill,
+    TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddIdCardImage value)? addIdCardImage,
+    TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult? Function(AddDeviceImages value)? addDeviceImages,
+    TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult? Function(Reset value)? reset,
+  }) {
+    return addIdCardImage?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(CancelOrder value)? cancelOrder,
+    TResult Function(CompleteOrder value)? completeOrder,
+    TResult Function(GetNewOrder value)? getNewOrder,
+    TResult Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult Function(RemovePickupPartner value)? removePickupPartner,
+    TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult Function(RefreshNewOrder value)? refreshNewOrder,
+    TResult Function(ChangeTab value)? changeTab,
+    TResult Function(ChangePickupPartner value)? changePickupPartner,
+    TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult Function(AddDiviceBill value)? addDiviceBill,
+    TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddIdCardImage value)? addIdCardImage,
+    TResult Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult Function(AddDeviceImages value)? addDeviceImages,
+    TResult Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult Function(Reset value)? reset,
+    required TResult orElse(),
+  }) {
+    if (addIdCardImage != null) {
+      return addIdCardImage(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddIdCardImage implements OrdersEvent {
+  const factory AddIdCardImage() = _$AddIdCardImageImpl;
+}
+
+/// @nodoc
+abstract class _$$RemoveIdCardImageImplCopyWith<$Res> {
+  factory _$$RemoveIdCardImageImplCopyWith(_$RemoveIdCardImageImpl value,
+          $Res Function(_$RemoveIdCardImageImpl) then) =
+      __$$RemoveIdCardImageImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$RemoveIdCardImageImplCopyWithImpl<$Res>
+    extends _$OrdersEventCopyWithImpl<$Res, _$RemoveIdCardImageImpl>
+    implements _$$RemoveIdCardImageImplCopyWith<$Res> {
+  __$$RemoveIdCardImageImplCopyWithImpl(_$RemoveIdCardImageImpl _value,
+      $Res Function(_$RemoveIdCardImageImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$RemoveIdCardImageImpl implements RemoveIdCardImage {
+  const _$RemoveIdCardImageImpl();
+
+  @override
+  String toString() {
+    return 'OrdersEvent.removeIdCardImage()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$RemoveIdCardImageImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String orderId) acceptOrder,
+    required TResult Function(String orderId, String reason) cancelOrder,
+    required TResult Function(
+            String orderId, CompleteOrderModel completeOrderModel)
+        completeOrder,
+    required TResult Function(bool call) getNewOrder,
+    required TResult Function(bool call) getPartnerOrders,
+    required TResult Function(String orderId) removePickupPartner,
+    required TResult Function() refresPartnerOrders,
+    required TResult Function() refreshNewOrder,
+    required TResult Function(int tab) changeTab,
+    required TResult Function(PickUpPerson pickUpPerson, String orderId)
+        changePickupPartner,
+    required TResult Function() checkErrorCompleteOrder,
+    required TResult Function() addDiviceBill,
+    required TResult Function() removeDiviceBill,
+    required TResult Function() addIdCardImage,
+    required TResult Function() removeIdCardImage,
+    required TResult Function() addDeviceImages,
+    required TResult Function(int index) removeDeviceImage,
+    required TResult Function() reset,
+  }) {
+    return removeIdCardImage();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String orderId)? acceptOrder,
+    TResult? Function(String orderId, String reason)? cancelOrder,
+    TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult? Function(bool call)? getNewOrder,
+    TResult? Function(bool call)? getPartnerOrders,
+    TResult? Function(String orderId)? removePickupPartner,
+    TResult? Function()? refresPartnerOrders,
+    TResult? Function()? refreshNewOrder,
+    TResult? Function(int tab)? changeTab,
+    TResult? Function(PickUpPerson pickUpPerson, String orderId)?
+        changePickupPartner,
+    TResult? Function()? checkErrorCompleteOrder,
+    TResult? Function()? addDiviceBill,
+    TResult? Function()? removeDiviceBill,
+    TResult? Function()? addIdCardImage,
+    TResult? Function()? removeIdCardImage,
+    TResult? Function()? addDeviceImages,
+    TResult? Function(int index)? removeDeviceImage,
+    TResult? Function()? reset,
+  }) {
+    return removeIdCardImage?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String orderId)? acceptOrder,
+    TResult Function(String orderId, String reason)? cancelOrder,
+    TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult Function(bool call)? getNewOrder,
+    TResult Function(bool call)? getPartnerOrders,
+    TResult Function(String orderId)? removePickupPartner,
+    TResult Function()? refresPartnerOrders,
+    TResult Function()? refreshNewOrder,
+    TResult Function(int tab)? changeTab,
+    TResult Function(PickUpPerson pickUpPerson, String orderId)?
+        changePickupPartner,
+    TResult Function()? checkErrorCompleteOrder,
+    TResult Function()? addDiviceBill,
+    TResult Function()? removeDiviceBill,
+    TResult Function()? addIdCardImage,
+    TResult Function()? removeIdCardImage,
+    TResult Function()? addDeviceImages,
+    TResult Function(int index)? removeDeviceImage,
+    TResult Function()? reset,
+    required TResult orElse(),
+  }) {
+    if (removeIdCardImage != null) {
+      return removeIdCardImage();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(CancelOrder value) cancelOrder,
+    required TResult Function(CompleteOrder value) completeOrder,
+    required TResult Function(GetNewOrder value) getNewOrder,
+    required TResult Function(GetPartnerOrders value) getPartnerOrders,
+    required TResult Function(RemovePickupPartner value) removePickupPartner,
+    required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
+    required TResult Function(RefreshNewOrder value) refreshNewOrder,
+    required TResult Function(ChangeTab value) changeTab,
+    required TResult Function(ChangePickupPartner value) changePickupPartner,
+    required TResult Function(CheckErrorCompleteOrder value)
+        checkErrorCompleteOrder,
+    required TResult Function(AddDiviceBill value) addDiviceBill,
+    required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddIdCardImage value) addIdCardImage,
+    required TResult Function(RemoveIdCardImage value) removeIdCardImage,
+    required TResult Function(AddDeviceImages value) addDeviceImages,
+    required TResult Function(RemoveDeviceImage value) removeDeviceImage,
+    required TResult Function(Reset value) reset,
+  }) {
+    return removeIdCardImage(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(CancelOrder value)? cancelOrder,
+    TResult? Function(CompleteOrder value)? completeOrder,
+    TResult? Function(GetNewOrder value)? getNewOrder,
+    TResult? Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult? Function(RemovePickupPartner value)? removePickupPartner,
+    TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
+    TResult? Function(ChangeTab value)? changeTab,
+    TResult? Function(ChangePickupPartner value)? changePickupPartner,
+    TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult? Function(AddDiviceBill value)? addDiviceBill,
+    TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddIdCardImage value)? addIdCardImage,
+    TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult? Function(AddDeviceImages value)? addDeviceImages,
+    TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult? Function(Reset value)? reset,
+  }) {
+    return removeIdCardImage?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(CancelOrder value)? cancelOrder,
+    TResult Function(CompleteOrder value)? completeOrder,
+    TResult Function(GetNewOrder value)? getNewOrder,
+    TResult Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult Function(RemovePickupPartner value)? removePickupPartner,
+    TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult Function(RefreshNewOrder value)? refreshNewOrder,
+    TResult Function(ChangeTab value)? changeTab,
+    TResult Function(ChangePickupPartner value)? changePickupPartner,
+    TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult Function(AddDiviceBill value)? addDiviceBill,
+    TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddIdCardImage value)? addIdCardImage,
+    TResult Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult Function(AddDeviceImages value)? addDeviceImages,
+    TResult Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult Function(Reset value)? reset,
+    required TResult orElse(),
+  }) {
+    if (removeIdCardImage != null) {
+      return removeIdCardImage(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RemoveIdCardImage implements OrdersEvent {
+  const factory RemoveIdCardImage() = _$RemoveIdCardImageImpl;
+}
+
+/// @nodoc
+abstract class _$$AddDeviceImagesImplCopyWith<$Res> {
+  factory _$$AddDeviceImagesImplCopyWith(_$AddDeviceImagesImpl value,
+          $Res Function(_$AddDeviceImagesImpl) then) =
+      __$$AddDeviceImagesImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AddDeviceImagesImplCopyWithImpl<$Res>
+    extends _$OrdersEventCopyWithImpl<$Res, _$AddDeviceImagesImpl>
+    implements _$$AddDeviceImagesImplCopyWith<$Res> {
+  __$$AddDeviceImagesImplCopyWithImpl(
+      _$AddDeviceImagesImpl _value, $Res Function(_$AddDeviceImagesImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$AddDeviceImagesImpl implements AddDeviceImages {
+  const _$AddDeviceImagesImpl();
+
+  @override
+  String toString() {
+    return 'OrdersEvent.addDeviceImages()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$AddDeviceImagesImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String orderId) acceptOrder,
+    required TResult Function(String orderId, String reason) cancelOrder,
+    required TResult Function(
+            String orderId, CompleteOrderModel completeOrderModel)
+        completeOrder,
+    required TResult Function(bool call) getNewOrder,
+    required TResult Function(bool call) getPartnerOrders,
+    required TResult Function(String orderId) removePickupPartner,
+    required TResult Function() refresPartnerOrders,
+    required TResult Function() refreshNewOrder,
+    required TResult Function(int tab) changeTab,
+    required TResult Function(PickUpPerson pickUpPerson, String orderId)
+        changePickupPartner,
+    required TResult Function() checkErrorCompleteOrder,
+    required TResult Function() addDiviceBill,
+    required TResult Function() removeDiviceBill,
+    required TResult Function() addIdCardImage,
+    required TResult Function() removeIdCardImage,
+    required TResult Function() addDeviceImages,
+    required TResult Function(int index) removeDeviceImage,
+    required TResult Function() reset,
+  }) {
+    return addDeviceImages();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String orderId)? acceptOrder,
+    TResult? Function(String orderId, String reason)? cancelOrder,
+    TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult? Function(bool call)? getNewOrder,
+    TResult? Function(bool call)? getPartnerOrders,
+    TResult? Function(String orderId)? removePickupPartner,
+    TResult? Function()? refresPartnerOrders,
+    TResult? Function()? refreshNewOrder,
+    TResult? Function(int tab)? changeTab,
+    TResult? Function(PickUpPerson pickUpPerson, String orderId)?
+        changePickupPartner,
+    TResult? Function()? checkErrorCompleteOrder,
+    TResult? Function()? addDiviceBill,
+    TResult? Function()? removeDiviceBill,
+    TResult? Function()? addIdCardImage,
+    TResult? Function()? removeIdCardImage,
+    TResult? Function()? addDeviceImages,
+    TResult? Function(int index)? removeDeviceImage,
+    TResult? Function()? reset,
+  }) {
+    return addDeviceImages?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String orderId)? acceptOrder,
+    TResult Function(String orderId, String reason)? cancelOrder,
+    TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult Function(bool call)? getNewOrder,
+    TResult Function(bool call)? getPartnerOrders,
+    TResult Function(String orderId)? removePickupPartner,
+    TResult Function()? refresPartnerOrders,
+    TResult Function()? refreshNewOrder,
+    TResult Function(int tab)? changeTab,
+    TResult Function(PickUpPerson pickUpPerson, String orderId)?
+        changePickupPartner,
+    TResult Function()? checkErrorCompleteOrder,
+    TResult Function()? addDiviceBill,
+    TResult Function()? removeDiviceBill,
+    TResult Function()? addIdCardImage,
+    TResult Function()? removeIdCardImage,
+    TResult Function()? addDeviceImages,
+    TResult Function(int index)? removeDeviceImage,
+    TResult Function()? reset,
+    required TResult orElse(),
+  }) {
+    if (addDeviceImages != null) {
+      return addDeviceImages();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(CancelOrder value) cancelOrder,
+    required TResult Function(CompleteOrder value) completeOrder,
+    required TResult Function(GetNewOrder value) getNewOrder,
+    required TResult Function(GetPartnerOrders value) getPartnerOrders,
+    required TResult Function(RemovePickupPartner value) removePickupPartner,
+    required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
+    required TResult Function(RefreshNewOrder value) refreshNewOrder,
+    required TResult Function(ChangeTab value) changeTab,
+    required TResult Function(ChangePickupPartner value) changePickupPartner,
+    required TResult Function(CheckErrorCompleteOrder value)
+        checkErrorCompleteOrder,
+    required TResult Function(AddDiviceBill value) addDiviceBill,
+    required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddIdCardImage value) addIdCardImage,
+    required TResult Function(RemoveIdCardImage value) removeIdCardImage,
+    required TResult Function(AddDeviceImages value) addDeviceImages,
+    required TResult Function(RemoveDeviceImage value) removeDeviceImage,
+    required TResult Function(Reset value) reset,
+  }) {
+    return addDeviceImages(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(CancelOrder value)? cancelOrder,
+    TResult? Function(CompleteOrder value)? completeOrder,
+    TResult? Function(GetNewOrder value)? getNewOrder,
+    TResult? Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult? Function(RemovePickupPartner value)? removePickupPartner,
+    TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
+    TResult? Function(ChangeTab value)? changeTab,
+    TResult? Function(ChangePickupPartner value)? changePickupPartner,
+    TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult? Function(AddDiviceBill value)? addDiviceBill,
+    TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddIdCardImage value)? addIdCardImage,
+    TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult? Function(AddDeviceImages value)? addDeviceImages,
+    TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult? Function(Reset value)? reset,
+  }) {
+    return addDeviceImages?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(CancelOrder value)? cancelOrder,
+    TResult Function(CompleteOrder value)? completeOrder,
+    TResult Function(GetNewOrder value)? getNewOrder,
+    TResult Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult Function(RemovePickupPartner value)? removePickupPartner,
+    TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult Function(RefreshNewOrder value)? refreshNewOrder,
+    TResult Function(ChangeTab value)? changeTab,
+    TResult Function(ChangePickupPartner value)? changePickupPartner,
+    TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult Function(AddDiviceBill value)? addDiviceBill,
+    TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddIdCardImage value)? addIdCardImage,
+    TResult Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult Function(AddDeviceImages value)? addDeviceImages,
+    TResult Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult Function(Reset value)? reset,
+    required TResult orElse(),
+  }) {
+    if (addDeviceImages != null) {
+      return addDeviceImages(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddDeviceImages implements OrdersEvent {
+  const factory AddDeviceImages() = _$AddDeviceImagesImpl;
+}
+
+/// @nodoc
+abstract class _$$RemoveDeviceImageImplCopyWith<$Res> {
+  factory _$$RemoveDeviceImageImplCopyWith(_$RemoveDeviceImageImpl value,
+          $Res Function(_$RemoveDeviceImageImpl) then) =
+      __$$RemoveDeviceImageImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int index});
+}
+
+/// @nodoc
+class __$$RemoveDeviceImageImplCopyWithImpl<$Res>
+    extends _$OrdersEventCopyWithImpl<$Res, _$RemoveDeviceImageImpl>
+    implements _$$RemoveDeviceImageImplCopyWith<$Res> {
+  __$$RemoveDeviceImageImplCopyWithImpl(_$RemoveDeviceImageImpl _value,
+      $Res Function(_$RemoveDeviceImageImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? index = null,
+  }) {
+    return _then(_$RemoveDeviceImageImpl(
+      index: null == index
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RemoveDeviceImageImpl implements RemoveDeviceImage {
+  const _$RemoveDeviceImageImpl({required this.index});
+
+  @override
+  final int index;
+
+  @override
+  String toString() {
+    return 'OrdersEvent.removeDeviceImage(index: $index)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RemoveDeviceImageImpl &&
+            (identical(other.index, index) || other.index == index));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, index);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RemoveDeviceImageImplCopyWith<_$RemoveDeviceImageImpl> get copyWith =>
+      __$$RemoveDeviceImageImplCopyWithImpl<_$RemoveDeviceImageImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String orderId) acceptOrder,
+    required TResult Function(String orderId, String reason) cancelOrder,
+    required TResult Function(
+            String orderId, CompleteOrderModel completeOrderModel)
+        completeOrder,
+    required TResult Function(bool call) getNewOrder,
+    required TResult Function(bool call) getPartnerOrders,
+    required TResult Function(String orderId) removePickupPartner,
+    required TResult Function() refresPartnerOrders,
+    required TResult Function() refreshNewOrder,
+    required TResult Function(int tab) changeTab,
+    required TResult Function(PickUpPerson pickUpPerson, String orderId)
+        changePickupPartner,
+    required TResult Function() checkErrorCompleteOrder,
+    required TResult Function() addDiviceBill,
+    required TResult Function() removeDiviceBill,
+    required TResult Function() addIdCardImage,
+    required TResult Function() removeIdCardImage,
+    required TResult Function() addDeviceImages,
+    required TResult Function(int index) removeDeviceImage,
+    required TResult Function() reset,
+  }) {
+    return removeDeviceImage(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String orderId)? acceptOrder,
+    TResult? Function(String orderId, String reason)? cancelOrder,
+    TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult? Function(bool call)? getNewOrder,
+    TResult? Function(bool call)? getPartnerOrders,
+    TResult? Function(String orderId)? removePickupPartner,
+    TResult? Function()? refresPartnerOrders,
+    TResult? Function()? refreshNewOrder,
+    TResult? Function(int tab)? changeTab,
+    TResult? Function(PickUpPerson pickUpPerson, String orderId)?
+        changePickupPartner,
+    TResult? Function()? checkErrorCompleteOrder,
+    TResult? Function()? addDiviceBill,
+    TResult? Function()? removeDiviceBill,
+    TResult? Function()? addIdCardImage,
+    TResult? Function()? removeIdCardImage,
+    TResult? Function()? addDeviceImages,
+    TResult? Function(int index)? removeDeviceImage,
+    TResult? Function()? reset,
+  }) {
+    return removeDeviceImage?.call(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String orderId)? acceptOrder,
+    TResult Function(String orderId, String reason)? cancelOrder,
+    TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult Function(bool call)? getNewOrder,
+    TResult Function(bool call)? getPartnerOrders,
+    TResult Function(String orderId)? removePickupPartner,
+    TResult Function()? refresPartnerOrders,
+    TResult Function()? refreshNewOrder,
+    TResult Function(int tab)? changeTab,
+    TResult Function(PickUpPerson pickUpPerson, String orderId)?
+        changePickupPartner,
+    TResult Function()? checkErrorCompleteOrder,
+    TResult Function()? addDiviceBill,
+    TResult Function()? removeDiviceBill,
+    TResult Function()? addIdCardImage,
+    TResult Function()? removeIdCardImage,
+    TResult Function()? addDeviceImages,
+    TResult Function(int index)? removeDeviceImage,
+    TResult Function()? reset,
+    required TResult orElse(),
+  }) {
+    if (removeDeviceImage != null) {
+      return removeDeviceImage(index);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(CancelOrder value) cancelOrder,
+    required TResult Function(CompleteOrder value) completeOrder,
+    required TResult Function(GetNewOrder value) getNewOrder,
+    required TResult Function(GetPartnerOrders value) getPartnerOrders,
+    required TResult Function(RemovePickupPartner value) removePickupPartner,
+    required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
+    required TResult Function(RefreshNewOrder value) refreshNewOrder,
+    required TResult Function(ChangeTab value) changeTab,
+    required TResult Function(ChangePickupPartner value) changePickupPartner,
+    required TResult Function(CheckErrorCompleteOrder value)
+        checkErrorCompleteOrder,
+    required TResult Function(AddDiviceBill value) addDiviceBill,
+    required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddIdCardImage value) addIdCardImage,
+    required TResult Function(RemoveIdCardImage value) removeIdCardImage,
+    required TResult Function(AddDeviceImages value) addDeviceImages,
+    required TResult Function(RemoveDeviceImage value) removeDeviceImage,
+    required TResult Function(Reset value) reset,
+  }) {
+    return removeDeviceImage(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(CancelOrder value)? cancelOrder,
+    TResult? Function(CompleteOrder value)? completeOrder,
+    TResult? Function(GetNewOrder value)? getNewOrder,
+    TResult? Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult? Function(RemovePickupPartner value)? removePickupPartner,
+    TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
+    TResult? Function(ChangeTab value)? changeTab,
+    TResult? Function(ChangePickupPartner value)? changePickupPartner,
+    TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult? Function(AddDiviceBill value)? addDiviceBill,
+    TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddIdCardImage value)? addIdCardImage,
+    TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult? Function(AddDeviceImages value)? addDeviceImages,
+    TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult? Function(Reset value)? reset,
+  }) {
+    return removeDeviceImage?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(CancelOrder value)? cancelOrder,
+    TResult Function(CompleteOrder value)? completeOrder,
+    TResult Function(GetNewOrder value)? getNewOrder,
+    TResult Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult Function(RemovePickupPartner value)? removePickupPartner,
+    TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult Function(RefreshNewOrder value)? refreshNewOrder,
+    TResult Function(ChangeTab value)? changeTab,
+    TResult Function(ChangePickupPartner value)? changePickupPartner,
+    TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult Function(AddDiviceBill value)? addDiviceBill,
+    TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddIdCardImage value)? addIdCardImage,
+    TResult Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult Function(AddDeviceImages value)? addDeviceImages,
+    TResult Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult Function(Reset value)? reset,
+    required TResult orElse(),
+  }) {
+    if (removeDeviceImage != null) {
+      return removeDeviceImage(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RemoveDeviceImage implements OrdersEvent {
+  const factory RemoveDeviceImage({required final int index}) =
+      _$RemoveDeviceImageImpl;
+
+  int get index;
+  @JsonKey(ignore: true)
+  _$$RemoveDeviceImageImplCopyWith<_$RemoveDeviceImageImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1715,15 +4048,25 @@ class _$ResetImpl implements Reset {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
-    required TResult Function(String orderId) cancelOrder,
-    required TResult Function() getNewOrder,
-    required TResult Function() refreshNewOrder,
-    required TResult Function() getPartnerOrders,
+    required TResult Function(String orderId, String reason) cancelOrder,
+    required TResult Function(
+            String orderId, CompleteOrderModel completeOrderModel)
+        completeOrder,
+    required TResult Function(bool call) getNewOrder,
+    required TResult Function(bool call) getPartnerOrders,
     required TResult Function(String orderId) removePickupPartner,
     required TResult Function() refresPartnerOrders,
+    required TResult Function() refreshNewOrder,
     required TResult Function(int tab) changeTab,
     required TResult Function(PickUpPerson pickUpPerson, String orderId)
         changePickupPartner,
+    required TResult Function() checkErrorCompleteOrder,
+    required TResult Function() addDiviceBill,
+    required TResult Function() removeDiviceBill,
+    required TResult Function() addIdCardImage,
+    required TResult Function() removeIdCardImage,
+    required TResult Function() addDeviceImages,
+    required TResult Function(int index) removeDeviceImage,
     required TResult Function() reset,
   }) {
     return reset();
@@ -1733,15 +4076,24 @@ class _$ResetImpl implements Reset {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
-    TResult? Function(String orderId)? cancelOrder,
-    TResult? Function()? getNewOrder,
-    TResult? Function()? refreshNewOrder,
-    TResult? Function()? getPartnerOrders,
+    TResult? Function(String orderId, String reason)? cancelOrder,
+    TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult? Function(bool call)? getNewOrder,
+    TResult? Function(bool call)? getPartnerOrders,
     TResult? Function(String orderId)? removePickupPartner,
     TResult? Function()? refresPartnerOrders,
+    TResult? Function()? refreshNewOrder,
     TResult? Function(int tab)? changeTab,
     TResult? Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult? Function()? checkErrorCompleteOrder,
+    TResult? Function()? addDiviceBill,
+    TResult? Function()? removeDiviceBill,
+    TResult? Function()? addIdCardImage,
+    TResult? Function()? removeIdCardImage,
+    TResult? Function()? addDeviceImages,
+    TResult? Function(int index)? removeDeviceImage,
     TResult? Function()? reset,
   }) {
     return reset?.call();
@@ -1751,15 +4103,24 @@ class _$ResetImpl implements Reset {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
-    TResult Function(String orderId)? cancelOrder,
-    TResult Function()? getNewOrder,
-    TResult Function()? refreshNewOrder,
-    TResult Function()? getPartnerOrders,
+    TResult Function(String orderId, String reason)? cancelOrder,
+    TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult Function(bool call)? getNewOrder,
+    TResult Function(bool call)? getPartnerOrders,
     TResult Function(String orderId)? removePickupPartner,
     TResult Function()? refresPartnerOrders,
+    TResult Function()? refreshNewOrder,
     TResult Function(int tab)? changeTab,
     TResult Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult Function()? checkErrorCompleteOrder,
+    TResult Function()? addDiviceBill,
+    TResult Function()? removeDiviceBill,
+    TResult Function()? addIdCardImage,
+    TResult Function()? removeIdCardImage,
+    TResult Function()? addDeviceImages,
+    TResult Function(int index)? removeDeviceImage,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -1774,13 +4135,22 @@ class _$ResetImpl implements Reset {
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
     required TResult Function(CancelOrder value) cancelOrder,
+    required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
-    required TResult Function(RefreshNewOrder value) refreshNewOrder,
     required TResult Function(GetPartnerOrders value) getPartnerOrders,
     required TResult Function(RemovePickupPartner value) removePickupPartner,
     required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
+    required TResult Function(RefreshNewOrder value) refreshNewOrder,
     required TResult Function(ChangeTab value) changeTab,
     required TResult Function(ChangePickupPartner value) changePickupPartner,
+    required TResult Function(CheckErrorCompleteOrder value)
+        checkErrorCompleteOrder,
+    required TResult Function(AddDiviceBill value) addDiviceBill,
+    required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddIdCardImage value) addIdCardImage,
+    required TResult Function(RemoveIdCardImage value) removeIdCardImage,
+    required TResult Function(AddDeviceImages value) addDeviceImages,
+    required TResult Function(RemoveDeviceImage value) removeDeviceImage,
     required TResult Function(Reset value) reset,
   }) {
     return reset(this);
@@ -1791,13 +4161,21 @@ class _$ResetImpl implements Reset {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
     TResult? Function(CancelOrder value)? cancelOrder,
+    TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
-    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
     TResult? Function(GetPartnerOrders value)? getPartnerOrders,
     TResult? Function(RemovePickupPartner value)? removePickupPartner,
     TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
     TResult? Function(ChangeTab value)? changeTab,
     TResult? Function(ChangePickupPartner value)? changePickupPartner,
+    TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult? Function(AddDiviceBill value)? addDiviceBill,
+    TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddIdCardImage value)? addIdCardImage,
+    TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult? Function(AddDeviceImages value)? addDeviceImages,
+    TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult? Function(Reset value)? reset,
   }) {
     return reset?.call(this);
@@ -1808,13 +4186,21 @@ class _$ResetImpl implements Reset {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
     TResult Function(CancelOrder value)? cancelOrder,
+    TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
-    TResult Function(RefreshNewOrder value)? refreshNewOrder,
     TResult Function(GetPartnerOrders value)? getPartnerOrders,
     TResult Function(RemovePickupPartner value)? removePickupPartner,
     TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult Function(RefreshNewOrder value)? refreshNewOrder,
     TResult Function(ChangeTab value)? changeTab,
     TResult Function(ChangePickupPartner value)? changePickupPartner,
+    TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult Function(AddDiviceBill value)? addDiviceBill,
+    TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddIdCardImage value)? addIdCardImage,
+    TResult Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult Function(AddDeviceImages value)? addDeviceImages,
+    TResult Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -1837,7 +4223,15 @@ mixin _$OrdersState {
   bool get acceptOrderError => throw _privateConstructorUsedError;
   bool get acceptOrder => throw _privateConstructorUsedError;
   bool get cancelOrder => throw _privateConstructorUsedError;
+  bool get completeOrderLoading => throw _privateConstructorUsedError;
+  bool get orderCompleted => throw _privateConstructorUsedError;
+  bool get orderCompletionError => throw _privateConstructorUsedError;
+  bool get newOrdesRefreshLoading => throw _privateConstructorUsedError;
+  bool get partnerOrdesRefreshLoading => throw _privateConstructorUsedError;
   String? get message => throw _privateConstructorUsedError;
+  ImageModel? get deviceBill => throw _privateConstructorUsedError;
+  ImageModel? get idCard => throw _privateConstructorUsedError;
+  List<ImageModel>? get deviceImages => throw _privateConstructorUsedError;
   List<OrderDetail>? get partnerOrders => throw _privateConstructorUsedError;
   List<OrderDetail>? get newOrders => throw _privateConstructorUsedError;
   int get orderTab => throw _privateConstructorUsedError;
@@ -1860,7 +4254,15 @@ abstract class $OrdersStateCopyWith<$Res> {
       bool acceptOrderError,
       bool acceptOrder,
       bool cancelOrder,
+      bool completeOrderLoading,
+      bool orderCompleted,
+      bool orderCompletionError,
+      bool newOrdesRefreshLoading,
+      bool partnerOrdesRefreshLoading,
       String? message,
+      ImageModel? deviceBill,
+      ImageModel? idCard,
+      List<ImageModel>? deviceImages,
       List<OrderDetail>? partnerOrders,
       List<OrderDetail>? newOrders,
       int orderTab});
@@ -1885,7 +4287,15 @@ class _$OrdersStateCopyWithImpl<$Res, $Val extends OrdersState>
     Object? acceptOrderError = null,
     Object? acceptOrder = null,
     Object? cancelOrder = null,
+    Object? completeOrderLoading = null,
+    Object? orderCompleted = null,
+    Object? orderCompletionError = null,
+    Object? newOrdesRefreshLoading = null,
+    Object? partnerOrdesRefreshLoading = null,
     Object? message = freezed,
+    Object? deviceBill = freezed,
+    Object? idCard = freezed,
+    Object? deviceImages = freezed,
     Object? partnerOrders = freezed,
     Object? newOrders = freezed,
     Object? orderTab = null,
@@ -1915,10 +4325,42 @@ class _$OrdersStateCopyWithImpl<$Res, $Val extends OrdersState>
           ? _value.cancelOrder
           : cancelOrder // ignore: cast_nullable_to_non_nullable
               as bool,
+      completeOrderLoading: null == completeOrderLoading
+          ? _value.completeOrderLoading
+          : completeOrderLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      orderCompleted: null == orderCompleted
+          ? _value.orderCompleted
+          : orderCompleted // ignore: cast_nullable_to_non_nullable
+              as bool,
+      orderCompletionError: null == orderCompletionError
+          ? _value.orderCompletionError
+          : orderCompletionError // ignore: cast_nullable_to_non_nullable
+              as bool,
+      newOrdesRefreshLoading: null == newOrdesRefreshLoading
+          ? _value.newOrdesRefreshLoading
+          : newOrdesRefreshLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      partnerOrdesRefreshLoading: null == partnerOrdesRefreshLoading
+          ? _value.partnerOrdesRefreshLoading
+          : partnerOrdesRefreshLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
       message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String?,
+      deviceBill: freezed == deviceBill
+          ? _value.deviceBill
+          : deviceBill // ignore: cast_nullable_to_non_nullable
+              as ImageModel?,
+      idCard: freezed == idCard
+          ? _value.idCard
+          : idCard // ignore: cast_nullable_to_non_nullable
+              as ImageModel?,
+      deviceImages: freezed == deviceImages
+          ? _value.deviceImages
+          : deviceImages // ignore: cast_nullable_to_non_nullable
+              as List<ImageModel>?,
       partnerOrders: freezed == partnerOrders
           ? _value.partnerOrders
           : partnerOrders // ignore: cast_nullable_to_non_nullable
@@ -1950,7 +4392,15 @@ abstract class _$$InitialImplCopyWith<$Res>
       bool acceptOrderError,
       bool acceptOrder,
       bool cancelOrder,
+      bool completeOrderLoading,
+      bool orderCompleted,
+      bool orderCompletionError,
+      bool newOrdesRefreshLoading,
+      bool partnerOrdesRefreshLoading,
       String? message,
+      ImageModel? deviceBill,
+      ImageModel? idCard,
+      List<ImageModel>? deviceImages,
       List<OrderDetail>? partnerOrders,
       List<OrderDetail>? newOrders,
       int orderTab});
@@ -1973,7 +4423,15 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? acceptOrderError = null,
     Object? acceptOrder = null,
     Object? cancelOrder = null,
+    Object? completeOrderLoading = null,
+    Object? orderCompleted = null,
+    Object? orderCompletionError = null,
+    Object? newOrdesRefreshLoading = null,
+    Object? partnerOrdesRefreshLoading = null,
     Object? message = freezed,
+    Object? deviceBill = freezed,
+    Object? idCard = freezed,
+    Object? deviceImages = freezed,
     Object? partnerOrders = freezed,
     Object? newOrders = freezed,
     Object? orderTab = null,
@@ -2003,10 +4461,42 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.cancelOrder
           : cancelOrder // ignore: cast_nullable_to_non_nullable
               as bool,
+      completeOrderLoading: null == completeOrderLoading
+          ? _value.completeOrderLoading
+          : completeOrderLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      orderCompleted: null == orderCompleted
+          ? _value.orderCompleted
+          : orderCompleted // ignore: cast_nullable_to_non_nullable
+              as bool,
+      orderCompletionError: null == orderCompletionError
+          ? _value.orderCompletionError
+          : orderCompletionError // ignore: cast_nullable_to_non_nullable
+              as bool,
+      newOrdesRefreshLoading: null == newOrdesRefreshLoading
+          ? _value.newOrdesRefreshLoading
+          : newOrdesRefreshLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      partnerOrdesRefreshLoading: null == partnerOrdesRefreshLoading
+          ? _value.partnerOrdesRefreshLoading
+          : partnerOrdesRefreshLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
       message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String?,
+      deviceBill: freezed == deviceBill
+          ? _value.deviceBill
+          : deviceBill // ignore: cast_nullable_to_non_nullable
+              as ImageModel?,
+      idCard: freezed == idCard
+          ? _value.idCard
+          : idCard // ignore: cast_nullable_to_non_nullable
+              as ImageModel?,
+      deviceImages: freezed == deviceImages
+          ? _value._deviceImages
+          : deviceImages // ignore: cast_nullable_to_non_nullable
+              as List<ImageModel>?,
       partnerOrders: freezed == partnerOrders
           ? _value._partnerOrders
           : partnerOrders // ignore: cast_nullable_to_non_nullable
@@ -2033,11 +4523,20 @@ class _$InitialImpl implements _Initial {
       required this.acceptOrderError,
       required this.acceptOrder,
       required this.cancelOrder,
+      required this.completeOrderLoading,
+      required this.orderCompleted,
+      required this.orderCompletionError,
+      required this.newOrdesRefreshLoading,
+      required this.partnerOrdesRefreshLoading,
       this.message,
+      this.deviceBill,
+      this.idCard,
+      final List<ImageModel>? deviceImages,
       final List<OrderDetail>? partnerOrders,
       final List<OrderDetail>? newOrders,
       required this.orderTab})
-      : _partnerOrders = partnerOrders,
+      : _deviceImages = deviceImages,
+        _partnerOrders = partnerOrders,
         _newOrders = newOrders;
 
   @override
@@ -2053,7 +4552,31 @@ class _$InitialImpl implements _Initial {
   @override
   final bool cancelOrder;
   @override
+  final bool completeOrderLoading;
+  @override
+  final bool orderCompleted;
+  @override
+  final bool orderCompletionError;
+  @override
+  final bool newOrdesRefreshLoading;
+  @override
+  final bool partnerOrdesRefreshLoading;
+  @override
   final String? message;
+  @override
+  final ImageModel? deviceBill;
+  @override
+  final ImageModel? idCard;
+  final List<ImageModel>? _deviceImages;
+  @override
+  List<ImageModel>? get deviceImages {
+    final value = _deviceImages;
+    if (value == null) return null;
+    if (_deviceImages is EqualUnmodifiableListView) return _deviceImages;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   final List<OrderDetail>? _partnerOrders;
   @override
   List<OrderDetail>? get partnerOrders {
@@ -2079,7 +4602,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'OrdersState(isLoading: $isLoading, hasError: $hasError, acceptOrderLoading: $acceptOrderLoading, acceptOrderError: $acceptOrderError, acceptOrder: $acceptOrder, cancelOrder: $cancelOrder, message: $message, partnerOrders: $partnerOrders, newOrders: $newOrders, orderTab: $orderTab)';
+    return 'OrdersState(isLoading: $isLoading, hasError: $hasError, acceptOrderLoading: $acceptOrderLoading, acceptOrderError: $acceptOrderError, acceptOrder: $acceptOrder, cancelOrder: $cancelOrder, completeOrderLoading: $completeOrderLoading, orderCompleted: $orderCompleted, orderCompletionError: $orderCompletionError, newOrdesRefreshLoading: $newOrdesRefreshLoading, partnerOrdesRefreshLoading: $partnerOrdesRefreshLoading, message: $message, deviceBill: $deviceBill, idCard: $idCard, deviceImages: $deviceImages, partnerOrders: $partnerOrders, newOrders: $newOrders, orderTab: $orderTab)';
   }
 
   @override
@@ -2099,7 +4622,24 @@ class _$InitialImpl implements _Initial {
                 other.acceptOrder == acceptOrder) &&
             (identical(other.cancelOrder, cancelOrder) ||
                 other.cancelOrder == cancelOrder) &&
+            (identical(other.completeOrderLoading, completeOrderLoading) ||
+                other.completeOrderLoading == completeOrderLoading) &&
+            (identical(other.orderCompleted, orderCompleted) ||
+                other.orderCompleted == orderCompleted) &&
+            (identical(other.orderCompletionError, orderCompletionError) ||
+                other.orderCompletionError == orderCompletionError) &&
+            (identical(other.newOrdesRefreshLoading, newOrdesRefreshLoading) ||
+                other.newOrdesRefreshLoading == newOrdesRefreshLoading) &&
+            (identical(other.partnerOrdesRefreshLoading,
+                    partnerOrdesRefreshLoading) ||
+                other.partnerOrdesRefreshLoading ==
+                    partnerOrdesRefreshLoading) &&
             (identical(other.message, message) || other.message == message) &&
+            (identical(other.deviceBill, deviceBill) ||
+                other.deviceBill == deviceBill) &&
+            (identical(other.idCard, idCard) || other.idCard == idCard) &&
+            const DeepCollectionEquality()
+                .equals(other._deviceImages, _deviceImages) &&
             const DeepCollectionEquality()
                 .equals(other._partnerOrders, _partnerOrders) &&
             const DeepCollectionEquality()
@@ -2117,7 +4657,15 @@ class _$InitialImpl implements _Initial {
       acceptOrderError,
       acceptOrder,
       cancelOrder,
+      completeOrderLoading,
+      orderCompleted,
+      orderCompletionError,
+      newOrdesRefreshLoading,
+      partnerOrdesRefreshLoading,
       message,
+      deviceBill,
+      idCard,
+      const DeepCollectionEquality().hash(_deviceImages),
       const DeepCollectionEquality().hash(_partnerOrders),
       const DeepCollectionEquality().hash(_newOrders),
       orderTab);
@@ -2137,7 +4685,15 @@ abstract class _Initial implements OrdersState {
       required final bool acceptOrderError,
       required final bool acceptOrder,
       required final bool cancelOrder,
+      required final bool completeOrderLoading,
+      required final bool orderCompleted,
+      required final bool orderCompletionError,
+      required final bool newOrdesRefreshLoading,
+      required final bool partnerOrdesRefreshLoading,
       final String? message,
+      final ImageModel? deviceBill,
+      final ImageModel? idCard,
+      final List<ImageModel>? deviceImages,
       final List<OrderDetail>? partnerOrders,
       final List<OrderDetail>? newOrders,
       required final int orderTab}) = _$InitialImpl;
@@ -2155,7 +4711,23 @@ abstract class _Initial implements OrdersState {
   @override
   bool get cancelOrder;
   @override
+  bool get completeOrderLoading;
+  @override
+  bool get orderCompleted;
+  @override
+  bool get orderCompletionError;
+  @override
+  bool get newOrdesRefreshLoading;
+  @override
+  bool get partnerOrdesRefreshLoading;
+  @override
   String? get message;
+  @override
+  ImageModel? get deviceBill;
+  @override
+  ImageModel? get idCard;
+  @override
+  List<ImageModel>? get deviceImages;
   @override
   List<OrderDetail>? get partnerOrders;
   @override

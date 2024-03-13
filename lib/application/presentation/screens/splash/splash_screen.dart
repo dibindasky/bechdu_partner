@@ -42,6 +42,7 @@ class ScreenSplash extends StatelessWidget {
       BuildContext context, bool isLogin, bool role) async {
     print("partner => $role");
     Future.delayed(const Duration(milliseconds: 2000), () {
+      partner = role;
       Navigator.pushReplacementNamed(
           context,
           isLogin

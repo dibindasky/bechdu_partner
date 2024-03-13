@@ -121,7 +121,7 @@ class OrderDetailWithoutBlur extends StatelessWidget {
               deviceName: orderDetail.productDetails?.name ?? '----',
               image: orderDetail.productDetails?.image ?? '',
               price: orderDetail.productDetails?.price ?? '--'),
-          orderDetail.status == 'cancelled'
+          orderDetail.status == 'cancelled' || orderDetail.status == 'Completed'
               ? kEmpty
               : OrderDetailTopPart(orderDetail: orderDetail),
           kHeight20,

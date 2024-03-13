@@ -8,6 +8,8 @@ import 'package:bechdu_partner/domain/model/commen/error_response_model/error_re
 import 'package:bechdu_partner/domain/model/commen/success_response_model/success_response_model.dart';
 import 'package:bechdu_partner/domain/model/requote/date_and_time_response_model/date_and_time_response_model.dart';
 import 'package:bechdu_partner/domain/model/requote/get_question_response_model/get_question_response_model.dart';
+import 'package:bechdu_partner/domain/model/requote/price_calculation_model/price_calculation_model.dart';
+import 'package:bechdu_partner/domain/model/requote/price_r_esponse_model/price_r_esponse_model.dart';
 import 'package:bechdu_partner/domain/model/requote/reshedule_model/reshedule_model.dart';
 import 'package:bechdu_partner/domain/repository/service/requote_repo.dart';
 import 'package:dartz/dartz.dart';
@@ -76,9 +78,11 @@ class RequoteService implements RequoteRepo {
     try {
       log('resheduleOrder data=> ${resheduleModel.toJson()}');
       log('resheduleOrder data=> ${resheduleModel.pickUpDetails!.toJson()}');
-      final response = await _apiService.put(ApiEndPoints.resheduleOrder
-          .replaceFirst('{orderId}', orderId)
-          .replaceFirst('{partnerPhone}', phone));
+      final response = await _apiService.put(
+          ApiEndPoints.resheduleOrder
+              .replaceFirst('{orderId}', orderId)
+              .replaceFirst('{partnerPhone}', phone),
+          data: resheduleModel.toJson());
       log('resheduleOrder success data=> ${response.data}');
       return Right(SuccessResponseModel.fromJson(response.data));
     } on DioException catch (e) {
@@ -93,6 +97,31 @@ class RequoteService implements RequoteRepo {
       }
     } catch (e) {
       log('resheduleOrder exception => $e');
+      return Left(Failure(message: errorMessage));
+    }
+  }
+
+  @override
+  Future<Either<Failure, PriceResponseModel>> getPrice(
+      {required PriceCalculationModel priceCalculationModel}) async {
+    try {
+      log('getPrice data=> ${priceCalculationModel.toJson()}');
+      final response =
+          await _apiService.post(ApiEndPoints.getPrice, addHeader: false);
+      log('getPrice success data=> ${response.data}');
+      return Right(PriceResponseModel.fromJson(response.data));
+    } on DioException catch (e) {
+      try {
+        log('getPrice dio exception => $e');
+        log(e.response.toString());
+        ErrorResponseModel error =
+            ErrorResponseModel.fromJson(e.response?.data);
+        return Left(Failure(message: error.error ?? errorMessage));
+      } catch (e) {
+        return Left(Failure(message: errorMessage));
+      }
+    } catch (e) {
+      log('getPrice exception => $e');
       return Left(Failure(message: errorMessage));
     }
   }

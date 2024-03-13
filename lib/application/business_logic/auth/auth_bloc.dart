@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:bechdu_partner/data/feature/device_informations.dart';
 import 'package:bechdu_partner/data/secure_storage/secure_storage.dart';
 import 'package:bechdu_partner/domain/model/auth/phone_number_model/phone_number_model.dart';
@@ -78,6 +79,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           isLogin: true,
           role: r.role == 'Partner'));
       print("login response => ${r.toJson()}");
+      partner = r.role == 'Partner';
       await SecureStorage.setRole(isPartner: r.role == 'Partner');
       await SecureStorage.saveToken(
           tokenModel: TokenModel(accessToken: r.token));

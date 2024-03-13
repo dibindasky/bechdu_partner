@@ -30,6 +30,9 @@ const urlMapTest = 'https://www.google.com/maps?q=';
 double sHeight = 900;
 double sWidth = 400;
 
+// for entire app conversion from partner to pickup guy
+late bool partner;
+
 const kEmpty = SizedBox();
 
 const kHeight5 = SizedBox(height: 5);
@@ -115,8 +118,6 @@ final textHeadSemiBold1 = TextStyle(
 
 void sizeFinder(BuildContext context) {
   final size = MediaQuery.of(context).size;
-  print(size.height);
-  print(size.width);
   sHeight = size.height > 900 ? 900 : size.height;
   sWidth = size.width > 450 ? 450 : size.width;
 }

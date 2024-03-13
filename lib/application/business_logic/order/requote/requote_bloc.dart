@@ -26,12 +26,15 @@ class RequoteBloc extends Bloc<RequoteEvent, RequoteState> {
     on<MarkGrid>(markGrid);
     on<GetDateAndTime>(getDateAndTime);
     on<ResheduleOrder>(resheduleOrder);
+    on<GetPrice>(getPrice);
     on<Reset>(reset);
   }
 
   FutureOr<void> reset(Reset event, emit) {
     emit(RequoteState.initial());
   }
+
+  FutureOr<void> getPrice(GetPrice event, emit) async {}
 
   FutureOr<void> resheduleOrder(ResheduleOrder event, emit) async {
     final phone = await SecureStorage.getPhone();

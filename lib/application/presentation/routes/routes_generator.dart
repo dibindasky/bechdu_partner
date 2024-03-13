@@ -2,6 +2,7 @@ import 'package:bechdu_partner/application/presentation/routes/routes.dart';
 import 'package:bechdu_partner/application/presentation/screens/auth/login_screen.dart';
 import 'package:bechdu_partner/application/presentation/screens/auth/otp_screen.dart';
 import 'package:bechdu_partner/application/presentation/screens/bottom_bar/bottom_bar_screen.dart';
+import 'package:bechdu_partner/application/presentation/screens/complete_order/complete_order_screen.dart';
 import 'package:bechdu_partner/application/presentation/screens/home/home_screen.dart';
 import 'package:bechdu_partner/application/presentation/screens/notification/notificaton_screen.dart';
 import 'package:bechdu_partner/application/presentation/screens/order/order_detail_screen.dart';
@@ -36,6 +37,11 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (ctx) => const ScreenSettings());
       case Routes.pointsPage:
         return MaterialPageRoute(builder: (ctx) => const ScreenPoints());
+      case Routes.completeOrderPage:
+        return arguments is OrderDetail
+            ? MaterialPageRoute(
+                builder: (ctx) => ScreenCompleteOrder(orderDetail: arguments))
+            : _errorScreen();
       case Routes.profilePage:
         return MaterialPageRoute(builder: (ctx) => const ScreenProfile());
       case Routes.transcationPage:

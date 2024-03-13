@@ -1,5 +1,6 @@
 import 'package:bechdu_partner/application/business_logic/order/orders/orders_bloc.dart';
 import 'package:bechdu_partner/application/business_logic/pickup_partner/pickup_partner_bloc.dart';
+import 'package:bechdu_partner/application/presentation/routes/routes.dart';
 import 'package:bechdu_partner/application/presentation/utils/clipper/vertical_curves.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
@@ -53,12 +54,42 @@ Future<dynamic> showBottomSheetAssignPartner(
                     builder: (context, state) {
                       if (state.pickUpPersons == null ||
                           state.pickUpPersons == []) {
-                        return const Text('no partner available');
+                        return Column(
+                          children: [
+                            InkWell(
+                                onTap: () {
+                                  Navigator.pushNamed(
+                                      context, Routes.addPickUpPage);
+                                },
+                                child:
+                                    const CircleAvatar(child: Icon(Icons.add))),
+                            Text('Add PickUpPartner', style: textHeadBold1),
+                            kHeight30,
+                            const Text('no partner available'),
+                          ],
+                        );
                       } else {
                         // sort out blocked pickup partners
+                        print('partner available');
                         final list = state.pickUpPersons!
                             .where((element) => element.status != 'blocked')
                             .toList();
+                        if (list.isEmpty) {
+                          return Column(
+                            children: [
+                              InkWell(
+                                  onTap: () {
+                                    Navigator.pushNamed(
+                                        context, Routes.addPickUpPage);
+                                  },
+                                  child: const CircleAvatar(
+                                      child: Icon(Icons.add))),
+                              Text('Add PickUpPartner', style: textHeadBold1),
+                              kHeight30,
+                              const Text('no partner available'),
+                            ],
+                          );
+                        }
                         return ListView.builder(
                           itemCount: list.length,
                           shrinkWrap: true,

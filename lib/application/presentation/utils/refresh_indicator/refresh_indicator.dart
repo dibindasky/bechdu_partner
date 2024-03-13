@@ -5,12 +5,14 @@ import 'package:flutter/material.dart';
 class ErrorRefreshIndicator extends StatelessWidget {
   const ErrorRefreshIndicator({
     super.key,
+    this.shrinkWrap=false,
     required this.onRefresh,
     this.errorMessage = 'something went wrong pull to refresh',
   });
 
   final VoidCallback onRefresh;
   final String errorMessage;
+  final bool shrinkWrap;
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +22,7 @@ class ErrorRefreshIndicator extends StatelessWidget {
         await Future.delayed(const Duration(milliseconds: 1500));
       },
       child: ListView(
+        shrinkWrap: shrinkWrap,
         children: [
           kHeight50,
           const Icon(Icons.refresh, color: kGreyLight),

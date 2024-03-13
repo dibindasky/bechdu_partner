@@ -34,6 +34,7 @@ class ApiEndPoints {
   static String resheduleOrder =
       '/partner/reschedule-order/{orderId}/{partnerPhone}';
   static String getQuestions = '/api/category/fetch-category-name/{category}';
+  static String getPrice = '/product/calculate-price';
 
   // transcations
   static String getCreditedTranscation =

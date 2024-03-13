@@ -1,4 +1,5 @@
 import 'package:bechdu_partner/application/business_logic/order/requote/requote_bloc.dart';
+import 'package:bechdu_partner/application/presentation/routes/routes.dart';
 import 'package:bechdu_partner/application/presentation/screens/order/dialoges/show_dialog_cancel_order.dart';
 import 'package:bechdu_partner/application/presentation/screens/order/dialoges/show_dialoge_reschedule.dart';
 import 'package:bechdu_partner/application/presentation/screens/order/requote/requote_price_session.dart';
@@ -45,7 +46,12 @@ class OrderDetailTopPart extends StatelessWidget {
                   }),
               kWidth5,
               OrdersCustomButton(
-                  text: ' Complete ', image: iconCompleteCheck, onTap: () {})
+                  text: ' Complete ',
+                  image: iconCompleteCheck,
+                  onTap: () {
+                    Navigator.pushNamed(context, Routes.completeOrderPage,
+                        arguments: orderDetail);
+                  })
             ],
           ),
           kHeight10,

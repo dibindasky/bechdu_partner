@@ -13,4 +13,5 @@ class Routes {
   static const String pickUpProfilePage = '/pick_up_profile_page';
   static const String profilePage = '/profile_page';
   static const String homePage = '/home_page';
+  static const String completeOrderPage = '/complete_order_page';
 }

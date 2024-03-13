@@ -17,6 +17,7 @@ class TranscationBloc extends Bloc<TranscationEvent, TranscationState> {
   int creditedPage = 1;
   int debitedPage = 1;
   int pageCount = 10;
+  int pageCount2 = 5;
   TranscationBloc(this.transcationsRepo) : super(TranscationState.initial()) {
     on<ChangeTab>(changeTab);
     on<GetCreditedTranscations>(getCreditedTranscations);
@@ -38,7 +39,7 @@ class TranscationBloc extends Bloc<TranscationEvent, TranscationState> {
       GetCreditedTranscations event, emit) async {
     emit(state.copyWith(isLoading: true, message: null, hasError: false));
     final phone = await SecureStorage.getPhone();
-    creditedPage = 1;
+    pageCount = 5;
     final result = await transcationsRepo.getCreditedTranscations(
         pageSizeQueryModel:
             PageSizeQueryModel(page: creditedPage, pageSize: pageCount),
@@ -55,26 +56,22 @@ class TranscationBloc extends Bloc<TranscationEvent, TranscationState> {
     final phone = await SecureStorage.getPhone();
     final result = await transcationsRepo.getCreditedTranscations(
         pageSizeQueryModel:
-            PageSizeQueryModel(page: ++creditedPage, pageSize: pageCount),
+            PageSizeQueryModel(page: creditedPage, pageSize: pageCount += 5),
         phone: phone!);
     result.fold(
         (l) => emit(state.copyWith(creditedLoading: false, hasError: true)),
         (r) => emit(state.copyWith(
-                creditedLoading: false,
-                creditedTranscations: [
-                  ...state.creditedTranscations!,
-                  ...r.data ?? []
-                ])));
+            creditedLoading: false, creditedTranscations: r.data)));
   }
 
   FutureOr<void> getDebitedTranscations(
       GetDebitedTranscations event, emit) async {
     emit(state.copyWith(isLoading: true, message: null, hasError: false));
     final phone = await SecureStorage.getPhone();
-    debitedPage = 1;
+    pageCount2 = 5;
     final result = await transcationsRepo.getDebitedTranscations(
         pageSizeQueryModel:
-            PageSizeQueryModel(page: debitedPage, pageSize: pageCount),
+            PageSizeQueryModel(page: debitedPage, pageSize: pageCount2),
         phone: phone!);
     result.fold(
         (l) => emit(state.copyWith(isLoading: false, hasError: true)),
@@ -88,13 +85,11 @@ class TranscationBloc extends Bloc<TranscationEvent, TranscationState> {
     final phone = await SecureStorage.getPhone();
     final result = await transcationsRepo.getDebitedTranscations(
         pageSizeQueryModel:
-            PageSizeQueryModel(page: ++debitedPage, pageSize: pageCount),
+            PageSizeQueryModel(page: debitedPage, pageSize: pageCount2 += 5),
         phone: phone!);
     result.fold(
         (l) => emit(state.copyWith(debitedLoading: false, hasError: true)),
-        (r) => emit(state.copyWith(debitedLoading: false, debitedTranscations: [
-              ...state.debitedTranscations!,
-              ...r.data ?? []
-            ])));
+        (r) => emit(state.copyWith(
+            debitedLoading: false, debitedTranscations: r.data)));
   }
 }
