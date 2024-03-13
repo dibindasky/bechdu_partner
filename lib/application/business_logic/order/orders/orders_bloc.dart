@@ -28,6 +28,11 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
     on<RefresPartnerOrders>(refresPartnerOrders);
     on<ChangePickupPartner>(changePickupPartner);
     on<RemovePickupPartner>(removePickupPartner);
+    on<Reset>(reset);
+  }
+
+  FutureOr<void> reset(Reset event, emit) {
+    emit(OrdersState.initial());
   }
 
   FutureOr<void> getPartnerOrders(GetPartnerOrders event, emit) async {

@@ -8,7 +8,7 @@ class PickUpDetails {
   String? date;
   String? reason;
 
-  PickUpDetails({this.time, this.date,this.reason});
+  PickUpDetails({this.time, this.date, this.reason});
 
   factory PickUpDetails.fromJson(Map<String, dynamic> json) {
     return _$PickUpDetailsFromJson(json);

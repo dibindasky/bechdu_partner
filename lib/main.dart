@@ -2,6 +2,8 @@ import 'package:bechdu_partner/application/business_logic/auth/auth_bloc.dart';
 import 'package:bechdu_partner/application/business_logic/order/orders/orders_bloc.dart';
 import 'package:bechdu_partner/application/business_logic/order/requote/requote_bloc.dart';
 import 'package:bechdu_partner/application/business_logic/pickup_partner/pickup_partner_bloc.dart';
+import 'package:bechdu_partner/application/business_logic/points/points_bloc.dart';
+import 'package:bechdu_partner/application/business_logic/role/role_bloc.dart';
 import 'package:bechdu_partner/application/business_logic/transcation/transcation_bloc.dart';
 import 'package:bechdu_partner/application/presentation/routes/routes_generator.dart';
 import 'package:bechdu_partner/domain/core/di/dipendency_injection.dart';
@@ -29,6 +31,8 @@ class Beachdu extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => getIt<AuthBloc>()),
         BlocProvider(create: (context) => getIt<RequoteBloc>()),
+        BlocProvider(create: (context) => getIt<RoleBloc>()),
+        BlocProvider(create: (context) => getIt<PointsBloc>()),
         BlocProvider(create: (context) => getIt<OrdersBloc>()),
         BlocProvider(create: (context) => getIt<TranscationBloc>()),
         BlocProvider(create: (context) => getIt<PickupPartnerBloc>()),

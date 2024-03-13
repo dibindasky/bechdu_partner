@@ -19,32 +19,44 @@ mixin _$PointsEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getGst,
+    required TResult Function() getCoinValue,
+    required TResult Function() reset,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getGst,
+    TResult? Function()? getCoinValue,
+    TResult? Function()? reset,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getGst,
+    TResult Function()? getCoinValue,
+    TResult Function()? reset,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetGst value) getGst,
+    required TResult Function(GetCoinValue value) getCoinValue,
+    required TResult Function(Reset value) reset,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetGst value)? getGst,
+    TResult? Function(GetCoinValue value)? getCoinValue,
+    TResult? Function(Reset value)? reset,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetGst value)? getGst,
+    TResult Function(GetCoinValue value)? getCoinValue,
+    TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -107,6 +119,8 @@ class _$GetGstImpl implements GetGst {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getGst,
+    required TResult Function() getCoinValue,
+    required TResult Function() reset,
   }) {
     return getGst();
   }
@@ -115,6 +129,8 @@ class _$GetGstImpl implements GetGst {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getGst,
+    TResult? Function()? getCoinValue,
+    TResult? Function()? reset,
   }) {
     return getGst?.call();
   }
@@ -123,6 +139,8 @@ class _$GetGstImpl implements GetGst {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getGst,
+    TResult Function()? getCoinValue,
+    TResult Function()? reset,
     required TResult orElse(),
   }) {
     if (getGst != null) {
@@ -135,6 +153,8 @@ class _$GetGstImpl implements GetGst {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetGst value) getGst,
+    required TResult Function(GetCoinValue value) getCoinValue,
+    required TResult Function(Reset value) reset,
   }) {
     return getGst(this);
   }
@@ -143,6 +163,8 @@ class _$GetGstImpl implements GetGst {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetGst value)? getGst,
+    TResult? Function(GetCoinValue value)? getCoinValue,
+    TResult? Function(Reset value)? reset,
   }) {
     return getGst?.call(this);
   }
@@ -151,6 +173,8 @@ class _$GetGstImpl implements GetGst {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetGst value)? getGst,
+    TResult Function(GetCoinValue value)? getCoinValue,
+    TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
     if (getGst != null) {
@@ -165,10 +189,227 @@ abstract class GetGst implements PointsEvent {
 }
 
 /// @nodoc
+abstract class _$$GetCoinValueImplCopyWith<$Res> {
+  factory _$$GetCoinValueImplCopyWith(
+          _$GetCoinValueImpl value, $Res Function(_$GetCoinValueImpl) then) =
+      __$$GetCoinValueImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetCoinValueImplCopyWithImpl<$Res>
+    extends _$PointsEventCopyWithImpl<$Res, _$GetCoinValueImpl>
+    implements _$$GetCoinValueImplCopyWith<$Res> {
+  __$$GetCoinValueImplCopyWithImpl(
+      _$GetCoinValueImpl _value, $Res Function(_$GetCoinValueImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetCoinValueImpl implements GetCoinValue {
+  const _$GetCoinValueImpl();
+
+  @override
+  String toString() {
+    return 'PointsEvent.getCoinValue()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetCoinValueImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getGst,
+    required TResult Function() getCoinValue,
+    required TResult Function() reset,
+  }) {
+    return getCoinValue();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getGst,
+    TResult? Function()? getCoinValue,
+    TResult? Function()? reset,
+  }) {
+    return getCoinValue?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getGst,
+    TResult Function()? getCoinValue,
+    TResult Function()? reset,
+    required TResult orElse(),
+  }) {
+    if (getCoinValue != null) {
+      return getCoinValue();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetGst value) getGst,
+    required TResult Function(GetCoinValue value) getCoinValue,
+    required TResult Function(Reset value) reset,
+  }) {
+    return getCoinValue(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetGst value)? getGst,
+    TResult? Function(GetCoinValue value)? getCoinValue,
+    TResult? Function(Reset value)? reset,
+  }) {
+    return getCoinValue?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetGst value)? getGst,
+    TResult Function(GetCoinValue value)? getCoinValue,
+    TResult Function(Reset value)? reset,
+    required TResult orElse(),
+  }) {
+    if (getCoinValue != null) {
+      return getCoinValue(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetCoinValue implements PointsEvent {
+  const factory GetCoinValue() = _$GetCoinValueImpl;
+}
+
+/// @nodoc
+abstract class _$$ResetImplCopyWith<$Res> {
+  factory _$$ResetImplCopyWith(
+          _$ResetImpl value, $Res Function(_$ResetImpl) then) =
+      __$$ResetImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ResetImplCopyWithImpl<$Res>
+    extends _$PointsEventCopyWithImpl<$Res, _$ResetImpl>
+    implements _$$ResetImplCopyWith<$Res> {
+  __$$ResetImplCopyWithImpl(
+      _$ResetImpl _value, $Res Function(_$ResetImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ResetImpl implements Reset {
+  const _$ResetImpl();
+
+  @override
+  String toString() {
+    return 'PointsEvent.reset()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ResetImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getGst,
+    required TResult Function() getCoinValue,
+    required TResult Function() reset,
+  }) {
+    return reset();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getGst,
+    TResult? Function()? getCoinValue,
+    TResult? Function()? reset,
+  }) {
+    return reset?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getGst,
+    TResult Function()? getCoinValue,
+    TResult Function()? reset,
+    required TResult orElse(),
+  }) {
+    if (reset != null) {
+      return reset();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetGst value) getGst,
+    required TResult Function(GetCoinValue value) getCoinValue,
+    required TResult Function(Reset value) reset,
+  }) {
+    return reset(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetGst value)? getGst,
+    TResult? Function(GetCoinValue value)? getCoinValue,
+    TResult? Function(Reset value)? reset,
+  }) {
+    return reset?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetGst value)? getGst,
+    TResult Function(GetCoinValue value)? getCoinValue,
+    TResult Function(Reset value)? reset,
+    required TResult orElse(),
+  }) {
+    if (reset != null) {
+      return reset(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Reset implements PointsEvent {
+  const factory Reset() = _$ResetImpl;
+}
+
+/// @nodoc
 mixin _$PointsState {
   bool get hasError => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   int? get gst => throw _privateConstructorUsedError;
+  int? get coinValue => throw _privateConstructorUsedError;
   String? get message => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -182,7 +423,12 @@ abstract class $PointsStateCopyWith<$Res> {
           PointsState value, $Res Function(PointsState) then) =
       _$PointsStateCopyWithImpl<$Res, PointsState>;
   @useResult
-  $Res call({bool hasError, bool isLoading, int? gst, String? message});
+  $Res call(
+      {bool hasError,
+      bool isLoading,
+      int? gst,
+      int? coinValue,
+      String? message});
 }
 
 /// @nodoc
@@ -201,6 +447,7 @@ class _$PointsStateCopyWithImpl<$Res, $Val extends PointsState>
     Object? hasError = null,
     Object? isLoading = null,
     Object? gst = freezed,
+    Object? coinValue = freezed,
     Object? message = freezed,
   }) {
     return _then(_value.copyWith(
@@ -215,6 +462,10 @@ class _$PointsStateCopyWithImpl<$Res, $Val extends PointsState>
       gst: freezed == gst
           ? _value.gst
           : gst // ignore: cast_nullable_to_non_nullable
+              as int?,
+      coinValue: freezed == coinValue
+          ? _value.coinValue
+          : coinValue // ignore: cast_nullable_to_non_nullable
               as int?,
       message: freezed == message
           ? _value.message
@@ -232,7 +483,12 @@ abstract class _$$InitialImplCopyWith<$Res>
       __$$InitialImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool hasError, bool isLoading, int? gst, String? message});
+  $Res call(
+      {bool hasError,
+      bool isLoading,
+      int? gst,
+      int? coinValue,
+      String? message});
 }
 
 /// @nodoc
@@ -249,6 +505,7 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? hasError = null,
     Object? isLoading = null,
     Object? gst = freezed,
+    Object? coinValue = freezed,
     Object? message = freezed,
   }) {
     return _then(_$InitialImpl(
@@ -263,6 +520,10 @@ class __$$InitialImplCopyWithImpl<$Res>
       gst: freezed == gst
           ? _value.gst
           : gst // ignore: cast_nullable_to_non_nullable
+              as int?,
+      coinValue: freezed == coinValue
+          ? _value.coinValue
+          : coinValue // ignore: cast_nullable_to_non_nullable
               as int?,
       message: freezed == message
           ? _value.message
@@ -279,6 +540,7 @@ class _$InitialImpl implements _Initial {
       {required this.hasError,
       required this.isLoading,
       this.gst,
+      this.coinValue,
       this.message});
 
   @override
@@ -288,11 +550,13 @@ class _$InitialImpl implements _Initial {
   @override
   final int? gst;
   @override
+  final int? coinValue;
+  @override
   final String? message;
 
   @override
   String toString() {
-    return 'PointsState(hasError: $hasError, isLoading: $isLoading, gst: $gst, message: $message)';
+    return 'PointsState(hasError: $hasError, isLoading: $isLoading, gst: $gst, coinValue: $coinValue, message: $message)';
   }
 
   @override
@@ -305,12 +569,14 @@ class _$InitialImpl implements _Initial {
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
             (identical(other.gst, gst) || other.gst == gst) &&
+            (identical(other.coinValue, coinValue) ||
+                other.coinValue == coinValue) &&
             (identical(other.message, message) || other.message == message));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, hasError, isLoading, gst, message);
+      Object.hash(runtimeType, hasError, isLoading, gst, coinValue, message);
 
   @JsonKey(ignore: true)
   @override
@@ -324,6 +590,7 @@ abstract class _Initial implements PointsState {
       {required final bool hasError,
       required final bool isLoading,
       final int? gst,
+      final int? coinValue,
       final String? message}) = _$InitialImpl;
 
   @override
@@ -332,6 +599,8 @@ abstract class _Initial implements PointsState {
   bool get isLoading;
   @override
   int? get gst;
+  @override
+  int? get coinValue;
   @override
   String? get message;
   @override

@@ -4,18 +4,10 @@ import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class TranscationTabBar extends StatefulWidget {
+class TranscationTabBar extends StatelessWidget {
   const TranscationTabBar({
     super.key,
   });
-
-  @override
-  State<TranscationTabBar> createState() => _TranscationTabBarState();
-}
-
-class _TranscationTabBarState extends State<TranscationTabBar> {
-  int selectedIndex = 0;
-  bool isCredited = true;
 
   @override
   Widget build(BuildContext context) {
@@ -30,9 +22,13 @@ class _TranscationTabBarState extends State<TranscationTabBar> {
             return Row(
               children: [
                 selectionContainer(
-                    text: 'Credited', isSelected: state.isCreditedTab),
+                    text: 'Credited',
+                    isSelected: state.isCreditedTab,
+                    context: context),
                 selectionContainer(
-                    text: 'Debited', isSelected: !state.isCreditedTab)
+                    text: 'Debited',
+                    isSelected: !state.isCreditedTab,
+                    context: context)
               ],
             );
           },
@@ -41,7 +37,10 @@ class _TranscationTabBarState extends State<TranscationTabBar> {
     );
   }
 
-  Widget selectionContainer({required String text, required bool isSelected}) {
+  Widget selectionContainer(
+      {required String text,
+      required bool isSelected,
+      required BuildContext context}) {
     return Expanded(
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 200),

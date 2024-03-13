@@ -2,12 +2,14 @@ import 'package:bechdu_partner/application/presentation/routes/routes.dart';
 import 'package:bechdu_partner/application/presentation/screens/auth/login_screen.dart';
 import 'package:bechdu_partner/application/presentation/screens/auth/otp_screen.dart';
 import 'package:bechdu_partner/application/presentation/screens/bottom_bar/bottom_bar_screen.dart';
+import 'package:bechdu_partner/application/presentation/screens/home/home_screen.dart';
 import 'package:bechdu_partner/application/presentation/screens/notification/notificaton_screen.dart';
 import 'package:bechdu_partner/application/presentation/screens/order/order_detail_screen.dart';
 import 'package:bechdu_partner/application/presentation/screens/pick_up_partner/add_pick_up/add_pick_up_screen.dart';
 import 'package:bechdu_partner/application/presentation/screens/pick_up_partner/pick_up_list/pick_up_list_screen.dart';
 import 'package:bechdu_partner/application/presentation/screens/pick_up_partner/pick_up_profile/pick_up_profile_screen.dart';
 import 'package:bechdu_partner/application/presentation/screens/points/points_screen.dart';
+import 'package:bechdu_partner/application/presentation/screens/profile/profile_screen.dart';
 import 'package:bechdu_partner/application/presentation/screens/settings/settings_screen.dart';
 import 'package:bechdu_partner/application/presentation/screens/splash/splash_screen.dart';
 import 'package:bechdu_partner/application/presentation/screens/transcations/transcations_screen.dart';
@@ -34,8 +36,12 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (ctx) => const ScreenSettings());
       case Routes.pointsPage:
         return MaterialPageRoute(builder: (ctx) => const ScreenPoints());
+      case Routes.profilePage:
+        return MaterialPageRoute(builder: (ctx) => const ScreenProfile());
       case Routes.transcationPage:
         return MaterialPageRoute(builder: (ctx) => const ScreenTranscations());
+      case Routes.homePage:
+        return MaterialPageRoute(builder: (ctx) => const ScreenHome());
       case Routes.pickUpProfilePage:
         return MaterialPageRoute(
             builder: (ctx) => const ScreenPickUpPartnerProfile());

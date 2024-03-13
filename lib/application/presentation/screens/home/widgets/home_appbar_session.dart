@@ -1,5 +1,6 @@
 import 'package:bechdu_partner/application/business_logic/order/orders/orders_bloc.dart';
 import 'package:bechdu_partner/application/business_logic/pickup_partner/pickup_partner_bloc.dart';
+import 'package:bechdu_partner/application/business_logic/role/role_bloc.dart';
 import 'package:bechdu_partner/application/presentation/routes/routes.dart';
 import 'package:bechdu_partner/application/presentation/screens/home/widgets/custom_search_field_home.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
@@ -79,33 +80,42 @@ class HomeScreenAppBar extends StatelessWidget {
                   ],
                 ),
                 kHeight20,
-                Row(
-                  children: [
-                    const Expanded(
-                      flex: 8,
-                      child: CustomSearchFieldHomePage(),
-                    ),
-                    kWidth20,
-                    Expanded(
-                      child: PopupMenuButton(
-                          color: kWhite,
-                          icon: const Icon(Icons.filter_alt),
-                          itemBuilder: (context) => ([
-                                PopupMenuItem(
-                                    onTap: () {
-                                      context.read<OrdersBloc>().add(
-                                          const OrdersEvent.changeTab(tab: 0));
-                                    },
-                                    child: const Text('New Orders')),
-                                PopupMenuItem(
-                                    onTap: () {
-                                      context.read<OrdersBloc>().add(
-                                          const OrdersEvent.changeTab(tab: 1));
-                                    },
-                                    child: const Text('Accepted Orders'))
-                              ])),
-                    )
-                  ],
+                BlocBuilder<RoleBloc, RoleState>(
+                  builder: (context, state) {
+                    return Row(
+                      children: [
+                        const Expanded(
+                          flex: 8,
+                          child: CustomSearchFieldHomePage(),
+                        ),
+                        kWidth20,
+                        state.partner
+                            ? Expanded(
+                                child: PopupMenuButton(
+                                    color: kWhite,
+                                    icon: const Icon(Icons.filter_alt),
+                                    itemBuilder: (context) => ([
+                                          PopupMenuItem(
+                                              onTap: () {
+                                                context.read<OrdersBloc>().add(
+                                                    const OrdersEvent.changeTab(
+                                                        tab: 0));
+                                              },
+                                              child: const Text('New Orders')),
+                                          PopupMenuItem(
+                                              onTap: () {
+                                                context.read<OrdersBloc>().add(
+                                                    const OrdersEvent.changeTab(
+                                                        tab: 1));
+                                              },
+                                              child:
+                                                  const Text('Accepted Orders'))
+                                        ])),
+                              )
+                            : kEmpty
+                      ],
+                    );
+                  },
                 )
               ],
             ),

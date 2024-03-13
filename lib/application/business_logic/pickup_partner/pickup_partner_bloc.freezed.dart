@@ -27,6 +27,7 @@ mixin _$PickupPartnerEvent {
     required TResult Function(String partnerId, String orderId)
         assignOrderToPickupPartner,
     required TResult Function(String orderId) deAssignOrderFromPickupPartner,
+    required TResult Function() reset,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -40,6 +41,7 @@ mixin _$PickupPartnerEvent {
     TResult? Function(String partnerId, String orderId)?
         assignOrderToPickupPartner,
     TResult? Function(String orderId)? deAssignOrderFromPickupPartner,
+    TResult? Function()? reset,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -53,6 +55,7 @@ mixin _$PickupPartnerEvent {
     TResult Function(String partnerId, String orderId)?
         assignOrderToPickupPartner,
     TResult Function(String orderId)? deAssignOrderFromPickupPartner,
+    TResult Function()? reset,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -67,6 +70,7 @@ mixin _$PickupPartnerEvent {
         assignOrderToPickupPartner,
     required TResult Function(DeAssignOrderFromPickupPartner value)
         deAssignOrderFromPickupPartner,
+    required TResult Function(Reset value) reset,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -80,6 +84,7 @@ mixin _$PickupPartnerEvent {
         assignOrderToPickupPartner,
     TResult? Function(DeAssignOrderFromPickupPartner value)?
         deAssignOrderFromPickupPartner,
+    TResult? Function(Reset value)? reset,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -93,6 +98,7 @@ mixin _$PickupPartnerEvent {
         assignOrderToPickupPartner,
     TResult Function(DeAssignOrderFromPickupPartner value)?
         deAssignOrderFromPickupPartner,
+    TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -191,6 +197,7 @@ class _$AddPickupPartnerImpl implements AddPickupPartner {
     required TResult Function(String partnerId, String orderId)
         assignOrderToPickupPartner,
     required TResult Function(String orderId) deAssignOrderFromPickupPartner,
+    required TResult Function() reset,
   }) {
     return addPickupPartner(addPickupPartnerModel);
   }
@@ -207,6 +214,7 @@ class _$AddPickupPartnerImpl implements AddPickupPartner {
     TResult? Function(String partnerId, String orderId)?
         assignOrderToPickupPartner,
     TResult? Function(String orderId)? deAssignOrderFromPickupPartner,
+    TResult? Function()? reset,
   }) {
     return addPickupPartner?.call(addPickupPartnerModel);
   }
@@ -223,6 +231,7 @@ class _$AddPickupPartnerImpl implements AddPickupPartner {
     TResult Function(String partnerId, String orderId)?
         assignOrderToPickupPartner,
     TResult Function(String orderId)? deAssignOrderFromPickupPartner,
+    TResult Function()? reset,
     required TResult orElse(),
   }) {
     if (addPickupPartner != null) {
@@ -243,6 +252,7 @@ class _$AddPickupPartnerImpl implements AddPickupPartner {
         assignOrderToPickupPartner,
     required TResult Function(DeAssignOrderFromPickupPartner value)
         deAssignOrderFromPickupPartner,
+    required TResult Function(Reset value) reset,
   }) {
     return addPickupPartner(this);
   }
@@ -259,6 +269,7 @@ class _$AddPickupPartnerImpl implements AddPickupPartner {
         assignOrderToPickupPartner,
     TResult? Function(DeAssignOrderFromPickupPartner value)?
         deAssignOrderFromPickupPartner,
+    TResult? Function(Reset value)? reset,
   }) {
     return addPickupPartner?.call(this);
   }
@@ -275,6 +286,7 @@ class _$AddPickupPartnerImpl implements AddPickupPartner {
         assignOrderToPickupPartner,
     TResult Function(DeAssignOrderFromPickupPartner value)?
         deAssignOrderFromPickupPartner,
+    TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
     if (addPickupPartner != null) {
@@ -342,6 +354,7 @@ class _$GetPickupPartnersImpl implements GetPickupPartners {
     required TResult Function(String partnerId, String orderId)
         assignOrderToPickupPartner,
     required TResult Function(String orderId) deAssignOrderFromPickupPartner,
+    required TResult Function() reset,
   }) {
     return getPickupPartners();
   }
@@ -358,6 +371,7 @@ class _$GetPickupPartnersImpl implements GetPickupPartners {
     TResult? Function(String partnerId, String orderId)?
         assignOrderToPickupPartner,
     TResult? Function(String orderId)? deAssignOrderFromPickupPartner,
+    TResult? Function()? reset,
   }) {
     return getPickupPartners?.call();
   }
@@ -374,6 +388,7 @@ class _$GetPickupPartnersImpl implements GetPickupPartners {
     TResult Function(String partnerId, String orderId)?
         assignOrderToPickupPartner,
     TResult Function(String orderId)? deAssignOrderFromPickupPartner,
+    TResult Function()? reset,
     required TResult orElse(),
   }) {
     if (getPickupPartners != null) {
@@ -394,6 +409,7 @@ class _$GetPickupPartnersImpl implements GetPickupPartners {
         assignOrderToPickupPartner,
     required TResult Function(DeAssignOrderFromPickupPartner value)
         deAssignOrderFromPickupPartner,
+    required TResult Function(Reset value) reset,
   }) {
     return getPickupPartners(this);
   }
@@ -410,6 +426,7 @@ class _$GetPickupPartnersImpl implements GetPickupPartners {
         assignOrderToPickupPartner,
     TResult? Function(DeAssignOrderFromPickupPartner value)?
         deAssignOrderFromPickupPartner,
+    TResult? Function(Reset value)? reset,
   }) {
     return getPickupPartners?.call(this);
   }
@@ -426,6 +443,7 @@ class _$GetPickupPartnersImpl implements GetPickupPartners {
         assignOrderToPickupPartner,
     TResult Function(DeAssignOrderFromPickupPartner value)?
         deAssignOrderFromPickupPartner,
+    TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
     if (getPickupPartners != null) {
@@ -513,6 +531,7 @@ class _$BlocPickupPartnersImpl implements BlocPickupPartners {
     required TResult Function(String partnerId, String orderId)
         assignOrderToPickupPartner,
     required TResult Function(String orderId) deAssignOrderFromPickupPartner,
+    required TResult Function() reset,
   }) {
     return blocPickupPartners(id);
   }
@@ -529,6 +548,7 @@ class _$BlocPickupPartnersImpl implements BlocPickupPartners {
     TResult? Function(String partnerId, String orderId)?
         assignOrderToPickupPartner,
     TResult? Function(String orderId)? deAssignOrderFromPickupPartner,
+    TResult? Function()? reset,
   }) {
     return blocPickupPartners?.call(id);
   }
@@ -545,6 +565,7 @@ class _$BlocPickupPartnersImpl implements BlocPickupPartners {
     TResult Function(String partnerId, String orderId)?
         assignOrderToPickupPartner,
     TResult Function(String orderId)? deAssignOrderFromPickupPartner,
+    TResult Function()? reset,
     required TResult orElse(),
   }) {
     if (blocPickupPartners != null) {
@@ -565,6 +586,7 @@ class _$BlocPickupPartnersImpl implements BlocPickupPartners {
         assignOrderToPickupPartner,
     required TResult Function(DeAssignOrderFromPickupPartner value)
         deAssignOrderFromPickupPartner,
+    required TResult Function(Reset value) reset,
   }) {
     return blocPickupPartners(this);
   }
@@ -581,6 +603,7 @@ class _$BlocPickupPartnersImpl implements BlocPickupPartners {
         assignOrderToPickupPartner,
     TResult? Function(DeAssignOrderFromPickupPartner value)?
         deAssignOrderFromPickupPartner,
+    TResult? Function(Reset value)? reset,
   }) {
     return blocPickupPartners?.call(this);
   }
@@ -597,6 +620,7 @@ class _$BlocPickupPartnersImpl implements BlocPickupPartners {
         assignOrderToPickupPartner,
     TResult Function(DeAssignOrderFromPickupPartner value)?
         deAssignOrderFromPickupPartner,
+    TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
     if (blocPickupPartners != null) {
@@ -691,6 +715,7 @@ class _$UnBlocPickupPartnersImpl implements UnBlocPickupPartners {
     required TResult Function(String partnerId, String orderId)
         assignOrderToPickupPartner,
     required TResult Function(String orderId) deAssignOrderFromPickupPartner,
+    required TResult Function() reset,
   }) {
     return unBlocPickupPartners(id);
   }
@@ -707,6 +732,7 @@ class _$UnBlocPickupPartnersImpl implements UnBlocPickupPartners {
     TResult? Function(String partnerId, String orderId)?
         assignOrderToPickupPartner,
     TResult? Function(String orderId)? deAssignOrderFromPickupPartner,
+    TResult? Function()? reset,
   }) {
     return unBlocPickupPartners?.call(id);
   }
@@ -723,6 +749,7 @@ class _$UnBlocPickupPartnersImpl implements UnBlocPickupPartners {
     TResult Function(String partnerId, String orderId)?
         assignOrderToPickupPartner,
     TResult Function(String orderId)? deAssignOrderFromPickupPartner,
+    TResult Function()? reset,
     required TResult orElse(),
   }) {
     if (unBlocPickupPartners != null) {
@@ -743,6 +770,7 @@ class _$UnBlocPickupPartnersImpl implements UnBlocPickupPartners {
         assignOrderToPickupPartner,
     required TResult Function(DeAssignOrderFromPickupPartner value)
         deAssignOrderFromPickupPartner,
+    required TResult Function(Reset value) reset,
   }) {
     return unBlocPickupPartners(this);
   }
@@ -759,6 +787,7 @@ class _$UnBlocPickupPartnersImpl implements UnBlocPickupPartners {
         assignOrderToPickupPartner,
     TResult? Function(DeAssignOrderFromPickupPartner value)?
         deAssignOrderFromPickupPartner,
+    TResult? Function(Reset value)? reset,
   }) {
     return unBlocPickupPartners?.call(this);
   }
@@ -775,6 +804,7 @@ class _$UnBlocPickupPartnersImpl implements UnBlocPickupPartners {
         assignOrderToPickupPartner,
     TResult Function(DeAssignOrderFromPickupPartner value)?
         deAssignOrderFromPickupPartner,
+    TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
     if (unBlocPickupPartners != null) {
@@ -841,6 +871,7 @@ class _$GetPartnerProfileImpl implements GetPartnerProfile {
     required TResult Function(String partnerId, String orderId)
         assignOrderToPickupPartner,
     required TResult Function(String orderId) deAssignOrderFromPickupPartner,
+    required TResult Function() reset,
   }) {
     return getPartnerProfile();
   }
@@ -857,6 +888,7 @@ class _$GetPartnerProfileImpl implements GetPartnerProfile {
     TResult? Function(String partnerId, String orderId)?
         assignOrderToPickupPartner,
     TResult? Function(String orderId)? deAssignOrderFromPickupPartner,
+    TResult? Function()? reset,
   }) {
     return getPartnerProfile?.call();
   }
@@ -873,6 +905,7 @@ class _$GetPartnerProfileImpl implements GetPartnerProfile {
     TResult Function(String partnerId, String orderId)?
         assignOrderToPickupPartner,
     TResult Function(String orderId)? deAssignOrderFromPickupPartner,
+    TResult Function()? reset,
     required TResult orElse(),
   }) {
     if (getPartnerProfile != null) {
@@ -893,6 +926,7 @@ class _$GetPartnerProfileImpl implements GetPartnerProfile {
         assignOrderToPickupPartner,
     required TResult Function(DeAssignOrderFromPickupPartner value)
         deAssignOrderFromPickupPartner,
+    required TResult Function(Reset value) reset,
   }) {
     return getPartnerProfile(this);
   }
@@ -909,6 +943,7 @@ class _$GetPartnerProfileImpl implements GetPartnerProfile {
         assignOrderToPickupPartner,
     TResult? Function(DeAssignOrderFromPickupPartner value)?
         deAssignOrderFromPickupPartner,
+    TResult? Function(Reset value)? reset,
   }) {
     return getPartnerProfile?.call(this);
   }
@@ -925,6 +960,7 @@ class _$GetPartnerProfileImpl implements GetPartnerProfile {
         assignOrderToPickupPartner,
     TResult Function(DeAssignOrderFromPickupPartner value)?
         deAssignOrderFromPickupPartner,
+    TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
     if (getPartnerProfile != null) {
@@ -1025,6 +1061,7 @@ class _$AssignOrderToPickupPartnerImpl implements AssignOrderToPickupPartner {
     required TResult Function(String partnerId, String orderId)
         assignOrderToPickupPartner,
     required TResult Function(String orderId) deAssignOrderFromPickupPartner,
+    required TResult Function() reset,
   }) {
     return assignOrderToPickupPartner(partnerId, orderId);
   }
@@ -1041,6 +1078,7 @@ class _$AssignOrderToPickupPartnerImpl implements AssignOrderToPickupPartner {
     TResult? Function(String partnerId, String orderId)?
         assignOrderToPickupPartner,
     TResult? Function(String orderId)? deAssignOrderFromPickupPartner,
+    TResult? Function()? reset,
   }) {
     return assignOrderToPickupPartner?.call(partnerId, orderId);
   }
@@ -1057,6 +1095,7 @@ class _$AssignOrderToPickupPartnerImpl implements AssignOrderToPickupPartner {
     TResult Function(String partnerId, String orderId)?
         assignOrderToPickupPartner,
     TResult Function(String orderId)? deAssignOrderFromPickupPartner,
+    TResult Function()? reset,
     required TResult orElse(),
   }) {
     if (assignOrderToPickupPartner != null) {
@@ -1077,6 +1116,7 @@ class _$AssignOrderToPickupPartnerImpl implements AssignOrderToPickupPartner {
         assignOrderToPickupPartner,
     required TResult Function(DeAssignOrderFromPickupPartner value)
         deAssignOrderFromPickupPartner,
+    required TResult Function(Reset value) reset,
   }) {
     return assignOrderToPickupPartner(this);
   }
@@ -1093,6 +1133,7 @@ class _$AssignOrderToPickupPartnerImpl implements AssignOrderToPickupPartner {
         assignOrderToPickupPartner,
     TResult? Function(DeAssignOrderFromPickupPartner value)?
         deAssignOrderFromPickupPartner,
+    TResult? Function(Reset value)? reset,
   }) {
     return assignOrderToPickupPartner?.call(this);
   }
@@ -1109,6 +1150,7 @@ class _$AssignOrderToPickupPartnerImpl implements AssignOrderToPickupPartner {
         assignOrderToPickupPartner,
     TResult Function(DeAssignOrderFromPickupPartner value)?
         deAssignOrderFromPickupPartner,
+    TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
     if (assignOrderToPickupPartner != null) {
@@ -1209,6 +1251,7 @@ class _$DeAssignOrderFromPickupPartnerImpl
     required TResult Function(String partnerId, String orderId)
         assignOrderToPickupPartner,
     required TResult Function(String orderId) deAssignOrderFromPickupPartner,
+    required TResult Function() reset,
   }) {
     return deAssignOrderFromPickupPartner(orderId);
   }
@@ -1225,6 +1268,7 @@ class _$DeAssignOrderFromPickupPartnerImpl
     TResult? Function(String partnerId, String orderId)?
         assignOrderToPickupPartner,
     TResult? Function(String orderId)? deAssignOrderFromPickupPartner,
+    TResult? Function()? reset,
   }) {
     return deAssignOrderFromPickupPartner?.call(orderId);
   }
@@ -1241,6 +1285,7 @@ class _$DeAssignOrderFromPickupPartnerImpl
     TResult Function(String partnerId, String orderId)?
         assignOrderToPickupPartner,
     TResult Function(String orderId)? deAssignOrderFromPickupPartner,
+    TResult Function()? reset,
     required TResult orElse(),
   }) {
     if (deAssignOrderFromPickupPartner != null) {
@@ -1261,6 +1306,7 @@ class _$DeAssignOrderFromPickupPartnerImpl
         assignOrderToPickupPartner,
     required TResult Function(DeAssignOrderFromPickupPartner value)
         deAssignOrderFromPickupPartner,
+    required TResult Function(Reset value) reset,
   }) {
     return deAssignOrderFromPickupPartner(this);
   }
@@ -1277,6 +1323,7 @@ class _$DeAssignOrderFromPickupPartnerImpl
         assignOrderToPickupPartner,
     TResult? Function(DeAssignOrderFromPickupPartner value)?
         deAssignOrderFromPickupPartner,
+    TResult? Function(Reset value)? reset,
   }) {
     return deAssignOrderFromPickupPartner?.call(this);
   }
@@ -1293,6 +1340,7 @@ class _$DeAssignOrderFromPickupPartnerImpl
         assignOrderToPickupPartner,
     TResult Function(DeAssignOrderFromPickupPartner value)?
         deAssignOrderFromPickupPartner,
+    TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
     if (deAssignOrderFromPickupPartner != null) {
@@ -1311,6 +1359,156 @@ abstract class DeAssignOrderFromPickupPartner implements PickupPartnerEvent {
   _$$DeAssignOrderFromPickupPartnerImplCopyWith<
           _$DeAssignOrderFromPickupPartnerImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ResetImplCopyWith<$Res> {
+  factory _$$ResetImplCopyWith(
+          _$ResetImpl value, $Res Function(_$ResetImpl) then) =
+      __$$ResetImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ResetImplCopyWithImpl<$Res>
+    extends _$PickupPartnerEventCopyWithImpl<$Res, _$ResetImpl>
+    implements _$$ResetImplCopyWith<$Res> {
+  __$$ResetImplCopyWithImpl(
+      _$ResetImpl _value, $Res Function(_$ResetImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ResetImpl implements Reset {
+  const _$ResetImpl();
+
+  @override
+  String toString() {
+    return 'PickupPartnerEvent.reset()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ResetImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(AddPickupPartnerModel addPickupPartnerModel)
+        addPickupPartner,
+    required TResult Function() getPickupPartners,
+    required TResult Function(String id) blocPickupPartners,
+    required TResult Function(String id) unBlocPickupPartners,
+    required TResult Function() getPartnerProfile,
+    required TResult Function(String partnerId, String orderId)
+        assignOrderToPickupPartner,
+    required TResult Function(String orderId) deAssignOrderFromPickupPartner,
+    required TResult Function() reset,
+  }) {
+    return reset();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(AddPickupPartnerModel addPickupPartnerModel)?
+        addPickupPartner,
+    TResult? Function()? getPickupPartners,
+    TResult? Function(String id)? blocPickupPartners,
+    TResult? Function(String id)? unBlocPickupPartners,
+    TResult? Function()? getPartnerProfile,
+    TResult? Function(String partnerId, String orderId)?
+        assignOrderToPickupPartner,
+    TResult? Function(String orderId)? deAssignOrderFromPickupPartner,
+    TResult? Function()? reset,
+  }) {
+    return reset?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(AddPickupPartnerModel addPickupPartnerModel)?
+        addPickupPartner,
+    TResult Function()? getPickupPartners,
+    TResult Function(String id)? blocPickupPartners,
+    TResult Function(String id)? unBlocPickupPartners,
+    TResult Function()? getPartnerProfile,
+    TResult Function(String partnerId, String orderId)?
+        assignOrderToPickupPartner,
+    TResult Function(String orderId)? deAssignOrderFromPickupPartner,
+    TResult Function()? reset,
+    required TResult orElse(),
+  }) {
+    if (reset != null) {
+      return reset();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddPickupPartner value) addPickupPartner,
+    required TResult Function(GetPickupPartners value) getPickupPartners,
+    required TResult Function(BlocPickupPartners value) blocPickupPartners,
+    required TResult Function(UnBlocPickupPartners value) unBlocPickupPartners,
+    required TResult Function(GetPartnerProfile value) getPartnerProfile,
+    required TResult Function(AssignOrderToPickupPartner value)
+        assignOrderToPickupPartner,
+    required TResult Function(DeAssignOrderFromPickupPartner value)
+        deAssignOrderFromPickupPartner,
+    required TResult Function(Reset value) reset,
+  }) {
+    return reset(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddPickupPartner value)? addPickupPartner,
+    TResult? Function(GetPickupPartners value)? getPickupPartners,
+    TResult? Function(BlocPickupPartners value)? blocPickupPartners,
+    TResult? Function(UnBlocPickupPartners value)? unBlocPickupPartners,
+    TResult? Function(GetPartnerProfile value)? getPartnerProfile,
+    TResult? Function(AssignOrderToPickupPartner value)?
+        assignOrderToPickupPartner,
+    TResult? Function(DeAssignOrderFromPickupPartner value)?
+        deAssignOrderFromPickupPartner,
+    TResult? Function(Reset value)? reset,
+  }) {
+    return reset?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddPickupPartner value)? addPickupPartner,
+    TResult Function(GetPickupPartners value)? getPickupPartners,
+    TResult Function(BlocPickupPartners value)? blocPickupPartners,
+    TResult Function(UnBlocPickupPartners value)? unBlocPickupPartners,
+    TResult Function(GetPartnerProfile value)? getPartnerProfile,
+    TResult Function(AssignOrderToPickupPartner value)?
+        assignOrderToPickupPartner,
+    TResult Function(DeAssignOrderFromPickupPartner value)?
+        deAssignOrderFromPickupPartner,
+    TResult Function(Reset value)? reset,
+    required TResult orElse(),
+  }) {
+    if (reset != null) {
+      return reset(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Reset implements PickupPartnerEvent {
+  const factory Reset() = _$ResetImpl;
 }
 
 /// @nodoc

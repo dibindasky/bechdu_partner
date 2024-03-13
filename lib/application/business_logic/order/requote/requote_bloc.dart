@@ -26,6 +26,11 @@ class RequoteBloc extends Bloc<RequoteEvent, RequoteState> {
     on<MarkGrid>(markGrid);
     on<GetDateAndTime>(getDateAndTime);
     on<ResheduleOrder>(resheduleOrder);
+    on<Reset>(reset);
+  }
+
+  FutureOr<void> reset(Reset event, emit) {
+    emit(RequoteState.initial());
   }
 
   FutureOr<void> resheduleOrder(ResheduleOrder event, emit) async {
@@ -40,8 +45,8 @@ class RequoteBloc extends Bloc<RequoteEvent, RequoteState> {
         orderId: event.orderId,
         phone: phone!);
     result.fold(
-        (l) =>
-            emit(state.copyWith(resheduleLoading: false, message: l.message,hasError: true)),
+        (l) => emit(state.copyWith(
+            resheduleLoading: false, message: l.message, hasError: true)),
         (r) => emit(state.copyWith(
             resheduleLoading: false, message: r.message, resheduleDone: true)));
   }

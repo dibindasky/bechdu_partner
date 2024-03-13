@@ -91,7 +91,9 @@ class _ScreenOTPState extends State<ScreenOTP> {
                 if (state.isLogin) {
                   Navigator.pop(context);
                   Navigator.pushNamedAndRemoveUntil(
-                      context, Routes.bottomBar, (route) => false);
+                      context,
+                      state.role ? Routes.bottomBar : Routes.homePage,
+                      (route) => false);
                 }
               },
               builder: (context, state) {

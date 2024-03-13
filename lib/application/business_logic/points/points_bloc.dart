@@ -13,10 +13,24 @@ class PointsBloc extends Bloc<PointsEvent, PointsState> {
   final PointsRepo pointsRepo;
   PointsBloc(this.pointsRepo) : super(PointsState.initial()) {
     on<GetGst>(getGstRate);
+    on<Reset>(reset);
+    on<GetCoinValue>(getCoinValue);
+  }
+
+  FutureOr<void> reset(Reset event, emit) {
+    return emit(PointsState.initial());
   }
 
   FutureOr<void> getGstRate(GetGst event, emit) async {
     final result = await pointsRepo.getGstRate();
     result.fold((l) => null, (r) => emit(state.copyWith(gst: r.gst)));
+  }
+
+  FutureOr<void> getCoinValue(GetCoinValue event, emit) async {
+    final result = await pointsRepo.getCoinRate();
+    result.fold(
+        (l) => null,
+        (r) => emit(state.copyWith(
+            coinValue: r.coinValue != null ? int.parse(r.coinValue!) : null)));
   }
 }

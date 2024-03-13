@@ -6,6 +6,7 @@ import 'package:bechdu_partner/domain/core/api_endpoints/api_endpoints.dart';
 import 'package:bechdu_partner/domain/core/failure/failute.dart';
 import 'package:bechdu_partner/domain/model/commen/error_response_model/error_response_model.dart';
 import 'package:bechdu_partner/domain/model/commen/success_response_model/success_response_model.dart';
+import 'package:bechdu_partner/domain/model/order/complete_order_model/complete_order_model.dart';
 import 'package:bechdu_partner/domain/model/order/get_partner_order_response_model/get_partner_order_response_model.dart';
 import 'package:bechdu_partner/domain/repository/service/order_repo.dart';
 import 'package:dartz/dartz.dart';
@@ -99,7 +100,7 @@ class OrderService implements OrderRepo {
       return Right(SuccessResponseModel.fromJson(response.data));
     } on DioException catch (e) {
       try {
-        log('acceptOrder dio exception => $e');
+        log('cancelOrder dio exception => $e');
         log(e.response.toString());
         ErrorResponseModel error =
             ErrorResponseModel.fromJson(e.response?.data);
@@ -108,7 +109,35 @@ class OrderService implements OrderRepo {
         return Left(Failure(message: errorMessage));
       }
     } catch (e) {
-      log('acceptOrder exception => $e');
+      log('cancelOrder exception => $e');
+      return Left(Failure(message: errorMessage));
+    }
+  }
+
+  @override
+  Future<Either<Failure, SuccessResponseModel>> completeOrder(
+      {required String phone,
+      required String orderId,
+      required CompleteOrderModel completeOrderModel}) async {
+    try {
+      final response = await _apiService.put(
+          ApiEndPoints.completeOrder
+              .replaceFirst('{partnerPhone}', phone)
+              .replaceFirst('{orderId}', orderId),
+          data: completeOrderModel.toJson());
+      return Right(SuccessResponseModel.fromJson(response.data));
+    } on DioException catch (e) {
+      try {
+        log('completeOrder dio exception => $e');
+        log(e.response.toString());
+        ErrorResponseModel error =
+            ErrorResponseModel.fromJson(e.response?.data);
+        return Left(Failure(message: error.error ?? errorMessage));
+      } catch (e) {
+        return Left(Failure(message: errorMessage));
+      }
+    } catch (e) {
+      log('completeOrder exception => $e');
       return Left(Failure(message: errorMessage));
     }
   }

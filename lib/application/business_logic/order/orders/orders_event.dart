@@ -16,4 +16,5 @@ class OrdersEvent with _$OrdersEvent {
   const factory OrdersEvent.changePickupPartner(
       {required PickUpPerson pickUpPerson,
       required String orderId}) = ChangePickupPartner;
+  const factory OrdersEvent.reset() = Reset;
 }

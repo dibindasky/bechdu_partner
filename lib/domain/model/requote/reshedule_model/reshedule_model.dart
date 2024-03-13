@@ -6,6 +6,7 @@ part 'reshedule_model.g.dart';
 
 @JsonSerializable()
 class ResheduleModel {
+  @JsonKey(name: 'pickUpDetails')
   PickUpDetails? pickUpDetails;
 
   ResheduleModel({this.pickUpDetails});

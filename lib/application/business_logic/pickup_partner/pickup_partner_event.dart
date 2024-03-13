@@ -16,4 +16,5 @@ class PickupPartnerEvent with _$PickupPartnerEvent {
       required String orderId}) = AssignOrderToPickupPartner;
   const factory PickupPartnerEvent.deAssignOrderFromPickupPartner(
       {required String orderId}) = DeAssignOrderFromPickupPartner;
+  const factory PickupPartnerEvent.reset() = Reset;
 }

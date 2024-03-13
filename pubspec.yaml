@@ -48,6 +48,7 @@ dependencies:
   dio: ^5.4.1
   flutter_secure_storage: ^4.2.1
   shimmer: ^3.0.0
+  device_info_plus: ^9.1.2
 
 dev_dependencies:
   flutter_test:

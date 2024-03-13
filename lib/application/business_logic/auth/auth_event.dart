@@ -9,4 +9,5 @@ class AuthEvent with _$AuthEvent {
   const factory AuthEvent.agreePolicy() = AgreePolicy;
   const factory AuthEvent.log() = Log;
   const factory AuthEvent.logOut() = LogOut;
+  const factory AuthEvent.reset() = Reset;
 }

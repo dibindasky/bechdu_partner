@@ -28,6 +28,7 @@ mixin _$OrdersEvent {
     required TResult Function(int tab) changeTab,
     required TResult Function(PickUpPerson pickUpPerson, String orderId)
         changePickupPartner,
+    required TResult Function() reset,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -42,6 +43,7 @@ mixin _$OrdersEvent {
     TResult? Function(int tab)? changeTab,
     TResult? Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult? Function()? reset,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -56,6 +58,7 @@ mixin _$OrdersEvent {
     TResult Function(int tab)? changeTab,
     TResult Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult Function()? reset,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -70,6 +73,7 @@ mixin _$OrdersEvent {
     required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
     required TResult Function(ChangeTab value) changeTab,
     required TResult Function(ChangePickupPartner value) changePickupPartner,
+    required TResult Function(Reset value) reset,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -83,6 +87,7 @@ mixin _$OrdersEvent {
     TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
     TResult? Function(ChangeTab value)? changeTab,
     TResult? Function(ChangePickupPartner value)? changePickupPartner,
+    TResult? Function(Reset value)? reset,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -96,6 +101,7 @@ mixin _$OrdersEvent {
     TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
     TResult Function(ChangeTab value)? changeTab,
     TResult Function(ChangePickupPartner value)? changePickupPartner,
+    TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -193,6 +199,7 @@ class _$AcceptOrderImpl implements AcceptOrder {
     required TResult Function(int tab) changeTab,
     required TResult Function(PickUpPerson pickUpPerson, String orderId)
         changePickupPartner,
+    required TResult Function() reset,
   }) {
     return acceptOrder(orderId);
   }
@@ -210,6 +217,7 @@ class _$AcceptOrderImpl implements AcceptOrder {
     TResult? Function(int tab)? changeTab,
     TResult? Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult? Function()? reset,
   }) {
     return acceptOrder?.call(orderId);
   }
@@ -227,6 +235,7 @@ class _$AcceptOrderImpl implements AcceptOrder {
     TResult Function(int tab)? changeTab,
     TResult Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult Function()? reset,
     required TResult orElse(),
   }) {
     if (acceptOrder != null) {
@@ -247,6 +256,7 @@ class _$AcceptOrderImpl implements AcceptOrder {
     required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
     required TResult Function(ChangeTab value) changeTab,
     required TResult Function(ChangePickupPartner value) changePickupPartner,
+    required TResult Function(Reset value) reset,
   }) {
     return acceptOrder(this);
   }
@@ -263,6 +273,7 @@ class _$AcceptOrderImpl implements AcceptOrder {
     TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
     TResult? Function(ChangeTab value)? changeTab,
     TResult? Function(ChangePickupPartner value)? changePickupPartner,
+    TResult? Function(Reset value)? reset,
   }) {
     return acceptOrder?.call(this);
   }
@@ -279,6 +290,7 @@ class _$AcceptOrderImpl implements AcceptOrder {
     TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
     TResult Function(ChangeTab value)? changeTab,
     TResult Function(ChangePickupPartner value)? changePickupPartner,
+    TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
     if (acceptOrder != null) {
@@ -372,6 +384,7 @@ class _$CancelOrderImpl implements CancelOrder {
     required TResult Function(int tab) changeTab,
     required TResult Function(PickUpPerson pickUpPerson, String orderId)
         changePickupPartner,
+    required TResult Function() reset,
   }) {
     return cancelOrder(orderId);
   }
@@ -389,6 +402,7 @@ class _$CancelOrderImpl implements CancelOrder {
     TResult? Function(int tab)? changeTab,
     TResult? Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult? Function()? reset,
   }) {
     return cancelOrder?.call(orderId);
   }
@@ -406,6 +420,7 @@ class _$CancelOrderImpl implements CancelOrder {
     TResult Function(int tab)? changeTab,
     TResult Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult Function()? reset,
     required TResult orElse(),
   }) {
     if (cancelOrder != null) {
@@ -426,6 +441,7 @@ class _$CancelOrderImpl implements CancelOrder {
     required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
     required TResult Function(ChangeTab value) changeTab,
     required TResult Function(ChangePickupPartner value) changePickupPartner,
+    required TResult Function(Reset value) reset,
   }) {
     return cancelOrder(this);
   }
@@ -442,6 +458,7 @@ class _$CancelOrderImpl implements CancelOrder {
     TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
     TResult? Function(ChangeTab value)? changeTab,
     TResult? Function(ChangePickupPartner value)? changePickupPartner,
+    TResult? Function(Reset value)? reset,
   }) {
     return cancelOrder?.call(this);
   }
@@ -458,6 +475,7 @@ class _$CancelOrderImpl implements CancelOrder {
     TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
     TResult Function(ChangeTab value)? changeTab,
     TResult Function(ChangePickupPartner value)? changePickupPartner,
+    TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
     if (cancelOrder != null) {
@@ -525,6 +543,7 @@ class _$GetNewOrderImpl implements GetNewOrder {
     required TResult Function(int tab) changeTab,
     required TResult Function(PickUpPerson pickUpPerson, String orderId)
         changePickupPartner,
+    required TResult Function() reset,
   }) {
     return getNewOrder();
   }
@@ -542,6 +561,7 @@ class _$GetNewOrderImpl implements GetNewOrder {
     TResult? Function(int tab)? changeTab,
     TResult? Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult? Function()? reset,
   }) {
     return getNewOrder?.call();
   }
@@ -559,6 +579,7 @@ class _$GetNewOrderImpl implements GetNewOrder {
     TResult Function(int tab)? changeTab,
     TResult Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult Function()? reset,
     required TResult orElse(),
   }) {
     if (getNewOrder != null) {
@@ -579,6 +600,7 @@ class _$GetNewOrderImpl implements GetNewOrder {
     required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
     required TResult Function(ChangeTab value) changeTab,
     required TResult Function(ChangePickupPartner value) changePickupPartner,
+    required TResult Function(Reset value) reset,
   }) {
     return getNewOrder(this);
   }
@@ -595,6 +617,7 @@ class _$GetNewOrderImpl implements GetNewOrder {
     TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
     TResult? Function(ChangeTab value)? changeTab,
     TResult? Function(ChangePickupPartner value)? changePickupPartner,
+    TResult? Function(Reset value)? reset,
   }) {
     return getNewOrder?.call(this);
   }
@@ -611,6 +634,7 @@ class _$GetNewOrderImpl implements GetNewOrder {
     TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
     TResult Function(ChangeTab value)? changeTab,
     TResult Function(ChangePickupPartner value)? changePickupPartner,
+    TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
     if (getNewOrder != null) {
@@ -672,6 +696,7 @@ class _$RefreshNewOrderImpl implements RefreshNewOrder {
     required TResult Function(int tab) changeTab,
     required TResult Function(PickUpPerson pickUpPerson, String orderId)
         changePickupPartner,
+    required TResult Function() reset,
   }) {
     return refreshNewOrder();
   }
@@ -689,6 +714,7 @@ class _$RefreshNewOrderImpl implements RefreshNewOrder {
     TResult? Function(int tab)? changeTab,
     TResult? Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult? Function()? reset,
   }) {
     return refreshNewOrder?.call();
   }
@@ -706,6 +732,7 @@ class _$RefreshNewOrderImpl implements RefreshNewOrder {
     TResult Function(int tab)? changeTab,
     TResult Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult Function()? reset,
     required TResult orElse(),
   }) {
     if (refreshNewOrder != null) {
@@ -726,6 +753,7 @@ class _$RefreshNewOrderImpl implements RefreshNewOrder {
     required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
     required TResult Function(ChangeTab value) changeTab,
     required TResult Function(ChangePickupPartner value) changePickupPartner,
+    required TResult Function(Reset value) reset,
   }) {
     return refreshNewOrder(this);
   }
@@ -742,6 +770,7 @@ class _$RefreshNewOrderImpl implements RefreshNewOrder {
     TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
     TResult? Function(ChangeTab value)? changeTab,
     TResult? Function(ChangePickupPartner value)? changePickupPartner,
+    TResult? Function(Reset value)? reset,
   }) {
     return refreshNewOrder?.call(this);
   }
@@ -758,6 +787,7 @@ class _$RefreshNewOrderImpl implements RefreshNewOrder {
     TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
     TResult Function(ChangeTab value)? changeTab,
     TResult Function(ChangePickupPartner value)? changePickupPartner,
+    TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
     if (refreshNewOrder != null) {
@@ -819,6 +849,7 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
     required TResult Function(int tab) changeTab,
     required TResult Function(PickUpPerson pickUpPerson, String orderId)
         changePickupPartner,
+    required TResult Function() reset,
   }) {
     return getPartnerOrders();
   }
@@ -836,6 +867,7 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
     TResult? Function(int tab)? changeTab,
     TResult? Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult? Function()? reset,
   }) {
     return getPartnerOrders?.call();
   }
@@ -853,6 +885,7 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
     TResult Function(int tab)? changeTab,
     TResult Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult Function()? reset,
     required TResult orElse(),
   }) {
     if (getPartnerOrders != null) {
@@ -873,6 +906,7 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
     required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
     required TResult Function(ChangeTab value) changeTab,
     required TResult Function(ChangePickupPartner value) changePickupPartner,
+    required TResult Function(Reset value) reset,
   }) {
     return getPartnerOrders(this);
   }
@@ -889,6 +923,7 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
     TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
     TResult? Function(ChangeTab value)? changeTab,
     TResult? Function(ChangePickupPartner value)? changePickupPartner,
+    TResult? Function(Reset value)? reset,
   }) {
     return getPartnerOrders?.call(this);
   }
@@ -905,6 +940,7 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
     TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
     TResult Function(ChangeTab value)? changeTab,
     TResult Function(ChangePickupPartner value)? changePickupPartner,
+    TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
     if (getPartnerOrders != null) {
@@ -993,6 +1029,7 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
     required TResult Function(int tab) changeTab,
     required TResult Function(PickUpPerson pickUpPerson, String orderId)
         changePickupPartner,
+    required TResult Function() reset,
   }) {
     return removePickupPartner(orderId);
   }
@@ -1010,6 +1047,7 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
     TResult? Function(int tab)? changeTab,
     TResult? Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult? Function()? reset,
   }) {
     return removePickupPartner?.call(orderId);
   }
@@ -1027,6 +1065,7 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
     TResult Function(int tab)? changeTab,
     TResult Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult Function()? reset,
     required TResult orElse(),
   }) {
     if (removePickupPartner != null) {
@@ -1047,6 +1086,7 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
     required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
     required TResult Function(ChangeTab value) changeTab,
     required TResult Function(ChangePickupPartner value) changePickupPartner,
+    required TResult Function(Reset value) reset,
   }) {
     return removePickupPartner(this);
   }
@@ -1063,6 +1103,7 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
     TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
     TResult? Function(ChangeTab value)? changeTab,
     TResult? Function(ChangePickupPartner value)? changePickupPartner,
+    TResult? Function(Reset value)? reset,
   }) {
     return removePickupPartner?.call(this);
   }
@@ -1079,6 +1120,7 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
     TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
     TResult Function(ChangeTab value)? changeTab,
     TResult Function(ChangePickupPartner value)? changePickupPartner,
+    TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
     if (removePickupPartner != null) {
@@ -1147,6 +1189,7 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
     required TResult Function(int tab) changeTab,
     required TResult Function(PickUpPerson pickUpPerson, String orderId)
         changePickupPartner,
+    required TResult Function() reset,
   }) {
     return refresPartnerOrders();
   }
@@ -1164,6 +1207,7 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
     TResult? Function(int tab)? changeTab,
     TResult? Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult? Function()? reset,
   }) {
     return refresPartnerOrders?.call();
   }
@@ -1181,6 +1225,7 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
     TResult Function(int tab)? changeTab,
     TResult Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult Function()? reset,
     required TResult orElse(),
   }) {
     if (refresPartnerOrders != null) {
@@ -1201,6 +1246,7 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
     required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
     required TResult Function(ChangeTab value) changeTab,
     required TResult Function(ChangePickupPartner value) changePickupPartner,
+    required TResult Function(Reset value) reset,
   }) {
     return refresPartnerOrders(this);
   }
@@ -1217,6 +1263,7 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
     TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
     TResult? Function(ChangeTab value)? changeTab,
     TResult? Function(ChangePickupPartner value)? changePickupPartner,
+    TResult? Function(Reset value)? reset,
   }) {
     return refresPartnerOrders?.call(this);
   }
@@ -1233,6 +1280,7 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
     TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
     TResult Function(ChangeTab value)? changeTab,
     TResult Function(ChangePickupPartner value)? changePickupPartner,
+    TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
     if (refresPartnerOrders != null) {
@@ -1320,6 +1368,7 @@ class _$ChangeTabImpl implements ChangeTab {
     required TResult Function(int tab) changeTab,
     required TResult Function(PickUpPerson pickUpPerson, String orderId)
         changePickupPartner,
+    required TResult Function() reset,
   }) {
     return changeTab(tab);
   }
@@ -1337,6 +1386,7 @@ class _$ChangeTabImpl implements ChangeTab {
     TResult? Function(int tab)? changeTab,
     TResult? Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult? Function()? reset,
   }) {
     return changeTab?.call(tab);
   }
@@ -1354,6 +1404,7 @@ class _$ChangeTabImpl implements ChangeTab {
     TResult Function(int tab)? changeTab,
     TResult Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult Function()? reset,
     required TResult orElse(),
   }) {
     if (changeTab != null) {
@@ -1374,6 +1425,7 @@ class _$ChangeTabImpl implements ChangeTab {
     required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
     required TResult Function(ChangeTab value) changeTab,
     required TResult Function(ChangePickupPartner value) changePickupPartner,
+    required TResult Function(Reset value) reset,
   }) {
     return changeTab(this);
   }
@@ -1390,6 +1442,7 @@ class _$ChangeTabImpl implements ChangeTab {
     TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
     TResult? Function(ChangeTab value)? changeTab,
     TResult? Function(ChangePickupPartner value)? changePickupPartner,
+    TResult? Function(Reset value)? reset,
   }) {
     return changeTab?.call(this);
   }
@@ -1406,6 +1459,7 @@ class _$ChangeTabImpl implements ChangeTab {
     TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
     TResult Function(ChangeTab value)? changeTab,
     TResult Function(ChangePickupPartner value)? changePickupPartner,
+    TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
     if (changeTab != null) {
@@ -1509,6 +1563,7 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
     required TResult Function(int tab) changeTab,
     required TResult Function(PickUpPerson pickUpPerson, String orderId)
         changePickupPartner,
+    required TResult Function() reset,
   }) {
     return changePickupPartner(pickUpPerson, orderId);
   }
@@ -1526,6 +1581,7 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
     TResult? Function(int tab)? changeTab,
     TResult? Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult? Function()? reset,
   }) {
     return changePickupPartner?.call(pickUpPerson, orderId);
   }
@@ -1543,6 +1599,7 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
     TResult Function(int tab)? changeTab,
     TResult Function(PickUpPerson pickUpPerson, String orderId)?
         changePickupPartner,
+    TResult Function()? reset,
     required TResult orElse(),
   }) {
     if (changePickupPartner != null) {
@@ -1563,6 +1620,7 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
     required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
     required TResult Function(ChangeTab value) changeTab,
     required TResult Function(ChangePickupPartner value) changePickupPartner,
+    required TResult Function(Reset value) reset,
   }) {
     return changePickupPartner(this);
   }
@@ -1579,6 +1637,7 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
     TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
     TResult? Function(ChangeTab value)? changeTab,
     TResult? Function(ChangePickupPartner value)? changePickupPartner,
+    TResult? Function(Reset value)? reset,
   }) {
     return changePickupPartner?.call(this);
   }
@@ -1595,6 +1654,7 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
     TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
     TResult Function(ChangeTab value)? changeTab,
     TResult Function(ChangePickupPartner value)? changePickupPartner,
+    TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
     if (changePickupPartner != null) {
@@ -1614,6 +1674,159 @@ abstract class ChangePickupPartner implements OrdersEvent {
   @JsonKey(ignore: true)
   _$$ChangePickupPartnerImplCopyWith<_$ChangePickupPartnerImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ResetImplCopyWith<$Res> {
+  factory _$$ResetImplCopyWith(
+          _$ResetImpl value, $Res Function(_$ResetImpl) then) =
+      __$$ResetImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ResetImplCopyWithImpl<$Res>
+    extends _$OrdersEventCopyWithImpl<$Res, _$ResetImpl>
+    implements _$$ResetImplCopyWith<$Res> {
+  __$$ResetImplCopyWithImpl(
+      _$ResetImpl _value, $Res Function(_$ResetImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ResetImpl implements Reset {
+  const _$ResetImpl();
+
+  @override
+  String toString() {
+    return 'OrdersEvent.reset()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ResetImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String orderId) acceptOrder,
+    required TResult Function(String orderId) cancelOrder,
+    required TResult Function() getNewOrder,
+    required TResult Function() refreshNewOrder,
+    required TResult Function() getPartnerOrders,
+    required TResult Function(String orderId) removePickupPartner,
+    required TResult Function() refresPartnerOrders,
+    required TResult Function(int tab) changeTab,
+    required TResult Function(PickUpPerson pickUpPerson, String orderId)
+        changePickupPartner,
+    required TResult Function() reset,
+  }) {
+    return reset();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String orderId)? acceptOrder,
+    TResult? Function(String orderId)? cancelOrder,
+    TResult? Function()? getNewOrder,
+    TResult? Function()? refreshNewOrder,
+    TResult? Function()? getPartnerOrders,
+    TResult? Function(String orderId)? removePickupPartner,
+    TResult? Function()? refresPartnerOrders,
+    TResult? Function(int tab)? changeTab,
+    TResult? Function(PickUpPerson pickUpPerson, String orderId)?
+        changePickupPartner,
+    TResult? Function()? reset,
+  }) {
+    return reset?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String orderId)? acceptOrder,
+    TResult Function(String orderId)? cancelOrder,
+    TResult Function()? getNewOrder,
+    TResult Function()? refreshNewOrder,
+    TResult Function()? getPartnerOrders,
+    TResult Function(String orderId)? removePickupPartner,
+    TResult Function()? refresPartnerOrders,
+    TResult Function(int tab)? changeTab,
+    TResult Function(PickUpPerson pickUpPerson, String orderId)?
+        changePickupPartner,
+    TResult Function()? reset,
+    required TResult orElse(),
+  }) {
+    if (reset != null) {
+      return reset();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(CancelOrder value) cancelOrder,
+    required TResult Function(GetNewOrder value) getNewOrder,
+    required TResult Function(RefreshNewOrder value) refreshNewOrder,
+    required TResult Function(GetPartnerOrders value) getPartnerOrders,
+    required TResult Function(RemovePickupPartner value) removePickupPartner,
+    required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
+    required TResult Function(ChangeTab value) changeTab,
+    required TResult Function(ChangePickupPartner value) changePickupPartner,
+    required TResult Function(Reset value) reset,
+  }) {
+    return reset(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(CancelOrder value)? cancelOrder,
+    TResult? Function(GetNewOrder value)? getNewOrder,
+    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
+    TResult? Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult? Function(RemovePickupPartner value)? removePickupPartner,
+    TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult? Function(ChangeTab value)? changeTab,
+    TResult? Function(ChangePickupPartner value)? changePickupPartner,
+    TResult? Function(Reset value)? reset,
+  }) {
+    return reset?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(CancelOrder value)? cancelOrder,
+    TResult Function(GetNewOrder value)? getNewOrder,
+    TResult Function(RefreshNewOrder value)? refreshNewOrder,
+    TResult Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult Function(RemovePickupPartner value)? removePickupPartner,
+    TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult Function(ChangeTab value)? changeTab,
+    TResult Function(ChangePickupPartner value)? changePickupPartner,
+    TResult Function(Reset value)? reset,
+    required TResult orElse(),
+  }) {
+    if (reset != null) {
+      return reset(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Reset implements OrdersEvent {
+  const factory Reset() = _$ResetImpl;
 }
 
 /// @nodoc

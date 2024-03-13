@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:bechdu_partner/data/feature/device_informations.dart';
 import 'package:bechdu_partner/data/secure_storage/secure_storage.dart';
 import 'package:bechdu_partner/domain/model/auth/phone_number_model/phone_number_model.dart';
 import 'package:bechdu_partner/domain/model/auth/verify_otp_model/verify_otp_model.dart';
@@ -24,6 +25,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<AgreePolicy>(agreePolicy);
     on<Log>(log);
     on<LogOut>(logOut);
+    on<Reset>(reset);
+  }
+
+  FutureOr<void> reset(Reset event, emit) {
+    emit(AuthState.initial());
   }
 
   FutureOr<void> sendOtp(SendOtp event, emit) async {
@@ -48,7 +54,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   FutureOr<void> log(Log event, emit) async {
     final log = await SecureStorage.getLogin();
-    emit(state.copyWith(isLogin: log));
+    final role = await SecureStorage.getrole();
+    emit(state.copyWith(isLogin: log, role: role));
   }
 
   FutureOr<void> logOut(LogOut event, emit) async {
@@ -57,14 +64,20 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   FutureOr<void> verifyOtp(VerifyOtp event, emit) async {
     emit(AuthState.initial().copyWith(isLoading: true));
-    final result =
-        await authRepo.verifyOtp(verifyOtpModel: event.verifyOtpModel);
+    final userAgent = await DeviceInformation.getDeviceInformation();
+    final result = await authRepo.verifyOtp(
+        verifyOtpModel: event.verifyOtpModel, userAgent: userAgent);
     result.fold(
         (l) => emit(state.copyWith(
             isLoading: false,
             otpVerificationError: true,
             message: l.message)), (r) async {
-      emit(state.copyWith(isLoading: false, message: r.message, isLogin: true));
+      emit(state.copyWith(
+          isLoading: false,
+          message: r.message,
+          isLogin: true,
+          role: r.role == 'Partner'));
+      print("login response => ${r.toJson()}");
       await SecureStorage.setRole(isPartner: r.role == 'Partner');
       await SecureStorage.saveToken(
           tokenModel: TokenModel(accessToken: r.token));

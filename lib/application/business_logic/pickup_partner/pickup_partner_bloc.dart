@@ -27,6 +27,11 @@ class PickupPartnerBloc extends Bloc<PickupPartnerEvent, PickupPartnerState> {
     on<GetPartnerProfile>(getPartnerProfile);
     on<AssignOrderToPickupPartner>(assignOrderToPickupPartner);
     on<DeAssignOrderFromPickupPartner>(deAssignOrderFromPickupPartner);
+    on<Reset>(reset);
+  }
+
+  FutureOr<void> reset(Reset event, emit) {
+    emit(PickupPartnerState.initial());
   }
 
   FutureOr<void> addPickupPartner(AddPickupPartner event, emit) async {

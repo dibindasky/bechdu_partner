@@ -1,4 +1,5 @@
 import 'package:bechdu_partner/application/business_logic/pickup_partner/pickup_partner_bloc.dart';
+import 'package:bechdu_partner/application/business_logic/points/points_bloc.dart';
 import 'package:bechdu_partner/application/presentation/screens/points/widgets/add_coin_dialoge.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
@@ -12,6 +13,9 @@ class CoinPointTable extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      context.read<PointsBloc>().add(const PointsEvent.getGst());
+    });
     return ClipRRect(
       borderRadius: kRadius5,
       child: ColoredBox(

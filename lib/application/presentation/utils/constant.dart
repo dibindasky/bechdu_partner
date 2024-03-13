@@ -8,6 +8,8 @@ const gilroyMedium = 'Gilroy-Medium';
 const gilroyRegular = 'Gilroy-Regular';
 const gilroySemiBold = 'Gilroy-SemiBold';
 
+const iconBechdu = 'assets/images/bechdu_logo.png';
+
 const loginPageImage = 'assets/images/login_page.png';
 const imageDiffectedPhone = 'assets/images/diffectImage.png';
 const iconHome = 'assets/images/carbon_home.png';

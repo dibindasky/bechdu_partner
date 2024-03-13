@@ -74,6 +74,8 @@ class RequoteService implements RequoteRepo {
       required String orderId,
       required String phone}) async {
     try {
+      log('resheduleOrder data=> ${resheduleModel.toJson()}');
+      log('resheduleOrder data=> ${resheduleModel.pickUpDetails!.toJson()}');
       final response = await _apiService.put(ApiEndPoints.resheduleOrder
           .replaceFirst('{orderId}', orderId)
           .replaceFirst('{partnerPhone}', phone));

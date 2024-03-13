@@ -4,7 +4,7 @@ class ApiEndPoints {
   static String baseUrlImage =
       'https://bechdu-main-backend.onrender.com/uploads/';
 
-      // auth
+  // auth
   static String sendOtp = '/partner/send-sms';
   static String verifyOtp = '/partner/sms-login';
 
@@ -13,7 +13,7 @@ class ApiEndPoints {
   static String getAssignedOrders =
       '/partner/get-assigned-partner-orders/{phone}';
 
-      // pickup partner managing
+  // pickup partner managing
   static String addPickupPartner = '/partner/add-pickup-person/{phone}';
   static String getPickupPartner = '/partner/get-pickup-persons/{phone}';
   static String blockPickupPartner =
@@ -29,10 +29,20 @@ class ApiEndPoints {
   static String deAssignOrderFromPickupPartner =
       '/partner/deassign-order/{partnerPhone}/{orderId}';
   static String cancelOrder = '/partner/cancel-order/{orderId}/{partnerPhone}';
-  static String resheduleOrder = '/partner/reschedule-order/{orderId}/{partnerPhone}';
+  static String completeOrder =
+      '/partner/complete-order/{orderId}/{partnerPhone}';
+  static String resheduleOrder =
+      '/partner/reschedule-order/{orderId}/{partnerPhone}';
   static String getQuestions = '/api/category/fetch-category-name/{category}';
+
+  // transcations
+  static String getCreditedTranscation =
+      '/partner/transactions/credited/{partnerPhone}';
+  static String getDebitedTranscation =
+      '/partner/transactions/debited/{partnerPhone}';
 
   // without headers general
   static String getDateAndTime = '/dynamic/calendar/next-10-days';
   static String getGstValue = '/dynamic/get-gst-value';
+  static String getConValue = '/coins/get-coin-value';
 }
