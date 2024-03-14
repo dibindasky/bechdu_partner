@@ -10,7 +10,8 @@ class OrdersEvent with _$OrdersEvent {
       {required String orderId,
       required CompleteOrderModel completeOrderModel}) = CompleteOrder;
   const factory OrdersEvent.getNewOrder({required bool call}) = GetNewOrder;
-  const factory OrdersEvent.getPartnerOrders({required bool call}) = GetPartnerOrders;
+  const factory OrdersEvent.getPartnerOrders({required bool call}) =
+      GetPartnerOrders;
   const factory OrdersEvent.removePickupPartner({required String orderId}) =
       RemovePickupPartner;
   const factory OrdersEvent.refresPartnerOrders() = RefresPartnerOrders;

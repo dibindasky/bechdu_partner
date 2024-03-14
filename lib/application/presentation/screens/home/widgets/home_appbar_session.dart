@@ -123,47 +123,50 @@ class HomeScreenAppBar extends StatelessWidget {
             ),
           ),
           kHeight10,
-          BlocBuilder<OrdersBloc, OrdersState>(
-            builder: (context, state) {
-              return InkWell(
-                // onTap: () => Navigator.pushNamed(context, Routes.orderScreen,
-                //     arguments: <String, bool>{
-                //       'newOrder': true,
-                //     }),
-                child: ColoredBox(
-                  color: kBluePrimary,
-                  child: SizedBox(
-                    width: double.infinity,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 14),
-                      child: Row(
-                        children: [
-                          kWidth20,
-                          Text(
-                            'You Have A New Order',
-                            style: textHeadBoldBig.copyWith(color: kWhite),
-                          ),
-                          const Spacer(),
-                          Container(
-                            padding: const EdgeInsets.all(2),
-                            decoration: BoxDecoration(
-                                borderRadius: kRadius50,
-                                border: Border.all(color: kWhite)),
-                            child: const Icon(
-                              Icons.arrow_forward_ios_outlined,
-                              color: kWhite,
-                              size: 15,
+          partner
+              ? BlocBuilder<OrdersBloc, OrdersState>(
+                  builder: (context, state) {
+                    return InkWell(
+                      // onTap: () => Navigator.pushNamed(context, Routes.orderScreen,
+                      //     arguments: <String, bool>{
+                      //       'newOrder': true,
+                      //     }),
+                      child: ColoredBox(
+                        color: kBluePrimary,
+                        child: SizedBox(
+                          width: double.infinity,
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 14),
+                            child: Row(
+                              children: [
+                                kWidth20,
+                                Text(
+                                  'You Have A New Order',
+                                  style:
+                                      textHeadBoldBig.copyWith(color: kWhite),
+                                ),
+                                const Spacer(),
+                                Container(
+                                  padding: const EdgeInsets.all(2),
+                                  decoration: BoxDecoration(
+                                      borderRadius: kRadius50,
+                                      border: Border.all(color: kWhite)),
+                                  child: const Icon(
+                                    Icons.arrow_forward_ios_outlined,
+                                    color: kWhite,
+                                    size: 15,
+                                  ),
+                                ),
+                                kWidth20,
+                              ],
                             ),
                           ),
-                          kWidth20,
-                        ],
+                        ),
                       ),
-                    ),
-                  ),
-                ),
-              );
-            },
-          )
+                    );
+                  },
+                )
+              : kEmpty
         ],
       ),
     );

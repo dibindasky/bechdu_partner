@@ -46,4 +46,6 @@ class ApiEndPoints {
   static String getDateAndTime = '/dynamic/calendar/next-10-days';
   static String getGstValue = '/dynamic/get-gst-value';
   static String getConValue = '/coins/get-coin-value';
+  static String downloadInvoice = '/partner/transaction/{phone}/{id}';
+  static String manuelTransation = '/payment/create-payments';
 }

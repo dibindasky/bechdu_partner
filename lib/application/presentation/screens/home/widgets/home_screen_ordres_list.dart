@@ -16,9 +16,13 @@ class HomeScreenOrdersList extends StatelessWidget {
   Widget build(BuildContext context) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (partner) {
-        context.read<OrdersBloc>().add(const OrdersEvent.getNewOrder(call: false));
+        context
+            .read<OrdersBloc>()
+            .add(const OrdersEvent.getNewOrder(call: false));
       }
-      context.read<OrdersBloc>().add(const OrdersEvent.getPartnerOrders(call: false));
+      context
+          .read<OrdersBloc>()
+          .add(const OrdersEvent.getPartnerOrders(call: false));
     });
     return Expanded(
       child: RefreshIndicator(
@@ -26,10 +30,10 @@ class HomeScreenOrdersList extends StatelessWidget {
         onRefresh: () async {
           if (partner) {
             context.read<OrdersBloc>().add(const OrdersEvent.refreshNewOrder());
-            context
-                .read<PickupPartnerBloc>()
-                .add(const PickupPartnerEvent.getPartnerProfile());
           }
+          context
+              .read<PickupPartnerBloc>()
+              .add(const PickupPartnerEvent.getPartnerProfile());
           context
               .read<OrdersBloc>()
               .add(const OrdersEvent.refresPartnerOrders());

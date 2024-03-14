@@ -14,6 +14,7 @@ import 'package:bechdu_partner/application/presentation/screens/profile/profile_
 import 'package:bechdu_partner/application/presentation/screens/settings/settings_screen.dart';
 import 'package:bechdu_partner/application/presentation/screens/splash/splash_screen.dart';
 import 'package:bechdu_partner/application/presentation/screens/transcations/transcations_screen.dart';
+import 'package:bechdu_partner/application/presentation/utils/pdf/pdf_preview.dart';
 import 'package:bechdu_partner/domain/model/order/get_partner_order_response_model/order_detail.dart';
 import 'package:flutter/material.dart';
 
@@ -41,6 +42,11 @@ class RouteGenerator {
         return arguments is OrderDetail
             ? MaterialPageRoute(
                 builder: (ctx) => ScreenCompleteOrder(orderDetail: arguments))
+            : _errorScreen();
+      case Routes.pdfPage:
+        return arguments is String
+            ? MaterialPageRoute(
+                builder: (ctx) => ScreenPdfPreview(base64: arguments))
             : _errorScreen();
       case Routes.profilePage:
         return MaterialPageRoute(builder: (ctx) => const ScreenProfile());

@@ -8,9 +8,10 @@ import 'package:dartz/dartz.dart';
 
 abstract class OrderRepo {
   Future<Either<Failure, GetPartnerOrderResponseModel>> getPartnerNewOrders(
-      {required String phone,required SearchSizeQuery searchSizeQurey});
+      {required String phone, required SearchSizeQuery searchSizeQurey});
   Future<Either<Failure, GetPartnerOrderResponseModel>>
-      getPartnerAssignedOrders({required String phone,required SearchSizeQuery searchSizeQurey});
+      getPartnerAssignedOrders(
+          {required String phone, required SearchSizeQuery searchSizeQurey});
   Future<Either<Failure, SuccessResponseModel>> acceptOrder(
       {required String phone, required String orderId});
   Future<Either<Failure, SuccessResponseModel>> cancelOrder(

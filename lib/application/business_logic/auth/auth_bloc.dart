@@ -54,13 +54,13 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   FutureOr<void> log(Log event, emit) async {
-    final log = await SecureStorage.getLogin();
-    final role = await SecureStorage.getrole();
+    final log = await SharedPref.getLogin();
+    final role = await SharedPref.getRole();
     emit(state.copyWith(isLogin: log, role: role));
   }
 
   FutureOr<void> logOut(LogOut event, emit) async {
-    await SecureStorage.clearLogin();
+    await SharedPref.clearLogin();
   }
 
   FutureOr<void> verifyOtp(VerifyOtp event, emit) async {
@@ -80,11 +80,12 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           role: r.role == 'Partner'));
       print("login response => ${r.toJson()}");
       partner = r.role == 'Partner';
-      await SecureStorage.setRole(isPartner: r.role == 'Partner');
-      await SecureStorage.saveToken(
-          tokenModel: TokenModel(accessToken: r.token));
-      await SecureStorage.setPhone(phone: r.phone!);
-      await SecureStorage.setLogin();
+      await SharedPref.setRole(isPartner: r.role == 'Partner');
+      await SharedPref.saveToken(tokenModel: TokenModel(accessToken: r.token));
+      await SharedPref.setPhone(phone: r.phone!);
+      await SharedPref.setLogin();
+      phoneController.text = '';
+      otpController.text = '';
     });
   }
 }

@@ -1,4 +1,5 @@
 import 'package:bechdu_partner/application/business_logic/transcation/transcation_bloc.dart';
+import 'package:bechdu_partner/application/presentation/routes/routes.dart';
 import 'package:bechdu_partner/application/presentation/screens/transcations/widgets/tabs/transcations_tile.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
@@ -39,7 +40,15 @@ class _CreditedTranscationsListState extends State<CreditedTranscationsList> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<TranscationBloc, TranscationState>(
+    return BlocConsumer<TranscationBloc, TranscationState>(
+      listener: (context, state) {
+        print('listner ------------');
+        if (state.downloaded && state.invoice != null) {
+          print('listner ------------2---------');
+          Navigator.pushNamed(context, Routes.pdfPage,
+              arguments: state.invoice!);
+        }
+      },
       builder: (context, state) {
         if (state.isLoading) {
           return const Center(

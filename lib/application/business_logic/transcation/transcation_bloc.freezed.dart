@@ -23,6 +23,8 @@ mixin _$TranscationEvent {
     required TResult Function() getDebitedTranscations,
     required TResult Function() getCreditedTranscationsNextPage,
     required TResult Function() getDebitedTranscationsNextPage,
+    required TResult Function(String id) downloadInvoice,
+    required TResult Function(String buffer) makePdf,
     required TResult Function() reset,
   }) =>
       throw _privateConstructorUsedError;
@@ -33,6 +35,8 @@ mixin _$TranscationEvent {
     TResult? Function()? getDebitedTranscations,
     TResult? Function()? getCreditedTranscationsNextPage,
     TResult? Function()? getDebitedTranscationsNextPage,
+    TResult? Function(String id)? downloadInvoice,
+    TResult? Function(String buffer)? makePdf,
     TResult? Function()? reset,
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +47,8 @@ mixin _$TranscationEvent {
     TResult Function()? getDebitedTranscations,
     TResult Function()? getCreditedTranscationsNextPage,
     TResult Function()? getDebitedTranscationsNextPage,
+    TResult Function(String id)? downloadInvoice,
+    TResult Function(String buffer)? makePdf,
     TResult Function()? reset,
     required TResult orElse(),
   }) =>
@@ -58,6 +64,8 @@ mixin _$TranscationEvent {
         getCreditedTranscationsNextPage,
     required TResult Function(GetDebitedTranscationsNextPage value)
         getDebitedTranscationsNextPage,
+    required TResult Function(DownloadInvoice value) downloadInvoice,
+    required TResult Function(MakePdf value) makePdf,
     required TResult Function(Reset value) reset,
   }) =>
       throw _privateConstructorUsedError;
@@ -70,6 +78,8 @@ mixin _$TranscationEvent {
         getCreditedTranscationsNextPage,
     TResult? Function(GetDebitedTranscationsNextPage value)?
         getDebitedTranscationsNextPage,
+    TResult? Function(DownloadInvoice value)? downloadInvoice,
+    TResult? Function(MakePdf value)? makePdf,
     TResult? Function(Reset value)? reset,
   }) =>
       throw _privateConstructorUsedError;
@@ -82,6 +92,8 @@ mixin _$TranscationEvent {
         getCreditedTranscationsNextPage,
     TResult Function(GetDebitedTranscationsNextPage value)?
         getDebitedTranscationsNextPage,
+    TResult Function(DownloadInvoice value)? downloadInvoice,
+    TResult Function(MakePdf value)? makePdf,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) =>
@@ -149,6 +161,8 @@ class _$ChangeTabImpl implements ChangeTab {
     required TResult Function() getDebitedTranscations,
     required TResult Function() getCreditedTranscationsNextPage,
     required TResult Function() getDebitedTranscationsNextPage,
+    required TResult Function(String id) downloadInvoice,
+    required TResult Function(String buffer) makePdf,
     required TResult Function() reset,
   }) {
     return changeTab();
@@ -162,6 +176,8 @@ class _$ChangeTabImpl implements ChangeTab {
     TResult? Function()? getDebitedTranscations,
     TResult? Function()? getCreditedTranscationsNextPage,
     TResult? Function()? getDebitedTranscationsNextPage,
+    TResult? Function(String id)? downloadInvoice,
+    TResult? Function(String buffer)? makePdf,
     TResult? Function()? reset,
   }) {
     return changeTab?.call();
@@ -175,6 +191,8 @@ class _$ChangeTabImpl implements ChangeTab {
     TResult Function()? getDebitedTranscations,
     TResult Function()? getCreditedTranscationsNextPage,
     TResult Function()? getDebitedTranscationsNextPage,
+    TResult Function(String id)? downloadInvoice,
+    TResult Function(String buffer)? makePdf,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -196,6 +214,8 @@ class _$ChangeTabImpl implements ChangeTab {
         getCreditedTranscationsNextPage,
     required TResult Function(GetDebitedTranscationsNextPage value)
         getDebitedTranscationsNextPage,
+    required TResult Function(DownloadInvoice value) downloadInvoice,
+    required TResult Function(MakePdf value) makePdf,
     required TResult Function(Reset value) reset,
   }) {
     return changeTab(this);
@@ -211,6 +231,8 @@ class _$ChangeTabImpl implements ChangeTab {
         getCreditedTranscationsNextPage,
     TResult? Function(GetDebitedTranscationsNextPage value)?
         getDebitedTranscationsNextPage,
+    TResult? Function(DownloadInvoice value)? downloadInvoice,
+    TResult? Function(MakePdf value)? makePdf,
     TResult? Function(Reset value)? reset,
   }) {
     return changeTab?.call(this);
@@ -226,6 +248,8 @@ class _$ChangeTabImpl implements ChangeTab {
         getCreditedTranscationsNextPage,
     TResult Function(GetDebitedTranscationsNextPage value)?
         getDebitedTranscationsNextPage,
+    TResult Function(DownloadInvoice value)? downloadInvoice,
+    TResult Function(MakePdf value)? makePdf,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -286,6 +310,8 @@ class _$GetCreditedTranscationsImpl implements GetCreditedTranscations {
     required TResult Function() getDebitedTranscations,
     required TResult Function() getCreditedTranscationsNextPage,
     required TResult Function() getDebitedTranscationsNextPage,
+    required TResult Function(String id) downloadInvoice,
+    required TResult Function(String buffer) makePdf,
     required TResult Function() reset,
   }) {
     return getCreditedTranscations();
@@ -299,6 +325,8 @@ class _$GetCreditedTranscationsImpl implements GetCreditedTranscations {
     TResult? Function()? getDebitedTranscations,
     TResult? Function()? getCreditedTranscationsNextPage,
     TResult? Function()? getDebitedTranscationsNextPage,
+    TResult? Function(String id)? downloadInvoice,
+    TResult? Function(String buffer)? makePdf,
     TResult? Function()? reset,
   }) {
     return getCreditedTranscations?.call();
@@ -312,6 +340,8 @@ class _$GetCreditedTranscationsImpl implements GetCreditedTranscations {
     TResult Function()? getDebitedTranscations,
     TResult Function()? getCreditedTranscationsNextPage,
     TResult Function()? getDebitedTranscationsNextPage,
+    TResult Function(String id)? downloadInvoice,
+    TResult Function(String buffer)? makePdf,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -333,6 +363,8 @@ class _$GetCreditedTranscationsImpl implements GetCreditedTranscations {
         getCreditedTranscationsNextPage,
     required TResult Function(GetDebitedTranscationsNextPage value)
         getDebitedTranscationsNextPage,
+    required TResult Function(DownloadInvoice value) downloadInvoice,
+    required TResult Function(MakePdf value) makePdf,
     required TResult Function(Reset value) reset,
   }) {
     return getCreditedTranscations(this);
@@ -348,6 +380,8 @@ class _$GetCreditedTranscationsImpl implements GetCreditedTranscations {
         getCreditedTranscationsNextPage,
     TResult? Function(GetDebitedTranscationsNextPage value)?
         getDebitedTranscationsNextPage,
+    TResult? Function(DownloadInvoice value)? downloadInvoice,
+    TResult? Function(MakePdf value)? makePdf,
     TResult? Function(Reset value)? reset,
   }) {
     return getCreditedTranscations?.call(this);
@@ -363,6 +397,8 @@ class _$GetCreditedTranscationsImpl implements GetCreditedTranscations {
         getCreditedTranscationsNextPage,
     TResult Function(GetDebitedTranscationsNextPage value)?
         getDebitedTranscationsNextPage,
+    TResult Function(DownloadInvoice value)? downloadInvoice,
+    TResult Function(MakePdf value)? makePdf,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -423,6 +459,8 @@ class _$GetDebitedTranscationsImpl implements GetDebitedTranscations {
     required TResult Function() getDebitedTranscations,
     required TResult Function() getCreditedTranscationsNextPage,
     required TResult Function() getDebitedTranscationsNextPage,
+    required TResult Function(String id) downloadInvoice,
+    required TResult Function(String buffer) makePdf,
     required TResult Function() reset,
   }) {
     return getDebitedTranscations();
@@ -436,6 +474,8 @@ class _$GetDebitedTranscationsImpl implements GetDebitedTranscations {
     TResult? Function()? getDebitedTranscations,
     TResult? Function()? getCreditedTranscationsNextPage,
     TResult? Function()? getDebitedTranscationsNextPage,
+    TResult? Function(String id)? downloadInvoice,
+    TResult? Function(String buffer)? makePdf,
     TResult? Function()? reset,
   }) {
     return getDebitedTranscations?.call();
@@ -449,6 +489,8 @@ class _$GetDebitedTranscationsImpl implements GetDebitedTranscations {
     TResult Function()? getDebitedTranscations,
     TResult Function()? getCreditedTranscationsNextPage,
     TResult Function()? getDebitedTranscationsNextPage,
+    TResult Function(String id)? downloadInvoice,
+    TResult Function(String buffer)? makePdf,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -470,6 +512,8 @@ class _$GetDebitedTranscationsImpl implements GetDebitedTranscations {
         getCreditedTranscationsNextPage,
     required TResult Function(GetDebitedTranscationsNextPage value)
         getDebitedTranscationsNextPage,
+    required TResult Function(DownloadInvoice value) downloadInvoice,
+    required TResult Function(MakePdf value) makePdf,
     required TResult Function(Reset value) reset,
   }) {
     return getDebitedTranscations(this);
@@ -485,6 +529,8 @@ class _$GetDebitedTranscationsImpl implements GetDebitedTranscations {
         getCreditedTranscationsNextPage,
     TResult? Function(GetDebitedTranscationsNextPage value)?
         getDebitedTranscationsNextPage,
+    TResult? Function(DownloadInvoice value)? downloadInvoice,
+    TResult? Function(MakePdf value)? makePdf,
     TResult? Function(Reset value)? reset,
   }) {
     return getDebitedTranscations?.call(this);
@@ -500,6 +546,8 @@ class _$GetDebitedTranscationsImpl implements GetDebitedTranscations {
         getCreditedTranscationsNextPage,
     TResult Function(GetDebitedTranscationsNextPage value)?
         getDebitedTranscationsNextPage,
+    TResult Function(DownloadInvoice value)? downloadInvoice,
+    TResult Function(MakePdf value)? makePdf,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -562,6 +610,8 @@ class _$GetCreditedTranscationsNextPageImpl
     required TResult Function() getDebitedTranscations,
     required TResult Function() getCreditedTranscationsNextPage,
     required TResult Function() getDebitedTranscationsNextPage,
+    required TResult Function(String id) downloadInvoice,
+    required TResult Function(String buffer) makePdf,
     required TResult Function() reset,
   }) {
     return getCreditedTranscationsNextPage();
@@ -575,6 +625,8 @@ class _$GetCreditedTranscationsNextPageImpl
     TResult? Function()? getDebitedTranscations,
     TResult? Function()? getCreditedTranscationsNextPage,
     TResult? Function()? getDebitedTranscationsNextPage,
+    TResult? Function(String id)? downloadInvoice,
+    TResult? Function(String buffer)? makePdf,
     TResult? Function()? reset,
   }) {
     return getCreditedTranscationsNextPage?.call();
@@ -588,6 +640,8 @@ class _$GetCreditedTranscationsNextPageImpl
     TResult Function()? getDebitedTranscations,
     TResult Function()? getCreditedTranscationsNextPage,
     TResult Function()? getDebitedTranscationsNextPage,
+    TResult Function(String id)? downloadInvoice,
+    TResult Function(String buffer)? makePdf,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -609,6 +663,8 @@ class _$GetCreditedTranscationsNextPageImpl
         getCreditedTranscationsNextPage,
     required TResult Function(GetDebitedTranscationsNextPage value)
         getDebitedTranscationsNextPage,
+    required TResult Function(DownloadInvoice value) downloadInvoice,
+    required TResult Function(MakePdf value) makePdf,
     required TResult Function(Reset value) reset,
   }) {
     return getCreditedTranscationsNextPage(this);
@@ -624,6 +680,8 @@ class _$GetCreditedTranscationsNextPageImpl
         getCreditedTranscationsNextPage,
     TResult? Function(GetDebitedTranscationsNextPage value)?
         getDebitedTranscationsNextPage,
+    TResult? Function(DownloadInvoice value)? downloadInvoice,
+    TResult? Function(MakePdf value)? makePdf,
     TResult? Function(Reset value)? reset,
   }) {
     return getCreditedTranscationsNextPage?.call(this);
@@ -639,6 +697,8 @@ class _$GetCreditedTranscationsNextPageImpl
         getCreditedTranscationsNextPage,
     TResult Function(GetDebitedTranscationsNextPage value)?
         getDebitedTranscationsNextPage,
+    TResult Function(DownloadInvoice value)? downloadInvoice,
+    TResult Function(MakePdf value)? makePdf,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -702,6 +762,8 @@ class _$GetDebitedTranscationsNextPageImpl
     required TResult Function() getDebitedTranscations,
     required TResult Function() getCreditedTranscationsNextPage,
     required TResult Function() getDebitedTranscationsNextPage,
+    required TResult Function(String id) downloadInvoice,
+    required TResult Function(String buffer) makePdf,
     required TResult Function() reset,
   }) {
     return getDebitedTranscationsNextPage();
@@ -715,6 +777,8 @@ class _$GetDebitedTranscationsNextPageImpl
     TResult? Function()? getDebitedTranscations,
     TResult? Function()? getCreditedTranscationsNextPage,
     TResult? Function()? getDebitedTranscationsNextPage,
+    TResult? Function(String id)? downloadInvoice,
+    TResult? Function(String buffer)? makePdf,
     TResult? Function()? reset,
   }) {
     return getDebitedTranscationsNextPage?.call();
@@ -728,6 +792,8 @@ class _$GetDebitedTranscationsNextPageImpl
     TResult Function()? getDebitedTranscations,
     TResult Function()? getCreditedTranscationsNextPage,
     TResult Function()? getDebitedTranscationsNextPage,
+    TResult Function(String id)? downloadInvoice,
+    TResult Function(String buffer)? makePdf,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -749,6 +815,8 @@ class _$GetDebitedTranscationsNextPageImpl
         getCreditedTranscationsNextPage,
     required TResult Function(GetDebitedTranscationsNextPage value)
         getDebitedTranscationsNextPage,
+    required TResult Function(DownloadInvoice value) downloadInvoice,
+    required TResult Function(MakePdf value) makePdf,
     required TResult Function(Reset value) reset,
   }) {
     return getDebitedTranscationsNextPage(this);
@@ -764,6 +832,8 @@ class _$GetDebitedTranscationsNextPageImpl
         getCreditedTranscationsNextPage,
     TResult? Function(GetDebitedTranscationsNextPage value)?
         getDebitedTranscationsNextPage,
+    TResult? Function(DownloadInvoice value)? downloadInvoice,
+    TResult? Function(MakePdf value)? makePdf,
     TResult? Function(Reset value)? reset,
   }) {
     return getDebitedTranscationsNextPage?.call(this);
@@ -779,6 +849,8 @@ class _$GetDebitedTranscationsNextPageImpl
         getCreditedTranscationsNextPage,
     TResult Function(GetDebitedTranscationsNextPage value)?
         getDebitedTranscationsNextPage,
+    TResult Function(DownloadInvoice value)? downloadInvoice,
+    TResult Function(MakePdf value)? makePdf,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -792,6 +864,362 @@ class _$GetDebitedTranscationsNextPageImpl
 abstract class GetDebitedTranscationsNextPage implements TranscationEvent {
   const factory GetDebitedTranscationsNextPage() =
       _$GetDebitedTranscationsNextPageImpl;
+}
+
+/// @nodoc
+abstract class _$$DownloadInvoiceImplCopyWith<$Res> {
+  factory _$$DownloadInvoiceImplCopyWith(_$DownloadInvoiceImpl value,
+          $Res Function(_$DownloadInvoiceImpl) then) =
+      __$$DownloadInvoiceImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String id});
+}
+
+/// @nodoc
+class __$$DownloadInvoiceImplCopyWithImpl<$Res>
+    extends _$TranscationEventCopyWithImpl<$Res, _$DownloadInvoiceImpl>
+    implements _$$DownloadInvoiceImplCopyWith<$Res> {
+  __$$DownloadInvoiceImplCopyWithImpl(
+      _$DownloadInvoiceImpl _value, $Res Function(_$DownloadInvoiceImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$DownloadInvoiceImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DownloadInvoiceImpl implements DownloadInvoice {
+  const _$DownloadInvoiceImpl({required this.id});
+
+  @override
+  final String id;
+
+  @override
+  String toString() {
+    return 'TranscationEvent.downloadInvoice(id: $id)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DownloadInvoiceImpl &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DownloadInvoiceImplCopyWith<_$DownloadInvoiceImpl> get copyWith =>
+      __$$DownloadInvoiceImplCopyWithImpl<_$DownloadInvoiceImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() changeTab,
+    required TResult Function() getCreditedTranscations,
+    required TResult Function() getDebitedTranscations,
+    required TResult Function() getCreditedTranscationsNextPage,
+    required TResult Function() getDebitedTranscationsNextPage,
+    required TResult Function(String id) downloadInvoice,
+    required TResult Function(String buffer) makePdf,
+    required TResult Function() reset,
+  }) {
+    return downloadInvoice(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? changeTab,
+    TResult? Function()? getCreditedTranscations,
+    TResult? Function()? getDebitedTranscations,
+    TResult? Function()? getCreditedTranscationsNextPage,
+    TResult? Function()? getDebitedTranscationsNextPage,
+    TResult? Function(String id)? downloadInvoice,
+    TResult? Function(String buffer)? makePdf,
+    TResult? Function()? reset,
+  }) {
+    return downloadInvoice?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? changeTab,
+    TResult Function()? getCreditedTranscations,
+    TResult Function()? getDebitedTranscations,
+    TResult Function()? getCreditedTranscationsNextPage,
+    TResult Function()? getDebitedTranscationsNextPage,
+    TResult Function(String id)? downloadInvoice,
+    TResult Function(String buffer)? makePdf,
+    TResult Function()? reset,
+    required TResult orElse(),
+  }) {
+    if (downloadInvoice != null) {
+      return downloadInvoice(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ChangeTab value) changeTab,
+    required TResult Function(GetCreditedTranscations value)
+        getCreditedTranscations,
+    required TResult Function(GetDebitedTranscations value)
+        getDebitedTranscations,
+    required TResult Function(GetCreditedTranscationsNextPage value)
+        getCreditedTranscationsNextPage,
+    required TResult Function(GetDebitedTranscationsNextPage value)
+        getDebitedTranscationsNextPage,
+    required TResult Function(DownloadInvoice value) downloadInvoice,
+    required TResult Function(MakePdf value) makePdf,
+    required TResult Function(Reset value) reset,
+  }) {
+    return downloadInvoice(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ChangeTab value)? changeTab,
+    TResult? Function(GetCreditedTranscations value)? getCreditedTranscations,
+    TResult? Function(GetDebitedTranscations value)? getDebitedTranscations,
+    TResult? Function(GetCreditedTranscationsNextPage value)?
+        getCreditedTranscationsNextPage,
+    TResult? Function(GetDebitedTranscationsNextPage value)?
+        getDebitedTranscationsNextPage,
+    TResult? Function(DownloadInvoice value)? downloadInvoice,
+    TResult? Function(MakePdf value)? makePdf,
+    TResult? Function(Reset value)? reset,
+  }) {
+    return downloadInvoice?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ChangeTab value)? changeTab,
+    TResult Function(GetCreditedTranscations value)? getCreditedTranscations,
+    TResult Function(GetDebitedTranscations value)? getDebitedTranscations,
+    TResult Function(GetCreditedTranscationsNextPage value)?
+        getCreditedTranscationsNextPage,
+    TResult Function(GetDebitedTranscationsNextPage value)?
+        getDebitedTranscationsNextPage,
+    TResult Function(DownloadInvoice value)? downloadInvoice,
+    TResult Function(MakePdf value)? makePdf,
+    TResult Function(Reset value)? reset,
+    required TResult orElse(),
+  }) {
+    if (downloadInvoice != null) {
+      return downloadInvoice(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DownloadInvoice implements TranscationEvent {
+  const factory DownloadInvoice({required final String id}) =
+      _$DownloadInvoiceImpl;
+
+  String get id;
+  @JsonKey(ignore: true)
+  _$$DownloadInvoiceImplCopyWith<_$DownloadInvoiceImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$MakePdfImplCopyWith<$Res> {
+  factory _$$MakePdfImplCopyWith(
+          _$MakePdfImpl value, $Res Function(_$MakePdfImpl) then) =
+      __$$MakePdfImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String buffer});
+}
+
+/// @nodoc
+class __$$MakePdfImplCopyWithImpl<$Res>
+    extends _$TranscationEventCopyWithImpl<$Res, _$MakePdfImpl>
+    implements _$$MakePdfImplCopyWith<$Res> {
+  __$$MakePdfImplCopyWithImpl(
+      _$MakePdfImpl _value, $Res Function(_$MakePdfImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? buffer = null,
+  }) {
+    return _then(_$MakePdfImpl(
+      buffer: null == buffer
+          ? _value.buffer
+          : buffer // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$MakePdfImpl implements MakePdf {
+  const _$MakePdfImpl({required this.buffer});
+
+  @override
+  final String buffer;
+
+  @override
+  String toString() {
+    return 'TranscationEvent.makePdf(buffer: $buffer)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$MakePdfImpl &&
+            (identical(other.buffer, buffer) || other.buffer == buffer));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, buffer);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$MakePdfImplCopyWith<_$MakePdfImpl> get copyWith =>
+      __$$MakePdfImplCopyWithImpl<_$MakePdfImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() changeTab,
+    required TResult Function() getCreditedTranscations,
+    required TResult Function() getDebitedTranscations,
+    required TResult Function() getCreditedTranscationsNextPage,
+    required TResult Function() getDebitedTranscationsNextPage,
+    required TResult Function(String id) downloadInvoice,
+    required TResult Function(String buffer) makePdf,
+    required TResult Function() reset,
+  }) {
+    return makePdf(buffer);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? changeTab,
+    TResult? Function()? getCreditedTranscations,
+    TResult? Function()? getDebitedTranscations,
+    TResult? Function()? getCreditedTranscationsNextPage,
+    TResult? Function()? getDebitedTranscationsNextPage,
+    TResult? Function(String id)? downloadInvoice,
+    TResult? Function(String buffer)? makePdf,
+    TResult? Function()? reset,
+  }) {
+    return makePdf?.call(buffer);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? changeTab,
+    TResult Function()? getCreditedTranscations,
+    TResult Function()? getDebitedTranscations,
+    TResult Function()? getCreditedTranscationsNextPage,
+    TResult Function()? getDebitedTranscationsNextPage,
+    TResult Function(String id)? downloadInvoice,
+    TResult Function(String buffer)? makePdf,
+    TResult Function()? reset,
+    required TResult orElse(),
+  }) {
+    if (makePdf != null) {
+      return makePdf(buffer);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ChangeTab value) changeTab,
+    required TResult Function(GetCreditedTranscations value)
+        getCreditedTranscations,
+    required TResult Function(GetDebitedTranscations value)
+        getDebitedTranscations,
+    required TResult Function(GetCreditedTranscationsNextPage value)
+        getCreditedTranscationsNextPage,
+    required TResult Function(GetDebitedTranscationsNextPage value)
+        getDebitedTranscationsNextPage,
+    required TResult Function(DownloadInvoice value) downloadInvoice,
+    required TResult Function(MakePdf value) makePdf,
+    required TResult Function(Reset value) reset,
+  }) {
+    return makePdf(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ChangeTab value)? changeTab,
+    TResult? Function(GetCreditedTranscations value)? getCreditedTranscations,
+    TResult? Function(GetDebitedTranscations value)? getDebitedTranscations,
+    TResult? Function(GetCreditedTranscationsNextPage value)?
+        getCreditedTranscationsNextPage,
+    TResult? Function(GetDebitedTranscationsNextPage value)?
+        getDebitedTranscationsNextPage,
+    TResult? Function(DownloadInvoice value)? downloadInvoice,
+    TResult? Function(MakePdf value)? makePdf,
+    TResult? Function(Reset value)? reset,
+  }) {
+    return makePdf?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ChangeTab value)? changeTab,
+    TResult Function(GetCreditedTranscations value)? getCreditedTranscations,
+    TResult Function(GetDebitedTranscations value)? getDebitedTranscations,
+    TResult Function(GetCreditedTranscationsNextPage value)?
+        getCreditedTranscationsNextPage,
+    TResult Function(GetDebitedTranscationsNextPage value)?
+        getDebitedTranscationsNextPage,
+    TResult Function(DownloadInvoice value)? downloadInvoice,
+    TResult Function(MakePdf value)? makePdf,
+    TResult Function(Reset value)? reset,
+    required TResult orElse(),
+  }) {
+    if (makePdf != null) {
+      return makePdf(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class MakePdf implements TranscationEvent {
+  const factory MakePdf({required final String buffer}) = _$MakePdfImpl;
+
+  String get buffer;
+  @JsonKey(ignore: true)
+  _$$MakePdfImplCopyWith<_$MakePdfImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -837,6 +1265,8 @@ class _$ResetImpl implements Reset {
     required TResult Function() getDebitedTranscations,
     required TResult Function() getCreditedTranscationsNextPage,
     required TResult Function() getDebitedTranscationsNextPage,
+    required TResult Function(String id) downloadInvoice,
+    required TResult Function(String buffer) makePdf,
     required TResult Function() reset,
   }) {
     return reset();
@@ -850,6 +1280,8 @@ class _$ResetImpl implements Reset {
     TResult? Function()? getDebitedTranscations,
     TResult? Function()? getCreditedTranscationsNextPage,
     TResult? Function()? getDebitedTranscationsNextPage,
+    TResult? Function(String id)? downloadInvoice,
+    TResult? Function(String buffer)? makePdf,
     TResult? Function()? reset,
   }) {
     return reset?.call();
@@ -863,6 +1295,8 @@ class _$ResetImpl implements Reset {
     TResult Function()? getDebitedTranscations,
     TResult Function()? getCreditedTranscationsNextPage,
     TResult Function()? getDebitedTranscationsNextPage,
+    TResult Function(String id)? downloadInvoice,
+    TResult Function(String buffer)? makePdf,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -884,6 +1318,8 @@ class _$ResetImpl implements Reset {
         getCreditedTranscationsNextPage,
     required TResult Function(GetDebitedTranscationsNextPage value)
         getDebitedTranscationsNextPage,
+    required TResult Function(DownloadInvoice value) downloadInvoice,
+    required TResult Function(MakePdf value) makePdf,
     required TResult Function(Reset value) reset,
   }) {
     return reset(this);
@@ -899,6 +1335,8 @@ class _$ResetImpl implements Reset {
         getCreditedTranscationsNextPage,
     TResult? Function(GetDebitedTranscationsNextPage value)?
         getDebitedTranscationsNextPage,
+    TResult? Function(DownloadInvoice value)? downloadInvoice,
+    TResult? Function(MakePdf value)? makePdf,
     TResult? Function(Reset value)? reset,
   }) {
     return reset?.call(this);
@@ -914,6 +1352,8 @@ class _$ResetImpl implements Reset {
         getCreditedTranscationsNextPage,
     TResult Function(GetDebitedTranscationsNextPage value)?
         getDebitedTranscationsNextPage,
+    TResult Function(DownloadInvoice value)? downloadInvoice,
+    TResult Function(MakePdf value)? makePdf,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -934,11 +1374,14 @@ mixin _$TranscationState {
   bool get isLoading => throw _privateConstructorUsedError;
   bool get creditedLoading => throw _privateConstructorUsedError;
   bool get debitedLoading => throw _privateConstructorUsedError;
+  bool get downloading => throw _privateConstructorUsedError;
+  bool get downloaded => throw _privateConstructorUsedError;
   List<Transcation>? get creditedTranscations =>
       throw _privateConstructorUsedError;
   List<Transcation>? get debitedTranscations =>
       throw _privateConstructorUsedError;
   String? get message => throw _privateConstructorUsedError;
+  String? get invoice => throw _privateConstructorUsedError;
   bool get isCreditedTab => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -957,9 +1400,12 @@ abstract class $TranscationStateCopyWith<$Res> {
       bool isLoading,
       bool creditedLoading,
       bool debitedLoading,
+      bool downloading,
+      bool downloaded,
       List<Transcation>? creditedTranscations,
       List<Transcation>? debitedTranscations,
       String? message,
+      String? invoice,
       bool isCreditedTab});
 }
 
@@ -980,9 +1426,12 @@ class _$TranscationStateCopyWithImpl<$Res, $Val extends TranscationState>
     Object? isLoading = null,
     Object? creditedLoading = null,
     Object? debitedLoading = null,
+    Object? downloading = null,
+    Object? downloaded = null,
     Object? creditedTranscations = freezed,
     Object? debitedTranscations = freezed,
     Object? message = freezed,
+    Object? invoice = freezed,
     Object? isCreditedTab = null,
   }) {
     return _then(_value.copyWith(
@@ -1002,6 +1451,14 @@ class _$TranscationStateCopyWithImpl<$Res, $Val extends TranscationState>
           ? _value.debitedLoading
           : debitedLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      downloading: null == downloading
+          ? _value.downloading
+          : downloading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      downloaded: null == downloaded
+          ? _value.downloaded
+          : downloaded // ignore: cast_nullable_to_non_nullable
+              as bool,
       creditedTranscations: freezed == creditedTranscations
           ? _value.creditedTranscations
           : creditedTranscations // ignore: cast_nullable_to_non_nullable
@@ -1013,6 +1470,10 @@ class _$TranscationStateCopyWithImpl<$Res, $Val extends TranscationState>
       message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+      invoice: freezed == invoice
+          ? _value.invoice
+          : invoice // ignore: cast_nullable_to_non_nullable
               as String?,
       isCreditedTab: null == isCreditedTab
           ? _value.isCreditedTab
@@ -1035,9 +1496,12 @@ abstract class _$$InitialImplCopyWith<$Res>
       bool isLoading,
       bool creditedLoading,
       bool debitedLoading,
+      bool downloading,
+      bool downloaded,
       List<Transcation>? creditedTranscations,
       List<Transcation>? debitedTranscations,
       String? message,
+      String? invoice,
       bool isCreditedTab});
 }
 
@@ -1056,9 +1520,12 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? isLoading = null,
     Object? creditedLoading = null,
     Object? debitedLoading = null,
+    Object? downloading = null,
+    Object? downloaded = null,
     Object? creditedTranscations = freezed,
     Object? debitedTranscations = freezed,
     Object? message = freezed,
+    Object? invoice = freezed,
     Object? isCreditedTab = null,
   }) {
     return _then(_$InitialImpl(
@@ -1078,6 +1545,14 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.debitedLoading
           : debitedLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      downloading: null == downloading
+          ? _value.downloading
+          : downloading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      downloaded: null == downloaded
+          ? _value.downloaded
+          : downloaded // ignore: cast_nullable_to_non_nullable
+              as bool,
       creditedTranscations: freezed == creditedTranscations
           ? _value._creditedTranscations
           : creditedTranscations // ignore: cast_nullable_to_non_nullable
@@ -1089,6 +1564,10 @@ class __$$InitialImplCopyWithImpl<$Res>
       message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+      invoice: freezed == invoice
+          ? _value.invoice
+          : invoice // ignore: cast_nullable_to_non_nullable
               as String?,
       isCreditedTab: null == isCreditedTab
           ? _value.isCreditedTab
@@ -1106,9 +1585,12 @@ class _$InitialImpl implements _Initial {
       required this.isLoading,
       required this.creditedLoading,
       required this.debitedLoading,
+      required this.downloading,
+      required this.downloaded,
       final List<Transcation>? creditedTranscations,
       final List<Transcation>? debitedTranscations,
       this.message,
+      this.invoice,
       required this.isCreditedTab})
       : _creditedTranscations = creditedTranscations,
         _debitedTranscations = debitedTranscations;
@@ -1121,6 +1603,10 @@ class _$InitialImpl implements _Initial {
   final bool creditedLoading;
   @override
   final bool debitedLoading;
+  @override
+  final bool downloading;
+  @override
+  final bool downloaded;
   final List<Transcation>? _creditedTranscations;
   @override
   List<Transcation>? get creditedTranscations {
@@ -1146,11 +1632,13 @@ class _$InitialImpl implements _Initial {
   @override
   final String? message;
   @override
+  final String? invoice;
+  @override
   final bool isCreditedTab;
 
   @override
   String toString() {
-    return 'TranscationState(hasError: $hasError, isLoading: $isLoading, creditedLoading: $creditedLoading, debitedLoading: $debitedLoading, creditedTranscations: $creditedTranscations, debitedTranscations: $debitedTranscations, message: $message, isCreditedTab: $isCreditedTab)';
+    return 'TranscationState(hasError: $hasError, isLoading: $isLoading, creditedLoading: $creditedLoading, debitedLoading: $debitedLoading, downloading: $downloading, downloaded: $downloaded, creditedTranscations: $creditedTranscations, debitedTranscations: $debitedTranscations, message: $message, invoice: $invoice, isCreditedTab: $isCreditedTab)';
   }
 
   @override
@@ -1166,11 +1654,16 @@ class _$InitialImpl implements _Initial {
                 other.creditedLoading == creditedLoading) &&
             (identical(other.debitedLoading, debitedLoading) ||
                 other.debitedLoading == debitedLoading) &&
+            (identical(other.downloading, downloading) ||
+                other.downloading == downloading) &&
+            (identical(other.downloaded, downloaded) ||
+                other.downloaded == downloaded) &&
             const DeepCollectionEquality()
                 .equals(other._creditedTranscations, _creditedTranscations) &&
             const DeepCollectionEquality()
                 .equals(other._debitedTranscations, _debitedTranscations) &&
             (identical(other.message, message) || other.message == message) &&
+            (identical(other.invoice, invoice) || other.invoice == invoice) &&
             (identical(other.isCreditedTab, isCreditedTab) ||
                 other.isCreditedTab == isCreditedTab));
   }
@@ -1182,9 +1675,12 @@ class _$InitialImpl implements _Initial {
       isLoading,
       creditedLoading,
       debitedLoading,
+      downloading,
+      downloaded,
       const DeepCollectionEquality().hash(_creditedTranscations),
       const DeepCollectionEquality().hash(_debitedTranscations),
       message,
+      invoice,
       isCreditedTab);
 
   @JsonKey(ignore: true)
@@ -1200,9 +1696,12 @@ abstract class _Initial implements TranscationState {
       required final bool isLoading,
       required final bool creditedLoading,
       required final bool debitedLoading,
+      required final bool downloading,
+      required final bool downloaded,
       final List<Transcation>? creditedTranscations,
       final List<Transcation>? debitedTranscations,
       final String? message,
+      final String? invoice,
       required final bool isCreditedTab}) = _$InitialImpl;
 
   @override
@@ -1214,11 +1713,17 @@ abstract class _Initial implements TranscationState {
   @override
   bool get debitedLoading;
   @override
+  bool get downloading;
+  @override
+  bool get downloaded;
+  @override
   List<Transcation>? get creditedTranscations;
   @override
   List<Transcation>? get debitedTranscations;
   @override
   String? get message;
+  @override
+  String? get invoice;
   @override
   bool get isCreditedTab;
   @override

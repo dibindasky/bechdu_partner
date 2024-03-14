@@ -29,22 +29,24 @@ class OrdersDetailImageAndPriceSession extends StatelessWidget {
           ),
         ),
         kHeight10,
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              '$deviceName ( $coin',
-              style: textHeadBold1.copyWith(fontSize: sWidth * 0.06),
-            ),
-            CircleAvatar(
-              radius: sWidth * 0.025,
-              backgroundImage: const AssetImage(iconNottoCoin),
-            ),
-            Text(
-              ' )',
-              style: textHeadBold1.copyWith(fontSize: sWidth * 0.06),
-            )
-          ],
+        FittedBox(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                '$deviceName ( $coin',
+                style: textHeadBold1.copyWith(fontSize: sWidth * 0.06),
+              ),
+              CircleAvatar(
+                radius: sWidth * 0.025,
+                backgroundImage: const AssetImage(iconNottoCoin),
+              ),
+              Text(
+                ' )',
+                style: textHeadBold1.copyWith(fontSize: sWidth * 0.06),
+              )
+            ],
+          ),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,

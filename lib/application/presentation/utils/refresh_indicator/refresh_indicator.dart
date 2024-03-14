@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class ErrorRefreshIndicator extends StatelessWidget {
   const ErrorRefreshIndicator({
     super.key,
-    this.shrinkWrap=false,
+    this.shrinkWrap = false,
     required this.onRefresh,
     this.errorMessage = 'something went wrong pull to refresh',
   });

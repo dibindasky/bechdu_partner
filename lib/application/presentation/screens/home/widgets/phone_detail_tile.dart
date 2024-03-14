@@ -66,8 +66,8 @@ class PhoneDetailTile extends StatelessWidget {
                     ],
                   ),
                 ),
-                Expanded(
-                  child: const Icon(
+                const Expanded(
+                  child: Icon(
                     Icons.arrow_circle_right_rounded,
                     color: kBluePrimary,
                   ),

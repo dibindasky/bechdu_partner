@@ -34,7 +34,7 @@ class ApiService {
     try {
       if (addHeader) {
         final accessToken =
-            await SecureStorage.getToken().then((token) => token.accessToken);
+            await SharedPref.getToken().then((token) => token.accessToken);
         _dio.options.headers.addAll(
           {
             'authorization': "Bearer $accessToken",
@@ -69,7 +69,7 @@ class ApiService {
     try {
       if (addHeader) {
         final accessToken =
-            await SecureStorage.getToken().then((token) => token.accessToken);
+            await SharedPref.getToken().then((token) => token.accessToken);
         _dio.options.headers.addAll(
           {
             'authorization': "Bearer $accessToken",
@@ -106,7 +106,7 @@ class ApiService {
     try {
       if (addHeader) {
         final accessToken =
-            await SecureStorage.getToken().then((token) => token.accessToken);
+            await SharedPref.getToken().then((token) => token.accessToken);
         _dio.options.headers.addAll(
           {
             'authorization': "Bearer $accessToken",
@@ -141,7 +141,7 @@ class ApiService {
     try {
       if (addHeader) {
         final accessToken =
-            await SecureStorage.getToken().then((token) => token.accessToken);
+            await SharedPref.getToken().then((token) => token.accessToken);
         _dio.options.headers.addAll(
           {
             'authorization': "Bearer $accessToken",
@@ -175,7 +175,7 @@ class ApiService {
     try {
       if (addHeader) {
         final accessToken =
-            await SecureStorage.getToken().then((token) => token.accessToken);
+            await SharedPref.getToken().then((token) => token.accessToken);
         _dio.options.headers.addAll(
           {
             'authorization': "Bearer $accessToken",

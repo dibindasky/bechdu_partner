@@ -71,9 +71,11 @@ class _NewOrdersListState extends State<NewOrdersList> {
           // return const Center(child: Text('You have no new orders'));
           return ErrorRefreshIndicator(
               onRefresh: () {
-                context
-                    .read<OrdersBloc>()
-                    .add(const OrdersEvent.getNewOrder(call: true));
+                if (partner) {
+                  context
+                      .read<OrdersBloc>()
+                      .add(const OrdersEvent.getNewOrder(call: true));
+                }
                 context
                     .read<OrdersBloc>()
                     .add(const OrdersEvent.getPartnerOrders(call: true));
@@ -84,9 +86,11 @@ class _NewOrdersListState extends State<NewOrdersList> {
         return Center(
             child: InkWell(
           onTap: () {
-            context
-                .read<OrdersBloc>()
-                .add(const OrdersEvent.getNewOrder(call: true));
+            if (partner) {
+              context
+                  .read<OrdersBloc>()
+                  .add(const OrdersEvent.getNewOrder(call: true));
+            }
             context
                 .read<OrdersBloc>()
                 .add(const OrdersEvent.getPartnerOrders(call: true));
@@ -96,9 +100,11 @@ class _NewOrdersListState extends State<NewOrdersList> {
             children: [
               IconButton(
                   onPressed: () {
-                    context
-                        .read<OrdersBloc>()
-                        .add(const OrdersEvent.getNewOrder(call: true));
+                    if (partner) {
+                      context
+                          .read<OrdersBloc>()
+                          .add(const OrdersEvent.getNewOrder(call: true));
+                    }
                     context
                         .read<OrdersBloc>()
                         .add(const OrdersEvent.getPartnerOrders(call: true));

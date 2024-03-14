@@ -1,3 +1,4 @@
+import 'package:bechdu_partner/application/business_logic/order/orders/orders_bloc.dart';
 import 'package:bechdu_partner/application/business_logic/order/requote/requote_bloc.dart';
 import 'package:bechdu_partner/application/presentation/screens/auth/widgets/custom_button_auth.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
@@ -58,6 +59,9 @@ class _ReshedulePopupState extends State<ReshedulePopup> {
                           color: state.hasError ? kRed : kOrangePrimary);
                     }
                     if (state.resheduleDone) {
+                      context
+                          .read<OrdersBloc>()
+                          .add(const OrdersEvent.getPartnerOrders(call: true));
                       Navigator.pop(context);
                       Navigator.pop(context);
                     } else {

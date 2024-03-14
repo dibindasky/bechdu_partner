@@ -1,4 +1,5 @@
 import 'package:bechdu_partner/application/business_logic/transcation/transcation_bloc.dart';
+import 'package:bechdu_partner/application/presentation/routes/routes.dart';
 import 'package:bechdu_partner/application/presentation/screens/transcations/widgets/tabs/transcations_tile.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
@@ -39,7 +40,15 @@ class _DebitedTranscationsListState extends State<DebitedTranscationsList> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<TranscationBloc, TranscationState>(
+    return BlocConsumer<TranscationBloc, TranscationState>(
+      listener: (context, state) {
+        print("listner =====1");
+        if (state.downloaded && state.invoice != null) {
+          print("listner =====2");
+          Navigator.pushNamed(context, Routes.pdfPage,
+              arguments: state.invoice!);
+        }
+      },
       builder: (context, state) {
         if (state.isLoading) {
           return const Center(
@@ -80,9 +89,9 @@ class _DebitedTranscationsListState extends State<DebitedTranscationsList> {
               onRefresh: () => context
                   .read<TranscationBloc>()
                   .add(const TranscationEvent.getDebitedTranscations()));
-        }else{
+        } else {
           return ErrorRefreshIndicator(
-            errorMessage: 'No Transcations yet',
+              errorMessage: 'No Transcations yet',
               onRefresh: () => context
                   .read<TranscationBloc>()
                   .add(const TranscationEvent.getDebitedTranscations()));

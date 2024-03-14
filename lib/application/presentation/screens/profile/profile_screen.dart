@@ -57,10 +57,12 @@ class ScreenProfile extends StatelessWidget {
                       controller: TextEditingController(),
                       headline: 'Username',
                       text: state.partnerProfile?.name ?? ''),
-                  UserDetailTile(
-                      controller: TextEditingController(),
-                      headline: 'Email',
-                      text: state.partnerProfile?.email ?? ''),
+                  partner
+                      ? UserDetailTile(
+                          controller: TextEditingController(),
+                          headline: 'Email',
+                          text: state.partnerProfile?.email ?? '')
+                      : kEmpty,
                   UserDetailTile(
                       controller: TextEditingController(),
                       headline: 'Mobile Number',

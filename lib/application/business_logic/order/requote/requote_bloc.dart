@@ -37,7 +37,7 @@ class RequoteBloc extends Bloc<RequoteEvent, RequoteState> {
   FutureOr<void> getPrice(GetPrice event, emit) async {}
 
   FutureOr<void> resheduleOrder(ResheduleOrder event, emit) async {
-    final phone = await SecureStorage.getPhone();
+    final phone = await SharedPref.getPhone();
     emit(state.copyWith(
         resheduleLoading: true,
         resheduleDone: false,

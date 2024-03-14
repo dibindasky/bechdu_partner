@@ -11,7 +11,7 @@ part 'role_bloc.freezed.dart';
 class RoleBloc extends Bloc<RoleEvent, RoleState> {
   RoleBloc() : super(const RoleState.initial(partner: false)) {
     on<GetRole>((event, emit) async {
-      final role = await SecureStorage.getrole();
+      final role = await SharedPref.getRole();
       emit(state.copyWith(partner: role));
     });
   }

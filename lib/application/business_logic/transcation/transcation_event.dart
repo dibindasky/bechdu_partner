@@ -11,5 +11,8 @@ class TranscationEvent with _$TranscationEvent {
       GetCreditedTranscationsNextPage;
   const factory TranscationEvent.getDebitedTranscationsNextPage() =
       GetDebitedTranscationsNextPage;
+  const factory TranscationEvent.downloadInvoice({required String id}) =
+      DownloadInvoice;
+  const factory TranscationEvent.makePdf({required String buffer}) = MakePdf;
   const factory TranscationEvent.reset() = Reset;
 }

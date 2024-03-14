@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:bechdu_partner/data/feature/image_picker_service.dart';
 import 'package:bechdu_partner/data/secure_storage/secure_storage.dart';
 import 'package:bechdu_partner/domain/model/commen/image/image_model.dart';
@@ -110,7 +111,7 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
         cancelOrder: false,
         acceptOrder: false,
         acceptOrderError: false));
-    final phone = await SecureStorage.getPhone();
+    final phone = await SharedPref.getPhone();
     if (phone == null) {
       return emit(state.copyWith(
           completeOrderLoading: false,
@@ -131,7 +132,9 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
           orderCompleted: true,
           message: r.message));
       add(const OrdersEvent.getPartnerOrders(call: true));
-      add(const OrdersEvent.getNewOrder(call: true));
+      if (partner) {
+        add(const OrdersEvent.getNewOrder(call: true));
+      }
     });
   }
 
@@ -144,7 +147,7 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
         cancelOrder: false,
         acceptOrder: false,
         acceptOrderError: false));
-    final phone = await SecureStorage.getPhone();
+    final phone = await SharedPref.getPhone();
     if (phone == null) {
       return emit(state.copyWith(
           isLoading: false,
@@ -170,7 +173,7 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
         message: null,
         acceptOrder: false,
         acceptOrderError: false));
-    final phone = await SecureStorage.getPhone();
+    final phone = await SharedPref.getPhone();
     if (phone == null) {
       return emit(state.copyWith(
           isLoading: false,
@@ -198,7 +201,7 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
         message: null,
         acceptOrder: false,
         acceptOrderError: false));
-    final phone = await SecureStorage.getPhone();
+    final phone = await SharedPref.getPhone();
     if (phone == null) {
       return emit(state.copyWith(
           partnerOrdesRefreshLoading: false,
@@ -227,7 +230,7 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
         message: null,
         acceptOrder: false,
         acceptOrderError: false));
-    final phone = await SecureStorage.getPhone();
+    final phone = await SharedPref.getPhone();
     if (phone == null) {
       return emit(state.copyWith(
           newOrdesRefreshLoading: false,
@@ -262,7 +265,7 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
         acceptOrderError: false,
         acceptOrderLoading: true,
         message: null));
-    final phone = await SecureStorage.getPhone();
+    final phone = await SharedPref.getPhone();
     if (phone == null) {
       return emit(state.copyWith(
           acceptOrderLoading: false,
@@ -279,7 +282,9 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
       emit(state.copyWith(
           acceptOrderLoading: false, message: r.message, acceptOrder: true));
       add(const OrdersEvent.getPartnerOrders(call: true));
-      add(const OrdersEvent.getNewOrder(call: true));
+      if (partner) {
+        add(const OrdersEvent.getNewOrder(call: true));
+      }
     });
   }
 
@@ -289,7 +294,7 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
         acceptOrderError: false,
         acceptOrderLoading: true,
         message: null));
-    final phone = await SecureStorage.getPhone();
+    final phone = await SharedPref.getPhone();
     if (phone == null) {
       return emit(state.copyWith(
           acceptOrderLoading: false,
@@ -308,7 +313,9 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
       emit(state.copyWith(
           acceptOrderLoading: false, message: r.message, cancelOrder: true));
       add(const OrdersEvent.getPartnerOrders(call: true));
-      add(const OrdersEvent.getNewOrder(call: true));
+      if (partner) {
+        add(const OrdersEvent.getNewOrder(call: true));
+      }
     });
   }
 

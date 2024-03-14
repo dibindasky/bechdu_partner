@@ -21,6 +21,7 @@ mixin _$PointsEvent {
     required TResult Function() getGst,
     required TResult Function() getCoinValue,
     required TResult Function() reset,
+    required TResult Function(int coins) findPayableAmound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +29,7 @@ mixin _$PointsEvent {
     TResult? Function()? getGst,
     TResult? Function()? getCoinValue,
     TResult? Function()? reset,
+    TResult? Function(int coins)? findPayableAmound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +37,7 @@ mixin _$PointsEvent {
     TResult Function()? getGst,
     TResult Function()? getCoinValue,
     TResult Function()? reset,
+    TResult Function(int coins)? findPayableAmound,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +46,7 @@ mixin _$PointsEvent {
     required TResult Function(GetGst value) getGst,
     required TResult Function(GetCoinValue value) getCoinValue,
     required TResult Function(Reset value) reset,
+    required TResult Function(FindPayableAmound value) findPayableAmound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +54,7 @@ mixin _$PointsEvent {
     TResult? Function(GetGst value)? getGst,
     TResult? Function(GetCoinValue value)? getCoinValue,
     TResult? Function(Reset value)? reset,
+    TResult? Function(FindPayableAmound value)? findPayableAmound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +62,7 @@ mixin _$PointsEvent {
     TResult Function(GetGst value)? getGst,
     TResult Function(GetCoinValue value)? getCoinValue,
     TResult Function(Reset value)? reset,
+    TResult Function(FindPayableAmound value)? findPayableAmound,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -121,6 +127,7 @@ class _$GetGstImpl implements GetGst {
     required TResult Function() getGst,
     required TResult Function() getCoinValue,
     required TResult Function() reset,
+    required TResult Function(int coins) findPayableAmound,
   }) {
     return getGst();
   }
@@ -131,6 +138,7 @@ class _$GetGstImpl implements GetGst {
     TResult? Function()? getGst,
     TResult? Function()? getCoinValue,
     TResult? Function()? reset,
+    TResult? Function(int coins)? findPayableAmound,
   }) {
     return getGst?.call();
   }
@@ -141,6 +149,7 @@ class _$GetGstImpl implements GetGst {
     TResult Function()? getGst,
     TResult Function()? getCoinValue,
     TResult Function()? reset,
+    TResult Function(int coins)? findPayableAmound,
     required TResult orElse(),
   }) {
     if (getGst != null) {
@@ -155,6 +164,7 @@ class _$GetGstImpl implements GetGst {
     required TResult Function(GetGst value) getGst,
     required TResult Function(GetCoinValue value) getCoinValue,
     required TResult Function(Reset value) reset,
+    required TResult Function(FindPayableAmound value) findPayableAmound,
   }) {
     return getGst(this);
   }
@@ -165,6 +175,7 @@ class _$GetGstImpl implements GetGst {
     TResult? Function(GetGst value)? getGst,
     TResult? Function(GetCoinValue value)? getCoinValue,
     TResult? Function(Reset value)? reset,
+    TResult? Function(FindPayableAmound value)? findPayableAmound,
   }) {
     return getGst?.call(this);
   }
@@ -175,6 +186,7 @@ class _$GetGstImpl implements GetGst {
     TResult Function(GetGst value)? getGst,
     TResult Function(GetCoinValue value)? getCoinValue,
     TResult Function(Reset value)? reset,
+    TResult Function(FindPayableAmound value)? findPayableAmound,
     required TResult orElse(),
   }) {
     if (getGst != null) {
@@ -229,6 +241,7 @@ class _$GetCoinValueImpl implements GetCoinValue {
     required TResult Function() getGst,
     required TResult Function() getCoinValue,
     required TResult Function() reset,
+    required TResult Function(int coins) findPayableAmound,
   }) {
     return getCoinValue();
   }
@@ -239,6 +252,7 @@ class _$GetCoinValueImpl implements GetCoinValue {
     TResult? Function()? getGst,
     TResult? Function()? getCoinValue,
     TResult? Function()? reset,
+    TResult? Function(int coins)? findPayableAmound,
   }) {
     return getCoinValue?.call();
   }
@@ -249,6 +263,7 @@ class _$GetCoinValueImpl implements GetCoinValue {
     TResult Function()? getGst,
     TResult Function()? getCoinValue,
     TResult Function()? reset,
+    TResult Function(int coins)? findPayableAmound,
     required TResult orElse(),
   }) {
     if (getCoinValue != null) {
@@ -263,6 +278,7 @@ class _$GetCoinValueImpl implements GetCoinValue {
     required TResult Function(GetGst value) getGst,
     required TResult Function(GetCoinValue value) getCoinValue,
     required TResult Function(Reset value) reset,
+    required TResult Function(FindPayableAmound value) findPayableAmound,
   }) {
     return getCoinValue(this);
   }
@@ -273,6 +289,7 @@ class _$GetCoinValueImpl implements GetCoinValue {
     TResult? Function(GetGst value)? getGst,
     TResult? Function(GetCoinValue value)? getCoinValue,
     TResult? Function(Reset value)? reset,
+    TResult? Function(FindPayableAmound value)? findPayableAmound,
   }) {
     return getCoinValue?.call(this);
   }
@@ -283,6 +300,7 @@ class _$GetCoinValueImpl implements GetCoinValue {
     TResult Function(GetGst value)? getGst,
     TResult Function(GetCoinValue value)? getCoinValue,
     TResult Function(Reset value)? reset,
+    TResult Function(FindPayableAmound value)? findPayableAmound,
     required TResult orElse(),
   }) {
     if (getCoinValue != null) {
@@ -337,6 +355,7 @@ class _$ResetImpl implements Reset {
     required TResult Function() getGst,
     required TResult Function() getCoinValue,
     required TResult Function() reset,
+    required TResult Function(int coins) findPayableAmound,
   }) {
     return reset();
   }
@@ -347,6 +366,7 @@ class _$ResetImpl implements Reset {
     TResult? Function()? getGst,
     TResult? Function()? getCoinValue,
     TResult? Function()? reset,
+    TResult? Function(int coins)? findPayableAmound,
   }) {
     return reset?.call();
   }
@@ -357,6 +377,7 @@ class _$ResetImpl implements Reset {
     TResult Function()? getGst,
     TResult Function()? getCoinValue,
     TResult Function()? reset,
+    TResult Function(int coins)? findPayableAmound,
     required TResult orElse(),
   }) {
     if (reset != null) {
@@ -371,6 +392,7 @@ class _$ResetImpl implements Reset {
     required TResult Function(GetGst value) getGst,
     required TResult Function(GetCoinValue value) getCoinValue,
     required TResult Function(Reset value) reset,
+    required TResult Function(FindPayableAmound value) findPayableAmound,
   }) {
     return reset(this);
   }
@@ -381,6 +403,7 @@ class _$ResetImpl implements Reset {
     TResult? Function(GetGst value)? getGst,
     TResult? Function(GetCoinValue value)? getCoinValue,
     TResult? Function(Reset value)? reset,
+    TResult? Function(FindPayableAmound value)? findPayableAmound,
   }) {
     return reset?.call(this);
   }
@@ -391,6 +414,7 @@ class _$ResetImpl implements Reset {
     TResult Function(GetGst value)? getGst,
     TResult Function(GetCoinValue value)? getCoinValue,
     TResult Function(Reset value)? reset,
+    TResult Function(FindPayableAmound value)? findPayableAmound,
     required TResult orElse(),
   }) {
     if (reset != null) {
@@ -402,6 +426,153 @@ class _$ResetImpl implements Reset {
 
 abstract class Reset implements PointsEvent {
   const factory Reset() = _$ResetImpl;
+}
+
+/// @nodoc
+abstract class _$$FindPayableAmoundImplCopyWith<$Res> {
+  factory _$$FindPayableAmoundImplCopyWith(_$FindPayableAmoundImpl value,
+          $Res Function(_$FindPayableAmoundImpl) then) =
+      __$$FindPayableAmoundImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int coins});
+}
+
+/// @nodoc
+class __$$FindPayableAmoundImplCopyWithImpl<$Res>
+    extends _$PointsEventCopyWithImpl<$Res, _$FindPayableAmoundImpl>
+    implements _$$FindPayableAmoundImplCopyWith<$Res> {
+  __$$FindPayableAmoundImplCopyWithImpl(_$FindPayableAmoundImpl _value,
+      $Res Function(_$FindPayableAmoundImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? coins = null,
+  }) {
+    return _then(_$FindPayableAmoundImpl(
+      coins: null == coins
+          ? _value.coins
+          : coins // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$FindPayableAmoundImpl implements FindPayableAmound {
+  const _$FindPayableAmoundImpl({required this.coins});
+
+  @override
+  final int coins;
+
+  @override
+  String toString() {
+    return 'PointsEvent.findPayableAmound(coins: $coins)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FindPayableAmoundImpl &&
+            (identical(other.coins, coins) || other.coins == coins));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, coins);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FindPayableAmoundImplCopyWith<_$FindPayableAmoundImpl> get copyWith =>
+      __$$FindPayableAmoundImplCopyWithImpl<_$FindPayableAmoundImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getGst,
+    required TResult Function() getCoinValue,
+    required TResult Function() reset,
+    required TResult Function(int coins) findPayableAmound,
+  }) {
+    return findPayableAmound(coins);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getGst,
+    TResult? Function()? getCoinValue,
+    TResult? Function()? reset,
+    TResult? Function(int coins)? findPayableAmound,
+  }) {
+    return findPayableAmound?.call(coins);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getGst,
+    TResult Function()? getCoinValue,
+    TResult Function()? reset,
+    TResult Function(int coins)? findPayableAmound,
+    required TResult orElse(),
+  }) {
+    if (findPayableAmound != null) {
+      return findPayableAmound(coins);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetGst value) getGst,
+    required TResult Function(GetCoinValue value) getCoinValue,
+    required TResult Function(Reset value) reset,
+    required TResult Function(FindPayableAmound value) findPayableAmound,
+  }) {
+    return findPayableAmound(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetGst value)? getGst,
+    TResult? Function(GetCoinValue value)? getCoinValue,
+    TResult? Function(Reset value)? reset,
+    TResult? Function(FindPayableAmound value)? findPayableAmound,
+  }) {
+    return findPayableAmound?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetGst value)? getGst,
+    TResult Function(GetCoinValue value)? getCoinValue,
+    TResult Function(Reset value)? reset,
+    TResult Function(FindPayableAmound value)? findPayableAmound,
+    required TResult orElse(),
+  }) {
+    if (findPayableAmound != null) {
+      return findPayableAmound(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FindPayableAmound implements PointsEvent {
+  const factory FindPayableAmound({required final int coins}) =
+      _$FindPayableAmoundImpl;
+
+  int get coins;
+  @JsonKey(ignore: true)
+  _$$FindPayableAmoundImplCopyWith<_$FindPayableAmoundImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

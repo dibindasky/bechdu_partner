@@ -109,9 +109,11 @@ class OrderDetailWithoutBlur extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      context
-          .read<PickupPartnerBloc>()
-          .add(const PickupPartnerEvent.getPickupPartners());
+      if (partner) {
+        context
+            .read<PickupPartnerBloc>()
+            .add(const PickupPartnerEvent.getPickupPartners());
+      }
     });
     return SingleChildScrollView(
       child: Column(
@@ -125,25 +127,27 @@ class OrderDetailWithoutBlur extends StatelessWidget {
               ? kEmpty
               : OrderDetailTopPart(orderDetail: orderDetail),
           kHeight20,
-          BlocBuilder<PickupPartnerBloc, PickupPartnerState>(
-            builder: (context, state) {
-              if (state.assigningOrderLoader) {
-                return const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
-                  child: ShimmerLoader(
-                      itemCount: 1,
-                      height: 50,
-                      scrollDirection: Axis.vertical,
-                      width: double.infinity),
-                );
-              }
-              return PartnerDetailTile(
-                  status: orderDetail.status!,
-                  partner: orderDetail.partner,
-                  orderId: orderDetail.id!);
-            },
-          ),
-          kHeight20,
+          partner
+              ? BlocBuilder<PickupPartnerBloc, PickupPartnerState>(
+                  builder: (context, state) {
+                    if (state.assigningOrderLoader) {
+                      return const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 20),
+                        child: ShimmerLoader(
+                            itemCount: 1,
+                            height: 50,
+                            scrollDirection: Axis.vertical,
+                            width: double.infinity),
+                      );
+                    }
+                    return PartnerDetailTile(
+                        status: orderDetail.status!,
+                        partner: orderDetail.partner,
+                        orderId: orderDetail.id!);
+                  },
+                )
+              : kEmpty,
+          partner ? kHeight20 : kEmpty,
           PickUpDetailOrderTile(
             isBlurred: false,
             isUser: true,

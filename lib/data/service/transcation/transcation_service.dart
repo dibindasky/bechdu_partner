@@ -6,7 +6,10 @@ import 'package:bechdu_partner/domain/core/api_endpoints/api_endpoints.dart';
 import 'package:bechdu_partner/domain/core/failure/failute.dart';
 import 'package:bechdu_partner/domain/model/commen/error_response_model/error_response_model.dart';
 import 'package:bechdu_partner/domain/model/commen/page_size_query_model/page_size_query_model.dart';
+import 'package:bechdu_partner/domain/model/commen/success_response_model/success_response_model.dart';
 import 'package:bechdu_partner/domain/model/transcaton/get_credited_transcations_response_model/get_credited_transcations_response_model.dart';
+import 'package:bechdu_partner/domain/model/transcaton/invoice_response_model/invoice_response_model.dart';
+import 'package:bechdu_partner/domain/model/transcaton/manuel_transcation_model/manuel_transcation_model.dart';
 import 'package:bechdu_partner/domain/repository/service/transcations_repo.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
@@ -74,6 +77,55 @@ class TranscationService implements TranscationsRepo {
       }
     } catch (e) {
       log('getDebitedTranscations exception => $e');
+      return Left(Failure(message: errorMessage));
+    }
+  }
+
+  @override
+  Future<Either<Failure, InvoiceResponseModel>> downloadInvoice(
+      {required String phone, required String id}) async {
+    try {
+      final response = await _apiService.get(ApiEndPoints.downloadInvoice
+          .replaceFirst('{phone}', phone)
+          .replaceFirst('{id}', id));
+      log('downloadInvoice success data=> ${response.data}');
+      return Right(InvoiceResponseModel.fromJson(response.data));
+    } on DioException catch (e) {
+      try {
+        log('downloadInvoice dio exception => $e');
+        // log(e.response.toString());
+        ErrorResponseModel error =
+            ErrorResponseModel.fromJson(e.response?.data);
+        return Left(Failure(message: error.error ?? errorMessage));
+      } catch (e) {
+        return Left(Failure(message: errorMessage));
+      }
+    } catch (e) {
+      log('downloadInvoice exception => $e');
+      return Left(Failure(message: errorMessage));
+    }
+  }
+
+  @override
+  Future<Either<Failure, SuccessResponseModel>> uploadCheckRecipt(
+      {required ManuelTranscationModel manuelTranscationModel}) async {
+    try {
+      final response = await _apiService.post(ApiEndPoints.manuelTransation,
+          data: manuelTranscationModel.toJson());
+      log('uploadCheckRecipt success data=> ${response.data}');
+      return Right(SuccessResponseModel(message: response.data.toString()));
+    } on DioException catch (e) {
+      try {
+        log('uploadCheckRecipt dio exception => $e');
+        log(e.response.toString());
+        ErrorResponseModel error =
+            ErrorResponseModel.fromJson(e.response?.data);
+        return Left(Failure(message: error.error ?? errorMessage));
+      } catch (e) {
+        return Left(Failure(message: errorMessage));
+      }
+    } catch (e) {
+      log('uploadCheckRecipt exception => $e');
       return Left(Failure(message: errorMessage));
     }
   }

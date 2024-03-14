@@ -1,63 +1,72 @@
 import 'dart:developer';
 
 import 'package:bechdu_partner/domain/model/token/token_model.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class SecureStorage {
+class SharedPref {
   static const String accessKey = 'access_key';
-  static const String isLoged = 'is_logedIn';
+  static const String isLogged = 'is_loggedIn';
   static const String isPartnerKey = 'is_partner';
   static const String phoneKey = 'phone_key';
 
-  static const secureStorage = FlutterSecureStorage();
+  static Future<SharedPreferences> _getPrefs() async =>
+      await SharedPreferences.getInstance();
 
   static Future<void> saveToken({required TokenModel tokenModel}) async {
     log('save token =>() ${tokenModel.accessToken}');
-    await secureStorage.write(
-        key: accessKey, value: tokenModel.accessToken ?? '');
+    final preferences = await _getPrefs();
+    await preferences.setString(accessKey, tokenModel.accessToken ?? '');
   }
 
   static Future<TokenModel> getToken() async {
     log('get token =>()');
-    final accessToken = await secureStorage.read(key: accessKey);
+    final preferences = await _getPrefs();
+    final accessToken = preferences.getString(accessKey);
     log('accessToken =>() $accessToken');
     return TokenModel(accessToken: accessToken);
   }
 
   static Future<void> setLogin() async {
-    log('set token =>()');
-    await secureStorage.write(key: isLoged, value: '1');
+    log('set login =>()');
+    final preferences = await _getPrefs();
+    await preferences.setBool(isLogged, true);
   }
 
   static Future<void> clearLogin() async {
     log('delete all secureStorage =>()');
-    await secureStorage.deleteAll();
+    final preferences = await _getPrefs();
+    await preferences.clear();
   }
 
   static Future<bool> getLogin() async {
     log('get login =>()');
-    final login = await secureStorage.read(key: isLoged);
-    log('get login =>() ${login == '1'}');
-    return login == '1';
+    final preferences = await _getPrefs();
+    final login = preferences.getBool(isLogged) ?? false;
+    log('get login =>() $login');
+    return login;
   }
 
   static Future<void> setRole({required bool isPartner}) async {
     log('set isBusiness token =>() $isPartner');
-    await secureStorage.write(key: isPartnerKey, value: isPartner ? '1' : '0');
+    final preferences = await _getPrefs();
+    await preferences.setBool(isPartnerKey, isPartner);
   }
 
-  static Future<bool> getrole() async {
-    final role = await secureStorage.read(key: isPartnerKey);
-    return role == '1';
+  static Future<bool> getRole() async {
+    final preferences = await _getPrefs();
+    final role = preferences.getBool(isPartnerKey) ?? false;
+    return role;
   }
 
   static Future<void> setPhone({required String phone}) async {
     log('set phone =>() $phone');
-    await secureStorage.write(key: phoneKey, value: phone);
+    final preferences = await _getPrefs();
+    await preferences.setString(phoneKey, phone);
   }
 
   static Future<String?> getPhone() async {
-    final phone = await secureStorage.read(key: phoneKey);
+    final preferences = await _getPrefs();
+    final phone = preferences.getString(phoneKey);
     return phone;
   }
 }

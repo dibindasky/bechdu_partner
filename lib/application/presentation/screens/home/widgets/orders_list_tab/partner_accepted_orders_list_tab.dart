@@ -77,9 +77,11 @@ class _OrdersHistoryListState extends State<OrdersHistoryList> {
         return Center(
             child: InkWell(
           onTap: () {
-            context
-                .read<OrdersBloc>()
-                .add(const OrdersEvent.getNewOrder(call: true));
+            if (partner) {
+              context
+                  .read<OrdersBloc>()
+                  .add(const OrdersEvent.getNewOrder(call: true));
+            }
             context
                 .read<OrdersBloc>()
                 .add(const OrdersEvent.getPartnerOrders(call: true));
@@ -89,9 +91,11 @@ class _OrdersHistoryListState extends State<OrdersHistoryList> {
             children: [
               IconButton(
                   onPressed: () {
-                    context
-                        .read<OrdersBloc>()
-                        .add(const OrdersEvent.getNewOrder(call: true));
+                    if (partner) {
+                      context
+                          .read<OrdersBloc>()
+                          .add(const OrdersEvent.getNewOrder(call: true));
+                    }
                     context
                         .read<OrdersBloc>()
                         .add(const OrdersEvent.getPartnerOrders(call: true));

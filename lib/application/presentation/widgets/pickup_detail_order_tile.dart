@@ -54,11 +54,13 @@ class PickUpDetailOrderTile extends StatelessWidget {
                 ),
                 trailing: isBlurred
                     ? null
-                    : _circleIconMaker(
-                        icon: Icons.phone,
-                        onTap: () {
-                          OpenLauncherFeature.launchPhone(phone: phone);
-                        }),
+                    : isUser
+                        ? _circleIconMaker(
+                            icon: Icons.phone,
+                            onTap: () {
+                              OpenLauncherFeature.launchPhone(phone: phone);
+                            })
+                        : null,
               ),
               ListTile(
                 leading: SizedBox(
