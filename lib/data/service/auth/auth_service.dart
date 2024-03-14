@@ -37,12 +37,13 @@ class AuthService implements AuthRepo {
 
   @override
   Future<Either<Failure, VerifyOtpResponseModel>> verifyOtp(
-      {required VerifyOtpModel verifyOtpModel}) async {
+      {required VerifyOtpModel verifyOtpModel,
+      required String userAgent}) async {
     try {
       log('verify otp  => ${verifyOtpModel.toJson()}');
       // _dio.options.headers['user-agent']='PocoM2Pro';
       _dio.options.headers.addAll(
-          {'user-agent': 'PocoM2Pro', 'content-Type': 'application/json'});
+          {'user-agent': userAgent, 'content-Type': 'application/json'});
       log(_dio.options.headers.toString());
       final response = await _dio.post(ApiEndPoints.verifyOtp,
           data: verifyOtpModel.toJson());

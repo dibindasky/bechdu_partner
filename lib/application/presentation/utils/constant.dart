@@ -8,6 +8,8 @@ const gilroyMedium = 'Gilroy-Medium';
 const gilroyRegular = 'Gilroy-Regular';
 const gilroySemiBold = 'Gilroy-SemiBold';
 
+const iconBechdu = 'assets/images/bechdu_logo.png';
+
 const loginPageImage = 'assets/images/login_page.png';
 const imageDiffectedPhone = 'assets/images/diffectImage.png';
 const iconHome = 'assets/images/carbon_home.png';
@@ -27,6 +29,9 @@ const urlMapTest = 'https://www.google.com/maps?q=';
 
 double sHeight = 900;
 double sWidth = 400;
+
+// for entire app conversion from partner to pickup guy
+late bool partner;
 
 const kEmpty = SizedBox();
 
@@ -90,6 +95,13 @@ final textHeadRegular1 = TextStyle(
   fontSize: sWidth < 400 ? sWidth * 0.040 : sWidth * 0.035,
 );
 
+final textHeadRegular2 = TextStyle(
+  color: kBlack,
+  fontFamily: gilroyRegular,
+  fontWeight: FontWeight.w400,
+  fontSize: sWidth < 400 ? sWidth * 0.050 : sWidth * 0.040,
+);
+
 final textHeadRegularBig = TextStyle(
   color: kBlack,
   fontFamily: gilroyRegular,
@@ -106,121 +118,6 @@ final textHeadSemiBold1 = TextStyle(
 
 void sizeFinder(BuildContext context) {
   final size = MediaQuery.of(context).size;
-  print(size.height);
-  print(size.width);
   sHeight = size.height > 900 ? 900 : size.height;
   sWidth = size.width > 450 ? 450 : size.width;
 }
-
-var testQuestionMap = [
-  {
-    "sectionType": "yes/no",
-    "sectionCriteria": "all",
-    "sectionHeading": "Device",
-    "data": [
-      {
-        "description": "Are you able to make and receive calls?",
-      },
-      {
-        "description": "Is your device's touch screen working properly?",
-      },
-      {
-        "description": "Is your phone's screen original?",
-      },
-      {
-        "description": "Is your device under manufacturer warranty?",
-      },
-      {
-        "description": "Do you have GST val id bill with the same IMEI?",
-      },
-    ],
-  },
-  {
-    "sectionType": "image",
-    "sectionCriteria": "none",
-    "sectionHeading": "Display",
-    "data": [
-      {
-        "description": "Broken/Scratch on device screen",
-        "img": "imageDiffectedPhone",
-      },
-      {
-        "description": "Dead Spot/Visible lines on screen",
-        "img": "imageDiffectedPhone",
-      },
-      {
-        "description": "Scratch/Dent on device body",
-        "img": "imageDiffectedPhone",
-      },
-      {
-        "description": "Device panel missing/broken",
-        "img": "imageDiffectedPhone",
-      },
-    ],
-  },
-  {
-    "sectionType": "image",
-    "sectionCriteria": "some",
-    "sectionHeading": "Functionality",
-    "data": [
-      {
-        "description": "Front Camera not working",
-        "img": "imageDiffectedPhone",
-      },
-      {
-        "description": "Back Camera not working",
-        "img": "imageDiffectedPhone",
-      },
-      {
-        "description": "Volume Button not working",
-        "img": "imageDiffectedPhone",
-      },
-      {
-        "description": "Finger Touch not working",
-        "img": "imageDiffectedPhone",
-      },
-    ],
-  },
-  {
-    "sectionType": "image",
-    "sectionCriteria": "none",
-    "sectionHeading": "Accessories",
-    "data": [
-      {
-        "description": "Box",
-        "img": "imageDiffectedPhone",
-      },
-      {
-        "description": "Bill",
-        "img": "imageDiffectedPhone",
-      },
-      {
-        "description": "Charger",
-        "img": "imageDiffectedPhone",
-      },
-      {
-        "description": "Headset",
-        "img": "imageDiffectedPhone",
-      },
-    ],
-  },
-  {
-    "sectionType": "grid",
-    "sectionCriteria": "one",
-    "sectionHeading": "Device Age",
-    "data": [
-      {
-        "description": "0-3 Months",
-      },
-      {
-        "description": "3-6 Months",
-      },
-      {
-        "description": "6-11 Months",
-      },
-      {
-        "description": "Above 11 Months",
-      },
-    ],
-  },
-];

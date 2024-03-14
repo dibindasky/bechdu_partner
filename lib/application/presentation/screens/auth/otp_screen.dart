@@ -36,9 +36,11 @@ class _ScreenOTPState extends State<ScreenOTP> {
             kHeight20,
             Wrap(
               children: [
-                Text('A 6 digit OTP has been sent to your phone number ',
+                Text('A 4 digit OTP has been sent to your phone number ',
                     style: textHeadMedium1.copyWith(color: kGreyLight)),
-                Text('+91 9999988888 ', style: textHeadMedium1),
+                Text(
+                    '+91 ${context.read<AuthBloc>().phoneController.text.trim()} ',
+                    style: textHeadMedium1),
                 InkWell(
                   onTap: () {
                     Navigator.pop(context);
@@ -91,7 +93,9 @@ class _ScreenOTPState extends State<ScreenOTP> {
                 if (state.isLogin) {
                   Navigator.pop(context);
                   Navigator.pushNamedAndRemoveUntil(
-                      context, Routes.bottomBar, (route) => false);
+                      context,
+                      state.role ? Routes.bottomBar : Routes.homePage,
+                      (route) => false);
                 }
               },
               builder: (context, state) {

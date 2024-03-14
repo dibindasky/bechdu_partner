@@ -7,7 +7,7 @@ import 'package:dartz/dartz.dart';
 
 abstract class AuthRepo {
   Future<Either<Failure, VerifyOtpResponseModel>> verifyOtp(
-      {required VerifyOtpModel verifyOtpModel});
+      {required VerifyOtpModel verifyOtpModel, required String userAgent});
   Future<Either<Failure, SuccessResponseModel>> sendOtp(
       {required PhoneNumberModel phoneNumberModel});
 }

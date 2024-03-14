@@ -22,6 +22,5 @@ abstract class PickupPartnerRepo {
       required String pickupId,
       required String orderId});
   Future<Either<Failure, SuccessResponseModel>> deAssignOrderFromPickupPartner(
-      {required String phone,
-      required String orderId});
+      {required String phone, required String orderId});
 }

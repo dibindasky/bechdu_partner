@@ -108,10 +108,12 @@ class OrderDetailWithoutBlur extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      context
-          .read<PickupPartnerBloc>()
-          .add(const PickupPartnerEvent.getPickupPartners());
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (partner) {
+        context
+            .read<PickupPartnerBloc>()
+            .add(const PickupPartnerEvent.getPickupPartners());
+      }
     });
     return SingleChildScrollView(
       child: Column(
@@ -121,29 +123,31 @@ class OrderDetailWithoutBlur extends StatelessWidget {
               deviceName: orderDetail.productDetails?.name ?? '----',
               image: orderDetail.productDetails?.image ?? '',
               price: orderDetail.productDetails?.price ?? '--'),
-          orderDetail.status == 'cancelled'
+          orderDetail.status == 'cancelled' || orderDetail.status == 'Completed'
               ? kEmpty
               : OrderDetailTopPart(orderDetail: orderDetail),
           kHeight20,
-          BlocBuilder<PickupPartnerBloc, PickupPartnerState>(
-            builder: (context, state) {
-              if (state.assigningOrderLoader) {
-                return const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
-                  child: ShimmerLoader(
-                      itemCount: 1,
-                      height: 50,
-                      scrollDirection: Axis.vertical,
-                      width: double.infinity),
-                );
-              }
-              return PartnerDetailTile(
-                  status: orderDetail.status!,
-                  partner: orderDetail.partner,
-                  orderId: orderDetail.id!);
-            },
-          ),
-          kHeight20,
+          partner
+              ? BlocBuilder<PickupPartnerBloc, PickupPartnerState>(
+                  builder: (context, state) {
+                    if (state.assigningOrderLoader) {
+                      return const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 20),
+                        child: ShimmerLoader(
+                            itemCount: 1,
+                            height: 50,
+                            scrollDirection: Axis.vertical,
+                            width: double.infinity),
+                      );
+                    }
+                    return PartnerDetailTile(
+                        status: orderDetail.status!,
+                        partner: orderDetail.partner,
+                        orderId: orderDetail.id!);
+                  },
+                )
+              : kEmpty,
+          partner ? kHeight20 : kEmpty,
           PickUpDetailOrderTile(
             isBlurred: false,
             isUser: true,

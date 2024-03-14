@@ -19,8 +19,6 @@ class OrdersListTileHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(orderDetail.orderId);
-    print(orderDetail.productDetails?.options?.map((e) => e.heading).toList());
     return Container(
       margin: const EdgeInsets.only(left: 15, right: 15, top: 10),
       decoration: BoxDecoration(
@@ -47,7 +45,7 @@ class OrdersListTileHome extends StatelessWidget {
             ),
             const Spacer(),
             StatusColoredBox(
-              color: kBluePrimary,
+              color: getStatusColor(orderDetail.status ?? ''),
               text: orderDetail.status ?? '',
             ),
             kWidth10

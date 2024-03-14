@@ -8,6 +8,7 @@ class AuthState with _$AuthState {
     required bool otpSend,
     required bool otpVerificationError,
     required bool isLogin,
+    required bool role,
     required bool agreePolicy,
     required bool agreePolicyError,
     String? message,
@@ -16,6 +17,7 @@ class AuthState with _$AuthState {
   factory AuthState.initial() => const AuthState(
         isLoading: false,
         hasError: false,
+        role: false,
         otpSend: false,
         agreePolicy: true,
         agreePolicyError: false,

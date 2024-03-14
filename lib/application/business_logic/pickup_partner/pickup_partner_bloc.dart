@@ -27,6 +27,11 @@ class PickupPartnerBloc extends Bloc<PickupPartnerEvent, PickupPartnerState> {
     on<GetPartnerProfile>(getPartnerProfile);
     on<AssignOrderToPickupPartner>(assignOrderToPickupPartner);
     on<DeAssignOrderFromPickupPartner>(deAssignOrderFromPickupPartner);
+    on<Reset>(reset);
+  }
+
+  FutureOr<void> reset(Reset event, emit) {
+    emit(PickupPartnerState.initial());
   }
 
   FutureOr<void> addPickupPartner(AddPickupPartner event, emit) async {
@@ -37,7 +42,7 @@ class PickupPartnerBloc extends Bloc<PickupPartnerEvent, PickupPartnerState> {
         pickupPersonAdded: false,
         orderAssigned: false,
         orderDeAssigned: false));
-    final phone = await SecureStorage.getPhone();
+    final phone = await SharedPref.getPhone();
     if (phone == null) {
       return emit(state.copyWith(
           partnerAddingLoader: false,
@@ -69,7 +74,7 @@ class PickupPartnerBloc extends Bloc<PickupPartnerEvent, PickupPartnerState> {
         pickupPersonAdded: false,
         orderAssigned: false,
         orderDeAssigned: false));
-    final phone = await SecureStorage.getPhone();
+    final phone = await SharedPref.getPhone();
     if (phone == null) {
       return emit(state.copyWith(
           isLoading: false,
@@ -92,7 +97,7 @@ class PickupPartnerBloc extends Bloc<PickupPartnerEvent, PickupPartnerState> {
         pickupPersonAdded: false,
         orderAssigned: false,
         orderDeAssigned: false));
-    final phone = await SecureStorage.getPhone();
+    final phone = await SharedPref.getPhone();
     if (phone == null) {
       return emit(state.copyWith(
           isLoading: false,
@@ -117,7 +122,7 @@ class PickupPartnerBloc extends Bloc<PickupPartnerEvent, PickupPartnerState> {
         pickupPersonAdded: false,
         orderAssigned: false,
         orderDeAssigned: false));
-    final phone = await SecureStorage.getPhone();
+    final phone = await SharedPref.getPhone();
     if (phone == null) {
       return emit(state.copyWith(
           isLoading: false,
@@ -142,7 +147,7 @@ class PickupPartnerBloc extends Bloc<PickupPartnerEvent, PickupPartnerState> {
         orderDeAssigned: false,
         orderAssigned: false,
         pickupPersonAdded: false));
-    final phone = await SecureStorage.getPhone();
+    final phone = await SharedPref.getPhone();
     if (phone == null) {
       return emit(state.copyWith(
           isLoading: false,
@@ -167,7 +172,7 @@ class PickupPartnerBloc extends Bloc<PickupPartnerEvent, PickupPartnerState> {
         message: null,
         hasError: false,
         pickupPersonAdded: false));
-    final phone = await SecureStorage.getPhone();
+    final phone = await SharedPref.getPhone();
     if (phone == null) {
       return emit(state.copyWith(
           isLoading: false,
@@ -201,7 +206,7 @@ class PickupPartnerBloc extends Bloc<PickupPartnerEvent, PickupPartnerState> {
         message: null,
         hasError: false,
         pickupPersonAdded: false));
-    final phone = await SecureStorage.getPhone();
+    final phone = await SharedPref.getPhone();
     if (phone == null) {
       return emit(state.copyWith(
           isLoading: false,

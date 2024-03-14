@@ -11,4 +11,8 @@ class Routes {
   static const String settingsPage = '/settings_page';
   static const String transcationPage = '/transcations_page';
   static const String pickUpProfilePage = '/pick_up_profile_page';
+  static const String profilePage = '/profile_page';
+  static const String homePage = '/home_page';
+  static const String pdfPage = '/pdf_page';
+  static const String completeOrderPage = '/complete_order_page';
 }

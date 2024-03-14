@@ -30,7 +30,7 @@ class RequoteTabs extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: List.generate(
-                  state.map.length,
+                  state.sections?.length ?? 0,
                   (index) => InkWell(
                     onTap: () {
                       context

@@ -58,7 +58,13 @@ void showDialogeCancel(context, orderId) {
                             if (cancelKey.currentState!.validate()) {
                               Navigator.pop(context);
                               context.read<OrdersBloc>().add(
-                                  OrdersEvent.cancelOrder(orderId: orderId));
+                                  OrdersEvent.cancelOrder(
+                                      orderId: orderId,
+                                      reason: context
+                                          .read<OrdersBloc>()
+                                          .cancelController
+                                          .text
+                                          .trim()));
                             }
                           },
                           text: 'Cancel',
