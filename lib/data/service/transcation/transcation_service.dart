@@ -9,6 +9,7 @@ import 'package:bechdu_partner/domain/model/commen/page_size_query_model/page_si
 import 'package:bechdu_partner/domain/model/commen/success_response_model/success_response_model.dart';
 import 'package:bechdu_partner/domain/model/transcaton/get_credited_transcations_response_model/get_credited_transcations_response_model.dart';
 import 'package:bechdu_partner/domain/model/transcaton/invoice_response_model/invoice_response_model.dart';
+import 'package:bechdu_partner/domain/model/transcaton/manual_transcation_response_model/manual_transcation_response_model.dart';
 import 'package:bechdu_partner/domain/model/transcaton/manuel_transcation_model/manuel_transcation_model.dart';
 import 'package:bechdu_partner/domain/repository/service/transcations_repo.dart';
 import 'package:dartz/dartz.dart';
@@ -126,6 +127,32 @@ class TranscationService implements TranscationsRepo {
       }
     } catch (e) {
       log('uploadCheckRecipt exception => $e');
+      return Left(Failure(message: errorMessage));
+    }
+  }
+
+  @override
+  Future<Either<Failure, ManualTranscationResponseModel>> getManuelTranscations(
+      {required PageSizeQueryModel pageSizeQueryModel,
+      required String phone}) async {
+    try {
+      final response = await _apiService.get(
+          ApiEndPoints.getManuelTransation.replaceFirst('{phone}', phone),
+          queryParameters: pageSizeQueryModel.toJson());
+      log('getManuelTranscations success data=> ${response.data}');
+      return Right(ManualTranscationResponseModel.fromJson(response.data));
+    } on DioException catch (e) {
+      try {
+        log('getManuelTranscations dio exception => $e');
+        log(e.response.toString());
+        ErrorResponseModel error =
+            ErrorResponseModel.fromJson(e.response?.data);
+        return Left(Failure(message: error.error ?? errorMessage));
+      } catch (e) {
+        return Left(Failure(message: errorMessage));
+      }
+    } catch (e) {
+      log('getManuelTranscations exception => $e');
       return Left(Failure(message: errorMessage));
     }
   }

@@ -17,7 +17,7 @@ class PickupPartnerListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => Navigator.pushNamed(context, Routes.pickUpProfilePage),
+      onTap: () => Navigator.pushNamed(context, Routes.pickUpProfilePage,arguments: pickUpPerson),
       child: ListTile(
         leading: const CircleAvatar(
           backgroundColor: kBluePrimary,

@@ -6,8 +6,8 @@ part 'transcation.g.dart';
 class Transcation {
   String? type;
   String? paymentId;
-  int? price;
-  int? gstPrice;
+  double? price;
+  double? gstPrice;
   int? gstPercentage;
   String? partnerState;
   @JsonKey(name: 'HomeState')

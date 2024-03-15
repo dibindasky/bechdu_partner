@@ -73,6 +73,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             isLoading: false,
             otpVerificationError: true,
             message: l.message)), (r) async {
+      SharedPref.setPhone(phone: r.phone!);
+      SharedPref.saveToken(tokenModel: TokenModel(accessToken: r.token));
       emit(state.copyWith(
           isLoading: false,
           message: r.message,
@@ -81,8 +83,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       print("login response => ${r.toJson()}");
       partner = r.role == 'Partner';
       await SharedPref.setRole(isPartner: r.role == 'Partner');
-      await SharedPref.saveToken(tokenModel: TokenModel(accessToken: r.token));
-      await SharedPref.setPhone(phone: r.phone!);
       await SharedPref.setLogin();
       phoneController.text = '';
       otpController.text = '';

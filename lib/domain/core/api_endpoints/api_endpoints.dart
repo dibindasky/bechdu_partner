@@ -48,4 +48,5 @@ class ApiEndPoints {
   static String getConValue = '/coins/get-coin-value';
   static String downloadInvoice = '/partner/transaction/{phone}/{id}';
   static String manuelTransation = '/payment/create-payments';
+  static String getManuelTransation = '/payment/get-partner-payments/{phone}';
 }

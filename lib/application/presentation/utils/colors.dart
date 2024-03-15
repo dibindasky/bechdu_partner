@@ -36,3 +36,16 @@ Color getStatusColor(String status) {
       return kBluePrimary;
   }
 }
+
+Color getTranscationStatusColor(String status) {
+  switch (status) {
+    case "Pending":
+      return kOrangePrimary;
+    case "approved":
+      return kGreenPrimary;
+    case "rejected":
+      return kRedDark;
+    default:
+      return kBluePrimary;
+  }
+}

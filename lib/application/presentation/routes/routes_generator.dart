@@ -16,6 +16,7 @@ import 'package:bechdu_partner/application/presentation/screens/splash/splash_sc
 import 'package:bechdu_partner/application/presentation/screens/transcations/transcations_screen.dart';
 import 'package:bechdu_partner/application/presentation/utils/pdf/pdf_preview.dart';
 import 'package:bechdu_partner/domain/model/order/get_partner_order_response_model/order_detail.dart';
+import 'package:bechdu_partner/domain/model/pickup_partner/get_pickup_partner_response_model/pick_up_person.dart';
 import 'package:flutter/material.dart';
 
 class RouteGenerator {
@@ -54,9 +55,13 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (ctx) => const ScreenTranscations());
       case Routes.homePage:
         return MaterialPageRoute(builder: (ctx) => const ScreenHome());
+
       case Routes.pickUpProfilePage:
-        return MaterialPageRoute(
-            builder: (ctx) => const ScreenPickUpPartnerProfile());
+        return arguments is PickUpPerson
+            ? MaterialPageRoute(
+                builder: (ctx) =>
+                    ScreenPickUpPartnerProfile(pickUpPerson: arguments))
+            : _errorScreen();
       case Routes.bottomBar:
         return MaterialPageRoute(builder: (ctx) => const ScreenBottomBar());
       case Routes.orderScreen:

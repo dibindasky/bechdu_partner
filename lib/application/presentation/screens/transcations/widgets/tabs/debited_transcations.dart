@@ -56,18 +56,29 @@ class _DebitedTranscationsListState extends State<DebitedTranscationsList> {
         }
         if (state.debitedTranscations != null &&
             state.debitedTranscations!.isNotEmpty) {
+          int len = state.debitedLoading
+              ? state.debitedTranscations!.length + 1
+              : state.debitedTranscations!.length;
           return RefreshIndicator(
             onRefresh: () async {
-              context
-                  .read<TranscationBloc>()
-                  .add(const TranscationEvent.getDebitedTranscations());
+              context.read<TranscationBloc>().add(
+                  const TranscationEvent.getDebitedTranscations(call: true));
+              context.read<TranscationBloc>().add(
+                  const TranscationEvent.getManuelTransactions(call: true));
             },
             child: ListView.builder(
-              itemCount: state.debitedLoading
-                  ? state.debitedTranscations!.length + 1
-                  : state.debitedTranscations!.length,
+              itemCount: len < 6 ? len + 1 : len,
               controller: controller,
               itemBuilder: (context, index) {
+                if (len < 6 && !state.debitedLoading) {
+                  if (index >= len) {
+                    return SizedBox(height: 1000, width: sWidth);
+                  } else {
+                    return TranscationListTile(
+                        credited: true,
+                        transcation: state.creditedTranscations![index]);
+                  }
+                }
                 if (index == state.debitedTranscations!.length) {
                   return Padding(
                     padding: const EdgeInsets.symmetric(vertical: 10),
@@ -85,16 +96,23 @@ class _DebitedTranscationsListState extends State<DebitedTranscationsList> {
             ),
           );
         } else if (state.debitedTranscations == null) {
-          return ErrorRefreshIndicator(
-              onRefresh: () => context
-                  .read<TranscationBloc>()
-                  .add(const TranscationEvent.getDebitedTranscations()));
+          return ErrorRefreshIndicator(onRefresh: () {
+            context
+                .read<TranscationBloc>()
+                .add(const TranscationEvent.getDebitedTranscations(call: true));
+            context
+                .read<TranscationBloc>()
+                .add(const TranscationEvent.getManuelTransactions(call: true));
+          });
         } else {
           return ErrorRefreshIndicator(
               errorMessage: 'No Transcations yet',
-              onRefresh: () => context
-                  .read<TranscationBloc>()
-                  .add(const TranscationEvent.getDebitedTranscations()));
+              onRefresh: () {
+                context.read<TranscationBloc>().add(
+                    const TranscationEvent.getDebitedTranscations(call: true));
+                context.read<TranscationBloc>().add(
+                    const TranscationEvent.getManuelTransactions(call: true));
+              });
         }
       },
     );

@@ -9,8 +9,8 @@ part of 'transcation.dart';
 Transcation _$TranscationFromJson(Map<String, dynamic> json) => Transcation(
       type: json['type'] as String?,
       paymentId: json['paymentId'] as String?,
-      price: json['price'] as int?,
-      gstPrice: json['gstPrice'] as int?,
+      price: (json['price'] as num?)?.toDouble(),
+      gstPrice: (json['gstPrice'] as num?)?.toDouble(),
       gstPercentage: json['gstPercentage'] as int?,
       partnerState: json['partnerState'] as String?,
       homeState: json['HomeState'] as String?,

@@ -14,11 +14,11 @@ import 'package:uuid/uuid.dart';
 
 @injectable
 class ImagePickerService {
-  Future<Either<Failure, ImageModel>> pickImage() async {
+  Future<Either<Failure, ImageModel>> pickImage({bool camera = true}) async {
     try {
       final ImagePicker imagePicker = ImagePicker();
-      final pickedImage =
-          await imagePicker.pickImage(source: ImageSource.camera);
+      final pickedImage = await imagePicker.pickImage(
+          source: camera ? ImageSource.camera : ImageSource.gallery);
       if (pickedImage != null) {
         final directory = await getTemporaryDirectory();
         final compressedFilePath = '${directory.path}/${const Uuid().v4()}.jpg';

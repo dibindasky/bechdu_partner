@@ -1,5 +1,6 @@
 import 'package:bechdu_partner/application/business_logic/order/orders/orders_bloc.dart';
 import 'package:bechdu_partner/application/business_logic/pickup_partner/pickup_partner_bloc.dart';
+import 'package:bechdu_partner/application/business_logic/transcation/transcation_bloc.dart';
 import 'package:bechdu_partner/application/presentation/routes/routes.dart';
 import 'package:bechdu_partner/application/presentation/screens/order/widgets/device_detail_orders_session.dart';
 import 'package:bechdu_partner/application/presentation/screens/order/widgets/order_detail_image_and_price_session.dart';
@@ -78,6 +79,12 @@ class ScreenOrderDetail extends StatelessWidget {
                     var orderModel = orderDetail.copyWith(status: 'processing');
                     Navigator.pushReplacementNamed(context, Routes.orderScreen,
                         arguments: orderModel);
+                    context
+                        .read<PickupPartnerBloc>()
+                        .add(const PickupPartnerEvent.getPartnerProfile());
+                    context.read<TranscationBloc>().add(
+                        const TranscationEvent.getDebitedTranscations(
+                            call: true));
                   }
                 },
                 builder: (context, state) {

@@ -42,30 +42,42 @@ class _NewOrdersListState extends State<NewOrdersList> {
             child: CircularProgressIndicator(color: kBluePrimary));
       } else if (state.newOrders != null) {
         if (state.newOrders!.isNotEmpty) {
+          int len = state.newOrdesRefreshLoading
+              ? state.newOrders!.length + 1
+              : state.newOrders!.length;
           return ListView.builder(
             controller: controller,
             padding: EdgeInsets.zero,
-            itemCount: state.newOrdesRefreshLoading
-                ? state.newOrders!.length + 1
-                : state.newOrders!.length,
+            itemCount: len < 5 ? len + 1 : len,
             shrinkWrap: true,
-            itemBuilder: (context, index) => state.newOrders!.length == index
-                ? Padding(
-                    padding:
-                        const EdgeInsets.only(bottom: 100, left: 20, right: 20),
-                    child:
-                        ShimmerLoader(itemCount: 1, height: 150, width: sWidth),
-                  )
-                : Padding(
-                    padding: EdgeInsets.only(
-                        bottom: state.newOrders!.length - 1 == index &&
-                                !state.newOrdesRefreshLoading
-                            ? 100
-                            : 0),
-                    child: OrdersListTileHome(
-                        orderDetail: state.newOrders![index],
-                        showExpansion: true),
-                  ),
+            itemBuilder: (context, index) {
+              if (len < 5 && !state.newOrdesRefreshLoading) {
+                if (index < len) {
+                  return OrdersListTileHome(
+                      orderDetail: state.newOrders![index],
+                      showExpansion: true);
+                } else {
+                  return SizedBox(height: 500, width: sWidth);
+                }
+              }
+              return state.newOrders!.length <= index 
+                  ? Padding(
+                      padding: EdgeInsets.only(
+                          bottom:index==len? 100:0, left: 20, right: 20),
+                      child: ShimmerLoader(
+                          itemCount: 1, height: 150, width: sWidth),
+                    )
+                  : Padding(
+                      padding: EdgeInsets.only(
+                          bottom: state.newOrders!.length - 1 == index &&
+                                  !state.newOrdesRefreshLoading
+                              ? 100
+                              : 0),
+                      child: OrdersListTileHome(
+                          orderDetail: state.newOrders![index],
+                          showExpansion: true),
+                    );
+            },
           );
         } else {
           // return const Center(child: Text('You have no new orders'));

@@ -2,6 +2,7 @@ import 'package:bechdu_partner/application/business_logic/order/orders/orders_bl
 import 'package:bechdu_partner/application/business_logic/pickup_partner/pickup_partner_bloc.dart';
 import 'package:bechdu_partner/application/presentation/routes/routes.dart';
 import 'package:bechdu_partner/application/presentation/screens/home/widgets/custom_search_field_home.dart';
+import 'package:bechdu_partner/application/presentation/utils/animations/shriking_animation.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:flutter/material.dart';
@@ -64,11 +65,13 @@ class HomeScreenAppBar extends StatelessWidget {
                                                 color: kWhite),
                                           ),
                                           kWidth5,
-                                          CircleAvatar(
-                                            radius: sWidth * 0.04,
-                                            backgroundColor: kBluePrimary,
-                                            backgroundImage:
-                                                const AssetImage(iconNottoCoin),
+                                          AnimatedGrowShrinkContainer(
+                                            child: CircleAvatar(
+                                              radius: sWidth * 0.04,
+                                              backgroundColor: kBluePrimary,
+                                              backgroundImage:
+                                                  const AssetImage(iconNottoCoin),
+                                            ),
                                           )
                                         ],
                                       ),

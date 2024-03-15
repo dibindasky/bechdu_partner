@@ -55,6 +55,14 @@ class ScreenSettings extends StatelessWidget {
                 title: Text('Share', style: textHeadRegular2),
               ),
               const Divider(),
+              ListTile(
+                leading: const CircleAvatar(
+                  backgroundColor: kWhite,
+                  child: Icon(Icons.person_off_outlined),
+                ),
+                title: Text('Delete account', style: textHeadRegular2),
+              ),
+              const Divider(),
               kHeight50,
               Text('version 1.0.0',
                   style: textHeadMedium1.copyWith(color: kGreyLight))
