@@ -39,6 +39,7 @@ class PickupPartnerBloc extends Bloc<PickupPartnerEvent, PickupPartnerState> {
         partnerAddingLoader: true,
         message: null,
         hasError: false,
+        popOrderScreen: false,
         pickupPersonAdded: false,
         orderAssigned: false,
         orderDeAssigned: false));
@@ -71,6 +72,7 @@ class PickupPartnerBloc extends Bloc<PickupPartnerEvent, PickupPartnerState> {
         isLoading: true,
         message: null,
         hasError: false,
+        popOrderScreen: false,
         pickupPersonAdded: false,
         orderAssigned: false,
         orderDeAssigned: false));
@@ -94,6 +96,7 @@ class PickupPartnerBloc extends Bloc<PickupPartnerEvent, PickupPartnerState> {
         isLoading: true,
         message: null,
         hasError: false,
+        popOrderScreen: false,
         pickupPersonAdded: false,
         orderAssigned: false,
         orderDeAssigned: false));
@@ -118,6 +121,7 @@ class PickupPartnerBloc extends Bloc<PickupPartnerEvent, PickupPartnerState> {
     emit(state.copyWith(
         isLoading: true,
         message: null,
+        popOrderScreen: false,
         hasError: false,
         pickupPersonAdded: false,
         orderAssigned: false,
@@ -143,6 +147,7 @@ class PickupPartnerBloc extends Bloc<PickupPartnerEvent, PickupPartnerState> {
     emit(state.copyWith(
         isLoading: true,
         message: null,
+        popOrderScreen: false,
         hasError: false,
         orderDeAssigned: false,
         orderAssigned: false,
@@ -166,6 +171,7 @@ class PickupPartnerBloc extends Bloc<PickupPartnerEvent, PickupPartnerState> {
       AssignOrderToPickupPartner event, emit) async {
     emit(state.copyWith(
         isLoading: true,
+        popOrderScreen: false,
         assigningOrderLoader: true,
         orderAssigned: false,
         orderDeAssigned: false,
@@ -176,6 +182,7 @@ class PickupPartnerBloc extends Bloc<PickupPartnerEvent, PickupPartnerState> {
     if (phone == null) {
       return emit(state.copyWith(
           isLoading: false,
+          popOrderScreen: true,
           hasError: true,
           message: 'failed to connect, please try again'));
     }
@@ -186,6 +193,7 @@ class PickupPartnerBloc extends Bloc<PickupPartnerEvent, PickupPartnerState> {
             isLoading: false,
             hasError: true,
             message: l.message,
+            popOrderScreen: true,
             assigningOrderLoader: false)), (r) {
       emit(state.copyWith(
           isLoading: false,
@@ -203,6 +211,7 @@ class PickupPartnerBloc extends Bloc<PickupPartnerEvent, PickupPartnerState> {
         isLoading: true,
         assigningOrderLoader: true,
         orderDeAssigned: false,
+        popOrderScreen: false,
         message: null,
         hasError: false,
         pickupPersonAdded: false));
@@ -210,6 +219,7 @@ class PickupPartnerBloc extends Bloc<PickupPartnerEvent, PickupPartnerState> {
     if (phone == null) {
       return emit(state.copyWith(
           isLoading: false,
+          popOrderScreen: true,
           hasError: true,
           message: 'failed to connect, please try again'));
     }
@@ -219,6 +229,7 @@ class PickupPartnerBloc extends Bloc<PickupPartnerEvent, PickupPartnerState> {
         (l) => emit(state.copyWith(
             isLoading: false,
             hasError: true,
+            popOrderScreen: true,
             message: l.message,
             assigningOrderLoader: false)), (r) {
       emit(state.copyWith(

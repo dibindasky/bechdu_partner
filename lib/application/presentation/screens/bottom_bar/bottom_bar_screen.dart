@@ -13,11 +13,7 @@ class ScreenBottomBar extends StatelessWidget {
     sizeFinder(context);
     return const Scaffold(
       body: Stack(
-        children: [
-          ScreenHome(),
-          CustomBottomBar(),
-          ToggleButtonOrders()
-        ],
+        children: [ScreenHome(), CustomBottomBar(), ToggleButtonOrders()],
       ),
     );
   }

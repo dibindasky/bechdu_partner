@@ -1520,6 +1520,7 @@ mixin _$PickupPartnerState {
   bool get assigningOrderLoader => throw _privateConstructorUsedError;
   bool get orderAssigned => throw _privateConstructorUsedError;
   bool get orderDeAssigned => throw _privateConstructorUsedError;
+  bool get popOrderScreen => throw _privateConstructorUsedError;
   PickUpPerson? get selectedPickup => throw _privateConstructorUsedError;
   List<PickUpPerson>? get pickUpPersons => throw _privateConstructorUsedError;
   PartnerProfile? get partnerProfile => throw _privateConstructorUsedError;
@@ -1544,6 +1545,7 @@ abstract class $PickupPartnerStateCopyWith<$Res> {
       bool assigningOrderLoader,
       bool orderAssigned,
       bool orderDeAssigned,
+      bool popOrderScreen,
       PickUpPerson? selectedPickup,
       List<PickUpPerson>? pickUpPersons,
       PartnerProfile? partnerProfile,
@@ -1570,6 +1572,7 @@ class _$PickupPartnerStateCopyWithImpl<$Res, $Val extends PickupPartnerState>
     Object? assigningOrderLoader = null,
     Object? orderAssigned = null,
     Object? orderDeAssigned = null,
+    Object? popOrderScreen = null,
     Object? selectedPickup = freezed,
     Object? pickUpPersons = freezed,
     Object? partnerProfile = freezed,
@@ -1603,6 +1606,10 @@ class _$PickupPartnerStateCopyWithImpl<$Res, $Val extends PickupPartnerState>
       orderDeAssigned: null == orderDeAssigned
           ? _value.orderDeAssigned
           : orderDeAssigned // ignore: cast_nullable_to_non_nullable
+              as bool,
+      popOrderScreen: null == popOrderScreen
+          ? _value.popOrderScreen
+          : popOrderScreen // ignore: cast_nullable_to_non_nullable
               as bool,
       selectedPickup: freezed == selectedPickup
           ? _value.selectedPickup
@@ -1640,6 +1647,7 @@ abstract class _$$InitialImplCopyWith<$Res>
       bool assigningOrderLoader,
       bool orderAssigned,
       bool orderDeAssigned,
+      bool popOrderScreen,
       PickUpPerson? selectedPickup,
       List<PickUpPerson>? pickUpPersons,
       PartnerProfile? partnerProfile,
@@ -1664,6 +1672,7 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? assigningOrderLoader = null,
     Object? orderAssigned = null,
     Object? orderDeAssigned = null,
+    Object? popOrderScreen = null,
     Object? selectedPickup = freezed,
     Object? pickUpPersons = freezed,
     Object? partnerProfile = freezed,
@@ -1698,6 +1707,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.orderDeAssigned
           : orderDeAssigned // ignore: cast_nullable_to_non_nullable
               as bool,
+      popOrderScreen: null == popOrderScreen
+          ? _value.popOrderScreen
+          : popOrderScreen // ignore: cast_nullable_to_non_nullable
+              as bool,
       selectedPickup: freezed == selectedPickup
           ? _value.selectedPickup
           : selectedPickup // ignore: cast_nullable_to_non_nullable
@@ -1729,6 +1742,7 @@ class _$InitialImpl implements _Initial {
       required this.assigningOrderLoader,
       required this.orderAssigned,
       required this.orderDeAssigned,
+      required this.popOrderScreen,
       this.selectedPickup,
       final List<PickUpPerson>? pickUpPersons,
       this.partnerProfile,
@@ -1750,6 +1764,8 @@ class _$InitialImpl implements _Initial {
   @override
   final bool orderDeAssigned;
   @override
+  final bool popOrderScreen;
+  @override
   final PickUpPerson? selectedPickup;
   final List<PickUpPerson>? _pickUpPersons;
   @override
@@ -1768,7 +1784,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'PickupPartnerState(isLoading: $isLoading, hasError: $hasError, partnerAddingLoader: $partnerAddingLoader, pickupPersonAdded: $pickupPersonAdded, assigningOrderLoader: $assigningOrderLoader, orderAssigned: $orderAssigned, orderDeAssigned: $orderDeAssigned, selectedPickup: $selectedPickup, pickUpPersons: $pickUpPersons, partnerProfile: $partnerProfile, message: $message)';
+    return 'PickupPartnerState(isLoading: $isLoading, hasError: $hasError, partnerAddingLoader: $partnerAddingLoader, pickupPersonAdded: $pickupPersonAdded, assigningOrderLoader: $assigningOrderLoader, orderAssigned: $orderAssigned, orderDeAssigned: $orderDeAssigned, popOrderScreen: $popOrderScreen, selectedPickup: $selectedPickup, pickUpPersons: $pickUpPersons, partnerProfile: $partnerProfile, message: $message)';
   }
 
   @override
@@ -1790,6 +1806,8 @@ class _$InitialImpl implements _Initial {
                 other.orderAssigned == orderAssigned) &&
             (identical(other.orderDeAssigned, orderDeAssigned) ||
                 other.orderDeAssigned == orderDeAssigned) &&
+            (identical(other.popOrderScreen, popOrderScreen) ||
+                other.popOrderScreen == popOrderScreen) &&
             (identical(other.selectedPickup, selectedPickup) ||
                 other.selectedPickup == selectedPickup) &&
             const DeepCollectionEquality()
@@ -1809,6 +1827,7 @@ class _$InitialImpl implements _Initial {
       assigningOrderLoader,
       orderAssigned,
       orderDeAssigned,
+      popOrderScreen,
       selectedPickup,
       const DeepCollectionEquality().hash(_pickUpPersons),
       partnerProfile,
@@ -1830,6 +1849,7 @@ abstract class _Initial implements PickupPartnerState {
       required final bool assigningOrderLoader,
       required final bool orderAssigned,
       required final bool orderDeAssigned,
+      required final bool popOrderScreen,
       final PickUpPerson? selectedPickup,
       final List<PickUpPerson>? pickUpPersons,
       final PartnerProfile? partnerProfile,
@@ -1849,6 +1869,8 @@ abstract class _Initial implements PickupPartnerState {
   bool get orderAssigned;
   @override
   bool get orderDeAssigned;
+  @override
+  bool get popOrderScreen;
   @override
   PickUpPerson? get selectedPickup;
   @override

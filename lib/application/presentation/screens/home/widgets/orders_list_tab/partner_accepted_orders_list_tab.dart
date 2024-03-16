@@ -36,6 +36,11 @@ class _OrdersHistoryListState extends State<OrdersHistoryList> {
 
   @override
   Widget build(BuildContext context) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+      context
+          .read<OrdersBloc>()
+          .add(const OrdersEvent.getPartnerOrders(call: false));
+    });
     return BlocBuilder<OrdersBloc, OrdersState>(builder: (context, state) {
       if (state.isLoading) {
         return const Center(
@@ -77,7 +82,8 @@ class _OrdersHistoryListState extends State<OrdersHistoryList> {
                         : 0),
                 child: OrdersListTileHome(
                     orderDetail: state.partnerOrders![index],
-                    showExpansion: false),
+                    showExpansion:
+                        state.partnerOrders![index].status == 'cancelled'),
               );
             },
           );

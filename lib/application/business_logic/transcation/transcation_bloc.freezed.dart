@@ -33,6 +33,7 @@ mixin _$TranscationEvent {
     required TResult Function() uploadReciept,
     required TResult Function(int gst, int coinValue)
         makeManuelTranscationRequest,
+    required TResult Function(EpayModel epayModel) makeEpaymetns,
     required TResult Function() reset,
   }) =>
       throw _privateConstructorUsedError;
@@ -51,6 +52,7 @@ mixin _$TranscationEvent {
     TResult? Function()? getManuelTransactionsNext,
     TResult? Function()? uploadReciept,
     TResult? Function(int gst, int coinValue)? makeManuelTranscationRequest,
+    TResult? Function(EpayModel epayModel)? makeEpaymetns,
     TResult? Function()? reset,
   }) =>
       throw _privateConstructorUsedError;
@@ -69,6 +71,7 @@ mixin _$TranscationEvent {
     TResult Function()? getManuelTransactionsNext,
     TResult Function()? uploadReciept,
     TResult Function(int gst, int coinValue)? makeManuelTranscationRequest,
+    TResult Function(EpayModel epayModel)? makeEpaymetns,
     TResult Function()? reset,
     required TResult orElse(),
   }) =>
@@ -95,6 +98,7 @@ mixin _$TranscationEvent {
     required TResult Function(UploadReciept value) uploadReciept,
     required TResult Function(MakeManuelTranscationRequest value)
         makeManuelTranscationRequest,
+    required TResult Function(MakeEpaymetns value) makeEpaymetns,
     required TResult Function(Reset value) reset,
   }) =>
       throw _privateConstructorUsedError;
@@ -117,6 +121,7 @@ mixin _$TranscationEvent {
     TResult? Function(UploadReciept value)? uploadReciept,
     TResult? Function(MakeManuelTranscationRequest value)?
         makeManuelTranscationRequest,
+    TResult? Function(MakeEpaymetns value)? makeEpaymetns,
     TResult? Function(Reset value)? reset,
   }) =>
       throw _privateConstructorUsedError;
@@ -139,6 +144,7 @@ mixin _$TranscationEvent {
     TResult Function(UploadReciept value)? uploadReciept,
     TResult Function(MakeManuelTranscationRequest value)?
         makeManuelTranscationRequest,
+    TResult Function(MakeEpaymetns value)? makeEpaymetns,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) =>
@@ -216,6 +222,7 @@ class _$ChangeTabImpl implements ChangeTab {
     required TResult Function() uploadReciept,
     required TResult Function(int gst, int coinValue)
         makeManuelTranscationRequest,
+    required TResult Function(EpayModel epayModel) makeEpaymetns,
     required TResult Function() reset,
   }) {
     return changeTab();
@@ -237,6 +244,7 @@ class _$ChangeTabImpl implements ChangeTab {
     TResult? Function()? getManuelTransactionsNext,
     TResult? Function()? uploadReciept,
     TResult? Function(int gst, int coinValue)? makeManuelTranscationRequest,
+    TResult? Function(EpayModel epayModel)? makeEpaymetns,
     TResult? Function()? reset,
   }) {
     return changeTab?.call();
@@ -258,6 +266,7 @@ class _$ChangeTabImpl implements ChangeTab {
     TResult Function()? getManuelTransactionsNext,
     TResult Function()? uploadReciept,
     TResult Function(int gst, int coinValue)? makeManuelTranscationRequest,
+    TResult Function(EpayModel epayModel)? makeEpaymetns,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -290,6 +299,7 @@ class _$ChangeTabImpl implements ChangeTab {
     required TResult Function(UploadReciept value) uploadReciept,
     required TResult Function(MakeManuelTranscationRequest value)
         makeManuelTranscationRequest,
+    required TResult Function(MakeEpaymetns value) makeEpaymetns,
     required TResult Function(Reset value) reset,
   }) {
     return changeTab(this);
@@ -315,6 +325,7 @@ class _$ChangeTabImpl implements ChangeTab {
     TResult? Function(UploadReciept value)? uploadReciept,
     TResult? Function(MakeManuelTranscationRequest value)?
         makeManuelTranscationRequest,
+    TResult? Function(MakeEpaymetns value)? makeEpaymetns,
     TResult? Function(Reset value)? reset,
   }) {
     return changeTab?.call(this);
@@ -340,6 +351,7 @@ class _$ChangeTabImpl implements ChangeTab {
     TResult Function(UploadReciept value)? uploadReciept,
     TResult Function(MakeManuelTranscationRequest value)?
         makeManuelTranscationRequest,
+    TResult Function(MakeEpaymetns value)? makeEpaymetns,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -407,6 +419,7 @@ class _$AgreePolicyImpl implements AgreePolicy {
     required TResult Function() uploadReciept,
     required TResult Function(int gst, int coinValue)
         makeManuelTranscationRequest,
+    required TResult Function(EpayModel epayModel) makeEpaymetns,
     required TResult Function() reset,
   }) {
     return agreePolicy();
@@ -428,6 +441,7 @@ class _$AgreePolicyImpl implements AgreePolicy {
     TResult? Function()? getManuelTransactionsNext,
     TResult? Function()? uploadReciept,
     TResult? Function(int gst, int coinValue)? makeManuelTranscationRequest,
+    TResult? Function(EpayModel epayModel)? makeEpaymetns,
     TResult? Function()? reset,
   }) {
     return agreePolicy?.call();
@@ -449,6 +463,7 @@ class _$AgreePolicyImpl implements AgreePolicy {
     TResult Function()? getManuelTransactionsNext,
     TResult Function()? uploadReciept,
     TResult Function(int gst, int coinValue)? makeManuelTranscationRequest,
+    TResult Function(EpayModel epayModel)? makeEpaymetns,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -481,6 +496,7 @@ class _$AgreePolicyImpl implements AgreePolicy {
     required TResult Function(UploadReciept value) uploadReciept,
     required TResult Function(MakeManuelTranscationRequest value)
         makeManuelTranscationRequest,
+    required TResult Function(MakeEpaymetns value) makeEpaymetns,
     required TResult Function(Reset value) reset,
   }) {
     return agreePolicy(this);
@@ -506,6 +522,7 @@ class _$AgreePolicyImpl implements AgreePolicy {
     TResult? Function(UploadReciept value)? uploadReciept,
     TResult? Function(MakeManuelTranscationRequest value)?
         makeManuelTranscationRequest,
+    TResult? Function(MakeEpaymetns value)? makeEpaymetns,
     TResult? Function(Reset value)? reset,
   }) {
     return agreePolicy?.call(this);
@@ -531,6 +548,7 @@ class _$AgreePolicyImpl implements AgreePolicy {
     TResult Function(UploadReciept value)? uploadReciept,
     TResult Function(MakeManuelTranscationRequest value)?
         makeManuelTranscationRequest,
+    TResult Function(MakeEpaymetns value)? makeEpaymetns,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -627,6 +645,7 @@ class _$GetCreditedTranscationsImpl implements GetCreditedTranscations {
     required TResult Function() uploadReciept,
     required TResult Function(int gst, int coinValue)
         makeManuelTranscationRequest,
+    required TResult Function(EpayModel epayModel) makeEpaymetns,
     required TResult Function() reset,
   }) {
     return getCreditedTranscations(call);
@@ -648,6 +667,7 @@ class _$GetCreditedTranscationsImpl implements GetCreditedTranscations {
     TResult? Function()? getManuelTransactionsNext,
     TResult? Function()? uploadReciept,
     TResult? Function(int gst, int coinValue)? makeManuelTranscationRequest,
+    TResult? Function(EpayModel epayModel)? makeEpaymetns,
     TResult? Function()? reset,
   }) {
     return getCreditedTranscations?.call(call);
@@ -669,6 +689,7 @@ class _$GetCreditedTranscationsImpl implements GetCreditedTranscations {
     TResult Function()? getManuelTransactionsNext,
     TResult Function()? uploadReciept,
     TResult Function(int gst, int coinValue)? makeManuelTranscationRequest,
+    TResult Function(EpayModel epayModel)? makeEpaymetns,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -701,6 +722,7 @@ class _$GetCreditedTranscationsImpl implements GetCreditedTranscations {
     required TResult Function(UploadReciept value) uploadReciept,
     required TResult Function(MakeManuelTranscationRequest value)
         makeManuelTranscationRequest,
+    required TResult Function(MakeEpaymetns value) makeEpaymetns,
     required TResult Function(Reset value) reset,
   }) {
     return getCreditedTranscations(this);
@@ -726,6 +748,7 @@ class _$GetCreditedTranscationsImpl implements GetCreditedTranscations {
     TResult? Function(UploadReciept value)? uploadReciept,
     TResult? Function(MakeManuelTranscationRequest value)?
         makeManuelTranscationRequest,
+    TResult? Function(MakeEpaymetns value)? makeEpaymetns,
     TResult? Function(Reset value)? reset,
   }) {
     return getCreditedTranscations?.call(this);
@@ -751,6 +774,7 @@ class _$GetCreditedTranscationsImpl implements GetCreditedTranscations {
     TResult Function(UploadReciept value)? uploadReciept,
     TResult Function(MakeManuelTranscationRequest value)?
         makeManuelTranscationRequest,
+    TResult Function(MakeEpaymetns value)? makeEpaymetns,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -853,6 +877,7 @@ class _$GetDebitedTranscationsImpl implements GetDebitedTranscations {
     required TResult Function() uploadReciept,
     required TResult Function(int gst, int coinValue)
         makeManuelTranscationRequest,
+    required TResult Function(EpayModel epayModel) makeEpaymetns,
     required TResult Function() reset,
   }) {
     return getDebitedTranscations(call);
@@ -874,6 +899,7 @@ class _$GetDebitedTranscationsImpl implements GetDebitedTranscations {
     TResult? Function()? getManuelTransactionsNext,
     TResult? Function()? uploadReciept,
     TResult? Function(int gst, int coinValue)? makeManuelTranscationRequest,
+    TResult? Function(EpayModel epayModel)? makeEpaymetns,
     TResult? Function()? reset,
   }) {
     return getDebitedTranscations?.call(call);
@@ -895,6 +921,7 @@ class _$GetDebitedTranscationsImpl implements GetDebitedTranscations {
     TResult Function()? getManuelTransactionsNext,
     TResult Function()? uploadReciept,
     TResult Function(int gst, int coinValue)? makeManuelTranscationRequest,
+    TResult Function(EpayModel epayModel)? makeEpaymetns,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -927,6 +954,7 @@ class _$GetDebitedTranscationsImpl implements GetDebitedTranscations {
     required TResult Function(UploadReciept value) uploadReciept,
     required TResult Function(MakeManuelTranscationRequest value)
         makeManuelTranscationRequest,
+    required TResult Function(MakeEpaymetns value) makeEpaymetns,
     required TResult Function(Reset value) reset,
   }) {
     return getDebitedTranscations(this);
@@ -952,6 +980,7 @@ class _$GetDebitedTranscationsImpl implements GetDebitedTranscations {
     TResult? Function(UploadReciept value)? uploadReciept,
     TResult? Function(MakeManuelTranscationRequest value)?
         makeManuelTranscationRequest,
+    TResult? Function(MakeEpaymetns value)? makeEpaymetns,
     TResult? Function(Reset value)? reset,
   }) {
     return getDebitedTranscations?.call(this);
@@ -977,6 +1006,7 @@ class _$GetDebitedTranscationsImpl implements GetDebitedTranscations {
     TResult Function(UploadReciept value)? uploadReciept,
     TResult Function(MakeManuelTranscationRequest value)?
         makeManuelTranscationRequest,
+    TResult Function(MakeEpaymetns value)? makeEpaymetns,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -1055,6 +1085,7 @@ class _$GetCreditedTranscationsNextPageImpl
     required TResult Function() uploadReciept,
     required TResult Function(int gst, int coinValue)
         makeManuelTranscationRequest,
+    required TResult Function(EpayModel epayModel) makeEpaymetns,
     required TResult Function() reset,
   }) {
     return getCreditedTranscationsNextPage();
@@ -1076,6 +1107,7 @@ class _$GetCreditedTranscationsNextPageImpl
     TResult? Function()? getManuelTransactionsNext,
     TResult? Function()? uploadReciept,
     TResult? Function(int gst, int coinValue)? makeManuelTranscationRequest,
+    TResult? Function(EpayModel epayModel)? makeEpaymetns,
     TResult? Function()? reset,
   }) {
     return getCreditedTranscationsNextPage?.call();
@@ -1097,6 +1129,7 @@ class _$GetCreditedTranscationsNextPageImpl
     TResult Function()? getManuelTransactionsNext,
     TResult Function()? uploadReciept,
     TResult Function(int gst, int coinValue)? makeManuelTranscationRequest,
+    TResult Function(EpayModel epayModel)? makeEpaymetns,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -1129,6 +1162,7 @@ class _$GetCreditedTranscationsNextPageImpl
     required TResult Function(UploadReciept value) uploadReciept,
     required TResult Function(MakeManuelTranscationRequest value)
         makeManuelTranscationRequest,
+    required TResult Function(MakeEpaymetns value) makeEpaymetns,
     required TResult Function(Reset value) reset,
   }) {
     return getCreditedTranscationsNextPage(this);
@@ -1154,6 +1188,7 @@ class _$GetCreditedTranscationsNextPageImpl
     TResult? Function(UploadReciept value)? uploadReciept,
     TResult? Function(MakeManuelTranscationRequest value)?
         makeManuelTranscationRequest,
+    TResult? Function(MakeEpaymetns value)? makeEpaymetns,
     TResult? Function(Reset value)? reset,
   }) {
     return getCreditedTranscationsNextPage?.call(this);
@@ -1179,6 +1214,7 @@ class _$GetCreditedTranscationsNextPageImpl
     TResult Function(UploadReciept value)? uploadReciept,
     TResult Function(MakeManuelTranscationRequest value)?
         makeManuelTranscationRequest,
+    TResult Function(MakeEpaymetns value)? makeEpaymetns,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -1252,6 +1288,7 @@ class _$GetDebitedTranscationsNextPageImpl
     required TResult Function() uploadReciept,
     required TResult Function(int gst, int coinValue)
         makeManuelTranscationRequest,
+    required TResult Function(EpayModel epayModel) makeEpaymetns,
     required TResult Function() reset,
   }) {
     return getDebitedTranscationsNextPage();
@@ -1273,6 +1310,7 @@ class _$GetDebitedTranscationsNextPageImpl
     TResult? Function()? getManuelTransactionsNext,
     TResult? Function()? uploadReciept,
     TResult? Function(int gst, int coinValue)? makeManuelTranscationRequest,
+    TResult? Function(EpayModel epayModel)? makeEpaymetns,
     TResult? Function()? reset,
   }) {
     return getDebitedTranscationsNextPage?.call();
@@ -1294,6 +1332,7 @@ class _$GetDebitedTranscationsNextPageImpl
     TResult Function()? getManuelTransactionsNext,
     TResult Function()? uploadReciept,
     TResult Function(int gst, int coinValue)? makeManuelTranscationRequest,
+    TResult Function(EpayModel epayModel)? makeEpaymetns,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -1326,6 +1365,7 @@ class _$GetDebitedTranscationsNextPageImpl
     required TResult Function(UploadReciept value) uploadReciept,
     required TResult Function(MakeManuelTranscationRequest value)
         makeManuelTranscationRequest,
+    required TResult Function(MakeEpaymetns value) makeEpaymetns,
     required TResult Function(Reset value) reset,
   }) {
     return getDebitedTranscationsNextPage(this);
@@ -1351,6 +1391,7 @@ class _$GetDebitedTranscationsNextPageImpl
     TResult? Function(UploadReciept value)? uploadReciept,
     TResult? Function(MakeManuelTranscationRequest value)?
         makeManuelTranscationRequest,
+    TResult? Function(MakeEpaymetns value)? makeEpaymetns,
     TResult? Function(Reset value)? reset,
   }) {
     return getDebitedTranscationsNextPage?.call(this);
@@ -1376,6 +1417,7 @@ class _$GetDebitedTranscationsNextPageImpl
     TResult Function(UploadReciept value)? uploadReciept,
     TResult Function(MakeManuelTranscationRequest value)?
         makeManuelTranscationRequest,
+    TResult Function(MakeEpaymetns value)? makeEpaymetns,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -1471,6 +1513,7 @@ class _$DownloadInvoiceImpl implements DownloadInvoice {
     required TResult Function() uploadReciept,
     required TResult Function(int gst, int coinValue)
         makeManuelTranscationRequest,
+    required TResult Function(EpayModel epayModel) makeEpaymetns,
     required TResult Function() reset,
   }) {
     return downloadInvoice(id);
@@ -1492,6 +1535,7 @@ class _$DownloadInvoiceImpl implements DownloadInvoice {
     TResult? Function()? getManuelTransactionsNext,
     TResult? Function()? uploadReciept,
     TResult? Function(int gst, int coinValue)? makeManuelTranscationRequest,
+    TResult? Function(EpayModel epayModel)? makeEpaymetns,
     TResult? Function()? reset,
   }) {
     return downloadInvoice?.call(id);
@@ -1513,6 +1557,7 @@ class _$DownloadInvoiceImpl implements DownloadInvoice {
     TResult Function()? getManuelTransactionsNext,
     TResult Function()? uploadReciept,
     TResult Function(int gst, int coinValue)? makeManuelTranscationRequest,
+    TResult Function(EpayModel epayModel)? makeEpaymetns,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -1545,6 +1590,7 @@ class _$DownloadInvoiceImpl implements DownloadInvoice {
     required TResult Function(UploadReciept value) uploadReciept,
     required TResult Function(MakeManuelTranscationRequest value)
         makeManuelTranscationRequest,
+    required TResult Function(MakeEpaymetns value) makeEpaymetns,
     required TResult Function(Reset value) reset,
   }) {
     return downloadInvoice(this);
@@ -1570,6 +1616,7 @@ class _$DownloadInvoiceImpl implements DownloadInvoice {
     TResult? Function(UploadReciept value)? uploadReciept,
     TResult? Function(MakeManuelTranscationRequest value)?
         makeManuelTranscationRequest,
+    TResult? Function(MakeEpaymetns value)? makeEpaymetns,
     TResult? Function(Reset value)? reset,
   }) {
     return downloadInvoice?.call(this);
@@ -1595,6 +1642,7 @@ class _$DownloadInvoiceImpl implements DownloadInvoice {
     TResult Function(UploadReciept value)? uploadReciept,
     TResult Function(MakeManuelTranscationRequest value)?
         makeManuelTranscationRequest,
+    TResult Function(MakeEpaymetns value)? makeEpaymetns,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -1694,6 +1742,7 @@ class _$MakePdfImpl implements MakePdf {
     required TResult Function() uploadReciept,
     required TResult Function(int gst, int coinValue)
         makeManuelTranscationRequest,
+    required TResult Function(EpayModel epayModel) makeEpaymetns,
     required TResult Function() reset,
   }) {
     return makePdf(buffer);
@@ -1715,6 +1764,7 @@ class _$MakePdfImpl implements MakePdf {
     TResult? Function()? getManuelTransactionsNext,
     TResult? Function()? uploadReciept,
     TResult? Function(int gst, int coinValue)? makeManuelTranscationRequest,
+    TResult? Function(EpayModel epayModel)? makeEpaymetns,
     TResult? Function()? reset,
   }) {
     return makePdf?.call(buffer);
@@ -1736,6 +1786,7 @@ class _$MakePdfImpl implements MakePdf {
     TResult Function()? getManuelTransactionsNext,
     TResult Function()? uploadReciept,
     TResult Function(int gst, int coinValue)? makeManuelTranscationRequest,
+    TResult Function(EpayModel epayModel)? makeEpaymetns,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -1768,6 +1819,7 @@ class _$MakePdfImpl implements MakePdf {
     required TResult Function(UploadReciept value) uploadReciept,
     required TResult Function(MakeManuelTranscationRequest value)
         makeManuelTranscationRequest,
+    required TResult Function(MakeEpaymetns value) makeEpaymetns,
     required TResult Function(Reset value) reset,
   }) {
     return makePdf(this);
@@ -1793,6 +1845,7 @@ class _$MakePdfImpl implements MakePdf {
     TResult? Function(UploadReciept value)? uploadReciept,
     TResult? Function(MakeManuelTranscationRequest value)?
         makeManuelTranscationRequest,
+    TResult? Function(MakeEpaymetns value)? makeEpaymetns,
     TResult? Function(Reset value)? reset,
   }) {
     return makePdf?.call(this);
@@ -1818,6 +1871,7 @@ class _$MakePdfImpl implements MakePdf {
     TResult Function(UploadReciept value)? uploadReciept,
     TResult Function(MakeManuelTranscationRequest value)?
         makeManuelTranscationRequest,
+    TResult Function(MakeEpaymetns value)? makeEpaymetns,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -1936,6 +1990,7 @@ class _$CalculateAmountImpl implements CalculateAmount {
     required TResult Function() uploadReciept,
     required TResult Function(int gst, int coinValue)
         makeManuelTranscationRequest,
+    required TResult Function(EpayModel epayModel) makeEpaymetns,
     required TResult Function() reset,
   }) {
     return calculateAmount(coins, coinValue, gstValue);
@@ -1957,6 +2012,7 @@ class _$CalculateAmountImpl implements CalculateAmount {
     TResult? Function()? getManuelTransactionsNext,
     TResult? Function()? uploadReciept,
     TResult? Function(int gst, int coinValue)? makeManuelTranscationRequest,
+    TResult? Function(EpayModel epayModel)? makeEpaymetns,
     TResult? Function()? reset,
   }) {
     return calculateAmount?.call(coins, coinValue, gstValue);
@@ -1978,6 +2034,7 @@ class _$CalculateAmountImpl implements CalculateAmount {
     TResult Function()? getManuelTransactionsNext,
     TResult Function()? uploadReciept,
     TResult Function(int gst, int coinValue)? makeManuelTranscationRequest,
+    TResult Function(EpayModel epayModel)? makeEpaymetns,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -2010,6 +2067,7 @@ class _$CalculateAmountImpl implements CalculateAmount {
     required TResult Function(UploadReciept value) uploadReciept,
     required TResult Function(MakeManuelTranscationRequest value)
         makeManuelTranscationRequest,
+    required TResult Function(MakeEpaymetns value) makeEpaymetns,
     required TResult Function(Reset value) reset,
   }) {
     return calculateAmount(this);
@@ -2035,6 +2093,7 @@ class _$CalculateAmountImpl implements CalculateAmount {
     TResult? Function(UploadReciept value)? uploadReciept,
     TResult? Function(MakeManuelTranscationRequest value)?
         makeManuelTranscationRequest,
+    TResult? Function(MakeEpaymetns value)? makeEpaymetns,
     TResult? Function(Reset value)? reset,
   }) {
     return calculateAmount?.call(this);
@@ -2060,6 +2119,7 @@ class _$CalculateAmountImpl implements CalculateAmount {
     TResult Function(UploadReciept value)? uploadReciept,
     TResult Function(MakeManuelTranscationRequest value)?
         makeManuelTranscationRequest,
+    TResult Function(MakeEpaymetns value)? makeEpaymetns,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -2165,6 +2225,7 @@ class _$GetManuelTransactionsImpl implements GetManuelTransactions {
     required TResult Function() uploadReciept,
     required TResult Function(int gst, int coinValue)
         makeManuelTranscationRequest,
+    required TResult Function(EpayModel epayModel) makeEpaymetns,
     required TResult Function() reset,
   }) {
     return getManuelTransactions(call);
@@ -2186,6 +2247,7 @@ class _$GetManuelTransactionsImpl implements GetManuelTransactions {
     TResult? Function()? getManuelTransactionsNext,
     TResult? Function()? uploadReciept,
     TResult? Function(int gst, int coinValue)? makeManuelTranscationRequest,
+    TResult? Function(EpayModel epayModel)? makeEpaymetns,
     TResult? Function()? reset,
   }) {
     return getManuelTransactions?.call(call);
@@ -2207,6 +2269,7 @@ class _$GetManuelTransactionsImpl implements GetManuelTransactions {
     TResult Function()? getManuelTransactionsNext,
     TResult Function()? uploadReciept,
     TResult Function(int gst, int coinValue)? makeManuelTranscationRequest,
+    TResult Function(EpayModel epayModel)? makeEpaymetns,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -2239,6 +2302,7 @@ class _$GetManuelTransactionsImpl implements GetManuelTransactions {
     required TResult Function(UploadReciept value) uploadReciept,
     required TResult Function(MakeManuelTranscationRequest value)
         makeManuelTranscationRequest,
+    required TResult Function(MakeEpaymetns value) makeEpaymetns,
     required TResult Function(Reset value) reset,
   }) {
     return getManuelTransactions(this);
@@ -2264,6 +2328,7 @@ class _$GetManuelTransactionsImpl implements GetManuelTransactions {
     TResult? Function(UploadReciept value)? uploadReciept,
     TResult? Function(MakeManuelTranscationRequest value)?
         makeManuelTranscationRequest,
+    TResult? Function(MakeEpaymetns value)? makeEpaymetns,
     TResult? Function(Reset value)? reset,
   }) {
     return getManuelTransactions?.call(this);
@@ -2289,6 +2354,7 @@ class _$GetManuelTransactionsImpl implements GetManuelTransactions {
     TResult Function(UploadReciept value)? uploadReciept,
     TResult Function(MakeManuelTranscationRequest value)?
         makeManuelTranscationRequest,
+    TResult Function(MakeEpaymetns value)? makeEpaymetns,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -2366,6 +2432,7 @@ class _$GetManuelTransactionsNextImpl implements GetManuelTransactionsNext {
     required TResult Function() uploadReciept,
     required TResult Function(int gst, int coinValue)
         makeManuelTranscationRequest,
+    required TResult Function(EpayModel epayModel) makeEpaymetns,
     required TResult Function() reset,
   }) {
     return getManuelTransactionsNext();
@@ -2387,6 +2454,7 @@ class _$GetManuelTransactionsNextImpl implements GetManuelTransactionsNext {
     TResult? Function()? getManuelTransactionsNext,
     TResult? Function()? uploadReciept,
     TResult? Function(int gst, int coinValue)? makeManuelTranscationRequest,
+    TResult? Function(EpayModel epayModel)? makeEpaymetns,
     TResult? Function()? reset,
   }) {
     return getManuelTransactionsNext?.call();
@@ -2408,6 +2476,7 @@ class _$GetManuelTransactionsNextImpl implements GetManuelTransactionsNext {
     TResult Function()? getManuelTransactionsNext,
     TResult Function()? uploadReciept,
     TResult Function(int gst, int coinValue)? makeManuelTranscationRequest,
+    TResult Function(EpayModel epayModel)? makeEpaymetns,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -2440,6 +2509,7 @@ class _$GetManuelTransactionsNextImpl implements GetManuelTransactionsNext {
     required TResult Function(UploadReciept value) uploadReciept,
     required TResult Function(MakeManuelTranscationRequest value)
         makeManuelTranscationRequest,
+    required TResult Function(MakeEpaymetns value) makeEpaymetns,
     required TResult Function(Reset value) reset,
   }) {
     return getManuelTransactionsNext(this);
@@ -2465,6 +2535,7 @@ class _$GetManuelTransactionsNextImpl implements GetManuelTransactionsNext {
     TResult? Function(UploadReciept value)? uploadReciept,
     TResult? Function(MakeManuelTranscationRequest value)?
         makeManuelTranscationRequest,
+    TResult? Function(MakeEpaymetns value)? makeEpaymetns,
     TResult? Function(Reset value)? reset,
   }) {
     return getManuelTransactionsNext?.call(this);
@@ -2490,6 +2561,7 @@ class _$GetManuelTransactionsNextImpl implements GetManuelTransactionsNext {
     TResult Function(UploadReciept value)? uploadReciept,
     TResult Function(MakeManuelTranscationRequest value)?
         makeManuelTranscationRequest,
+    TResult Function(MakeEpaymetns value)? makeEpaymetns,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -2557,6 +2629,7 @@ class _$UploadRecieptImpl implements UploadReciept {
     required TResult Function() uploadReciept,
     required TResult Function(int gst, int coinValue)
         makeManuelTranscationRequest,
+    required TResult Function(EpayModel epayModel) makeEpaymetns,
     required TResult Function() reset,
   }) {
     return uploadReciept();
@@ -2578,6 +2651,7 @@ class _$UploadRecieptImpl implements UploadReciept {
     TResult? Function()? getManuelTransactionsNext,
     TResult? Function()? uploadReciept,
     TResult? Function(int gst, int coinValue)? makeManuelTranscationRequest,
+    TResult? Function(EpayModel epayModel)? makeEpaymetns,
     TResult? Function()? reset,
   }) {
     return uploadReciept?.call();
@@ -2599,6 +2673,7 @@ class _$UploadRecieptImpl implements UploadReciept {
     TResult Function()? getManuelTransactionsNext,
     TResult Function()? uploadReciept,
     TResult Function(int gst, int coinValue)? makeManuelTranscationRequest,
+    TResult Function(EpayModel epayModel)? makeEpaymetns,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -2631,6 +2706,7 @@ class _$UploadRecieptImpl implements UploadReciept {
     required TResult Function(UploadReciept value) uploadReciept,
     required TResult Function(MakeManuelTranscationRequest value)
         makeManuelTranscationRequest,
+    required TResult Function(MakeEpaymetns value) makeEpaymetns,
     required TResult Function(Reset value) reset,
   }) {
     return uploadReciept(this);
@@ -2656,6 +2732,7 @@ class _$UploadRecieptImpl implements UploadReciept {
     TResult? Function(UploadReciept value)? uploadReciept,
     TResult? Function(MakeManuelTranscationRequest value)?
         makeManuelTranscationRequest,
+    TResult? Function(MakeEpaymetns value)? makeEpaymetns,
     TResult? Function(Reset value)? reset,
   }) {
     return uploadReciept?.call(this);
@@ -2681,6 +2758,7 @@ class _$UploadRecieptImpl implements UploadReciept {
     TResult Function(UploadReciept value)? uploadReciept,
     TResult Function(MakeManuelTranscationRequest value)?
         makeManuelTranscationRequest,
+    TResult Function(MakeEpaymetns value)? makeEpaymetns,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -2790,6 +2868,7 @@ class _$MakeManuelTranscationRequestImpl
     required TResult Function() uploadReciept,
     required TResult Function(int gst, int coinValue)
         makeManuelTranscationRequest,
+    required TResult Function(EpayModel epayModel) makeEpaymetns,
     required TResult Function() reset,
   }) {
     return makeManuelTranscationRequest(gst, coinValue);
@@ -2811,6 +2890,7 @@ class _$MakeManuelTranscationRequestImpl
     TResult? Function()? getManuelTransactionsNext,
     TResult? Function()? uploadReciept,
     TResult? Function(int gst, int coinValue)? makeManuelTranscationRequest,
+    TResult? Function(EpayModel epayModel)? makeEpaymetns,
     TResult? Function()? reset,
   }) {
     return makeManuelTranscationRequest?.call(gst, coinValue);
@@ -2832,6 +2912,7 @@ class _$MakeManuelTranscationRequestImpl
     TResult Function()? getManuelTransactionsNext,
     TResult Function()? uploadReciept,
     TResult Function(int gst, int coinValue)? makeManuelTranscationRequest,
+    TResult Function(EpayModel epayModel)? makeEpaymetns,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -2864,6 +2945,7 @@ class _$MakeManuelTranscationRequestImpl
     required TResult Function(UploadReciept value) uploadReciept,
     required TResult Function(MakeManuelTranscationRequest value)
         makeManuelTranscationRequest,
+    required TResult Function(MakeEpaymetns value) makeEpaymetns,
     required TResult Function(Reset value) reset,
   }) {
     return makeManuelTranscationRequest(this);
@@ -2889,6 +2971,7 @@ class _$MakeManuelTranscationRequestImpl
     TResult? Function(UploadReciept value)? uploadReciept,
     TResult? Function(MakeManuelTranscationRequest value)?
         makeManuelTranscationRequest,
+    TResult? Function(MakeEpaymetns value)? makeEpaymetns,
     TResult? Function(Reset value)? reset,
   }) {
     return makeManuelTranscationRequest?.call(this);
@@ -2914,6 +2997,7 @@ class _$MakeManuelTranscationRequestImpl
     TResult Function(UploadReciept value)? uploadReciept,
     TResult Function(MakeManuelTranscationRequest value)?
         makeManuelTranscationRequest,
+    TResult Function(MakeEpaymetns value)? makeEpaymetns,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -2935,6 +3019,236 @@ abstract class MakeManuelTranscationRequest implements TranscationEvent {
   _$$MakeManuelTranscationRequestImplCopyWith<
           _$MakeManuelTranscationRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$MakeEpaymetnsImplCopyWith<$Res> {
+  factory _$$MakeEpaymetnsImplCopyWith(
+          _$MakeEpaymetnsImpl value, $Res Function(_$MakeEpaymetnsImpl) then) =
+      __$$MakeEpaymetnsImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({EpayModel epayModel});
+}
+
+/// @nodoc
+class __$$MakeEpaymetnsImplCopyWithImpl<$Res>
+    extends _$TranscationEventCopyWithImpl<$Res, _$MakeEpaymetnsImpl>
+    implements _$$MakeEpaymetnsImplCopyWith<$Res> {
+  __$$MakeEpaymetnsImplCopyWithImpl(
+      _$MakeEpaymetnsImpl _value, $Res Function(_$MakeEpaymetnsImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? epayModel = null,
+  }) {
+    return _then(_$MakeEpaymetnsImpl(
+      epayModel: null == epayModel
+          ? _value.epayModel
+          : epayModel // ignore: cast_nullable_to_non_nullable
+              as EpayModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$MakeEpaymetnsImpl implements MakeEpaymetns {
+  const _$MakeEpaymetnsImpl({required this.epayModel});
+
+  @override
+  final EpayModel epayModel;
+
+  @override
+  String toString() {
+    return 'TranscationEvent.makeEpaymetns(epayModel: $epayModel)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$MakeEpaymetnsImpl &&
+            (identical(other.epayModel, epayModel) ||
+                other.epayModel == epayModel));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, epayModel);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$MakeEpaymetnsImplCopyWith<_$MakeEpaymetnsImpl> get copyWith =>
+      __$$MakeEpaymetnsImplCopyWithImpl<_$MakeEpaymetnsImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() changeTab,
+    required TResult Function() agreePolicy,
+    required TResult Function(bool call) getCreditedTranscations,
+    required TResult Function(bool call) getDebitedTranscations,
+    required TResult Function() getCreditedTranscationsNextPage,
+    required TResult Function() getDebitedTranscationsNextPage,
+    required TResult Function(String id) downloadInvoice,
+    required TResult Function(String buffer) makePdf,
+    required TResult Function(int coins, int coinValue, int gstValue)
+        calculateAmount,
+    required TResult Function(bool call) getManuelTransactions,
+    required TResult Function() getManuelTransactionsNext,
+    required TResult Function() uploadReciept,
+    required TResult Function(int gst, int coinValue)
+        makeManuelTranscationRequest,
+    required TResult Function(EpayModel epayModel) makeEpaymetns,
+    required TResult Function() reset,
+  }) {
+    return makeEpaymetns(epayModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? changeTab,
+    TResult? Function()? agreePolicy,
+    TResult? Function(bool call)? getCreditedTranscations,
+    TResult? Function(bool call)? getDebitedTranscations,
+    TResult? Function()? getCreditedTranscationsNextPage,
+    TResult? Function()? getDebitedTranscationsNextPage,
+    TResult? Function(String id)? downloadInvoice,
+    TResult? Function(String buffer)? makePdf,
+    TResult? Function(int coins, int coinValue, int gstValue)? calculateAmount,
+    TResult? Function(bool call)? getManuelTransactions,
+    TResult? Function()? getManuelTransactionsNext,
+    TResult? Function()? uploadReciept,
+    TResult? Function(int gst, int coinValue)? makeManuelTranscationRequest,
+    TResult? Function(EpayModel epayModel)? makeEpaymetns,
+    TResult? Function()? reset,
+  }) {
+    return makeEpaymetns?.call(epayModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? changeTab,
+    TResult Function()? agreePolicy,
+    TResult Function(bool call)? getCreditedTranscations,
+    TResult Function(bool call)? getDebitedTranscations,
+    TResult Function()? getCreditedTranscationsNextPage,
+    TResult Function()? getDebitedTranscationsNextPage,
+    TResult Function(String id)? downloadInvoice,
+    TResult Function(String buffer)? makePdf,
+    TResult Function(int coins, int coinValue, int gstValue)? calculateAmount,
+    TResult Function(bool call)? getManuelTransactions,
+    TResult Function()? getManuelTransactionsNext,
+    TResult Function()? uploadReciept,
+    TResult Function(int gst, int coinValue)? makeManuelTranscationRequest,
+    TResult Function(EpayModel epayModel)? makeEpaymetns,
+    TResult Function()? reset,
+    required TResult orElse(),
+  }) {
+    if (makeEpaymetns != null) {
+      return makeEpaymetns(epayModel);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ChangeTab value) changeTab,
+    required TResult Function(AgreePolicy value) agreePolicy,
+    required TResult Function(GetCreditedTranscations value)
+        getCreditedTranscations,
+    required TResult Function(GetDebitedTranscations value)
+        getDebitedTranscations,
+    required TResult Function(GetCreditedTranscationsNextPage value)
+        getCreditedTranscationsNextPage,
+    required TResult Function(GetDebitedTranscationsNextPage value)
+        getDebitedTranscationsNextPage,
+    required TResult Function(DownloadInvoice value) downloadInvoice,
+    required TResult Function(MakePdf value) makePdf,
+    required TResult Function(CalculateAmount value) calculateAmount,
+    required TResult Function(GetManuelTransactions value)
+        getManuelTransactions,
+    required TResult Function(GetManuelTransactionsNext value)
+        getManuelTransactionsNext,
+    required TResult Function(UploadReciept value) uploadReciept,
+    required TResult Function(MakeManuelTranscationRequest value)
+        makeManuelTranscationRequest,
+    required TResult Function(MakeEpaymetns value) makeEpaymetns,
+    required TResult Function(Reset value) reset,
+  }) {
+    return makeEpaymetns(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ChangeTab value)? changeTab,
+    TResult? Function(AgreePolicy value)? agreePolicy,
+    TResult? Function(GetCreditedTranscations value)? getCreditedTranscations,
+    TResult? Function(GetDebitedTranscations value)? getDebitedTranscations,
+    TResult? Function(GetCreditedTranscationsNextPage value)?
+        getCreditedTranscationsNextPage,
+    TResult? Function(GetDebitedTranscationsNextPage value)?
+        getDebitedTranscationsNextPage,
+    TResult? Function(DownloadInvoice value)? downloadInvoice,
+    TResult? Function(MakePdf value)? makePdf,
+    TResult? Function(CalculateAmount value)? calculateAmount,
+    TResult? Function(GetManuelTransactions value)? getManuelTransactions,
+    TResult? Function(GetManuelTransactionsNext value)?
+        getManuelTransactionsNext,
+    TResult? Function(UploadReciept value)? uploadReciept,
+    TResult? Function(MakeManuelTranscationRequest value)?
+        makeManuelTranscationRequest,
+    TResult? Function(MakeEpaymetns value)? makeEpaymetns,
+    TResult? Function(Reset value)? reset,
+  }) {
+    return makeEpaymetns?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ChangeTab value)? changeTab,
+    TResult Function(AgreePolicy value)? agreePolicy,
+    TResult Function(GetCreditedTranscations value)? getCreditedTranscations,
+    TResult Function(GetDebitedTranscations value)? getDebitedTranscations,
+    TResult Function(GetCreditedTranscationsNextPage value)?
+        getCreditedTranscationsNextPage,
+    TResult Function(GetDebitedTranscationsNextPage value)?
+        getDebitedTranscationsNextPage,
+    TResult Function(DownloadInvoice value)? downloadInvoice,
+    TResult Function(MakePdf value)? makePdf,
+    TResult Function(CalculateAmount value)? calculateAmount,
+    TResult Function(GetManuelTransactions value)? getManuelTransactions,
+    TResult Function(GetManuelTransactionsNext value)?
+        getManuelTransactionsNext,
+    TResult Function(UploadReciept value)? uploadReciept,
+    TResult Function(MakeManuelTranscationRequest value)?
+        makeManuelTranscationRequest,
+    TResult Function(MakeEpaymetns value)? makeEpaymetns,
+    TResult Function(Reset value)? reset,
+    required TResult orElse(),
+  }) {
+    if (makeEpaymetns != null) {
+      return makeEpaymetns(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class MakeEpaymetns implements TranscationEvent {
+  const factory MakeEpaymetns({required final EpayModel epayModel}) =
+      _$MakeEpaymetnsImpl;
+
+  EpayModel get epayModel;
+  @JsonKey(ignore: true)
+  _$$MakeEpaymetnsImplCopyWith<_$MakeEpaymetnsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2990,6 +3304,7 @@ class _$ResetImpl implements Reset {
     required TResult Function() uploadReciept,
     required TResult Function(int gst, int coinValue)
         makeManuelTranscationRequest,
+    required TResult Function(EpayModel epayModel) makeEpaymetns,
     required TResult Function() reset,
   }) {
     return reset();
@@ -3011,6 +3326,7 @@ class _$ResetImpl implements Reset {
     TResult? Function()? getManuelTransactionsNext,
     TResult? Function()? uploadReciept,
     TResult? Function(int gst, int coinValue)? makeManuelTranscationRequest,
+    TResult? Function(EpayModel epayModel)? makeEpaymetns,
     TResult? Function()? reset,
   }) {
     return reset?.call();
@@ -3032,6 +3348,7 @@ class _$ResetImpl implements Reset {
     TResult Function()? getManuelTransactionsNext,
     TResult Function()? uploadReciept,
     TResult Function(int gst, int coinValue)? makeManuelTranscationRequest,
+    TResult Function(EpayModel epayModel)? makeEpaymetns,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -3064,6 +3381,7 @@ class _$ResetImpl implements Reset {
     required TResult Function(UploadReciept value) uploadReciept,
     required TResult Function(MakeManuelTranscationRequest value)
         makeManuelTranscationRequest,
+    required TResult Function(MakeEpaymetns value) makeEpaymetns,
     required TResult Function(Reset value) reset,
   }) {
     return reset(this);
@@ -3089,6 +3407,7 @@ class _$ResetImpl implements Reset {
     TResult? Function(UploadReciept value)? uploadReciept,
     TResult? Function(MakeManuelTranscationRequest value)?
         makeManuelTranscationRequest,
+    TResult? Function(MakeEpaymetns value)? makeEpaymetns,
     TResult? Function(Reset value)? reset,
   }) {
     return reset?.call(this);
@@ -3114,6 +3433,7 @@ class _$ResetImpl implements Reset {
     TResult Function(UploadReciept value)? uploadReciept,
     TResult Function(MakeManuelTranscationRequest value)?
         makeManuelTranscationRequest,
+    TResult Function(MakeEpaymetns value)? makeEpaymetns,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -3140,6 +3460,8 @@ mixin _$TranscationState {
   bool get downloaded => throw _privateConstructorUsedError;
   bool get agreePolicys => throw _privateConstructorUsedError;
   bool get gstError => throw _privateConstructorUsedError;
+  bool get paymentLoading => throw _privateConstructorUsedError;
+  bool get paymetnDone => throw _privateConstructorUsedError;
   List<Transcation>? get creditedTranscations =>
       throw _privateConstructorUsedError;
   List<Transcation>? get debitedTranscations =>
@@ -3174,6 +3496,8 @@ abstract class $TranscationStateCopyWith<$Res> {
       bool downloaded,
       bool agreePolicys,
       bool gstError,
+      bool paymentLoading,
+      bool paymetnDone,
       List<Transcation>? creditedTranscations,
       List<Transcation>? debitedTranscations,
       List<TranscationCashModel>? manuelTranscations,
@@ -3207,6 +3531,8 @@ class _$TranscationStateCopyWithImpl<$Res, $Val extends TranscationState>
     Object? downloaded = null,
     Object? agreePolicys = null,
     Object? gstError = null,
+    Object? paymentLoading = null,
+    Object? paymetnDone = null,
     Object? creditedTranscations = freezed,
     Object? debitedTranscations = freezed,
     Object? manuelTranscations = freezed,
@@ -3256,6 +3582,14 @@ class _$TranscationStateCopyWithImpl<$Res, $Val extends TranscationState>
       gstError: null == gstError
           ? _value.gstError
           : gstError // ignore: cast_nullable_to_non_nullable
+              as bool,
+      paymentLoading: null == paymentLoading
+          ? _value.paymentLoading
+          : paymentLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      paymetnDone: null == paymetnDone
+          ? _value.paymetnDone
+          : paymetnDone // ignore: cast_nullable_to_non_nullable
               as bool,
       creditedTranscations: freezed == creditedTranscations
           ? _value.creditedTranscations
@@ -3312,6 +3646,8 @@ abstract class _$$InitialImplCopyWith<$Res>
       bool downloaded,
       bool agreePolicys,
       bool gstError,
+      bool paymentLoading,
+      bool paymetnDone,
       List<Transcation>? creditedTranscations,
       List<Transcation>? debitedTranscations,
       List<TranscationCashModel>? manuelTranscations,
@@ -3343,6 +3679,8 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? downloaded = null,
     Object? agreePolicys = null,
     Object? gstError = null,
+    Object? paymentLoading = null,
+    Object? paymetnDone = null,
     Object? creditedTranscations = freezed,
     Object? debitedTranscations = freezed,
     Object? manuelTranscations = freezed,
@@ -3392,6 +3730,14 @@ class __$$InitialImplCopyWithImpl<$Res>
       gstError: null == gstError
           ? _value.gstError
           : gstError // ignore: cast_nullable_to_non_nullable
+              as bool,
+      paymentLoading: null == paymentLoading
+          ? _value.paymentLoading
+          : paymentLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      paymetnDone: null == paymetnDone
+          ? _value.paymetnDone
+          : paymetnDone // ignore: cast_nullable_to_non_nullable
               as bool,
       creditedTranscations: freezed == creditedTranscations
           ? _value._creditedTranscations
@@ -3443,6 +3789,8 @@ class _$InitialImpl implements _Initial {
       required this.downloaded,
       required this.agreePolicys,
       required this.gstError,
+      required this.paymentLoading,
+      required this.paymetnDone,
       final List<Transcation>? creditedTranscations,
       final List<Transcation>? debitedTranscations,
       final List<TranscationCashModel>? manuelTranscations,
@@ -3475,6 +3823,10 @@ class _$InitialImpl implements _Initial {
   final bool agreePolicys;
   @override
   final bool gstError;
+  @override
+  final bool paymentLoading;
+  @override
+  final bool paymetnDone;
   final List<Transcation>? _creditedTranscations;
   @override
   List<Transcation>? get creditedTranscations {
@@ -3521,7 +3873,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'TranscationState(hasError: $hasError, isLoading: $isLoading, creditedLoading: $creditedLoading, manuelTranscationsLoading: $manuelTranscationsLoading, manuelTranscationDone: $manuelTranscationDone, debitedLoading: $debitedLoading, downloading: $downloading, downloaded: $downloaded, agreePolicys: $agreePolicys, gstError: $gstError, creditedTranscations: $creditedTranscations, debitedTranscations: $debitedTranscations, manuelTranscations: $manuelTranscations, message: $message, invoice: $invoice, reciept: $reciept, amountPayable: $amountPayable, isCreditedTab: $isCreditedTab)';
+    return 'TranscationState(hasError: $hasError, isLoading: $isLoading, creditedLoading: $creditedLoading, manuelTranscationsLoading: $manuelTranscationsLoading, manuelTranscationDone: $manuelTranscationDone, debitedLoading: $debitedLoading, downloading: $downloading, downloaded: $downloaded, agreePolicys: $agreePolicys, gstError: $gstError, paymentLoading: $paymentLoading, paymetnDone: $paymetnDone, creditedTranscations: $creditedTranscations, debitedTranscations: $debitedTranscations, manuelTranscations: $manuelTranscations, message: $message, invoice: $invoice, reciept: $reciept, amountPayable: $amountPayable, isCreditedTab: $isCreditedTab)';
   }
 
   @override
@@ -3550,6 +3902,10 @@ class _$InitialImpl implements _Initial {
                 other.agreePolicys == agreePolicys) &&
             (identical(other.gstError, gstError) ||
                 other.gstError == gstError) &&
+            (identical(other.paymentLoading, paymentLoading) ||
+                other.paymentLoading == paymentLoading) &&
+            (identical(other.paymetnDone, paymetnDone) ||
+                other.paymetnDone == paymetnDone) &&
             const DeepCollectionEquality()
                 .equals(other._creditedTranscations, _creditedTranscations) &&
             const DeepCollectionEquality()
@@ -3566,26 +3922,29 @@ class _$InitialImpl implements _Initial {
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      hasError,
-      isLoading,
-      creditedLoading,
-      manuelTranscationsLoading,
-      manuelTranscationDone,
-      debitedLoading,
-      downloading,
-      downloaded,
-      agreePolicys,
-      gstError,
-      const DeepCollectionEquality().hash(_creditedTranscations),
-      const DeepCollectionEquality().hash(_debitedTranscations),
-      const DeepCollectionEquality().hash(_manuelTranscations),
-      message,
-      invoice,
-      reciept,
-      amountPayable,
-      isCreditedTab);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        hasError,
+        isLoading,
+        creditedLoading,
+        manuelTranscationsLoading,
+        manuelTranscationDone,
+        debitedLoading,
+        downloading,
+        downloaded,
+        agreePolicys,
+        gstError,
+        paymentLoading,
+        paymetnDone,
+        const DeepCollectionEquality().hash(_creditedTranscations),
+        const DeepCollectionEquality().hash(_debitedTranscations),
+        const DeepCollectionEquality().hash(_manuelTranscations),
+        message,
+        invoice,
+        reciept,
+        amountPayable,
+        isCreditedTab
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -3606,6 +3965,8 @@ abstract class _Initial implements TranscationState {
       required final bool downloaded,
       required final bool agreePolicys,
       required final bool gstError,
+      required final bool paymentLoading,
+      required final bool paymetnDone,
       final List<Transcation>? creditedTranscations,
       final List<Transcation>? debitedTranscations,
       final List<TranscationCashModel>? manuelTranscations,
@@ -3635,6 +3996,10 @@ abstract class _Initial implements TranscationState {
   bool get agreePolicys;
   @override
   bool get gstError;
+  @override
+  bool get paymentLoading;
+  @override
+  bool get paymetnDone;
   @override
   List<Transcation>? get creditedTranscations;
   @override

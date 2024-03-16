@@ -10,6 +10,7 @@ class PickupPartnerState with _$PickupPartnerState {
       required bool assigningOrderLoader,
       required bool orderAssigned,
       required bool orderDeAssigned,
+      required bool popOrderScreen,
       PickUpPerson? selectedPickup,
       List<PickUpPerson>? pickUpPersons,
       PartnerProfile? partnerProfile,
@@ -20,6 +21,7 @@ class PickupPartnerState with _$PickupPartnerState {
       partnerAddingLoader: false,
       pickupPersonAdded: false,
       orderDeAssigned: false,
+      popOrderScreen: false,
       assigningOrderLoader: false,
       orderAssigned: false);
 }

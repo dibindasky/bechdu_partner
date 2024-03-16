@@ -4,6 +4,7 @@ import 'package:bechdu_partner/data/feature/pdf_buffer.dart';
 import 'package:bechdu_partner/data/secure_storage/secure_storage.dart';
 import 'package:bechdu_partner/domain/model/commen/image/image_model.dart';
 import 'package:bechdu_partner/domain/model/commen/page_size_query_model/page_size_query_model.dart';
+import 'package:bechdu_partner/domain/model/transcaton/epay_model/epay_model.dart';
 import 'package:bechdu_partner/domain/model/transcaton/get_credited_transcations_response_model/transcation.dart';
 import 'package:bechdu_partner/domain/model/transcaton/manual_transcation_response_model/transcation_cash_model.dart';
 import 'package:bechdu_partner/domain/model/transcaton/manuel_transcation_model/manuel_transcation_model.dart';
@@ -42,8 +43,34 @@ class TranscationBloc extends Bloc<TranscationEvent, TranscationState> {
     on<CalculateAmount>(calculateAmount);
     on<UploadReciept>(uploadReciept);
     on<MakeManuelTranscationRequest>(makeManuelTranscationRequest);
+    on<MakeEpaymetns>(makeEpaymetns);
     on<MakePdf>(makePdf);
     on<Reset>(reset);
+  }
+
+  FutureOr<void> makeEpaymetns(MakeEpaymetns event, emit) async {
+    emit(state.copyWith(
+        gstError: false,
+        message: null,
+        hasError: false,
+        paymentLoading: true,
+        paymetnDone: false,
+        downloaded: false));
+    final phone = await SharedPref.getPhone();
+    final result = await transcationsRepo.makeEpayment(
+        epayModel: event.epayModel, phone: phone!);
+    result.fold(
+        (l) => emit(state.copyWith(
+            hasError: true,
+            paymetnDone: false,
+            paymentLoading: false,
+            message: l.message)), (r) {
+      emit(state.copyWith(
+          message: r.message, paymentLoading: false, paymetnDone: true));
+      add(const TranscationEvent.getCreditedTranscations(call: true));
+      add(const TranscationEvent.getDebitedTranscations(call: true));
+      add(const TranscationEvent.getManuelTransactions(call: true));
+    });
   }
 
   FutureOr<void> reset(Reset event, emit) {
@@ -108,13 +135,11 @@ class TranscationBloc extends Bloc<TranscationEvent, TranscationState> {
     emit(state.copyWith(
         downloaded: false, hasError: false, message: null, gstError: false));
     if (event.gstValue == 0) {
-      print('======get 0======');
       return emit(state.copyWith(
           downloaded: false, hasError: false, message: null, gstError: true));
     }
     final persentage = (event.coins * event.coinValue) * (event.gstValue / 100);
     final total = ((event.coins * event.coinValue)) + persentage;
-    print('======get $persentage===$total======');
 
     return emit(state.copyWith(
         downloaded: false,
@@ -151,7 +176,6 @@ class TranscationBloc extends Bloc<TranscationEvent, TranscationState> {
             hasError: true,
             downloading: false,
             message: 'Error while generating invoice')), (r) {
-      print("invoice ========1");
       // add(TranscationEvent.makePdf(buffer: r.base64String!));
       emit(state.copyWith(
           downloading: false, downloaded: true, invoice: r.base64String));
@@ -176,7 +200,6 @@ class TranscationBloc extends Bloc<TranscationEvent, TranscationState> {
             PageSizeQueryModel(page: page, pageSize: pageCount3));
     result.fold((l) => emit(state.copyWith(hasError: true, isLoading: false)),
         (r) {
-      print("invoice ========1");
       // add(TranscationEvent.makePdf(buffer: r.base64String!));
       emit(state.copyWith(isLoading: false, manuelTranscations: r.data));
     });
@@ -201,7 +224,6 @@ class TranscationBloc extends Bloc<TranscationEvent, TranscationState> {
             manuelTranscationsLoading: false,
             downloading: false,
             message: 'Error while generating invoice')), (r) {
-      print("invoice ========1");
       emit(state.copyWith(
           manuelTranscationsLoading: false, manuelTranscations: r.data));
     });
@@ -212,7 +234,7 @@ class TranscationBloc extends Bloc<TranscationEvent, TranscationState> {
     if (state.creditedTranscations != null && !event.call) return;
     emit(state.copyWith(
         gstError: false,
-        isLoading: true,
+        isLoading: true,paymetnDone: false,
         message: null,
         hasError: false,
         downloaded: false));
@@ -252,7 +274,7 @@ class TranscationBloc extends Bloc<TranscationEvent, TranscationState> {
     emit(state.copyWith(
         gstError: false,
         isLoading: true,
-        message: null,
+        message: null,paymetnDone: false,
         hasError: false,
         downloaded: false));
     final phone = await SharedPref.getPhone();

@@ -28,14 +28,14 @@ class OrderDetailTopPart extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               OrdersCustomButton(
-                  text: '  Cancel  ',
+                  text: 'Cancel Order',
                   image: iconCancel,
                   onTap: () {
                     showDialogeCancel(context, orderDetail.id);
                   }),
               kWidth5,
               OrdersCustomButton(
-                  text: 'Reschedule',
+                  text: ' Reschedule ',
                   image: iconShedule,
                   onTap: () {
                     // Navigator.pushNamed(context, Routes.reshedulePage);
@@ -45,51 +45,59 @@ class OrderDetailTopPart extends StatelessWidget {
                     showDialogeReschedule(context, orderDetail.id!);
                   }),
               kWidth5,
-              OrdersCustomButton(
-                  text: ' Complete ',
-                  image: iconCompleteCheck,
-                  onTap: () {
-                    Navigator.pushNamed(context, Routes.completeOrderPage,
-                        arguments: orderDetail);
-                  })
+              BlocConsumer<RequoteBloc, RequoteState>(
+                listenWhen: (previous, current) =>
+                    previous.questionLoading && current.sections != null,
+                listener: (context, state) {
+                  // on requote price
+                  if (state.sections!.isNotEmpty) {
+                    showBottomSheet(
+                        clipBehavior: Clip.none,
+                        backgroundColor: kWhite,
+                        context: context,
+                        builder: (context) => BottomSheet(
+                              backgroundColor: kWhite,
+                              onClosing: () {},
+                              builder: (context) =>
+                                  RequotePriceSession(orderDetail: orderDetail),
+                            ));
+                  }
+                },
+                builder: (context, state) => state.questionLoading
+                    ?
+                    //  LinearProgressIndicator(
+                    //     minHeight: 35,
+                    //     backgroundColor: kWhite,
+                    //     color: kGreyLighter,
+                    //     borderRadius: kRadius10,
+                    //   )
+                    const Expanded(
+                        child: Center(
+                            child: CircularProgressIndicator(
+                          color: kGreenPrimary,
+                        )),
+                      )
+                    : OrdersCustomButton(
+                        text: 'Requote Price',
+                        image: iconRedo,
+                        onTap: () {
+                          context.read<RequoteBloc>().add(
+                              RequoteEvent.getQuestions(
+                                  category:
+                                      orderDetail.productDetails!.category!));
+                        },
+                      ),
+              ),
             ],
           ),
           kHeight10,
-          BlocConsumer<RequoteBloc, RequoteState>(
-            listenWhen: (previous, current) =>
-                previous.questionLoading && current.sections != null,
-            listener: (context, state) {
-              // on requote price
-              if (state.sections!.isNotEmpty) {
-                showBottomSheet(
-                    clipBehavior: Clip.none,
-                    backgroundColor: kWhite,
-                    context: context,
-                    builder: (context) => BottomSheet(
-                          backgroundColor: kWhite,
-                          onClosing: () {},
-                          builder: (context) =>
-                              RequotePriceSession(orderDetail: orderDetail),
-                        ));
-              }
-            },
-            builder: (context, state) => state.questionLoading
-                ? LinearProgressIndicator(
-                    minHeight: 35,
-                    backgroundColor: kWhite,
-                    color: kGreyLighter,
-                    borderRadius: kRadius10,
-                  )
-                : OrdersCustomButton(
-                    text: 'Requote Price',
-                    image: iconRedo,
-                    expnded: false,
-                    onTap: () {
-                      context.read<RequoteBloc>().add(RequoteEvent.getQuestions(
-                          category: orderDetail.productDetails!.category!));
-                    },
-                  ),
-          ),
+          OrderCustomButtonBottom(
+              text: 'Complete',
+              image: iconCompleteCheck,
+              onTap: () {
+                Navigator.pushNamed(context, Routes.completeOrderPage,
+                    arguments: orderDetail);
+              })
         ],
       ),
     );

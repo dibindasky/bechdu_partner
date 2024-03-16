@@ -4,6 +4,8 @@ part of 'orders_bloc.dart';
 class OrdersEvent with _$OrdersEvent {
   const factory OrdersEvent.acceptOrder({required String orderId}) =
       AcceptOrder;
+  const factory OrdersEvent.getOrderDetail({required String orderId}) =
+      GetOrderDetail;
   const factory OrdersEvent.cancelOrder(
       {required String orderId, required String reason}) = CancelOrder;
   const factory OrdersEvent.completeOrder(

@@ -69,8 +69,8 @@ class HomeScreenAppBar extends StatelessWidget {
                                             child: CircleAvatar(
                                               radius: sWidth * 0.04,
                                               backgroundColor: kBluePrimary,
-                                              backgroundImage:
-                                                  const AssetImage(iconNottoCoin),
+                                              backgroundImage: const AssetImage(
+                                                  iconNottoCoin),
                                             ),
                                           )
                                         ],
@@ -144,22 +144,22 @@ class HomeScreenAppBar extends StatelessWidget {
                               children: [
                                 kWidth20,
                                 Text(
-                                  'You Have A New Order',
+                                  state.orderTab==0?'New Orders':'Accepted Orders',
                                   style:
                                       textHeadBoldBig.copyWith(color: kWhite),
                                 ),
                                 const Spacer(),
-                                Container(
-                                  padding: const EdgeInsets.all(2),
-                                  decoration: BoxDecoration(
-                                      borderRadius: kRadius50,
-                                      border: Border.all(color: kWhite)),
-                                  child: const Icon(
-                                    Icons.arrow_forward_ios_outlined,
-                                    color: kWhite,
-                                    size: 15,
-                                  ),
-                                ),
+                                // Container(
+                                //   padding: const EdgeInsets.all(2),
+                                //   decoration: BoxDecoration(
+                                //       borderRadius: kRadius50,
+                                //       border: Border.all(color: kWhite)),
+                                //   child: const Icon(
+                                //     Icons.arrow_forward_ios_outlined,
+                                //     color: kWhite,
+                                //     size: 15,
+                                //   ),
+                                // ),
                                 kWidth20,
                               ],
                             ),

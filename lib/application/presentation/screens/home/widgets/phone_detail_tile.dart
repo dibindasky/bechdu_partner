@@ -15,8 +15,11 @@ class PhoneDetailTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => Navigator.pushNamed(context, Routes.orderScreen,
-          arguments: orderDetail),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        Navigator.pushNamed(context, Routes.orderScreen,
+            arguments: orderDetail);
+      },
       child: ClipRRect(
         borderRadius: kRadius5,
         child: ColoredBox(

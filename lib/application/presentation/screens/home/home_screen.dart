@@ -13,13 +13,13 @@ class ScreenHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-        context.read<RoleBloc>().add(const RoleEvent.getRole());
-        context
-            .read<PickupPartnerBloc>()
-            .add(const PickupPartnerEvent.getPartnerProfile());
-        if (!partner) {
-          context.read<OrdersBloc>().add(const OrdersEvent.changeTab(tab: 1));
-        }
+      context.read<RoleBloc>().add(const RoleEvent.getRole());
+      context
+          .read<PickupPartnerBloc>()
+          .add(const PickupPartnerEvent.getPartnerProfile());
+      if (!partner) {
+        context.read<OrdersBloc>().add(const OrdersEvent.changeTab(tab: 1));
+      }
     });
     return const Scaffold(
       body: Column(

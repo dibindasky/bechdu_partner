@@ -27,5 +27,7 @@ class TranscationEvent with _$TranscationEvent {
   const factory TranscationEvent.makeManuelTranscationRequest(
       {required int gst,
       required int coinValue}) = MakeManuelTranscationRequest;
+  const factory TranscationEvent.makeEpaymetns({required EpayModel epayModel}) =
+      MakeEpaymetns;
   const factory TranscationEvent.reset() = Reset;
 }

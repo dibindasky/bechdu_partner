@@ -37,6 +37,11 @@ class _NewOrdersListState extends State<NewOrdersList> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<OrdersBloc, OrdersState>(builder: (context, state) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        context
+            .read<OrdersBloc>()
+            .add(const OrdersEvent.getNewOrder(call: false));
+      });
       if (state.isLoading) {
         return const Center(
             child: CircularProgressIndicator(color: kBluePrimary));
@@ -60,10 +65,10 @@ class _NewOrdersListState extends State<NewOrdersList> {
                   return SizedBox(height: 500, width: sWidth);
                 }
               }
-              return state.newOrders!.length <= index 
+              return state.newOrders!.length <= index
                   ? Padding(
                       padding: EdgeInsets.only(
-                          bottom:index==len? 100:0, left: 20, right: 20),
+                          bottom: index == len ? 100 : 0, left: 20, right: 20),
                       child: ShimmerLoader(
                           itemCount: 1, height: 150, width: sWidth),
                     )

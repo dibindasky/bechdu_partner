@@ -14,6 +14,7 @@ class CustomSearchFieldHomePage extends StatelessWidget {
     return BlocBuilder<OrdersBloc, OrdersState>(
       builder: (context, state) {
         return TextField(
+          onTapOutside: (event) => FocusScope.of(context).unfocus(),
           controller: context.read<OrdersBloc>().searchController,
           onChanged: (value) {
             if (!partner || state.orderTab == 1) {

@@ -10,6 +10,7 @@ import 'package:bechdu_partner/domain/model/commen/success_response_model/succes
 import 'package:bechdu_partner/domain/model/order/c_ancel_reason_model/c_ancel_reason_model.dart';
 import 'package:bechdu_partner/domain/model/order/complete_order_model/complete_order_model.dart';
 import 'package:bechdu_partner/domain/model/order/get_partner_order_response_model/get_partner_order_response_model.dart';
+import 'package:bechdu_partner/domain/model/order/get_partner_order_response_model/order_detail.dart';
 import 'package:bechdu_partner/domain/repository/service/order_repo.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
@@ -150,6 +151,32 @@ class OrderService implements OrderRepo {
       }
     } catch (e) {
       log('completeOrder exception => $e');
+      return Left(Failure(message: errorMessage));
+    }
+  }
+
+  @override
+  Future<Either<Failure, OrderDetail>> getOrderDetails(
+      {required String phone, required String orderId}) async {
+    try {
+      final response = await _apiService.get(
+          ApiEndPoints.getOrderDetails
+              .replaceFirst('{partnerPhone}', phone)
+              .replaceFirst('{orderID}', orderId)
+          );
+      return Right(OrderDetail.fromJson(response.data));
+    } on DioException catch (e) {
+      try {
+        log('getOrderDetails dio exception => $e');
+        log(e.response.toString());
+        ErrorResponseModel error =
+            ErrorResponseModel.fromJson(e.response?.data);
+        return Left(Failure(message: error.error ?? errorMessage));
+      } catch (e) {
+        return Left(Failure(message: errorMessage));
+      }
+    } catch (e) {
+      log('getOrderDetails exception => $e');
       return Left(Failure(message: errorMessage));
     }
   }
