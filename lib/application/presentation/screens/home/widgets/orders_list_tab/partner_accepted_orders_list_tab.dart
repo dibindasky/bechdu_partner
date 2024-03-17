@@ -51,41 +51,52 @@ class _OrdersHistoryListState extends State<OrdersHistoryList> {
           int len = state.partnerOrdesRefreshLoading
               ? state.partnerOrders!.length + 1
               : state.partnerOrders!.length;
-          return ListView.builder(
-            controller: controller,
-            itemCount: len < 5 ? len + 1 : len,
-            padding: EdgeInsets.zero,
-            shrinkWrap: true,
-            itemBuilder: (context, index) {
-              if (len < 5 && !state.partnerOrdesRefreshLoading) {
-                if (index < len) {
-                  return OrdersListTileHome(
-                      orderDetail: state.partnerOrders![index],
-                      showExpansion: true);
-                } else {
-                  return SizedBox(height: 1000, width: sWidth);
+          return RefreshIndicator(onRefresh: () async{
+             if (partner) {
+                      context
+                          .read<OrdersBloc>()
+                          .add(const OrdersEvent.getNewOrder(call: true));
+                    }
+                    context
+                        .read<OrdersBloc>()
+                        .add(const OrdersEvent.getPartnerOrders(call: true));
+          },
+            child: ListView.builder(
+              controller: controller,
+              itemCount: len < 5 ? len + 1 : len,
+              padding: EdgeInsets.zero,
+              shrinkWrap: true,
+              itemBuilder: (context, index) {
+                if (len < 5 && !state.partnerOrdesRefreshLoading) {
+                  if (index < len) {
+                    return OrdersListTileHome(
+                        orderDetail: state.partnerOrders![index],
+                        showExpansion: true);
+                  } else {
+                    return SizedBox(height: 1000, width: sWidth);
+                  }
                 }
-              }
-              if (state.partnerOrders!.length <= index) {
+                if (state.partnerOrders!.length <= index) {
+                  return Padding(
+                    padding: EdgeInsets.only(
+                        bottom: index == len ? 100 : 0, left: 20, right: 20),
+                    child:
+                        ShimmerLoader(itemCount: 1, height: 150, width: sWidth),
+                  );
+                }
                 return Padding(
                   padding: EdgeInsets.only(
-                      bottom: index == len ? 100 : 0, left: 20, right: 20),
-                  child:
-                      ShimmerLoader(itemCount: 1, height: 150, width: sWidth),
+                      bottom: state.partnerOrders!.length - 1 == index &&
+                              !state.partnerOrdesRefreshLoading
+                          ? 100
+                          : 0),
+                  child: OrdersListTileHome(
+                      orderDetail: state.partnerOrders![index],
+                      showExpansion:
+                          state.partnerOrders![index].status == 'cancelled'),
                 );
-              }
-              return Padding(
-                padding: EdgeInsets.only(
-                    bottom: state.partnerOrders!.length - 1 == index &&
-                            !state.partnerOrdesRefreshLoading
-                        ? 100
-                        : 0),
-                child: OrdersListTileHome(
-                    orderDetail: state.partnerOrders![index],
-                    showExpansion:
-                        state.partnerOrders![index].status == 'cancelled'),
-              );
-            },
+              },
+            ),
           );
         } else {
           return ErrorRefreshIndicator(

@@ -20,13 +20,6 @@ class OrderDetailWithoutBlur extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (partner) {
-        context
-            .read<PickupPartnerBloc>()
-            .add(const PickupPartnerEvent.getPickupPartners());
-      }
-    });
     return SingleChildScrollView(
       child: Column(
         children: [

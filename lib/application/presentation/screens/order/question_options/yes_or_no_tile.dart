@@ -6,93 +6,81 @@ import 'package:bechdu_partner/domain/model/requote/price_calculation_model/sele
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class YesOrNoTile extends StatefulWidget {
-  const YesOrNoTile({super.key, required this.option});
+class YesOrNoTile extends StatelessWidget {
+  const YesOrNoTile(
+      {super.key,
+      required this.option,required this.onTap,
+      required this.selected,
+      required this.state});
 
   final Option option;
+  final bool? selected;
+  final RequoteState state;
+  final VoidCallback onTap;
 
-  @override
-  State<YesOrNoTile> createState() => _YesOrNoTileState();
-}
-
-class _YesOrNoTileState extends State<YesOrNoTile> {
-  bool? selected;
+  // @override
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<RequoteBloc, RequoteState>(
-      builder: (context, state) {
-        return Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Material(
-            borderRadius: kRadius5,
-            elevation: 5,
-            child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Material(
+        borderRadius: kRadius5,
+        elevation: 5,
+        child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  option.description ?? '',
+                  style: textHeadBold1,
+                ),
+                kHeight10,
+                Row(
                   children: [
-                    Text(
-                      widget.option.description ?? '',
-                      style: textHeadBold1,
-                    ),
-                    kHeight10,
-                    Row(
-                      children: [
-                        TapButtonYesOrNo(
-                            onTap: () {
-                              context.read<RequoteBloc>().add(
-                                  RequoteEvent.markYesOrNo(
-                                      selectedOption: SelectedOption(
-                                          description:
-                                              widget.option.description,
-                                          type: widget.option.type,
-                                          value: true,
-                                          heading: state
-                                              .sections![state.requoteIndex]
-                                              .heading)));
-                              setState(() {
-                                changeSelection(true);
-                              });
-                            },
-                            yesOrNo: true,
-                            selected: selected == true),
-                        kWidth20,
-                        TapButtonYesOrNo(
-                            onTap: () {
-                              context.read<RequoteBloc>().add(
-                                  RequoteEvent.markYesOrNo(
-                                      selectedOption: SelectedOption(
-                                          description:
-                                              widget.option.description,
-                                          type: widget.option.type,
-                                          value: false,
-                                          heading: state
-                                              .sections![state.requoteIndex]
-                                              .heading)));
-                              setState(() {
-                                changeSelection(false);
-                              });
-                            },
-                            yesOrNo: false,
-                            selected: selected == false),
-                      ],
-                    ),
+                    TapButtonYesOrNo(
+                        onTap: () {
+                          context.read<RequoteBloc>().add(
+                              RequoteEvent.markYesOrNo(
+                                  selectedOption: SelectedOption(
+                                      description: option.description,
+                                      type: option.type,
+                                      value: true,
+                                      heading: state
+                                          .sections![state.requoteIndex]
+                                          .heading)));
+                          // setState(() {
+                          //   changeSelection(true);
+                          // });
+                          onTap();
+                        },
+                        yesOrNo: true,
+                        selected: selected == true),
+                    kWidth20,
+                    TapButtonYesOrNo(
+                        onTap: () {
+                          context.read<RequoteBloc>().add(
+                              RequoteEvent.markYesOrNo(
+                                  selectedOption: SelectedOption(
+                                      description: option.description,
+                                      type: option.type,
+                                      value: false,
+                                      heading: state
+                                          .sections![state.requoteIndex]
+                                          .heading)));
+                          // setState(() {
+                          //   changeSelection(false);
+                          // });
+                          onTap();
+                        },
+                        yesOrNo: false,
+                        selected: selected == false),
                   ],
-                )),
-          ),
-        );
-      },
+                ),
+              ],
+            )),
+      ),
     );
-  }
-
-  changeSelection(bool value) {
-    if (value == selected) {
-      selected = null;
-    } else if ((value && selected == false) || (value && selected == null)) {
-      selected = true;
-    } else if ((!value && selected == true) || (!value && selected == null)) {
-      selected = false;
-    }
   }
 }
 

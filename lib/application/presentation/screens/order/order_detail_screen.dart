@@ -9,7 +9,6 @@ import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:bechdu_partner/application/presentation/utils/snackbar/snack_show.dart';
 import 'package:bechdu_partner/domain/model/order/get_partner_order_response_model/order_detail.dart';
-import 'package:bechdu_partner/domain/model/order/get_partner_order_response_model/partner.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -25,6 +24,11 @@ class ScreenOrderDetail extends StatelessWidget {
         context
             .read<OrdersBloc>()
             .add(OrdersEvent.getOrderDetail(orderId: orderDetail.id!));
+      }
+      if (partner) {
+        context
+            .read<PickupPartnerBloc>()
+            .add(const PickupPartnerEvent.getPickupPartners());
       }
     });
     return BlocBuilder<OrdersBloc, OrdersState>(
@@ -72,32 +76,13 @@ class ScreenOrderDetail extends StatelessWidget {
                                 partner ? Routes.bottomBar : Routes.homePage,
                                 (route) => false);
                           }
-                          if (state.orderDeAssigned) {
-                            Partner pickup = orderDetail.partner!.copyWith(
-                                pickUpPersonName: state.orderAssigned
-                                    ? state.selectedPickup?.name
-                                    : '',
-                                pickUpPersonPhone: state.orderAssigned
-                                    ? state.selectedPickup?.phone
-                                    : '');
-                            orderDetail = orderDetail.copyWith(partner: pickup);
-                            Navigator.pushReplacementNamed(
-                                context, Routes.orderScreen,
-                                arguments:
-                                    orderDetail.copyWith(status: 'processing'));
-                          }
-                          if (state.orderAssigned) {
+                          if (state.orderAssigned || state.orderDeAssigned) {
                             Navigator.pushReplacementNamed(
                                 context, Routes.orderScreen,
                                 arguments: orderDetail);
                           }
                         },
                         builder: (context, state) {
-                          // if (state.isLoading) {
-                          //   return const Center(
-                          //     child: CircularProgressIndicator(),
-                          //   );
-                          // }
                           return BlocConsumer<OrdersBloc, OrdersState>(
                             listener: (context, state) {
                               if (state.message != null) {
@@ -107,6 +92,14 @@ class ScreenOrderDetail extends StatelessWidget {
                                     color: state.acceptOrderError
                                         ? kRed
                                         : kGreenPrimary);
+                              }
+                              if (state.popOrderScreen) {
+                                Navigator.pushNamedAndRemoveUntil(
+                                    context,
+                                    partner
+                                        ? Routes.bottomBar
+                                        : Routes.homePage,
+                                    (route) => false);
                               }
                               if (state.acceptOrderError || state.cancelOrder) {
                                 Navigator.of(context).pop();

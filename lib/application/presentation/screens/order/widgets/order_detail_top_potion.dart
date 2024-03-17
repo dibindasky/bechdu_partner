@@ -52,26 +52,20 @@ class OrderDetailTopPart extends StatelessWidget {
                   // on requote price
                   if (state.sections!.isNotEmpty) {
                     showBottomSheet(
-                        clipBehavior: Clip.none,
+                      clipBehavior: Clip.none,
+                      backgroundColor: kWhite,
+                      context: context,
+                      builder: (context) => BottomSheet(
                         backgroundColor: kWhite,
-                        context: context,
-                        builder: (context) => BottomSheet(
-                              backgroundColor: kWhite,
-                              onClosing: () {},
-                              builder: (context) =>
-                                  RequotePriceSession(orderDetail: orderDetail),
-                            ));
+                        onClosing: () {},
+                        builder: (context) =>
+                            RequotePriceSession(orderDetail: orderDetail),
+                      ),
+                    );
                   }
                 },
                 builder: (context, state) => state.questionLoading
-                    ?
-                    //  LinearProgressIndicator(
-                    //     minHeight: 35,
-                    //     backgroundColor: kWhite,
-                    //     color: kGreyLighter,
-                    //     borderRadius: kRadius10,
-                    //   )
-                    const Expanded(
+                    ? const Expanded(
                         child: Center(
                             child: CircularProgressIndicator(
                           color: kGreenPrimary,
@@ -82,7 +76,7 @@ class OrderDetailTopPart extends StatelessWidget {
                         image: iconRedo,
                         onTap: () {
                           context.read<RequoteBloc>().add(
-                              RequoteEvent.getQuestions(
+                              RequoteEvent.getQuestions(slug: orderDetail.productDetails!.slug!,
                                   category:
                                       orderDetail.productDetails!.category!));
                         },
