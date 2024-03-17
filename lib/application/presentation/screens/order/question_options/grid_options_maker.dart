@@ -2,52 +2,54 @@ import 'package:bechdu_partner/application/business_logic/order/requote/requote_
 import 'package:bechdu_partner/application/presentation/screens/order/question_options/grid_option_selector_tile.dart';
 import 'package:bechdu_partner/application/presentation/screens/order/requote/answer_index_changer.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
+import 'package:bechdu_partner/domain/model/requote/get_question_response_model/option.dart';
 import 'package:bechdu_partner/domain/model/requote/price_calculation_model/selected_option.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class GridOptionMaker extends StatelessWidget {
-  const GridOptionMaker({super.key});
+class GridOptionMaker extends StatefulWidget {
+  const GridOptionMaker({super.key, required this.list});
 
+  final List<Option> list;
+
+  @override
+  State<GridOptionMaker> createState() => _GridOptionMakerState();
+}
+
+class _GridOptionMakerState extends State<GridOptionMaker> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: BlocConsumer<RequoteBloc, RequoteState>(
-        listener: (context, state) {
-          // TODO: implement listener
-        },
+      child: BlocBuilder<RequoteBloc, RequoteState>(
         builder: (context, state) {
-          if (state.sections == null) {
-            return Center(child: Text('no question avilable'));
-          }
-          final list = state.sections![state.requoteIndex].options!;
-          // final data = state
-          //     .selectedAnswers[state.sections?[state.requoteIndex].heading];
-          // final selected = list
-          //     .where(
-          //         (element) => element.description == data?.first.description)
-          //     .toList();
-
           return SingleChildScrollView(
             child: Column(
               children: [
                 ListView.builder(
                   physics: const NeverScrollableScrollPhysics(),
-                  itemCount: list.length,
+                  itemCount: widget.list.length,
                   shrinkWrap: true,
                   itemBuilder: (context, index) {
+                    final answers = state.selectedAnswers[
+                            state.sections![state.requoteIndex].heading!]!
+                        .where((element) =>
+                            element.description ==
+                            widget.list[index].description)
+                        .toList();
                     return GridOptionSelectorTile(
-                      option: list[index],
-                      // selected: selected.contains(list[index]),
-                      onTap: () => context.read<RequoteBloc>().add(
-                          RequoteEvent.markGrid(
-                              selectedOption: SelectedOption(
-                                  description: list[index].description,
-                                  heading: state
-                                      .sections![state.requoteIndex].heading,
-                                  value: null,
-                                  type: state
-                                      .sections![state.requoteIndex].type))),
+                      option: widget.list[index],
+                      selected: answers.isNotEmpty,
+                      onTap: () {
+                        context.read<RequoteBloc>().add(RequoteEvent.markAnswer(
+                            selectedOption: SelectedOption(
+                                description: widget.list[index].description,
+                                heading:
+                                    state.sections![state.requoteIndex].heading,
+                                value: null,
+                                type: state.sections![state.requoteIndex]
+                                    .options![index].type)));
+                        setState(() {});
+                      },
                     );
                   },
                 ),

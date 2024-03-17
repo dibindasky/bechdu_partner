@@ -1,6 +1,7 @@
 import 'package:bechdu_partner/application/business_logic/pickup_partner/pickup_partner_bloc.dart';
 import 'package:bechdu_partner/application/business_logic/points/points_bloc.dart';
 import 'package:bechdu_partner/application/presentation/screens/points/widgets/add_coin_dialoge.dart';
+import 'package:bechdu_partner/application/presentation/utils/animations/shriking_animation.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +16,7 @@ class CoinPointTable extends StatelessWidget {
   Widget build(BuildContext context) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       context.read<PointsBloc>().add(const PointsEvent.getGst());
+      context.read<PointsBloc>().add(const PointsEvent.getCoinValue());
     });
     return ClipRRect(
       borderRadius: kRadius5,
@@ -58,30 +60,32 @@ class CoinPointTable extends StatelessWidget {
                           context: context,
                           builder: (context) => const AddCoinsDialoge());
                     },
-                    child: Material(
-                      elevation: 3,
-                      borderRadius: kRadius50,
-                      child: ClipRRect(
+                    child: AnimatedGrowShrinkContainer(
+                      child: Material(
+                        elevation: 3,
                         borderRadius: kRadius50,
-                        child: ColoredBox(
-                          color: kWhite,
-                          child: Padding(
-                            padding: const EdgeInsets.all(10),
-                            child: Center(
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  CircleAvatar(
-                                    radius: sWidth * 0.03,
-                                    backgroundImage:
-                                        const AssetImage(iconNottoCoin),
-                                  ),
-                                  kWidth10,
-                                  Text(
-                                    'Add Points',
-                                    style: textHeadBoldBig,
-                                  ),
-                                ],
+                        child: ClipRRect(
+                          borderRadius: kRadius50,
+                          child: ColoredBox(
+                            color: kWhite,
+                            child: Padding(
+                              padding: const EdgeInsets.all(10),
+                              child: Center(
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    CircleAvatar(
+                                      radius: sWidth * 0.03,
+                                      backgroundImage:
+                                          const AssetImage(iconNottoCoin),
+                                    ),
+                                    kWidth10,
+                                    Text(
+                                      'Add Points',
+                                      style: textHeadBoldBig,
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),

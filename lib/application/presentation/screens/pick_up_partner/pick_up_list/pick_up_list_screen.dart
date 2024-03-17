@@ -31,14 +31,22 @@ class ScreenPickUpPartnersList extends StatelessWidget {
                 child: CircularProgressIndicator(color: kGreenPrimary));
           }
           if (state.pickUpPersons != null && state.pickUpPersons!.isNotEmpty) {
-            return ListView.separated(
-              itemCount: state.pickUpPersons!.length,
-              separatorBuilder: (context, index) => ColoredBox(
-                color: kGreyLight.withOpacity(0.5),
-                child: const SizedBox(height: 1, width: double.infinity),
+            return RefreshIndicator(
+              onRefresh: () async {
+                context
+                    .read<PickupPartnerBloc>()
+                    .add(const PickupPartnerEvent.getPickupPartners());
+                await Future.delayed(const Duration(seconds: 1));
+              },
+              child: ListView.separated(
+                itemCount: state.pickUpPersons!.length,
+                separatorBuilder: (context, index) => ColoredBox(
+                  color: kGreyLight.withOpacity(0.5),
+                  child: const SizedBox(height: 1, width: double.infinity),
+                ),
+                itemBuilder: (context, index) => PickupPartnerListTile(
+                    pickUpPerson: state.pickUpPersons![index]),
               ),
-              itemBuilder: (context, index) => PickupPartnerListTile(
-                  pickUpPerson: state.pickUpPersons![index]),
             );
           } else {
             return const Center(child: Text('No Pickup Partners to show'));

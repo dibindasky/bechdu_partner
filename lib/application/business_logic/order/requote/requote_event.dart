@@ -2,7 +2,7 @@ part of 'requote_bloc.dart';
 
 @freezed
 class RequoteEvent with _$RequoteEvent {
-  const factory RequoteEvent.getQuestions({required String category}) =
+  const factory RequoteEvent.getQuestions({required String category,required String slug}) =
       GetQuestions;
   const factory RequoteEvent.getDateAndTime() = GetDateAndTime;
   const factory RequoteEvent.resheduleOrder(
@@ -12,8 +12,6 @@ class RequoteEvent with _$RequoteEvent {
   const factory RequoteEvent.goBackIndex({required int index}) = GoBackIndex;
   const factory RequoteEvent.markYesOrNo(
       {required SelectedOption selectedOption}) = MarkYesOrNo;
-  const factory RequoteEvent.markGrid(
-      {required SelectedOption selectedOption}) = MarkGrid;
   const factory RequoteEvent.markAnswer(
       {required SelectedOption selectedOption}) = MarkAnswer;
   const factory RequoteEvent.getPrice() = GetPrice;

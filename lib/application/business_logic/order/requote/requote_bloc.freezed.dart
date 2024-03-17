@@ -18,14 +18,13 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$RequoteEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String category) getQuestions,
+    required TResult Function(String category, String slug) getQuestions,
     required TResult Function() getDateAndTime,
     required TResult Function(ResheduleModel resheduleModel, String orderId)
         resheduleOrder,
     required TResult Function(int index) changeIndex,
     required TResult Function(int index) goBackIndex,
     required TResult Function(SelectedOption selectedOption) markYesOrNo,
-    required TResult Function(SelectedOption selectedOption) markGrid,
     required TResult Function(SelectedOption selectedOption) markAnswer,
     required TResult Function() getPrice,
     required TResult Function() reset,
@@ -33,14 +32,13 @@ mixin _$RequoteEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String category)? getQuestions,
+    TResult? Function(String category, String slug)? getQuestions,
     TResult? Function()? getDateAndTime,
     TResult? Function(ResheduleModel resheduleModel, String orderId)?
         resheduleOrder,
     TResult? Function(int index)? changeIndex,
     TResult? Function(int index)? goBackIndex,
     TResult? Function(SelectedOption selectedOption)? markYesOrNo,
-    TResult? Function(SelectedOption selectedOption)? markGrid,
     TResult? Function(SelectedOption selectedOption)? markAnswer,
     TResult? Function()? getPrice,
     TResult? Function()? reset,
@@ -48,14 +46,13 @@ mixin _$RequoteEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String category)? getQuestions,
+    TResult Function(String category, String slug)? getQuestions,
     TResult Function()? getDateAndTime,
     TResult Function(ResheduleModel resheduleModel, String orderId)?
         resheduleOrder,
     TResult Function(int index)? changeIndex,
     TResult Function(int index)? goBackIndex,
     TResult Function(SelectedOption selectedOption)? markYesOrNo,
-    TResult Function(SelectedOption selectedOption)? markGrid,
     TResult Function(SelectedOption selectedOption)? markAnswer,
     TResult Function()? getPrice,
     TResult Function()? reset,
@@ -70,7 +67,6 @@ mixin _$RequoteEvent {
     required TResult Function(ChangeIndex value) changeIndex,
     required TResult Function(GoBackIndex value) goBackIndex,
     required TResult Function(MarkYesOrNo value) markYesOrNo,
-    required TResult Function(MarkGrid value) markGrid,
     required TResult Function(MarkAnswer value) markAnswer,
     required TResult Function(GetPrice value) getPrice,
     required TResult Function(Reset value) reset,
@@ -84,7 +80,6 @@ mixin _$RequoteEvent {
     TResult? Function(ChangeIndex value)? changeIndex,
     TResult? Function(GoBackIndex value)? goBackIndex,
     TResult? Function(MarkYesOrNo value)? markYesOrNo,
-    TResult? Function(MarkGrid value)? markGrid,
     TResult? Function(MarkAnswer value)? markAnswer,
     TResult? Function(GetPrice value)? getPrice,
     TResult? Function(Reset value)? reset,
@@ -98,7 +93,6 @@ mixin _$RequoteEvent {
     TResult Function(ChangeIndex value)? changeIndex,
     TResult Function(GoBackIndex value)? goBackIndex,
     TResult Function(MarkYesOrNo value)? markYesOrNo,
-    TResult Function(MarkGrid value)? markGrid,
     TResult Function(MarkAnswer value)? markAnswer,
     TResult Function(GetPrice value)? getPrice,
     TResult Function(Reset value)? reset,
@@ -131,7 +125,7 @@ abstract class _$$GetQuestionsImplCopyWith<$Res> {
           _$GetQuestionsImpl value, $Res Function(_$GetQuestionsImpl) then) =
       __$$GetQuestionsImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String category});
+  $Res call({String category, String slug});
 }
 
 /// @nodoc
@@ -146,11 +140,16 @@ class __$$GetQuestionsImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? category = null,
+    Object? slug = null,
   }) {
     return _then(_$GetQuestionsImpl(
       category: null == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
+              as String,
+      slug: null == slug
+          ? _value.slug
+          : slug // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -159,14 +158,16 @@ class __$$GetQuestionsImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetQuestionsImpl implements GetQuestions {
-  const _$GetQuestionsImpl({required this.category});
+  const _$GetQuestionsImpl({required this.category, required this.slug});
 
   @override
   final String category;
+  @override
+  final String slug;
 
   @override
   String toString() {
-    return 'RequoteEvent.getQuestions(category: $category)';
+    return 'RequoteEvent.getQuestions(category: $category, slug: $slug)';
   }
 
   @override
@@ -175,11 +176,12 @@ class _$GetQuestionsImpl implements GetQuestions {
         (other.runtimeType == runtimeType &&
             other is _$GetQuestionsImpl &&
             (identical(other.category, category) ||
-                other.category == category));
+                other.category == category) &&
+            (identical(other.slug, slug) || other.slug == slug));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, category);
+  int get hashCode => Object.hash(runtimeType, category, slug);
 
   @JsonKey(ignore: true)
   @override
@@ -190,57 +192,54 @@ class _$GetQuestionsImpl implements GetQuestions {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String category) getQuestions,
+    required TResult Function(String category, String slug) getQuestions,
     required TResult Function() getDateAndTime,
     required TResult Function(ResheduleModel resheduleModel, String orderId)
         resheduleOrder,
     required TResult Function(int index) changeIndex,
     required TResult Function(int index) goBackIndex,
     required TResult Function(SelectedOption selectedOption) markYesOrNo,
-    required TResult Function(SelectedOption selectedOption) markGrid,
     required TResult Function(SelectedOption selectedOption) markAnswer,
     required TResult Function() getPrice,
     required TResult Function() reset,
   }) {
-    return getQuestions(category);
+    return getQuestions(category, slug);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String category)? getQuestions,
+    TResult? Function(String category, String slug)? getQuestions,
     TResult? Function()? getDateAndTime,
     TResult? Function(ResheduleModel resheduleModel, String orderId)?
         resheduleOrder,
     TResult? Function(int index)? changeIndex,
     TResult? Function(int index)? goBackIndex,
     TResult? Function(SelectedOption selectedOption)? markYesOrNo,
-    TResult? Function(SelectedOption selectedOption)? markGrid,
     TResult? Function(SelectedOption selectedOption)? markAnswer,
     TResult? Function()? getPrice,
     TResult? Function()? reset,
   }) {
-    return getQuestions?.call(category);
+    return getQuestions?.call(category, slug);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String category)? getQuestions,
+    TResult Function(String category, String slug)? getQuestions,
     TResult Function()? getDateAndTime,
     TResult Function(ResheduleModel resheduleModel, String orderId)?
         resheduleOrder,
     TResult Function(int index)? changeIndex,
     TResult Function(int index)? goBackIndex,
     TResult Function(SelectedOption selectedOption)? markYesOrNo,
-    TResult Function(SelectedOption selectedOption)? markGrid,
     TResult Function(SelectedOption selectedOption)? markAnswer,
     TResult Function()? getPrice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
     if (getQuestions != null) {
-      return getQuestions(category);
+      return getQuestions(category, slug);
     }
     return orElse();
   }
@@ -254,7 +253,6 @@ class _$GetQuestionsImpl implements GetQuestions {
     required TResult Function(ChangeIndex value) changeIndex,
     required TResult Function(GoBackIndex value) goBackIndex,
     required TResult Function(MarkYesOrNo value) markYesOrNo,
-    required TResult Function(MarkGrid value) markGrid,
     required TResult Function(MarkAnswer value) markAnswer,
     required TResult Function(GetPrice value) getPrice,
     required TResult Function(Reset value) reset,
@@ -271,7 +269,6 @@ class _$GetQuestionsImpl implements GetQuestions {
     TResult? Function(ChangeIndex value)? changeIndex,
     TResult? Function(GoBackIndex value)? goBackIndex,
     TResult? Function(MarkYesOrNo value)? markYesOrNo,
-    TResult? Function(MarkGrid value)? markGrid,
     TResult? Function(MarkAnswer value)? markAnswer,
     TResult? Function(GetPrice value)? getPrice,
     TResult? Function(Reset value)? reset,
@@ -288,7 +285,6 @@ class _$GetQuestionsImpl implements GetQuestions {
     TResult Function(ChangeIndex value)? changeIndex,
     TResult Function(GoBackIndex value)? goBackIndex,
     TResult Function(MarkYesOrNo value)? markYesOrNo,
-    TResult Function(MarkGrid value)? markGrid,
     TResult Function(MarkAnswer value)? markAnswer,
     TResult Function(GetPrice value)? getPrice,
     TResult Function(Reset value)? reset,
@@ -302,10 +298,12 @@ class _$GetQuestionsImpl implements GetQuestions {
 }
 
 abstract class GetQuestions implements RequoteEvent {
-  const factory GetQuestions({required final String category}) =
-      _$GetQuestionsImpl;
+  const factory GetQuestions(
+      {required final String category,
+      required final String slug}) = _$GetQuestionsImpl;
 
   String get category;
+  String get slug;
   @JsonKey(ignore: true)
   _$$GetQuestionsImplCopyWith<_$GetQuestionsImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -349,14 +347,13 @@ class _$GetDateAndTimeImpl implements GetDateAndTime {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String category) getQuestions,
+    required TResult Function(String category, String slug) getQuestions,
     required TResult Function() getDateAndTime,
     required TResult Function(ResheduleModel resheduleModel, String orderId)
         resheduleOrder,
     required TResult Function(int index) changeIndex,
     required TResult Function(int index) goBackIndex,
     required TResult Function(SelectedOption selectedOption) markYesOrNo,
-    required TResult Function(SelectedOption selectedOption) markGrid,
     required TResult Function(SelectedOption selectedOption) markAnswer,
     required TResult Function() getPrice,
     required TResult Function() reset,
@@ -367,14 +364,13 @@ class _$GetDateAndTimeImpl implements GetDateAndTime {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String category)? getQuestions,
+    TResult? Function(String category, String slug)? getQuestions,
     TResult? Function()? getDateAndTime,
     TResult? Function(ResheduleModel resheduleModel, String orderId)?
         resheduleOrder,
     TResult? Function(int index)? changeIndex,
     TResult? Function(int index)? goBackIndex,
     TResult? Function(SelectedOption selectedOption)? markYesOrNo,
-    TResult? Function(SelectedOption selectedOption)? markGrid,
     TResult? Function(SelectedOption selectedOption)? markAnswer,
     TResult? Function()? getPrice,
     TResult? Function()? reset,
@@ -385,14 +381,13 @@ class _$GetDateAndTimeImpl implements GetDateAndTime {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String category)? getQuestions,
+    TResult Function(String category, String slug)? getQuestions,
     TResult Function()? getDateAndTime,
     TResult Function(ResheduleModel resheduleModel, String orderId)?
         resheduleOrder,
     TResult Function(int index)? changeIndex,
     TResult Function(int index)? goBackIndex,
     TResult Function(SelectedOption selectedOption)? markYesOrNo,
-    TResult Function(SelectedOption selectedOption)? markGrid,
     TResult Function(SelectedOption selectedOption)? markAnswer,
     TResult Function()? getPrice,
     TResult Function()? reset,
@@ -413,7 +408,6 @@ class _$GetDateAndTimeImpl implements GetDateAndTime {
     required TResult Function(ChangeIndex value) changeIndex,
     required TResult Function(GoBackIndex value) goBackIndex,
     required TResult Function(MarkYesOrNo value) markYesOrNo,
-    required TResult Function(MarkGrid value) markGrid,
     required TResult Function(MarkAnswer value) markAnswer,
     required TResult Function(GetPrice value) getPrice,
     required TResult Function(Reset value) reset,
@@ -430,7 +424,6 @@ class _$GetDateAndTimeImpl implements GetDateAndTime {
     TResult? Function(ChangeIndex value)? changeIndex,
     TResult? Function(GoBackIndex value)? goBackIndex,
     TResult? Function(MarkYesOrNo value)? markYesOrNo,
-    TResult? Function(MarkGrid value)? markGrid,
     TResult? Function(MarkAnswer value)? markAnswer,
     TResult? Function(GetPrice value)? getPrice,
     TResult? Function(Reset value)? reset,
@@ -447,7 +440,6 @@ class _$GetDateAndTimeImpl implements GetDateAndTime {
     TResult Function(ChangeIndex value)? changeIndex,
     TResult Function(GoBackIndex value)? goBackIndex,
     TResult Function(MarkYesOrNo value)? markYesOrNo,
-    TResult Function(MarkGrid value)? markGrid,
     TResult Function(MarkAnswer value)? markAnswer,
     TResult Function(GetPrice value)? getPrice,
     TResult Function(Reset value)? reset,
@@ -539,14 +531,13 @@ class _$ResheduleOrderImpl implements ResheduleOrder {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String category) getQuestions,
+    required TResult Function(String category, String slug) getQuestions,
     required TResult Function() getDateAndTime,
     required TResult Function(ResheduleModel resheduleModel, String orderId)
         resheduleOrder,
     required TResult Function(int index) changeIndex,
     required TResult Function(int index) goBackIndex,
     required TResult Function(SelectedOption selectedOption) markYesOrNo,
-    required TResult Function(SelectedOption selectedOption) markGrid,
     required TResult Function(SelectedOption selectedOption) markAnswer,
     required TResult Function() getPrice,
     required TResult Function() reset,
@@ -557,14 +548,13 @@ class _$ResheduleOrderImpl implements ResheduleOrder {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String category)? getQuestions,
+    TResult? Function(String category, String slug)? getQuestions,
     TResult? Function()? getDateAndTime,
     TResult? Function(ResheduleModel resheduleModel, String orderId)?
         resheduleOrder,
     TResult? Function(int index)? changeIndex,
     TResult? Function(int index)? goBackIndex,
     TResult? Function(SelectedOption selectedOption)? markYesOrNo,
-    TResult? Function(SelectedOption selectedOption)? markGrid,
     TResult? Function(SelectedOption selectedOption)? markAnswer,
     TResult? Function()? getPrice,
     TResult? Function()? reset,
@@ -575,14 +565,13 @@ class _$ResheduleOrderImpl implements ResheduleOrder {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String category)? getQuestions,
+    TResult Function(String category, String slug)? getQuestions,
     TResult Function()? getDateAndTime,
     TResult Function(ResheduleModel resheduleModel, String orderId)?
         resheduleOrder,
     TResult Function(int index)? changeIndex,
     TResult Function(int index)? goBackIndex,
     TResult Function(SelectedOption selectedOption)? markYesOrNo,
-    TResult Function(SelectedOption selectedOption)? markGrid,
     TResult Function(SelectedOption selectedOption)? markAnswer,
     TResult Function()? getPrice,
     TResult Function()? reset,
@@ -603,7 +592,6 @@ class _$ResheduleOrderImpl implements ResheduleOrder {
     required TResult Function(ChangeIndex value) changeIndex,
     required TResult Function(GoBackIndex value) goBackIndex,
     required TResult Function(MarkYesOrNo value) markYesOrNo,
-    required TResult Function(MarkGrid value) markGrid,
     required TResult Function(MarkAnswer value) markAnswer,
     required TResult Function(GetPrice value) getPrice,
     required TResult Function(Reset value) reset,
@@ -620,7 +608,6 @@ class _$ResheduleOrderImpl implements ResheduleOrder {
     TResult? Function(ChangeIndex value)? changeIndex,
     TResult? Function(GoBackIndex value)? goBackIndex,
     TResult? Function(MarkYesOrNo value)? markYesOrNo,
-    TResult? Function(MarkGrid value)? markGrid,
     TResult? Function(MarkAnswer value)? markAnswer,
     TResult? Function(GetPrice value)? getPrice,
     TResult? Function(Reset value)? reset,
@@ -637,7 +624,6 @@ class _$ResheduleOrderImpl implements ResheduleOrder {
     TResult Function(ChangeIndex value)? changeIndex,
     TResult Function(GoBackIndex value)? goBackIndex,
     TResult Function(MarkYesOrNo value)? markYesOrNo,
-    TResult Function(MarkGrid value)? markGrid,
     TResult Function(MarkAnswer value)? markAnswer,
     TResult Function(GetPrice value)? getPrice,
     TResult Function(Reset value)? reset,
@@ -726,14 +712,13 @@ class _$ChangeIndexImpl implements ChangeIndex {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String category) getQuestions,
+    required TResult Function(String category, String slug) getQuestions,
     required TResult Function() getDateAndTime,
     required TResult Function(ResheduleModel resheduleModel, String orderId)
         resheduleOrder,
     required TResult Function(int index) changeIndex,
     required TResult Function(int index) goBackIndex,
     required TResult Function(SelectedOption selectedOption) markYesOrNo,
-    required TResult Function(SelectedOption selectedOption) markGrid,
     required TResult Function(SelectedOption selectedOption) markAnswer,
     required TResult Function() getPrice,
     required TResult Function() reset,
@@ -744,14 +729,13 @@ class _$ChangeIndexImpl implements ChangeIndex {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String category)? getQuestions,
+    TResult? Function(String category, String slug)? getQuestions,
     TResult? Function()? getDateAndTime,
     TResult? Function(ResheduleModel resheduleModel, String orderId)?
         resheduleOrder,
     TResult? Function(int index)? changeIndex,
     TResult? Function(int index)? goBackIndex,
     TResult? Function(SelectedOption selectedOption)? markYesOrNo,
-    TResult? Function(SelectedOption selectedOption)? markGrid,
     TResult? Function(SelectedOption selectedOption)? markAnswer,
     TResult? Function()? getPrice,
     TResult? Function()? reset,
@@ -762,14 +746,13 @@ class _$ChangeIndexImpl implements ChangeIndex {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String category)? getQuestions,
+    TResult Function(String category, String slug)? getQuestions,
     TResult Function()? getDateAndTime,
     TResult Function(ResheduleModel resheduleModel, String orderId)?
         resheduleOrder,
     TResult Function(int index)? changeIndex,
     TResult Function(int index)? goBackIndex,
     TResult Function(SelectedOption selectedOption)? markYesOrNo,
-    TResult Function(SelectedOption selectedOption)? markGrid,
     TResult Function(SelectedOption selectedOption)? markAnswer,
     TResult Function()? getPrice,
     TResult Function()? reset,
@@ -790,7 +773,6 @@ class _$ChangeIndexImpl implements ChangeIndex {
     required TResult Function(ChangeIndex value) changeIndex,
     required TResult Function(GoBackIndex value) goBackIndex,
     required TResult Function(MarkYesOrNo value) markYesOrNo,
-    required TResult Function(MarkGrid value) markGrid,
     required TResult Function(MarkAnswer value) markAnswer,
     required TResult Function(GetPrice value) getPrice,
     required TResult Function(Reset value) reset,
@@ -807,7 +789,6 @@ class _$ChangeIndexImpl implements ChangeIndex {
     TResult? Function(ChangeIndex value)? changeIndex,
     TResult? Function(GoBackIndex value)? goBackIndex,
     TResult? Function(MarkYesOrNo value)? markYesOrNo,
-    TResult? Function(MarkGrid value)? markGrid,
     TResult? Function(MarkAnswer value)? markAnswer,
     TResult? Function(GetPrice value)? getPrice,
     TResult? Function(Reset value)? reset,
@@ -824,7 +805,6 @@ class _$ChangeIndexImpl implements ChangeIndex {
     TResult Function(ChangeIndex value)? changeIndex,
     TResult Function(GoBackIndex value)? goBackIndex,
     TResult Function(MarkYesOrNo value)? markYesOrNo,
-    TResult Function(MarkGrid value)? markGrid,
     TResult Function(MarkAnswer value)? markAnswer,
     TResult Function(GetPrice value)? getPrice,
     TResult Function(Reset value)? reset,
@@ -910,14 +890,13 @@ class _$GoBackIndexImpl implements GoBackIndex {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String category) getQuestions,
+    required TResult Function(String category, String slug) getQuestions,
     required TResult Function() getDateAndTime,
     required TResult Function(ResheduleModel resheduleModel, String orderId)
         resheduleOrder,
     required TResult Function(int index) changeIndex,
     required TResult Function(int index) goBackIndex,
     required TResult Function(SelectedOption selectedOption) markYesOrNo,
-    required TResult Function(SelectedOption selectedOption) markGrid,
     required TResult Function(SelectedOption selectedOption) markAnswer,
     required TResult Function() getPrice,
     required TResult Function() reset,
@@ -928,14 +907,13 @@ class _$GoBackIndexImpl implements GoBackIndex {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String category)? getQuestions,
+    TResult? Function(String category, String slug)? getQuestions,
     TResult? Function()? getDateAndTime,
     TResult? Function(ResheduleModel resheduleModel, String orderId)?
         resheduleOrder,
     TResult? Function(int index)? changeIndex,
     TResult? Function(int index)? goBackIndex,
     TResult? Function(SelectedOption selectedOption)? markYesOrNo,
-    TResult? Function(SelectedOption selectedOption)? markGrid,
     TResult? Function(SelectedOption selectedOption)? markAnswer,
     TResult? Function()? getPrice,
     TResult? Function()? reset,
@@ -946,14 +924,13 @@ class _$GoBackIndexImpl implements GoBackIndex {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String category)? getQuestions,
+    TResult Function(String category, String slug)? getQuestions,
     TResult Function()? getDateAndTime,
     TResult Function(ResheduleModel resheduleModel, String orderId)?
         resheduleOrder,
     TResult Function(int index)? changeIndex,
     TResult Function(int index)? goBackIndex,
     TResult Function(SelectedOption selectedOption)? markYesOrNo,
-    TResult Function(SelectedOption selectedOption)? markGrid,
     TResult Function(SelectedOption selectedOption)? markAnswer,
     TResult Function()? getPrice,
     TResult Function()? reset,
@@ -974,7 +951,6 @@ class _$GoBackIndexImpl implements GoBackIndex {
     required TResult Function(ChangeIndex value) changeIndex,
     required TResult Function(GoBackIndex value) goBackIndex,
     required TResult Function(MarkYesOrNo value) markYesOrNo,
-    required TResult Function(MarkGrid value) markGrid,
     required TResult Function(MarkAnswer value) markAnswer,
     required TResult Function(GetPrice value) getPrice,
     required TResult Function(Reset value) reset,
@@ -991,7 +967,6 @@ class _$GoBackIndexImpl implements GoBackIndex {
     TResult? Function(ChangeIndex value)? changeIndex,
     TResult? Function(GoBackIndex value)? goBackIndex,
     TResult? Function(MarkYesOrNo value)? markYesOrNo,
-    TResult? Function(MarkGrid value)? markGrid,
     TResult? Function(MarkAnswer value)? markAnswer,
     TResult? Function(GetPrice value)? getPrice,
     TResult? Function(Reset value)? reset,
@@ -1008,7 +983,6 @@ class _$GoBackIndexImpl implements GoBackIndex {
     TResult Function(ChangeIndex value)? changeIndex,
     TResult Function(GoBackIndex value)? goBackIndex,
     TResult Function(MarkYesOrNo value)? markYesOrNo,
-    TResult Function(MarkGrid value)? markGrid,
     TResult Function(MarkAnswer value)? markAnswer,
     TResult Function(GetPrice value)? getPrice,
     TResult Function(Reset value)? reset,
@@ -1095,14 +1069,13 @@ class _$MarkYesOrNoImpl implements MarkYesOrNo {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String category) getQuestions,
+    required TResult Function(String category, String slug) getQuestions,
     required TResult Function() getDateAndTime,
     required TResult Function(ResheduleModel resheduleModel, String orderId)
         resheduleOrder,
     required TResult Function(int index) changeIndex,
     required TResult Function(int index) goBackIndex,
     required TResult Function(SelectedOption selectedOption) markYesOrNo,
-    required TResult Function(SelectedOption selectedOption) markGrid,
     required TResult Function(SelectedOption selectedOption) markAnswer,
     required TResult Function() getPrice,
     required TResult Function() reset,
@@ -1113,14 +1086,13 @@ class _$MarkYesOrNoImpl implements MarkYesOrNo {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String category)? getQuestions,
+    TResult? Function(String category, String slug)? getQuestions,
     TResult? Function()? getDateAndTime,
     TResult? Function(ResheduleModel resheduleModel, String orderId)?
         resheduleOrder,
     TResult? Function(int index)? changeIndex,
     TResult? Function(int index)? goBackIndex,
     TResult? Function(SelectedOption selectedOption)? markYesOrNo,
-    TResult? Function(SelectedOption selectedOption)? markGrid,
     TResult? Function(SelectedOption selectedOption)? markAnswer,
     TResult? Function()? getPrice,
     TResult? Function()? reset,
@@ -1131,14 +1103,13 @@ class _$MarkYesOrNoImpl implements MarkYesOrNo {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String category)? getQuestions,
+    TResult Function(String category, String slug)? getQuestions,
     TResult Function()? getDateAndTime,
     TResult Function(ResheduleModel resheduleModel, String orderId)?
         resheduleOrder,
     TResult Function(int index)? changeIndex,
     TResult Function(int index)? goBackIndex,
     TResult Function(SelectedOption selectedOption)? markYesOrNo,
-    TResult Function(SelectedOption selectedOption)? markGrid,
     TResult Function(SelectedOption selectedOption)? markAnswer,
     TResult Function()? getPrice,
     TResult Function()? reset,
@@ -1159,7 +1130,6 @@ class _$MarkYesOrNoImpl implements MarkYesOrNo {
     required TResult Function(ChangeIndex value) changeIndex,
     required TResult Function(GoBackIndex value) goBackIndex,
     required TResult Function(MarkYesOrNo value) markYesOrNo,
-    required TResult Function(MarkGrid value) markGrid,
     required TResult Function(MarkAnswer value) markAnswer,
     required TResult Function(GetPrice value) getPrice,
     required TResult Function(Reset value) reset,
@@ -1176,7 +1146,6 @@ class _$MarkYesOrNoImpl implements MarkYesOrNo {
     TResult? Function(ChangeIndex value)? changeIndex,
     TResult? Function(GoBackIndex value)? goBackIndex,
     TResult? Function(MarkYesOrNo value)? markYesOrNo,
-    TResult? Function(MarkGrid value)? markGrid,
     TResult? Function(MarkAnswer value)? markAnswer,
     TResult? Function(GetPrice value)? getPrice,
     TResult? Function(Reset value)? reset,
@@ -1193,7 +1162,6 @@ class _$MarkYesOrNoImpl implements MarkYesOrNo {
     TResult Function(ChangeIndex value)? changeIndex,
     TResult Function(GoBackIndex value)? goBackIndex,
     TResult Function(MarkYesOrNo value)? markYesOrNo,
-    TResult Function(MarkGrid value)? markGrid,
     TResult Function(MarkAnswer value)? markAnswer,
     TResult Function(GetPrice value)? getPrice,
     TResult Function(Reset value)? reset,
@@ -1213,192 +1181,6 @@ abstract class MarkYesOrNo implements RequoteEvent {
   SelectedOption get selectedOption;
   @JsonKey(ignore: true)
   _$$MarkYesOrNoImplCopyWith<_$MarkYesOrNoImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$MarkGridImplCopyWith<$Res> {
-  factory _$$MarkGridImplCopyWith(
-          _$MarkGridImpl value, $Res Function(_$MarkGridImpl) then) =
-      __$$MarkGridImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({SelectedOption selectedOption});
-}
-
-/// @nodoc
-class __$$MarkGridImplCopyWithImpl<$Res>
-    extends _$RequoteEventCopyWithImpl<$Res, _$MarkGridImpl>
-    implements _$$MarkGridImplCopyWith<$Res> {
-  __$$MarkGridImplCopyWithImpl(
-      _$MarkGridImpl _value, $Res Function(_$MarkGridImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? selectedOption = null,
-  }) {
-    return _then(_$MarkGridImpl(
-      selectedOption: null == selectedOption
-          ? _value.selectedOption
-          : selectedOption // ignore: cast_nullable_to_non_nullable
-              as SelectedOption,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$MarkGridImpl implements MarkGrid {
-  const _$MarkGridImpl({required this.selectedOption});
-
-  @override
-  final SelectedOption selectedOption;
-
-  @override
-  String toString() {
-    return 'RequoteEvent.markGrid(selectedOption: $selectedOption)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$MarkGridImpl &&
-            (identical(other.selectedOption, selectedOption) ||
-                other.selectedOption == selectedOption));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, selectedOption);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$MarkGridImplCopyWith<_$MarkGridImpl> get copyWith =>
-      __$$MarkGridImplCopyWithImpl<_$MarkGridImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String category) getQuestions,
-    required TResult Function() getDateAndTime,
-    required TResult Function(ResheduleModel resheduleModel, String orderId)
-        resheduleOrder,
-    required TResult Function(int index) changeIndex,
-    required TResult Function(int index) goBackIndex,
-    required TResult Function(SelectedOption selectedOption) markYesOrNo,
-    required TResult Function(SelectedOption selectedOption) markGrid,
-    required TResult Function(SelectedOption selectedOption) markAnswer,
-    required TResult Function() getPrice,
-    required TResult Function() reset,
-  }) {
-    return markGrid(selectedOption);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String category)? getQuestions,
-    TResult? Function()? getDateAndTime,
-    TResult? Function(ResheduleModel resheduleModel, String orderId)?
-        resheduleOrder,
-    TResult? Function(int index)? changeIndex,
-    TResult? Function(int index)? goBackIndex,
-    TResult? Function(SelectedOption selectedOption)? markYesOrNo,
-    TResult? Function(SelectedOption selectedOption)? markGrid,
-    TResult? Function(SelectedOption selectedOption)? markAnswer,
-    TResult? Function()? getPrice,
-    TResult? Function()? reset,
-  }) {
-    return markGrid?.call(selectedOption);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String category)? getQuestions,
-    TResult Function()? getDateAndTime,
-    TResult Function(ResheduleModel resheduleModel, String orderId)?
-        resheduleOrder,
-    TResult Function(int index)? changeIndex,
-    TResult Function(int index)? goBackIndex,
-    TResult Function(SelectedOption selectedOption)? markYesOrNo,
-    TResult Function(SelectedOption selectedOption)? markGrid,
-    TResult Function(SelectedOption selectedOption)? markAnswer,
-    TResult Function()? getPrice,
-    TResult Function()? reset,
-    required TResult orElse(),
-  }) {
-    if (markGrid != null) {
-      return markGrid(selectedOption);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(GetQuestions value) getQuestions,
-    required TResult Function(GetDateAndTime value) getDateAndTime,
-    required TResult Function(ResheduleOrder value) resheduleOrder,
-    required TResult Function(ChangeIndex value) changeIndex,
-    required TResult Function(GoBackIndex value) goBackIndex,
-    required TResult Function(MarkYesOrNo value) markYesOrNo,
-    required TResult Function(MarkGrid value) markGrid,
-    required TResult Function(MarkAnswer value) markAnswer,
-    required TResult Function(GetPrice value) getPrice,
-    required TResult Function(Reset value) reset,
-  }) {
-    return markGrid(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(GetQuestions value)? getQuestions,
-    TResult? Function(GetDateAndTime value)? getDateAndTime,
-    TResult? Function(ResheduleOrder value)? resheduleOrder,
-    TResult? Function(ChangeIndex value)? changeIndex,
-    TResult? Function(GoBackIndex value)? goBackIndex,
-    TResult? Function(MarkYesOrNo value)? markYesOrNo,
-    TResult? Function(MarkGrid value)? markGrid,
-    TResult? Function(MarkAnswer value)? markAnswer,
-    TResult? Function(GetPrice value)? getPrice,
-    TResult? Function(Reset value)? reset,
-  }) {
-    return markGrid?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(GetQuestions value)? getQuestions,
-    TResult Function(GetDateAndTime value)? getDateAndTime,
-    TResult Function(ResheduleOrder value)? resheduleOrder,
-    TResult Function(ChangeIndex value)? changeIndex,
-    TResult Function(GoBackIndex value)? goBackIndex,
-    TResult Function(MarkYesOrNo value)? markYesOrNo,
-    TResult Function(MarkGrid value)? markGrid,
-    TResult Function(MarkAnswer value)? markAnswer,
-    TResult Function(GetPrice value)? getPrice,
-    TResult Function(Reset value)? reset,
-    required TResult orElse(),
-  }) {
-    if (markGrid != null) {
-      return markGrid(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class MarkGrid implements RequoteEvent {
-  const factory MarkGrid({required final SelectedOption selectedOption}) =
-      _$MarkGridImpl;
-
-  SelectedOption get selectedOption;
-  @JsonKey(ignore: true)
-  _$$MarkGridImplCopyWith<_$MarkGridImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1467,14 +1249,13 @@ class _$MarkAnswerImpl implements MarkAnswer {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String category) getQuestions,
+    required TResult Function(String category, String slug) getQuestions,
     required TResult Function() getDateAndTime,
     required TResult Function(ResheduleModel resheduleModel, String orderId)
         resheduleOrder,
     required TResult Function(int index) changeIndex,
     required TResult Function(int index) goBackIndex,
     required TResult Function(SelectedOption selectedOption) markYesOrNo,
-    required TResult Function(SelectedOption selectedOption) markGrid,
     required TResult Function(SelectedOption selectedOption) markAnswer,
     required TResult Function() getPrice,
     required TResult Function() reset,
@@ -1485,14 +1266,13 @@ class _$MarkAnswerImpl implements MarkAnswer {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String category)? getQuestions,
+    TResult? Function(String category, String slug)? getQuestions,
     TResult? Function()? getDateAndTime,
     TResult? Function(ResheduleModel resheduleModel, String orderId)?
         resheduleOrder,
     TResult? Function(int index)? changeIndex,
     TResult? Function(int index)? goBackIndex,
     TResult? Function(SelectedOption selectedOption)? markYesOrNo,
-    TResult? Function(SelectedOption selectedOption)? markGrid,
     TResult? Function(SelectedOption selectedOption)? markAnswer,
     TResult? Function()? getPrice,
     TResult? Function()? reset,
@@ -1503,14 +1283,13 @@ class _$MarkAnswerImpl implements MarkAnswer {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String category)? getQuestions,
+    TResult Function(String category, String slug)? getQuestions,
     TResult Function()? getDateAndTime,
     TResult Function(ResheduleModel resheduleModel, String orderId)?
         resheduleOrder,
     TResult Function(int index)? changeIndex,
     TResult Function(int index)? goBackIndex,
     TResult Function(SelectedOption selectedOption)? markYesOrNo,
-    TResult Function(SelectedOption selectedOption)? markGrid,
     TResult Function(SelectedOption selectedOption)? markAnswer,
     TResult Function()? getPrice,
     TResult Function()? reset,
@@ -1531,7 +1310,6 @@ class _$MarkAnswerImpl implements MarkAnswer {
     required TResult Function(ChangeIndex value) changeIndex,
     required TResult Function(GoBackIndex value) goBackIndex,
     required TResult Function(MarkYesOrNo value) markYesOrNo,
-    required TResult Function(MarkGrid value) markGrid,
     required TResult Function(MarkAnswer value) markAnswer,
     required TResult Function(GetPrice value) getPrice,
     required TResult Function(Reset value) reset,
@@ -1548,7 +1326,6 @@ class _$MarkAnswerImpl implements MarkAnswer {
     TResult? Function(ChangeIndex value)? changeIndex,
     TResult? Function(GoBackIndex value)? goBackIndex,
     TResult? Function(MarkYesOrNo value)? markYesOrNo,
-    TResult? Function(MarkGrid value)? markGrid,
     TResult? Function(MarkAnswer value)? markAnswer,
     TResult? Function(GetPrice value)? getPrice,
     TResult? Function(Reset value)? reset,
@@ -1565,7 +1342,6 @@ class _$MarkAnswerImpl implements MarkAnswer {
     TResult Function(ChangeIndex value)? changeIndex,
     TResult Function(GoBackIndex value)? goBackIndex,
     TResult Function(MarkYesOrNo value)? markYesOrNo,
-    TResult Function(MarkGrid value)? markGrid,
     TResult Function(MarkAnswer value)? markAnswer,
     TResult Function(GetPrice value)? getPrice,
     TResult Function(Reset value)? reset,
@@ -1626,14 +1402,13 @@ class _$GetPriceImpl implements GetPrice {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String category) getQuestions,
+    required TResult Function(String category, String slug) getQuestions,
     required TResult Function() getDateAndTime,
     required TResult Function(ResheduleModel resheduleModel, String orderId)
         resheduleOrder,
     required TResult Function(int index) changeIndex,
     required TResult Function(int index) goBackIndex,
     required TResult Function(SelectedOption selectedOption) markYesOrNo,
-    required TResult Function(SelectedOption selectedOption) markGrid,
     required TResult Function(SelectedOption selectedOption) markAnswer,
     required TResult Function() getPrice,
     required TResult Function() reset,
@@ -1644,14 +1419,13 @@ class _$GetPriceImpl implements GetPrice {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String category)? getQuestions,
+    TResult? Function(String category, String slug)? getQuestions,
     TResult? Function()? getDateAndTime,
     TResult? Function(ResheduleModel resheduleModel, String orderId)?
         resheduleOrder,
     TResult? Function(int index)? changeIndex,
     TResult? Function(int index)? goBackIndex,
     TResult? Function(SelectedOption selectedOption)? markYesOrNo,
-    TResult? Function(SelectedOption selectedOption)? markGrid,
     TResult? Function(SelectedOption selectedOption)? markAnswer,
     TResult? Function()? getPrice,
     TResult? Function()? reset,
@@ -1662,14 +1436,13 @@ class _$GetPriceImpl implements GetPrice {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String category)? getQuestions,
+    TResult Function(String category, String slug)? getQuestions,
     TResult Function()? getDateAndTime,
     TResult Function(ResheduleModel resheduleModel, String orderId)?
         resheduleOrder,
     TResult Function(int index)? changeIndex,
     TResult Function(int index)? goBackIndex,
     TResult Function(SelectedOption selectedOption)? markYesOrNo,
-    TResult Function(SelectedOption selectedOption)? markGrid,
     TResult Function(SelectedOption selectedOption)? markAnswer,
     TResult Function()? getPrice,
     TResult Function()? reset,
@@ -1690,7 +1463,6 @@ class _$GetPriceImpl implements GetPrice {
     required TResult Function(ChangeIndex value) changeIndex,
     required TResult Function(GoBackIndex value) goBackIndex,
     required TResult Function(MarkYesOrNo value) markYesOrNo,
-    required TResult Function(MarkGrid value) markGrid,
     required TResult Function(MarkAnswer value) markAnswer,
     required TResult Function(GetPrice value) getPrice,
     required TResult Function(Reset value) reset,
@@ -1707,7 +1479,6 @@ class _$GetPriceImpl implements GetPrice {
     TResult? Function(ChangeIndex value)? changeIndex,
     TResult? Function(GoBackIndex value)? goBackIndex,
     TResult? Function(MarkYesOrNo value)? markYesOrNo,
-    TResult? Function(MarkGrid value)? markGrid,
     TResult? Function(MarkAnswer value)? markAnswer,
     TResult? Function(GetPrice value)? getPrice,
     TResult? Function(Reset value)? reset,
@@ -1724,7 +1495,6 @@ class _$GetPriceImpl implements GetPrice {
     TResult Function(ChangeIndex value)? changeIndex,
     TResult Function(GoBackIndex value)? goBackIndex,
     TResult Function(MarkYesOrNo value)? markYesOrNo,
-    TResult Function(MarkGrid value)? markGrid,
     TResult Function(MarkAnswer value)? markAnswer,
     TResult Function(GetPrice value)? getPrice,
     TResult Function(Reset value)? reset,
@@ -1779,14 +1549,13 @@ class _$ResetImpl implements Reset {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String category) getQuestions,
+    required TResult Function(String category, String slug) getQuestions,
     required TResult Function() getDateAndTime,
     required TResult Function(ResheduleModel resheduleModel, String orderId)
         resheduleOrder,
     required TResult Function(int index) changeIndex,
     required TResult Function(int index) goBackIndex,
     required TResult Function(SelectedOption selectedOption) markYesOrNo,
-    required TResult Function(SelectedOption selectedOption) markGrid,
     required TResult Function(SelectedOption selectedOption) markAnswer,
     required TResult Function() getPrice,
     required TResult Function() reset,
@@ -1797,14 +1566,13 @@ class _$ResetImpl implements Reset {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String category)? getQuestions,
+    TResult? Function(String category, String slug)? getQuestions,
     TResult? Function()? getDateAndTime,
     TResult? Function(ResheduleModel resheduleModel, String orderId)?
         resheduleOrder,
     TResult? Function(int index)? changeIndex,
     TResult? Function(int index)? goBackIndex,
     TResult? Function(SelectedOption selectedOption)? markYesOrNo,
-    TResult? Function(SelectedOption selectedOption)? markGrid,
     TResult? Function(SelectedOption selectedOption)? markAnswer,
     TResult? Function()? getPrice,
     TResult? Function()? reset,
@@ -1815,14 +1583,13 @@ class _$ResetImpl implements Reset {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String category)? getQuestions,
+    TResult Function(String category, String slug)? getQuestions,
     TResult Function()? getDateAndTime,
     TResult Function(ResheduleModel resheduleModel, String orderId)?
         resheduleOrder,
     TResult Function(int index)? changeIndex,
     TResult Function(int index)? goBackIndex,
     TResult Function(SelectedOption selectedOption)? markYesOrNo,
-    TResult Function(SelectedOption selectedOption)? markGrid,
     TResult Function(SelectedOption selectedOption)? markAnswer,
     TResult Function()? getPrice,
     TResult Function()? reset,
@@ -1843,7 +1610,6 @@ class _$ResetImpl implements Reset {
     required TResult Function(ChangeIndex value) changeIndex,
     required TResult Function(GoBackIndex value) goBackIndex,
     required TResult Function(MarkYesOrNo value) markYesOrNo,
-    required TResult Function(MarkGrid value) markGrid,
     required TResult Function(MarkAnswer value) markAnswer,
     required TResult Function(GetPrice value) getPrice,
     required TResult Function(Reset value) reset,
@@ -1860,7 +1626,6 @@ class _$ResetImpl implements Reset {
     TResult? Function(ChangeIndex value)? changeIndex,
     TResult? Function(GoBackIndex value)? goBackIndex,
     TResult? Function(MarkYesOrNo value)? markYesOrNo,
-    TResult? Function(MarkGrid value)? markGrid,
     TResult? Function(MarkAnswer value)? markAnswer,
     TResult? Function(GetPrice value)? getPrice,
     TResult? Function(Reset value)? reset,
@@ -1877,7 +1642,6 @@ class _$ResetImpl implements Reset {
     TResult Function(ChangeIndex value)? changeIndex,
     TResult Function(GoBackIndex value)? goBackIndex,
     TResult Function(MarkYesOrNo value)? markYesOrNo,
-    TResult Function(MarkGrid value)? markGrid,
     TResult Function(MarkAnswer value)? markAnswer,
     TResult Function(GetPrice value)? getPrice,
     TResult Function(Reset value)? reset,
@@ -1899,10 +1663,15 @@ mixin _$RequoteState {
   bool get isLoading => throw _privateConstructorUsedError;
   bool get hasError => throw _privateConstructorUsedError;
   String? get message => throw _privateConstructorUsedError;
+  String? get basePrice => throw _privateConstructorUsedError;
+  String? get category => throw _privateConstructorUsedError;
+  String? get slug => throw _privateConstructorUsedError;
   List<String> get dates => throw _privateConstructorUsedError;
   List<String> get time => throw _privateConstructorUsedError;
   bool get questionLoading => throw _privateConstructorUsedError;
   bool get resheduleLoading => throw _privateConstructorUsedError;
+  bool get priceCalculationLoading => throw _privateConstructorUsedError;
+  bool get priceCalculationError => throw _privateConstructorUsedError;
   bool get resheduleDone => throw _privateConstructorUsedError;
   int get requoteIndex => throw _privateConstructorUsedError;
   List<Section>? get sections => throw _privateConstructorUsedError;
@@ -1924,10 +1693,15 @@ abstract class $RequoteStateCopyWith<$Res> {
       {bool isLoading,
       bool hasError,
       String? message,
+      String? basePrice,
+      String? category,
+      String? slug,
       List<String> dates,
       List<String> time,
       bool questionLoading,
       bool resheduleLoading,
+      bool priceCalculationLoading,
+      bool priceCalculationError,
       bool resheduleDone,
       int requoteIndex,
       List<Section>? sections,
@@ -1950,10 +1724,15 @@ class _$RequoteStateCopyWithImpl<$Res, $Val extends RequoteState>
     Object? isLoading = null,
     Object? hasError = null,
     Object? message = freezed,
+    Object? basePrice = freezed,
+    Object? category = freezed,
+    Object? slug = freezed,
     Object? dates = null,
     Object? time = null,
     Object? questionLoading = null,
     Object? resheduleLoading = null,
+    Object? priceCalculationLoading = null,
+    Object? priceCalculationError = null,
     Object? resheduleDone = null,
     Object? requoteIndex = null,
     Object? sections = freezed,
@@ -1972,6 +1751,18 @@ class _$RequoteStateCopyWithImpl<$Res, $Val extends RequoteState>
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String?,
+      basePrice: freezed == basePrice
+          ? _value.basePrice
+          : basePrice // ignore: cast_nullable_to_non_nullable
+              as String?,
+      category: freezed == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String?,
+      slug: freezed == slug
+          ? _value.slug
+          : slug // ignore: cast_nullable_to_non_nullable
+              as String?,
       dates: null == dates
           ? _value.dates
           : dates // ignore: cast_nullable_to_non_nullable
@@ -1987,6 +1778,14 @@ class _$RequoteStateCopyWithImpl<$Res, $Val extends RequoteState>
       resheduleLoading: null == resheduleLoading
           ? _value.resheduleLoading
           : resheduleLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      priceCalculationLoading: null == priceCalculationLoading
+          ? _value.priceCalculationLoading
+          : priceCalculationLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      priceCalculationError: null == priceCalculationError
+          ? _value.priceCalculationError
+          : priceCalculationError // ignore: cast_nullable_to_non_nullable
               as bool,
       resheduleDone: null == resheduleDone
           ? _value.resheduleDone
@@ -2020,10 +1819,15 @@ abstract class _$$InitialImplCopyWith<$Res>
       {bool isLoading,
       bool hasError,
       String? message,
+      String? basePrice,
+      String? category,
+      String? slug,
       List<String> dates,
       List<String> time,
       bool questionLoading,
       bool resheduleLoading,
+      bool priceCalculationLoading,
+      bool priceCalculationError,
       bool resheduleDone,
       int requoteIndex,
       List<Section>? sections,
@@ -2044,10 +1848,15 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? isLoading = null,
     Object? hasError = null,
     Object? message = freezed,
+    Object? basePrice = freezed,
+    Object? category = freezed,
+    Object? slug = freezed,
     Object? dates = null,
     Object? time = null,
     Object? questionLoading = null,
     Object? resheduleLoading = null,
+    Object? priceCalculationLoading = null,
+    Object? priceCalculationError = null,
     Object? resheduleDone = null,
     Object? requoteIndex = null,
     Object? sections = freezed,
@@ -2066,6 +1875,18 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String?,
+      basePrice: freezed == basePrice
+          ? _value.basePrice
+          : basePrice // ignore: cast_nullable_to_non_nullable
+              as String?,
+      category: freezed == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String?,
+      slug: freezed == slug
+          ? _value.slug
+          : slug // ignore: cast_nullable_to_non_nullable
+              as String?,
       dates: null == dates
           ? _value._dates
           : dates // ignore: cast_nullable_to_non_nullable
@@ -2081,6 +1902,14 @@ class __$$InitialImplCopyWithImpl<$Res>
       resheduleLoading: null == resheduleLoading
           ? _value.resheduleLoading
           : resheduleLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      priceCalculationLoading: null == priceCalculationLoading
+          ? _value.priceCalculationLoading
+          : priceCalculationLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      priceCalculationError: null == priceCalculationError
+          ? _value.priceCalculationError
+          : priceCalculationError // ignore: cast_nullable_to_non_nullable
               as bool,
       resheduleDone: null == resheduleDone
           ? _value.resheduleDone
@@ -2109,10 +1938,15 @@ class _$InitialImpl implements _Initial {
       {required this.isLoading,
       required this.hasError,
       this.message,
+      this.basePrice,
+      this.category,
+      this.slug,
       required final List<String> dates,
       required final List<String> time,
       required this.questionLoading,
       required this.resheduleLoading,
+      required this.priceCalculationLoading,
+      required this.priceCalculationError,
       required this.resheduleDone,
       required this.requoteIndex,
       final List<Section>? sections,
@@ -2128,6 +1962,12 @@ class _$InitialImpl implements _Initial {
   final bool hasError;
   @override
   final String? message;
+  @override
+  final String? basePrice;
+  @override
+  final String? category;
+  @override
+  final String? slug;
   final List<String> _dates;
   @override
   List<String> get dates {
@@ -2148,6 +1988,10 @@ class _$InitialImpl implements _Initial {
   final bool questionLoading;
   @override
   final bool resheduleLoading;
+  @override
+  final bool priceCalculationLoading;
+  @override
+  final bool priceCalculationError;
   @override
   final bool resheduleDone;
   @override
@@ -2172,7 +2016,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'RequoteState(isLoading: $isLoading, hasError: $hasError, message: $message, dates: $dates, time: $time, questionLoading: $questionLoading, resheduleLoading: $resheduleLoading, resheduleDone: $resheduleDone, requoteIndex: $requoteIndex, sections: $sections, selectedAnswers: $selectedAnswers)';
+    return 'RequoteState(isLoading: $isLoading, hasError: $hasError, message: $message, basePrice: $basePrice, category: $category, slug: $slug, dates: $dates, time: $time, questionLoading: $questionLoading, resheduleLoading: $resheduleLoading, priceCalculationLoading: $priceCalculationLoading, priceCalculationError: $priceCalculationError, resheduleDone: $resheduleDone, requoteIndex: $requoteIndex, sections: $sections, selectedAnswers: $selectedAnswers)';
   }
 
   @override
@@ -2185,12 +2029,22 @@ class _$InitialImpl implements _Initial {
             (identical(other.hasError, hasError) ||
                 other.hasError == hasError) &&
             (identical(other.message, message) || other.message == message) &&
+            (identical(other.basePrice, basePrice) ||
+                other.basePrice == basePrice) &&
+            (identical(other.category, category) ||
+                other.category == category) &&
+            (identical(other.slug, slug) || other.slug == slug) &&
             const DeepCollectionEquality().equals(other._dates, _dates) &&
             const DeepCollectionEquality().equals(other._time, _time) &&
             (identical(other.questionLoading, questionLoading) ||
                 other.questionLoading == questionLoading) &&
             (identical(other.resheduleLoading, resheduleLoading) ||
                 other.resheduleLoading == resheduleLoading) &&
+            (identical(
+                    other.priceCalculationLoading, priceCalculationLoading) ||
+                other.priceCalculationLoading == priceCalculationLoading) &&
+            (identical(other.priceCalculationError, priceCalculationError) ||
+                other.priceCalculationError == priceCalculationError) &&
             (identical(other.resheduleDone, resheduleDone) ||
                 other.resheduleDone == resheduleDone) &&
             (identical(other.requoteIndex, requoteIndex) ||
@@ -2206,10 +2060,15 @@ class _$InitialImpl implements _Initial {
       isLoading,
       hasError,
       message,
+      basePrice,
+      category,
+      slug,
       const DeepCollectionEquality().hash(_dates),
       const DeepCollectionEquality().hash(_time),
       questionLoading,
       resheduleLoading,
+      priceCalculationLoading,
+      priceCalculationError,
       resheduleDone,
       requoteIndex,
       const DeepCollectionEquality().hash(_sections),
@@ -2227,10 +2086,15 @@ abstract class _Initial implements RequoteState {
           {required final bool isLoading,
           required final bool hasError,
           final String? message,
+          final String? basePrice,
+          final String? category,
+          final String? slug,
           required final List<String> dates,
           required final List<String> time,
           required final bool questionLoading,
           required final bool resheduleLoading,
+          required final bool priceCalculationLoading,
+          required final bool priceCalculationError,
           required final bool resheduleDone,
           required final int requoteIndex,
           final List<Section>? sections,
@@ -2244,6 +2108,12 @@ abstract class _Initial implements RequoteState {
   @override
   String? get message;
   @override
+  String? get basePrice;
+  @override
+  String? get category;
+  @override
+  String? get slug;
+  @override
   List<String> get dates;
   @override
   List<String> get time;
@@ -2251,6 +2121,10 @@ abstract class _Initial implements RequoteState {
   bool get questionLoading;
   @override
   bool get resheduleLoading;
+  @override
+  bool get priceCalculationLoading;
+  @override
+  bool get priceCalculationError;
   @override
   bool get resheduleDone;
   @override

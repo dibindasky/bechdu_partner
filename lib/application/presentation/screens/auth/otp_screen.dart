@@ -91,7 +91,7 @@ class _ScreenOTPState extends State<ScreenOTP> {
             BlocConsumer<AuthBloc, AuthState>(
               listener: (context, state) {
                 if (state.isLogin) {
-                  Navigator.pop(context);
+                  // Navigator.pop(context);
                   Navigator.pushNamedAndRemoveUntil(
                       context,
                       state.role ? Routes.bottomBar : Routes.homePage,

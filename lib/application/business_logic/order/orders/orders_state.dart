@@ -14,12 +14,15 @@ class OrdersState with _$OrdersState {
       required bool orderCompletionError,
       required bool newOrdesRefreshLoading,
       required bool partnerOrdesRefreshLoading,
+      required bool orderDetailError,
+      required bool popOrderScreen,
       String? message,
       ImageModel? deviceBill,
       ImageModel? idCard,
       List<ImageModel>? deviceImages,
       List<OrderDetail>? partnerOrders,
       List<OrderDetail>? newOrders,
+      OrderDetail? orderDetail,
       required int orderTab}) = _Initial;
 
   factory OrdersState.initial() => const OrdersState(
@@ -28,7 +31,8 @@ class OrdersState with _$OrdersState {
       newOrdesRefreshLoading: false,
       partnerOrdesRefreshLoading: false,
       hasError: false,
-      orderTab: 0,
+      orderDetailError: false,
+      orderTab: 0,popOrderScreen:false,
       acceptOrder: false,
       cancelOrder: false,
       acceptOrderError: false,

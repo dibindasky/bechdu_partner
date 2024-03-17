@@ -2,6 +2,7 @@ import 'package:bechdu_partner/application/business_logic/order/orders/orders_bl
 import 'package:bechdu_partner/application/presentation/screens/home/widgets/home_orders_tile.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
+import 'package:bechdu_partner/application/presentation/utils/refresh_indicator/refresh_indicator.dart';
 import 'package:bechdu_partner/application/presentation/utils/shimmer/shimmer_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -35,6 +36,11 @@ class _OrdersHistoryListState extends State<OrdersHistoryList> {
 
   @override
   Widget build(BuildContext context) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+      context
+          .read<OrdersBloc>()
+          .add(const OrdersEvent.getPartnerOrders(call: false));
+    });
     return BlocBuilder<OrdersBloc, OrdersState>(builder: (context, state) {
       if (state.isLoading) {
         return const Center(
@@ -42,36 +48,70 @@ class _OrdersHistoryListState extends State<OrdersHistoryList> {
       }
       if (state.partnerOrders != null) {
         if (state.partnerOrders!.isNotEmpty) {
-          return ListView.builder(
-            controller: controller,
-            itemCount: state.partnerOrdesRefreshLoading
-                ? state.partnerOrders!.length + 1
-                : state.partnerOrders!.length,
-            padding: EdgeInsets.zero,
-            shrinkWrap: true,
-            itemBuilder: (context, index) {
-              if (state.partnerOrders!.length == index) {
+          int len = state.partnerOrdesRefreshLoading
+              ? state.partnerOrders!.length + 1
+              : state.partnerOrders!.length;
+          return RefreshIndicator(onRefresh: () async{
+             if (partner) {
+                      context
+                          .read<OrdersBloc>()
+                          .add(const OrdersEvent.getNewOrder(call: true));
+                    }
+                    context
+                        .read<OrdersBloc>()
+                        .add(const OrdersEvent.getPartnerOrders(call: true));
+          },
+            child: ListView.builder(
+              controller: controller,
+              itemCount: len < 5 ? len + 1 : len,
+              padding: EdgeInsets.zero,
+              shrinkWrap: true,
+              itemBuilder: (context, index) {
+                if (len < 5 && !state.partnerOrdesRefreshLoading) {
+                  if (index < len) {
+                    return OrdersListTileHome(
+                        orderDetail: state.partnerOrders![index],
+                        showExpansion: true);
+                  } else {
+                    return SizedBox(height: 1000, width: sWidth);
+                  }
+                }
+                if (state.partnerOrders!.length <= index) {
+                  return Padding(
+                    padding: EdgeInsets.only(
+                        bottom: index == len ? 100 : 0, left: 20, right: 20),
+                    child:
+                        ShimmerLoader(itemCount: 1, height: 150, width: sWidth),
+                  );
+                }
                 return Padding(
-                  padding:
-                      const EdgeInsets.only(bottom: 100, left: 20, right: 20),
-                  child:
-                      ShimmerLoader(itemCount: 1, height: 150, width: sWidth),
+                  padding: EdgeInsets.only(
+                      bottom: state.partnerOrders!.length - 1 == index &&
+                              !state.partnerOrdesRefreshLoading
+                          ? 100
+                          : 0),
+                  child: OrdersListTileHome(
+                      orderDetail: state.partnerOrders![index],
+                      showExpansion:
+                          state.partnerOrders![index].status == 'cancelled'),
                 );
-              }
-              return Padding(
-                padding: EdgeInsets.only(
-                    bottom: state.partnerOrders!.length - 1 == index &&
-                            !state.partnerOrdesRefreshLoading
-                        ? 100
-                        : 0),
-                child: OrdersListTileHome(
-                    orderDetail: state.partnerOrders![index],
-                    showExpansion: false),
-              );
-            },
+              },
+            ),
           );
         } else {
-          return const Center(child: Text('Your orders list is empty'));
+          return ErrorRefreshIndicator(
+            onRefresh: () {
+              if (partner) {
+                context
+                    .read<OrdersBloc>()
+                    .add(const OrdersEvent.getNewOrder(call: true));
+              }
+              context
+                  .read<OrdersBloc>()
+                  .add(const OrdersEvent.getPartnerOrders(call: true));
+            },
+            errorMessage: 'Your order list is empty',
+          );
         }
       } else {
         return Center(

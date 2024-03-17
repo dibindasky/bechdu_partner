@@ -19,6 +19,7 @@ mixin _$OrdersEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
+    required TResult Function(String orderId) getOrderDetail,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -44,6 +45,7 @@ mixin _$OrdersEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
+    TResult? Function(String orderId)? getOrderDetail,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -68,6 +70,7 @@ mixin _$OrdersEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
+    TResult Function(String orderId)? getOrderDetail,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -93,6 +96,7 @@ mixin _$OrdersEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(GetOrderDetail value) getOrderDetail,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -116,6 +120,7 @@ mixin _$OrdersEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(GetOrderDetail value)? getOrderDetail,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -138,6 +143,7 @@ mixin _$OrdersEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(GetOrderDetail value)? getOrderDetail,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -243,6 +249,7 @@ class _$AcceptOrderImpl implements AcceptOrder {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
+    required TResult Function(String orderId) getOrderDetail,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -271,6 +278,7 @@ class _$AcceptOrderImpl implements AcceptOrder {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
+    TResult? Function(String orderId)? getOrderDetail,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -298,6 +306,7 @@ class _$AcceptOrderImpl implements AcceptOrder {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
+    TResult Function(String orderId)? getOrderDetail,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -329,6 +338,7 @@ class _$AcceptOrderImpl implements AcceptOrder {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(GetOrderDetail value) getOrderDetail,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -355,6 +365,7 @@ class _$AcceptOrderImpl implements AcceptOrder {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(GetOrderDetail value)? getOrderDetail,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -380,6 +391,7 @@ class _$AcceptOrderImpl implements AcceptOrder {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(GetOrderDetail value)? getOrderDetail,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -413,6 +425,251 @@ abstract class AcceptOrder implements OrdersEvent {
   String get orderId;
   @JsonKey(ignore: true)
   _$$AcceptOrderImplCopyWith<_$AcceptOrderImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetOrderDetailImplCopyWith<$Res> {
+  factory _$$GetOrderDetailImplCopyWith(_$GetOrderDetailImpl value,
+          $Res Function(_$GetOrderDetailImpl) then) =
+      __$$GetOrderDetailImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String orderId});
+}
+
+/// @nodoc
+class __$$GetOrderDetailImplCopyWithImpl<$Res>
+    extends _$OrdersEventCopyWithImpl<$Res, _$GetOrderDetailImpl>
+    implements _$$GetOrderDetailImplCopyWith<$Res> {
+  __$$GetOrderDetailImplCopyWithImpl(
+      _$GetOrderDetailImpl _value, $Res Function(_$GetOrderDetailImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? orderId = null,
+  }) {
+    return _then(_$GetOrderDetailImpl(
+      orderId: null == orderId
+          ? _value.orderId
+          : orderId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetOrderDetailImpl implements GetOrderDetail {
+  const _$GetOrderDetailImpl({required this.orderId});
+
+  @override
+  final String orderId;
+
+  @override
+  String toString() {
+    return 'OrdersEvent.getOrderDetail(orderId: $orderId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetOrderDetailImpl &&
+            (identical(other.orderId, orderId) || other.orderId == orderId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, orderId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetOrderDetailImplCopyWith<_$GetOrderDetailImpl> get copyWith =>
+      __$$GetOrderDetailImplCopyWithImpl<_$GetOrderDetailImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String orderId) acceptOrder,
+    required TResult Function(String orderId) getOrderDetail,
+    required TResult Function(String orderId, String reason) cancelOrder,
+    required TResult Function(
+            String orderId, CompleteOrderModel completeOrderModel)
+        completeOrder,
+    required TResult Function(bool call) getNewOrder,
+    required TResult Function(bool call) getPartnerOrders,
+    required TResult Function(String orderId) removePickupPartner,
+    required TResult Function() refresPartnerOrders,
+    required TResult Function() refreshNewOrder,
+    required TResult Function(int tab) changeTab,
+    required TResult Function(PickUpPerson pickUpPerson, String orderId)
+        changePickupPartner,
+    required TResult Function() checkErrorCompleteOrder,
+    required TResult Function() addDiviceBill,
+    required TResult Function() removeDiviceBill,
+    required TResult Function() addIdCardImage,
+    required TResult Function() removeIdCardImage,
+    required TResult Function() addDeviceImages,
+    required TResult Function(int index) removeDeviceImage,
+    required TResult Function() reset,
+  }) {
+    return getOrderDetail(orderId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String orderId)? acceptOrder,
+    TResult? Function(String orderId)? getOrderDetail,
+    TResult? Function(String orderId, String reason)? cancelOrder,
+    TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult? Function(bool call)? getNewOrder,
+    TResult? Function(bool call)? getPartnerOrders,
+    TResult? Function(String orderId)? removePickupPartner,
+    TResult? Function()? refresPartnerOrders,
+    TResult? Function()? refreshNewOrder,
+    TResult? Function(int tab)? changeTab,
+    TResult? Function(PickUpPerson pickUpPerson, String orderId)?
+        changePickupPartner,
+    TResult? Function()? checkErrorCompleteOrder,
+    TResult? Function()? addDiviceBill,
+    TResult? Function()? removeDiviceBill,
+    TResult? Function()? addIdCardImage,
+    TResult? Function()? removeIdCardImage,
+    TResult? Function()? addDeviceImages,
+    TResult? Function(int index)? removeDeviceImage,
+    TResult? Function()? reset,
+  }) {
+    return getOrderDetail?.call(orderId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String orderId)? acceptOrder,
+    TResult Function(String orderId)? getOrderDetail,
+    TResult Function(String orderId, String reason)? cancelOrder,
+    TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult Function(bool call)? getNewOrder,
+    TResult Function(bool call)? getPartnerOrders,
+    TResult Function(String orderId)? removePickupPartner,
+    TResult Function()? refresPartnerOrders,
+    TResult Function()? refreshNewOrder,
+    TResult Function(int tab)? changeTab,
+    TResult Function(PickUpPerson pickUpPerson, String orderId)?
+        changePickupPartner,
+    TResult Function()? checkErrorCompleteOrder,
+    TResult Function()? addDiviceBill,
+    TResult Function()? removeDiviceBill,
+    TResult Function()? addIdCardImage,
+    TResult Function()? removeIdCardImage,
+    TResult Function()? addDeviceImages,
+    TResult Function(int index)? removeDeviceImage,
+    TResult Function()? reset,
+    required TResult orElse(),
+  }) {
+    if (getOrderDetail != null) {
+      return getOrderDetail(orderId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(GetOrderDetail value) getOrderDetail,
+    required TResult Function(CancelOrder value) cancelOrder,
+    required TResult Function(CompleteOrder value) completeOrder,
+    required TResult Function(GetNewOrder value) getNewOrder,
+    required TResult Function(GetPartnerOrders value) getPartnerOrders,
+    required TResult Function(RemovePickupPartner value) removePickupPartner,
+    required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
+    required TResult Function(RefreshNewOrder value) refreshNewOrder,
+    required TResult Function(ChangeTab value) changeTab,
+    required TResult Function(ChangePickupPartner value) changePickupPartner,
+    required TResult Function(CheckErrorCompleteOrder value)
+        checkErrorCompleteOrder,
+    required TResult Function(AddDiviceBill value) addDiviceBill,
+    required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddIdCardImage value) addIdCardImage,
+    required TResult Function(RemoveIdCardImage value) removeIdCardImage,
+    required TResult Function(AddDeviceImages value) addDeviceImages,
+    required TResult Function(RemoveDeviceImage value) removeDeviceImage,
+    required TResult Function(Reset value) reset,
+  }) {
+    return getOrderDetail(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(GetOrderDetail value)? getOrderDetail,
+    TResult? Function(CancelOrder value)? cancelOrder,
+    TResult? Function(CompleteOrder value)? completeOrder,
+    TResult? Function(GetNewOrder value)? getNewOrder,
+    TResult? Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult? Function(RemovePickupPartner value)? removePickupPartner,
+    TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
+    TResult? Function(ChangeTab value)? changeTab,
+    TResult? Function(ChangePickupPartner value)? changePickupPartner,
+    TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult? Function(AddDiviceBill value)? addDiviceBill,
+    TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddIdCardImage value)? addIdCardImage,
+    TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult? Function(AddDeviceImages value)? addDeviceImages,
+    TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult? Function(Reset value)? reset,
+  }) {
+    return getOrderDetail?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(GetOrderDetail value)? getOrderDetail,
+    TResult Function(CancelOrder value)? cancelOrder,
+    TResult Function(CompleteOrder value)? completeOrder,
+    TResult Function(GetNewOrder value)? getNewOrder,
+    TResult Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult Function(RemovePickupPartner value)? removePickupPartner,
+    TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult Function(RefreshNewOrder value)? refreshNewOrder,
+    TResult Function(ChangeTab value)? changeTab,
+    TResult Function(ChangePickupPartner value)? changePickupPartner,
+    TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult Function(AddDiviceBill value)? addDiviceBill,
+    TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddIdCardImage value)? addIdCardImage,
+    TResult Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult Function(AddDeviceImages value)? addDeviceImages,
+    TResult Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult Function(Reset value)? reset,
+    required TResult orElse(),
+  }) {
+    if (getOrderDetail != null) {
+      return getOrderDetail(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetOrderDetail implements OrdersEvent {
+  const factory GetOrderDetail({required final String orderId}) =
+      _$GetOrderDetailImpl;
+
+  String get orderId;
+  @JsonKey(ignore: true)
+  _$$GetOrderDetailImplCopyWith<_$GetOrderDetailImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -489,6 +746,7 @@ class _$CancelOrderImpl implements CancelOrder {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
+    required TResult Function(String orderId) getOrderDetail,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -517,6 +775,7 @@ class _$CancelOrderImpl implements CancelOrder {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
+    TResult? Function(String orderId)? getOrderDetail,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -544,6 +803,7 @@ class _$CancelOrderImpl implements CancelOrder {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
+    TResult Function(String orderId)? getOrderDetail,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -575,6 +835,7 @@ class _$CancelOrderImpl implements CancelOrder {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(GetOrderDetail value) getOrderDetail,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -601,6 +862,7 @@ class _$CancelOrderImpl implements CancelOrder {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(GetOrderDetail value)? getOrderDetail,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -626,6 +888,7 @@ class _$CancelOrderImpl implements CancelOrder {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(GetOrderDetail value)? getOrderDetail,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -739,6 +1002,7 @@ class _$CompleteOrderImpl implements CompleteOrder {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
+    required TResult Function(String orderId) getOrderDetail,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -767,6 +1031,7 @@ class _$CompleteOrderImpl implements CompleteOrder {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
+    TResult? Function(String orderId)? getOrderDetail,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -794,6 +1059,7 @@ class _$CompleteOrderImpl implements CompleteOrder {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
+    TResult Function(String orderId)? getOrderDetail,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -825,6 +1091,7 @@ class _$CompleteOrderImpl implements CompleteOrder {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(GetOrderDetail value) getOrderDetail,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -851,6 +1118,7 @@ class _$CompleteOrderImpl implements CompleteOrder {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(GetOrderDetail value)? getOrderDetail,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -876,6 +1144,7 @@ class _$CompleteOrderImpl implements CompleteOrder {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(GetOrderDetail value)? getOrderDetail,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -980,6 +1249,7 @@ class _$GetNewOrderImpl implements GetNewOrder {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
+    required TResult Function(String orderId) getOrderDetail,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -1008,6 +1278,7 @@ class _$GetNewOrderImpl implements GetNewOrder {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
+    TResult? Function(String orderId)? getOrderDetail,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -1035,6 +1306,7 @@ class _$GetNewOrderImpl implements GetNewOrder {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
+    TResult Function(String orderId)? getOrderDetail,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -1066,6 +1338,7 @@ class _$GetNewOrderImpl implements GetNewOrder {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(GetOrderDetail value) getOrderDetail,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -1092,6 +1365,7 @@ class _$GetNewOrderImpl implements GetNewOrder {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(GetOrderDetail value)? getOrderDetail,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -1117,6 +1391,7 @@ class _$GetNewOrderImpl implements GetNewOrder {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(GetOrderDetail value)? getOrderDetail,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -1218,6 +1493,7 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
+    required TResult Function(String orderId) getOrderDetail,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -1246,6 +1522,7 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
+    TResult? Function(String orderId)? getOrderDetail,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -1273,6 +1550,7 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
+    TResult Function(String orderId)? getOrderDetail,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -1304,6 +1582,7 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(GetOrderDetail value) getOrderDetail,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -1330,6 +1609,7 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(GetOrderDetail value)? getOrderDetail,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -1355,6 +1635,7 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(GetOrderDetail value)? getOrderDetail,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -1457,6 +1738,7 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
+    required TResult Function(String orderId) getOrderDetail,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -1485,6 +1767,7 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
+    TResult? Function(String orderId)? getOrderDetail,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -1512,6 +1795,7 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
+    TResult Function(String orderId)? getOrderDetail,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -1543,6 +1827,7 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(GetOrderDetail value) getOrderDetail,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -1569,6 +1854,7 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(GetOrderDetail value)? getOrderDetail,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -1594,6 +1880,7 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(GetOrderDetail value)? getOrderDetail,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -1670,6 +1957,7 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
+    required TResult Function(String orderId) getOrderDetail,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -1698,6 +1986,7 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
+    TResult? Function(String orderId)? getOrderDetail,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -1725,6 +2014,7 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
+    TResult Function(String orderId)? getOrderDetail,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -1756,6 +2046,7 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(GetOrderDetail value) getOrderDetail,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -1782,6 +2073,7 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(GetOrderDetail value)? getOrderDetail,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -1807,6 +2099,7 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(GetOrderDetail value)? getOrderDetail,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -1876,6 +2169,7 @@ class _$RefreshNewOrderImpl implements RefreshNewOrder {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
+    required TResult Function(String orderId) getOrderDetail,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -1904,6 +2198,7 @@ class _$RefreshNewOrderImpl implements RefreshNewOrder {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
+    TResult? Function(String orderId)? getOrderDetail,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -1931,6 +2226,7 @@ class _$RefreshNewOrderImpl implements RefreshNewOrder {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
+    TResult Function(String orderId)? getOrderDetail,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -1962,6 +2258,7 @@ class _$RefreshNewOrderImpl implements RefreshNewOrder {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(GetOrderDetail value) getOrderDetail,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -1988,6 +2285,7 @@ class _$RefreshNewOrderImpl implements RefreshNewOrder {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(GetOrderDetail value)? getOrderDetail,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -2013,6 +2311,7 @@ class _$RefreshNewOrderImpl implements RefreshNewOrder {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(GetOrderDetail value)? getOrderDetail,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -2108,6 +2407,7 @@ class _$ChangeTabImpl implements ChangeTab {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
+    required TResult Function(String orderId) getOrderDetail,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -2136,6 +2436,7 @@ class _$ChangeTabImpl implements ChangeTab {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
+    TResult? Function(String orderId)? getOrderDetail,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -2163,6 +2464,7 @@ class _$ChangeTabImpl implements ChangeTab {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
+    TResult Function(String orderId)? getOrderDetail,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -2194,6 +2496,7 @@ class _$ChangeTabImpl implements ChangeTab {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(GetOrderDetail value) getOrderDetail,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -2220,6 +2523,7 @@ class _$ChangeTabImpl implements ChangeTab {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(GetOrderDetail value)? getOrderDetail,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -2245,6 +2549,7 @@ class _$ChangeTabImpl implements ChangeTab {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(GetOrderDetail value)? getOrderDetail,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -2356,6 +2661,7 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
+    required TResult Function(String orderId) getOrderDetail,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -2384,6 +2690,7 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
+    TResult? Function(String orderId)? getOrderDetail,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -2411,6 +2718,7 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
+    TResult Function(String orderId)? getOrderDetail,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -2442,6 +2750,7 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(GetOrderDetail value) getOrderDetail,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -2468,6 +2777,7 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(GetOrderDetail value)? getOrderDetail,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -2493,6 +2803,7 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(GetOrderDetail value)? getOrderDetail,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -2573,6 +2884,7 @@ class _$CheckErrorCompleteOrderImpl implements CheckErrorCompleteOrder {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
+    required TResult Function(String orderId) getOrderDetail,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -2601,6 +2913,7 @@ class _$CheckErrorCompleteOrderImpl implements CheckErrorCompleteOrder {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
+    TResult? Function(String orderId)? getOrderDetail,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -2628,6 +2941,7 @@ class _$CheckErrorCompleteOrderImpl implements CheckErrorCompleteOrder {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
+    TResult Function(String orderId)? getOrderDetail,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -2659,6 +2973,7 @@ class _$CheckErrorCompleteOrderImpl implements CheckErrorCompleteOrder {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(GetOrderDetail value) getOrderDetail,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -2685,6 +3000,7 @@ class _$CheckErrorCompleteOrderImpl implements CheckErrorCompleteOrder {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(GetOrderDetail value)? getOrderDetail,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -2710,6 +3026,7 @@ class _$CheckErrorCompleteOrderImpl implements CheckErrorCompleteOrder {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(GetOrderDetail value)? getOrderDetail,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -2779,6 +3096,7 @@ class _$AddDiviceBillImpl implements AddDiviceBill {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
+    required TResult Function(String orderId) getOrderDetail,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -2807,6 +3125,7 @@ class _$AddDiviceBillImpl implements AddDiviceBill {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
+    TResult? Function(String orderId)? getOrderDetail,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -2834,6 +3153,7 @@ class _$AddDiviceBillImpl implements AddDiviceBill {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
+    TResult Function(String orderId)? getOrderDetail,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -2865,6 +3185,7 @@ class _$AddDiviceBillImpl implements AddDiviceBill {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(GetOrderDetail value) getOrderDetail,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -2891,6 +3212,7 @@ class _$AddDiviceBillImpl implements AddDiviceBill {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(GetOrderDetail value)? getOrderDetail,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -2916,6 +3238,7 @@ class _$AddDiviceBillImpl implements AddDiviceBill {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(GetOrderDetail value)? getOrderDetail,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -2985,6 +3308,7 @@ class _$RemoveDiviceBillImpl implements RemoveDiviceBill {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
+    required TResult Function(String orderId) getOrderDetail,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -3013,6 +3337,7 @@ class _$RemoveDiviceBillImpl implements RemoveDiviceBill {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
+    TResult? Function(String orderId)? getOrderDetail,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -3040,6 +3365,7 @@ class _$RemoveDiviceBillImpl implements RemoveDiviceBill {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
+    TResult Function(String orderId)? getOrderDetail,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -3071,6 +3397,7 @@ class _$RemoveDiviceBillImpl implements RemoveDiviceBill {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(GetOrderDetail value) getOrderDetail,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -3097,6 +3424,7 @@ class _$RemoveDiviceBillImpl implements RemoveDiviceBill {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(GetOrderDetail value)? getOrderDetail,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -3122,6 +3450,7 @@ class _$RemoveDiviceBillImpl implements RemoveDiviceBill {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(GetOrderDetail value)? getOrderDetail,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -3191,6 +3520,7 @@ class _$AddIdCardImageImpl implements AddIdCardImage {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
+    required TResult Function(String orderId) getOrderDetail,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -3219,6 +3549,7 @@ class _$AddIdCardImageImpl implements AddIdCardImage {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
+    TResult? Function(String orderId)? getOrderDetail,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -3246,6 +3577,7 @@ class _$AddIdCardImageImpl implements AddIdCardImage {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
+    TResult Function(String orderId)? getOrderDetail,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -3277,6 +3609,7 @@ class _$AddIdCardImageImpl implements AddIdCardImage {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(GetOrderDetail value) getOrderDetail,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -3303,6 +3636,7 @@ class _$AddIdCardImageImpl implements AddIdCardImage {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(GetOrderDetail value)? getOrderDetail,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -3328,6 +3662,7 @@ class _$AddIdCardImageImpl implements AddIdCardImage {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(GetOrderDetail value)? getOrderDetail,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -3397,6 +3732,7 @@ class _$RemoveIdCardImageImpl implements RemoveIdCardImage {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
+    required TResult Function(String orderId) getOrderDetail,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -3425,6 +3761,7 @@ class _$RemoveIdCardImageImpl implements RemoveIdCardImage {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
+    TResult? Function(String orderId)? getOrderDetail,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -3452,6 +3789,7 @@ class _$RemoveIdCardImageImpl implements RemoveIdCardImage {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
+    TResult Function(String orderId)? getOrderDetail,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -3483,6 +3821,7 @@ class _$RemoveIdCardImageImpl implements RemoveIdCardImage {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(GetOrderDetail value) getOrderDetail,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -3509,6 +3848,7 @@ class _$RemoveIdCardImageImpl implements RemoveIdCardImage {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(GetOrderDetail value)? getOrderDetail,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -3534,6 +3874,7 @@ class _$RemoveIdCardImageImpl implements RemoveIdCardImage {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(GetOrderDetail value)? getOrderDetail,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -3603,6 +3944,7 @@ class _$AddDeviceImagesImpl implements AddDeviceImages {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
+    required TResult Function(String orderId) getOrderDetail,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -3631,6 +3973,7 @@ class _$AddDeviceImagesImpl implements AddDeviceImages {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
+    TResult? Function(String orderId)? getOrderDetail,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -3658,6 +4001,7 @@ class _$AddDeviceImagesImpl implements AddDeviceImages {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
+    TResult Function(String orderId)? getOrderDetail,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -3689,6 +4033,7 @@ class _$AddDeviceImagesImpl implements AddDeviceImages {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(GetOrderDetail value) getOrderDetail,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -3715,6 +4060,7 @@ class _$AddDeviceImagesImpl implements AddDeviceImages {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(GetOrderDetail value)? getOrderDetail,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -3740,6 +4086,7 @@ class _$AddDeviceImagesImpl implements AddDeviceImages {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(GetOrderDetail value)? getOrderDetail,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -3836,6 +4183,7 @@ class _$RemoveDeviceImageImpl implements RemoveDeviceImage {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
+    required TResult Function(String orderId) getOrderDetail,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -3864,6 +4212,7 @@ class _$RemoveDeviceImageImpl implements RemoveDeviceImage {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
+    TResult? Function(String orderId)? getOrderDetail,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -3891,6 +4240,7 @@ class _$RemoveDeviceImageImpl implements RemoveDeviceImage {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
+    TResult Function(String orderId)? getOrderDetail,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -3922,6 +4272,7 @@ class _$RemoveDeviceImageImpl implements RemoveDeviceImage {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(GetOrderDetail value) getOrderDetail,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -3948,6 +4299,7 @@ class _$RemoveDeviceImageImpl implements RemoveDeviceImage {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(GetOrderDetail value)? getOrderDetail,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -3973,6 +4325,7 @@ class _$RemoveDeviceImageImpl implements RemoveDeviceImage {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(GetOrderDetail value)? getOrderDetail,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -4048,6 +4401,7 @@ class _$ResetImpl implements Reset {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
+    required TResult Function(String orderId) getOrderDetail,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -4076,6 +4430,7 @@ class _$ResetImpl implements Reset {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
+    TResult? Function(String orderId)? getOrderDetail,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -4103,6 +4458,7 @@ class _$ResetImpl implements Reset {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
+    TResult Function(String orderId)? getOrderDetail,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -4134,6 +4490,7 @@ class _$ResetImpl implements Reset {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(GetOrderDetail value) getOrderDetail,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -4160,6 +4517,7 @@ class _$ResetImpl implements Reset {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(GetOrderDetail value)? getOrderDetail,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -4185,6 +4543,7 @@ class _$ResetImpl implements Reset {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(GetOrderDetail value)? getOrderDetail,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -4228,12 +4587,15 @@ mixin _$OrdersState {
   bool get orderCompletionError => throw _privateConstructorUsedError;
   bool get newOrdesRefreshLoading => throw _privateConstructorUsedError;
   bool get partnerOrdesRefreshLoading => throw _privateConstructorUsedError;
+  bool get orderDetailError => throw _privateConstructorUsedError;
+  bool get popOrderScreen => throw _privateConstructorUsedError;
   String? get message => throw _privateConstructorUsedError;
   ImageModel? get deviceBill => throw _privateConstructorUsedError;
   ImageModel? get idCard => throw _privateConstructorUsedError;
   List<ImageModel>? get deviceImages => throw _privateConstructorUsedError;
   List<OrderDetail>? get partnerOrders => throw _privateConstructorUsedError;
   List<OrderDetail>? get newOrders => throw _privateConstructorUsedError;
+  OrderDetail? get orderDetail => throw _privateConstructorUsedError;
   int get orderTab => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -4259,12 +4621,15 @@ abstract class $OrdersStateCopyWith<$Res> {
       bool orderCompletionError,
       bool newOrdesRefreshLoading,
       bool partnerOrdesRefreshLoading,
+      bool orderDetailError,
+      bool popOrderScreen,
       String? message,
       ImageModel? deviceBill,
       ImageModel? idCard,
       List<ImageModel>? deviceImages,
       List<OrderDetail>? partnerOrders,
       List<OrderDetail>? newOrders,
+      OrderDetail? orderDetail,
       int orderTab});
 }
 
@@ -4292,12 +4657,15 @@ class _$OrdersStateCopyWithImpl<$Res, $Val extends OrdersState>
     Object? orderCompletionError = null,
     Object? newOrdesRefreshLoading = null,
     Object? partnerOrdesRefreshLoading = null,
+    Object? orderDetailError = null,
+    Object? popOrderScreen = null,
     Object? message = freezed,
     Object? deviceBill = freezed,
     Object? idCard = freezed,
     Object? deviceImages = freezed,
     Object? partnerOrders = freezed,
     Object? newOrders = freezed,
+    Object? orderDetail = freezed,
     Object? orderTab = null,
   }) {
     return _then(_value.copyWith(
@@ -4345,6 +4713,14 @@ class _$OrdersStateCopyWithImpl<$Res, $Val extends OrdersState>
           ? _value.partnerOrdesRefreshLoading
           : partnerOrdesRefreshLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      orderDetailError: null == orderDetailError
+          ? _value.orderDetailError
+          : orderDetailError // ignore: cast_nullable_to_non_nullable
+              as bool,
+      popOrderScreen: null == popOrderScreen
+          ? _value.popOrderScreen
+          : popOrderScreen // ignore: cast_nullable_to_non_nullable
+              as bool,
       message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -4369,6 +4745,10 @@ class _$OrdersStateCopyWithImpl<$Res, $Val extends OrdersState>
           ? _value.newOrders
           : newOrders // ignore: cast_nullable_to_non_nullable
               as List<OrderDetail>?,
+      orderDetail: freezed == orderDetail
+          ? _value.orderDetail
+          : orderDetail // ignore: cast_nullable_to_non_nullable
+              as OrderDetail?,
       orderTab: null == orderTab
           ? _value.orderTab
           : orderTab // ignore: cast_nullable_to_non_nullable
@@ -4397,12 +4777,15 @@ abstract class _$$InitialImplCopyWith<$Res>
       bool orderCompletionError,
       bool newOrdesRefreshLoading,
       bool partnerOrdesRefreshLoading,
+      bool orderDetailError,
+      bool popOrderScreen,
       String? message,
       ImageModel? deviceBill,
       ImageModel? idCard,
       List<ImageModel>? deviceImages,
       List<OrderDetail>? partnerOrders,
       List<OrderDetail>? newOrders,
+      OrderDetail? orderDetail,
       int orderTab});
 }
 
@@ -4428,12 +4811,15 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? orderCompletionError = null,
     Object? newOrdesRefreshLoading = null,
     Object? partnerOrdesRefreshLoading = null,
+    Object? orderDetailError = null,
+    Object? popOrderScreen = null,
     Object? message = freezed,
     Object? deviceBill = freezed,
     Object? idCard = freezed,
     Object? deviceImages = freezed,
     Object? partnerOrders = freezed,
     Object? newOrders = freezed,
+    Object? orderDetail = freezed,
     Object? orderTab = null,
   }) {
     return _then(_$InitialImpl(
@@ -4481,6 +4867,14 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.partnerOrdesRefreshLoading
           : partnerOrdesRefreshLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      orderDetailError: null == orderDetailError
+          ? _value.orderDetailError
+          : orderDetailError // ignore: cast_nullable_to_non_nullable
+              as bool,
+      popOrderScreen: null == popOrderScreen
+          ? _value.popOrderScreen
+          : popOrderScreen // ignore: cast_nullable_to_non_nullable
+              as bool,
       message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -4505,6 +4899,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value._newOrders
           : newOrders // ignore: cast_nullable_to_non_nullable
               as List<OrderDetail>?,
+      orderDetail: freezed == orderDetail
+          ? _value.orderDetail
+          : orderDetail // ignore: cast_nullable_to_non_nullable
+              as OrderDetail?,
       orderTab: null == orderTab
           ? _value.orderTab
           : orderTab // ignore: cast_nullable_to_non_nullable
@@ -4528,12 +4926,15 @@ class _$InitialImpl implements _Initial {
       required this.orderCompletionError,
       required this.newOrdesRefreshLoading,
       required this.partnerOrdesRefreshLoading,
+      required this.orderDetailError,
+      required this.popOrderScreen,
       this.message,
       this.deviceBill,
       this.idCard,
       final List<ImageModel>? deviceImages,
       final List<OrderDetail>? partnerOrders,
       final List<OrderDetail>? newOrders,
+      this.orderDetail,
       required this.orderTab})
       : _deviceImages = deviceImages,
         _partnerOrders = partnerOrders,
@@ -4561,6 +4962,10 @@ class _$InitialImpl implements _Initial {
   final bool newOrdesRefreshLoading;
   @override
   final bool partnerOrdesRefreshLoading;
+  @override
+  final bool orderDetailError;
+  @override
+  final bool popOrderScreen;
   @override
   final String? message;
   @override
@@ -4598,11 +5003,13 @@ class _$InitialImpl implements _Initial {
   }
 
   @override
+  final OrderDetail? orderDetail;
+  @override
   final int orderTab;
 
   @override
   String toString() {
-    return 'OrdersState(isLoading: $isLoading, hasError: $hasError, acceptOrderLoading: $acceptOrderLoading, acceptOrderError: $acceptOrderError, acceptOrder: $acceptOrder, cancelOrder: $cancelOrder, completeOrderLoading: $completeOrderLoading, orderCompleted: $orderCompleted, orderCompletionError: $orderCompletionError, newOrdesRefreshLoading: $newOrdesRefreshLoading, partnerOrdesRefreshLoading: $partnerOrdesRefreshLoading, message: $message, deviceBill: $deviceBill, idCard: $idCard, deviceImages: $deviceImages, partnerOrders: $partnerOrders, newOrders: $newOrders, orderTab: $orderTab)';
+    return 'OrdersState(isLoading: $isLoading, hasError: $hasError, acceptOrderLoading: $acceptOrderLoading, acceptOrderError: $acceptOrderError, acceptOrder: $acceptOrder, cancelOrder: $cancelOrder, completeOrderLoading: $completeOrderLoading, orderCompleted: $orderCompleted, orderCompletionError: $orderCompletionError, newOrdesRefreshLoading: $newOrdesRefreshLoading, partnerOrdesRefreshLoading: $partnerOrdesRefreshLoading, orderDetailError: $orderDetailError, popOrderScreen: $popOrderScreen, message: $message, deviceBill: $deviceBill, idCard: $idCard, deviceImages: $deviceImages, partnerOrders: $partnerOrders, newOrders: $newOrders, orderDetail: $orderDetail, orderTab: $orderTab)';
   }
 
   @override
@@ -4634,6 +5041,10 @@ class _$InitialImpl implements _Initial {
                     partnerOrdesRefreshLoading) ||
                 other.partnerOrdesRefreshLoading ==
                     partnerOrdesRefreshLoading) &&
+            (identical(other.orderDetailError, orderDetailError) ||
+                other.orderDetailError == orderDetailError) &&
+            (identical(other.popOrderScreen, popOrderScreen) ||
+                other.popOrderScreen == popOrderScreen) &&
             (identical(other.message, message) || other.message == message) &&
             (identical(other.deviceBill, deviceBill) ||
                 other.deviceBill == deviceBill) &&
@@ -4644,31 +5055,37 @@ class _$InitialImpl implements _Initial {
                 .equals(other._partnerOrders, _partnerOrders) &&
             const DeepCollectionEquality()
                 .equals(other._newOrders, _newOrders) &&
+            (identical(other.orderDetail, orderDetail) ||
+                other.orderDetail == orderDetail) &&
             (identical(other.orderTab, orderTab) ||
                 other.orderTab == orderTab));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      isLoading,
-      hasError,
-      acceptOrderLoading,
-      acceptOrderError,
-      acceptOrder,
-      cancelOrder,
-      completeOrderLoading,
-      orderCompleted,
-      orderCompletionError,
-      newOrdesRefreshLoading,
-      partnerOrdesRefreshLoading,
-      message,
-      deviceBill,
-      idCard,
-      const DeepCollectionEquality().hash(_deviceImages),
-      const DeepCollectionEquality().hash(_partnerOrders),
-      const DeepCollectionEquality().hash(_newOrders),
-      orderTab);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        isLoading,
+        hasError,
+        acceptOrderLoading,
+        acceptOrderError,
+        acceptOrder,
+        cancelOrder,
+        completeOrderLoading,
+        orderCompleted,
+        orderCompletionError,
+        newOrdesRefreshLoading,
+        partnerOrdesRefreshLoading,
+        orderDetailError,
+        popOrderScreen,
+        message,
+        deviceBill,
+        idCard,
+        const DeepCollectionEquality().hash(_deviceImages),
+        const DeepCollectionEquality().hash(_partnerOrders),
+        const DeepCollectionEquality().hash(_newOrders),
+        orderDetail,
+        orderTab
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -4690,12 +5107,15 @@ abstract class _Initial implements OrdersState {
       required final bool orderCompletionError,
       required final bool newOrdesRefreshLoading,
       required final bool partnerOrdesRefreshLoading,
+      required final bool orderDetailError,
+      required final bool popOrderScreen,
       final String? message,
       final ImageModel? deviceBill,
       final ImageModel? idCard,
       final List<ImageModel>? deviceImages,
       final List<OrderDetail>? partnerOrders,
       final List<OrderDetail>? newOrders,
+      final OrderDetail? orderDetail,
       required final int orderTab}) = _$InitialImpl;
 
   @override
@@ -4721,6 +5141,10 @@ abstract class _Initial implements OrdersState {
   @override
   bool get partnerOrdesRefreshLoading;
   @override
+  bool get orderDetailError;
+  @override
+  bool get popOrderScreen;
+  @override
   String? get message;
   @override
   ImageModel? get deviceBill;
@@ -4732,6 +5156,8 @@ abstract class _Initial implements OrdersState {
   List<OrderDetail>? get partnerOrders;
   @override
   List<OrderDetail>? get newOrders;
+  @override
+  OrderDetail? get orderDetail;
   @override
   int get orderTab;
   @override

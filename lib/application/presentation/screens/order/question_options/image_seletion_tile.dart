@@ -9,27 +9,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class GridTileQuestion extends StatefulWidget {
-  const GridTileQuestion({super.key, required this.option});
+  const GridTileQuestion(
+      {super.key,
+      required this.option,
+      required this.onTap,
+      required this.selected});
 
   final Option option;
+  final VoidCallback onTap;
+  final bool selected;
 
   @override
   State<GridTileQuestion> createState() => _GridTileQuestionState();
 }
 
 class _GridTileQuestionState extends State<GridTileQuestion> {
-  bool selected = false;
-
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<RequoteBloc, RequoteState>(
       builder: (context, state) {
-        final data = state
-            .selectedAnswers[state.sections?[state.requoteIndex].heading]
-            ?.where(
-                (element) => element.description == widget.option.description)
-            .toList();
-        selected = data != null && data.isNotEmpty ? true : false;
         return InkWell(
           onTap: () {
             context.read<RequoteBloc>().add(RequoteEvent.markAnswer(
@@ -38,17 +36,18 @@ class _GridTileQuestionState extends State<GridTileQuestion> {
                     type: widget.option.type,
                     value: null,
                     heading: state.sections![state.requoteIndex].heading)));
-            setState(() {
-              selected = !selected;
-            });
+            // setState(() {
+            //   selected = !selected;
+            // });
+            widget.onTap();
           },
           child: ClipRRect(
             borderRadius: kRadius10,
             child: DecoratedBox(
               decoration: BoxDecoration(
                   border: Border.all(
-                      color: selected ? kGreenPrimary : kBlack,
-                      width: selected ? 3 : 1),
+                      color: widget.selected ? kGreenPrimary : kBlack,
+                      width: widget.selected ? 3 : 1),
                   borderRadius: kRadius10),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),

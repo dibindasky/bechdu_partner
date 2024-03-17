@@ -28,17 +28,26 @@ class AnswerIndexChanger extends StatelessWidget {
         ),
         kWidth20,
         Expanded(
-          child: BlocBuilder<RequoteBloc, RequoteState>(
+          child: BlocConsumer<RequoteBloc, RequoteState>(
+            listener: (context, state) {
+              if (state.priceCalculationLoading) {
+                showDialog(
+                    context: context,
+                    builder: (context) => const Center(
+                          child: CircularProgressIndicator(color: kBluePrimary),
+                        ));
+              } if (state.priceCalculationError) {
+                Navigator.pop(context);
+              } if (state.basePrice != null) {
+                Navigator.pop(context);
+                showDialogeRequote(context);
+              }
+            },
             builder: (context, state) {
               return StatusColoredBox(
                   onTap: () {
-                    if (state.requoteIndex >=
-                        (state.sections?.length ?? 0) - 1) {
-                      showDialogeRequote(context);
-                    } else {
-                      context.read<RequoteBloc>().add(RequoteEvent.changeIndex(
-                          index: state.requoteIndex + 1));
-                    }
+                    context.read<RequoteBloc>().add(RequoteEvent.changeIndex(
+                        index: state.requoteIndex + 1));
                   },
                   text: 'Continue',
                   color: kGreenPrimary,

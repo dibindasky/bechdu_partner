@@ -51,11 +51,41 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
     on<RemoveDiviceBill>(removeDiviceBill);
     on<RemoveIdCardImage>(removeIdCardImage);
     on<CheckErrorCompleteOrder>(checkErrorCompleteOrder);
+    on<GetOrderDetail>(getOrderDetail);
     on<Reset>(reset);
   }
 
   FutureOr<void> reset(Reset event, emit) {
     emit(OrdersState.initial());
+  }
+
+  FutureOr<void> getOrderDetail(GetOrderDetail event, emit) async {
+    emit(state.copyWith(
+        isLoading: true,
+        orderDetailError: false,
+        message: null,
+        popOrderScreen: false,
+        orderCompleted: false,
+        cancelOrder: false,
+        acceptOrder: false,
+        acceptOrderError: false));
+    final phone = await SharedPref.getPhone();
+    if (phone == null) {
+      return emit(state.copyWith(
+          isLoading: false,
+          hasError: true,
+          orderDetailError: true,
+          message: 'failed to connect, please try again'));
+    }
+    final result =
+        await _orderRepo.getOrderDetails(phone: phone, orderId: event.orderId);
+    result.fold(
+        (l) => emit(state.copyWith(
+            orderDetailError: true,
+            isLoading: false,
+            hasError: true,
+            message: l.message)),
+        (r) => emit(state.copyWith(isLoading: false, orderDetail: r)));
   }
 
   FutureOr<void> checkErrorCompleteOrder(
@@ -64,28 +94,46 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
         state.deviceImages == [] ||
         state.idCard == null ||
         state.deviceBill == null) {
-      emit(state.copyWith(orderCompletionError: true));
+      emit(state.copyWith(
+        orderCompletionError: true,
+        popOrderScreen: false,
+        orderDetailError: false,
+      ));
     } else {
-      emit(state.copyWith(orderCompletionError: false));
+      emit(state.copyWith(
+        orderCompletionError: false,
+        orderDetailError: false,
+      ));
     }
   }
 
   FutureOr<void> removeIdCardImage(RemoveIdCardImage event, emit) async {
-    return emit(state.copyWith(idCard: null));
+    return emit(state.copyWith(
+        idCard: null,
+        message: null,
+        orderDetailError: false,
+        popOrderScreen: false));
   }
 
   FutureOr<void> addDiviceBill(AddDiviceBill event, emit) async {
     final result = await imagePickerService.pickImage();
-    result.fold((l) => null, (r) => emit(state.copyWith(deviceBill: r)));
+    result.fold(
+        (l) => null,
+        (r) => emit(state.copyWith(
+            deviceBill: r, popOrderScreen: false, orderDetailError: false)));
   }
 
   FutureOr<void> removeDiviceBill(RemoveDiviceBill event, emit) async {
-    return emit(state.copyWith(deviceBill: null));
+    return emit(state.copyWith(
+        deviceBill: null, popOrderScreen: false, orderDetailError: false));
   }
 
   FutureOr<void> addIdCardImage(AddIdCardImage event, emit) async {
     final result = await imagePickerService.pickImage();
-    result.fold((l) => null, (r) => emit(state.copyWith(idCard: r)));
+    result.fold(
+        (l) => null,
+        (r) => emit(state.copyWith(
+            idCard: r, popOrderScreen: false, orderDetailError: false)));
   }
 
   FutureOr<void> addDeviceImages(AddDeviceImages event, emit) async {
@@ -93,21 +141,27 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
     result.fold((l) => null, (r) {
       List<ImageModel> images = List.from(state.deviceImages ?? []);
       images.add(r);
-      return emit(state.copyWith(deviceImages: images));
+      return emit(state.copyWith(
+          deviceImages: images,
+          popOrderScreen: false,
+          orderDetailError: false));
     });
   }
 
   FutureOr<void> removeDeviceImage(RemoveDeviceImage event, emit) async {
     List<ImageModel> images = List.from(state.deviceImages ?? []);
     images.removeAt(event.index);
-    return emit(state.copyWith(deviceImages: images));
+    return emit(state.copyWith(
+        deviceImages: images, popOrderScreen: false, orderDetailError: false));
   }
 
   FutureOr<void> completeOrder(CompleteOrder event, emit) async {
     emit(state.copyWith(
         completeOrderLoading: true,
         message: null,
+        orderDetailError: false,
         orderCompleted: false,
+        popOrderScreen: false,
         cancelOrder: false,
         acceptOrder: false,
         acceptOrderError: false));
@@ -143,6 +197,8 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
     emit(state.copyWith(
         isLoading: true,
         message: null,
+        popOrderScreen: false,
+        orderDetailError: false,
         orderCompleted: false,
         cancelOrder: false,
         acceptOrder: false,
@@ -170,6 +226,8 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
     if (state.newOrders != null && !event.call) return;
     emit(state.copyWith(
         isLoading: true,
+        orderDetailError: false,
+        popOrderScreen: false,
         message: null,
         acceptOrder: false,
         acceptOrderError: false));
@@ -199,6 +257,8 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
     emit(state.copyWith(
         partnerOrdesRefreshLoading: true,
         message: null,
+        orderDetailError: false,
+        popOrderScreen: false,
         acceptOrder: false,
         acceptOrderError: false));
     final phone = await SharedPref.getPhone();
@@ -228,6 +288,8 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
     emit(state.copyWith(
         newOrdesRefreshLoading: true,
         message: null,
+        popOrderScreen: false,
+        orderDetailError: false,
         acceptOrder: false,
         acceptOrderError: false));
     final phone = await SharedPref.getPhone();
@@ -245,7 +307,10 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
             search: searchController.text.trim()));
     result.fold(
         (l) => emit(state.copyWith(
-            hasError: true, message: l.message, newOrdesRefreshLoading: false)),
+            orderDetailError: false,
+            hasError: true,
+            message: l.message,
+            newOrdesRefreshLoading: false)),
         (r) => emit(state.copyWith(
             newOrders: r.orders, newOrdesRefreshLoading: false)));
   }
@@ -254,6 +319,8 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
     emit(state.copyWith(
         orderTab: event.tab,
         message: null,
+        popOrderScreen: false,
+        orderDetailError: false,
         hasError: false,
         acceptOrder: false,
         acceptOrderError: false));
@@ -262,6 +329,7 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
   FutureOr<void> acceptOrder(AcceptOrder event, emit) async {
     emit(state.copyWith(
         acceptOrder: false,
+        popOrderScreen: false,
         acceptOrderError: false,
         acceptOrderLoading: true,
         message: null));
@@ -270,6 +338,7 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
       return emit(state.copyWith(
           acceptOrderLoading: false,
           acceptOrderError: true,
+          popOrderScreen: true,
           message: 'failed to connect, please try again'));
     }
     final result =
@@ -278,6 +347,7 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
         (l) => emit(state.copyWith(
             acceptOrderError: true,
             acceptOrderLoading: false,
+            popOrderScreen: true,
             message: l.message)), (r) {
       emit(state.copyWith(
           acceptOrderLoading: false, message: r.message, acceptOrder: true));
@@ -291,7 +361,9 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
   FutureOr<void> cancelOrder(CancelOrder event, emit) async {
     emit(state.copyWith(
         cancelOrder: false,
+        popOrderScreen: false,
         acceptOrderError: false,
+        orderDetailError: false,
         acceptOrderLoading: true,
         message: null));
     final phone = await SharedPref.getPhone();
@@ -299,6 +371,7 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
       return emit(state.copyWith(
           acceptOrderLoading: false,
           acceptOrderError: true,
+          popOrderScreen: true,
           message: 'failed to connect, please try again'));
     }
     final result = await _orderRepo.cancelOrder(
@@ -309,6 +382,7 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
         (l) => emit(state.copyWith(
             acceptOrderError: true,
             acceptOrderLoading: false,
+            popOrderScreen: true,
             message: l.message)), (r) {
       emit(state.copyWith(
           acceptOrderLoading: false, message: r.message, cancelOrder: true));
@@ -327,7 +401,8 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
         pickUpPersonPhone: event.pickUpPerson.phone);
     final order = orders[index].copyWith(partner: data);
     orders[index] = order;
-    emit(state.copyWith(partnerOrders: orders, message: null));
+    emit(state.copyWith(
+        partnerOrders: orders, popOrderScreen: false, message: null));
   }
 
   FutureOr<void> removePickupPartner(RemovePickupPartner event, emit) {
@@ -338,6 +413,7 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
         .copyWith(pickUpPersonName: '', pickUpPersonPhone: '');
     final order = orders[index].copyWith(partner: data);
     orders[index] = order;
-    emit(state.copyWith(partnerOrders: orders, message: null));
+    emit(state.copyWith(
+        partnerOrders: orders, popOrderScreen: false, message: null));
   }
 }

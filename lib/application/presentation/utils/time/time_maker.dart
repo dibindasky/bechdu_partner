@@ -10,5 +10,5 @@ String formatDateTime(DateTime dateTime) {
   final seconds = dateTime.second.toString().padLeft(2, '0');
 
   // Format the date and time using string interpolation
-  return '$day/$month/$year $hours:$minutes:$seconds';
+  return '$day/$month/$year, $hours:$minutes:$seconds';
 }

@@ -13,10 +13,13 @@ class ScreenTranscations extends StatelessWidget {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       context
           .read<TranscationBloc>()
-          .add(const TranscationEvent.getCreditedTranscations());
+          .add(const TranscationEvent.getManuelTransactions(call: false));
       context
           .read<TranscationBloc>()
-          .add(const TranscationEvent.getDebitedTranscations());
+          .add(const TranscationEvent.getCreditedTranscations(call: false));
+      context
+          .read<TranscationBloc>()
+          .add(const TranscationEvent.getDebitedTranscations(call: false));
     });
     return Scaffold(
       appBar: AppBar(

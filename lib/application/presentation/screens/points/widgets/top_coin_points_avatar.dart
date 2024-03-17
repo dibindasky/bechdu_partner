@@ -16,13 +16,13 @@ class TopCoinPointsAvatar extends StatelessWidget {
       builder: (context, state) {
         return Column(
           children: [
-            AnimatedGrowShrinkContainer(
+            CircleAvatar(
+              radius: sWidth * 0.115,
+              backgroundColor: klightGreen,
               child: CircleAvatar(
-                radius: sWidth * 0.115,
-                backgroundColor: klightGreen,
-                child: CircleAvatar(
-                  radius: sWidth * 0.10,
-                  backgroundColor: kBluePrimary,
+                radius: sWidth * 0.10,
+                backgroundColor: kBluePrimary,
+                child: AnimatedGrowShrinkContainer(
                   child: CircleAvatar(
                     radius: sWidth * 0.075,
                     backgroundImage: const AssetImage(iconNottoCoin),

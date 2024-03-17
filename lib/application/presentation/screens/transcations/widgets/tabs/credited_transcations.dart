@@ -56,18 +56,29 @@ class _CreditedTranscationsListState extends State<CreditedTranscationsList> {
         }
         if (state.creditedTranscations != null &&
             state.creditedTranscations!.isNotEmpty) {
+          int len = state.creditedLoading
+              ? state.creditedTranscations!.length + 1
+              : state.creditedTranscations!.length;
           return RefreshIndicator(
             onRefresh: () async {
-              context
-                  .read<TranscationBloc>()
-                  .add(const TranscationEvent.getCreditedTranscations());
+              context.read<TranscationBloc>().add(
+                  const TranscationEvent.getCreditedTranscations(call: true));
+              context.read<TranscationBloc>().add(
+                  const TranscationEvent.getManuelTransactions(call: true));
             },
             child: ListView.builder(
-              itemCount: state.creditedLoading
-                  ? state.creditedTranscations!.length + 1
-                  : state.creditedTranscations!.length,
+              itemCount: len < 6 ? len + 1 : len,
               controller: controller,
               itemBuilder: (context, index) {
+                if (len < 6 && !state.creditedLoading) {
+                  if (index >= len) {
+                    return SizedBox(height: 1000, width: sWidth);
+                  } else {
+                    return TranscationListTile(
+                        credited: true,
+                        transcation: state.creditedTranscations![index]);
+                  }
+                }
                 if (index == state.creditedTranscations!.length) {
                   return Padding(
                     padding: const EdgeInsets.symmetric(vertical: 10),
@@ -85,16 +96,22 @@ class _CreditedTranscationsListState extends State<CreditedTranscationsList> {
             ),
           );
         } else if (state.creditedTranscations == null) {
-          return ErrorRefreshIndicator(
-              onRefresh: () => context
-                  .read<TranscationBloc>()
-                  .add(const TranscationEvent.getCreditedTranscations()));
+          return ErrorRefreshIndicator(onRefresh: () {
+            context.read<TranscationBloc>().add(
+                const TranscationEvent.getCreditedTranscations(call: true));
+            context
+                .read<TranscationBloc>()
+                .add(const TranscationEvent.getManuelTransactions(call: true));
+          });
         } else {
           return ErrorRefreshIndicator(
               errorMessage: 'No Transcations yet',
-              onRefresh: () => context
-                  .read<TranscationBloc>()
-                  .add(const TranscationEvent.getCreditedTranscations()));
+              onRefresh: () {
+                context.read<TranscationBloc>().add(
+                    const TranscationEvent.getCreditedTranscations(call: true));
+                context.read<TranscationBloc>().add(
+                    const TranscationEvent.getManuelTransactions(call: true));
+              });
         }
       },
     );

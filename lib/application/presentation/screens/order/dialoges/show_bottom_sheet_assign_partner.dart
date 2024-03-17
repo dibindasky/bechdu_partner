@@ -1,4 +1,3 @@
-import 'package:bechdu_partner/application/business_logic/order/orders/orders_bloc.dart';
 import 'package:bechdu_partner/application/business_logic/pickup_partner/pickup_partner_bloc.dart';
 import 'package:bechdu_partner/application/presentation/routes/routes.dart';
 import 'package:bechdu_partner/application/presentation/utils/clipper/vertical_curves.dart';
@@ -44,11 +43,10 @@ Future<dynamic> showBottomSheetAssignPartner(
                         previous.assigningOrderLoader && current.orderAssigned,
                     listener: (context, state) {
                       if (selectedPickup != null) {
-                        Navigator.of(context).pop();
-                        context.read<OrdersBloc>().add(
-                            OrdersEvent.changePickupPartner(
-                                pickUpPerson: selectedPickup!,
-                                orderId: orderId));
+                        // context.read<OrdersBloc>().add(
+                        //     OrdersEvent.changePickupPartner(
+                        //         pickUpPerson: selectedPickup!,
+                        //         orderId: orderId));
                       }
                     },
                     builder: (context, state) {
@@ -69,8 +67,6 @@ Future<dynamic> showBottomSheetAssignPartner(
                           ],
                         );
                       } else {
-                        // sort out blocked pickup partners
-                        print('partner available');
                         final list = state.pickUpPersons!
                             .where((element) => element.status != 'blocked')
                             .toList();
@@ -141,6 +137,7 @@ Future<dynamic> showBottomSheetAssignPartner(
                                                           partnerId: data.id!,
                                                           orderId: orderId));
                                               selectedPickup = data;
+                                              Navigator.of(context).pop();
                                             },
                                             child: ClipRRect(
                                               borderRadius: kRadius5,

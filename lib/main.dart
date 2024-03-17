@@ -10,6 +10,9 @@ import 'package:bechdu_partner/domain/core/di/dipendency_injection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+final navigatorKey = GlobalKey<NavigatorState>();
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,19 +30,25 @@ class Beachdu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(create: (context) => getIt<AuthBloc>()),
-        BlocProvider(create: (context) => getIt<RequoteBloc>()),
-        BlocProvider(create: (context) => getIt<RoleBloc>()),
-        BlocProvider(create: (context) => getIt<PointsBloc>()),
-        BlocProvider(create: (context) => getIt<OrdersBloc>()),
-        BlocProvider(create: (context) => getIt<TranscationBloc>()),
-        BlocProvider(create: (context) => getIt<PickupPartnerBloc>()),
-      ],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        onGenerateRoute: routeGenerator.onGenerateRoute,
+    return ScreenUtilInit(
+      designSize: const Size(360, 690),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider(create: (context) => getIt<AuthBloc>()),
+          BlocProvider(create: (context) => getIt<RequoteBloc>()),
+          BlocProvider(create: (context) => getIt<RoleBloc>()),
+          BlocProvider(create: (context) => getIt<PointsBloc>()),
+          BlocProvider(create: (context) => getIt<OrdersBloc>()),
+          BlocProvider(create: (context) => getIt<TranscationBloc>()),
+          BlocProvider(create: (context) => getIt<PickupPartnerBloc>()),
+        ],
+        child: MaterialApp(
+          navigatorKey: navigatorKey,
+          debugShowCheckedModeBanner: false,
+          onGenerateRoute: routeGenerator.onGenerateRoute,
+        ),
       ),
     );
   }

@@ -91,6 +91,7 @@ extension GetItInjectableX on _i1.GetIt {
     gh.factory<_i25.TranscationBloc>(() => _i25.TranscationBloc(
           gh<_i20.TranscationsRepo>(),
           gh<_i7.InvoiceMaker>(),
+          gh<_i6.ImagePickerService>(),
         ));
     return this;
   }

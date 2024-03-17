@@ -4,6 +4,7 @@ import 'package:bechdu_partner/domain/model/commen/success_response_model/succes
 import 'package:bechdu_partner/domain/model/order/c_ancel_reason_model/c_ancel_reason_model.dart';
 import 'package:bechdu_partner/domain/model/order/complete_order_model/complete_order_model.dart';
 import 'package:bechdu_partner/domain/model/order/get_partner_order_response_model/get_partner_order_response_model.dart';
+import 'package:bechdu_partner/domain/model/order/get_partner_order_response_model/order_detail.dart';
 import 'package:dartz/dartz.dart';
 
 abstract class OrderRepo {
@@ -22,4 +23,7 @@ abstract class OrderRepo {
       {required String phone,
       required String orderId,
       required CompleteOrderModel completeOrderModel});
+  Future<Either<Failure, OrderDetail>> getOrderDetails(
+      {required String phone,
+      required String orderId});
 }

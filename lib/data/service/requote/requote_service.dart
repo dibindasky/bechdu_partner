@@ -106,8 +106,8 @@ class RequoteService implements RequoteRepo {
       {required PriceCalculationModel priceCalculationModel}) async {
     try {
       log('getPrice data=> ${priceCalculationModel.toJson()}');
-      final response =
-          await _apiService.post(ApiEndPoints.getPrice, addHeader: false);
+      final response = await _apiService.post(ApiEndPoints.getPrice,
+          addHeader: false, data: priceCalculationModel.toJson());
       log('getPrice success data=> ${response.data}');
       return Right(PriceResponseModel.fromJson(response.data));
     } on DioException catch (e) {

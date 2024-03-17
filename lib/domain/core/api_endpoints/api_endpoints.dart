@@ -29,6 +29,7 @@ class ApiEndPoints {
   static String deAssignOrderFromPickupPartner =
       '/partner/deassign-order/{partnerPhone}/{orderId}';
   static String cancelOrder = '/partner/cancel-order/{orderId}/{partnerPhone}';
+  static String getOrderDetails = '/partner/get-orders/{partnerPhone}/{orderID}';
   static String completeOrder =
       '/partner/complete-order/{orderId}/{partnerPhone}';
   static String resheduleOrder =
@@ -46,6 +47,10 @@ class ApiEndPoints {
   static String getDateAndTime = '/dynamic/calendar/next-10-days';
   static String getGstValue = '/dynamic/get-gst-value';
   static String getConValue = '/coins/get-coin-value';
+
+  // transcattions
   static String downloadInvoice = '/partner/transaction/{phone}/{id}';
   static String manuelTransation = '/payment/create-payments';
+  static String getManuelTransation = '/payment/get-partner-payments/{phone}';
+  static String makeEpayment='/partner/update-coins-after-payment/{phone}';
 }

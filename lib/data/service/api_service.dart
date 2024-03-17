@@ -1,6 +1,8 @@
 import 'dart:developer';
 
+import 'package:bechdu_partner/application/presentation/routes/routes.dart';
 import 'package:bechdu_partner/data/secure_storage/secure_storage.dart';
+import 'package:bechdu_partner/main.dart';
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 
@@ -52,6 +54,9 @@ class ApiService {
     } on DioException catch (exception) {
       log('Dio exception code => ${exception.response?.statusCode}');
       log('Dio exception => ${exception.response}');
+      if (exception.response?.statusCode == 403) {
+        _logOut();
+      }
       rethrow;
     } catch (e) {
       log('Exception => $e');
@@ -89,6 +94,9 @@ class ApiService {
     } on DioException catch (exception) {
       log('Dio exception code => ${exception.response?.statusCode}');
       log('Dio exception => ${exception.response?.statusCode}');
+      if (exception.response?.statusCode == 403) {
+        _logOut();
+      }
       rethrow;
     } catch (e) {
       log('Exception => $e');
@@ -124,6 +132,9 @@ class ApiService {
     } on DioException catch (exception) {
       log('Dio exception code => ${exception.response?.statusCode}');
       log('Dio exception => ${exception.response?.statusCode}');
+      if (exception.response?.statusCode == 403) {
+        _logOut();
+      }
       rethrow;
     } catch (e) {
       log('Exception => $e');
@@ -158,6 +169,9 @@ class ApiService {
     } on DioException catch (exception) {
       log('Dio exception code => ${exception.response?.statusCode}');
       log('Dio exception => ${exception.response?.statusCode}');
+      if (exception.response?.statusCode == 403) {
+        _logOut();
+      }
       rethrow;
     } catch (e) {
       log('Exception => $e');
@@ -192,10 +206,19 @@ class ApiService {
     } on DioException catch (exception) {
       log('Dio exception code => ${exception.response?.statusCode}');
       log('Dio exception => ${exception.response?.statusCode}');
+      if (exception.response?.statusCode == 403) {
+        _logOut();
+      }
       rethrow;
     } catch (e) {
       log('Exception => $e');
       rethrow;
     }
+  }
+
+  void _logOut() {
+    SharedPref.clearLogin();
+    navigatorKey.currentState!
+        .pushNamedAndRemoveUntil(Routes.signInPage, (route) => false);
   }
 }
