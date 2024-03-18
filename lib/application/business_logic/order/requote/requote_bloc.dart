@@ -4,6 +4,7 @@ import 'package:bechdu_partner/data/secure_storage/secure_storage.dart';
 import 'package:bechdu_partner/domain/model/requote/get_question_response_model/section.dart';
 import 'package:bechdu_partner/domain/model/requote/price_calculation_model/price_calculation_model.dart';
 import 'package:bechdu_partner/domain/model/requote/price_calculation_model/selected_option.dart';
+import 'package:bechdu_partner/domain/model/requote/requote_price_model/requote_price_model.dart';
 import 'package:bechdu_partner/domain/model/requote/reshedule_model/reshedule_model.dart';
 import 'package:bechdu_partner/domain/repository/service/requote_repo.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -27,6 +28,7 @@ class RequoteBloc extends Bloc<RequoteEvent, RequoteState> {
     on<GetDateAndTime>(getDateAndTime);
     on<ResheduleOrder>(resheduleOrder);
     on<GetPrice>(getPrice);
+    on<RequotePrice>(requotePrice);
     on<Reset>(reset);
   }
 
@@ -38,13 +40,15 @@ class RequoteBloc extends Bloc<RequoteEvent, RequoteState> {
     emit(state.copyWith(
         hasError: false,
         resheduleDone: false,
+        requoteDone: false,
+        requoteError: false,
+        requoteLoading: false,
         basePrice: null,
         priceCalculationError: false,
         priceCalculationLoading: true,
         message: null,
         questionLoading: false));
     List<SelectedOption> list = [];
-
     for (var element in state.sections!) {
       list.addAll(state.selectedAnswers[element.heading]!);
     }
@@ -67,11 +71,43 @@ class RequoteBloc extends Bloc<RequoteEvent, RequoteState> {
             priceCalculationLoading: false)));
   }
 
+  FutureOr<void> requotePrice(RequotePrice event, emit) async {
+    final phone = await SharedPref.getPhone();
+    emit(state.copyWith(
+        resheduleLoading: false,
+        requoteDone: false,
+        requoteError: false,
+        requoteLoading: false,
+        priceCalculationError: false,
+        priceCalculationLoading: false,
+        hasError: false,
+        resheduleDone: false,
+        message: null,
+        questionLoading: false));
+    final result = await requoteService.requoteOrder(
+        requotePriceModel: event.requotePriceModel,
+        orderId: event.orderId,
+        phone: phone!);
+    result.fold(
+        (l) => emit(state.copyWith(
+            message: l.message,
+            hasError: true,
+            requoteLoading: false,
+            requoteError: true)),
+        (r) => emit(state.copyWith(
+            message: r.message, requoteDone: true, requoteLoading: false)));
+  }
+
   FutureOr<void> resheduleOrder(ResheduleOrder event, emit) async {
     final phone = await SharedPref.getPhone();
     emit(state.copyWith(
         resheduleLoading: true,
+        basePrice: null,
         priceCalculationError: false,
+        priceCalculationLoading: false,
+        requoteDone: false,
+        requoteError: false,
+        requoteLoading: false,
         hasError: false,
         resheduleDone: false,
         message: null,
@@ -114,8 +150,16 @@ class RequoteBloc extends Bloc<RequoteEvent, RequoteState> {
     if (list.isNotEmpty) {
       print(list.first.value);
     }
-    return emit(
-        state.copyWith(message: null, selectedAnswers: map, hasError: false));
+    return emit(state.copyWith(
+        message: null,
+        selectedAnswers: map,
+        hasError: false,
+        basePrice: null,
+        priceCalculationError: false,
+        priceCalculationLoading: false,
+        requoteDone: false,
+        requoteError: false,
+        requoteLoading: false));
   }
 
   FutureOr<void> markYesOrNo(MarkYesOrNo event, emit) async {
@@ -155,13 +199,23 @@ class RequoteBloc extends Bloc<RequoteEvent, RequoteState> {
         message: null,
         selectedAnswers: map,
         hasError: false,
-        priceCalculationError: false));
+        basePrice: null,
+        priceCalculationError: false,
+        priceCalculationLoading: false,
+        requoteDone: false,
+        requoteError: false,
+        requoteLoading: false));
   }
 
   FutureOr<void> getQuestions(GetQuestions event, emit) async {
     emit(state.copyWith(
         slug: event.slug,
+        requoteDone: false,
+        requoteError: false,
+        requoteLoading: false,
+        basePrice: null,
         priceCalculationError: false,
+        priceCalculationLoading: false,
         questionLoading: true,
         sections: null,
         message: null,
@@ -193,7 +247,12 @@ class RequoteBloc extends Bloc<RequoteEvent, RequoteState> {
                 .length !=
             state.sections![state.requoteIndex].options!.length) {
       emit(state.copyWith(
+          basePrice: null,
           priceCalculationError: false,
+          priceCalculationLoading: false,
+          requoteDone: false,
+          requoteError: false,
+          requoteLoading: false,
           message: 'must choose all options',
           hasError: true));
     } else if (state.sections![state.requoteIndex].criteria == 'one' &&
@@ -201,7 +260,10 @@ class RequoteBloc extends Bloc<RequoteEvent, RequoteState> {
                 .length !=
             1) {
       emit(state.copyWith(
-          priceCalculationError: false,
+          basePrice: null,
+          requoteDone: false,
+          requoteError: false,
+          requoteLoading: false,
           message: 'must choose one option',
           hasError: true));
     } else if (state.sections![state.requoteIndex].criteria == 'some' &&
@@ -209,13 +271,19 @@ class RequoteBloc extends Bloc<RequoteEvent, RequoteState> {
             .isEmpty) {
       emit(state.copyWith(
           priceCalculationError: false,
+          requoteDone: false,
+          requoteError: false,
+          requoteLoading: false,
           message: 'select atleast one option',
           hasError: true));
     } else if (state.requoteIndex != state.sections!.length - 1) {
       emit(state.copyWith(
-          priceCalculationError: false,
+          priceCalculationLoading: false,
           message: null,
           hasError: false,
+          requoteDone: false,
+          requoteError: false,
+          requoteLoading: false,
           requoteIndex: event.index));
     } else if (state.requoteIndex == state.sections!.length - 1) {
       add(const RequoteEvent.getPrice());
@@ -228,10 +296,23 @@ class RequoteBloc extends Bloc<RequoteEvent, RequoteState> {
     }
     if (event.index + 1 == state.requoteIndex) {
       emit(state.copyWith(
-          message: null, hasError: false, requoteIndex: event.index));
+          requoteDone: false,
+          requoteError: false,
+          basePrice: null,
+          priceCalculationError: false,
+          priceCalculationLoading: false,
+          requoteLoading: false,
+          message: null,
+          hasError: false,
+          requoteIndex: event.index));
     } else {
       emit(state.copyWith(
+          requoteDone: false,
+          requoteError: false,
+          basePrice: null,
           priceCalculationError: false,
+          priceCalculationLoading: false,
+          requoteLoading: false,
           message: 'you can go back to the previous step only',
           hasError: true));
     }
@@ -242,7 +323,12 @@ class RequoteBloc extends Bloc<RequoteEvent, RequoteState> {
     result.fold(
         (l) => null,
         (r) => emit(state.copyWith(
+            basePrice: null,
             priceCalculationError: false,
+            priceCalculationLoading: false,
+            requoteDone: false,
+            requoteError: false,
+            requoteLoading: false,
             dates: r.dates ?? [],
             time: r.timeSlot ?? [],
             hasError: false)));

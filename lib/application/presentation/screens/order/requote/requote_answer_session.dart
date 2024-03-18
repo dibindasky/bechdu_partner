@@ -31,9 +31,11 @@ class RequoteAnswerSession extends StatelessWidget {
           return YesOrNoListMaker(
               list: state.sections![state.requoteIndex].options!);
         } else if (state.sections![state.requoteIndex].type == 'image') {
-          return ImageGridMaker(list: state.sections![state.requoteIndex].options!);
+          return ImageGridMaker(
+              list: state.sections![state.requoteIndex].options!);
         } else {
-          return GridOptionMaker(list: state.sections![state.requoteIndex].options!);
+          return GridOptionMaker(
+              list: state.sections![state.requoteIndex].options!);
         }
       },
     );

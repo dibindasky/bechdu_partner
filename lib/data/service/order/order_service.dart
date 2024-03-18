@@ -159,11 +159,9 @@ class OrderService implements OrderRepo {
   Future<Either<Failure, OrderDetail>> getOrderDetails(
       {required String phone, required String orderId}) async {
     try {
-      final response = await _apiService.get(
-          ApiEndPoints.getOrderDetails
-              .replaceFirst('{partnerPhone}', phone)
-              .replaceFirst('{orderID}', orderId)
-          );
+      final response = await _apiService.get(ApiEndPoints.getOrderDetails
+          .replaceFirst('{partnerPhone}', phone)
+          .replaceFirst('{orderID}', orderId));
       return Right(OrderDetail.fromJson(response.data));
     } on DioException catch (e) {
       try {

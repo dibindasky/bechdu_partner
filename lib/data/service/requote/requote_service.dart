@@ -10,6 +10,7 @@ import 'package:bechdu_partner/domain/model/requote/date_and_time_response_model
 import 'package:bechdu_partner/domain/model/requote/get_question_response_model/get_question_response_model.dart';
 import 'package:bechdu_partner/domain/model/requote/price_calculation_model/price_calculation_model.dart';
 import 'package:bechdu_partner/domain/model/requote/price_r_esponse_model/price_r_esponse_model.dart';
+import 'package:bechdu_partner/domain/model/requote/requote_price_model/requote_price_model.dart';
 import 'package:bechdu_partner/domain/model/requote/reshedule_model/reshedule_model.dart';
 import 'package:bechdu_partner/domain/repository/service/requote_repo.dart';
 import 'package:dartz/dartz.dart';
@@ -122,6 +123,36 @@ class RequoteService implements RequoteRepo {
       }
     } catch (e) {
       log('getPrice exception => $e');
+      return Left(Failure(message: errorMessage));
+    }
+  }
+
+  @override
+  Future<Either<Failure, SuccessResponseModel>> requoteOrder(
+      {required RequotePriceModel requotePriceModel,
+      required String orderId,
+      required String phone}) async {
+    try {
+      log('requoteOrder data=> ${requotePriceModel.toJson()}');
+      final response = await _apiService.put(
+          ApiEndPoints.requotePrice
+              .replaceFirst('{orderID}', orderId)
+              .replaceFirst('{partnerPhone}', phone),
+          data: requotePriceModel.toJson());
+      log('requoteOrder success data=> ${response.data}');
+      return Right(SuccessResponseModel.fromJson(response.data));
+    } on DioException catch (e) {
+      try {
+        log('requoteOrder dio exception => $e');
+        log(e.response.toString());
+        ErrorResponseModel error =
+            ErrorResponseModel.fromJson(e.response?.data);
+        return Left(Failure(message: error.error ?? errorMessage));
+      } catch (e) {
+        return Left(Failure(message: errorMessage));
+      }
+    } catch (e) {
+      log('requoteOrder exception => $e');
       return Left(Failure(message: errorMessage));
     }
   }

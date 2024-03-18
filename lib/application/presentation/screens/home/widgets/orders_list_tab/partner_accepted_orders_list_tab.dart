@@ -36,7 +36,7 @@ class _OrdersHistoryListState extends State<OrdersHistoryList> {
 
   @override
   Widget build(BuildContext context) {
-        WidgetsBinding.instance.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       context
           .read<OrdersBloc>()
           .add(const OrdersEvent.getPartnerOrders(call: false));
@@ -51,16 +51,17 @@ class _OrdersHistoryListState extends State<OrdersHistoryList> {
           int len = state.partnerOrdesRefreshLoading
               ? state.partnerOrders!.length + 1
               : state.partnerOrders!.length;
-          return RefreshIndicator(onRefresh: () async{
-             if (partner) {
-                      context
-                          .read<OrdersBloc>()
-                          .add(const OrdersEvent.getNewOrder(call: true));
-                    }
-                    context
-                        .read<OrdersBloc>()
-                        .add(const OrdersEvent.getPartnerOrders(call: true));
-          },
+          return RefreshIndicator(
+            onRefresh: () async {
+              if (partner) {
+                context
+                    .read<OrdersBloc>()
+                    .add(const OrdersEvent.getNewOrder(call: true));
+              }
+              context
+                  .read<OrdersBloc>()
+                  .add(const OrdersEvent.getPartnerOrders(call: true));
+            },
             child: ListView.builder(
               controller: controller,
               itemCount: len < 5 ? len + 1 : len,

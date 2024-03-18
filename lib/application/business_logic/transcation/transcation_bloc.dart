@@ -234,7 +234,8 @@ class TranscationBloc extends Bloc<TranscationEvent, TranscationState> {
     if (state.creditedTranscations != null && !event.call) return;
     emit(state.copyWith(
         gstError: false,
-        isLoading: true,paymetnDone: false,
+        isLoading: true,
+        paymetnDone: false,
         message: null,
         hasError: false,
         downloaded: false));
@@ -274,7 +275,8 @@ class TranscationBloc extends Bloc<TranscationEvent, TranscationState> {
     emit(state.copyWith(
         gstError: false,
         isLoading: true,
-        message: null,paymetnDone: false,
+        message: null,
+        paymetnDone: false,
         hasError: false,
         downloaded: false));
     final phone = await SharedPref.getPhone();

@@ -102,7 +102,12 @@ class ScreenOrderDetail extends StatelessWidget {
                                     (route) => false);
                               }
                               if (state.acceptOrderError || state.cancelOrder) {
-                                Navigator.of(context).pop();
+                                Navigator.pushNamedAndRemoveUntil(
+                                    context,
+                                    partner
+                                        ? Routes.bottomBar
+                                        : Routes.homePage,
+                                    (route) => false);
                               }
                               if (state.acceptOrder) {
                                 var orderModel =

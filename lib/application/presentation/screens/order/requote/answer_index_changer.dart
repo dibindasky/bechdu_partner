@@ -36,9 +36,11 @@ class AnswerIndexChanger extends StatelessWidget {
                     builder: (context) => const Center(
                           child: CircularProgressIndicator(color: kBluePrimary),
                         ));
-              } if (state.priceCalculationError) {
+              }
+              if (state.priceCalculationError) {
                 Navigator.pop(context);
-              } if (state.basePrice != null) {
+              }
+              if (state.basePrice != null) {
                 Navigator.pop(context);
                 showDialogeRequote(context);
               }

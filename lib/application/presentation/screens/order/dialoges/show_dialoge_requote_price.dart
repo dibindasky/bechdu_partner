@@ -5,6 +5,8 @@ import 'package:bechdu_partner/application/presentation/screens/order/dialoges/s
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:bechdu_partner/application/presentation/widgets/status_colored_box.dart';
+import 'package:bechdu_partner/domain/model/requote/price_calculation_model/selected_option.dart';
+import 'package:bechdu_partner/domain/model/requote/requote_price_model/requote_price_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -85,42 +87,76 @@ showDialogeRequote(context) {
                         ),
                       ),
                       kHeight30,
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          children: [
-                            Expanded(
-                              child: InkWell(
-                                onTap: () {
-                                  showDialogeCancel(
-                                      context, state.orderDetail!.id!);
-                                },
-                                child: const StatusColoredBox(
-                                    text: 'Cancel',
-                                    color: kRed,
-                                    fontWeight: FontWeight.w700,
-                                    verticalPadding: 10),
-                              ),
-                            ),
-                            kWidth20,
-                            Expanded(
-                              child: BlocBuilder<OrdersBloc, OrdersState>(
-                                builder: (context, state) {
-                                  return StatusColoredBox(
-                                      text: 'Continue',
-                                      onTap: () {
-                                        Navigator.pushReplacementNamed(
-                                            context, Routes.completeOrderPage,
-                                            arguments: state.orderDetail);
-                                      },
-                                      color: kGreenPrimary,
-                                      fontWeight: FontWeight.w700,
-                                      verticalPadding: 10);
-                                },
-                              ),
-                            )
-                          ],
-                        ),
+                      BlocBuilder<OrdersBloc, OrdersState>(
+                        builder: (context, order) {
+                          return BlocConsumer<RequoteBloc, RequoteState>(
+                            listener: (context, state) {
+                              if (state.requoteDone) {
+                                context.read<OrdersBloc>().add(
+                                    OrdersEvent.getOrderDetail(
+                                        orderId: order.orderDetail!.id!));
+                                context.read<OrdersBloc>().add(
+                                    const OrdersEvent.getPartnerOrders(
+                                        call: true));
+                                Navigator.pushReplacementNamed(
+                                    context, Routes.completeOrderPage,
+                                    arguments: order.orderDetail);
+                              }
+                            },
+                            builder: (context, state) {
+                              if (state.requoteLoading) {
+                                return const Center(
+                                    child: CircularProgressIndicator(
+                                        color: kBluePrimary));
+                              }
+                              return Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                      child: InkWell(
+                                        onTap: () {
+                                          showDialogeCancel(
+                                              context, order.orderDetail!.id!);
+                                        },
+                                        child: const StatusColoredBox(
+                                            text: 'Cancel',
+                                            color: kRed,
+                                            fontWeight: FontWeight.w700,
+                                            verticalPadding: 10),
+                                      ),
+                                    ),
+                                    kWidth20,
+                                    Expanded(
+                                        child: StatusColoredBox(
+                                            text: 'Continue',
+                                            onTap: () {
+                                              List<SelectedOption> list = [];
+                                              for (var element
+                                                  in state.sections!) {
+                                                list.addAll(
+                                                    state.selectedAnswers[
+                                                        element.heading]!);
+                                              }
+                                              context.read<RequoteBloc>().add(
+                                                  RequoteEvent.requotePrice(
+                                                      orderId: order
+                                                          .orderDetail!.id!,
+                                                      requotePriceModel:
+                                                          RequotePriceModel(
+                                                              price: state
+                                                                  .basePrice,
+                                                              options: list)));
+                                            },
+                                            color: kGreenPrimary,
+                                            fontWeight: FontWeight.w700,
+                                            verticalPadding: 10))
+                                  ],
+                                ),
+                              );
+                            },
+                          );
+                        },
                       ),
                       kHeight10
                     ],

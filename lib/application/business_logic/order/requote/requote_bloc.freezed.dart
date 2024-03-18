@@ -27,6 +27,9 @@ mixin _$RequoteEvent {
     required TResult Function(SelectedOption selectedOption) markYesOrNo,
     required TResult Function(SelectedOption selectedOption) markAnswer,
     required TResult Function() getPrice,
+    required TResult Function(
+            String orderId, RequotePriceModel requotePriceModel)
+        requotePrice,
     required TResult Function() reset,
   }) =>
       throw _privateConstructorUsedError;
@@ -41,6 +44,8 @@ mixin _$RequoteEvent {
     TResult? Function(SelectedOption selectedOption)? markYesOrNo,
     TResult? Function(SelectedOption selectedOption)? markAnswer,
     TResult? Function()? getPrice,
+    TResult? Function(String orderId, RequotePriceModel requotePriceModel)?
+        requotePrice,
     TResult? Function()? reset,
   }) =>
       throw _privateConstructorUsedError;
@@ -55,6 +60,8 @@ mixin _$RequoteEvent {
     TResult Function(SelectedOption selectedOption)? markYesOrNo,
     TResult Function(SelectedOption selectedOption)? markAnswer,
     TResult Function()? getPrice,
+    TResult Function(String orderId, RequotePriceModel requotePriceModel)?
+        requotePrice,
     TResult Function()? reset,
     required TResult orElse(),
   }) =>
@@ -69,6 +76,7 @@ mixin _$RequoteEvent {
     required TResult Function(MarkYesOrNo value) markYesOrNo,
     required TResult Function(MarkAnswer value) markAnswer,
     required TResult Function(GetPrice value) getPrice,
+    required TResult Function(RequotePrice value) requotePrice,
     required TResult Function(Reset value) reset,
   }) =>
       throw _privateConstructorUsedError;
@@ -82,6 +90,7 @@ mixin _$RequoteEvent {
     TResult? Function(MarkYesOrNo value)? markYesOrNo,
     TResult? Function(MarkAnswer value)? markAnswer,
     TResult? Function(GetPrice value)? getPrice,
+    TResult? Function(RequotePrice value)? requotePrice,
     TResult? Function(Reset value)? reset,
   }) =>
       throw _privateConstructorUsedError;
@@ -95,6 +104,7 @@ mixin _$RequoteEvent {
     TResult Function(MarkYesOrNo value)? markYesOrNo,
     TResult Function(MarkAnswer value)? markAnswer,
     TResult Function(GetPrice value)? getPrice,
+    TResult Function(RequotePrice value)? requotePrice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) =>
@@ -201,6 +211,9 @@ class _$GetQuestionsImpl implements GetQuestions {
     required TResult Function(SelectedOption selectedOption) markYesOrNo,
     required TResult Function(SelectedOption selectedOption) markAnswer,
     required TResult Function() getPrice,
+    required TResult Function(
+            String orderId, RequotePriceModel requotePriceModel)
+        requotePrice,
     required TResult Function() reset,
   }) {
     return getQuestions(category, slug);
@@ -218,6 +231,8 @@ class _$GetQuestionsImpl implements GetQuestions {
     TResult? Function(SelectedOption selectedOption)? markYesOrNo,
     TResult? Function(SelectedOption selectedOption)? markAnswer,
     TResult? Function()? getPrice,
+    TResult? Function(String orderId, RequotePriceModel requotePriceModel)?
+        requotePrice,
     TResult? Function()? reset,
   }) {
     return getQuestions?.call(category, slug);
@@ -235,6 +250,8 @@ class _$GetQuestionsImpl implements GetQuestions {
     TResult Function(SelectedOption selectedOption)? markYesOrNo,
     TResult Function(SelectedOption selectedOption)? markAnswer,
     TResult Function()? getPrice,
+    TResult Function(String orderId, RequotePriceModel requotePriceModel)?
+        requotePrice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -255,6 +272,7 @@ class _$GetQuestionsImpl implements GetQuestions {
     required TResult Function(MarkYesOrNo value) markYesOrNo,
     required TResult Function(MarkAnswer value) markAnswer,
     required TResult Function(GetPrice value) getPrice,
+    required TResult Function(RequotePrice value) requotePrice,
     required TResult Function(Reset value) reset,
   }) {
     return getQuestions(this);
@@ -271,6 +289,7 @@ class _$GetQuestionsImpl implements GetQuestions {
     TResult? Function(MarkYesOrNo value)? markYesOrNo,
     TResult? Function(MarkAnswer value)? markAnswer,
     TResult? Function(GetPrice value)? getPrice,
+    TResult? Function(RequotePrice value)? requotePrice,
     TResult? Function(Reset value)? reset,
   }) {
     return getQuestions?.call(this);
@@ -287,6 +306,7 @@ class _$GetQuestionsImpl implements GetQuestions {
     TResult Function(MarkYesOrNo value)? markYesOrNo,
     TResult Function(MarkAnswer value)? markAnswer,
     TResult Function(GetPrice value)? getPrice,
+    TResult Function(RequotePrice value)? requotePrice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -356,6 +376,9 @@ class _$GetDateAndTimeImpl implements GetDateAndTime {
     required TResult Function(SelectedOption selectedOption) markYesOrNo,
     required TResult Function(SelectedOption selectedOption) markAnswer,
     required TResult Function() getPrice,
+    required TResult Function(
+            String orderId, RequotePriceModel requotePriceModel)
+        requotePrice,
     required TResult Function() reset,
   }) {
     return getDateAndTime();
@@ -373,6 +396,8 @@ class _$GetDateAndTimeImpl implements GetDateAndTime {
     TResult? Function(SelectedOption selectedOption)? markYesOrNo,
     TResult? Function(SelectedOption selectedOption)? markAnswer,
     TResult? Function()? getPrice,
+    TResult? Function(String orderId, RequotePriceModel requotePriceModel)?
+        requotePrice,
     TResult? Function()? reset,
   }) {
     return getDateAndTime?.call();
@@ -390,6 +415,8 @@ class _$GetDateAndTimeImpl implements GetDateAndTime {
     TResult Function(SelectedOption selectedOption)? markYesOrNo,
     TResult Function(SelectedOption selectedOption)? markAnswer,
     TResult Function()? getPrice,
+    TResult Function(String orderId, RequotePriceModel requotePriceModel)?
+        requotePrice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -410,6 +437,7 @@ class _$GetDateAndTimeImpl implements GetDateAndTime {
     required TResult Function(MarkYesOrNo value) markYesOrNo,
     required TResult Function(MarkAnswer value) markAnswer,
     required TResult Function(GetPrice value) getPrice,
+    required TResult Function(RequotePrice value) requotePrice,
     required TResult Function(Reset value) reset,
   }) {
     return getDateAndTime(this);
@@ -426,6 +454,7 @@ class _$GetDateAndTimeImpl implements GetDateAndTime {
     TResult? Function(MarkYesOrNo value)? markYesOrNo,
     TResult? Function(MarkAnswer value)? markAnswer,
     TResult? Function(GetPrice value)? getPrice,
+    TResult? Function(RequotePrice value)? requotePrice,
     TResult? Function(Reset value)? reset,
   }) {
     return getDateAndTime?.call(this);
@@ -442,6 +471,7 @@ class _$GetDateAndTimeImpl implements GetDateAndTime {
     TResult Function(MarkYesOrNo value)? markYesOrNo,
     TResult Function(MarkAnswer value)? markAnswer,
     TResult Function(GetPrice value)? getPrice,
+    TResult Function(RequotePrice value)? requotePrice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -540,6 +570,9 @@ class _$ResheduleOrderImpl implements ResheduleOrder {
     required TResult Function(SelectedOption selectedOption) markYesOrNo,
     required TResult Function(SelectedOption selectedOption) markAnswer,
     required TResult Function() getPrice,
+    required TResult Function(
+            String orderId, RequotePriceModel requotePriceModel)
+        requotePrice,
     required TResult Function() reset,
   }) {
     return resheduleOrder(resheduleModel, orderId);
@@ -557,6 +590,8 @@ class _$ResheduleOrderImpl implements ResheduleOrder {
     TResult? Function(SelectedOption selectedOption)? markYesOrNo,
     TResult? Function(SelectedOption selectedOption)? markAnswer,
     TResult? Function()? getPrice,
+    TResult? Function(String orderId, RequotePriceModel requotePriceModel)?
+        requotePrice,
     TResult? Function()? reset,
   }) {
     return resheduleOrder?.call(resheduleModel, orderId);
@@ -574,6 +609,8 @@ class _$ResheduleOrderImpl implements ResheduleOrder {
     TResult Function(SelectedOption selectedOption)? markYesOrNo,
     TResult Function(SelectedOption selectedOption)? markAnswer,
     TResult Function()? getPrice,
+    TResult Function(String orderId, RequotePriceModel requotePriceModel)?
+        requotePrice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -594,6 +631,7 @@ class _$ResheduleOrderImpl implements ResheduleOrder {
     required TResult Function(MarkYesOrNo value) markYesOrNo,
     required TResult Function(MarkAnswer value) markAnswer,
     required TResult Function(GetPrice value) getPrice,
+    required TResult Function(RequotePrice value) requotePrice,
     required TResult Function(Reset value) reset,
   }) {
     return resheduleOrder(this);
@@ -610,6 +648,7 @@ class _$ResheduleOrderImpl implements ResheduleOrder {
     TResult? Function(MarkYesOrNo value)? markYesOrNo,
     TResult? Function(MarkAnswer value)? markAnswer,
     TResult? Function(GetPrice value)? getPrice,
+    TResult? Function(RequotePrice value)? requotePrice,
     TResult? Function(Reset value)? reset,
   }) {
     return resheduleOrder?.call(this);
@@ -626,6 +665,7 @@ class _$ResheduleOrderImpl implements ResheduleOrder {
     TResult Function(MarkYesOrNo value)? markYesOrNo,
     TResult Function(MarkAnswer value)? markAnswer,
     TResult Function(GetPrice value)? getPrice,
+    TResult Function(RequotePrice value)? requotePrice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -721,6 +761,9 @@ class _$ChangeIndexImpl implements ChangeIndex {
     required TResult Function(SelectedOption selectedOption) markYesOrNo,
     required TResult Function(SelectedOption selectedOption) markAnswer,
     required TResult Function() getPrice,
+    required TResult Function(
+            String orderId, RequotePriceModel requotePriceModel)
+        requotePrice,
     required TResult Function() reset,
   }) {
     return changeIndex(index);
@@ -738,6 +781,8 @@ class _$ChangeIndexImpl implements ChangeIndex {
     TResult? Function(SelectedOption selectedOption)? markYesOrNo,
     TResult? Function(SelectedOption selectedOption)? markAnswer,
     TResult? Function()? getPrice,
+    TResult? Function(String orderId, RequotePriceModel requotePriceModel)?
+        requotePrice,
     TResult? Function()? reset,
   }) {
     return changeIndex?.call(index);
@@ -755,6 +800,8 @@ class _$ChangeIndexImpl implements ChangeIndex {
     TResult Function(SelectedOption selectedOption)? markYesOrNo,
     TResult Function(SelectedOption selectedOption)? markAnswer,
     TResult Function()? getPrice,
+    TResult Function(String orderId, RequotePriceModel requotePriceModel)?
+        requotePrice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -775,6 +822,7 @@ class _$ChangeIndexImpl implements ChangeIndex {
     required TResult Function(MarkYesOrNo value) markYesOrNo,
     required TResult Function(MarkAnswer value) markAnswer,
     required TResult Function(GetPrice value) getPrice,
+    required TResult Function(RequotePrice value) requotePrice,
     required TResult Function(Reset value) reset,
   }) {
     return changeIndex(this);
@@ -791,6 +839,7 @@ class _$ChangeIndexImpl implements ChangeIndex {
     TResult? Function(MarkYesOrNo value)? markYesOrNo,
     TResult? Function(MarkAnswer value)? markAnswer,
     TResult? Function(GetPrice value)? getPrice,
+    TResult? Function(RequotePrice value)? requotePrice,
     TResult? Function(Reset value)? reset,
   }) {
     return changeIndex?.call(this);
@@ -807,6 +856,7 @@ class _$ChangeIndexImpl implements ChangeIndex {
     TResult Function(MarkYesOrNo value)? markYesOrNo,
     TResult Function(MarkAnswer value)? markAnswer,
     TResult Function(GetPrice value)? getPrice,
+    TResult Function(RequotePrice value)? requotePrice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -899,6 +949,9 @@ class _$GoBackIndexImpl implements GoBackIndex {
     required TResult Function(SelectedOption selectedOption) markYesOrNo,
     required TResult Function(SelectedOption selectedOption) markAnswer,
     required TResult Function() getPrice,
+    required TResult Function(
+            String orderId, RequotePriceModel requotePriceModel)
+        requotePrice,
     required TResult Function() reset,
   }) {
     return goBackIndex(index);
@@ -916,6 +969,8 @@ class _$GoBackIndexImpl implements GoBackIndex {
     TResult? Function(SelectedOption selectedOption)? markYesOrNo,
     TResult? Function(SelectedOption selectedOption)? markAnswer,
     TResult? Function()? getPrice,
+    TResult? Function(String orderId, RequotePriceModel requotePriceModel)?
+        requotePrice,
     TResult? Function()? reset,
   }) {
     return goBackIndex?.call(index);
@@ -933,6 +988,8 @@ class _$GoBackIndexImpl implements GoBackIndex {
     TResult Function(SelectedOption selectedOption)? markYesOrNo,
     TResult Function(SelectedOption selectedOption)? markAnswer,
     TResult Function()? getPrice,
+    TResult Function(String orderId, RequotePriceModel requotePriceModel)?
+        requotePrice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -953,6 +1010,7 @@ class _$GoBackIndexImpl implements GoBackIndex {
     required TResult Function(MarkYesOrNo value) markYesOrNo,
     required TResult Function(MarkAnswer value) markAnswer,
     required TResult Function(GetPrice value) getPrice,
+    required TResult Function(RequotePrice value) requotePrice,
     required TResult Function(Reset value) reset,
   }) {
     return goBackIndex(this);
@@ -969,6 +1027,7 @@ class _$GoBackIndexImpl implements GoBackIndex {
     TResult? Function(MarkYesOrNo value)? markYesOrNo,
     TResult? Function(MarkAnswer value)? markAnswer,
     TResult? Function(GetPrice value)? getPrice,
+    TResult? Function(RequotePrice value)? requotePrice,
     TResult? Function(Reset value)? reset,
   }) {
     return goBackIndex?.call(this);
@@ -985,6 +1044,7 @@ class _$GoBackIndexImpl implements GoBackIndex {
     TResult Function(MarkYesOrNo value)? markYesOrNo,
     TResult Function(MarkAnswer value)? markAnswer,
     TResult Function(GetPrice value)? getPrice,
+    TResult Function(RequotePrice value)? requotePrice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -1078,6 +1138,9 @@ class _$MarkYesOrNoImpl implements MarkYesOrNo {
     required TResult Function(SelectedOption selectedOption) markYesOrNo,
     required TResult Function(SelectedOption selectedOption) markAnswer,
     required TResult Function() getPrice,
+    required TResult Function(
+            String orderId, RequotePriceModel requotePriceModel)
+        requotePrice,
     required TResult Function() reset,
   }) {
     return markYesOrNo(selectedOption);
@@ -1095,6 +1158,8 @@ class _$MarkYesOrNoImpl implements MarkYesOrNo {
     TResult? Function(SelectedOption selectedOption)? markYesOrNo,
     TResult? Function(SelectedOption selectedOption)? markAnswer,
     TResult? Function()? getPrice,
+    TResult? Function(String orderId, RequotePriceModel requotePriceModel)?
+        requotePrice,
     TResult? Function()? reset,
   }) {
     return markYesOrNo?.call(selectedOption);
@@ -1112,6 +1177,8 @@ class _$MarkYesOrNoImpl implements MarkYesOrNo {
     TResult Function(SelectedOption selectedOption)? markYesOrNo,
     TResult Function(SelectedOption selectedOption)? markAnswer,
     TResult Function()? getPrice,
+    TResult Function(String orderId, RequotePriceModel requotePriceModel)?
+        requotePrice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -1132,6 +1199,7 @@ class _$MarkYesOrNoImpl implements MarkYesOrNo {
     required TResult Function(MarkYesOrNo value) markYesOrNo,
     required TResult Function(MarkAnswer value) markAnswer,
     required TResult Function(GetPrice value) getPrice,
+    required TResult Function(RequotePrice value) requotePrice,
     required TResult Function(Reset value) reset,
   }) {
     return markYesOrNo(this);
@@ -1148,6 +1216,7 @@ class _$MarkYesOrNoImpl implements MarkYesOrNo {
     TResult? Function(MarkYesOrNo value)? markYesOrNo,
     TResult? Function(MarkAnswer value)? markAnswer,
     TResult? Function(GetPrice value)? getPrice,
+    TResult? Function(RequotePrice value)? requotePrice,
     TResult? Function(Reset value)? reset,
   }) {
     return markYesOrNo?.call(this);
@@ -1164,6 +1233,7 @@ class _$MarkYesOrNoImpl implements MarkYesOrNo {
     TResult Function(MarkYesOrNo value)? markYesOrNo,
     TResult Function(MarkAnswer value)? markAnswer,
     TResult Function(GetPrice value)? getPrice,
+    TResult Function(RequotePrice value)? requotePrice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -1258,6 +1328,9 @@ class _$MarkAnswerImpl implements MarkAnswer {
     required TResult Function(SelectedOption selectedOption) markYesOrNo,
     required TResult Function(SelectedOption selectedOption) markAnswer,
     required TResult Function() getPrice,
+    required TResult Function(
+            String orderId, RequotePriceModel requotePriceModel)
+        requotePrice,
     required TResult Function() reset,
   }) {
     return markAnswer(selectedOption);
@@ -1275,6 +1348,8 @@ class _$MarkAnswerImpl implements MarkAnswer {
     TResult? Function(SelectedOption selectedOption)? markYesOrNo,
     TResult? Function(SelectedOption selectedOption)? markAnswer,
     TResult? Function()? getPrice,
+    TResult? Function(String orderId, RequotePriceModel requotePriceModel)?
+        requotePrice,
     TResult? Function()? reset,
   }) {
     return markAnswer?.call(selectedOption);
@@ -1292,6 +1367,8 @@ class _$MarkAnswerImpl implements MarkAnswer {
     TResult Function(SelectedOption selectedOption)? markYesOrNo,
     TResult Function(SelectedOption selectedOption)? markAnswer,
     TResult Function()? getPrice,
+    TResult Function(String orderId, RequotePriceModel requotePriceModel)?
+        requotePrice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -1312,6 +1389,7 @@ class _$MarkAnswerImpl implements MarkAnswer {
     required TResult Function(MarkYesOrNo value) markYesOrNo,
     required TResult Function(MarkAnswer value) markAnswer,
     required TResult Function(GetPrice value) getPrice,
+    required TResult Function(RequotePrice value) requotePrice,
     required TResult Function(Reset value) reset,
   }) {
     return markAnswer(this);
@@ -1328,6 +1406,7 @@ class _$MarkAnswerImpl implements MarkAnswer {
     TResult? Function(MarkYesOrNo value)? markYesOrNo,
     TResult? Function(MarkAnswer value)? markAnswer,
     TResult? Function(GetPrice value)? getPrice,
+    TResult? Function(RequotePrice value)? requotePrice,
     TResult? Function(Reset value)? reset,
   }) {
     return markAnswer?.call(this);
@@ -1344,6 +1423,7 @@ class _$MarkAnswerImpl implements MarkAnswer {
     TResult Function(MarkYesOrNo value)? markYesOrNo,
     TResult Function(MarkAnswer value)? markAnswer,
     TResult Function(GetPrice value)? getPrice,
+    TResult Function(RequotePrice value)? requotePrice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -1411,6 +1491,9 @@ class _$GetPriceImpl implements GetPrice {
     required TResult Function(SelectedOption selectedOption) markYesOrNo,
     required TResult Function(SelectedOption selectedOption) markAnswer,
     required TResult Function() getPrice,
+    required TResult Function(
+            String orderId, RequotePriceModel requotePriceModel)
+        requotePrice,
     required TResult Function() reset,
   }) {
     return getPrice();
@@ -1428,6 +1511,8 @@ class _$GetPriceImpl implements GetPrice {
     TResult? Function(SelectedOption selectedOption)? markYesOrNo,
     TResult? Function(SelectedOption selectedOption)? markAnswer,
     TResult? Function()? getPrice,
+    TResult? Function(String orderId, RequotePriceModel requotePriceModel)?
+        requotePrice,
     TResult? Function()? reset,
   }) {
     return getPrice?.call();
@@ -1445,6 +1530,8 @@ class _$GetPriceImpl implements GetPrice {
     TResult Function(SelectedOption selectedOption)? markYesOrNo,
     TResult Function(SelectedOption selectedOption)? markAnswer,
     TResult Function()? getPrice,
+    TResult Function(String orderId, RequotePriceModel requotePriceModel)?
+        requotePrice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -1465,6 +1552,7 @@ class _$GetPriceImpl implements GetPrice {
     required TResult Function(MarkYesOrNo value) markYesOrNo,
     required TResult Function(MarkAnswer value) markAnswer,
     required TResult Function(GetPrice value) getPrice,
+    required TResult Function(RequotePrice value) requotePrice,
     required TResult Function(Reset value) reset,
   }) {
     return getPrice(this);
@@ -1481,6 +1569,7 @@ class _$GetPriceImpl implements GetPrice {
     TResult? Function(MarkYesOrNo value)? markYesOrNo,
     TResult? Function(MarkAnswer value)? markAnswer,
     TResult? Function(GetPrice value)? getPrice,
+    TResult? Function(RequotePrice value)? requotePrice,
     TResult? Function(Reset value)? reset,
   }) {
     return getPrice?.call(this);
@@ -1497,6 +1586,7 @@ class _$GetPriceImpl implements GetPrice {
     TResult Function(MarkYesOrNo value)? markYesOrNo,
     TResult Function(MarkAnswer value)? markAnswer,
     TResult Function(GetPrice value)? getPrice,
+    TResult Function(RequotePrice value)? requotePrice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -1509,6 +1599,207 @@ class _$GetPriceImpl implements GetPrice {
 
 abstract class GetPrice implements RequoteEvent {
   const factory GetPrice() = _$GetPriceImpl;
+}
+
+/// @nodoc
+abstract class _$$RequotePriceImplCopyWith<$Res> {
+  factory _$$RequotePriceImplCopyWith(
+          _$RequotePriceImpl value, $Res Function(_$RequotePriceImpl) then) =
+      __$$RequotePriceImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String orderId, RequotePriceModel requotePriceModel});
+}
+
+/// @nodoc
+class __$$RequotePriceImplCopyWithImpl<$Res>
+    extends _$RequoteEventCopyWithImpl<$Res, _$RequotePriceImpl>
+    implements _$$RequotePriceImplCopyWith<$Res> {
+  __$$RequotePriceImplCopyWithImpl(
+      _$RequotePriceImpl _value, $Res Function(_$RequotePriceImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? orderId = null,
+    Object? requotePriceModel = null,
+  }) {
+    return _then(_$RequotePriceImpl(
+      orderId: null == orderId
+          ? _value.orderId
+          : orderId // ignore: cast_nullable_to_non_nullable
+              as String,
+      requotePriceModel: null == requotePriceModel
+          ? _value.requotePriceModel
+          : requotePriceModel // ignore: cast_nullable_to_non_nullable
+              as RequotePriceModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RequotePriceImpl implements RequotePrice {
+  const _$RequotePriceImpl(
+      {required this.orderId, required this.requotePriceModel});
+
+  @override
+  final String orderId;
+  @override
+  final RequotePriceModel requotePriceModel;
+
+  @override
+  String toString() {
+    return 'RequoteEvent.requotePrice(orderId: $orderId, requotePriceModel: $requotePriceModel)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RequotePriceImpl &&
+            (identical(other.orderId, orderId) || other.orderId == orderId) &&
+            (identical(other.requotePriceModel, requotePriceModel) ||
+                other.requotePriceModel == requotePriceModel));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, orderId, requotePriceModel);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RequotePriceImplCopyWith<_$RequotePriceImpl> get copyWith =>
+      __$$RequotePriceImplCopyWithImpl<_$RequotePriceImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String category, String slug) getQuestions,
+    required TResult Function() getDateAndTime,
+    required TResult Function(ResheduleModel resheduleModel, String orderId)
+        resheduleOrder,
+    required TResult Function(int index) changeIndex,
+    required TResult Function(int index) goBackIndex,
+    required TResult Function(SelectedOption selectedOption) markYesOrNo,
+    required TResult Function(SelectedOption selectedOption) markAnswer,
+    required TResult Function() getPrice,
+    required TResult Function(
+            String orderId, RequotePriceModel requotePriceModel)
+        requotePrice,
+    required TResult Function() reset,
+  }) {
+    return requotePrice(orderId, requotePriceModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String category, String slug)? getQuestions,
+    TResult? Function()? getDateAndTime,
+    TResult? Function(ResheduleModel resheduleModel, String orderId)?
+        resheduleOrder,
+    TResult? Function(int index)? changeIndex,
+    TResult? Function(int index)? goBackIndex,
+    TResult? Function(SelectedOption selectedOption)? markYesOrNo,
+    TResult? Function(SelectedOption selectedOption)? markAnswer,
+    TResult? Function()? getPrice,
+    TResult? Function(String orderId, RequotePriceModel requotePriceModel)?
+        requotePrice,
+    TResult? Function()? reset,
+  }) {
+    return requotePrice?.call(orderId, requotePriceModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String category, String slug)? getQuestions,
+    TResult Function()? getDateAndTime,
+    TResult Function(ResheduleModel resheduleModel, String orderId)?
+        resheduleOrder,
+    TResult Function(int index)? changeIndex,
+    TResult Function(int index)? goBackIndex,
+    TResult Function(SelectedOption selectedOption)? markYesOrNo,
+    TResult Function(SelectedOption selectedOption)? markAnswer,
+    TResult Function()? getPrice,
+    TResult Function(String orderId, RequotePriceModel requotePriceModel)?
+        requotePrice,
+    TResult Function()? reset,
+    required TResult orElse(),
+  }) {
+    if (requotePrice != null) {
+      return requotePrice(orderId, requotePriceModel);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetQuestions value) getQuestions,
+    required TResult Function(GetDateAndTime value) getDateAndTime,
+    required TResult Function(ResheduleOrder value) resheduleOrder,
+    required TResult Function(ChangeIndex value) changeIndex,
+    required TResult Function(GoBackIndex value) goBackIndex,
+    required TResult Function(MarkYesOrNo value) markYesOrNo,
+    required TResult Function(MarkAnswer value) markAnswer,
+    required TResult Function(GetPrice value) getPrice,
+    required TResult Function(RequotePrice value) requotePrice,
+    required TResult Function(Reset value) reset,
+  }) {
+    return requotePrice(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetQuestions value)? getQuestions,
+    TResult? Function(GetDateAndTime value)? getDateAndTime,
+    TResult? Function(ResheduleOrder value)? resheduleOrder,
+    TResult? Function(ChangeIndex value)? changeIndex,
+    TResult? Function(GoBackIndex value)? goBackIndex,
+    TResult? Function(MarkYesOrNo value)? markYesOrNo,
+    TResult? Function(MarkAnswer value)? markAnswer,
+    TResult? Function(GetPrice value)? getPrice,
+    TResult? Function(RequotePrice value)? requotePrice,
+    TResult? Function(Reset value)? reset,
+  }) {
+    return requotePrice?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetQuestions value)? getQuestions,
+    TResult Function(GetDateAndTime value)? getDateAndTime,
+    TResult Function(ResheduleOrder value)? resheduleOrder,
+    TResult Function(ChangeIndex value)? changeIndex,
+    TResult Function(GoBackIndex value)? goBackIndex,
+    TResult Function(MarkYesOrNo value)? markYesOrNo,
+    TResult Function(MarkAnswer value)? markAnswer,
+    TResult Function(GetPrice value)? getPrice,
+    TResult Function(RequotePrice value)? requotePrice,
+    TResult Function(Reset value)? reset,
+    required TResult orElse(),
+  }) {
+    if (requotePrice != null) {
+      return requotePrice(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RequotePrice implements RequoteEvent {
+  const factory RequotePrice(
+      {required final String orderId,
+      required final RequotePriceModel requotePriceModel}) = _$RequotePriceImpl;
+
+  String get orderId;
+  RequotePriceModel get requotePriceModel;
+  @JsonKey(ignore: true)
+  _$$RequotePriceImplCopyWith<_$RequotePriceImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1558,6 +1849,9 @@ class _$ResetImpl implements Reset {
     required TResult Function(SelectedOption selectedOption) markYesOrNo,
     required TResult Function(SelectedOption selectedOption) markAnswer,
     required TResult Function() getPrice,
+    required TResult Function(
+            String orderId, RequotePriceModel requotePriceModel)
+        requotePrice,
     required TResult Function() reset,
   }) {
     return reset();
@@ -1575,6 +1869,8 @@ class _$ResetImpl implements Reset {
     TResult? Function(SelectedOption selectedOption)? markYesOrNo,
     TResult? Function(SelectedOption selectedOption)? markAnswer,
     TResult? Function()? getPrice,
+    TResult? Function(String orderId, RequotePriceModel requotePriceModel)?
+        requotePrice,
     TResult? Function()? reset,
   }) {
     return reset?.call();
@@ -1592,6 +1888,8 @@ class _$ResetImpl implements Reset {
     TResult Function(SelectedOption selectedOption)? markYesOrNo,
     TResult Function(SelectedOption selectedOption)? markAnswer,
     TResult Function()? getPrice,
+    TResult Function(String orderId, RequotePriceModel requotePriceModel)?
+        requotePrice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -1612,6 +1910,7 @@ class _$ResetImpl implements Reset {
     required TResult Function(MarkYesOrNo value) markYesOrNo,
     required TResult Function(MarkAnswer value) markAnswer,
     required TResult Function(GetPrice value) getPrice,
+    required TResult Function(RequotePrice value) requotePrice,
     required TResult Function(Reset value) reset,
   }) {
     return reset(this);
@@ -1628,6 +1927,7 @@ class _$ResetImpl implements Reset {
     TResult? Function(MarkYesOrNo value)? markYesOrNo,
     TResult? Function(MarkAnswer value)? markAnswer,
     TResult? Function(GetPrice value)? getPrice,
+    TResult? Function(RequotePrice value)? requotePrice,
     TResult? Function(Reset value)? reset,
   }) {
     return reset?.call(this);
@@ -1644,6 +1944,7 @@ class _$ResetImpl implements Reset {
     TResult Function(MarkYesOrNo value)? markYesOrNo,
     TResult Function(MarkAnswer value)? markAnswer,
     TResult Function(GetPrice value)? getPrice,
+    TResult Function(RequotePrice value)? requotePrice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -1672,6 +1973,9 @@ mixin _$RequoteState {
   bool get resheduleLoading => throw _privateConstructorUsedError;
   bool get priceCalculationLoading => throw _privateConstructorUsedError;
   bool get priceCalculationError => throw _privateConstructorUsedError;
+  bool get requoteLoading => throw _privateConstructorUsedError;
+  bool get requoteError => throw _privateConstructorUsedError;
+  bool get requoteDone => throw _privateConstructorUsedError;
   bool get resheduleDone => throw _privateConstructorUsedError;
   int get requoteIndex => throw _privateConstructorUsedError;
   List<Section>? get sections => throw _privateConstructorUsedError;
@@ -1702,6 +2006,9 @@ abstract class $RequoteStateCopyWith<$Res> {
       bool resheduleLoading,
       bool priceCalculationLoading,
       bool priceCalculationError,
+      bool requoteLoading,
+      bool requoteError,
+      bool requoteDone,
       bool resheduleDone,
       int requoteIndex,
       List<Section>? sections,
@@ -1733,6 +2040,9 @@ class _$RequoteStateCopyWithImpl<$Res, $Val extends RequoteState>
     Object? resheduleLoading = null,
     Object? priceCalculationLoading = null,
     Object? priceCalculationError = null,
+    Object? requoteLoading = null,
+    Object? requoteError = null,
+    Object? requoteDone = null,
     Object? resheduleDone = null,
     Object? requoteIndex = null,
     Object? sections = freezed,
@@ -1787,6 +2097,18 @@ class _$RequoteStateCopyWithImpl<$Res, $Val extends RequoteState>
           ? _value.priceCalculationError
           : priceCalculationError // ignore: cast_nullable_to_non_nullable
               as bool,
+      requoteLoading: null == requoteLoading
+          ? _value.requoteLoading
+          : requoteLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      requoteError: null == requoteError
+          ? _value.requoteError
+          : requoteError // ignore: cast_nullable_to_non_nullable
+              as bool,
+      requoteDone: null == requoteDone
+          ? _value.requoteDone
+          : requoteDone // ignore: cast_nullable_to_non_nullable
+              as bool,
       resheduleDone: null == resheduleDone
           ? _value.resheduleDone
           : resheduleDone // ignore: cast_nullable_to_non_nullable
@@ -1828,6 +2150,9 @@ abstract class _$$InitialImplCopyWith<$Res>
       bool resheduleLoading,
       bool priceCalculationLoading,
       bool priceCalculationError,
+      bool requoteLoading,
+      bool requoteError,
+      bool requoteDone,
       bool resheduleDone,
       int requoteIndex,
       List<Section>? sections,
@@ -1857,6 +2182,9 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? resheduleLoading = null,
     Object? priceCalculationLoading = null,
     Object? priceCalculationError = null,
+    Object? requoteLoading = null,
+    Object? requoteError = null,
+    Object? requoteDone = null,
     Object? resheduleDone = null,
     Object? requoteIndex = null,
     Object? sections = freezed,
@@ -1911,6 +2239,18 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.priceCalculationError
           : priceCalculationError // ignore: cast_nullable_to_non_nullable
               as bool,
+      requoteLoading: null == requoteLoading
+          ? _value.requoteLoading
+          : requoteLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      requoteError: null == requoteError
+          ? _value.requoteError
+          : requoteError // ignore: cast_nullable_to_non_nullable
+              as bool,
+      requoteDone: null == requoteDone
+          ? _value.requoteDone
+          : requoteDone // ignore: cast_nullable_to_non_nullable
+              as bool,
       resheduleDone: null == resheduleDone
           ? _value.resheduleDone
           : resheduleDone // ignore: cast_nullable_to_non_nullable
@@ -1947,6 +2287,9 @@ class _$InitialImpl implements _Initial {
       required this.resheduleLoading,
       required this.priceCalculationLoading,
       required this.priceCalculationError,
+      required this.requoteLoading,
+      required this.requoteError,
+      required this.requoteDone,
       required this.resheduleDone,
       required this.requoteIndex,
       final List<Section>? sections,
@@ -1993,6 +2336,12 @@ class _$InitialImpl implements _Initial {
   @override
   final bool priceCalculationError;
   @override
+  final bool requoteLoading;
+  @override
+  final bool requoteError;
+  @override
+  final bool requoteDone;
+  @override
   final bool resheduleDone;
   @override
   final int requoteIndex;
@@ -2016,7 +2365,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'RequoteState(isLoading: $isLoading, hasError: $hasError, message: $message, basePrice: $basePrice, category: $category, slug: $slug, dates: $dates, time: $time, questionLoading: $questionLoading, resheduleLoading: $resheduleLoading, priceCalculationLoading: $priceCalculationLoading, priceCalculationError: $priceCalculationError, resheduleDone: $resheduleDone, requoteIndex: $requoteIndex, sections: $sections, selectedAnswers: $selectedAnswers)';
+    return 'RequoteState(isLoading: $isLoading, hasError: $hasError, message: $message, basePrice: $basePrice, category: $category, slug: $slug, dates: $dates, time: $time, questionLoading: $questionLoading, resheduleLoading: $resheduleLoading, priceCalculationLoading: $priceCalculationLoading, priceCalculationError: $priceCalculationError, requoteLoading: $requoteLoading, requoteError: $requoteError, requoteDone: $requoteDone, resheduleDone: $resheduleDone, requoteIndex: $requoteIndex, sections: $sections, selectedAnswers: $selectedAnswers)';
   }
 
   @override
@@ -2045,6 +2394,12 @@ class _$InitialImpl implements _Initial {
                 other.priceCalculationLoading == priceCalculationLoading) &&
             (identical(other.priceCalculationError, priceCalculationError) ||
                 other.priceCalculationError == priceCalculationError) &&
+            (identical(other.requoteLoading, requoteLoading) ||
+                other.requoteLoading == requoteLoading) &&
+            (identical(other.requoteError, requoteError) ||
+                other.requoteError == requoteError) &&
+            (identical(other.requoteDone, requoteDone) ||
+                other.requoteDone == requoteDone) &&
             (identical(other.resheduleDone, resheduleDone) ||
                 other.resheduleDone == resheduleDone) &&
             (identical(other.requoteIndex, requoteIndex) ||
@@ -2055,24 +2410,28 @@ class _$InitialImpl implements _Initial {
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      isLoading,
-      hasError,
-      message,
-      basePrice,
-      category,
-      slug,
-      const DeepCollectionEquality().hash(_dates),
-      const DeepCollectionEquality().hash(_time),
-      questionLoading,
-      resheduleLoading,
-      priceCalculationLoading,
-      priceCalculationError,
-      resheduleDone,
-      requoteIndex,
-      const DeepCollectionEquality().hash(_sections),
-      const DeepCollectionEquality().hash(_selectedAnswers));
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        isLoading,
+        hasError,
+        message,
+        basePrice,
+        category,
+        slug,
+        const DeepCollectionEquality().hash(_dates),
+        const DeepCollectionEquality().hash(_time),
+        questionLoading,
+        resheduleLoading,
+        priceCalculationLoading,
+        priceCalculationError,
+        requoteLoading,
+        requoteError,
+        requoteDone,
+        resheduleDone,
+        requoteIndex,
+        const DeepCollectionEquality().hash(_sections),
+        const DeepCollectionEquality().hash(_selectedAnswers)
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -2095,6 +2454,9 @@ abstract class _Initial implements RequoteState {
           required final bool resheduleLoading,
           required final bool priceCalculationLoading,
           required final bool priceCalculationError,
+          required final bool requoteLoading,
+          required final bool requoteError,
+          required final bool requoteDone,
           required final bool resheduleDone,
           required final int requoteIndex,
           final List<Section>? sections,
@@ -2125,6 +2487,12 @@ abstract class _Initial implements RequoteState {
   bool get priceCalculationLoading;
   @override
   bool get priceCalculationError;
+  @override
+  bool get requoteLoading;
+  @override
+  bool get requoteError;
+  @override
+  bool get requoteDone;
   @override
   bool get resheduleDone;
   @override

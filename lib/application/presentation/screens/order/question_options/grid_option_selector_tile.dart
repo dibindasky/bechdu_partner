@@ -7,7 +7,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class GridOptionSelectorTile extends StatelessWidget {
   const GridOptionSelectorTile(
-      {super.key, required this.option, required this.onTap, required this.selected});
+      {super.key,
+      required this.option,
+      required this.onTap,
+      required this.selected});
 
   final Option option;
   final VoidCallback onTap;

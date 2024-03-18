@@ -183,8 +183,13 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
             message: l.message)), (r) {
       emit(state.copyWith(
           completeOrderLoading: false,
+          deviceBill: null,
+          idCard: null,
+          deviceImages: [],
           orderCompleted: true,
           message: r.message));
+      imeiNumberController.text = '';
+      finalPriceController.text = '';
       add(const OrdersEvent.getPartnerOrders(call: true));
       if (partner) {
         add(const OrdersEvent.getNewOrder(call: true));
@@ -324,6 +329,11 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
         hasError: false,
         acceptOrder: false,
         acceptOrderError: false));
+    if (state.orderTab == 0) {
+      add(const OrdersEvent.getNewOrder(call: true));
+    } else {
+      add(const OrdersEvent.getPartnerOrders(call: true));
+    }
   }
 
   FutureOr<void> acceptOrder(AcceptOrder event, emit) async {

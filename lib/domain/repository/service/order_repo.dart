@@ -24,6 +24,5 @@ abstract class OrderRepo {
       required String orderId,
       required CompleteOrderModel completeOrderModel});
   Future<Either<Failure, OrderDetail>> getOrderDetails(
-      {required String phone,
-      required String orderId});
+      {required String phone, required String orderId});
 }

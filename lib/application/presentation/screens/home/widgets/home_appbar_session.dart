@@ -144,7 +144,9 @@ class HomeScreenAppBar extends StatelessWidget {
                               children: [
                                 kWidth20,
                                 Text(
-                                  state.orderTab==0?'New Orders':'Accepted Orders',
+                                  state.orderTab == 0
+                                      ? 'New Orders'
+                                      : 'Accepted Orders',
                                   style:
                                       textHeadBoldBig.copyWith(color: kWhite),
                                 ),
