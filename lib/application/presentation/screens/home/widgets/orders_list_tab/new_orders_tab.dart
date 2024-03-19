@@ -51,15 +51,15 @@ class _NewOrdersListState extends State<NewOrdersList> {
               ? state.newOrders!.length + 1
               : state.newOrders!.length;
           return RefreshIndicator(
-            onRefresh: () async{
-               if (partner) {
+            onRefresh: () async {
+              if (partner) {
+                context
+                    .read<OrdersBloc>()
+                    .add(const OrdersEvent.getNewOrder(call: true));
+              }
               context
                   .read<OrdersBloc>()
-                  .add(const OrdersEvent.getNewOrder(call: true));
-            }
-            context
-                .read<OrdersBloc>()
-                .add(const OrdersEvent.getPartnerOrders(call: true));
+                  .add(const OrdersEvent.getPartnerOrders(call: true));
             },
             child: ListView.builder(
               controller: controller,
@@ -79,7 +79,9 @@ class _NewOrdersListState extends State<NewOrdersList> {
                 return state.newOrders!.length <= index
                     ? Padding(
                         padding: EdgeInsets.only(
-                            bottom: index == len ? 100 : 0, left: 20, right: 20),
+                            bottom: index == len ? 100 : 0,
+                            left: 20,
+                            right: 20),
                         child: ShimmerLoader(
                             itemCount: 1, height: 150, width: sWidth),
                       )

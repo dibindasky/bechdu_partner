@@ -75,8 +75,12 @@ class OrderDetailTopPart extends StatelessWidget {
                         text: 'Requote Price',
                         image: iconRedo,
                         onTap: () {
+                          context
+                              .read<RequoteBloc>()
+                              .add(const RequoteEvent.reset());
                           context.read<RequoteBloc>().add(
-                              RequoteEvent.getQuestions(slug: orderDetail.productDetails!.slug!,
+                              RequoteEvent.getQuestions(
+                                  slug: orderDetail.productDetails!.slug!,
                                   category:
                                       orderDetail.productDetails!.category!));
                         },

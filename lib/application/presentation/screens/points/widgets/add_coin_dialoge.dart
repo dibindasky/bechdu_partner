@@ -252,7 +252,8 @@ class _AddCoinsDialogeState extends State<AddCoinsDialoge> {
                                         RazorpayGateway(context).makePayment(
                                             epayModel: epayModel,
                                             amount: 1,
-                                            description: 'payment for $coins coin',
+                                            description:
+                                                'payment for $coins coin',
                                             email:
                                                 partner.partnerProfile?.email ??
                                                     '',
@@ -386,7 +387,8 @@ class UserAgrementPaymnetChekBox extends StatelessWidget {
                 color: kWhite,
                 fontSize: sWidth * 0.03),
           ),
-        ),kWidth10,
+        ),
+        kWidth10,
       ],
     );
   }

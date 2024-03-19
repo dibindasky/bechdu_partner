@@ -4,6 +4,7 @@ import 'package:bechdu_partner/domain/model/requote/date_and_time_response_model
 import 'package:bechdu_partner/domain/model/requote/get_question_response_model/get_question_response_model.dart';
 import 'package:bechdu_partner/domain/model/requote/price_calculation_model/price_calculation_model.dart';
 import 'package:bechdu_partner/domain/model/requote/price_r_esponse_model/price_r_esponse_model.dart';
+import 'package:bechdu_partner/domain/model/requote/requote_price_model/requote_price_model.dart';
 import 'package:bechdu_partner/domain/model/requote/reshedule_model/reshedule_model.dart';
 import 'package:dartz/dartz.dart';
 
@@ -15,6 +16,10 @@ abstract class RequoteRepo {
   Future<Either<Failure, DateAndTimeResponseModel>> getDateAndTime();
   Future<Either<Failure, SuccessResponseModel>> resheduleOrder(
       {required ResheduleModel resheduleModel,
+      required String orderId,
+      required String phone});
+  Future<Either<Failure, SuccessResponseModel>> requoteOrder(
+      {required RequotePriceModel requotePriceModel,
       required String orderId,
       required String phone});
 }

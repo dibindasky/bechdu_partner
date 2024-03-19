@@ -44,9 +44,9 @@ class _ImageGridMakerState extends State<ImageGridMaker> {
                               widget.list[index].description)
                           .toList();
                       return GridTileQuestion(
-                        onTap: () {setState(() {
-                          
-                        });},
+                        onTap: () {
+                          setState(() {});
+                        },
                         option: widget.list[index],
                         selected: answers.isNotEmpty,
                       );

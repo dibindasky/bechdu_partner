@@ -9,7 +9,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class YesOrNoTile extends StatelessWidget {
   const YesOrNoTile(
       {super.key,
-      required this.option,required this.onTap,
+      required this.option,
+      required this.onTap,
       required this.selected,
       required this.state});
 
