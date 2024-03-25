@@ -45,7 +45,7 @@ class ScreenPickUpPartnersList extends StatelessWidget {
                   child: const SizedBox(height: 1, width: double.infinity),
                 ),
                 itemBuilder: (context, index) => PickupPartnerListTile(
-                    pickUpPerson: state.pickUpPersons![index]),
+                    index: index, pickUpPerson: state.pickUpPersons![index]),
               ),
             );
           } else {

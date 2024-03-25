@@ -7,6 +7,7 @@ import 'package:bechdu_partner/application/business_logic/transcation/transcatio
 import 'package:bechdu_partner/application/presentation/routes/routes.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
+import 'package:bechdu_partner/application/presentation/utils/dialoge/dialoge.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -73,21 +74,32 @@ class ScreenProfile extends StatelessWidget {
                     trailing: const Icon(Icons.logout, color: kBlack),
                     title: Text('Log-Out', style: textHeadBoldBig),
                     onTap: () {
-                      context.read<AuthBloc>().add(const AuthEvent.logOut());
-                      context.read<AuthBloc>().add(const AuthEvent.reset());
-                      context.read<OrdersBloc>().add(const OrdersEvent.reset());
-                      context
-                          .read<RequoteBloc>()
-                          .add(const RequoteEvent.reset());
-                      context.read<PointsBloc>().add(const PointsEvent.reset());
-                      context
-                          .read<TranscationBloc>()
-                          .add(const TranscationEvent.reset());
-                      context
-                          .read<PickupPartnerBloc>()
-                          .add(const PickupPartnerEvent.reset());
-                      Navigator.pushNamedAndRemoveUntil(
-                          context, Routes.signInPage, (route) => false);
+                      showCustomDialoge(
+                          context: context,
+                          title: 'Are you sure want to Logout ?',
+                          buttonText: 'Log Out',
+                          onTap: () {
+                            context
+                                .read<AuthBloc>()
+                                .add(const AuthEvent.reset());
+                            context
+                                .read<OrdersBloc>()
+                                .add(const OrdersEvent.reset());
+                            context
+                                .read<RequoteBloc>()
+                                .add(const RequoteEvent.reset());
+                            context
+                                .read<PointsBloc>()
+                                .add(const PointsEvent.reset());
+                            context
+                                .read<TranscationBloc>()
+                                .add(const TranscationEvent.reset());
+                            context
+                                .read<PickupPartnerBloc>()
+                                .add(const PickupPartnerEvent.reset());
+                            Navigator.pushNamedAndRemoveUntil(
+                                context, Routes.signInPage, (route) => false);
+                          });
                     },
                   ),
                   const Divider(color: kBlack),

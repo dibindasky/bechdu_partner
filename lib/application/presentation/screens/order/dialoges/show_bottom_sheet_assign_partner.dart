@@ -3,6 +3,7 @@ import 'package:bechdu_partner/application/presentation/routes/routes.dart';
 import 'package:bechdu_partner/application/presentation/utils/clipper/vertical_curves.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
+import 'package:bechdu_partner/application/presentation/utils/dialoge/dialoge.dart';
 import 'package:bechdu_partner/data/feature/url_launcher_service.dart';
 import 'package:bechdu_partner/domain/model/pickup_partner/get_pickup_partner_response_model/pick_up_person.dart';
 import 'package:flutter/material.dart';
@@ -130,14 +131,23 @@ Future<dynamic> showBottomSheetAssignPartner(
                                           kWidth10,
                                           InkWell(
                                             onTap: () {
-                                              context
-                                                  .read<PickupPartnerBloc>()
-                                                  .add(PickupPartnerEvent
-                                                      .assignOrderToPickupPartner(
-                                                          partnerId: data.id!,
-                                                          orderId: orderId));
-                                              selectedPickup = data;
-                                              Navigator.of(context).pop();
+                                              showCustomDialoge(
+                                                  context: context,
+                                                  title: 'Assign Pickup ?',
+                                                  buttonText: 'Assign',
+                                                  onTap: () {
+                                                    context
+                                                        .read<
+                                                            PickupPartnerBloc>()
+                                                        .add(PickupPartnerEvent
+                                                            .assignOrderToPickupPartner(
+                                                                partnerId:
+                                                                    data.id!,
+                                                                orderId:
+                                                                    orderId));
+                                                    selectedPickup = data;
+                                                    Navigator.of(context).pop();
+                                                  });
                                             },
                                             child: ClipRRect(
                                               borderRadius: kRadius5,

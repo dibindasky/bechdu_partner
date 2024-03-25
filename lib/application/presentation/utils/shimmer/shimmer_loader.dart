@@ -28,8 +28,8 @@ class ShimmerLoader extends StatelessWidget {
       scrollDirection: scrollDirection,
       itemBuilder: (context, index) {
         return Shimmer.fromColors(
-          baseColor: const Color.fromARGB(255, 247, 243, 243),
-          highlightColor: const Color.fromARGB(255, 235, 235, 235),
+          baseColor: const Color.fromARGB(255, 255, 255, 255),
+          highlightColor: const Color.fromARGB(255, 226, 226, 226),
           child: Container(
             height: height,
             width: width,

@@ -1,4 +1,5 @@
 import 'package:bechdu_partner/application/business_logic/order/orders/orders_bloc.dart';
+import 'package:bechdu_partner/application/presentation/routes/routes.dart';
 import 'package:bechdu_partner/application/presentation/screens/home/widgets/home_orders_tile.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
@@ -41,7 +42,12 @@ class _OrdersHistoryListState extends State<OrdersHistoryList> {
           .read<OrdersBloc>()
           .add(const OrdersEvent.getPartnerOrders(call: false));
     });
-    return BlocBuilder<OrdersBloc, OrdersState>(builder: (context, state) {
+    return BlocConsumer<OrdersBloc, OrdersState>(listener: (context, state) {
+      if (state.popOrderScreen && state.orderDetail == null) {
+        Navigator.pushNamedAndRemoveUntil(context,
+            partner ? Routes.bottomBar : Routes.homePage, (route) => false);
+      }
+    }, builder: (context, state) {
       if (state.isLoading) {
         return const Center(
             child: CircularProgressIndicator(color: kBluePrimary));

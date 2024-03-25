@@ -13,14 +13,6 @@ class ApiEndPoints {
   static String getAssignedOrders =
       '/partner/get-assigned-partner-orders/{phone}';
 
-  // pickup partner managing
-  static String addPickupPartner = '/partner/add-pickup-person/{phone}';
-  static String getPickupPartner = '/partner/get-pickup-persons/{phone}';
-  static String blockPickupPartner =
-      '/partner/block-pickup-person/{partnerPhone}/{pickUpGuyId}';
-  static String unBlockPickupPartner =
-      '/partner/unblock-pickup-person/{partnerPhone}/{pickUpGuyId}';
-
   // order managing
   static String acceptOrder = '/partner/accept-order/{partnerPhone}/{orderID}';
   static String getParnerProfile = '/partner/partners/{partnerPhone}';
@@ -40,6 +32,14 @@ class ApiEndPoints {
   static String getQuestions = '/api/category/fetch-category-name/{category}';
   static String getPrice = '/product/calculate-price';
 
+  // pickup partner managing
+  static String addPickupPartner = '/partner/add-pickup-person/{phone}';
+  static String getPickupPartner = '/partner/get-pickup-persons/{phone}';
+  static String blockPickupPartner =
+      '/partner/block-pickup-person/{partnerPhone}/{pickUpGuyId}';
+  static String unBlockPickupPartner =
+      '/partner/unblock-pickup-person/{partnerPhone}/{pickUpGuyId}';
+
   // transcations
   static String getCreditedTranscation =
       '/partner/transactions/credited/{partnerPhone}';
@@ -56,4 +56,8 @@ class ApiEndPoints {
   static String manuelTransation = '/payment/create-payments';
   static String getManuelTransation = '/payment/get-partner-payments/{phone}';
   static String makeEpayment = '/partner/update-coins-after-payment/{phone}';
+
+  // notification
+  static String getNotification = '/partner/notifications/{phone}';
+
 }

@@ -10,6 +10,8 @@ const gilroySemiBold = 'Gilroy-SemiBold';
 
 const iconBechdu = 'assets/images/bechdu_logo.png';
 
+const gifNoData = 'assets/images/Mobile Marketing (2).gif';
+
 const loginPageImage = 'assets/images/login_page.png';
 const imageDiffectedPhone = 'assets/images/diffectImage.png';
 const iconHome = 'assets/images/carbon_home.png';
@@ -120,4 +122,22 @@ void sizeFinder(BuildContext context) {
   final size = MediaQuery.of(context).size;
   sHeight = size.height > 900 ? 900 : size.height;
   sWidth = size.width > 450 ? 450 : size.width;
+}
+
+
+IconData getNotificationIcon(String status) {
+  switch (status) {
+    case "new":
+      return Icons.new_releases_outlined;
+    case "cancelled":
+      return Icons.close;
+    case "Completed":
+      return Icons.check;
+    case "processing":
+      return Icons.restore;
+    case "rescheduled":
+      return Icons.restore;
+    default:
+      return Icons.circle;
+  }
 }

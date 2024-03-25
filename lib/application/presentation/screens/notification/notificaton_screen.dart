@@ -1,67 +1,145 @@
+import 'package:bechdu_partner/application/business_logic/notification/notification_bloc.dart';
+import 'package:bechdu_partner/application/business_logic/order/orders/orders_bloc.dart';
+import 'package:bechdu_partner/application/presentation/routes/routes.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
+import 'package:bechdu_partner/application/presentation/utils/refresh_indicator/refresh_indicator.dart';
+import 'package:bechdu_partner/application/presentation/utils/shimmer/shimmer_loader.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class ScreenNotification extends StatelessWidget {
+class ScreenNotification extends StatefulWidget {
   const ScreenNotification({super.key});
 
   @override
+  State<ScreenNotification> createState() => _ScreenNotificationState();
+}
+
+class _ScreenNotificationState extends State<ScreenNotification> {
+  final ScrollController controller = ScrollController();
+  @override
+  void initState() {
+    controller.addListener(() {
+      if (controller.position.pixels == controller.position.maxScrollExtent) {
+        context
+            .read<NotificationBloc>()
+            .add(const NotificationEvent.getNotificationsNext());
+      }
+    });
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      context
+          .read<NotificationBloc>()
+          .add(const NotificationEvent.getNotifications());
+    });
     return Scaffold(
         appBar: AppBar(
           title: Text('Notifications', style: textHeadBoldBig2),
         ),
-        body: ListView.separated(
-          itemCount: 10,
-          separatorBuilder: (context, index) => const Divider(),
-          itemBuilder: (context, index) {
-            final icon = index % 3 == 0
-                ? Icons.check
-                : index % 3 == 1
-                    ? Icons.close
-                    : Icons.restore;
-            final color = index % 3 == 0 ? kGreen : kRed;
-            return ListTile(
-              minLeadingWidth: 40,
-              isThreeLine: true,
-              leading: Row(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Icon(Icons.circle, size: 12, color: color),
-                  kWidth10,
-                  CircleAvatar(
-                    backgroundColor: color.withOpacity(0.2),
-                    child: Icon(icon, color: color),
-                  )
-                ],
-              ),
-              title: Text(
-                'Aman Sharma has pickedup Iphone',
-                style: textHeadBold1,
-              ),
-              subtitle: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Iphone 11 pickup has been completed successfully',
-                    style: textHeadRegular1,
-                  ),
-                  kHeight5,
-                  Text(
-                    '05:45 pm',
-                    style: textHeadRegular1,
-                  ),
-                ],
-              ),
-              trailing: const Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  InkWell(
-                    child: Icon(Icons.arrow_forward_ios_outlined, color: kBlue),
-                  ),
-                ],
-              ),
+        body: BlocBuilder<OrdersBloc, OrdersState>(
+          builder: (context, ordreState) {
+            return BlocBuilder<NotificationBloc, NotificationState>(
+              builder: (context, state) {
+                if (state.isLoading) {
+                  return const Center(
+                      child: CircularProgressIndicator(color: kBluePrimary));
+                } else if (state.notificationList != null &&
+                    state.notificationList!.isNotEmpty) {
+                  int length = state.pageLoading
+                      ? state.notificationList!.length + 1
+                      : state.notificationList!.length;
+                  return RefreshIndicator(
+                    onRefresh: () async {
+                      context
+                          .read<NotificationBloc>()
+                          .add(const NotificationEvent.getNotifications());
+                      await Future.delayed(const Duration(seconds: 2));
+                    },
+                    child: ListView.separated(
+                      controller: controller,
+                      itemCount: length,
+                      separatorBuilder: (context, index) => const Divider(),
+                      itemBuilder: (context, index) {
+                        if (index == state.notificationList!.length) {
+                          return ShimmerLoader(
+                              itemCount: 1, height: 100, width: sWidth);
+                        }
+                        final data = state.notificationList![index];
+                        final color = getStatusColor(data.type ?? "");
+                        return ListTile(
+                          minLeadingWidth: 40,
+                          isThreeLine: true,
+                          onTap: () {
+                            Navigator.pushNamed(context, Routes.orderScreen,
+                                arguments: ordreState.newOrders!.firstWhere(
+                                    (element) => element.id == data.orderId));
+                          },
+                          leading: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Icon(Icons.circle, size: 12, color: color),
+                              kWidth10,
+                              CircleAvatar(
+                                backgroundColor: color.withOpacity(0.2),
+                                child: Icon(
+                                    getNotificationIcon(data.type ?? ''),
+                                    color: color),
+                              )
+                            ],
+                          ),
+                          title: Text(
+                            data.title ?? '',
+                            style: textHeadBold1,
+                          ),
+                          subtitle: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                data.body ?? '',
+                                style: textHeadRegular1,
+                              ),
+                              kHeight5,
+                              Text(
+                                data.timestamp.toString(),
+                                style: textHeadRegular1,
+                              ),
+                            ],
+                          ),
+                          trailing: const Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              InkWell(
+                                child: Icon(Icons.arrow_forward_ios_outlined,
+                                    color: kBlue),
+                              ),
+                            ],
+                          ),
+                        );
+                      },
+                    ),
+                  );
+                } else {
+                  return ErrorRefreshIndicator(
+                      image: gifNoData,
+                      errorMessage: 'No Notifications',
+                      onRefresh: () {
+                        context
+                            .read<NotificationBloc>()
+                            .add(const NotificationEvent.getNotifications());
+                      });
+                }
+              },
             );
           },
         ));

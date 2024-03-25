@@ -8,6 +8,7 @@ class SharedPref {
   static const String isLogged = 'is_loggedIn';
   static const String isPartnerKey = 'is_partner';
   static const String phoneKey = 'phone_key';
+  static const String notificationKey = 'notification_key';
 
   static Future<SharedPreferences> _getPrefs() async =>
       await SharedPreferences.getInstance();
@@ -30,6 +31,7 @@ class SharedPref {
     log('set login =>()');
     final preferences = await _getPrefs();
     await preferences.setBool(isLogged, true);
+    await preferences.setInt(notificationKey, 0);
   }
 
   static Future<void> clearLogin() async {
@@ -56,6 +58,12 @@ class SharedPref {
     final preferences = await _getPrefs();
     final role = preferences.getBool(isPartnerKey) ?? false;
     return role;
+  }
+
+  static Future<int> getNotification() async {
+    final preferences = await _getPrefs();
+    final noti = preferences.getInt(notificationKey) ?? 0;
+    return noti;
   }
 
   static Future<void> setPhone({required String phone}) async {

@@ -1,8 +1,8 @@
 import 'package:bechdu_partner/application/business_logic/order/requote/requote_bloc.dart';
-import 'package:bechdu_partner/application/presentation/screens/order/dialoges/show_dialog_cancel_order.dart';
 import 'package:bechdu_partner/application/presentation/screens/order/dialoges/show_dialoge_requote_price.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
+import 'package:bechdu_partner/application/presentation/utils/dialoge/dialoge.dart';
 import 'package:bechdu_partner/application/presentation/widgets/status_colored_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -20,7 +20,14 @@ class AnswerIndexChanger extends StatelessWidget {
         Expanded(
           child: StatusColoredBox(
               // order id need to pass for cancelation
-              onTap: () => showDialogeCancel(context, ''),
+              onTap: () => showCustomDialoge(
+                  context: context,
+                  title: 'Cancel Requoteing',
+                  buttonText: 'Cancel Requote',
+                  onTap: () {
+                    Navigator.pop(context);
+                  }),
+              // onTap: () => showDialogeCancel(context, ''),
               text: 'Cancel',
               color: kRed,
               fontWeight: FontWeight.w700,

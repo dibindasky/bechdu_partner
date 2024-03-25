@@ -1,7 +1,6 @@
 import 'package:bechdu_partner/application/business_logic/order/orders/orders_bloc.dart';
 import 'package:bechdu_partner/application/business_logic/order/requote/requote_bloc.dart';
 import 'package:bechdu_partner/application/presentation/routes/routes.dart';
-import 'package:bechdu_partner/application/presentation/screens/order/dialoges/show_dialog_cancel_order.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:bechdu_partner/application/presentation/widgets/status_colored_box.dart';
@@ -116,8 +115,11 @@ showDialogeRequote(context) {
                                     Expanded(
                                       child: InkWell(
                                         onTap: () {
-                                          showDialogeCancel(
-                                              context, order.orderDetail!.id!);
+                                          Navigator.pop(context);
+                                          Navigator.pop(context);
+                                          Navigator.pop(context);
+                                          // showDialogeCancel(
+                                          //     context, order.orderDetail!.id!);
                                         },
                                         child: const StatusColoredBox(
                                             text: 'Cancel',

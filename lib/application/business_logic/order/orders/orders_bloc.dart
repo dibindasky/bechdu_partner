@@ -62,6 +62,7 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
   FutureOr<void> getOrderDetail(GetOrderDetail event, emit) async {
     emit(state.copyWith(
         isLoading: true,
+        orderDetail: null,
         orderDetailError: false,
         message: null,
         popOrderScreen: false,
@@ -75,6 +76,7 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
           isLoading: false,
           hasError: true,
           orderDetailError: true,
+          popOrderScreen: true,
           message: 'failed to connect, please try again'));
     }
     final result =
@@ -84,6 +86,7 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
             orderDetailError: true,
             isLoading: false,
             hasError: true,
+            popOrderScreen: true,
             message: l.message)),
         (r) => emit(state.copyWith(isLoading: false, orderDetail: r)));
   }

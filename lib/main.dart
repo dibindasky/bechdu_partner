@@ -1,4 +1,5 @@
 import 'package:bechdu_partner/application/business_logic/auth/auth_bloc.dart';
+import 'package:bechdu_partner/application/business_logic/notification/notification_bloc.dart';
 import 'package:bechdu_partner/application/business_logic/order/orders/orders_bloc.dart';
 import 'package:bechdu_partner/application/business_logic/order/requote/requote_bloc.dart';
 import 'package:bechdu_partner/application/business_logic/pickup_partner/pickup_partner_bloc.dart';
@@ -26,8 +27,8 @@ Future<void> main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   await FirebaseMessaging.instance.requestPermission();
-    final token = await FirebaseMessaging.instance.getToken();
-    print('firebase notification token =>  "$token"');
+  final token = await FirebaseMessaging.instance.getToken();
+  print('firebase notification token =>  "$token"');
   await configuteInjection();
   runApp(Beachdu());
 }
@@ -52,6 +53,7 @@ class Beachdu extends StatelessWidget {
           BlocProvider(create: (context) => getIt<OrdersBloc>()),
           BlocProvider(create: (context) => getIt<TranscationBloc>()),
           BlocProvider(create: (context) => getIt<PickupPartnerBloc>()),
+          BlocProvider(create: (context) => getIt<NotificationBloc>()),
         ],
         child: MaterialApp(
           navigatorKey: navigatorKey,

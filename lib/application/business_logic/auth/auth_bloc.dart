@@ -65,7 +65,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   FutureOr<void> verifyOtp(VerifyOtp event, emit) async {
-    emit(AuthState.initial().copyWith(isLoading: true));
+    emit(AuthState.initial()
+        .copyWith(isLoading: true, otpVerificationError: false));
     final userAgent = await DeviceInformation.getDeviceInformation();
     await FirebaseMessaging.instance.requestPermission();
     final token = await FirebaseMessaging.instance.getToken();
@@ -73,11 +74,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     print(model.toJson());
     final result =
         await authRepo.verifyOtp(verifyOtpModel: model, userAgent: userAgent);
-    result.fold(
-        (l) => emit(state.copyWith(
-            isLoading: false,
-            otpVerificationError: true,
-            message: l.message)), (r) async {
+    result.fold((l) {
+      otpController.clear();
+      return emit(state.copyWith(
+          isLoading: false, otpVerificationError: true, message: l.message));
+    }, (r) async {
       SharedPref.setPhone(phone: r.phone!);
       SharedPref.saveToken(tokenModel: TokenModel(accessToken: r.token));
       emit(state.copyWith(
