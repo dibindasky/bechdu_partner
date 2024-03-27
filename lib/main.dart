@@ -18,6 +18,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
 
+@pragma('vm:entry-point')
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  await Firebase.initializeApp();
+}
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations(
@@ -26,9 +31,7 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  await FirebaseMessaging.instance.requestPermission();
-  final token = await FirebaseMessaging.instance.getToken();
-  print('firebase notification token =>  "$token"');
+  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
   await configuteInjection();
   runApp(Beachdu());
 }

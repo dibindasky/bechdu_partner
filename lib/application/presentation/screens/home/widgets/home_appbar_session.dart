@@ -1,7 +1,9 @@
+import 'package:bechdu_partner/application/business_logic/notification/notification_bloc.dart';
 import 'package:bechdu_partner/application/business_logic/order/orders/orders_bloc.dart';
 import 'package:bechdu_partner/application/business_logic/pickup_partner/pickup_partner_bloc.dart';
 import 'package:bechdu_partner/application/presentation/routes/routes.dart';
 import 'package:bechdu_partner/application/presentation/screens/home/widgets/custom_search_field_home.dart';
+import 'package:bechdu_partner/application/presentation/utils/animations/ringing_animation.dart';
 import 'package:bechdu_partner/application/presentation/utils/animations/shriking_animation.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
@@ -19,6 +21,9 @@ class HomeScreenAppBar extends StatelessWidget {
       context
           .read<PickupPartnerBloc>()
           .add(const PickupPartnerEvent.getPartnerProfile());
+      context
+          .read<NotificationBloc>()
+          .add(const NotificationEvent.getNotifications(reset: false));
     });
     return SafeArea(
       child: Column(
@@ -35,11 +40,20 @@ class HomeScreenAppBar extends StatelessWidget {
                       style: textHeadBoldBig2,
                     ),
                     const Spacer(),
-                    InkWell(
-                        onTap: () => Navigator.pushNamed(
-                            context, Routes.notificationPage),
-                        child: const Icon(Icons.notifications,
-                            color: kBluePrimary)),
+                    BlocBuilder<NotificationBloc, NotificationState>(
+                      builder: (context, state) {
+                        return InkWell(
+                            onTap: () => Navigator.pushNamed(
+                                context, Routes.notificationPage),
+                            child: BellIconAnimation(
+                              animate: state.notiLength != null &&
+                                  state.notiLength! > 0,
+                              // animate: true,
+                              child: const Icon(Icons.notifications,
+                                  color: kBluePrimary),
+                            ));
+                      },
+                    ),
                     kWidth10,
                     partner
                         ? InkWell(

@@ -6,8 +6,10 @@ class NotificationState with _$NotificationState {
       {required bool isLoading,
       required bool pageLoading,
       required bool hasError,
+      int? notiLength,
+      int? totalNotiLength,
       String? message,
       List<NotificationModel>? notificationList}) = _Initial;
   factory NotificationState.initial() =>
-      const NotificationState(isLoading: true, hasError: false,pageLoading:false);
+      const NotificationState(isLoading: true, hasError: false,pageLoading:false,);
 }

@@ -12,6 +12,9 @@ const iconBechdu = 'assets/images/bechdu_logo.png';
 
 const gifNoData = 'assets/images/Mobile Marketing (2).gif';
 
+const iconPhone = 'assets/images/phone bechdu.png';
+const iconLocation = 'assets/images/Subtract.png';
+
 const loginPageImage = 'assets/images/login_page.png';
 const imageDiffectedPhone = 'assets/images/diffectImage.png';
 const iconHome = 'assets/images/carbon_home.png';

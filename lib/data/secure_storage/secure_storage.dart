@@ -60,6 +60,11 @@ class SharedPref {
     return role;
   }
 
+  static Future<void> setNotification({required int length}) async {
+    final preferences = await _getPrefs();
+    await preferences.setInt(notificationKey, length);
+  }
+
   static Future<int> getNotification() async {
     final preferences = await _getPrefs();
     final noti = preferences.getInt(notificationKey) ?? 0;

@@ -18,18 +18,26 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   NotificationBloc(this.notificatonRepo) : super(NotificationState.initial()) {
     on<GetNotifications>(getNotifications);
     on<GetNotificationsNext>(getNotificationsNext);
+    on<ResetLength>(resetLength);
   }
 
   FutureOr<void> getNotifications(GetNotifications event, emit) async {
     emit(state.copyWith(isLoading: true, hasError: false));
+    final notiLen = await SharedPref.getNotification();
     final phone = await SharedPref.getPhone();
     final result = await notificatonRepo.getNotifications(
         phone: phone!,
         pageSizeQueryModel: PageSizeQueryModel(page: 1, pageSize: size));
-    result.fold(
-        (l) => emit(state.copyWith(isLoading: false)),
-        (r) =>
-            emit(state.copyWith(isLoading: false, notificationList: r.data)));
+    result.fold((l) => emit(state.copyWith(isLoading: false)), (r) {
+      emit(state.copyWith(
+          isLoading: false,
+          notificationList: r.data,
+          totalNotiLength: r.length,
+          notiLength: r.length ?? 0 - notiLen));
+      if (event.reset) {
+        add(const NotificationEvent.resetLength());
+      }
+    });
   }
 
   FutureOr<void> getNotificationsNext(GetNotificationsNext event, emit) async {
@@ -38,9 +46,20 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     final result = await notificatonRepo.getNotifications(
         phone: phone!,
         pageSizeQueryModel: PageSizeQueryModel(page: 1, pageSize: ++size));
-    result.fold(
-        (l) => emit(state.copyWith(pageLoading: false)),
-        (r) =>
-            emit(state.copyWith(pageLoading: false, notificationList: r.data)));
+    result.fold((l) => emit(state.copyWith(pageLoading: false)), (r) {
+      emit(state.copyWith(
+          pageLoading: false,
+          notificationList: r.data,
+          notiLength: 0,
+          totalNotiLength: r.length));
+      add(const NotificationEvent.resetLength());
+    });
+  }
+
+  FutureOr<void> resetLength(ResetLength event, emit) async {
+    if (state.totalNotiLength != null) {
+      await SharedPref.setNotification(length: state.totalNotiLength!);
+      emit(state.copyWith(notiLength: 0));
+    }
   }
 }

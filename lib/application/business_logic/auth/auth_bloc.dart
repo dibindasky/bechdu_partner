@@ -1,12 +1,12 @@
 import 'dart:async';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:bechdu_partner/data/feature/device_informations.dart';
+import 'package:bechdu_partner/data/firebase_api/firebase_api.dart';
 import 'package:bechdu_partner/data/secure_storage/secure_storage.dart';
 import 'package:bechdu_partner/domain/model/auth/phone_number_model/phone_number_model.dart';
 import 'package:bechdu_partner/domain/model/auth/verify_otp_model/verify_otp_model.dart';
 import 'package:bechdu_partner/domain/model/token/token_model.dart';
 import 'package:bechdu_partner/domain/repository/service/auth_repo.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -68,8 +68,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     emit(AuthState.initial()
         .copyWith(isLoading: true, otpVerificationError: false));
     final userAgent = await DeviceInformation.getDeviceInformation();
-    await FirebaseMessaging.instance.requestPermission();
-    final token = await FirebaseMessaging.instance.getToken();
+    final token = await NotificationServices().getDeviceToken();
     final model = event.verifyOtpModel.copyWith(deviceToken: token);
     print(model.toJson());
     final result =
