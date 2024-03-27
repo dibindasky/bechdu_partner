@@ -10,15 +10,17 @@ class PickupPartnerListTile extends StatelessWidget {
   const PickupPartnerListTile({
     super.key,
     required this.pickUpPerson,
+    required this.index,
   });
 
   final PickUpPerson pickUpPerson;
+  final int index;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () => Navigator.pushNamed(context, Routes.pickUpProfilePage,
-          arguments: pickUpPerson),
+          arguments: index),
       child: ListTile(
         leading: const CircleAvatar(
           backgroundColor: kBluePrimary,

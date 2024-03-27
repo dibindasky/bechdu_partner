@@ -24,9 +24,7 @@ class _AnimatedGrowShrinkContainerState
         AnimationController(vsync: this, duration: const Duration(seconds: 2));
     _scaleAnimation = Tween<double>(begin: 1.0, end: 0.8).animate(_controller)
       ..addListener(() => setState(() {}));
-    _controller.repeat(
-        reverse:
-            true); // Set to repeat and reverse for continuous shrinking and expanding
+    _controller.repeat(reverse: true);
   }
 
   @override

@@ -3,16 +3,17 @@ import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:flutter/material.dart';
 
 class ErrorRefreshIndicator extends StatelessWidget {
-  const ErrorRefreshIndicator({
-    super.key,
-    this.shrinkWrap = false,
-    required this.onRefresh,
-    this.errorMessage = 'something went wrong pull to refresh',
-  });
+  const ErrorRefreshIndicator(
+      {super.key,
+      this.shrinkWrap = false,
+      required this.onRefresh,
+      this.errorMessage = 'something went wrong pull to refresh',
+      this.image});
 
   final VoidCallback onRefresh;
   final String errorMessage;
   final bool shrinkWrap;
+  final String? image;
 
   @override
   Widget build(BuildContext context) {
@@ -25,8 +26,10 @@ class ErrorRefreshIndicator extends StatelessWidget {
         shrinkWrap: shrinkWrap,
         children: [
           kHeight50,
-          const Icon(Icons.refresh, color: kGreyLight),
-          Center(child: Text(errorMessage)),
+          image != null
+              ? Image.asset(image!)
+              : const Icon(Icons.refresh, color: kGreyLight),
+          Center(child: Text(errorMessage,style: textHeadMedium1)),
           const SizedBox(width: double.infinity)
         ],
       ),

@@ -97,13 +97,12 @@ class TranscationBloc extends Bloc<TranscationEvent, TranscationState> {
         message: null));
     final coins = int.parse(priceController.text.trim());
     final persentage = (coins * event.coinValue) * (event.gst / 100);
-    final total = ((coins * event.coinValue)) + persentage;
     final ManuelTranscationModel model = ManuelTranscationModel(
         coins: priceController.text.trim(),
         image: state.reciept!.base64Image,
         partnerPhone: await SharedPref.getPhone(),
         gstPrice: persentage.toString(),
-        price: total.toString(),
+        price: (coins * event.coinValue).toString(),
         gstPercentage: event.gst.toString());
     final result =
         await transcationsRepo.uploadCheckRecipt(manuelTranscationModel: model);

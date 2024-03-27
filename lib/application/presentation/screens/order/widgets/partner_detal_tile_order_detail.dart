@@ -2,6 +2,7 @@ import 'package:bechdu_partner/application/business_logic/pickup_partner/pickup_
 import 'package:bechdu_partner/application/presentation/screens/order/dialoges/show_bottom_sheet_assign_partner.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
+import 'package:bechdu_partner/application/presentation/utils/dialoge/dialoge.dart';
 import 'package:bechdu_partner/application/presentation/widgets/status_colored_box.dart';
 import 'package:bechdu_partner/domain/model/order/get_partner_order_response_model/partner.dart';
 import 'package:flutter/material.dart';
@@ -55,10 +56,16 @@ class PartnerDetailTile extends StatelessWidget {
                             color: kBluePrimary,
                             onTap: () {
                               if (pickup?.pickUpPersonName != '') {
-                                context.read<PickupPartnerBloc>().add(
-                                    PickupPartnerEvent
-                                        .deAssignOrderFromPickupPartner(
-                                            orderId: orderId));
+                                showCustomDialoge(
+                                    context: context,
+                                    title: 'Deassign Pickup ?',
+                                    buttonText: 'Deassign',
+                                    onTap: () {
+                                      context.read<PickupPartnerBloc>().add(
+                                          PickupPartnerEvent
+                                              .deAssignOrderFromPickupPartner(
+                                                  orderId: orderId));
+                                    });
                               } else {
                                 showBottomSheetAssignPartner(context, orderId);
                               }

@@ -15,6 +15,8 @@ class RequoteEvent with _$RequoteEvent {
   const factory RequoteEvent.markAnswer(
       {required SelectedOption selectedOption}) = MarkAnswer;
   const factory RequoteEvent.getPrice() = GetPrice;
-  const factory RequoteEvent.requotePrice({required String orderId,required RequotePriceModel requotePriceModel}) = RequotePrice;
+  const factory RequoteEvent.requotePrice(
+      {required String orderId,
+      required RequotePriceModel requotePriceModel}) = RequotePrice;
   const factory RequoteEvent.reset() = Reset;
 }

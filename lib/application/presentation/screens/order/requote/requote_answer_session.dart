@@ -26,7 +26,6 @@ class RequoteAnswerSession extends StatelessWidget {
       buildWhen: (previous, current) =>
           previous.requoteIndex != current.requoteIndex,
       builder: (context, state) {
-        print('session maker===========');
         if (state.sections![state.requoteIndex].type == 'yes/no') {
           return YesOrNoListMaker(
               list: state.sections![state.requoteIndex].options!);

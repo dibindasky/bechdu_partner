@@ -46,7 +46,7 @@ class RazorpayGateway {
         'contact': phone, // User's phone number
       },
       'external': {
-        'wallets': ['paytm'] // Example: Enable Paytm wallet
+        'wallets': ['paytm']
       },
       'method': {
         'netbanking': true,
@@ -63,12 +63,11 @@ class RazorpayGateway {
       print(e.message);
     } catch (e) {
       print('razorpay exception');
-      print(e.toString()); // Handle errors
+      print(e.toString());
     }
   }
 
   void _handlePaymentSuccess(PaymentSuccessResponse response) {
-    // Process successful payment (e.g., display success message)
     print('=========Payment successful: $response');
     print('=========Payment successful: ${response.paymentId}');
     this.epayModel.paymentId = response.paymentId ?? '';
@@ -79,14 +78,12 @@ class RazorpayGateway {
   }
 
   void _handlePaymentError(PaymentFailureResponse response) {
-    // Handle payment failure (e.g., display error message)
     print('==========Payment failed: $response');
     showSnackBar(context: context, message: 'Payement failed', color: kRedDark);
     Navigator.pop(context);
   }
 
   void _handleExternalWallet(ExternalWalletResponse response) {
-    // Handle external wallet selection (e.g., display message)
     print('=============External wallet selected: ${response.walletName}');
     showSnackBar(context: context, message: 'Payement failed', color: kRedDark);
     Navigator.pop(context);

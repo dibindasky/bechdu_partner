@@ -285,7 +285,9 @@ class RequoteBloc extends Bloc<RequoteEvent, RequoteState> {
           requoteError: false,
           requoteLoading: false,
           requoteIndex: event.index));
-    } else if (state.requoteIndex == state.sections!.length - 1) {
+    }
+    // if last index and validated then call for price
+    else if (state.requoteIndex == state.sections!.length - 1) {
       add(const RequoteEvent.getPrice());
     }
   }

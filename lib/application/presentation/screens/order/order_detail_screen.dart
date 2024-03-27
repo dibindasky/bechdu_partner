@@ -130,8 +130,10 @@ class ScreenOrderDetail extends StatelessWidget {
                                         color: kGreenPrimary));
                               }
                               return orderDetail.status == 'new'
+                                  // order details shown in blur for status new and canceled
                                   ? BlurredOrderDetails(
                                       orderDetail: orderDetail)
+                                  // order details for status processing, resheduled and complete
                                   : OrderDetailWithoutBlur(
                                       orderDetail: orderDetail);
                             },

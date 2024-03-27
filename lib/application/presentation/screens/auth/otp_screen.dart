@@ -43,6 +43,7 @@ class _ScreenOTPState extends State<ScreenOTP> {
                     style: textHeadMedium1),
                 InkWell(
                   onTap: () {
+                    context.read<AuthBloc>().otpController.clear();
                     Navigator.pop(context);
                   },
                   child: Text(

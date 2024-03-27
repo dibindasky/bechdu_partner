@@ -56,7 +56,7 @@ class PickUpDetailOrderTile extends StatelessWidget {
                     ? null
                     : isUser
                         ? _circleIconMaker(
-                            icon: Icons.phone,
+                            icon: iconPhone,
                             onTap: () {
                               OpenLauncherFeature.launchPhone(phone: phone);
                             })
@@ -75,8 +75,8 @@ class PickUpDetailOrderTile extends StatelessWidget {
                 trailing: isBlurred
                     ? kEmpty
                     : _circleIconMaker(
-                        icon: Icons.navigation_outlined,
-                        quarterTurns: 1,
+                        icon: iconLocation,
+                        // quarterTurns: 1,
                         onTap: () {
                           OpenLauncherFeature.launchMap(
                               address: address, context: context);
@@ -98,15 +98,21 @@ class PickUpDetailOrderTile extends StatelessWidget {
     );
   }
 
-  Widget _circleIconMaker(
-      {required IconData icon, int quarterTurns = 0, VoidCallback? onTap}) {
+  Widget _circleIconMaker({required String icon, VoidCallback? onTap}) {
     return InkWell(
       onTap: onTap,
-      child: CircleAvatar(
-          backgroundColor: kGreyLight.withOpacity(0.3),
-          child: RotatedBox(
-              quarterTurns: quarterTurns,
-              child: Icon(icon, color: kGreenPrimary))),
+      child: Container(
+        width: sWidth * 0.10,
+        height: sWidth * 0.10,
+        decoration: BoxDecoration(
+          color: kGreyLight.withOpacity(0.3),
+          borderRadius: BorderRadius.circular(100),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(8),
+          child: Image.asset(icon),
+        ),
+      ),
     );
   }
 }

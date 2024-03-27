@@ -1,4 +1,5 @@
 import 'package:bechdu_partner/application/business_logic/auth/auth_bloc.dart';
+import 'package:bechdu_partner/application/business_logic/notification/notification_bloc.dart';
 import 'package:bechdu_partner/application/business_logic/order/orders/orders_bloc.dart';
 import 'package:bechdu_partner/application/business_logic/order/requote/requote_bloc.dart';
 import 'package:bechdu_partner/application/business_logic/pickup_partner/pickup_partner_bloc.dart';
@@ -17,6 +18,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
 
+@pragma('vm:entry-point')
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  await Firebase.initializeApp();
+}
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations(
@@ -25,9 +31,7 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  await FirebaseMessaging.instance.requestPermission();
-    final token = await FirebaseMessaging.instance.getToken();
-    print('firebase notification token =>  "$token"');
+  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
   await configuteInjection();
   runApp(Beachdu());
 }
@@ -52,6 +56,7 @@ class Beachdu extends StatelessWidget {
           BlocProvider(create: (context) => getIt<OrdersBloc>()),
           BlocProvider(create: (context) => getIt<TranscationBloc>()),
           BlocProvider(create: (context) => getIt<PickupPartnerBloc>()),
+          BlocProvider(create: (context) => getIt<NotificationBloc>()),
         ],
         child: MaterialApp(
           navigatorKey: navigatorKey,

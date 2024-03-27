@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:typed_data';
 
 import 'package:bechdu_partner/application/business_logic/order/requote/requote_bloc.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
@@ -24,6 +25,13 @@ class GridTileQuestion extends StatefulWidget {
 }
 
 class _GridTileQuestionState extends State<GridTileQuestion> {
+  Uint8List? convertedImg;
+  @override
+  void initState() {
+    convertedImg = base64Decode(widget.option.image!);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<RequoteBloc, RequoteState>(
@@ -57,7 +65,7 @@ class _GridTileQuestionState extends State<GridTileQuestion> {
                     AspectRatio(
                       aspectRatio: 1,
                       child: FittedBox(
-                        child: Image.memory(base64Decode(widget.option.image!)),
+                        child: Image.memory(convertedImg!),
                       ),
                     ),
                     Text(

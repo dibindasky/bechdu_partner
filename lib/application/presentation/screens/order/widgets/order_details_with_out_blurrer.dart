@@ -46,7 +46,7 @@ class OrderDetailWithoutBlur extends StatelessWidget {
                       );
                     }
                     return PartnerDetailTile(
-                        status: orderDetail.status!,
+                        status: orderDetail.status??'',
                         partner: orderDetail.partner,
                         orderId: orderDetail.id!);
                   },

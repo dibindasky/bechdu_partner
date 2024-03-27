@@ -31,4 +31,23 @@ class InvoiceMaker {
     log('savePdfBufferToFile');
     return await file.writeAsBytes(pdfBuffer);
   }
+
+//   Future<void> saveToStorage(String base64Pdf, String fileName) async {
+//   final pdfBytes = base64Decode(base64Pdf);
+//   final status = await Permission.storage.request();
+//   if (!status.isGranted) {
+//     throw Exception('Storage permission denied');
+//   }
+//   try {
+//     await FileSaver.saveFile(
+//       '$fileName.pdf',
+//       pdfBytes,
+//       'application/pdf', 
+//       DirectoryPaths.downloads,
+//     );
+//     print('PDF saved successfully!');
+//   } catch (error) {
+//     print('Error saving PDF: $error');
+//   }
+// }
 }
