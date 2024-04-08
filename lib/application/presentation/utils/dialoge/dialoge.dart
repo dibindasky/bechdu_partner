@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 showCustomDialoge(
     {required BuildContext context,
     required String title,
+    Color buttonColor = kGreenPrimary,
     required String buttonText,
     required VoidCallback onTap}) {
   showDialog(
@@ -37,13 +38,13 @@ showCustomDialoge(
                 kWidth20,
                 OutlinedButton(
                     style: OutlinedButton.styleFrom(
-                        side: const BorderSide(color: kGreenPrimary)),
+                        side: BorderSide(color: buttonColor)),
                     onPressed: () {
                       Navigator.pop(context);
                       onTap();
                     },
                     child: Text(buttonText,
-                        style: textHeadMedium1.copyWith(color: kGreenPrimary)))
+                        style: textHeadMedium1.copyWith(color: buttonColor)))
               ],
             )
           ],

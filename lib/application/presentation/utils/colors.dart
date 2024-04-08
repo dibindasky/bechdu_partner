@@ -49,3 +49,15 @@ Color getTranscationStatusColor(String status) {
       return kBluePrimary;
   }
 }
+
+class Solution {
+  String largestOddNumber(String num) {
+    int index = num.length;
+    int b = int.parse(num[--index]);
+    while (index >= 0 && b % 2 != 1) {
+      if (index == 0) return '';
+      b = int.parse(num[--index]);
+    }
+    return index < 0 ? '' : num.substring(0, index);
+  }
+}

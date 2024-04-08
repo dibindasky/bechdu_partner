@@ -29,7 +29,7 @@ class ErrorRefreshIndicator extends StatelessWidget {
           image != null
               ? Image.asset(image!)
               : const Icon(Icons.refresh, color: kGreyLight),
-          Center(child: Text(errorMessage,style: textHeadMedium1)),
+          Center(child: Text(errorMessage, style: textHeadMedium1)),
           const SizedBox(width: double.infinity)
         ],
       ),

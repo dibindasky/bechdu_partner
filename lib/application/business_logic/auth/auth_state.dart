@@ -11,6 +11,9 @@ class AuthState with _$AuthState {
     required bool role,
     required bool agreePolicy,
     required bool agreePolicyError,
+    required bool deleteLoading,
+    required bool deteteOtpSend,
+    required bool deleteSuccess,
     String? message,
   }) = _Initial;
 
@@ -22,6 +25,8 @@ class AuthState with _$AuthState {
         agreePolicy: true,
         agreePolicyError: false,
         otpVerificationError: false,
-        isLogin: false,
+        isLogin: false,deleteLoading: false,
+        deleteSuccess: false,
+        deteteOtpSend: false
       );
 }

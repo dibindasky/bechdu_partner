@@ -46,7 +46,7 @@ class OrderDetailWithoutBlur extends StatelessWidget {
                       );
                     }
                     return PartnerDetailTile(
-                        status: orderDetail.status??'',
+                        status: orderDetail.status ?? '',
                         partner: orderDetail.partner,
                         orderId: orderDetail.id!);
                   },
@@ -65,7 +65,8 @@ class OrderDetailWithoutBlur extends StatelessWidget {
           kHeight10,
           OrderDetailDiviceDetailsSession(
               isBlurred: orderDetail.status == 'cancelled',
-              productDetails: orderDetail.productDetails)
+              productDetails: orderDetail.productDetails),
+          kHeight20
         ],
       ),
     );

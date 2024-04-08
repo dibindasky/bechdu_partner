@@ -97,6 +97,9 @@ class ScreenProfile extends StatelessWidget {
                             context
                                 .read<PickupPartnerBloc>()
                                 .add(const PickupPartnerEvent.reset());
+                            context
+                                .read<AuthBloc>()
+                                .add(const AuthEvent.logOut());
                             Navigator.pushNamedAndRemoveUntil(
                                 context, Routes.signInPage, (route) => false);
                           });

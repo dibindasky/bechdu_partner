@@ -86,13 +86,13 @@ class NotificationServices {
   Future<void> showNotification(RemoteMessage message) async {
     print("in show notification start..====");
     AndroidNotificationChannel channel = AndroidNotificationChannel(
-        message.notification!.android!.channelId.toString(),
-        message.notification!.android!.channelId.toString(),
-        importance: Importance.max,
-        showBadge: true,
-        playSound: true,
-        // sound: const RawResourceAndroidNotificationSound('jetsons_doorbell')
-        );
+      message.notification!.android!.channelId.toString(),
+      message.notification!.android!.channelId.toString(),
+      importance: Importance.max,
+      showBadge: true,
+      playSound: true,
+      // sound: const RawResourceAndroidNotificationSound('jetsons_doorbell')
+    );
 
     AndroidNotificationDetails androidNotificationDetails =
         AndroidNotificationDetails(

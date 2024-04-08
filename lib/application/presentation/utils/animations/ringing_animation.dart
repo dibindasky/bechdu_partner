@@ -4,7 +4,8 @@ class BellIconAnimation extends StatefulWidget {
   final Widget child;
   final bool animate;
 
-  const BellIconAnimation({super.key, required this.child, this.animate = false});
+  const BellIconAnimation(
+      {super.key, required this.child, this.animate = false});
 
   @override
   // ignore: library_private_types_in_public_api
@@ -20,7 +21,7 @@ class _BellIconAnimationState extends State<BellIconAnimation>
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration:const Duration(milliseconds: 1000),
+      duration: const Duration(milliseconds: 1000),
     )..repeat(reverse: true);
   }
 

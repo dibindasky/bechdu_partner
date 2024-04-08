@@ -27,7 +27,9 @@ class RouteGenerator {
       case Routes.signInPage:
         return MaterialPageRoute(builder: (ctx) => const ScreenLogin());
       case Routes.otpPage:
-        return MaterialPageRoute(builder: (ctx) => const ScreenOTP());
+        return arguments is bool
+            ? MaterialPageRoute(builder: (ctx) => ScreenOTP(delete: arguments))
+            : _errorScreen();
       case Routes.addPickUpPage:
         return MaterialPageRoute(
             builder: (ctx) => const ScreenAddPickUpPartner());

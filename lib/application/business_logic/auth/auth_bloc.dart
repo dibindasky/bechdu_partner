@@ -3,6 +3,7 @@ import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:bechdu_partner/data/feature/device_informations.dart';
 import 'package:bechdu_partner/data/firebase_api/firebase_api.dart';
 import 'package:bechdu_partner/data/secure_storage/secure_storage.dart';
+import 'package:bechdu_partner/domain/model/auth/otp_model/otp_model.dart';
 import 'package:bechdu_partner/domain/model/auth/phone_number_model/phone_number_model.dart';
 import 'package:bechdu_partner/domain/model/auth/verify_otp_model/verify_otp_model.dart';
 import 'package:bechdu_partner/domain/model/token/token_model.dart';
@@ -28,10 +29,40 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<Log>(log);
     on<LogOut>(logOut);
     on<Reset>(reset);
+    on<DeleteAccount>(deleteAccount);
+    on<VerifyDeleteAccount>(verifyDeleteAccount);
   }
 
   FutureOr<void> reset(Reset event, emit) {
     emit(AuthState.initial());
+  }
+
+  FutureOr<void> deleteAccount(DeleteAccount event, emit) async {
+    emit(AuthState.initial().copyWith(
+        deleteLoading: true, deleteSuccess: false, deteteOtpSend: false));
+    final result = await authRepo.sendOtp(
+        phoneNumberModel:
+            PhoneNumberModel(mobileNumber: await SharedPref.getPhone()));
+    result.fold(
+        (l) => emit(state.copyWith(
+            message: l.message, hasError: true, deleteLoading: false)),
+        (r) => emit(state.copyWith(
+            message: r.message, deleteLoading: false, deteteOtpSend: true)));
+  }
+
+  FutureOr<void> verifyDeleteAccount(VerifyDeleteAccount event, emit) async {
+    emit(AuthState.initial().copyWith(
+        deleteLoading: true, deleteSuccess: false, deteteOtpSend: false));
+    final phone = await SharedPref.getPhone();
+    final result =
+        await authRepo.blockPartner(otpModel: event.otpModel, phone: phone!);
+    result.fold(
+        (l) => emit(state.copyWith(
+            message: l.message, hasError: true, deleteLoading: false)), (r) {
+      SharedPref.clearLogin();
+      return emit(state.copyWith(
+          message: r.message, deleteLoading: false, deleteSuccess: true));
+    });
   }
 
   FutureOr<void> sendOtp(SendOtp event, emit) async {
@@ -61,7 +92,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   FutureOr<void> logOut(LogOut event, emit) async {
-    await SharedPref.clearLogin();
+    final phone = await SharedPref.getPhone();
+    authRepo.logOut(phone: phone!);
+    SharedPref.clearLogin();
   }
 
   FutureOr<void> verifyOtp(VerifyOtp event, emit) async {

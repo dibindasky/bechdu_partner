@@ -95,7 +95,8 @@ class LoginPageSecondHalf extends StatelessWidget {
                 }
                 if (state.otpSend) {
                   Navigator.pop(context);
-                  Navigator.pushNamed(context, Routes.otpPage);
+                  Navigator.pushNamed(context, Routes.otpPage,
+                      arguments: false);
                 }
                 if (state.message != null) {
                   showSnackBar(
@@ -113,7 +114,9 @@ class LoginPageSecondHalf extends StatelessWidget {
                     backgroundColor: kBluePrimary,
                     text: 'Send OTP',
                     onTap: () {
-                      if (mobileKey.currentState!.validate()) {
+                      if (mobileKey.currentState!.validate() &&
+                          !state.isLoading) {
+                        // request will not be sent again even if user tap send otp while loading
                         context.read<AuthBloc>().add(
                               AuthEvent.sendOtp(
                                 phoneNumberModel: PhoneNumberModel(

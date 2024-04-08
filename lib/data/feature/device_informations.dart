@@ -7,8 +7,7 @@ class DeviceInformation {
     DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
     if (Platform.isAndroid) {
       AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
-      print(
-          'Running on ${androidInfo.model} ${androidInfo.id}');
+      print('Running on ${androidInfo.model} ${androidInfo.id}');
       return androidInfo.model + androidInfo.id;
     } else {
       IosDeviceInfo iosInfo = await deviceInfo.iosInfo;

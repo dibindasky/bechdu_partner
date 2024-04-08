@@ -24,6 +24,8 @@ mixin _$AuthEvent {
     required TResult Function() log,
     required TResult Function() logOut,
     required TResult Function() reset,
+    required TResult Function() deleteAccount,
+    required TResult Function(OtpModel otpModel) verifyDeleteAccount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -34,6 +36,8 @@ mixin _$AuthEvent {
     TResult? Function()? log,
     TResult? Function()? logOut,
     TResult? Function()? reset,
+    TResult? Function()? deleteAccount,
+    TResult? Function(OtpModel otpModel)? verifyDeleteAccount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,6 +48,8 @@ mixin _$AuthEvent {
     TResult Function()? log,
     TResult Function()? logOut,
     TResult Function()? reset,
+    TResult Function()? deleteAccount,
+    TResult Function(OtpModel otpModel)? verifyDeleteAccount,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -55,6 +61,8 @@ mixin _$AuthEvent {
     required TResult Function(Log value) log,
     required TResult Function(LogOut value) logOut,
     required TResult Function(Reset value) reset,
+    required TResult Function(DeleteAccount value) deleteAccount,
+    required TResult Function(VerifyDeleteAccount value) verifyDeleteAccount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,6 +73,8 @@ mixin _$AuthEvent {
     TResult? Function(Log value)? log,
     TResult? Function(LogOut value)? logOut,
     TResult? Function(Reset value)? reset,
+    TResult? Function(DeleteAccount value)? deleteAccount,
+    TResult? Function(VerifyDeleteAccount value)? verifyDeleteAccount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -75,6 +85,8 @@ mixin _$AuthEvent {
     TResult Function(Log value)? log,
     TResult Function(LogOut value)? logOut,
     TResult Function(Reset value)? reset,
+    TResult Function(DeleteAccount value)? deleteAccount,
+    TResult Function(VerifyDeleteAccount value)? verifyDeleteAccount,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -168,6 +180,8 @@ class _$SendOtpImpl implements SendOtp {
     required TResult Function() log,
     required TResult Function() logOut,
     required TResult Function() reset,
+    required TResult Function() deleteAccount,
+    required TResult Function(OtpModel otpModel) verifyDeleteAccount,
   }) {
     return sendOtp(phoneNumberModel);
   }
@@ -181,6 +195,8 @@ class _$SendOtpImpl implements SendOtp {
     TResult? Function()? log,
     TResult? Function()? logOut,
     TResult? Function()? reset,
+    TResult? Function()? deleteAccount,
+    TResult? Function(OtpModel otpModel)? verifyDeleteAccount,
   }) {
     return sendOtp?.call(phoneNumberModel);
   }
@@ -194,6 +210,8 @@ class _$SendOtpImpl implements SendOtp {
     TResult Function()? log,
     TResult Function()? logOut,
     TResult Function()? reset,
+    TResult Function()? deleteAccount,
+    TResult Function(OtpModel otpModel)? verifyDeleteAccount,
     required TResult orElse(),
   }) {
     if (sendOtp != null) {
@@ -211,6 +229,8 @@ class _$SendOtpImpl implements SendOtp {
     required TResult Function(Log value) log,
     required TResult Function(LogOut value) logOut,
     required TResult Function(Reset value) reset,
+    required TResult Function(DeleteAccount value) deleteAccount,
+    required TResult Function(VerifyDeleteAccount value) verifyDeleteAccount,
   }) {
     return sendOtp(this);
   }
@@ -224,6 +244,8 @@ class _$SendOtpImpl implements SendOtp {
     TResult? Function(Log value)? log,
     TResult? Function(LogOut value)? logOut,
     TResult? Function(Reset value)? reset,
+    TResult? Function(DeleteAccount value)? deleteAccount,
+    TResult? Function(VerifyDeleteAccount value)? verifyDeleteAccount,
   }) {
     return sendOtp?.call(this);
   }
@@ -237,6 +259,8 @@ class _$SendOtpImpl implements SendOtp {
     TResult Function(Log value)? log,
     TResult Function(LogOut value)? logOut,
     TResult Function(Reset value)? reset,
+    TResult Function(DeleteAccount value)? deleteAccount,
+    TResult Function(VerifyDeleteAccount value)? verifyDeleteAccount,
     required TResult orElse(),
   }) {
     if (sendOtp != null) {
@@ -327,6 +351,8 @@ class _$VerifyOtpImpl implements VerifyOtp {
     required TResult Function() log,
     required TResult Function() logOut,
     required TResult Function() reset,
+    required TResult Function() deleteAccount,
+    required TResult Function(OtpModel otpModel) verifyDeleteAccount,
   }) {
     return verifyOtp(verifyOtpModel);
   }
@@ -340,6 +366,8 @@ class _$VerifyOtpImpl implements VerifyOtp {
     TResult? Function()? log,
     TResult? Function()? logOut,
     TResult? Function()? reset,
+    TResult? Function()? deleteAccount,
+    TResult? Function(OtpModel otpModel)? verifyDeleteAccount,
   }) {
     return verifyOtp?.call(verifyOtpModel);
   }
@@ -353,6 +381,8 @@ class _$VerifyOtpImpl implements VerifyOtp {
     TResult Function()? log,
     TResult Function()? logOut,
     TResult Function()? reset,
+    TResult Function()? deleteAccount,
+    TResult Function(OtpModel otpModel)? verifyDeleteAccount,
     required TResult orElse(),
   }) {
     if (verifyOtp != null) {
@@ -370,6 +400,8 @@ class _$VerifyOtpImpl implements VerifyOtp {
     required TResult Function(Log value) log,
     required TResult Function(LogOut value) logOut,
     required TResult Function(Reset value) reset,
+    required TResult Function(DeleteAccount value) deleteAccount,
+    required TResult Function(VerifyDeleteAccount value) verifyDeleteAccount,
   }) {
     return verifyOtp(this);
   }
@@ -383,6 +415,8 @@ class _$VerifyOtpImpl implements VerifyOtp {
     TResult? Function(Log value)? log,
     TResult? Function(LogOut value)? logOut,
     TResult? Function(Reset value)? reset,
+    TResult? Function(DeleteAccount value)? deleteAccount,
+    TResult? Function(VerifyDeleteAccount value)? verifyDeleteAccount,
   }) {
     return verifyOtp?.call(this);
   }
@@ -396,6 +430,8 @@ class _$VerifyOtpImpl implements VerifyOtp {
     TResult Function(Log value)? log,
     TResult Function(LogOut value)? logOut,
     TResult Function(Reset value)? reset,
+    TResult Function(DeleteAccount value)? deleteAccount,
+    TResult Function(VerifyDeleteAccount value)? verifyDeleteAccount,
     required TResult orElse(),
   }) {
     if (verifyOtp != null) {
@@ -459,6 +495,8 @@ class _$AgreePolicyImpl implements AgreePolicy {
     required TResult Function() log,
     required TResult Function() logOut,
     required TResult Function() reset,
+    required TResult Function() deleteAccount,
+    required TResult Function(OtpModel otpModel) verifyDeleteAccount,
   }) {
     return agreePolicy();
   }
@@ -472,6 +510,8 @@ class _$AgreePolicyImpl implements AgreePolicy {
     TResult? Function()? log,
     TResult? Function()? logOut,
     TResult? Function()? reset,
+    TResult? Function()? deleteAccount,
+    TResult? Function(OtpModel otpModel)? verifyDeleteAccount,
   }) {
     return agreePolicy?.call();
   }
@@ -485,6 +525,8 @@ class _$AgreePolicyImpl implements AgreePolicy {
     TResult Function()? log,
     TResult Function()? logOut,
     TResult Function()? reset,
+    TResult Function()? deleteAccount,
+    TResult Function(OtpModel otpModel)? verifyDeleteAccount,
     required TResult orElse(),
   }) {
     if (agreePolicy != null) {
@@ -502,6 +544,8 @@ class _$AgreePolicyImpl implements AgreePolicy {
     required TResult Function(Log value) log,
     required TResult Function(LogOut value) logOut,
     required TResult Function(Reset value) reset,
+    required TResult Function(DeleteAccount value) deleteAccount,
+    required TResult Function(VerifyDeleteAccount value) verifyDeleteAccount,
   }) {
     return agreePolicy(this);
   }
@@ -515,6 +559,8 @@ class _$AgreePolicyImpl implements AgreePolicy {
     TResult? Function(Log value)? log,
     TResult? Function(LogOut value)? logOut,
     TResult? Function(Reset value)? reset,
+    TResult? Function(DeleteAccount value)? deleteAccount,
+    TResult? Function(VerifyDeleteAccount value)? verifyDeleteAccount,
   }) {
     return agreePolicy?.call(this);
   }
@@ -528,6 +574,8 @@ class _$AgreePolicyImpl implements AgreePolicy {
     TResult Function(Log value)? log,
     TResult Function(LogOut value)? logOut,
     TResult Function(Reset value)? reset,
+    TResult Function(DeleteAccount value)? deleteAccount,
+    TResult Function(VerifyDeleteAccount value)? verifyDeleteAccount,
     required TResult orElse(),
   }) {
     if (agreePolicy != null) {
@@ -583,6 +631,8 @@ class _$LogImpl implements Log {
     required TResult Function() log,
     required TResult Function() logOut,
     required TResult Function() reset,
+    required TResult Function() deleteAccount,
+    required TResult Function(OtpModel otpModel) verifyDeleteAccount,
   }) {
     return log();
   }
@@ -596,6 +646,8 @@ class _$LogImpl implements Log {
     TResult? Function()? log,
     TResult? Function()? logOut,
     TResult? Function()? reset,
+    TResult? Function()? deleteAccount,
+    TResult? Function(OtpModel otpModel)? verifyDeleteAccount,
   }) {
     return log?.call();
   }
@@ -609,6 +661,8 @@ class _$LogImpl implements Log {
     TResult Function()? log,
     TResult Function()? logOut,
     TResult Function()? reset,
+    TResult Function()? deleteAccount,
+    TResult Function(OtpModel otpModel)? verifyDeleteAccount,
     required TResult orElse(),
   }) {
     if (log != null) {
@@ -626,6 +680,8 @@ class _$LogImpl implements Log {
     required TResult Function(Log value) log,
     required TResult Function(LogOut value) logOut,
     required TResult Function(Reset value) reset,
+    required TResult Function(DeleteAccount value) deleteAccount,
+    required TResult Function(VerifyDeleteAccount value) verifyDeleteAccount,
   }) {
     return log(this);
   }
@@ -639,6 +695,8 @@ class _$LogImpl implements Log {
     TResult? Function(Log value)? log,
     TResult? Function(LogOut value)? logOut,
     TResult? Function(Reset value)? reset,
+    TResult? Function(DeleteAccount value)? deleteAccount,
+    TResult? Function(VerifyDeleteAccount value)? verifyDeleteAccount,
   }) {
     return log?.call(this);
   }
@@ -652,6 +710,8 @@ class _$LogImpl implements Log {
     TResult Function(Log value)? log,
     TResult Function(LogOut value)? logOut,
     TResult Function(Reset value)? reset,
+    TResult Function(DeleteAccount value)? deleteAccount,
+    TResult Function(VerifyDeleteAccount value)? verifyDeleteAccount,
     required TResult orElse(),
   }) {
     if (log != null) {
@@ -709,6 +769,8 @@ class _$LogOutImpl implements LogOut {
     required TResult Function() log,
     required TResult Function() logOut,
     required TResult Function() reset,
+    required TResult Function() deleteAccount,
+    required TResult Function(OtpModel otpModel) verifyDeleteAccount,
   }) {
     return logOut();
   }
@@ -722,6 +784,8 @@ class _$LogOutImpl implements LogOut {
     TResult? Function()? log,
     TResult? Function()? logOut,
     TResult? Function()? reset,
+    TResult? Function()? deleteAccount,
+    TResult? Function(OtpModel otpModel)? verifyDeleteAccount,
   }) {
     return logOut?.call();
   }
@@ -735,6 +799,8 @@ class _$LogOutImpl implements LogOut {
     TResult Function()? log,
     TResult Function()? logOut,
     TResult Function()? reset,
+    TResult Function()? deleteAccount,
+    TResult Function(OtpModel otpModel)? verifyDeleteAccount,
     required TResult orElse(),
   }) {
     if (logOut != null) {
@@ -752,6 +818,8 @@ class _$LogOutImpl implements LogOut {
     required TResult Function(Log value) log,
     required TResult Function(LogOut value) logOut,
     required TResult Function(Reset value) reset,
+    required TResult Function(DeleteAccount value) deleteAccount,
+    required TResult Function(VerifyDeleteAccount value) verifyDeleteAccount,
   }) {
     return logOut(this);
   }
@@ -765,6 +833,8 @@ class _$LogOutImpl implements LogOut {
     TResult? Function(Log value)? log,
     TResult? Function(LogOut value)? logOut,
     TResult? Function(Reset value)? reset,
+    TResult? Function(DeleteAccount value)? deleteAccount,
+    TResult? Function(VerifyDeleteAccount value)? verifyDeleteAccount,
   }) {
     return logOut?.call(this);
   }
@@ -778,6 +848,8 @@ class _$LogOutImpl implements LogOut {
     TResult Function(Log value)? log,
     TResult Function(LogOut value)? logOut,
     TResult Function(Reset value)? reset,
+    TResult Function(DeleteAccount value)? deleteAccount,
+    TResult Function(VerifyDeleteAccount value)? verifyDeleteAccount,
     required TResult orElse(),
   }) {
     if (logOut != null) {
@@ -835,6 +907,8 @@ class _$ResetImpl implements Reset {
     required TResult Function() log,
     required TResult Function() logOut,
     required TResult Function() reset,
+    required TResult Function() deleteAccount,
+    required TResult Function(OtpModel otpModel) verifyDeleteAccount,
   }) {
     return reset();
   }
@@ -848,6 +922,8 @@ class _$ResetImpl implements Reset {
     TResult? Function()? log,
     TResult? Function()? logOut,
     TResult? Function()? reset,
+    TResult? Function()? deleteAccount,
+    TResult? Function(OtpModel otpModel)? verifyDeleteAccount,
   }) {
     return reset?.call();
   }
@@ -861,6 +937,8 @@ class _$ResetImpl implements Reset {
     TResult Function()? log,
     TResult Function()? logOut,
     TResult Function()? reset,
+    TResult Function()? deleteAccount,
+    TResult Function(OtpModel otpModel)? verifyDeleteAccount,
     required TResult orElse(),
   }) {
     if (reset != null) {
@@ -878,6 +956,8 @@ class _$ResetImpl implements Reset {
     required TResult Function(Log value) log,
     required TResult Function(LogOut value) logOut,
     required TResult Function(Reset value) reset,
+    required TResult Function(DeleteAccount value) deleteAccount,
+    required TResult Function(VerifyDeleteAccount value) verifyDeleteAccount,
   }) {
     return reset(this);
   }
@@ -891,6 +971,8 @@ class _$ResetImpl implements Reset {
     TResult? Function(Log value)? log,
     TResult? Function(LogOut value)? logOut,
     TResult? Function(Reset value)? reset,
+    TResult? Function(DeleteAccount value)? deleteAccount,
+    TResult? Function(VerifyDeleteAccount value)? verifyDeleteAccount,
   }) {
     return reset?.call(this);
   }
@@ -904,6 +986,8 @@ class _$ResetImpl implements Reset {
     TResult Function(Log value)? log,
     TResult Function(LogOut value)? logOut,
     TResult Function(Reset value)? reset,
+    TResult Function(DeleteAccount value)? deleteAccount,
+    TResult Function(VerifyDeleteAccount value)? verifyDeleteAccount,
     required TResult orElse(),
   }) {
     if (reset != null) {
@@ -918,6 +1002,316 @@ abstract class Reset implements AuthEvent {
 }
 
 /// @nodoc
+abstract class _$$DeleteAccountImplCopyWith<$Res> {
+  factory _$$DeleteAccountImplCopyWith(
+          _$DeleteAccountImpl value, $Res Function(_$DeleteAccountImpl) then) =
+      __$$DeleteAccountImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$DeleteAccountImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$DeleteAccountImpl>
+    implements _$$DeleteAccountImplCopyWith<$Res> {
+  __$$DeleteAccountImplCopyWithImpl(
+      _$DeleteAccountImpl _value, $Res Function(_$DeleteAccountImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$DeleteAccountImpl implements DeleteAccount {
+  const _$DeleteAccountImpl();
+
+  @override
+  String toString() {
+    return 'AuthEvent.deleteAccount()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$DeleteAccountImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(PhoneNumberModel phoneNumberModel) sendOtp,
+    required TResult Function(VerifyOtpModel verifyOtpModel) verifyOtp,
+    required TResult Function() agreePolicy,
+    required TResult Function() log,
+    required TResult Function() logOut,
+    required TResult Function() reset,
+    required TResult Function() deleteAccount,
+    required TResult Function(OtpModel otpModel) verifyDeleteAccount,
+  }) {
+    return deleteAccount();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(PhoneNumberModel phoneNumberModel)? sendOtp,
+    TResult? Function(VerifyOtpModel verifyOtpModel)? verifyOtp,
+    TResult? Function()? agreePolicy,
+    TResult? Function()? log,
+    TResult? Function()? logOut,
+    TResult? Function()? reset,
+    TResult? Function()? deleteAccount,
+    TResult? Function(OtpModel otpModel)? verifyDeleteAccount,
+  }) {
+    return deleteAccount?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(PhoneNumberModel phoneNumberModel)? sendOtp,
+    TResult Function(VerifyOtpModel verifyOtpModel)? verifyOtp,
+    TResult Function()? agreePolicy,
+    TResult Function()? log,
+    TResult Function()? logOut,
+    TResult Function()? reset,
+    TResult Function()? deleteAccount,
+    TResult Function(OtpModel otpModel)? verifyDeleteAccount,
+    required TResult orElse(),
+  }) {
+    if (deleteAccount != null) {
+      return deleteAccount();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SendOtp value) sendOtp,
+    required TResult Function(VerifyOtp value) verifyOtp,
+    required TResult Function(AgreePolicy value) agreePolicy,
+    required TResult Function(Log value) log,
+    required TResult Function(LogOut value) logOut,
+    required TResult Function(Reset value) reset,
+    required TResult Function(DeleteAccount value) deleteAccount,
+    required TResult Function(VerifyDeleteAccount value) verifyDeleteAccount,
+  }) {
+    return deleteAccount(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SendOtp value)? sendOtp,
+    TResult? Function(VerifyOtp value)? verifyOtp,
+    TResult? Function(AgreePolicy value)? agreePolicy,
+    TResult? Function(Log value)? log,
+    TResult? Function(LogOut value)? logOut,
+    TResult? Function(Reset value)? reset,
+    TResult? Function(DeleteAccount value)? deleteAccount,
+    TResult? Function(VerifyDeleteAccount value)? verifyDeleteAccount,
+  }) {
+    return deleteAccount?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SendOtp value)? sendOtp,
+    TResult Function(VerifyOtp value)? verifyOtp,
+    TResult Function(AgreePolicy value)? agreePolicy,
+    TResult Function(Log value)? log,
+    TResult Function(LogOut value)? logOut,
+    TResult Function(Reset value)? reset,
+    TResult Function(DeleteAccount value)? deleteAccount,
+    TResult Function(VerifyDeleteAccount value)? verifyDeleteAccount,
+    required TResult orElse(),
+  }) {
+    if (deleteAccount != null) {
+      return deleteAccount(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteAccount implements AuthEvent {
+  const factory DeleteAccount() = _$DeleteAccountImpl;
+}
+
+/// @nodoc
+abstract class _$$VerifyDeleteAccountImplCopyWith<$Res> {
+  factory _$$VerifyDeleteAccountImplCopyWith(_$VerifyDeleteAccountImpl value,
+          $Res Function(_$VerifyDeleteAccountImpl) then) =
+      __$$VerifyDeleteAccountImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({OtpModel otpModel});
+}
+
+/// @nodoc
+class __$$VerifyDeleteAccountImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$VerifyDeleteAccountImpl>
+    implements _$$VerifyDeleteAccountImplCopyWith<$Res> {
+  __$$VerifyDeleteAccountImplCopyWithImpl(_$VerifyDeleteAccountImpl _value,
+      $Res Function(_$VerifyDeleteAccountImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? otpModel = null,
+  }) {
+    return _then(_$VerifyDeleteAccountImpl(
+      otpModel: null == otpModel
+          ? _value.otpModel
+          : otpModel // ignore: cast_nullable_to_non_nullable
+              as OtpModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$VerifyDeleteAccountImpl implements VerifyDeleteAccount {
+  const _$VerifyDeleteAccountImpl({required this.otpModel});
+
+  @override
+  final OtpModel otpModel;
+
+  @override
+  String toString() {
+    return 'AuthEvent.verifyDeleteAccount(otpModel: $otpModel)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$VerifyDeleteAccountImpl &&
+            (identical(other.otpModel, otpModel) ||
+                other.otpModel == otpModel));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, otpModel);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$VerifyDeleteAccountImplCopyWith<_$VerifyDeleteAccountImpl> get copyWith =>
+      __$$VerifyDeleteAccountImplCopyWithImpl<_$VerifyDeleteAccountImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(PhoneNumberModel phoneNumberModel) sendOtp,
+    required TResult Function(VerifyOtpModel verifyOtpModel) verifyOtp,
+    required TResult Function() agreePolicy,
+    required TResult Function() log,
+    required TResult Function() logOut,
+    required TResult Function() reset,
+    required TResult Function() deleteAccount,
+    required TResult Function(OtpModel otpModel) verifyDeleteAccount,
+  }) {
+    return verifyDeleteAccount(otpModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(PhoneNumberModel phoneNumberModel)? sendOtp,
+    TResult? Function(VerifyOtpModel verifyOtpModel)? verifyOtp,
+    TResult? Function()? agreePolicy,
+    TResult? Function()? log,
+    TResult? Function()? logOut,
+    TResult? Function()? reset,
+    TResult? Function()? deleteAccount,
+    TResult? Function(OtpModel otpModel)? verifyDeleteAccount,
+  }) {
+    return verifyDeleteAccount?.call(otpModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(PhoneNumberModel phoneNumberModel)? sendOtp,
+    TResult Function(VerifyOtpModel verifyOtpModel)? verifyOtp,
+    TResult Function()? agreePolicy,
+    TResult Function()? log,
+    TResult Function()? logOut,
+    TResult Function()? reset,
+    TResult Function()? deleteAccount,
+    TResult Function(OtpModel otpModel)? verifyDeleteAccount,
+    required TResult orElse(),
+  }) {
+    if (verifyDeleteAccount != null) {
+      return verifyDeleteAccount(otpModel);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SendOtp value) sendOtp,
+    required TResult Function(VerifyOtp value) verifyOtp,
+    required TResult Function(AgreePolicy value) agreePolicy,
+    required TResult Function(Log value) log,
+    required TResult Function(LogOut value) logOut,
+    required TResult Function(Reset value) reset,
+    required TResult Function(DeleteAccount value) deleteAccount,
+    required TResult Function(VerifyDeleteAccount value) verifyDeleteAccount,
+  }) {
+    return verifyDeleteAccount(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SendOtp value)? sendOtp,
+    TResult? Function(VerifyOtp value)? verifyOtp,
+    TResult? Function(AgreePolicy value)? agreePolicy,
+    TResult? Function(Log value)? log,
+    TResult? Function(LogOut value)? logOut,
+    TResult? Function(Reset value)? reset,
+    TResult? Function(DeleteAccount value)? deleteAccount,
+    TResult? Function(VerifyDeleteAccount value)? verifyDeleteAccount,
+  }) {
+    return verifyDeleteAccount?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SendOtp value)? sendOtp,
+    TResult Function(VerifyOtp value)? verifyOtp,
+    TResult Function(AgreePolicy value)? agreePolicy,
+    TResult Function(Log value)? log,
+    TResult Function(LogOut value)? logOut,
+    TResult Function(Reset value)? reset,
+    TResult Function(DeleteAccount value)? deleteAccount,
+    TResult Function(VerifyDeleteAccount value)? verifyDeleteAccount,
+    required TResult orElse(),
+  }) {
+    if (verifyDeleteAccount != null) {
+      return verifyDeleteAccount(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class VerifyDeleteAccount implements AuthEvent {
+  const factory VerifyDeleteAccount({required final OtpModel otpModel}) =
+      _$VerifyDeleteAccountImpl;
+
+  OtpModel get otpModel;
+  @JsonKey(ignore: true)
+  _$$VerifyDeleteAccountImplCopyWith<_$VerifyDeleteAccountImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$AuthState {
   bool get isLoading => throw _privateConstructorUsedError;
   bool get hasError => throw _privateConstructorUsedError;
@@ -927,6 +1321,9 @@ mixin _$AuthState {
   bool get role => throw _privateConstructorUsedError;
   bool get agreePolicy => throw _privateConstructorUsedError;
   bool get agreePolicyError => throw _privateConstructorUsedError;
+  bool get deleteLoading => throw _privateConstructorUsedError;
+  bool get deteteOtpSend => throw _privateConstructorUsedError;
+  bool get deleteSuccess => throw _privateConstructorUsedError;
   String? get message => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -948,6 +1345,9 @@ abstract class $AuthStateCopyWith<$Res> {
       bool role,
       bool agreePolicy,
       bool agreePolicyError,
+      bool deleteLoading,
+      bool deteteOtpSend,
+      bool deleteSuccess,
       String? message});
 }
 
@@ -972,6 +1372,9 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
     Object? role = null,
     Object? agreePolicy = null,
     Object? agreePolicyError = null,
+    Object? deleteLoading = null,
+    Object? deteteOtpSend = null,
+    Object? deleteSuccess = null,
     Object? message = freezed,
   }) {
     return _then(_value.copyWith(
@@ -1007,6 +1410,18 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
           ? _value.agreePolicyError
           : agreePolicyError // ignore: cast_nullable_to_non_nullable
               as bool,
+      deleteLoading: null == deleteLoading
+          ? _value.deleteLoading
+          : deleteLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      deteteOtpSend: null == deteteOtpSend
+          ? _value.deteteOtpSend
+          : deteteOtpSend // ignore: cast_nullable_to_non_nullable
+              as bool,
+      deleteSuccess: null == deleteSuccess
+          ? _value.deleteSuccess
+          : deleteSuccess // ignore: cast_nullable_to_non_nullable
+              as bool,
       message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -1032,6 +1447,9 @@ abstract class _$$InitialImplCopyWith<$Res>
       bool role,
       bool agreePolicy,
       bool agreePolicyError,
+      bool deleteLoading,
+      bool deteteOtpSend,
+      bool deleteSuccess,
       String? message});
 }
 
@@ -1054,6 +1472,9 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? role = null,
     Object? agreePolicy = null,
     Object? agreePolicyError = null,
+    Object? deleteLoading = null,
+    Object? deteteOtpSend = null,
+    Object? deleteSuccess = null,
     Object? message = freezed,
   }) {
     return _then(_$InitialImpl(
@@ -1089,6 +1510,18 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.agreePolicyError
           : agreePolicyError // ignore: cast_nullable_to_non_nullable
               as bool,
+      deleteLoading: null == deleteLoading
+          ? _value.deleteLoading
+          : deleteLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      deteteOtpSend: null == deteteOtpSend
+          ? _value.deteteOtpSend
+          : deteteOtpSend // ignore: cast_nullable_to_non_nullable
+              as bool,
+      deleteSuccess: null == deleteSuccess
+          ? _value.deleteSuccess
+          : deleteSuccess // ignore: cast_nullable_to_non_nullable
+              as bool,
       message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -1109,6 +1542,9 @@ class _$InitialImpl implements _Initial {
       required this.role,
       required this.agreePolicy,
       required this.agreePolicyError,
+      required this.deleteLoading,
+      required this.deteteOtpSend,
+      required this.deleteSuccess,
       this.message});
 
   @override
@@ -1128,11 +1564,17 @@ class _$InitialImpl implements _Initial {
   @override
   final bool agreePolicyError;
   @override
+  final bool deleteLoading;
+  @override
+  final bool deteteOtpSend;
+  @override
+  final bool deleteSuccess;
+  @override
   final String? message;
 
   @override
   String toString() {
-    return 'AuthState(isLoading: $isLoading, hasError: $hasError, otpSend: $otpSend, otpVerificationError: $otpVerificationError, isLogin: $isLogin, role: $role, agreePolicy: $agreePolicy, agreePolicyError: $agreePolicyError, message: $message)';
+    return 'AuthState(isLoading: $isLoading, hasError: $hasError, otpSend: $otpSend, otpVerificationError: $otpVerificationError, isLogin: $isLogin, role: $role, agreePolicy: $agreePolicy, agreePolicyError: $agreePolicyError, deleteLoading: $deleteLoading, deteteOtpSend: $deteteOtpSend, deleteSuccess: $deleteSuccess, message: $message)';
   }
 
   @override
@@ -1153,6 +1595,12 @@ class _$InitialImpl implements _Initial {
                 other.agreePolicy == agreePolicy) &&
             (identical(other.agreePolicyError, agreePolicyError) ||
                 other.agreePolicyError == agreePolicyError) &&
+            (identical(other.deleteLoading, deleteLoading) ||
+                other.deleteLoading == deleteLoading) &&
+            (identical(other.deteteOtpSend, deteteOtpSend) ||
+                other.deteteOtpSend == deteteOtpSend) &&
+            (identical(other.deleteSuccess, deleteSuccess) ||
+                other.deleteSuccess == deleteSuccess) &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -1167,6 +1615,9 @@ class _$InitialImpl implements _Initial {
       role,
       agreePolicy,
       agreePolicyError,
+      deleteLoading,
+      deteteOtpSend,
+      deleteSuccess,
       message);
 
   @JsonKey(ignore: true)
@@ -1186,6 +1637,9 @@ abstract class _Initial implements AuthState {
       required final bool role,
       required final bool agreePolicy,
       required final bool agreePolicyError,
+      required final bool deleteLoading,
+      required final bool deteteOtpSend,
+      required final bool deleteSuccess,
       final String? message}) = _$InitialImpl;
 
   @override
@@ -1204,6 +1658,12 @@ abstract class _Initial implements AuthState {
   bool get agreePolicy;
   @override
   bool get agreePolicyError;
+  @override
+  bool get deleteLoading;
+  @override
+  bool get deteteOtpSend;
+  @override
+  bool get deleteSuccess;
   @override
   String? get message;
   @override

@@ -42,7 +42,7 @@ class InvoiceMaker {
 //     await FileSaver.saveFile(
 //       '$fileName.pdf',
 //       pdfBytes,
-//       'application/pdf', 
+//       'application/pdf',
 //       DirectoryPaths.downloads,
 //     );
 //     print('PDF saved successfully!');

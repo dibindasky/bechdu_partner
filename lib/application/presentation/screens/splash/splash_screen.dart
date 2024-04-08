@@ -17,7 +17,6 @@ class ScreenSplash extends StatefulWidget {
 }
 
 class _ScreenSplashState extends State<ScreenSplash> {
-
   NotificationServices notificationServices = NotificationServices();
 
   @override
@@ -59,7 +58,7 @@ class _ScreenSplashState extends State<ScreenSplash> {
 
   void _navigateToSignInPage(
       BuildContext context, bool isLogin, bool role) async {
-    print("partner => $role");
+    print("is partner => $role");
     Future.delayed(const Duration(milliseconds: 2000), () {
       partner = role;
       Navigator.pushReplacementNamed(

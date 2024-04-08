@@ -10,4 +10,6 @@ class AuthEvent with _$AuthEvent {
   const factory AuthEvent.log() = Log;
   const factory AuthEvent.logOut() = LogOut;
   const factory AuthEvent.reset() = Reset;
+  const factory AuthEvent.deleteAccount() = DeleteAccount;
+  const factory AuthEvent.verifyDeleteAccount({required OtpModel otpModel}) = VerifyDeleteAccount;
 }

@@ -5,6 +5,7 @@ import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:bechdu_partner/application/presentation/utils/refresh_indicator/refresh_indicator.dart';
 import 'package:bechdu_partner/application/presentation/utils/shimmer/shimmer_loader.dart';
+import 'package:bechdu_partner/application/presentation/utils/time/time_maker.dart';
 import 'package:bechdu_partner/domain/model/order/get_partner_order_response_model/order_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,6 +26,7 @@ class _ScreenNotificationState extends State<ScreenNotification> {
         context
             .read<NotificationBloc>()
             .add(const NotificationEvent.getNotificationsNext());
+        context.read<OrdersBloc>().add(const OrdersEvent.refreshNewOrder());
       }
     });
     super.initState();
@@ -42,6 +44,7 @@ class _ScreenNotificationState extends State<ScreenNotification> {
       context
           .read<NotificationBloc>()
           .add(const NotificationEvent.getNotifications(reset: true));
+      context.read<OrdersBloc>().add(const OrdersEvent.getNewOrder(call: true));
     });
     return Scaffold(
       appBar: AppBar(
@@ -63,6 +66,9 @@ class _ScreenNotificationState extends State<ScreenNotification> {
                   onRefresh: () async {
                     context.read<NotificationBloc>().add(
                         const NotificationEvent.getNotifications(reset: true));
+                    context
+                        .read<OrdersBloc>()
+                        .add(const OrdersEvent.getNewOrder(call: true));
                     await Future.delayed(const Duration(seconds: 2));
                   },
                   child: ListView.separated(
@@ -75,6 +81,7 @@ class _ScreenNotificationState extends State<ScreenNotification> {
                             itemCount: 1, height: 100, width: sWidth);
                       }
                       final data = state.notificationList![index];
+                      print(data.type);
                       final color = getStatusColor(data.type ?? "");
                       return ListTile(
                         minLeadingWidth: 40,
@@ -112,7 +119,7 @@ class _ScreenNotificationState extends State<ScreenNotification> {
                             ),
                             kHeight5,
                             Text(
-                              data.timestamp.toString(),
+                              formatDateTime(data.timestamp!),
                               style: textHeadRegular1,
                             ),
                           ],
@@ -138,6 +145,9 @@ class _ScreenNotificationState extends State<ScreenNotification> {
                       context.read<NotificationBloc>().add(
                           const NotificationEvent.getNotifications(
                               reset: true));
+                      context
+                          .read<OrdersBloc>()
+                          .add(const OrdersEvent.getNewOrder(call: true));
                     });
               }
             },

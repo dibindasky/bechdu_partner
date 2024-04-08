@@ -127,7 +127,6 @@ void sizeFinder(BuildContext context) {
   sWidth = size.width > 450 ? 450 : size.width;
 }
 
-
 IconData getNotificationIcon(String status) {
   switch (status) {
     case "new":

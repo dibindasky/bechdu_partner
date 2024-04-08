@@ -1,8 +1,10 @@
 import 'dart:developer';
 
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
+import 'package:bechdu_partner/data/service/api_service.dart';
 import 'package:bechdu_partner/domain/core/api_endpoints/api_endpoints.dart';
 import 'package:bechdu_partner/domain/core/failure/failute.dart';
+import 'package:bechdu_partner/domain/model/auth/otp_model/otp_model.dart';
 import 'package:bechdu_partner/domain/model/auth/phone_number_model/phone_number_model.dart';
 import 'package:bechdu_partner/domain/model/auth/verify_otp_model/verify_otp_model.dart';
 import 'package:bechdu_partner/domain/model/auth/verify_otp_response_model/verify_otp_response_model.dart';
@@ -16,7 +18,9 @@ import 'package:injectable/injectable.dart';
 @LazySingleton(as: AuthRepo)
 @injectable
 class AuthService implements AuthRepo {
+  AuthService(this._apiService);
   final Dio _dio = Dio(BaseOptions(baseUrl: ApiEndPoints.baseUrl));
+  final ApiService _apiService;
   @override
   Future<Either<Failure, SuccessResponseModel>> sendOtp(
       {required PhoneNumberModel phoneNumberModel}) async {
@@ -54,6 +58,40 @@ class AuthService implements AuthRepo {
           message: ErrorResponseModel.fromJson(e.response?.data).error));
     } catch (e) {
       log('verify otp exception => $e');
+      return Left(Failure(message: errorMessage));
+    }
+  }
+
+  @override
+  Future<void> logOut({required String phone}) async {
+    try {
+      await _apiService.get(ApiEndPoints.logOut.replaceFirst('{phone}', phone));
+    } catch (e) {
+      log('exception in log out ==>> ${e.toString()}');
+    }
+  }
+
+  @override
+  Future<Either<Failure, SuccessResponseModel>> blockPartner(
+       {required OtpModel otpModel,required String phone}) async {
+    try {
+      final response = await _apiService.put(
+          ApiEndPoints.block.replaceFirst('{phone}', phone),
+          data: otpModel.toJson());
+      return Right(SuccessResponseModel.fromJson(response.data));
+    } on DioException catch (e) {
+      try {
+        log('blockPartner dio exception => $e');
+        log(e.response.toString());
+        ErrorResponseModel error =
+            ErrorResponseModel.fromJson(e.response?.data);
+        return Left(Failure(message: error.error ?? errorMessage));
+      } catch (e) {
+        log('blockPartner exception => $e');
+        return Left(Failure(message: errorMessage));
+      }
+    } catch (e) {
+      log('blockPartner exception => $e');
       return Left(Failure(message: errorMessage));
     }
   }

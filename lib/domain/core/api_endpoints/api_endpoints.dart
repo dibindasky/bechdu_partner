@@ -7,6 +7,8 @@ class ApiEndPoints {
   // auth
   static String sendOtp = '/partner/send-sms';
   static String verifyOtp = '/partner/sms-login';
+  static String logOut = '/partner/logout/{phone}';
+  static String block = '/partner/block-partner-app/{phone}';
 
   // get orders
   static String getNewOrders = '/partner/get-partner-orders/{phone}';
@@ -59,5 +61,4 @@ class ApiEndPoints {
 
   // notification
   static String getNotification = '/partner/notifications/{phone}';
-
 }
