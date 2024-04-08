@@ -85,6 +85,60 @@ showDialogeRequote(context) {
                           },
                         ),
                       ),
+                      BlocBuilder<OrdersBloc, OrdersState>(
+                        builder: (context, order) {
+                          if (order.orderDetail?.promo == null ||
+                              order.orderDetail?.promo == '') {
+                            return kEmpty;
+                          }
+                          return Column(
+                            children: [
+                              const Divider(),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 30),
+                                child: BlocBuilder<RequoteBloc, RequoteState>(
+                                  builder: (context, state) {
+                                    return Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text('Promo price',
+                                            style: textHeadBold1),
+                                        Text(
+                                            '₹ ${order.orderDetail?.promo?.price ?? ''}',
+                                            style: textHeadRegular1)
+                                      ],
+                                    );
+                                  },
+                                ),
+                              ),
+                              const Divider(),
+                              kHeight5,
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 30),
+                                child: BlocBuilder<RequoteBloc, RequoteState>(
+                                  builder: (context, state) {
+                                    return Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text('New Total',
+                                            style: textHeadBold1.copyWith(
+                                                color: kGreenPrimary)),
+                                        Text(
+                                            '₹ ${int.parse(order.orderDetail?.promo?.price ?? '0') + int.parse(state.basePrice ?? '0')}',
+                                            style: textHeadRegular1)
+                                      ],
+                                    );
+                                  },
+                                ),
+                              ),
+                            ],
+                          );
+                        },
+                      ),
                       kHeight30,
                       BlocBuilder<OrdersBloc, OrdersState>(
                         builder: (context, order) {

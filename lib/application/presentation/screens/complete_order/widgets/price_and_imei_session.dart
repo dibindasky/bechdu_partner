@@ -29,6 +29,16 @@ class PriceAndImeiSession extends StatelessWidget {
             ),
           ),
         ),
+        orderDetail.promo?.price != '' && orderDetail.promo?.price != null
+            ? kHeight10
+            : kEmpty,
+        orderDetail.promo?.price != '' && orderDetail.promo?.price != null
+            ? Text('Promo price is applied ', style: textHeadRegular2)
+            : kEmpty,
+        orderDetail.promo?.price != '' && orderDetail.promo?.price != null
+            ? Text('${orderDetail.promo?.code} - ₹ ${orderDetail.promo?.price}',
+                style: textHeadRegularBig.copyWith(color: kGreenPrimary))
+            : kEmpty,
         kHeight10,
         Text('Final price', style: textHeadRegular2),
         CustomTextFormField(

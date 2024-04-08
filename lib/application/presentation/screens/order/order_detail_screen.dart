@@ -31,7 +31,18 @@ class ScreenOrderDetail extends StatelessWidget {
             .add(const PickupPartnerEvent.getPickupPartners());
       }
     });
-    return BlocBuilder<OrdersBloc, OrdersState>(
+    return BlocConsumer<OrdersBloc, OrdersState>(
+      listener: (context, state) {
+        if (state.hasError &&
+            state.message != null &&
+            state.message == "You can't perform this action") {
+          showSnackBar(
+              context: context,
+              message: 'Order has been accepted by another partner.',
+              color: kRed);
+          Navigator.pop(context);
+        }
+      },
       builder: (context, state) {
         OrderDetail orderDetail = this.orderDetail.status != 'new'
             ? state.orderDetail ?? OrderDetail()

@@ -239,7 +239,7 @@ class _CustomDropDownState extends State<CustomDropDown> {
     return DropdownButtonHideUnderline(
         child: DropdownButton(
             hint: Container(
-              height: widget.showError ? sWidth * 0.13 : sWidth * 0.1,
+              // height: widget.showError ? sWidth * 0.13 : sWidth * 0.1,
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                   borderRadius: kRadius10,
@@ -263,7 +263,7 @@ class _CustomDropDownState extends State<CustomDropDown> {
                 return DropdownMenuItem<String>(
                   onTap: () => setState(() {
                     title = value;
-                  }),
+                  }), 
                   value: value,
                   child: Text(
                     value,

@@ -88,7 +88,8 @@ class _ScreenNotificationState extends State<ScreenNotification> {
                         isThreeLine: true,
                         onTap: () {
                           Navigator.pushNamed(context, Routes.orderScreen,
-                              arguments: data.type == 'new'
+                              arguments: data.type == 'new'&& ordreState.newOrders!.where(
+                                      (element) => element.id == data.orderId).isNotEmpty
                                   ? ordreState.newOrders!.firstWhere(
                                       (element) => element.id == data.orderId)
                                   : OrderDetail(id: data.orderId));

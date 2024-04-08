@@ -28,6 +28,8 @@ Color getStatusColor(String status) {
       return kRed;
     case "Completed":
       return kGreenPrimary;
+    case "completed":
+      return kGreenPrimary;
     case "processing":
       return kYellowPrimary;
     case "rescheduled":

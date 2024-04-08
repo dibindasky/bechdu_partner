@@ -3,6 +3,7 @@ import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:bechdu_partner/domain/model/order/get_partner_order_response_model/order_detail.dart';
 import 'package:flutter/material.dart';
+import 'package:injectable/injectable.dart';
 
 class PhoneDetailTile extends StatelessWidget {
   const PhoneDetailTile({
@@ -52,7 +53,7 @@ class PhoneDetailTile extends StatelessWidget {
                         style: textHeadRegular1,
                       ),
                       Text(
-                        '₹ ${orderDetail.productDetails?.price ?? '----'}',
+                        '₹ ${orderDetail.promo?.price == '' ? orderDetail.productDetails?.price : "${orderDetail.productDetails?.price} + ${orderDetail.promo?.price} \n(${orderDetail.promo?.code ?? ''})"}',
                         style: textHeadRegular1.copyWith(color: kGreyLight),
                       ),
                       Row(

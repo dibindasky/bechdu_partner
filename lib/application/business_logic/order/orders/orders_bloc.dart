@@ -399,6 +399,7 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
             message: l.message)), (r) {
       emit(state.copyWith(
           acceptOrderLoading: false, message: r.message, cancelOrder: true));
+      cancelController.text = '';
       add(const OrdersEvent.getPartnerOrders(call: true));
       if (partner) {
         add(const OrdersEvent.getNewOrder(call: true));

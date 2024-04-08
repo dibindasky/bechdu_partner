@@ -49,8 +49,14 @@ class HomeScreenAppBar extends StatelessWidget {
                               animate: state.notiLength != null &&
                                   state.notiLength! > 0,
                               // animate: true,
-                              child: const Icon(Icons.notifications,
-                                  color: kBluePrimary),
+                              child: Stack(
+                                children: [
+                                  Icon(Icons.notifications,
+                                      color: kBluePrimary),
+                                     state.notiLength != null &&
+                                  state.notiLength! > 0? Icon(Icons.circle,color: kRed,size: 10):kEmpty
+                                ],
+                              ),
                             ));
                       },
                     ),
