@@ -15,6 +15,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_windowmanager/flutter_windowmanager.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
 
@@ -33,6 +34,7 @@ Future<void> main() async {
   );
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
   await configuteInjection();
+  FlutterWindowManager.addFlags(FlutterWindowManager.FLAG_SECURE);
   runApp(Beachdu());
 }
 

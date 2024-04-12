@@ -2,8 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/widgets.dart';
 
-class BlurerMaker extends StatelessWidget {
-  const BlurerMaker({super.key, required this.child, required this.show});
+class BlurMaker extends StatelessWidget {
+  const BlurMaker({super.key, required this.child, required this.show});
 
   final Widget child;
   final bool show;

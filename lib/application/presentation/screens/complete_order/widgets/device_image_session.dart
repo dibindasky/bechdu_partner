@@ -1,4 +1,5 @@
 import 'package:bechdu_partner/application/business_logic/order/orders/orders_bloc.dart';
+import 'package:bechdu_partner/application/presentation/routes/routes.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:flutter/material.dart';
@@ -52,7 +53,17 @@ class DeviceImagesSession extends StatelessWidget {
                           itemCount: state.deviceImages!.length,
                           itemBuilder: (context, index) => Stack(
                             children: [
-                              Image.file(state.deviceImages![index].fileImage),
+                              AspectRatio(
+                                  aspectRatio: .8,
+                                  child: InkWell(
+                                    onTap: () => Navigator.pushNamed(
+                                        context, Routes.imagePreviewPage,
+                                        arguments: state.deviceImages![index]
+                                            .fileImage.path),
+                                    child: Image.file(
+                                        state.deviceImages![index].fileImage,
+                                        fit: BoxFit.cover),
+                                  )),
                               Positioned(
                                 top: 3,
                                 right: 3,

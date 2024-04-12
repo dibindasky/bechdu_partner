@@ -93,6 +93,7 @@ class OrderDetailTopPart extends StatelessWidget {
               text: 'Complete',
               image: iconCompleteCheck,
               onTap: () {
+                context.read<RequoteBloc>().finalPrice = '';
                 Navigator.pushNamed(context, Routes.completeOrderPage,
                     arguments: orderDetail);
               })

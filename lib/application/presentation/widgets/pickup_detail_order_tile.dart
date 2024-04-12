@@ -42,11 +42,11 @@ class PickUpDetailOrderTile extends StatelessWidget {
                   Icons.person_2_outlined,
                   color: kGreenPrimary,
                 ),
-                title: BlurerMaker(
+                title: BlurMaker(
                   show: isBlurred,
                   child: Wrap(
                     children: [
-                      Text(isUser ? 'Device Owner  ' : 'Pickup partner  ',
+                      Text(isUser ? 'Device Owner  ' :name==''?'Pickup ( Not Assigned )': 'Pickup partner  ',
                           style: textHeadRegular1),
                       Text(name, style: textHeadBold1),
                     ],
@@ -65,10 +65,10 @@ class PickUpDetailOrderTile extends StatelessWidget {
               ListTile(
                 leading: SizedBox(
                     height: 25, width: 25, child: Image.asset(iconPickHand)),
-                title: BlurerMaker(
+                title: BlurMaker(
                     show: isBlurred,
                     child: Text('Pickup Location ', style: textHeadRegular1)),
-                subtitle: BlurerMaker(
+                subtitle: BlurMaker(
                   show: isBlurred,
                   child: Text(address, style: textHeadBold1),
                 ),

@@ -44,7 +44,11 @@ class _ScreenNotificationState extends State<ScreenNotification> {
       context
           .read<NotificationBloc>()
           .add(const NotificationEvent.getNotifications(reset: true));
-      context.read<OrdersBloc>().add(const OrdersEvent.getNewOrder(call: true));
+      if (partner) {
+        context
+            .read<OrdersBloc>()
+            .add(const OrdersEvent.getNewOrder(call: true));
+      }
     });
     return Scaffold(
       appBar: AppBar(
@@ -66,9 +70,11 @@ class _ScreenNotificationState extends State<ScreenNotification> {
                   onRefresh: () async {
                     context.read<NotificationBloc>().add(
                         const NotificationEvent.getNotifications(reset: true));
-                    context
-                        .read<OrdersBloc>()
-                        .add(const OrdersEvent.getNewOrder(call: true));
+                    if (partner) {
+                      context
+                          .read<OrdersBloc>()
+                          .add(const OrdersEvent.getNewOrder(call: true));
+                    }
                     await Future.delayed(const Duration(seconds: 2));
                   },
                   child: ListView.separated(
@@ -81,18 +87,25 @@ class _ScreenNotificationState extends State<ScreenNotification> {
                             itemCount: 1, height: 100, width: sWidth);
                       }
                       final data = state.notificationList![index];
-                      print(data.type);
                       final color = getStatusColor(data.type ?? "");
                       return ListTile(
                         minLeadingWidth: 40,
                         isThreeLine: true,
                         onTap: () {
-                          Navigator.pushNamed(context, Routes.orderScreen,
-                              arguments: data.type == 'new'&& ordreState.newOrders!.where(
-                                      (element) => element.id == data.orderId).isNotEmpty
-                                  ? ordreState.newOrders!.firstWhere(
-                                      (element) => element.id == data.orderId)
-                                  : OrderDetail(id: data.orderId));
+                          if (partner) {
+                            Navigator.pushNamed(context, Routes.orderScreen,
+                                arguments: data.type == 'new' &&
+                                        ordreState.newOrders!
+                                            .where((element) =>
+                                                element.id == data.orderId)
+                                            .isNotEmpty
+                                    ? ordreState.newOrders!.firstWhere(
+                                        (element) => element.id == data.orderId)
+                                    : OrderDetail(id: data.orderId));
+                          } else {
+                            Navigator.pushNamed(context, Routes.orderScreen,
+                                arguments: OrderDetail(id: data.orderId));
+                          }
                         },
                         leading: Row(
                           mainAxisSize: MainAxisSize.min,
@@ -146,9 +159,11 @@ class _ScreenNotificationState extends State<ScreenNotification> {
                       context.read<NotificationBloc>().add(
                           const NotificationEvent.getNotifications(
                               reset: true));
-                      context
-                          .read<OrdersBloc>()
-                          .add(const OrdersEvent.getNewOrder(call: true));
+                      if (partner) {
+                        context
+                            .read<OrdersBloc>()
+                            .add(const OrdersEvent.getNewOrder(call: true));
+                      }
                     });
               }
             },

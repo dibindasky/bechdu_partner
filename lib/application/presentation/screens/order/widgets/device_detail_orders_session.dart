@@ -43,7 +43,7 @@ class OrderDetailDiviceDetailsSession extends StatelessWidget {
                   color: kWhite,
                   child: Padding(
                     padding: const EdgeInsets.all(15),
-                    child: BlurerMaker(
+                    child: BlurMaker(
                       show: isBlurred,
                       child: Column(
                         children: [

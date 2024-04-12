@@ -3,6 +3,7 @@ import 'package:bechdu_partner/application/presentation/screens/auth/login_scree
 import 'package:bechdu_partner/application/presentation/screens/auth/otp_screen.dart';
 import 'package:bechdu_partner/application/presentation/screens/bottom_bar/bottom_bar_screen.dart';
 import 'package:bechdu_partner/application/presentation/screens/complete_order/complete_order_screen.dart';
+import 'package:bechdu_partner/application/presentation/screens/complete_order/widgets/image_preview.dart';
 import 'package:bechdu_partner/application/presentation/screens/home/home_screen.dart';
 import 'package:bechdu_partner/application/presentation/screens/notification/notificaton_screen.dart';
 import 'package:bechdu_partner/application/presentation/screens/order/order_detail_screen.dart';
@@ -71,6 +72,11 @@ class RouteGenerator {
             : _errorScreen();
       case Routes.notificationPage:
         return MaterialPageRoute(builder: (ctx) => const ScreenNotification());
+      case Routes.imagePreviewPage:
+        return arguments is String
+            ? MaterialPageRoute(
+                builder: (ctx) => ImagePreview(image: arguments))
+            : _errorScreen();
       default:
         return _errorScreen();
     }

@@ -1,4 +1,5 @@
 import 'package:bechdu_partner/application/business_logic/order/orders/orders_bloc.dart';
+import 'package:bechdu_partner/application/business_logic/order/requote/requote_bloc.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:bechdu_partner/application/presentation/widgets/custom_text_form_field.dart';
@@ -16,6 +17,12 @@ class PriceAndImeiSession extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      context.read<OrdersBloc>().finalPriceController.text =
+          context.read<RequoteBloc>().finalPrice != ''
+              ? context.read<RequoteBloc>().finalPrice
+              : orderDetail.productDetails?.price ?? '';
+    });
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

@@ -33,12 +33,12 @@ class PartnerDetailTile extends StatelessWidget {
             color: kWhite,
             child: ListTile(
               leading: const CircleAvatar(
-                  backgroundImage: NetworkImage(phoneImageNetwork)),
+                  backgroundImage: AssetImage(phoneImage)),
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Expanded(
-                    child: Text(
+                    child: Text(status=='cancelled'?'Order Status':
                         pickup?.pickUpPersonName == ''
                             ? 'Assign pickup'
                             : pickup?.pickUpPersonName ?? '',

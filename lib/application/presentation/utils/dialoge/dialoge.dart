@@ -33,7 +33,7 @@ showCustomDialoge(
                         Navigator.pop(context);
                       },
                       child: Text(
-                        'cancel',
+                        'Cancel',
                         style: textHeadMedium1.copyWith(color: kBluePrimary),
                       )),
                   kWidth20,

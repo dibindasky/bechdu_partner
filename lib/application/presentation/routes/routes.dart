@@ -15,4 +15,5 @@ class Routes {
   static const String homePage = '/home_page';
   static const String pdfPage = '/pdf_page';
   static const String completeOrderPage = '/complete_order_page';
+  static const String imagePreviewPage = '/image_preview_page';
 }

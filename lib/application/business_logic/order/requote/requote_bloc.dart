@@ -19,6 +19,8 @@ part 'requote_bloc.freezed.dart';
 class RequoteBloc extends Bloc<RequoteEvent, RequoteState> {
   final RequoteRepo requoteService;
 
+  String finalPrice = '';
+
   RequoteBloc(this.requoteService) : super(RequoteState.initial()) {
     on<GetQuestions>(getQuestions);
     on<ChangeIndex>(changeIndex);
@@ -48,12 +50,10 @@ class RequoteBloc extends Bloc<RequoteEvent, RequoteState> {
         priceCalculationLoading: true,
         message: null,
         questionLoading: false));
+    finalPrice = '';
     List<SelectedOption> list = [];
     for (var element in state.sections!) {
       list.addAll(state.selectedAnswers[element.heading]!);
-    }
-    for (var element in list) {
-      print(element.toJson());
     }
     final result = await requoteService.getPrice(
         priceCalculationModel: PriceCalculationModel(
@@ -65,10 +65,11 @@ class RequoteBloc extends Bloc<RequoteEvent, RequoteState> {
             message: l.message,
             hasError: true,
             priceCalculationError: true,
-            priceCalculationLoading: false)),
-        (r) => emit(state.copyWith(
-            basePrice: r.basePrice.toString(),
-            priceCalculationLoading: false)));
+            priceCalculationLoading: false)), (r) {
+      finalPrice = r.basePrice.toString();
+      return emit(state.copyWith(
+          basePrice: r.basePrice.toString(), priceCalculationLoading: false));
+    });
   }
 
   FutureOr<void> requotePrice(RequotePrice event, emit) async {
@@ -77,7 +78,7 @@ class RequoteBloc extends Bloc<RequoteEvent, RequoteState> {
         resheduleLoading: false,
         requoteDone: false,
         requoteError: false,
-        requoteLoading: false,
+        requoteLoading: true,
         priceCalculationError: false,
         priceCalculationLoading: false,
         hasError: false,
@@ -146,10 +147,6 @@ class RequoteBloc extends Bloc<RequoteEvent, RequoteState> {
       }
     }
     map[state.sections![state.requoteIndex].heading!] = list;
-    print(map);
-    if (list.isNotEmpty) {
-      print(list.first.value);
-    }
     return emit(state.copyWith(
         message: null,
         selectedAnswers: map,
@@ -163,7 +160,6 @@ class RequoteBloc extends Bloc<RequoteEvent, RequoteState> {
   }
 
   FutureOr<void> markYesOrNo(MarkYesOrNo event, emit) async {
-    print(event.selectedOption.toJson());
     var map = Map<String, List<SelectedOption>>.from(state.selectedAnswers);
     List<SelectedOption> list =
         map[state.sections![state.requoteIndex].heading!]!;
@@ -191,10 +187,6 @@ class RequoteBloc extends Bloc<RequoteEvent, RequoteState> {
       }
     }
     map[state.sections![state.requoteIndex].heading!] = list;
-    print(map);
-    if (list.isNotEmpty) {
-      print(list.last.value);
-    }
     return emit(state.copyWith(
         message: null,
         selectedAnswers: map,

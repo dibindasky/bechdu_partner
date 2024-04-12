@@ -42,9 +42,7 @@ class _CreditedTranscationsListState extends State<CreditedTranscationsList> {
   Widget build(BuildContext context) {
     return BlocConsumer<TranscationBloc, TranscationState>(
       listener: (context, state) {
-        print('listner ------------');
         if (state.downloaded && state.invoice != null) {
-          print('listner ------------2---------');
           Navigator.pushNamed(context, Routes.pdfPage,
               arguments: state.invoice!);
         }

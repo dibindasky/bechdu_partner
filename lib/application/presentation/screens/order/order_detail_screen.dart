@@ -34,7 +34,7 @@ class ScreenOrderDetail extends StatelessWidget {
     return BlocConsumer<OrdersBloc, OrdersState>(
       listener: (context, state) {
         if (state.hasError &&
-            state.message != null &&
+            state.orderDetailError &&
             state.message == "You can't perform this action") {
           showSnackBar(
               context: context,

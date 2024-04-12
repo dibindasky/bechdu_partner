@@ -51,10 +51,10 @@ class HomeScreenAppBar extends StatelessWidget {
                               // animate: true,
                               child: Stack(
                                 children: [
-                                  Icon(Icons.notifications,
+                                  const Icon(Icons.notifications,
                                       color: kBluePrimary),
                                      state.notiLength != null &&
-                                  state.notiLength! > 0? Icon(Icons.circle,color: kRed,size: 10):kEmpty
+                                  state.notiLength! > 0? const Icon(Icons.circle,color: kRed,size: 10):kEmpty
                                 ],
                               ),
                             ));

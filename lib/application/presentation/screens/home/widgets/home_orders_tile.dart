@@ -69,7 +69,7 @@ class OrdersListTileHome extends StatelessWidget {
                   name: orderDetail.partner!.pickUpPersonName != null &&
                           orderDetail.partner!.pickUpPersonName!.isNotEmpty
                       ? orderDetail.partner!.pickUpPersonName!
-                      : orderDetail.partner!.partnerName ?? '-----',
+                      : '',
                   dateTime:
                       '${orderDetail.pickUpDetails?.time ?? '--,--'} ${orderDetail.pickUpDetails?.date ?? '--/--/--'}',
                   address: orderDetail.user?.address ?? '----- ------- -------',

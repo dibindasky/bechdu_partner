@@ -4,6 +4,7 @@ import 'package:bechdu_partner/application/presentation/routes/routes.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:bechdu_partner/application/presentation/widgets/status_colored_box.dart';
+import 'package:bechdu_partner/domain/model/order/get_partner_order_response_model/order_detail.dart';
 import 'package:bechdu_partner/domain/model/requote/price_calculation_model/selected_option.dart';
 import 'package:bechdu_partner/domain/model/requote/requote_price_model/requote_price_model.dart';
 import 'package:flutter/material.dart';
@@ -27,10 +28,12 @@ showDialogeRequote(context) {
                       SizedBox(
                         height: sWidth * 0.55,
                         width: sWidth * 0.8,
-                        child: Image.network(
-                          state.orderDetail!.productDetails!.image!,
-                          fit: BoxFit.contain,
-                        ),
+                        child: state.orderDetail == null
+                            ? null
+                            : Image.network(
+                                state.orderDetail!.productDetails!.image!,
+                                fit: BoxFit.contain,
+                              ),
                       ),
                       Align(
                         alignment: Alignment.topRight,
@@ -49,7 +52,7 @@ showDialogeRequote(context) {
                   kHeight10,
                   FittedBox(
                     child: Text(
-                      state.orderDetail!.productDetails?.name ?? '',
+                      state.orderDetail?.productDetails?.name ?? '',
                       style: textHeadBold1,
                     ),
                   ),
@@ -64,7 +67,7 @@ showDialogeRequote(context) {
                           children: [
                             Text('Old Price', style: textHeadBold1),
                             Text(
-                                '₹ ${state.orderDetail!.productDetails!.price}',
+                                '₹ ${state.orderDetail?.productDetails?.price??''}',
                                 style: textHeadRegular1)
                           ],
                         ),
@@ -88,7 +91,7 @@ showDialogeRequote(context) {
                       BlocBuilder<OrdersBloc, OrdersState>(
                         builder: (context, order) {
                           if (order.orderDetail?.promo == null ||
-                              order.orderDetail?.promo == '') {
+                              order.orderDetail?.promo?.price == '') {
                             return kEmpty;
                           }
                           return Column(

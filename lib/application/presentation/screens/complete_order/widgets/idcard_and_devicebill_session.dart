@@ -1,4 +1,5 @@
 import 'package:bechdu_partner/application/business_logic/order/orders/orders_bloc.dart';
+import 'package:bechdu_partner/application/presentation/routes/routes.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:flutter/material.dart';
@@ -20,11 +21,11 @@ class IdCardAndDeviceBillSession extends StatelessWidget {
               previous.orderCompletionError != current.orderCompletionError,
           builder: (context, state) {
             return Expanded(
-                child: InkWell(
-              onTap: () => context
-                  .read<OrdersBloc>()
-                  .add(const OrdersEvent.addIdCardImage()),
-              child: Container(
+              child: InkWell(
+                onTap: () => context
+                    .read<OrdersBloc>()
+                    .add(const OrdersEvent.addIdCardImage()),
+                child: Container(
                   padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                       border: Border.all(
@@ -50,28 +51,41 @@ class IdCardAndDeviceBillSession extends StatelessWidget {
                               aspectRatio: 1,
                               child: Stack(
                                 children: [
-                                  Image.file(state.idCard!.fileImage,
-                                      fit: BoxFit.contain),
+                                  InkWell(
+                                    onTap: () => Navigator.pushNamed(
+                                        context, Routes.imagePreviewPage,
+                                        arguments:
+                                            state.idCard!.fileImage.path),
+                                    child: AspectRatio(
+                                      aspectRatio: 1,
+                                      child: Image.file(state.idCard!.fileImage,
+                                          fit: BoxFit.cover),
+                                    ),
+                                  ),
                                   Positioned(
                                     top: 3,
                                     right: 3,
                                     child: InkWell(
-                                        onTap: () => context
-                                            .read<OrdersBloc>()
-                                            .add(const OrdersEvent
-                                                .removeIdCardImage()),
-                                        child: const CircleAvatar(
-                                          backgroundColor: kBluePrimary,
-                                          child:
-                                              Icon(Icons.delete, color: kWhite),
-                                        )),
+                                      onTap: () => context
+                                          .read<OrdersBloc>()
+                                          .add(const OrdersEvent
+                                              .removeIdCardImage()),
+                                      child: const CircleAvatar(
+                                        backgroundColor: kBluePrimary,
+                                        child:
+                                            Icon(Icons.delete, color: kWhite),
+                                      ),
+                                    ),
                                   )
                                 ],
-                              ))
+                              ),
+                            )
                           : kEmpty
                     ],
-                  )),
-            ));
+                  ),
+                ),
+              ),
+            );
           },
         ),
         kWidth10,
@@ -81,11 +95,11 @@ class IdCardAndDeviceBillSession extends StatelessWidget {
               previous.orderCompletionError != current.orderCompletionError,
           builder: (context, state) {
             return Expanded(
-                child: InkWell(
-              onTap: () => context
-                  .read<OrdersBloc>()
-                  .add(const OrdersEvent.addDiviceBill()),
-              child: Container(
+              child: InkWell(
+                onTap: () => context
+                    .read<OrdersBloc>()
+                    .add(const OrdersEvent.addDiviceBill()),
+                child: Container(
                   padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                       border: Border.all(
@@ -111,8 +125,18 @@ class IdCardAndDeviceBillSession extends StatelessWidget {
                               aspectRatio: 1,
                               child: Stack(
                                 children: [
-                                  Image.file(state.deviceBill!.fileImage,
-                                      fit: BoxFit.contain),
+                                  AspectRatio(
+                                    aspectRatio: 1,
+                                    child: InkWell(
+                                      onTap: () => Navigator.pushNamed(
+                                          context, Routes.imagePreviewPage,
+                                          arguments:
+                                              state.deviceBill!.fileImage.path),
+                                      child: Image.file(
+                                          state.deviceBill!.fileImage,
+                                          fit: BoxFit.cover),
+                                    ),
+                                  ),
                                   Positioned(
                                     top: 3,
                                     right: 3,
@@ -129,11 +153,14 @@ class IdCardAndDeviceBillSession extends StatelessWidget {
                                     ),
                                   )
                                 ],
-                              ))
+                              ),
+                            )
                           : kEmpty
                     ],
-                  )),
-            ));
+                  ),
+                ),
+              ),
+            );
           },
         )
       ],

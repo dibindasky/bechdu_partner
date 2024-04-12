@@ -69,7 +69,10 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
         orderCompleted: false,
         cancelOrder: false,
         acceptOrder: false,
-        acceptOrderError: false));
+        acceptOrderError: false,
+        deviceBill: null,
+        deviceImages: [],
+        idCard: null));
     final phone = await SharedPref.getPhone();
     if (phone == null) {
       return emit(state.copyWith(
