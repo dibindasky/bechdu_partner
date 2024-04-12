@@ -103,6 +103,7 @@ class _ScreenNotificationState extends State<ScreenNotification> {
                                         (element) => element.id == data.orderId)
                                     : OrderDetail(id: data.orderId));
                           } else {
+                            print('not partner from noti to order detail');
                             Navigator.pushNamed(context, Routes.orderScreen,
                                 arguments: OrderDetail(id: data.orderId));
                           }

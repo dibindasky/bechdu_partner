@@ -68,11 +68,13 @@ class _GridTileQuestionState extends State<GridTileQuestion> {
                         child: Image.memory(convertedImg!),
                       ),
                     ),
-                    Text(
-                      widget.option.description ?? '',
-                      style: textHeadBold1,
-                      textAlign: TextAlign.center,
-                      maxLines: 2,
+                    Expanded(
+                      child: Text(
+                        widget.option.description ?? '',
+                        style: textHeadBold1,
+                        textAlign: TextAlign.center,
+                        maxLines: 2,
+                      ),
                     ),
                   ],
                 ),

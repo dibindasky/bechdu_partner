@@ -47,15 +47,19 @@ class _TranscationListTileState extends State<TranscationListTile> {
               child: Column(
                 children: [
                   ListTile(
-                    title: Text(widget.transcation.message ?? '',
-                        style: textHeadBold1),
+                    title: Expanded(
+                      child: Text(widget.transcation.message ?? '',
+                          style: textHeadBold1),
+                    ),
                     subtitle: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         const Icon(Icons.calendar_month, color: kGreyLight),
                         kWidth10,
-                        Text(formatDateTime(widget.transcation.timestamp!),
-                            style: textHeadMedium1.copyWith(color: kGreyLight))
+                        Expanded(
+                          child: Text(formatDateTime(widget.transcation.timestamp!),
+                              style: textHeadMedium1.copyWith(color: kGreyLight)),
+                        )
                       ],
                     ),
                     trailing: SizedBox(
@@ -64,14 +68,16 @@ class _TranscationListTileState extends State<TranscationListTile> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Text(
-                              '${widget.credited ? '+' : '-'} ${widget.transcation.coins ?? 0} points',
-                              style: textHeadBold1.copyWith(
-                                  color: widget.credited
-                                      ? kGreenPrimary
-                                      : kRedDark)),
+                          Expanded(
+                            child: Text(
+                                '${widget.credited ? '+' : '-'} ${widget.transcation.coins ?? 0} points',
+                                style: textHeadBold1.copyWith(
+                                    color: widget.credited
+                                        ? kGreenPrimary
+                                        : kRedDark)),
+                          ),
                           widget.transcation.paymentId != null
-                              ? const Icon(Icons.picture_as_pdf)
+                              ? const Expanded(child: Icon(Icons.picture_as_pdf))
                               : kEmpty
                         ],
                       ),

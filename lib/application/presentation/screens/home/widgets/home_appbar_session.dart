@@ -47,14 +47,20 @@ class HomeScreenAppBar extends StatelessWidget {
                                 context, Routes.notificationPage),
                             child: BellIconAnimation(
                               animate: state.notiLength != null &&
-                                  state.notiLength! > 0,
+                                  state.totalNotiLength != null &&
+                                  state.notiLength! < state.totalNotiLength!,
                               // animate: true,
                               child: Stack(
                                 children: [
                                   const Icon(Icons.notifications,
                                       color: kBluePrimary),
-                                     state.notiLength != null &&
-                                  state.notiLength! > 0? const Icon(Icons.circle,color: kRed,size: 10):kEmpty
+                                  state.notiLength != null &&
+                                          state.totalNotiLength != null &&
+                                          state.notiLength! <
+                                              state.totalNotiLength!
+                                      ? const Icon(Icons.circle,
+                                          color: kRed, size: 10)
+                                      : kEmpty
                                 ],
                               ),
                             ));

@@ -33,7 +33,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
           isLoading: false,
           notificationList: r.data,
           totalNotiLength: r.length,
-          notiLength: r.length ?? 0 - notiLen));
+          notiLength: notiLen));
       if (event.reset) {
         add(const NotificationEvent.resetLength());
       }
@@ -59,7 +59,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   FutureOr<void> resetLength(ResetLength event, emit) async {
     if (state.totalNotiLength != null) {
       await SharedPref.setNotification(length: state.totalNotiLength!);
-      emit(state.copyWith(notiLength: 0));
+      emit(state.copyWith(notiLength: state.totalNotiLength!));
     }
   }
 }

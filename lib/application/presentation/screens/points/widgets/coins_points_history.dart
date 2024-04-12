@@ -83,33 +83,40 @@ class CoinsPointsHistory extends StatelessWidget {
                                         fit: BoxFit.contain,
                                       )),
                                     ),
-                                    Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          data.productDetails?.name == null
-                                              ? ''
-                                              : data.productDetails!.name!
-                                                          .length >
-                                                      18
-                                                  ? '${data.productDetails!.name!.substring(0, 15)}..'
-                                                  : data.productDetails!.name!,
-                                          style: textHeadRegular2,
-                                        ),
-                                        Text(
-                                          '₹ ${data.productDetails?.price ?? 0}',
-                                          style: textHeadRegularBig.copyWith(
-                                              color: kGreyLight),
-                                        ),
-                                        kHeight5,
-                                        StatusColoredBox(
-                                            text: data.status ?? '',
-                                            color: getStatusColor(
-                                                data.status ?? ''))
-                                      ],
+                                    Expanded(
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          FittedBox(
+                                            child: Text(
+                                              data.productDetails?.name == null
+                                                  ? ''
+                                                  : data.productDetails!.name!
+                                                              .length >
+                                                          18
+                                                      ? '${data.productDetails!.name!.substring(0, 15)}..'
+                                                      : data.productDetails!.name!,
+                                              style: textHeadRegular2,
+                                            ),
+                                          ),
+                                          Text(
+                                            '₹ ${data.productDetails?.price ?? 0}',
+                                            style: textHeadRegularBig.copyWith(
+                                                color: kGreyLight),
+                                          ),
+                                          kHeight5,
+                                          Row(
+                                            children: [
+                                              StatusColoredBox(
+                                                  text: data.status ?? '',
+                                                  color: getStatusColor(
+                                                      data.status ?? '')),kWidth30
+                                            ],
+                                          )
+                                        ],
+                                      ),
                                     ),
-                                    const Spacer(),
                                     Row(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.center,

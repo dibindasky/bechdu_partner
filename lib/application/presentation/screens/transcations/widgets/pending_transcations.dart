@@ -23,7 +23,7 @@ class PendingTranscationSession extends StatelessWidget {
           return kEmpty;
         }
         return SizedBox(
-          height: 200,
+          height: 230,
           child: PageView.builder(
               itemCount: state.manuelTranscations?.length ?? 0,
               scrollDirection: Axis.horizontal,
@@ -39,11 +39,13 @@ class PendingTranscationSession extends StatelessWidget {
                           style: textHeadBoldBig),
                       kHeight10,
                       Container(
+                        height: 168,
                         padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
                             border: Border.all(), borderRadius: kRadius15),
                         child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               kHeight10,
                               Row(
@@ -51,9 +53,11 @@ class PendingTranscationSession extends StatelessWidget {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text('${data.coins ?? '--'} Points',
+                                      overflow: TextOverflow.ellipsis,
                                       style: textHeadMediumBig.copyWith(
                                           fontSize: sWidth * 0.06)),
                                   Text('₹ ${data.totalPrice ?? '----'}',
+                                      overflow: TextOverflow.ellipsis,
                                       style: textHeadBoldBig2.copyWith(
                                           color: data.status == 'approved'
                                               ? kGreenPrimary
@@ -72,6 +76,7 @@ class PendingTranscationSession extends StatelessWidget {
                                         data.status == 'Pending'
                                             ? 'Points will be credited, when admin verify your transcation'
                                             : data.message ?? '',
+                                        
                                         style: textHeadRegular1,
                                       ),
                                     ),
@@ -82,7 +87,7 @@ class PendingTranscationSession extends StatelessWidget {
                                       color: getTranscationStatusColor(
                                           data.status ?? ''),
                                     ),
-                                    Text(
+                                   data.status == 'Pending'?kEmpty: Text(
                                       ' `${data.status ?? '-----'}',
                                       style: textHeadSemiBold1.copyWith(
                                           color: getTranscationStatusColor(
@@ -93,36 +98,6 @@ class PendingTranscationSession extends StatelessWidget {
                                 ),
                               ),
                               kHeight10,
-                              // TextField(
-                              //   keyboardType: TextInputType.number,
-                              //   cursorColor: kBluePrimary,
-                              //   style: textHeadRegular1.copyWith(color: kBluePrimary),
-                              //   decoration: InputDecoration(
-                              //     hintText: 'Upload The Receipt here',
-                              //     hintStyle:
-                              //         textHeadRegular1.copyWith(color: kBluePrimary),
-                              //     suffixIcon: IconButton(
-                              //         onPressed: () {},
-                              //         icon: const Icon(
-                              //           Icons.file_upload_outlined,
-                              //           color: kBluePrimary,
-                              //         )),
-                              //     enabledBorder: const OutlineInputBorder(),
-                              //     focusedBorder: const OutlineInputBorder(),
-                              //     border: const OutlineInputBorder(),
-                              //     contentPadding: const EdgeInsets.only(left: 10),
-                              //   ),
-                              // ),
-                              // kHeight30,
-                              // const Padding(
-                              //   padding: EdgeInsets.symmetric(horizontal: 50),
-                              //   child: StatusColoredBox(
-                              //       text: 'Proceed',
-                              //       color: kGreenPrimary,
-                              //       fontWeight: FontWeight.w600,
-                              //       verticalPadding: 10),
-                              // ),
-                              // kHeight20
                             ]),
                       ),
                       kHeight20

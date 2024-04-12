@@ -19,6 +19,7 @@ class ScreenOrderDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    int a = 1;
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (orderDetail.status != 'new') {
         context
@@ -34,13 +35,20 @@ class ScreenOrderDetail extends StatelessWidget {
     return BlocConsumer<OrdersBloc, OrdersState>(
       listener: (context, state) {
         if (state.hasError &&
-            state.orderDetailError &&
+            // state.orderDetailError &&
             state.message == "You can't perform this action") {
+          print(
+              'in first listner ${a++}===========****************************++++++++++++');
           showSnackBar(
               context: context,
-              message: 'Order has been accepted by another partner.',
+              message:partner? 'Order has been accepted by another partner.':'Order has been deassigned by partner',
               color: kRed);
-          Navigator.pop(context);
+          if (partner) {
+            Navigator.pop(context);
+          } else {
+            Navigator.pushNamedAndRemoveUntil(
+                context, Routes.homePage, (route) => false);
+          }
         }
       },
       builder: (context, state) {
@@ -97,6 +105,9 @@ class ScreenOrderDetail extends StatelessWidget {
                           return BlocConsumer<OrdersBloc, OrdersState>(
                             listener: (context, state) {
                               if (state.message != null) {
+                                print(
+                                    'in second listner message =====****************************++++++++++++');
+
                                 showSnackBar(
                                     context: context,
                                     message: state.message!,
