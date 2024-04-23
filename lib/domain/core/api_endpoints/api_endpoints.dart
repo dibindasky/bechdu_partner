@@ -1,8 +1,7 @@
 class ApiEndPoints {
   //base urls
-  static String baseUrl = 'https://bechdu-main-backend.onrender.com';
-  static String baseUrlImage =
-      'https://bechdu-main-backend.onrender.com/uploads/';
+  static String baseUrl = 'https://api.bechdu.in/';
+  static String baseUrlImage = 'https://api.bechdu.in/uploads/';
 
   // auth
   static String sendOtp = '/partner/send-sms';

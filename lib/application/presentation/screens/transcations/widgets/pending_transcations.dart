@@ -12,100 +12,107 @@ class PendingTranscationSession extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<TranscationBloc, TranscationState>(
       builder: (context, state) {
+        print('manual transcation   =======${state.manuelTranscations}');
         if (state.isLoading) {
           return ShimmerLoader(
               itemCount: 1,
               height: 180,
               width: sWidth,
               scrollDirection: Axis.vertical);
-        } else if (state.manuelTranscations == null ||
-            state.manuelTranscations == []) {
-          return kEmpty;
-        }
-        return SizedBox(
-          height: 230,
-          child: PageView.builder(
-              itemCount: state.manuelTranscations?.length ?? 0,
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) {
-                final data = state.manuelTranscations![index];
-                return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 5),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text('${data.status} Transaction',
-                          style: textHeadBoldBig),
-                      kHeight10,
-                      Container(
-                        height: 168,
-                        padding: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            border: Border.all(), borderRadius: kRadius15),
-                        child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              kHeight10,
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text('${data.coins ?? '--'} Points',
-                                      overflow: TextOverflow.ellipsis,
-                                      style: textHeadMediumBig.copyWith(
-                                          fontSize: sWidth * 0.06)),
-                                  Text('₹ ${data.totalPrice ?? '----'}',
-                                      overflow: TextOverflow.ellipsis,
-                                      style: textHeadBoldBig2.copyWith(
-                                          color: data.status == 'approved'
-                                              ? kGreenPrimary
-                                              : kRedDark))
-                                ],
-                              ),
-                              kHeight20,
-                              ColoredBox(
-                                color: kBluelight,
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.min,
+        } else if (state.manuelTranscations != null &&
+            state.manuelTranscations!.isNotEmpty) {
+          return SizedBox(
+            height: 230,
+            child: PageView.builder(
+                itemCount: state.manuelTranscations?.length ?? 0,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  final data = state.manuelTranscations![index];
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 5),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text('${data.status} Transaction',
+                            style: textHeadBoldBig),
+                        kHeight10,
+                        Container(
+                          height: 168,
+                          padding: const EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                              border: Border.all(), borderRadius: kRadius15),
+                          child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                kHeight10,
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
-                                    kWidth5,
                                     Expanded(
                                       child: Text(
-                                        data.status == 'Pending'
-                                            ? 'Points will be credited, when admin verify your transcation'
-                                            : data.message ?? '',
-                                        
-                                        style: textHeadRegular1,
-                                      ),
+                                          '${data.coins ?? '--'} Points',
+                                          overflow: TextOverflow.ellipsis,
+                                          style: textHeadMediumBig.copyWith(
+                                              fontSize: sWidth * 0.06)),
                                     ),
-                                    kWidth10,
-                                    Icon(
-                                      Icons.circle,
-                                      size: 10,
-                                      color: getTranscationStatusColor(
-                                          data.status ?? ''),
-                                    ),
-                                   data.status == 'Pending'?kEmpty: Text(
-                                      ' `${data.status ?? '-----'}',
-                                      style: textHeadSemiBold1.copyWith(
-                                          color: getTranscationStatusColor(
-                                              data.status ?? '')),
-                                    ),
-                                    kWidth5
+                                    Text('₹ ${data.totalPrice ?? '----'}',
+                                        // overflow: TextOverflow.visible,
+                                        style: textHeadBoldBig2.copyWith(
+                                            color: data.status == 'approved'
+                                                ? kGreenPrimary
+                                                : kRedDark))
                                   ],
                                 ),
-                              ),
-                              kHeight10,
-                            ]),
-                      ),
-                      kHeight20
-                    ],
-                  ),
-                );
-              }),
-        );
+                                kHeight20,
+                                ColoredBox(
+                                  color: kBluelight,
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      kWidth5,
+                                      Expanded(
+                                        child: Text(
+                                          data.status == 'Pending'
+                                              ? 'Points will be credited, when admin verify your transcation'
+                                              : data.message ?? '',
+                                          style: textHeadRegular1,
+                                        ),
+                                      ),
+                                      kWidth10,
+                                      Icon(
+                                        Icons.circle,
+                                        size: 10,
+                                        color: getTranscationStatusColor(
+                                            data.status ?? ''),
+                                      ),
+                                      data.status == 'Pending'
+                                          ? kEmpty
+                                          : Text(
+                                              ' `${data.status ?? '-----'}',
+                                              style: textHeadSemiBold1.copyWith(
+                                                  color:
+                                                      getTranscationStatusColor(
+                                                          data.status ?? '')),
+                                            ),
+                                      kWidth5
+                                    ],
+                                  ),
+                                ),
+                                kHeight10,
+                              ]),
+                        ),
+                        kHeight20
+                      ],
+                    ),
+                  );
+                }),
+          );
+        } else {
+          return kEmpty;
+        }
       },
     );
   }

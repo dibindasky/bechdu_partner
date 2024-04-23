@@ -47,10 +47,8 @@ class _TranscationListTileState extends State<TranscationListTile> {
               child: Column(
                 children: [
                   ListTile(
-                    title: Expanded(
-                      child: Text(widget.transcation.message ?? '',
-                          style: textHeadBold1),
-                    ),
+                    title: Text(widget.transcation.message ?? '',
+                        softWrap: true, style: textHeadBold1),
                     subtitle: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -58,7 +56,9 @@ class _TranscationListTileState extends State<TranscationListTile> {
                         kWidth10,
                         Expanded(
                           child: Text(formatDateTime(widget.transcation.timestamp!),
-                              style: textHeadMedium1.copyWith(color: kGreyLight)),
+                              softWrap: true,
+                              style:
+                                  textHeadMedium1.copyWith(color: kGreyLight)),
                         )
                       ],
                     ),
@@ -76,8 +76,10 @@ class _TranscationListTileState extends State<TranscationListTile> {
                                         ? kGreenPrimary
                                         : kRedDark)),
                           ),
+                          kHeight5,
                           widget.transcation.paymentId != null
-                              ? const Expanded(child: Icon(Icons.picture_as_pdf))
+                              ? const Expanded(
+                                  child: Icon(Icons.picture_as_pdf))
                               : kEmpty
                         ],
                       ),
