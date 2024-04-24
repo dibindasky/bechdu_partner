@@ -50,35 +50,55 @@ class DeviceImagesSession extends StatelessWidget {
                         child: ListView.separated(
                           separatorBuilder: (context, index) => kWidth20,
                           scrollDirection: Axis.horizontal,
-                          itemCount: state.deviceImages!.length,
-                          itemBuilder: (context, index) => Stack(
-                            children: [
-                              AspectRatio(
+                          itemCount: state.deviceImages!.isNotEmpty
+                              ? state.deviceImages!.length + 1
+                              : state.deviceImages!.length,
+                          itemBuilder: (context, index) {
+                            if (index == state.deviceImages?.length) {
+                              return InkWell(
+                                onTap: () => context
+                                    .read<OrdersBloc>()
+                                    .add(const OrdersEvent.addDeviceImages()),
+                                child: const AspectRatio(
                                   aspectRatio: .8,
-                                  child: InkWell(
-                                    onTap: () => Navigator.pushNamed(
-                                        context, Routes.imagePreviewPage,
-                                        arguments: state.deviceImages![index]
-                                            .fileImage.path),
-                                    child: Image.file(
-                                        state.deviceImages![index].fileImage,
-                                        fit: BoxFit.cover),
-                                  )),
-                              Positioned(
-                                top: 3,
-                                right: 3,
-                                child: InkWell(
-                                  onTap: () => context.read<OrdersBloc>().add(
-                                      OrdersEvent.removeDeviceImage(
-                                          index: index)),
-                                  child: const CircleAvatar(
-                                    backgroundColor: kBluePrimary,
-                                    child: Icon(Icons.delete, color: kWhite),
+                                  child: ColoredBox(
+                                    color: kGreyLighter,
+                                    child: Center(
+                                      child: Icon(Icons.add_a_photo),
+                                    ),
                                   ),
                                 ),
-                              )
-                            ],
-                          ),
+                              );
+                            }
+                            return Stack(
+                              children: [
+                                AspectRatio(
+                                    aspectRatio: .8,
+                                    child: InkWell(
+                                      onTap: () => Navigator.pushNamed(
+                                          context, Routes.imagePreviewPage,
+                                          arguments: state.deviceImages![index]
+                                              .fileImage.path),
+                                      child: Image.file(
+                                          state.deviceImages![index].fileImage,
+                                          fit: BoxFit.cover),
+                                    )),
+                                Positioned(
+                                  top: 3,
+                                  right: 3,
+                                  child: InkWell(
+                                    onTap: () => context.read<OrdersBloc>().add(
+                                        OrdersEvent.removeDeviceImage(
+                                            index: index)),
+                                    child: const CircleAvatar(
+                                      backgroundColor: kBluePrimary,
+                                      child: Icon(Icons.delete, color: kWhite),
+                                    ),
+                                  ),
+                                )
+                              ],
+                            );
+                          },
                         ),
                       )
                     : kEmpty

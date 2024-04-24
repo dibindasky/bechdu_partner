@@ -54,7 +54,7 @@ class ImagePickerService {
       file.absolute.path,
       targetPath,
       quality: quality,
-      rotate: 180,
+      // rotate: 180,
     );
     if (result != null) {
       return File(result.path);

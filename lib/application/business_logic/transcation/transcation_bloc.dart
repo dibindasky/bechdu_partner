@@ -119,7 +119,7 @@ class TranscationBloc extends Bloc<TranscationEvent, TranscationState> {
   }
 
   FutureOr<void> uploadReciept(UploadReciept event, emit) async {
-    final image = await imagePickerService.pickImage(camera: false);
+    final image = await imagePickerService.pickImage(camera: event.cam);
     image.fold(
         (l) => null,
         (r) => emit(state.copyWith(

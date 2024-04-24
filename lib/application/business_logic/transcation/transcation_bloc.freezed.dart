@@ -30,7 +30,7 @@ mixin _$TranscationEvent {
         calculateAmount,
     required TResult Function(bool call) getManuelTransactions,
     required TResult Function() getManuelTransactionsNext,
-    required TResult Function() uploadReciept,
+    required TResult Function(bool cam) uploadReciept,
     required TResult Function(int gst, int coinValue)
         makeManuelTranscationRequest,
     required TResult Function(EpayModel epayModel) makeEpaymetns,
@@ -50,7 +50,7 @@ mixin _$TranscationEvent {
     TResult? Function(int coins, int coinValue, int gstValue)? calculateAmount,
     TResult? Function(bool call)? getManuelTransactions,
     TResult? Function()? getManuelTransactionsNext,
-    TResult? Function()? uploadReciept,
+    TResult? Function(bool cam)? uploadReciept,
     TResult? Function(int gst, int coinValue)? makeManuelTranscationRequest,
     TResult? Function(EpayModel epayModel)? makeEpaymetns,
     TResult? Function()? reset,
@@ -69,7 +69,7 @@ mixin _$TranscationEvent {
     TResult Function(int coins, int coinValue, int gstValue)? calculateAmount,
     TResult Function(bool call)? getManuelTransactions,
     TResult Function()? getManuelTransactionsNext,
-    TResult Function()? uploadReciept,
+    TResult Function(bool cam)? uploadReciept,
     TResult Function(int gst, int coinValue)? makeManuelTranscationRequest,
     TResult Function(EpayModel epayModel)? makeEpaymetns,
     TResult Function()? reset,
@@ -219,7 +219,7 @@ class _$ChangeTabImpl implements ChangeTab {
         calculateAmount,
     required TResult Function(bool call) getManuelTransactions,
     required TResult Function() getManuelTransactionsNext,
-    required TResult Function() uploadReciept,
+    required TResult Function(bool cam) uploadReciept,
     required TResult Function(int gst, int coinValue)
         makeManuelTranscationRequest,
     required TResult Function(EpayModel epayModel) makeEpaymetns,
@@ -242,7 +242,7 @@ class _$ChangeTabImpl implements ChangeTab {
     TResult? Function(int coins, int coinValue, int gstValue)? calculateAmount,
     TResult? Function(bool call)? getManuelTransactions,
     TResult? Function()? getManuelTransactionsNext,
-    TResult? Function()? uploadReciept,
+    TResult? Function(bool cam)? uploadReciept,
     TResult? Function(int gst, int coinValue)? makeManuelTranscationRequest,
     TResult? Function(EpayModel epayModel)? makeEpaymetns,
     TResult? Function()? reset,
@@ -264,7 +264,7 @@ class _$ChangeTabImpl implements ChangeTab {
     TResult Function(int coins, int coinValue, int gstValue)? calculateAmount,
     TResult Function(bool call)? getManuelTransactions,
     TResult Function()? getManuelTransactionsNext,
-    TResult Function()? uploadReciept,
+    TResult Function(bool cam)? uploadReciept,
     TResult Function(int gst, int coinValue)? makeManuelTranscationRequest,
     TResult Function(EpayModel epayModel)? makeEpaymetns,
     TResult Function()? reset,
@@ -416,7 +416,7 @@ class _$AgreePolicyImpl implements AgreePolicy {
         calculateAmount,
     required TResult Function(bool call) getManuelTransactions,
     required TResult Function() getManuelTransactionsNext,
-    required TResult Function() uploadReciept,
+    required TResult Function(bool cam) uploadReciept,
     required TResult Function(int gst, int coinValue)
         makeManuelTranscationRequest,
     required TResult Function(EpayModel epayModel) makeEpaymetns,
@@ -439,7 +439,7 @@ class _$AgreePolicyImpl implements AgreePolicy {
     TResult? Function(int coins, int coinValue, int gstValue)? calculateAmount,
     TResult? Function(bool call)? getManuelTransactions,
     TResult? Function()? getManuelTransactionsNext,
-    TResult? Function()? uploadReciept,
+    TResult? Function(bool cam)? uploadReciept,
     TResult? Function(int gst, int coinValue)? makeManuelTranscationRequest,
     TResult? Function(EpayModel epayModel)? makeEpaymetns,
     TResult? Function()? reset,
@@ -461,7 +461,7 @@ class _$AgreePolicyImpl implements AgreePolicy {
     TResult Function(int coins, int coinValue, int gstValue)? calculateAmount,
     TResult Function(bool call)? getManuelTransactions,
     TResult Function()? getManuelTransactionsNext,
-    TResult Function()? uploadReciept,
+    TResult Function(bool cam)? uploadReciept,
     TResult Function(int gst, int coinValue)? makeManuelTranscationRequest,
     TResult Function(EpayModel epayModel)? makeEpaymetns,
     TResult Function()? reset,
@@ -642,7 +642,7 @@ class _$GetCreditedTranscationsImpl implements GetCreditedTranscations {
         calculateAmount,
     required TResult Function(bool call) getManuelTransactions,
     required TResult Function() getManuelTransactionsNext,
-    required TResult Function() uploadReciept,
+    required TResult Function(bool cam) uploadReciept,
     required TResult Function(int gst, int coinValue)
         makeManuelTranscationRequest,
     required TResult Function(EpayModel epayModel) makeEpaymetns,
@@ -665,7 +665,7 @@ class _$GetCreditedTranscationsImpl implements GetCreditedTranscations {
     TResult? Function(int coins, int coinValue, int gstValue)? calculateAmount,
     TResult? Function(bool call)? getManuelTransactions,
     TResult? Function()? getManuelTransactionsNext,
-    TResult? Function()? uploadReciept,
+    TResult? Function(bool cam)? uploadReciept,
     TResult? Function(int gst, int coinValue)? makeManuelTranscationRequest,
     TResult? Function(EpayModel epayModel)? makeEpaymetns,
     TResult? Function()? reset,
@@ -687,7 +687,7 @@ class _$GetCreditedTranscationsImpl implements GetCreditedTranscations {
     TResult Function(int coins, int coinValue, int gstValue)? calculateAmount,
     TResult Function(bool call)? getManuelTransactions,
     TResult Function()? getManuelTransactionsNext,
-    TResult Function()? uploadReciept,
+    TResult Function(bool cam)? uploadReciept,
     TResult Function(int gst, int coinValue)? makeManuelTranscationRequest,
     TResult Function(EpayModel epayModel)? makeEpaymetns,
     TResult Function()? reset,
@@ -874,7 +874,7 @@ class _$GetDebitedTranscationsImpl implements GetDebitedTranscations {
         calculateAmount,
     required TResult Function(bool call) getManuelTransactions,
     required TResult Function() getManuelTransactionsNext,
-    required TResult Function() uploadReciept,
+    required TResult Function(bool cam) uploadReciept,
     required TResult Function(int gst, int coinValue)
         makeManuelTranscationRequest,
     required TResult Function(EpayModel epayModel) makeEpaymetns,
@@ -897,7 +897,7 @@ class _$GetDebitedTranscationsImpl implements GetDebitedTranscations {
     TResult? Function(int coins, int coinValue, int gstValue)? calculateAmount,
     TResult? Function(bool call)? getManuelTransactions,
     TResult? Function()? getManuelTransactionsNext,
-    TResult? Function()? uploadReciept,
+    TResult? Function(bool cam)? uploadReciept,
     TResult? Function(int gst, int coinValue)? makeManuelTranscationRequest,
     TResult? Function(EpayModel epayModel)? makeEpaymetns,
     TResult? Function()? reset,
@@ -919,7 +919,7 @@ class _$GetDebitedTranscationsImpl implements GetDebitedTranscations {
     TResult Function(int coins, int coinValue, int gstValue)? calculateAmount,
     TResult Function(bool call)? getManuelTransactions,
     TResult Function()? getManuelTransactionsNext,
-    TResult Function()? uploadReciept,
+    TResult Function(bool cam)? uploadReciept,
     TResult Function(int gst, int coinValue)? makeManuelTranscationRequest,
     TResult Function(EpayModel epayModel)? makeEpaymetns,
     TResult Function()? reset,
@@ -1082,7 +1082,7 @@ class _$GetCreditedTranscationsNextPageImpl
         calculateAmount,
     required TResult Function(bool call) getManuelTransactions,
     required TResult Function() getManuelTransactionsNext,
-    required TResult Function() uploadReciept,
+    required TResult Function(bool cam) uploadReciept,
     required TResult Function(int gst, int coinValue)
         makeManuelTranscationRequest,
     required TResult Function(EpayModel epayModel) makeEpaymetns,
@@ -1105,7 +1105,7 @@ class _$GetCreditedTranscationsNextPageImpl
     TResult? Function(int coins, int coinValue, int gstValue)? calculateAmount,
     TResult? Function(bool call)? getManuelTransactions,
     TResult? Function()? getManuelTransactionsNext,
-    TResult? Function()? uploadReciept,
+    TResult? Function(bool cam)? uploadReciept,
     TResult? Function(int gst, int coinValue)? makeManuelTranscationRequest,
     TResult? Function(EpayModel epayModel)? makeEpaymetns,
     TResult? Function()? reset,
@@ -1127,7 +1127,7 @@ class _$GetCreditedTranscationsNextPageImpl
     TResult Function(int coins, int coinValue, int gstValue)? calculateAmount,
     TResult Function(bool call)? getManuelTransactions,
     TResult Function()? getManuelTransactionsNext,
-    TResult Function()? uploadReciept,
+    TResult Function(bool cam)? uploadReciept,
     TResult Function(int gst, int coinValue)? makeManuelTranscationRequest,
     TResult Function(EpayModel epayModel)? makeEpaymetns,
     TResult Function()? reset,
@@ -1285,7 +1285,7 @@ class _$GetDebitedTranscationsNextPageImpl
         calculateAmount,
     required TResult Function(bool call) getManuelTransactions,
     required TResult Function() getManuelTransactionsNext,
-    required TResult Function() uploadReciept,
+    required TResult Function(bool cam) uploadReciept,
     required TResult Function(int gst, int coinValue)
         makeManuelTranscationRequest,
     required TResult Function(EpayModel epayModel) makeEpaymetns,
@@ -1308,7 +1308,7 @@ class _$GetDebitedTranscationsNextPageImpl
     TResult? Function(int coins, int coinValue, int gstValue)? calculateAmount,
     TResult? Function(bool call)? getManuelTransactions,
     TResult? Function()? getManuelTransactionsNext,
-    TResult? Function()? uploadReciept,
+    TResult? Function(bool cam)? uploadReciept,
     TResult? Function(int gst, int coinValue)? makeManuelTranscationRequest,
     TResult? Function(EpayModel epayModel)? makeEpaymetns,
     TResult? Function()? reset,
@@ -1330,7 +1330,7 @@ class _$GetDebitedTranscationsNextPageImpl
     TResult Function(int coins, int coinValue, int gstValue)? calculateAmount,
     TResult Function(bool call)? getManuelTransactions,
     TResult Function()? getManuelTransactionsNext,
-    TResult Function()? uploadReciept,
+    TResult Function(bool cam)? uploadReciept,
     TResult Function(int gst, int coinValue)? makeManuelTranscationRequest,
     TResult Function(EpayModel epayModel)? makeEpaymetns,
     TResult Function()? reset,
@@ -1510,7 +1510,7 @@ class _$DownloadInvoiceImpl implements DownloadInvoice {
         calculateAmount,
     required TResult Function(bool call) getManuelTransactions,
     required TResult Function() getManuelTransactionsNext,
-    required TResult Function() uploadReciept,
+    required TResult Function(bool cam) uploadReciept,
     required TResult Function(int gst, int coinValue)
         makeManuelTranscationRequest,
     required TResult Function(EpayModel epayModel) makeEpaymetns,
@@ -1533,7 +1533,7 @@ class _$DownloadInvoiceImpl implements DownloadInvoice {
     TResult? Function(int coins, int coinValue, int gstValue)? calculateAmount,
     TResult? Function(bool call)? getManuelTransactions,
     TResult? Function()? getManuelTransactionsNext,
-    TResult? Function()? uploadReciept,
+    TResult? Function(bool cam)? uploadReciept,
     TResult? Function(int gst, int coinValue)? makeManuelTranscationRequest,
     TResult? Function(EpayModel epayModel)? makeEpaymetns,
     TResult? Function()? reset,
@@ -1555,7 +1555,7 @@ class _$DownloadInvoiceImpl implements DownloadInvoice {
     TResult Function(int coins, int coinValue, int gstValue)? calculateAmount,
     TResult Function(bool call)? getManuelTransactions,
     TResult Function()? getManuelTransactionsNext,
-    TResult Function()? uploadReciept,
+    TResult Function(bool cam)? uploadReciept,
     TResult Function(int gst, int coinValue)? makeManuelTranscationRequest,
     TResult Function(EpayModel epayModel)? makeEpaymetns,
     TResult Function()? reset,
@@ -1739,7 +1739,7 @@ class _$MakePdfImpl implements MakePdf {
         calculateAmount,
     required TResult Function(bool call) getManuelTransactions,
     required TResult Function() getManuelTransactionsNext,
-    required TResult Function() uploadReciept,
+    required TResult Function(bool cam) uploadReciept,
     required TResult Function(int gst, int coinValue)
         makeManuelTranscationRequest,
     required TResult Function(EpayModel epayModel) makeEpaymetns,
@@ -1762,7 +1762,7 @@ class _$MakePdfImpl implements MakePdf {
     TResult? Function(int coins, int coinValue, int gstValue)? calculateAmount,
     TResult? Function(bool call)? getManuelTransactions,
     TResult? Function()? getManuelTransactionsNext,
-    TResult? Function()? uploadReciept,
+    TResult? Function(bool cam)? uploadReciept,
     TResult? Function(int gst, int coinValue)? makeManuelTranscationRequest,
     TResult? Function(EpayModel epayModel)? makeEpaymetns,
     TResult? Function()? reset,
@@ -1784,7 +1784,7 @@ class _$MakePdfImpl implements MakePdf {
     TResult Function(int coins, int coinValue, int gstValue)? calculateAmount,
     TResult Function(bool call)? getManuelTransactions,
     TResult Function()? getManuelTransactionsNext,
-    TResult Function()? uploadReciept,
+    TResult Function(bool cam)? uploadReciept,
     TResult Function(int gst, int coinValue)? makeManuelTranscationRequest,
     TResult Function(EpayModel epayModel)? makeEpaymetns,
     TResult Function()? reset,
@@ -1987,7 +1987,7 @@ class _$CalculateAmountImpl implements CalculateAmount {
         calculateAmount,
     required TResult Function(bool call) getManuelTransactions,
     required TResult Function() getManuelTransactionsNext,
-    required TResult Function() uploadReciept,
+    required TResult Function(bool cam) uploadReciept,
     required TResult Function(int gst, int coinValue)
         makeManuelTranscationRequest,
     required TResult Function(EpayModel epayModel) makeEpaymetns,
@@ -2010,7 +2010,7 @@ class _$CalculateAmountImpl implements CalculateAmount {
     TResult? Function(int coins, int coinValue, int gstValue)? calculateAmount,
     TResult? Function(bool call)? getManuelTransactions,
     TResult? Function()? getManuelTransactionsNext,
-    TResult? Function()? uploadReciept,
+    TResult? Function(bool cam)? uploadReciept,
     TResult? Function(int gst, int coinValue)? makeManuelTranscationRequest,
     TResult? Function(EpayModel epayModel)? makeEpaymetns,
     TResult? Function()? reset,
@@ -2032,7 +2032,7 @@ class _$CalculateAmountImpl implements CalculateAmount {
     TResult Function(int coins, int coinValue, int gstValue)? calculateAmount,
     TResult Function(bool call)? getManuelTransactions,
     TResult Function()? getManuelTransactionsNext,
-    TResult Function()? uploadReciept,
+    TResult Function(bool cam)? uploadReciept,
     TResult Function(int gst, int coinValue)? makeManuelTranscationRequest,
     TResult Function(EpayModel epayModel)? makeEpaymetns,
     TResult Function()? reset,
@@ -2222,7 +2222,7 @@ class _$GetManuelTransactionsImpl implements GetManuelTransactions {
         calculateAmount,
     required TResult Function(bool call) getManuelTransactions,
     required TResult Function() getManuelTransactionsNext,
-    required TResult Function() uploadReciept,
+    required TResult Function(bool cam) uploadReciept,
     required TResult Function(int gst, int coinValue)
         makeManuelTranscationRequest,
     required TResult Function(EpayModel epayModel) makeEpaymetns,
@@ -2245,7 +2245,7 @@ class _$GetManuelTransactionsImpl implements GetManuelTransactions {
     TResult? Function(int coins, int coinValue, int gstValue)? calculateAmount,
     TResult? Function(bool call)? getManuelTransactions,
     TResult? Function()? getManuelTransactionsNext,
-    TResult? Function()? uploadReciept,
+    TResult? Function(bool cam)? uploadReciept,
     TResult? Function(int gst, int coinValue)? makeManuelTranscationRequest,
     TResult? Function(EpayModel epayModel)? makeEpaymetns,
     TResult? Function()? reset,
@@ -2267,7 +2267,7 @@ class _$GetManuelTransactionsImpl implements GetManuelTransactions {
     TResult Function(int coins, int coinValue, int gstValue)? calculateAmount,
     TResult Function(bool call)? getManuelTransactions,
     TResult Function()? getManuelTransactionsNext,
-    TResult Function()? uploadReciept,
+    TResult Function(bool cam)? uploadReciept,
     TResult Function(int gst, int coinValue)? makeManuelTranscationRequest,
     TResult Function(EpayModel epayModel)? makeEpaymetns,
     TResult Function()? reset,
@@ -2429,7 +2429,7 @@ class _$GetManuelTransactionsNextImpl implements GetManuelTransactionsNext {
         calculateAmount,
     required TResult Function(bool call) getManuelTransactions,
     required TResult Function() getManuelTransactionsNext,
-    required TResult Function() uploadReciept,
+    required TResult Function(bool cam) uploadReciept,
     required TResult Function(int gst, int coinValue)
         makeManuelTranscationRequest,
     required TResult Function(EpayModel epayModel) makeEpaymetns,
@@ -2452,7 +2452,7 @@ class _$GetManuelTransactionsNextImpl implements GetManuelTransactionsNext {
     TResult? Function(int coins, int coinValue, int gstValue)? calculateAmount,
     TResult? Function(bool call)? getManuelTransactions,
     TResult? Function()? getManuelTransactionsNext,
-    TResult? Function()? uploadReciept,
+    TResult? Function(bool cam)? uploadReciept,
     TResult? Function(int gst, int coinValue)? makeManuelTranscationRequest,
     TResult? Function(EpayModel epayModel)? makeEpaymetns,
     TResult? Function()? reset,
@@ -2474,7 +2474,7 @@ class _$GetManuelTransactionsNextImpl implements GetManuelTransactionsNext {
     TResult Function(int coins, int coinValue, int gstValue)? calculateAmount,
     TResult Function(bool call)? getManuelTransactions,
     TResult Function()? getManuelTransactionsNext,
-    TResult Function()? uploadReciept,
+    TResult Function(bool cam)? uploadReciept,
     TResult Function(int gst, int coinValue)? makeManuelTranscationRequest,
     TResult Function(EpayModel epayModel)? makeEpaymetns,
     TResult Function()? reset,
@@ -2581,6 +2581,8 @@ abstract class _$$UploadRecieptImplCopyWith<$Res> {
   factory _$$UploadRecieptImplCopyWith(
           _$UploadRecieptImpl value, $Res Function(_$UploadRecieptImpl) then) =
       __$$UploadRecieptImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool cam});
 }
 
 /// @nodoc
@@ -2590,26 +2592,50 @@ class __$$UploadRecieptImplCopyWithImpl<$Res>
   __$$UploadRecieptImplCopyWithImpl(
       _$UploadRecieptImpl _value, $Res Function(_$UploadRecieptImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? cam = null,
+  }) {
+    return _then(_$UploadRecieptImpl(
+      cam: null == cam
+          ? _value.cam
+          : cam // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$UploadRecieptImpl implements UploadReciept {
-  const _$UploadRecieptImpl();
+  const _$UploadRecieptImpl({required this.cam});
+
+  @override
+  final bool cam;
 
   @override
   String toString() {
-    return 'TranscationEvent.uploadReciept()';
+    return 'TranscationEvent.uploadReciept(cam: $cam)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$UploadRecieptImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$UploadRecieptImpl &&
+            (identical(other.cam, cam) || other.cam == cam));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, cam);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UploadRecieptImplCopyWith<_$UploadRecieptImpl> get copyWith =>
+      __$$UploadRecieptImplCopyWithImpl<_$UploadRecieptImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2626,13 +2652,13 @@ class _$UploadRecieptImpl implements UploadReciept {
         calculateAmount,
     required TResult Function(bool call) getManuelTransactions,
     required TResult Function() getManuelTransactionsNext,
-    required TResult Function() uploadReciept,
+    required TResult Function(bool cam) uploadReciept,
     required TResult Function(int gst, int coinValue)
         makeManuelTranscationRequest,
     required TResult Function(EpayModel epayModel) makeEpaymetns,
     required TResult Function() reset,
   }) {
-    return uploadReciept();
+    return uploadReciept(cam);
   }
 
   @override
@@ -2649,12 +2675,12 @@ class _$UploadRecieptImpl implements UploadReciept {
     TResult? Function(int coins, int coinValue, int gstValue)? calculateAmount,
     TResult? Function(bool call)? getManuelTransactions,
     TResult? Function()? getManuelTransactionsNext,
-    TResult? Function()? uploadReciept,
+    TResult? Function(bool cam)? uploadReciept,
     TResult? Function(int gst, int coinValue)? makeManuelTranscationRequest,
     TResult? Function(EpayModel epayModel)? makeEpaymetns,
     TResult? Function()? reset,
   }) {
-    return uploadReciept?.call();
+    return uploadReciept?.call(cam);
   }
 
   @override
@@ -2671,14 +2697,14 @@ class _$UploadRecieptImpl implements UploadReciept {
     TResult Function(int coins, int coinValue, int gstValue)? calculateAmount,
     TResult Function(bool call)? getManuelTransactions,
     TResult Function()? getManuelTransactionsNext,
-    TResult Function()? uploadReciept,
+    TResult Function(bool cam)? uploadReciept,
     TResult Function(int gst, int coinValue)? makeManuelTranscationRequest,
     TResult Function(EpayModel epayModel)? makeEpaymetns,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
     if (uploadReciept != null) {
-      return uploadReciept();
+      return uploadReciept(cam);
     }
     return orElse();
   }
@@ -2770,7 +2796,12 @@ class _$UploadRecieptImpl implements UploadReciept {
 }
 
 abstract class UploadReciept implements TranscationEvent {
-  const factory UploadReciept() = _$UploadRecieptImpl;
+  const factory UploadReciept({required final bool cam}) = _$UploadRecieptImpl;
+
+  bool get cam;
+  @JsonKey(ignore: true)
+  _$$UploadRecieptImplCopyWith<_$UploadRecieptImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2865,7 +2896,7 @@ class _$MakeManuelTranscationRequestImpl
         calculateAmount,
     required TResult Function(bool call) getManuelTransactions,
     required TResult Function() getManuelTransactionsNext,
-    required TResult Function() uploadReciept,
+    required TResult Function(bool cam) uploadReciept,
     required TResult Function(int gst, int coinValue)
         makeManuelTranscationRequest,
     required TResult Function(EpayModel epayModel) makeEpaymetns,
@@ -2888,7 +2919,7 @@ class _$MakeManuelTranscationRequestImpl
     TResult? Function(int coins, int coinValue, int gstValue)? calculateAmount,
     TResult? Function(bool call)? getManuelTransactions,
     TResult? Function()? getManuelTransactionsNext,
-    TResult? Function()? uploadReciept,
+    TResult? Function(bool cam)? uploadReciept,
     TResult? Function(int gst, int coinValue)? makeManuelTranscationRequest,
     TResult? Function(EpayModel epayModel)? makeEpaymetns,
     TResult? Function()? reset,
@@ -2910,7 +2941,7 @@ class _$MakeManuelTranscationRequestImpl
     TResult Function(int coins, int coinValue, int gstValue)? calculateAmount,
     TResult Function(bool call)? getManuelTransactions,
     TResult Function()? getManuelTransactionsNext,
-    TResult Function()? uploadReciept,
+    TResult Function(bool cam)? uploadReciept,
     TResult Function(int gst, int coinValue)? makeManuelTranscationRequest,
     TResult Function(EpayModel epayModel)? makeEpaymetns,
     TResult Function()? reset,
@@ -3098,7 +3129,7 @@ class _$MakeEpaymetnsImpl implements MakeEpaymetns {
         calculateAmount,
     required TResult Function(bool call) getManuelTransactions,
     required TResult Function() getManuelTransactionsNext,
-    required TResult Function() uploadReciept,
+    required TResult Function(bool cam) uploadReciept,
     required TResult Function(int gst, int coinValue)
         makeManuelTranscationRequest,
     required TResult Function(EpayModel epayModel) makeEpaymetns,
@@ -3121,7 +3152,7 @@ class _$MakeEpaymetnsImpl implements MakeEpaymetns {
     TResult? Function(int coins, int coinValue, int gstValue)? calculateAmount,
     TResult? Function(bool call)? getManuelTransactions,
     TResult? Function()? getManuelTransactionsNext,
-    TResult? Function()? uploadReciept,
+    TResult? Function(bool cam)? uploadReciept,
     TResult? Function(int gst, int coinValue)? makeManuelTranscationRequest,
     TResult? Function(EpayModel epayModel)? makeEpaymetns,
     TResult? Function()? reset,
@@ -3143,7 +3174,7 @@ class _$MakeEpaymetnsImpl implements MakeEpaymetns {
     TResult Function(int coins, int coinValue, int gstValue)? calculateAmount,
     TResult Function(bool call)? getManuelTransactions,
     TResult Function()? getManuelTransactionsNext,
-    TResult Function()? uploadReciept,
+    TResult Function(bool cam)? uploadReciept,
     TResult Function(int gst, int coinValue)? makeManuelTranscationRequest,
     TResult Function(EpayModel epayModel)? makeEpaymetns,
     TResult Function()? reset,
@@ -3301,7 +3332,7 @@ class _$ResetImpl implements Reset {
         calculateAmount,
     required TResult Function(bool call) getManuelTransactions,
     required TResult Function() getManuelTransactionsNext,
-    required TResult Function() uploadReciept,
+    required TResult Function(bool cam) uploadReciept,
     required TResult Function(int gst, int coinValue)
         makeManuelTranscationRequest,
     required TResult Function(EpayModel epayModel) makeEpaymetns,
@@ -3324,7 +3355,7 @@ class _$ResetImpl implements Reset {
     TResult? Function(int coins, int coinValue, int gstValue)? calculateAmount,
     TResult? Function(bool call)? getManuelTransactions,
     TResult? Function()? getManuelTransactionsNext,
-    TResult? Function()? uploadReciept,
+    TResult? Function(bool cam)? uploadReciept,
     TResult? Function(int gst, int coinValue)? makeManuelTranscationRequest,
     TResult? Function(EpayModel epayModel)? makeEpaymetns,
     TResult? Function()? reset,
@@ -3346,7 +3377,7 @@ class _$ResetImpl implements Reset {
     TResult Function(int coins, int coinValue, int gstValue)? calculateAmount,
     TResult Function(bool call)? getManuelTransactions,
     TResult Function()? getManuelTransactionsNext,
-    TResult Function()? uploadReciept,
+    TResult Function(bool cam)? uploadReciept,
     TResult Function(int gst, int coinValue)? makeManuelTranscationRequest,
     TResult Function(EpayModel epayModel)? makeEpaymetns,
     TResult Function()? reset,

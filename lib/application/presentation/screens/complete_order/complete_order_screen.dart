@@ -32,7 +32,8 @@ class ScreenCompleteOrder extends StatelessWidget {
                 kHeight10,
                 const DeviceImagesSession(),
                 kHeight20,
-                CompleteSubmitButton(orderDetail: orderDetail)
+                CompleteSubmitButton(orderDetail: orderDetail),
+                kHeight30,
               ],
             ),
           ),

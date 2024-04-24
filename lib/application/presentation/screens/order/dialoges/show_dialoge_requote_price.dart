@@ -4,7 +4,6 @@ import 'package:bechdu_partner/application/presentation/routes/routes.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:bechdu_partner/application/presentation/widgets/status_colored_box.dart';
-import 'package:bechdu_partner/domain/model/order/get_partner_order_response_model/order_detail.dart';
 import 'package:bechdu_partner/domain/model/requote/price_calculation_model/selected_option.dart';
 import 'package:bechdu_partner/domain/model/requote/requote_price_model/requote_price_model.dart';
 import 'package:flutter/material.dart';

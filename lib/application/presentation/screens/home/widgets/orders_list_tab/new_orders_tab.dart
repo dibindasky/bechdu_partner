@@ -1,4 +1,5 @@
 import 'package:bechdu_partner/application/business_logic/order/orders/orders_bloc.dart';
+import 'package:bechdu_partner/application/business_logic/pickup_partner/pickup_partner_bloc.dart';
 import 'package:bechdu_partner/application/presentation/screens/home/widgets/home_orders_tile.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
@@ -106,6 +107,9 @@ class _NewOrdersListState extends State<NewOrdersList> {
                   context
                       .read<OrdersBloc>()
                       .add(const OrdersEvent.getNewOrder(call: true));
+                  context
+                      .read<PickupPartnerBloc>()
+                      .add(const PickupPartnerEvent.getPartnerProfile());
                 }
                 context
                     .read<OrdersBloc>()

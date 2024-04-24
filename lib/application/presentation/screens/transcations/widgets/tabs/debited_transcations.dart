@@ -1,3 +1,4 @@
+import 'package:bechdu_partner/application/business_logic/pickup_partner/pickup_partner_bloc.dart';
 import 'package:bechdu_partner/application/business_logic/transcation/transcation_bloc.dart';
 import 'package:bechdu_partner/application/presentation/routes/routes.dart';
 import 'package:bechdu_partner/application/presentation/screens/transcations/widgets/tabs/transcations_tile.dart';
@@ -101,6 +102,9 @@ class _DebitedTranscationsListState extends State<DebitedTranscationsList> {
             context
                 .read<TranscationBloc>()
                 .add(const TranscationEvent.getManuelTransactions(call: true));
+            context
+                .read<PickupPartnerBloc>()
+                .add(const PickupPartnerEvent.getPartnerProfile());
           });
         } else {
           return ErrorRefreshIndicator(

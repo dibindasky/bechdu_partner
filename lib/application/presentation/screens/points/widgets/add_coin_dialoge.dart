@@ -5,6 +5,7 @@ import 'package:bechdu_partner/application/presentation/routes/routes.dart';
 import 'package:bechdu_partner/application/presentation/screens/points/widgets/add_coin_short_button.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
+import 'package:bechdu_partner/application/presentation/utils/dialoge/dialoge.dart';
 import 'package:bechdu_partner/data/feature/razorpay.dart';
 import 'package:bechdu_partner/domain/model/transcaton/epay_model/epay_model.dart';
 import 'package:flutter/material.dart';
@@ -320,9 +321,21 @@ class CustomTextFileldPaymnet extends StatelessWidget {
     return InkWell(
       onTap: () {
         // upload receipt here
-        context
-            .read<TranscationBloc>()
-            .add(const TranscationEvent.uploadReciept());
+        showCustomDialoge(
+            context: context,
+            title: 'Choose Image From !',
+            buttonText: 'Camera',
+            cancelButtonText: 'Gallery',
+            onCancelTap: () {
+              context
+                  .read<TranscationBloc>()
+                  .add(const TranscationEvent.uploadReciept(cam: false));
+            },
+            onTap: () {
+              context
+                  .read<TranscationBloc>()
+                  .add(const TranscationEvent.uploadReciept(cam: true));
+            });
       },
       child: BlocBuilder<TranscationBloc, TranscationState>(
         builder: (context, state) {

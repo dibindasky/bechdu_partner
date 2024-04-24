@@ -37,6 +37,7 @@ class _ReshedulePopupState extends State<ReshedulePopup> {
   bool dateError = false;
   bool timeError = false;
   bool messageError = false;
+  List<String> timeSlots = [];
 
   @override
   Widget build(BuildContext context) {
@@ -83,6 +84,34 @@ class _ReshedulePopupState extends State<ReshedulePopup> {
                           items: state.dates,
                           onTap: (value) {
                             date = value ?? 'Date';
+                            List<String> timess = List.from(state.time);
+                            timeSlots = List.from(state.time);
+                            if (date != 'Date') {
+                              final day = date.split(' ').first.length == 1
+                                  ? '0${date.split(' ').first}'
+                                  : date.split(' ').first;
+                              final toDay =
+                                  DateTime.now().day.toString().length == 1
+                                      ? "0${DateTime.now().day.toString()}"
+                                      : DateTime.now().day.toString();
+                              if (day == toDay) {
+                                DateTime currentTime = DateTime.now();
+                                List<String> remainingTimeSlots =
+                                    timess.where((timeSlot) {
+                                  List<String> times = timeSlot.split(" - ");
+                                  int startTime = int.parse(times.first
+                                      .substring(0, times.first.length - 2));
+                                  if (times.first
+                                          .substring(times.first.length - 2) ==
+                                      'PM') {
+                                    startTime += 12;
+                                  }
+                                  final timenow = currentTime.hour;
+                                  return startTime > timenow;
+                                }).toList();
+                                timeSlots = remainingTimeSlots;
+                              }
+                            }
                             setState(() {
                               dateError = value == 'Date';
                             });
@@ -93,7 +122,7 @@ class _ReshedulePopupState extends State<ReshedulePopup> {
                           title: time,
                           showError: timeError,
                           icon: Icons.calendar_month,
-                          items: state.time,
+                          items: timeSlots,
                           onTap: (value) {
                             time = value ?? 'Time';
                             setState(() {
@@ -162,8 +191,6 @@ class _ReshedulePopupState extends State<ReshedulePopup> {
                                       error = '';
                                       messageError = false;
                                     });
-                                    print(
-                                        'time $time, date $date, message $message');
                                     context.read<RequoteBloc>().add(
                                         RequoteEvent.resheduleOrder(
                                             resheduleModel: ResheduleModel(
@@ -263,7 +290,7 @@ class _CustomDropDownState extends State<CustomDropDown> {
                 return DropdownMenuItem<String>(
                   onTap: () => setState(() {
                     title = value;
-                  }), 
+                  }),
                   value: value,
                   child: Text(
                     value,

@@ -23,7 +23,7 @@ class TranscationEvent with _$TranscationEvent {
       GetManuelTransactions;
   const factory TranscationEvent.getManuelTransactionsNext() =
       GetManuelTransactionsNext;
-  const factory TranscationEvent.uploadReciept() = UploadReciept;
+  const factory TranscationEvent.uploadReciept({required bool cam}) = UploadReciept;
   const factory TranscationEvent.makeManuelTranscationRequest(
       {required int gst,
       required int coinValue}) = MakeManuelTranscationRequest;

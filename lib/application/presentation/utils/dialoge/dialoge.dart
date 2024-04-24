@@ -7,6 +7,8 @@ showCustomDialoge(
     required String title,
     Color buttonColor = kGreenPrimary,
     required String buttonText,
+    String cancelButtonText = 'Cancel',
+    VoidCallback? onCancelTap,
     required VoidCallback onTap}) {
   showDialog(
     context: context,
@@ -31,9 +33,12 @@ showCustomDialoge(
                           side: const BorderSide(color: kBluePrimary)),
                       onPressed: () {
                         Navigator.pop(context);
+                        if (onCancelTap != null) {
+                          onCancelTap();
+                        }
                       },
                       child: Text(
-                        'Cancel',
+                        cancelButtonText,
                         style: textHeadMedium1.copyWith(color: kBluePrimary),
                       )),
                   kWidth20,

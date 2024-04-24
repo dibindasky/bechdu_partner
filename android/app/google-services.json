@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "638524143029",
-    "project_id": "notify-dd676",
-    "storage_bucket": "notify-dd676.appspot.com"
+    "project_number": "313232559854",
+    "project_id": "bechdu-9649a",
+    "storage_bucket": "bechdu-9649a.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:638524143029:android:aafec2d8ce80b10dd915fc",
+        "mobilesdk_app_id": "1:313232559854:android:eeb94378408ef25f86adff",
         "android_client_info": {
           "package_name": "com.Zikrabyte.bechdu_partner"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyB3QlX0BXAgXpFUrcovda9aDMqIePXqcoQ"
+          "current_key": "AIzaSyDwUL7XyYQpavUu5LO1VVL9c3APVlf68SA"
         }
       ],
       "services": {
