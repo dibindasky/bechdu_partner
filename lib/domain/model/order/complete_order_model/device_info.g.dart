@@ -14,12 +14,14 @@ DeviceInfo _$DeviceInfoFromJson(Map<String, dynamic> json) => DeviceInfo(
       deviceImages: (json['deviceImages'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
+      imeiImage: json['imeiImage'] as String?,
     );
 
 Map<String, dynamic> _$DeviceInfoToJson(DeviceInfo instance) =>
     <String, dynamic>{
       'finalPrice': instance.finalPrice,
       'imeiNumber': instance.imeiNumber,
+      'imeiImage': instance.imeiImage,
       'deviceBill': instance.deviceBill,
       'idCard': instance.idCard,
       'deviceImages': instance.deviceImages,

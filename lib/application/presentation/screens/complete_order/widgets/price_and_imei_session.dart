@@ -18,6 +18,7 @@ class PriceAndImeiSession extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
+      // put final price to controller
       context.read<OrdersBloc>().finalPriceController.text =
           context.read<RequoteBloc>().finalPrice != ''
               ? context.read<RequoteBloc>().finalPrice

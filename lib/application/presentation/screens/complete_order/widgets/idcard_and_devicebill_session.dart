@@ -29,6 +29,10 @@ class IdCardAndDeviceBillSession extends StatelessWidget {
                   padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                       border: Border.all(
+                          width:
+                              state.orderCompletionError && state.idCard == null
+                                  ? 2
+                                  : 1,
                           color:
                               state.orderCompletionError && state.idCard == null
                                   ? kRedDark
@@ -42,7 +46,11 @@ class IdCardAndDeviceBillSession extends StatelessWidget {
                         children: [
                           Text('Id Card', style: textHeadRegular2),
                           kWidth10,
-                          const Icon(Icons.camera_outlined)
+                          Icon(Icons.camera_outlined,
+                              color: state.orderCompletionError &&
+                                      state.idCard == null
+                                  ? kRedDark
+                                  : kBlack)
                         ],
                       )),
                       state.idCard != null ? kHeight10 : kEmpty,
@@ -103,6 +111,10 @@ class IdCardAndDeviceBillSession extends StatelessWidget {
                   padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                       border: Border.all(
+                          width: state.orderCompletionError &&
+                                  state.deviceBill == null
+                              ? 2
+                              : 1,
                           color: state.orderCompletionError &&
                                   state.deviceBill == null
                               ? kRedDark
@@ -114,9 +126,13 @@ class IdCardAndDeviceBillSession extends StatelessWidget {
                           child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text('Device bill', style: textHeadRegular2),
+                          Text('Device Bill', style: textHeadRegular2),
                           kWidth10,
-                          const Icon(Icons.camera_outlined)
+                          Icon(Icons.camera_outlined,
+                              color: state.orderCompletionError &&
+                                      state.deviceBill == null
+                                  ? kRedDark
+                                  : kBlack)
                         ],
                       )),
                       state.deviceBill != null ? kHeight10 : kEmpty,

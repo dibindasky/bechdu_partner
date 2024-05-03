@@ -25,10 +25,16 @@ class DeviceImagesSession extends StatelessWidget {
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
                 border: Border.all(
-                    color:
-                        state.orderCompletionError && state.deviceImages == null
-                            ? kRedDark
-                            : kGreyLight),
+                    width: state.orderCompletionError &&
+                            (state.deviceImages == null ||
+                                state.deviceImages == [])
+                        ? 2
+                        : 1,
+                    color: state.orderCompletionError &&
+                            (state.deviceImages == null ||
+                                state.deviceImages == [])
+                        ? kRedDark
+                        : kGreyLight),
                 borderRadius: kRadius10),
             child: Column(
               children: [
@@ -38,7 +44,12 @@ class DeviceImagesSession extends StatelessWidget {
                   children: [
                     Text('Device images', style: textHeadRegular2),
                     kWidth10,
-                    const Icon(Icons.camera_outlined)
+                    Icon(Icons.camera_outlined,
+                        color: state.orderCompletionError &&
+                                (state.deviceImages == null ||
+                                    state.deviceImages == [])
+                            ? kRedDark
+                            : kBlack)
                   ],
                 )),
                 state.deviceImages != null && state.deviceImages!.isNotEmpty

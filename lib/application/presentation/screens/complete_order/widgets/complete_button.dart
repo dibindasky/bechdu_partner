@@ -52,11 +52,12 @@ class CompleteSubmitButton extends StatelessWidget {
                     .read<OrdersBloc>()
                     .add(const OrdersEvent.checkErrorCompleteOrder());
               } else {
-                print('in complete order ui call');
-                context.read<OrdersBloc>().add(OrdersEvent.completeOrder(
-                    orderId: orderDetail.id!,
-                    completeOrderModel: CompleteOrderModel(
-                        deviceInfo: DeviceInfo(
+                context.read<OrdersBloc>().add(
+                      OrdersEvent.completeOrder(
+                        orderId: orderDetail.id!,
+                        completeOrderModel: CompleteOrderModel(
+                          deviceInfo: DeviceInfo(
+                            imeiImage: state.imeiImage?.base64Image ?? '',
                             deviceBill: state.deviceBill!.base64Image,
                             idCard: state.idCard!.base64Image,
                             finalPrice: context
@@ -71,7 +72,11 @@ class CompleteSubmitButton extends StatelessWidget {
                                 .trim(),
                             deviceImages: state.deviceImages!
                                 .map((e) => e.base64Image)
-                                .toList()))));
+                                .toList(),
+                          ),
+                        ),
+                      ),
+                    );
               }
             }
           },

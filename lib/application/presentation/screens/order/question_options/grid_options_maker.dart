@@ -25,33 +25,38 @@ class _GridOptionMakerState extends State<GridOptionMaker> {
           return SingleChildScrollView(
             child: Column(
               children: [
-                ListView.builder(
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemCount: widget.list.length,
-                  shrinkWrap: true,
-                  itemBuilder: (context, index) {
-                    final answers = state.selectedAnswers[
-                            state.sections![state.requoteIndex].heading!]!
-                        .where((element) =>
-                            element.description ==
-                            widget.list[index].description)
-                        .toList();
-                    return GridOptionSelectorTile(
-                      option: widget.list[index],
-                      selected: answers.isNotEmpty,
-                      onTap: () {
-                        context.read<RequoteBloc>().add(RequoteEvent.markAnswer(
-                            selectedOption: SelectedOption(
-                                description: widget.list[index].description,
-                                heading:
-                                    state.sections![state.requoteIndex].heading,
-                                value: null,
-                                type: state.sections![state.requoteIndex]
-                                    .options![index].type)));
-                        setState(() {});
-                      },
-                    );
-                  },
+                PageStorage(
+                  bucket: PageStorageBucket(),
+                  key: PageStorageKey(generateRandomString(10)),
+                  child: ListView.builder(
+                    key: UniqueKey(),
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: widget.list.length,
+                    shrinkWrap: true,
+                    itemBuilder: (context, index) {
+                      final answers = state.selectedAnswers[
+                              state.sections![state.requoteIndex].heading!]!
+                          .where((element) =>
+                              element.description ==
+                              widget.list[index].description)
+                          .toList();
+                      return GridOptionSelectorTile(
+                        option: widget.list[index],
+                        selected: answers.isNotEmpty,
+                        onTap: () {
+                          context.read<RequoteBloc>().add(RequoteEvent.markAnswer(
+                              selectedOption: SelectedOption(
+                                  description: widget.list[index].description,
+                                  heading:
+                                      state.sections![state.requoteIndex].heading,
+                                  value: null,
+                                  type: state.sections![state.requoteIndex]
+                                      .options![index].type)));
+                          setState(() {});
+                        },
+                      );
+                    },
+                  ),
                 ),
                 kHeight30,
                 const AnswerIndexChanger(),

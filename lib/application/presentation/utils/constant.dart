@@ -1,5 +1,6 @@
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 const errorMessage = 'something went wrong, please try again';
 
@@ -142,4 +143,11 @@ IconData getNotificationIcon(String status) {
     default:
       return Icons.circle;
   }
+}
+
+String generateRandomString(int length) {
+  const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
+  final random = Random();
+  return String.fromCharCodes(Iterable.generate(
+    length, (_) => chars.codeUnitAt(random.nextInt(chars.length))));
 }

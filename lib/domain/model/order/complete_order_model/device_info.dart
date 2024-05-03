@@ -6,6 +6,7 @@ part 'device_info.g.dart';
 class DeviceInfo {
   String? finalPrice;
   String? imeiNumber;
+  String? imeiImage;
   String? deviceBill;
   String? idCard;
   List<String>? deviceImages;
@@ -16,6 +17,7 @@ class DeviceInfo {
     this.deviceBill,
     this.idCard,
     this.deviceImages,
+    this.imeiImage,
   });
 
   factory DeviceInfo.fromJson(Map<String, dynamic> json) {

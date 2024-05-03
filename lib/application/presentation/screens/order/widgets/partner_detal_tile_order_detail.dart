@@ -35,8 +35,8 @@ class PartnerDetailTile extends StatelessWidget {
               leading: const CircleAvatar(
                   backgroundColor: kGreenPrimary,
                   child: Icon(
-                    Icons.person_4_rounded,
-                    color: kBluePrimary,
+                    Icons.person,
+                    color: kWhite,
                   )),
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

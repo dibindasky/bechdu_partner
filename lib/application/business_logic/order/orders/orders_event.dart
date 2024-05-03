@@ -25,6 +25,8 @@ class OrdersEvent with _$OrdersEvent {
   const factory OrdersEvent.checkErrorCompleteOrder() = CheckErrorCompleteOrder;
   const factory OrdersEvent.addDiviceBill() = AddDiviceBill;
   const factory OrdersEvent.removeDiviceBill() = RemoveDiviceBill;
+  const factory OrdersEvent.addImeiImage() = AddImeiImage;
+  const factory OrdersEvent.removeImeiImage() = RemoveImeiImage;
   const factory OrdersEvent.addIdCardImage() = AddIdCardImage;
   const factory OrdersEvent.removeIdCardImage() = RemoveIdCardImage;
   const factory OrdersEvent.addDeviceImages() = AddDeviceImages;

@@ -35,6 +35,8 @@ mixin _$OrdersEvent {
     required TResult Function() checkErrorCompleteOrder,
     required TResult Function() addDiviceBill,
     required TResult Function() removeDiviceBill,
+    required TResult Function() addImeiImage,
+    required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
@@ -60,6 +62,8 @@ mixin _$OrdersEvent {
     TResult? Function()? checkErrorCompleteOrder,
     TResult? Function()? addDiviceBill,
     TResult? Function()? removeDiviceBill,
+    TResult? Function()? addImeiImage,
+    TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
@@ -85,6 +89,8 @@ mixin _$OrdersEvent {
     TResult Function()? checkErrorCompleteOrder,
     TResult Function()? addDiviceBill,
     TResult Function()? removeDiviceBill,
+    TResult Function()? addImeiImage,
+    TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
@@ -110,6 +116,8 @@ mixin _$OrdersEvent {
         checkErrorCompleteOrder,
     required TResult Function(AddDiviceBill value) addDiviceBill,
     required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddImeiImage value) addImeiImage,
+    required TResult Function(RemoveImeiImage value) removeImeiImage,
     required TResult Function(AddIdCardImage value) addIdCardImage,
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
@@ -133,6 +141,8 @@ mixin _$OrdersEvent {
     TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult? Function(AddDiviceBill value)? addDiviceBill,
     TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddImeiImage value)? addImeiImage,
+    TResult? Function(RemoveImeiImage value)? removeImeiImage,
     TResult? Function(AddIdCardImage value)? addIdCardImage,
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
@@ -156,6 +166,8 @@ mixin _$OrdersEvent {
     TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult Function(AddDiviceBill value)? addDiviceBill,
     TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddImeiImage value)? addImeiImage,
+    TResult Function(RemoveImeiImage value)? removeImeiImage,
     TResult Function(AddIdCardImage value)? addIdCardImage,
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
@@ -265,6 +277,8 @@ class _$AcceptOrderImpl implements AcceptOrder {
     required TResult Function() checkErrorCompleteOrder,
     required TResult Function() addDiviceBill,
     required TResult Function() removeDiviceBill,
+    required TResult Function() addImeiImage,
+    required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
@@ -293,6 +307,8 @@ class _$AcceptOrderImpl implements AcceptOrder {
     TResult? Function()? checkErrorCompleteOrder,
     TResult? Function()? addDiviceBill,
     TResult? Function()? removeDiviceBill,
+    TResult? Function()? addImeiImage,
+    TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
@@ -321,6 +337,8 @@ class _$AcceptOrderImpl implements AcceptOrder {
     TResult Function()? checkErrorCompleteOrder,
     TResult Function()? addDiviceBill,
     TResult Function()? removeDiviceBill,
+    TResult Function()? addImeiImage,
+    TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
@@ -352,6 +370,8 @@ class _$AcceptOrderImpl implements AcceptOrder {
         checkErrorCompleteOrder,
     required TResult Function(AddDiviceBill value) addDiviceBill,
     required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddImeiImage value) addImeiImage,
+    required TResult Function(RemoveImeiImage value) removeImeiImage,
     required TResult Function(AddIdCardImage value) addIdCardImage,
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
@@ -378,6 +398,8 @@ class _$AcceptOrderImpl implements AcceptOrder {
     TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult? Function(AddDiviceBill value)? addDiviceBill,
     TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddImeiImage value)? addImeiImage,
+    TResult? Function(RemoveImeiImage value)? removeImeiImage,
     TResult? Function(AddIdCardImage value)? addIdCardImage,
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
@@ -404,6 +426,8 @@ class _$AcceptOrderImpl implements AcceptOrder {
     TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult Function(AddDiviceBill value)? addDiviceBill,
     TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddImeiImage value)? addImeiImage,
+    TResult Function(RemoveImeiImage value)? removeImeiImage,
     TResult Function(AddIdCardImage value)? addIdCardImage,
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
@@ -510,6 +534,8 @@ class _$GetOrderDetailImpl implements GetOrderDetail {
     required TResult Function() checkErrorCompleteOrder,
     required TResult Function() addDiviceBill,
     required TResult Function() removeDiviceBill,
+    required TResult Function() addImeiImage,
+    required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
@@ -538,6 +564,8 @@ class _$GetOrderDetailImpl implements GetOrderDetail {
     TResult? Function()? checkErrorCompleteOrder,
     TResult? Function()? addDiviceBill,
     TResult? Function()? removeDiviceBill,
+    TResult? Function()? addImeiImage,
+    TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
@@ -566,6 +594,8 @@ class _$GetOrderDetailImpl implements GetOrderDetail {
     TResult Function()? checkErrorCompleteOrder,
     TResult Function()? addDiviceBill,
     TResult Function()? removeDiviceBill,
+    TResult Function()? addImeiImage,
+    TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
@@ -597,6 +627,8 @@ class _$GetOrderDetailImpl implements GetOrderDetail {
         checkErrorCompleteOrder,
     required TResult Function(AddDiviceBill value) addDiviceBill,
     required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddImeiImage value) addImeiImage,
+    required TResult Function(RemoveImeiImage value) removeImeiImage,
     required TResult Function(AddIdCardImage value) addIdCardImage,
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
@@ -623,6 +655,8 @@ class _$GetOrderDetailImpl implements GetOrderDetail {
     TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult? Function(AddDiviceBill value)? addDiviceBill,
     TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddImeiImage value)? addImeiImage,
+    TResult? Function(RemoveImeiImage value)? removeImeiImage,
     TResult? Function(AddIdCardImage value)? addIdCardImage,
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
@@ -649,6 +683,8 @@ class _$GetOrderDetailImpl implements GetOrderDetail {
     TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult Function(AddDiviceBill value)? addDiviceBill,
     TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddImeiImage value)? addImeiImage,
+    TResult Function(RemoveImeiImage value)? removeImeiImage,
     TResult Function(AddIdCardImage value)? addIdCardImage,
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
@@ -762,6 +798,8 @@ class _$CancelOrderImpl implements CancelOrder {
     required TResult Function() checkErrorCompleteOrder,
     required TResult Function() addDiviceBill,
     required TResult Function() removeDiviceBill,
+    required TResult Function() addImeiImage,
+    required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
@@ -790,6 +828,8 @@ class _$CancelOrderImpl implements CancelOrder {
     TResult? Function()? checkErrorCompleteOrder,
     TResult? Function()? addDiviceBill,
     TResult? Function()? removeDiviceBill,
+    TResult? Function()? addImeiImage,
+    TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
@@ -818,6 +858,8 @@ class _$CancelOrderImpl implements CancelOrder {
     TResult Function()? checkErrorCompleteOrder,
     TResult Function()? addDiviceBill,
     TResult Function()? removeDiviceBill,
+    TResult Function()? addImeiImage,
+    TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
@@ -849,6 +891,8 @@ class _$CancelOrderImpl implements CancelOrder {
         checkErrorCompleteOrder,
     required TResult Function(AddDiviceBill value) addDiviceBill,
     required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddImeiImage value) addImeiImage,
+    required TResult Function(RemoveImeiImage value) removeImeiImage,
     required TResult Function(AddIdCardImage value) addIdCardImage,
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
@@ -875,6 +919,8 @@ class _$CancelOrderImpl implements CancelOrder {
     TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult? Function(AddDiviceBill value)? addDiviceBill,
     TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddImeiImage value)? addImeiImage,
+    TResult? Function(RemoveImeiImage value)? removeImeiImage,
     TResult? Function(AddIdCardImage value)? addIdCardImage,
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
@@ -901,6 +947,8 @@ class _$CancelOrderImpl implements CancelOrder {
     TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult Function(AddDiviceBill value)? addDiviceBill,
     TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddImeiImage value)? addImeiImage,
+    TResult Function(RemoveImeiImage value)? removeImeiImage,
     TResult Function(AddIdCardImage value)? addIdCardImage,
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
@@ -1018,6 +1066,8 @@ class _$CompleteOrderImpl implements CompleteOrder {
     required TResult Function() checkErrorCompleteOrder,
     required TResult Function() addDiviceBill,
     required TResult Function() removeDiviceBill,
+    required TResult Function() addImeiImage,
+    required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
@@ -1046,6 +1096,8 @@ class _$CompleteOrderImpl implements CompleteOrder {
     TResult? Function()? checkErrorCompleteOrder,
     TResult? Function()? addDiviceBill,
     TResult? Function()? removeDiviceBill,
+    TResult? Function()? addImeiImage,
+    TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
@@ -1074,6 +1126,8 @@ class _$CompleteOrderImpl implements CompleteOrder {
     TResult Function()? checkErrorCompleteOrder,
     TResult Function()? addDiviceBill,
     TResult Function()? removeDiviceBill,
+    TResult Function()? addImeiImage,
+    TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
@@ -1105,6 +1159,8 @@ class _$CompleteOrderImpl implements CompleteOrder {
         checkErrorCompleteOrder,
     required TResult Function(AddDiviceBill value) addDiviceBill,
     required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddImeiImage value) addImeiImage,
+    required TResult Function(RemoveImeiImage value) removeImeiImage,
     required TResult Function(AddIdCardImage value) addIdCardImage,
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
@@ -1131,6 +1187,8 @@ class _$CompleteOrderImpl implements CompleteOrder {
     TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult? Function(AddDiviceBill value)? addDiviceBill,
     TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddImeiImage value)? addImeiImage,
+    TResult? Function(RemoveImeiImage value)? removeImeiImage,
     TResult? Function(AddIdCardImage value)? addIdCardImage,
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
@@ -1157,6 +1215,8 @@ class _$CompleteOrderImpl implements CompleteOrder {
     TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult Function(AddDiviceBill value)? addDiviceBill,
     TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddImeiImage value)? addImeiImage,
+    TResult Function(RemoveImeiImage value)? removeImeiImage,
     TResult Function(AddIdCardImage value)? addIdCardImage,
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
@@ -1265,6 +1325,8 @@ class _$GetNewOrderImpl implements GetNewOrder {
     required TResult Function() checkErrorCompleteOrder,
     required TResult Function() addDiviceBill,
     required TResult Function() removeDiviceBill,
+    required TResult Function() addImeiImage,
+    required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
@@ -1293,6 +1355,8 @@ class _$GetNewOrderImpl implements GetNewOrder {
     TResult? Function()? checkErrorCompleteOrder,
     TResult? Function()? addDiviceBill,
     TResult? Function()? removeDiviceBill,
+    TResult? Function()? addImeiImage,
+    TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
@@ -1321,6 +1385,8 @@ class _$GetNewOrderImpl implements GetNewOrder {
     TResult Function()? checkErrorCompleteOrder,
     TResult Function()? addDiviceBill,
     TResult Function()? removeDiviceBill,
+    TResult Function()? addImeiImage,
+    TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
@@ -1352,6 +1418,8 @@ class _$GetNewOrderImpl implements GetNewOrder {
         checkErrorCompleteOrder,
     required TResult Function(AddDiviceBill value) addDiviceBill,
     required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddImeiImage value) addImeiImage,
+    required TResult Function(RemoveImeiImage value) removeImeiImage,
     required TResult Function(AddIdCardImage value) addIdCardImage,
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
@@ -1378,6 +1446,8 @@ class _$GetNewOrderImpl implements GetNewOrder {
     TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult? Function(AddDiviceBill value)? addDiviceBill,
     TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddImeiImage value)? addImeiImage,
+    TResult? Function(RemoveImeiImage value)? removeImeiImage,
     TResult? Function(AddIdCardImage value)? addIdCardImage,
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
@@ -1404,6 +1474,8 @@ class _$GetNewOrderImpl implements GetNewOrder {
     TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult Function(AddDiviceBill value)? addDiviceBill,
     TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddImeiImage value)? addImeiImage,
+    TResult Function(RemoveImeiImage value)? removeImeiImage,
     TResult Function(AddIdCardImage value)? addIdCardImage,
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
@@ -1509,6 +1581,8 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
     required TResult Function() checkErrorCompleteOrder,
     required TResult Function() addDiviceBill,
     required TResult Function() removeDiviceBill,
+    required TResult Function() addImeiImage,
+    required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
@@ -1537,6 +1611,8 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
     TResult? Function()? checkErrorCompleteOrder,
     TResult? Function()? addDiviceBill,
     TResult? Function()? removeDiviceBill,
+    TResult? Function()? addImeiImage,
+    TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
@@ -1565,6 +1641,8 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
     TResult Function()? checkErrorCompleteOrder,
     TResult Function()? addDiviceBill,
     TResult Function()? removeDiviceBill,
+    TResult Function()? addImeiImage,
+    TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
@@ -1596,6 +1674,8 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
         checkErrorCompleteOrder,
     required TResult Function(AddDiviceBill value) addDiviceBill,
     required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddImeiImage value) addImeiImage,
+    required TResult Function(RemoveImeiImage value) removeImeiImage,
     required TResult Function(AddIdCardImage value) addIdCardImage,
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
@@ -1622,6 +1702,8 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
     TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult? Function(AddDiviceBill value)? addDiviceBill,
     TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddImeiImage value)? addImeiImage,
+    TResult? Function(RemoveImeiImage value)? removeImeiImage,
     TResult? Function(AddIdCardImage value)? addIdCardImage,
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
@@ -1648,6 +1730,8 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
     TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult Function(AddDiviceBill value)? addDiviceBill,
     TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddImeiImage value)? addImeiImage,
+    TResult Function(RemoveImeiImage value)? removeImeiImage,
     TResult Function(AddIdCardImage value)? addIdCardImage,
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
@@ -1754,6 +1838,8 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
     required TResult Function() checkErrorCompleteOrder,
     required TResult Function() addDiviceBill,
     required TResult Function() removeDiviceBill,
+    required TResult Function() addImeiImage,
+    required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
@@ -1782,6 +1868,8 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
     TResult? Function()? checkErrorCompleteOrder,
     TResult? Function()? addDiviceBill,
     TResult? Function()? removeDiviceBill,
+    TResult? Function()? addImeiImage,
+    TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
@@ -1810,6 +1898,8 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
     TResult Function()? checkErrorCompleteOrder,
     TResult Function()? addDiviceBill,
     TResult Function()? removeDiviceBill,
+    TResult Function()? addImeiImage,
+    TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
@@ -1841,6 +1931,8 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
         checkErrorCompleteOrder,
     required TResult Function(AddDiviceBill value) addDiviceBill,
     required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddImeiImage value) addImeiImage,
+    required TResult Function(RemoveImeiImage value) removeImeiImage,
     required TResult Function(AddIdCardImage value) addIdCardImage,
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
@@ -1867,6 +1959,8 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
     TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult? Function(AddDiviceBill value)? addDiviceBill,
     TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddImeiImage value)? addImeiImage,
+    TResult? Function(RemoveImeiImage value)? removeImeiImage,
     TResult? Function(AddIdCardImage value)? addIdCardImage,
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
@@ -1893,6 +1987,8 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
     TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult Function(AddDiviceBill value)? addDiviceBill,
     TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddImeiImage value)? addImeiImage,
+    TResult Function(RemoveImeiImage value)? removeImeiImage,
     TResult Function(AddIdCardImage value)? addIdCardImage,
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
@@ -1973,6 +2069,8 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
     required TResult Function() checkErrorCompleteOrder,
     required TResult Function() addDiviceBill,
     required TResult Function() removeDiviceBill,
+    required TResult Function() addImeiImage,
+    required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
@@ -2001,6 +2099,8 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
     TResult? Function()? checkErrorCompleteOrder,
     TResult? Function()? addDiviceBill,
     TResult? Function()? removeDiviceBill,
+    TResult? Function()? addImeiImage,
+    TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
@@ -2029,6 +2129,8 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
     TResult Function()? checkErrorCompleteOrder,
     TResult Function()? addDiviceBill,
     TResult Function()? removeDiviceBill,
+    TResult Function()? addImeiImage,
+    TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
@@ -2060,6 +2162,8 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
         checkErrorCompleteOrder,
     required TResult Function(AddDiviceBill value) addDiviceBill,
     required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddImeiImage value) addImeiImage,
+    required TResult Function(RemoveImeiImage value) removeImeiImage,
     required TResult Function(AddIdCardImage value) addIdCardImage,
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
@@ -2086,6 +2190,8 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
     TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult? Function(AddDiviceBill value)? addDiviceBill,
     TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddImeiImage value)? addImeiImage,
+    TResult? Function(RemoveImeiImage value)? removeImeiImage,
     TResult? Function(AddIdCardImage value)? addIdCardImage,
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
@@ -2112,6 +2218,8 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
     TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult Function(AddDiviceBill value)? addDiviceBill,
     TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddImeiImage value)? addImeiImage,
+    TResult Function(RemoveImeiImage value)? removeImeiImage,
     TResult Function(AddIdCardImage value)? addIdCardImage,
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
@@ -2185,6 +2293,8 @@ class _$RefreshNewOrderImpl implements RefreshNewOrder {
     required TResult Function() checkErrorCompleteOrder,
     required TResult Function() addDiviceBill,
     required TResult Function() removeDiviceBill,
+    required TResult Function() addImeiImage,
+    required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
@@ -2213,6 +2323,8 @@ class _$RefreshNewOrderImpl implements RefreshNewOrder {
     TResult? Function()? checkErrorCompleteOrder,
     TResult? Function()? addDiviceBill,
     TResult? Function()? removeDiviceBill,
+    TResult? Function()? addImeiImage,
+    TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
@@ -2241,6 +2353,8 @@ class _$RefreshNewOrderImpl implements RefreshNewOrder {
     TResult Function()? checkErrorCompleteOrder,
     TResult Function()? addDiviceBill,
     TResult Function()? removeDiviceBill,
+    TResult Function()? addImeiImage,
+    TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
@@ -2272,6 +2386,8 @@ class _$RefreshNewOrderImpl implements RefreshNewOrder {
         checkErrorCompleteOrder,
     required TResult Function(AddDiviceBill value) addDiviceBill,
     required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddImeiImage value) addImeiImage,
+    required TResult Function(RemoveImeiImage value) removeImeiImage,
     required TResult Function(AddIdCardImage value) addIdCardImage,
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
@@ -2298,6 +2414,8 @@ class _$RefreshNewOrderImpl implements RefreshNewOrder {
     TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult? Function(AddDiviceBill value)? addDiviceBill,
     TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddImeiImage value)? addImeiImage,
+    TResult? Function(RemoveImeiImage value)? removeImeiImage,
     TResult? Function(AddIdCardImage value)? addIdCardImage,
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
@@ -2324,6 +2442,8 @@ class _$RefreshNewOrderImpl implements RefreshNewOrder {
     TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult Function(AddDiviceBill value)? addDiviceBill,
     TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddImeiImage value)? addImeiImage,
+    TResult Function(RemoveImeiImage value)? removeImeiImage,
     TResult Function(AddIdCardImage value)? addIdCardImage,
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
@@ -2423,6 +2543,8 @@ class _$ChangeTabImpl implements ChangeTab {
     required TResult Function() checkErrorCompleteOrder,
     required TResult Function() addDiviceBill,
     required TResult Function() removeDiviceBill,
+    required TResult Function() addImeiImage,
+    required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
@@ -2451,6 +2573,8 @@ class _$ChangeTabImpl implements ChangeTab {
     TResult? Function()? checkErrorCompleteOrder,
     TResult? Function()? addDiviceBill,
     TResult? Function()? removeDiviceBill,
+    TResult? Function()? addImeiImage,
+    TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
@@ -2479,6 +2603,8 @@ class _$ChangeTabImpl implements ChangeTab {
     TResult Function()? checkErrorCompleteOrder,
     TResult Function()? addDiviceBill,
     TResult Function()? removeDiviceBill,
+    TResult Function()? addImeiImage,
+    TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
@@ -2510,6 +2636,8 @@ class _$ChangeTabImpl implements ChangeTab {
         checkErrorCompleteOrder,
     required TResult Function(AddDiviceBill value) addDiviceBill,
     required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddImeiImage value) addImeiImage,
+    required TResult Function(RemoveImeiImage value) removeImeiImage,
     required TResult Function(AddIdCardImage value) addIdCardImage,
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
@@ -2536,6 +2664,8 @@ class _$ChangeTabImpl implements ChangeTab {
     TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult? Function(AddDiviceBill value)? addDiviceBill,
     TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddImeiImage value)? addImeiImage,
+    TResult? Function(RemoveImeiImage value)? removeImeiImage,
     TResult? Function(AddIdCardImage value)? addIdCardImage,
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
@@ -2562,6 +2692,8 @@ class _$ChangeTabImpl implements ChangeTab {
     TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult Function(AddDiviceBill value)? addDiviceBill,
     TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddImeiImage value)? addImeiImage,
+    TResult Function(RemoveImeiImage value)? removeImeiImage,
     TResult Function(AddIdCardImage value)? addIdCardImage,
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
@@ -2677,6 +2809,8 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
     required TResult Function() checkErrorCompleteOrder,
     required TResult Function() addDiviceBill,
     required TResult Function() removeDiviceBill,
+    required TResult Function() addImeiImage,
+    required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
@@ -2705,6 +2839,8 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
     TResult? Function()? checkErrorCompleteOrder,
     TResult? Function()? addDiviceBill,
     TResult? Function()? removeDiviceBill,
+    TResult? Function()? addImeiImage,
+    TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
@@ -2733,6 +2869,8 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
     TResult Function()? checkErrorCompleteOrder,
     TResult Function()? addDiviceBill,
     TResult Function()? removeDiviceBill,
+    TResult Function()? addImeiImage,
+    TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
@@ -2764,6 +2902,8 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
         checkErrorCompleteOrder,
     required TResult Function(AddDiviceBill value) addDiviceBill,
     required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddImeiImage value) addImeiImage,
+    required TResult Function(RemoveImeiImage value) removeImeiImage,
     required TResult Function(AddIdCardImage value) addIdCardImage,
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
@@ -2790,6 +2930,8 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
     TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult? Function(AddDiviceBill value)? addDiviceBill,
     TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddImeiImage value)? addImeiImage,
+    TResult? Function(RemoveImeiImage value)? removeImeiImage,
     TResult? Function(AddIdCardImage value)? addIdCardImage,
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
@@ -2816,6 +2958,8 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
     TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult Function(AddDiviceBill value)? addDiviceBill,
     TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddImeiImage value)? addImeiImage,
+    TResult Function(RemoveImeiImage value)? removeImeiImage,
     TResult Function(AddIdCardImage value)? addIdCardImage,
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
@@ -2900,6 +3044,8 @@ class _$CheckErrorCompleteOrderImpl implements CheckErrorCompleteOrder {
     required TResult Function() checkErrorCompleteOrder,
     required TResult Function() addDiviceBill,
     required TResult Function() removeDiviceBill,
+    required TResult Function() addImeiImage,
+    required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
@@ -2928,6 +3074,8 @@ class _$CheckErrorCompleteOrderImpl implements CheckErrorCompleteOrder {
     TResult? Function()? checkErrorCompleteOrder,
     TResult? Function()? addDiviceBill,
     TResult? Function()? removeDiviceBill,
+    TResult? Function()? addImeiImage,
+    TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
@@ -2956,6 +3104,8 @@ class _$CheckErrorCompleteOrderImpl implements CheckErrorCompleteOrder {
     TResult Function()? checkErrorCompleteOrder,
     TResult Function()? addDiviceBill,
     TResult Function()? removeDiviceBill,
+    TResult Function()? addImeiImage,
+    TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
@@ -2987,6 +3137,8 @@ class _$CheckErrorCompleteOrderImpl implements CheckErrorCompleteOrder {
         checkErrorCompleteOrder,
     required TResult Function(AddDiviceBill value) addDiviceBill,
     required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddImeiImage value) addImeiImage,
+    required TResult Function(RemoveImeiImage value) removeImeiImage,
     required TResult Function(AddIdCardImage value) addIdCardImage,
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
@@ -3013,6 +3165,8 @@ class _$CheckErrorCompleteOrderImpl implements CheckErrorCompleteOrder {
     TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult? Function(AddDiviceBill value)? addDiviceBill,
     TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddImeiImage value)? addImeiImage,
+    TResult? Function(RemoveImeiImage value)? removeImeiImage,
     TResult? Function(AddIdCardImage value)? addIdCardImage,
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
@@ -3039,6 +3193,8 @@ class _$CheckErrorCompleteOrderImpl implements CheckErrorCompleteOrder {
     TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult Function(AddDiviceBill value)? addDiviceBill,
     TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddImeiImage value)? addImeiImage,
+    TResult Function(RemoveImeiImage value)? removeImeiImage,
     TResult Function(AddIdCardImage value)? addIdCardImage,
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
@@ -3112,6 +3268,8 @@ class _$AddDiviceBillImpl implements AddDiviceBill {
     required TResult Function() checkErrorCompleteOrder,
     required TResult Function() addDiviceBill,
     required TResult Function() removeDiviceBill,
+    required TResult Function() addImeiImage,
+    required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
@@ -3140,6 +3298,8 @@ class _$AddDiviceBillImpl implements AddDiviceBill {
     TResult? Function()? checkErrorCompleteOrder,
     TResult? Function()? addDiviceBill,
     TResult? Function()? removeDiviceBill,
+    TResult? Function()? addImeiImage,
+    TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
@@ -3168,6 +3328,8 @@ class _$AddDiviceBillImpl implements AddDiviceBill {
     TResult Function()? checkErrorCompleteOrder,
     TResult Function()? addDiviceBill,
     TResult Function()? removeDiviceBill,
+    TResult Function()? addImeiImage,
+    TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
@@ -3199,6 +3361,8 @@ class _$AddDiviceBillImpl implements AddDiviceBill {
         checkErrorCompleteOrder,
     required TResult Function(AddDiviceBill value) addDiviceBill,
     required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddImeiImage value) addImeiImage,
+    required TResult Function(RemoveImeiImage value) removeImeiImage,
     required TResult Function(AddIdCardImage value) addIdCardImage,
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
@@ -3225,6 +3389,8 @@ class _$AddDiviceBillImpl implements AddDiviceBill {
     TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult? Function(AddDiviceBill value)? addDiviceBill,
     TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddImeiImage value)? addImeiImage,
+    TResult? Function(RemoveImeiImage value)? removeImeiImage,
     TResult? Function(AddIdCardImage value)? addIdCardImage,
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
@@ -3251,6 +3417,8 @@ class _$AddDiviceBillImpl implements AddDiviceBill {
     TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult Function(AddDiviceBill value)? addDiviceBill,
     TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddImeiImage value)? addImeiImage,
+    TResult Function(RemoveImeiImage value)? removeImeiImage,
     TResult Function(AddIdCardImage value)? addIdCardImage,
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
@@ -3324,6 +3492,8 @@ class _$RemoveDiviceBillImpl implements RemoveDiviceBill {
     required TResult Function() checkErrorCompleteOrder,
     required TResult Function() addDiviceBill,
     required TResult Function() removeDiviceBill,
+    required TResult Function() addImeiImage,
+    required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
@@ -3352,6 +3522,8 @@ class _$RemoveDiviceBillImpl implements RemoveDiviceBill {
     TResult? Function()? checkErrorCompleteOrder,
     TResult? Function()? addDiviceBill,
     TResult? Function()? removeDiviceBill,
+    TResult? Function()? addImeiImage,
+    TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
@@ -3380,6 +3552,8 @@ class _$RemoveDiviceBillImpl implements RemoveDiviceBill {
     TResult Function()? checkErrorCompleteOrder,
     TResult Function()? addDiviceBill,
     TResult Function()? removeDiviceBill,
+    TResult Function()? addImeiImage,
+    TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
@@ -3411,6 +3585,8 @@ class _$RemoveDiviceBillImpl implements RemoveDiviceBill {
         checkErrorCompleteOrder,
     required TResult Function(AddDiviceBill value) addDiviceBill,
     required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddImeiImage value) addImeiImage,
+    required TResult Function(RemoveImeiImage value) removeImeiImage,
     required TResult Function(AddIdCardImage value) addIdCardImage,
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
@@ -3437,6 +3613,8 @@ class _$RemoveDiviceBillImpl implements RemoveDiviceBill {
     TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult? Function(AddDiviceBill value)? addDiviceBill,
     TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddImeiImage value)? addImeiImage,
+    TResult? Function(RemoveImeiImage value)? removeImeiImage,
     TResult? Function(AddIdCardImage value)? addIdCardImage,
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
@@ -3463,6 +3641,8 @@ class _$RemoveDiviceBillImpl implements RemoveDiviceBill {
     TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult Function(AddDiviceBill value)? addDiviceBill,
     TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddImeiImage value)? addImeiImage,
+    TResult Function(RemoveImeiImage value)? removeImeiImage,
     TResult Function(AddIdCardImage value)? addIdCardImage,
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
@@ -3479,6 +3659,454 @@ class _$RemoveDiviceBillImpl implements RemoveDiviceBill {
 
 abstract class RemoveDiviceBill implements OrdersEvent {
   const factory RemoveDiviceBill() = _$RemoveDiviceBillImpl;
+}
+
+/// @nodoc
+abstract class _$$AddImeiImageImplCopyWith<$Res> {
+  factory _$$AddImeiImageImplCopyWith(
+          _$AddImeiImageImpl value, $Res Function(_$AddImeiImageImpl) then) =
+      __$$AddImeiImageImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AddImeiImageImplCopyWithImpl<$Res>
+    extends _$OrdersEventCopyWithImpl<$Res, _$AddImeiImageImpl>
+    implements _$$AddImeiImageImplCopyWith<$Res> {
+  __$$AddImeiImageImplCopyWithImpl(
+      _$AddImeiImageImpl _value, $Res Function(_$AddImeiImageImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$AddImeiImageImpl implements AddImeiImage {
+  const _$AddImeiImageImpl();
+
+  @override
+  String toString() {
+    return 'OrdersEvent.addImeiImage()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$AddImeiImageImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String orderId) acceptOrder,
+    required TResult Function(String orderId) getOrderDetail,
+    required TResult Function(String orderId, String reason) cancelOrder,
+    required TResult Function(
+            String orderId, CompleteOrderModel completeOrderModel)
+        completeOrder,
+    required TResult Function(bool call) getNewOrder,
+    required TResult Function(bool call) getPartnerOrders,
+    required TResult Function(String orderId) removePickupPartner,
+    required TResult Function() refresPartnerOrders,
+    required TResult Function() refreshNewOrder,
+    required TResult Function(int tab) changeTab,
+    required TResult Function(PickUpPerson pickUpPerson, String orderId)
+        changePickupPartner,
+    required TResult Function() checkErrorCompleteOrder,
+    required TResult Function() addDiviceBill,
+    required TResult Function() removeDiviceBill,
+    required TResult Function() addImeiImage,
+    required TResult Function() removeImeiImage,
+    required TResult Function() addIdCardImage,
+    required TResult Function() removeIdCardImage,
+    required TResult Function() addDeviceImages,
+    required TResult Function(int index) removeDeviceImage,
+    required TResult Function() reset,
+  }) {
+    return addImeiImage();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String orderId)? acceptOrder,
+    TResult? Function(String orderId)? getOrderDetail,
+    TResult? Function(String orderId, String reason)? cancelOrder,
+    TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult? Function(bool call)? getNewOrder,
+    TResult? Function(bool call)? getPartnerOrders,
+    TResult? Function(String orderId)? removePickupPartner,
+    TResult? Function()? refresPartnerOrders,
+    TResult? Function()? refreshNewOrder,
+    TResult? Function(int tab)? changeTab,
+    TResult? Function(PickUpPerson pickUpPerson, String orderId)?
+        changePickupPartner,
+    TResult? Function()? checkErrorCompleteOrder,
+    TResult? Function()? addDiviceBill,
+    TResult? Function()? removeDiviceBill,
+    TResult? Function()? addImeiImage,
+    TResult? Function()? removeImeiImage,
+    TResult? Function()? addIdCardImage,
+    TResult? Function()? removeIdCardImage,
+    TResult? Function()? addDeviceImages,
+    TResult? Function(int index)? removeDeviceImage,
+    TResult? Function()? reset,
+  }) {
+    return addImeiImage?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String orderId)? acceptOrder,
+    TResult Function(String orderId)? getOrderDetail,
+    TResult Function(String orderId, String reason)? cancelOrder,
+    TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult Function(bool call)? getNewOrder,
+    TResult Function(bool call)? getPartnerOrders,
+    TResult Function(String orderId)? removePickupPartner,
+    TResult Function()? refresPartnerOrders,
+    TResult Function()? refreshNewOrder,
+    TResult Function(int tab)? changeTab,
+    TResult Function(PickUpPerson pickUpPerson, String orderId)?
+        changePickupPartner,
+    TResult Function()? checkErrorCompleteOrder,
+    TResult Function()? addDiviceBill,
+    TResult Function()? removeDiviceBill,
+    TResult Function()? addImeiImage,
+    TResult Function()? removeImeiImage,
+    TResult Function()? addIdCardImage,
+    TResult Function()? removeIdCardImage,
+    TResult Function()? addDeviceImages,
+    TResult Function(int index)? removeDeviceImage,
+    TResult Function()? reset,
+    required TResult orElse(),
+  }) {
+    if (addImeiImage != null) {
+      return addImeiImage();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(GetOrderDetail value) getOrderDetail,
+    required TResult Function(CancelOrder value) cancelOrder,
+    required TResult Function(CompleteOrder value) completeOrder,
+    required TResult Function(GetNewOrder value) getNewOrder,
+    required TResult Function(GetPartnerOrders value) getPartnerOrders,
+    required TResult Function(RemovePickupPartner value) removePickupPartner,
+    required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
+    required TResult Function(RefreshNewOrder value) refreshNewOrder,
+    required TResult Function(ChangeTab value) changeTab,
+    required TResult Function(ChangePickupPartner value) changePickupPartner,
+    required TResult Function(CheckErrorCompleteOrder value)
+        checkErrorCompleteOrder,
+    required TResult Function(AddDiviceBill value) addDiviceBill,
+    required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddImeiImage value) addImeiImage,
+    required TResult Function(RemoveImeiImage value) removeImeiImage,
+    required TResult Function(AddIdCardImage value) addIdCardImage,
+    required TResult Function(RemoveIdCardImage value) removeIdCardImage,
+    required TResult Function(AddDeviceImages value) addDeviceImages,
+    required TResult Function(RemoveDeviceImage value) removeDeviceImage,
+    required TResult Function(Reset value) reset,
+  }) {
+    return addImeiImage(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(GetOrderDetail value)? getOrderDetail,
+    TResult? Function(CancelOrder value)? cancelOrder,
+    TResult? Function(CompleteOrder value)? completeOrder,
+    TResult? Function(GetNewOrder value)? getNewOrder,
+    TResult? Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult? Function(RemovePickupPartner value)? removePickupPartner,
+    TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
+    TResult? Function(ChangeTab value)? changeTab,
+    TResult? Function(ChangePickupPartner value)? changePickupPartner,
+    TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult? Function(AddDiviceBill value)? addDiviceBill,
+    TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddImeiImage value)? addImeiImage,
+    TResult? Function(RemoveImeiImage value)? removeImeiImage,
+    TResult? Function(AddIdCardImage value)? addIdCardImage,
+    TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult? Function(AddDeviceImages value)? addDeviceImages,
+    TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult? Function(Reset value)? reset,
+  }) {
+    return addImeiImage?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(GetOrderDetail value)? getOrderDetail,
+    TResult Function(CancelOrder value)? cancelOrder,
+    TResult Function(CompleteOrder value)? completeOrder,
+    TResult Function(GetNewOrder value)? getNewOrder,
+    TResult Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult Function(RemovePickupPartner value)? removePickupPartner,
+    TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult Function(RefreshNewOrder value)? refreshNewOrder,
+    TResult Function(ChangeTab value)? changeTab,
+    TResult Function(ChangePickupPartner value)? changePickupPartner,
+    TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult Function(AddDiviceBill value)? addDiviceBill,
+    TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddImeiImage value)? addImeiImage,
+    TResult Function(RemoveImeiImage value)? removeImeiImage,
+    TResult Function(AddIdCardImage value)? addIdCardImage,
+    TResult Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult Function(AddDeviceImages value)? addDeviceImages,
+    TResult Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult Function(Reset value)? reset,
+    required TResult orElse(),
+  }) {
+    if (addImeiImage != null) {
+      return addImeiImage(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddImeiImage implements OrdersEvent {
+  const factory AddImeiImage() = _$AddImeiImageImpl;
+}
+
+/// @nodoc
+abstract class _$$RemoveImeiImageImplCopyWith<$Res> {
+  factory _$$RemoveImeiImageImplCopyWith(_$RemoveImeiImageImpl value,
+          $Res Function(_$RemoveImeiImageImpl) then) =
+      __$$RemoveImeiImageImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$RemoveImeiImageImplCopyWithImpl<$Res>
+    extends _$OrdersEventCopyWithImpl<$Res, _$RemoveImeiImageImpl>
+    implements _$$RemoveImeiImageImplCopyWith<$Res> {
+  __$$RemoveImeiImageImplCopyWithImpl(
+      _$RemoveImeiImageImpl _value, $Res Function(_$RemoveImeiImageImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$RemoveImeiImageImpl implements RemoveImeiImage {
+  const _$RemoveImeiImageImpl();
+
+  @override
+  String toString() {
+    return 'OrdersEvent.removeImeiImage()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$RemoveImeiImageImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String orderId) acceptOrder,
+    required TResult Function(String orderId) getOrderDetail,
+    required TResult Function(String orderId, String reason) cancelOrder,
+    required TResult Function(
+            String orderId, CompleteOrderModel completeOrderModel)
+        completeOrder,
+    required TResult Function(bool call) getNewOrder,
+    required TResult Function(bool call) getPartnerOrders,
+    required TResult Function(String orderId) removePickupPartner,
+    required TResult Function() refresPartnerOrders,
+    required TResult Function() refreshNewOrder,
+    required TResult Function(int tab) changeTab,
+    required TResult Function(PickUpPerson pickUpPerson, String orderId)
+        changePickupPartner,
+    required TResult Function() checkErrorCompleteOrder,
+    required TResult Function() addDiviceBill,
+    required TResult Function() removeDiviceBill,
+    required TResult Function() addImeiImage,
+    required TResult Function() removeImeiImage,
+    required TResult Function() addIdCardImage,
+    required TResult Function() removeIdCardImage,
+    required TResult Function() addDeviceImages,
+    required TResult Function(int index) removeDeviceImage,
+    required TResult Function() reset,
+  }) {
+    return removeImeiImage();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String orderId)? acceptOrder,
+    TResult? Function(String orderId)? getOrderDetail,
+    TResult? Function(String orderId, String reason)? cancelOrder,
+    TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult? Function(bool call)? getNewOrder,
+    TResult? Function(bool call)? getPartnerOrders,
+    TResult? Function(String orderId)? removePickupPartner,
+    TResult? Function()? refresPartnerOrders,
+    TResult? Function()? refreshNewOrder,
+    TResult? Function(int tab)? changeTab,
+    TResult? Function(PickUpPerson pickUpPerson, String orderId)?
+        changePickupPartner,
+    TResult? Function()? checkErrorCompleteOrder,
+    TResult? Function()? addDiviceBill,
+    TResult? Function()? removeDiviceBill,
+    TResult? Function()? addImeiImage,
+    TResult? Function()? removeImeiImage,
+    TResult? Function()? addIdCardImage,
+    TResult? Function()? removeIdCardImage,
+    TResult? Function()? addDeviceImages,
+    TResult? Function(int index)? removeDeviceImage,
+    TResult? Function()? reset,
+  }) {
+    return removeImeiImage?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String orderId)? acceptOrder,
+    TResult Function(String orderId)? getOrderDetail,
+    TResult Function(String orderId, String reason)? cancelOrder,
+    TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult Function(bool call)? getNewOrder,
+    TResult Function(bool call)? getPartnerOrders,
+    TResult Function(String orderId)? removePickupPartner,
+    TResult Function()? refresPartnerOrders,
+    TResult Function()? refreshNewOrder,
+    TResult Function(int tab)? changeTab,
+    TResult Function(PickUpPerson pickUpPerson, String orderId)?
+        changePickupPartner,
+    TResult Function()? checkErrorCompleteOrder,
+    TResult Function()? addDiviceBill,
+    TResult Function()? removeDiviceBill,
+    TResult Function()? addImeiImage,
+    TResult Function()? removeImeiImage,
+    TResult Function()? addIdCardImage,
+    TResult Function()? removeIdCardImage,
+    TResult Function()? addDeviceImages,
+    TResult Function(int index)? removeDeviceImage,
+    TResult Function()? reset,
+    required TResult orElse(),
+  }) {
+    if (removeImeiImage != null) {
+      return removeImeiImage();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(GetOrderDetail value) getOrderDetail,
+    required TResult Function(CancelOrder value) cancelOrder,
+    required TResult Function(CompleteOrder value) completeOrder,
+    required TResult Function(GetNewOrder value) getNewOrder,
+    required TResult Function(GetPartnerOrders value) getPartnerOrders,
+    required TResult Function(RemovePickupPartner value) removePickupPartner,
+    required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
+    required TResult Function(RefreshNewOrder value) refreshNewOrder,
+    required TResult Function(ChangeTab value) changeTab,
+    required TResult Function(ChangePickupPartner value) changePickupPartner,
+    required TResult Function(CheckErrorCompleteOrder value)
+        checkErrorCompleteOrder,
+    required TResult Function(AddDiviceBill value) addDiviceBill,
+    required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddImeiImage value) addImeiImage,
+    required TResult Function(RemoveImeiImage value) removeImeiImage,
+    required TResult Function(AddIdCardImage value) addIdCardImage,
+    required TResult Function(RemoveIdCardImage value) removeIdCardImage,
+    required TResult Function(AddDeviceImages value) addDeviceImages,
+    required TResult Function(RemoveDeviceImage value) removeDeviceImage,
+    required TResult Function(Reset value) reset,
+  }) {
+    return removeImeiImage(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(GetOrderDetail value)? getOrderDetail,
+    TResult? Function(CancelOrder value)? cancelOrder,
+    TResult? Function(CompleteOrder value)? completeOrder,
+    TResult? Function(GetNewOrder value)? getNewOrder,
+    TResult? Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult? Function(RemovePickupPartner value)? removePickupPartner,
+    TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
+    TResult? Function(ChangeTab value)? changeTab,
+    TResult? Function(ChangePickupPartner value)? changePickupPartner,
+    TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult? Function(AddDiviceBill value)? addDiviceBill,
+    TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddImeiImage value)? addImeiImage,
+    TResult? Function(RemoveImeiImage value)? removeImeiImage,
+    TResult? Function(AddIdCardImage value)? addIdCardImage,
+    TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult? Function(AddDeviceImages value)? addDeviceImages,
+    TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult? Function(Reset value)? reset,
+  }) {
+    return removeImeiImage?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(GetOrderDetail value)? getOrderDetail,
+    TResult Function(CancelOrder value)? cancelOrder,
+    TResult Function(CompleteOrder value)? completeOrder,
+    TResult Function(GetNewOrder value)? getNewOrder,
+    TResult Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult Function(RemovePickupPartner value)? removePickupPartner,
+    TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult Function(RefreshNewOrder value)? refreshNewOrder,
+    TResult Function(ChangeTab value)? changeTab,
+    TResult Function(ChangePickupPartner value)? changePickupPartner,
+    TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult Function(AddDiviceBill value)? addDiviceBill,
+    TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddImeiImage value)? addImeiImage,
+    TResult Function(RemoveImeiImage value)? removeImeiImage,
+    TResult Function(AddIdCardImage value)? addIdCardImage,
+    TResult Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult Function(AddDeviceImages value)? addDeviceImages,
+    TResult Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult Function(Reset value)? reset,
+    required TResult orElse(),
+  }) {
+    if (removeImeiImage != null) {
+      return removeImeiImage(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RemoveImeiImage implements OrdersEvent {
+  const factory RemoveImeiImage() = _$RemoveImeiImageImpl;
 }
 
 /// @nodoc
@@ -3536,6 +4164,8 @@ class _$AddIdCardImageImpl implements AddIdCardImage {
     required TResult Function() checkErrorCompleteOrder,
     required TResult Function() addDiviceBill,
     required TResult Function() removeDiviceBill,
+    required TResult Function() addImeiImage,
+    required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
@@ -3564,6 +4194,8 @@ class _$AddIdCardImageImpl implements AddIdCardImage {
     TResult? Function()? checkErrorCompleteOrder,
     TResult? Function()? addDiviceBill,
     TResult? Function()? removeDiviceBill,
+    TResult? Function()? addImeiImage,
+    TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
@@ -3592,6 +4224,8 @@ class _$AddIdCardImageImpl implements AddIdCardImage {
     TResult Function()? checkErrorCompleteOrder,
     TResult Function()? addDiviceBill,
     TResult Function()? removeDiviceBill,
+    TResult Function()? addImeiImage,
+    TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
@@ -3623,6 +4257,8 @@ class _$AddIdCardImageImpl implements AddIdCardImage {
         checkErrorCompleteOrder,
     required TResult Function(AddDiviceBill value) addDiviceBill,
     required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddImeiImage value) addImeiImage,
+    required TResult Function(RemoveImeiImage value) removeImeiImage,
     required TResult Function(AddIdCardImage value) addIdCardImage,
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
@@ -3649,6 +4285,8 @@ class _$AddIdCardImageImpl implements AddIdCardImage {
     TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult? Function(AddDiviceBill value)? addDiviceBill,
     TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddImeiImage value)? addImeiImage,
+    TResult? Function(RemoveImeiImage value)? removeImeiImage,
     TResult? Function(AddIdCardImage value)? addIdCardImage,
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
@@ -3675,6 +4313,8 @@ class _$AddIdCardImageImpl implements AddIdCardImage {
     TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult Function(AddDiviceBill value)? addDiviceBill,
     TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddImeiImage value)? addImeiImage,
+    TResult Function(RemoveImeiImage value)? removeImeiImage,
     TResult Function(AddIdCardImage value)? addIdCardImage,
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
@@ -3748,6 +4388,8 @@ class _$RemoveIdCardImageImpl implements RemoveIdCardImage {
     required TResult Function() checkErrorCompleteOrder,
     required TResult Function() addDiviceBill,
     required TResult Function() removeDiviceBill,
+    required TResult Function() addImeiImage,
+    required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
@@ -3776,6 +4418,8 @@ class _$RemoveIdCardImageImpl implements RemoveIdCardImage {
     TResult? Function()? checkErrorCompleteOrder,
     TResult? Function()? addDiviceBill,
     TResult? Function()? removeDiviceBill,
+    TResult? Function()? addImeiImage,
+    TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
@@ -3804,6 +4448,8 @@ class _$RemoveIdCardImageImpl implements RemoveIdCardImage {
     TResult Function()? checkErrorCompleteOrder,
     TResult Function()? addDiviceBill,
     TResult Function()? removeDiviceBill,
+    TResult Function()? addImeiImage,
+    TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
@@ -3835,6 +4481,8 @@ class _$RemoveIdCardImageImpl implements RemoveIdCardImage {
         checkErrorCompleteOrder,
     required TResult Function(AddDiviceBill value) addDiviceBill,
     required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddImeiImage value) addImeiImage,
+    required TResult Function(RemoveImeiImage value) removeImeiImage,
     required TResult Function(AddIdCardImage value) addIdCardImage,
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
@@ -3861,6 +4509,8 @@ class _$RemoveIdCardImageImpl implements RemoveIdCardImage {
     TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult? Function(AddDiviceBill value)? addDiviceBill,
     TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddImeiImage value)? addImeiImage,
+    TResult? Function(RemoveImeiImage value)? removeImeiImage,
     TResult? Function(AddIdCardImage value)? addIdCardImage,
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
@@ -3887,6 +4537,8 @@ class _$RemoveIdCardImageImpl implements RemoveIdCardImage {
     TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult Function(AddDiviceBill value)? addDiviceBill,
     TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddImeiImage value)? addImeiImage,
+    TResult Function(RemoveImeiImage value)? removeImeiImage,
     TResult Function(AddIdCardImage value)? addIdCardImage,
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
@@ -3960,6 +4612,8 @@ class _$AddDeviceImagesImpl implements AddDeviceImages {
     required TResult Function() checkErrorCompleteOrder,
     required TResult Function() addDiviceBill,
     required TResult Function() removeDiviceBill,
+    required TResult Function() addImeiImage,
+    required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
@@ -3988,6 +4642,8 @@ class _$AddDeviceImagesImpl implements AddDeviceImages {
     TResult? Function()? checkErrorCompleteOrder,
     TResult? Function()? addDiviceBill,
     TResult? Function()? removeDiviceBill,
+    TResult? Function()? addImeiImage,
+    TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
@@ -4016,6 +4672,8 @@ class _$AddDeviceImagesImpl implements AddDeviceImages {
     TResult Function()? checkErrorCompleteOrder,
     TResult Function()? addDiviceBill,
     TResult Function()? removeDiviceBill,
+    TResult Function()? addImeiImage,
+    TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
@@ -4047,6 +4705,8 @@ class _$AddDeviceImagesImpl implements AddDeviceImages {
         checkErrorCompleteOrder,
     required TResult Function(AddDiviceBill value) addDiviceBill,
     required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddImeiImage value) addImeiImage,
+    required TResult Function(RemoveImeiImage value) removeImeiImage,
     required TResult Function(AddIdCardImage value) addIdCardImage,
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
@@ -4073,6 +4733,8 @@ class _$AddDeviceImagesImpl implements AddDeviceImages {
     TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult? Function(AddDiviceBill value)? addDiviceBill,
     TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddImeiImage value)? addImeiImage,
+    TResult? Function(RemoveImeiImage value)? removeImeiImage,
     TResult? Function(AddIdCardImage value)? addIdCardImage,
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
@@ -4099,6 +4761,8 @@ class _$AddDeviceImagesImpl implements AddDeviceImages {
     TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult Function(AddDiviceBill value)? addDiviceBill,
     TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddImeiImage value)? addImeiImage,
+    TResult Function(RemoveImeiImage value)? removeImeiImage,
     TResult Function(AddIdCardImage value)? addIdCardImage,
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
@@ -4199,6 +4863,8 @@ class _$RemoveDeviceImageImpl implements RemoveDeviceImage {
     required TResult Function() checkErrorCompleteOrder,
     required TResult Function() addDiviceBill,
     required TResult Function() removeDiviceBill,
+    required TResult Function() addImeiImage,
+    required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
@@ -4227,6 +4893,8 @@ class _$RemoveDeviceImageImpl implements RemoveDeviceImage {
     TResult? Function()? checkErrorCompleteOrder,
     TResult? Function()? addDiviceBill,
     TResult? Function()? removeDiviceBill,
+    TResult? Function()? addImeiImage,
+    TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
@@ -4255,6 +4923,8 @@ class _$RemoveDeviceImageImpl implements RemoveDeviceImage {
     TResult Function()? checkErrorCompleteOrder,
     TResult Function()? addDiviceBill,
     TResult Function()? removeDiviceBill,
+    TResult Function()? addImeiImage,
+    TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
@@ -4286,6 +4956,8 @@ class _$RemoveDeviceImageImpl implements RemoveDeviceImage {
         checkErrorCompleteOrder,
     required TResult Function(AddDiviceBill value) addDiviceBill,
     required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddImeiImage value) addImeiImage,
+    required TResult Function(RemoveImeiImage value) removeImeiImage,
     required TResult Function(AddIdCardImage value) addIdCardImage,
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
@@ -4312,6 +4984,8 @@ class _$RemoveDeviceImageImpl implements RemoveDeviceImage {
     TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult? Function(AddDiviceBill value)? addDiviceBill,
     TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddImeiImage value)? addImeiImage,
+    TResult? Function(RemoveImeiImage value)? removeImeiImage,
     TResult? Function(AddIdCardImage value)? addIdCardImage,
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
@@ -4338,6 +5012,8 @@ class _$RemoveDeviceImageImpl implements RemoveDeviceImage {
     TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult Function(AddDiviceBill value)? addDiviceBill,
     TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddImeiImage value)? addImeiImage,
+    TResult Function(RemoveImeiImage value)? removeImeiImage,
     TResult Function(AddIdCardImage value)? addIdCardImage,
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
@@ -4417,6 +5093,8 @@ class _$ResetImpl implements Reset {
     required TResult Function() checkErrorCompleteOrder,
     required TResult Function() addDiviceBill,
     required TResult Function() removeDiviceBill,
+    required TResult Function() addImeiImage,
+    required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
@@ -4445,6 +5123,8 @@ class _$ResetImpl implements Reset {
     TResult? Function()? checkErrorCompleteOrder,
     TResult? Function()? addDiviceBill,
     TResult? Function()? removeDiviceBill,
+    TResult? Function()? addImeiImage,
+    TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
@@ -4473,6 +5153,8 @@ class _$ResetImpl implements Reset {
     TResult Function()? checkErrorCompleteOrder,
     TResult Function()? addDiviceBill,
     TResult Function()? removeDiviceBill,
+    TResult Function()? addImeiImage,
+    TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
@@ -4504,6 +5186,8 @@ class _$ResetImpl implements Reset {
         checkErrorCompleteOrder,
     required TResult Function(AddDiviceBill value) addDiviceBill,
     required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddImeiImage value) addImeiImage,
+    required TResult Function(RemoveImeiImage value) removeImeiImage,
     required TResult Function(AddIdCardImage value) addIdCardImage,
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
@@ -4530,6 +5214,8 @@ class _$ResetImpl implements Reset {
     TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult? Function(AddDiviceBill value)? addDiviceBill,
     TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddImeiImage value)? addImeiImage,
+    TResult? Function(RemoveImeiImage value)? removeImeiImage,
     TResult? Function(AddIdCardImage value)? addIdCardImage,
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
@@ -4556,6 +5242,8 @@ class _$ResetImpl implements Reset {
     TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
     TResult Function(AddDiviceBill value)? addDiviceBill,
     TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddImeiImage value)? addImeiImage,
+    TResult Function(RemoveImeiImage value)? removeImeiImage,
     TResult Function(AddIdCardImage value)? addIdCardImage,
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
@@ -4592,6 +5280,7 @@ mixin _$OrdersState {
   String? get message => throw _privateConstructorUsedError;
   ImageModel? get deviceBill => throw _privateConstructorUsedError;
   ImageModel? get idCard => throw _privateConstructorUsedError;
+  ImageModel? get imeiImage => throw _privateConstructorUsedError;
   List<ImageModel>? get deviceImages => throw _privateConstructorUsedError;
   List<OrderDetail>? get partnerOrders => throw _privateConstructorUsedError;
   List<OrderDetail>? get newOrders => throw _privateConstructorUsedError;
@@ -4626,6 +5315,7 @@ abstract class $OrdersStateCopyWith<$Res> {
       String? message,
       ImageModel? deviceBill,
       ImageModel? idCard,
+      ImageModel? imeiImage,
       List<ImageModel>? deviceImages,
       List<OrderDetail>? partnerOrders,
       List<OrderDetail>? newOrders,
@@ -4662,6 +5352,7 @@ class _$OrdersStateCopyWithImpl<$Res, $Val extends OrdersState>
     Object? message = freezed,
     Object? deviceBill = freezed,
     Object? idCard = freezed,
+    Object? imeiImage = freezed,
     Object? deviceImages = freezed,
     Object? partnerOrders = freezed,
     Object? newOrders = freezed,
@@ -4733,6 +5424,10 @@ class _$OrdersStateCopyWithImpl<$Res, $Val extends OrdersState>
           ? _value.idCard
           : idCard // ignore: cast_nullable_to_non_nullable
               as ImageModel?,
+      imeiImage: freezed == imeiImage
+          ? _value.imeiImage
+          : imeiImage // ignore: cast_nullable_to_non_nullable
+              as ImageModel?,
       deviceImages: freezed == deviceImages
           ? _value.deviceImages
           : deviceImages // ignore: cast_nullable_to_non_nullable
@@ -4782,6 +5477,7 @@ abstract class _$$InitialImplCopyWith<$Res>
       String? message,
       ImageModel? deviceBill,
       ImageModel? idCard,
+      ImageModel? imeiImage,
       List<ImageModel>? deviceImages,
       List<OrderDetail>? partnerOrders,
       List<OrderDetail>? newOrders,
@@ -4816,6 +5512,7 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? message = freezed,
     Object? deviceBill = freezed,
     Object? idCard = freezed,
+    Object? imeiImage = freezed,
     Object? deviceImages = freezed,
     Object? partnerOrders = freezed,
     Object? newOrders = freezed,
@@ -4887,6 +5584,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.idCard
           : idCard // ignore: cast_nullable_to_non_nullable
               as ImageModel?,
+      imeiImage: freezed == imeiImage
+          ? _value.imeiImage
+          : imeiImage // ignore: cast_nullable_to_non_nullable
+              as ImageModel?,
       deviceImages: freezed == deviceImages
           ? _value._deviceImages
           : deviceImages // ignore: cast_nullable_to_non_nullable
@@ -4931,6 +5632,7 @@ class _$InitialImpl implements _Initial {
       this.message,
       this.deviceBill,
       this.idCard,
+      this.imeiImage,
       final List<ImageModel>? deviceImages,
       final List<OrderDetail>? partnerOrders,
       final List<OrderDetail>? newOrders,
@@ -4972,6 +5674,8 @@ class _$InitialImpl implements _Initial {
   final ImageModel? deviceBill;
   @override
   final ImageModel? idCard;
+  @override
+  final ImageModel? imeiImage;
   final List<ImageModel>? _deviceImages;
   @override
   List<ImageModel>? get deviceImages {
@@ -5009,7 +5713,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'OrdersState(isLoading: $isLoading, hasError: $hasError, acceptOrderLoading: $acceptOrderLoading, acceptOrderError: $acceptOrderError, acceptOrder: $acceptOrder, cancelOrder: $cancelOrder, completeOrderLoading: $completeOrderLoading, orderCompleted: $orderCompleted, orderCompletionError: $orderCompletionError, newOrdesRefreshLoading: $newOrdesRefreshLoading, partnerOrdesRefreshLoading: $partnerOrdesRefreshLoading, orderDetailError: $orderDetailError, popOrderScreen: $popOrderScreen, message: $message, deviceBill: $deviceBill, idCard: $idCard, deviceImages: $deviceImages, partnerOrders: $partnerOrders, newOrders: $newOrders, orderDetail: $orderDetail, orderTab: $orderTab)';
+    return 'OrdersState(isLoading: $isLoading, hasError: $hasError, acceptOrderLoading: $acceptOrderLoading, acceptOrderError: $acceptOrderError, acceptOrder: $acceptOrder, cancelOrder: $cancelOrder, completeOrderLoading: $completeOrderLoading, orderCompleted: $orderCompleted, orderCompletionError: $orderCompletionError, newOrdesRefreshLoading: $newOrdesRefreshLoading, partnerOrdesRefreshLoading: $partnerOrdesRefreshLoading, orderDetailError: $orderDetailError, popOrderScreen: $popOrderScreen, message: $message, deviceBill: $deviceBill, idCard: $idCard, imeiImage: $imeiImage, deviceImages: $deviceImages, partnerOrders: $partnerOrders, newOrders: $newOrders, orderDetail: $orderDetail, orderTab: $orderTab)';
   }
 
   @override
@@ -5049,6 +5753,8 @@ class _$InitialImpl implements _Initial {
             (identical(other.deviceBill, deviceBill) ||
                 other.deviceBill == deviceBill) &&
             (identical(other.idCard, idCard) || other.idCard == idCard) &&
+            (identical(other.imeiImage, imeiImage) ||
+                other.imeiImage == imeiImage) &&
             const DeepCollectionEquality()
                 .equals(other._deviceImages, _deviceImages) &&
             const DeepCollectionEquality()
@@ -5080,6 +5786,7 @@ class _$InitialImpl implements _Initial {
         message,
         deviceBill,
         idCard,
+        imeiImage,
         const DeepCollectionEquality().hash(_deviceImages),
         const DeepCollectionEquality().hash(_partnerOrders),
         const DeepCollectionEquality().hash(_newOrders),
@@ -5112,6 +5819,7 @@ abstract class _Initial implements OrdersState {
       final String? message,
       final ImageModel? deviceBill,
       final ImageModel? idCard,
+      final ImageModel? imeiImage,
       final List<ImageModel>? deviceImages,
       final List<OrderDetail>? partnerOrders,
       final List<OrderDetail>? newOrders,
@@ -5150,6 +5858,8 @@ abstract class _Initial implements OrdersState {
   ImageModel? get deviceBill;
   @override
   ImageModel? get idCard;
+  @override
+  ImageModel? get imeiImage;
   @override
   List<ImageModel>? get deviceImages;
   @override

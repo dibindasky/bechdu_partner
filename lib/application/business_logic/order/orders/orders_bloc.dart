@@ -40,7 +40,7 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
     on<GetPartnerOrders>(getPartnerOrders);
     on<ChangeTab>(changeTab);
     on<RefreshNewOrder>(refreshNewOrder);
-    on<RefresPartnerOrders>(refresPartnerOrders);
+    on<RefresPartnerOrders>(refreshPartnerOrders);
     on<ChangePickupPartner>(changePickupPartner);
     on<RemovePickupPartner>(removePickupPartner);
     on<CompleteOrder>(completeOrder);
@@ -48,6 +48,8 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
     on<AddIdCardImage>(addIdCardImage);
     on<AddDeviceImages>(addDeviceImages);
     on<RemoveDeviceImage>(removeDeviceImage);
+    on<AddImeiImage>(addImeiImage);
+    on<RemoveImeiImage>(removeImeiImage);
     on<RemoveDiviceBill>(removeDiviceBill);
     on<RemoveIdCardImage>(removeIdCardImage);
     on<CheckErrorCompleteOrder>(checkErrorCompleteOrder);
@@ -126,7 +128,21 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
     result.fold(
         (l) => null,
         (r) => emit(state.copyWith(
-            deviceBill: r, popOrderScreen: false, orderDetailError: false)));
+            deviceBill: r,
+            popOrderScreen: false,
+            orderDetailError: false,
+            orderCompletionError: false)));
+  }
+
+  FutureOr<void> addImeiImage(AddImeiImage event, emit) async {
+    final result = await imagePickerService.pickImage();
+    result.fold(
+        (l) => null,
+        (r) => emit(state.copyWith(
+            imeiImage: r,
+            popOrderScreen: false,
+            orderDetailError: false,
+            orderCompletionError: false)));
   }
 
   FutureOr<void> removeDiviceBill(RemoveDiviceBill event, emit) async {
@@ -134,12 +150,20 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
         deviceBill: null, popOrderScreen: false, orderDetailError: false));
   }
 
+  FutureOr<void> removeImeiImage(RemoveImeiImage event, emit) async {
+    return emit(state.copyWith(
+        imeiImage: null, popOrderScreen: false, orderDetailError: false));
+  }
+
   FutureOr<void> addIdCardImage(AddIdCardImage event, emit) async {
     final result = await imagePickerService.pickImage();
     result.fold(
         (l) => null,
         (r) => emit(state.copyWith(
-            idCard: r, popOrderScreen: false, orderDetailError: false)));
+            idCard: r,
+            popOrderScreen: false,
+            orderDetailError: false,
+            orderCompletionError: false)));
   }
 
   FutureOr<void> addDeviceImages(AddDeviceImages event, emit) async {
@@ -150,6 +174,7 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
       return emit(state.copyWith(
           deviceImages: images,
           popOrderScreen: false,
+          orderCompletionError: false,
           orderDetailError: false));
     });
   }
@@ -191,6 +216,7 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
           completeOrderLoading: false,
           deviceBill: null,
           idCard: null,
+          imeiImage: null,
           deviceImages: [],
           orderCompleted: true,
           message: r.message));
@@ -264,7 +290,7 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
         (r) => emit(state.copyWith(isLoading: false, newOrders: r.orders)));
   }
 
-  FutureOr<void> refresPartnerOrders(RefresPartnerOrders event, emit) async {
+  FutureOr<void> refreshPartnerOrders(RefresPartnerOrders event, emit) async {
     emit(state.copyWith(
         partnerOrdesRefreshLoading: true,
         message: null,

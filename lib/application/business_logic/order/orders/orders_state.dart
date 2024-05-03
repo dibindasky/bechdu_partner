@@ -19,6 +19,7 @@ class OrdersState with _$OrdersState {
       String? message,
       ImageModel? deviceBill,
       ImageModel? idCard,
+      ImageModel? imeiImage,
       List<ImageModel>? deviceImages,
       List<OrderDetail>? partnerOrders,
       List<OrderDetail>? newOrders,
