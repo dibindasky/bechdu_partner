@@ -28,8 +28,16 @@ class _GridTileQuestionState extends State<GridTileQuestion> {
   Uint8List? convertedImg;
   @override
   void initState() {
-    convertedImg = base64Decode(widget.option.image!);
+    convertedImg = base64.decode(widget.option.image!);
     super.initState();
+  }
+
+  @override
+  void didUpdateWidget(covariant GridTileQuestion oldWidget) {
+    if(widget.option.image != oldWidget.option.image){
+      convertedImg = base64.decode(widget.option.image!);
+    }
+    super.didUpdateWidget(oldWidget);
   }
 
   @override
@@ -65,7 +73,9 @@ class _GridTileQuestionState extends State<GridTileQuestion> {
                     AspectRatio(
                       aspectRatio: 1,
                       child: FittedBox(
-                        child: Image.memory(convertedImg!),
+                        child: Image.memory(
+                          convertedImg!,
+                        ),
                       ),
                     ),
                     Expanded(

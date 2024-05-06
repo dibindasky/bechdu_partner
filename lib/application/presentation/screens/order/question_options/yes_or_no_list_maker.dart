@@ -26,36 +26,32 @@ class _YesOrNoListMakerState extends State<YesOrNoListMaker> {
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: PageStorage(
-                bucket: PageStorageBucket(),
-                key: PageStorageKey(generateRandomString(10)),
-                child: ListView.builder(
-                  key: UniqueKey(),
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemCount: widget.list.length,
-                  shrinkWrap: true,
-                  itemBuilder: (context, index) {
-                    return BlocBuilder<RequoteBloc, RequoteState>(
-                      builder: (context, state) {
-                        final answers = state.selectedAnswers[
-                                state.sections![state.requoteIndex].heading!]!
-                            .where((element) =>
-                                element.description ==
-                                widget.list[index].description)
-                            .toList();
-                        final selection =
-                            answers.isEmpty ? null : answers.first.value;
-                        print('selection $index => $selection');
-                        return YesOrNoTile(
-                          onTap: () => setState(() {}),
-                          state: state,
-                          option: widget.list[index],
-                          selected: selection,
-                        );
-                      },
-                    );
-                  },
-                ),
+              child: ListView.builder(
+                key: UniqueKey(),
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: widget.list.length,
+                shrinkWrap: true,
+                itemBuilder: (context, index) {
+                  return BlocBuilder<RequoteBloc, RequoteState>(
+                    builder: (context, state) {
+                      final answers = state.selectedAnswers[
+                              state.sections![state.requoteIndex].heading!]!
+                          .where((element) =>
+                              element.description ==
+                              widget.list[index].description)
+                          .toList();
+                      final selection =
+                          answers.isEmpty ? null : answers.first.value;
+                      print('selection $index => $selection');
+                      return YesOrNoTile(
+                        onTap: () => setState(() {}),
+                        state: state,
+                        option: widget.list[index],
+                        selected: selection,
+                      );
+                    },
+                  );
+                },
               ),
             ),
             kHeight30,

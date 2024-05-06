@@ -55,6 +55,7 @@ class OrderDetailTopPart extends StatelessWidget {
                       clipBehavior: Clip.none,
                       backgroundColor: kWhite,
                       context: context,
+                      enableDrag: false,
                       builder: (context) => BottomSheet(
                         backgroundColor: kWhite,
                         onClosing: () {},

@@ -16,6 +16,7 @@ class ImageGridMaker extends StatefulWidget {
 }
 
 class _ImageGridMakerState extends State<ImageGridMaker> {
+
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -24,40 +25,35 @@ class _ImageGridMakerState extends State<ImageGridMaker> {
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: PageStorage(
-                bucket: PageStorageBucket(),
-                key: PageStorageKey(generateRandomString(10)),
-                child: GridView.builder(
-                  key: UniqueKey(),
-                  shrinkWrap: true,
-                  itemCount: widget.list.length,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      childAspectRatio:
-                          widget.list.length <= 4 ? 1 / 1.3 : 1 / 1.5,
-                      mainAxisSpacing: 20,
-                      crossAxisSpacing: 20,
-                      crossAxisCount: widget.list.length <= 4 ? 2 : 3),
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemBuilder: (context, index) {
-                    return BlocBuilder<RequoteBloc, RequoteState>(
-                      builder: (context, state) {
-                        final answers = state.selectedAnswers[
-                                state.sections![state.requoteIndex].heading!]!
-                            .where((element) =>
-                                element.description ==
-                                widget.list[index].description)
-                            .toList();
-                        return GridTileQuestion(
-                          onTap: () {
-                            setState(() {});
-                          },
-                          option: widget.list[index],
-                          selected: answers.isNotEmpty,
-                        );
-                      },
-                    );
-                  },
-                ),
+              child: GridView.builder(
+                shrinkWrap: true,
+                itemCount: widget.list.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    childAspectRatio:
+                        widget.list.length <= 4 ? 1 / 1.3 : 1 / 1.5,
+                    mainAxisSpacing: 20,
+                    crossAxisSpacing: 20,
+                    crossAxisCount: widget.list.length <= 4 ? 2 : 3),
+                physics: const NeverScrollableScrollPhysics(),
+                itemBuilder: (context, index) {
+                  return BlocBuilder<RequoteBloc, RequoteState>(
+                    builder: (context, state) {
+                      final answers = state.selectedAnswers[
+                              state.sections![state.requoteIndex].heading!]!
+                          .where((element) =>
+                              element.description ==
+                              widget.list[index].description)
+                          .toList();
+                      return GridTileQuestion(
+                        onTap: () {
+                          setState(() {});
+                        },
+                        option: widget.list[index],
+                        selected: answers.isNotEmpty,
+                      );
+                    },
+                  );
+                },
               ),
             ),
             kHeight30,

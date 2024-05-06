@@ -19,10 +19,15 @@ class PriceAndImeiSession extends StatelessWidget {
   Widget build(BuildContext context) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       // put final price to controller
-      context.read<OrdersBloc>().finalPriceController.text =
-          context.read<RequoteBloc>().finalPrice != ''
-              ? context.read<RequoteBloc>().finalPrice
-              : orderDetail.productDetails?.price ?? '';
+      double price = double.parse(context.read<RequoteBloc>().finalPrice != ''
+          ? context.read<RequoteBloc>().finalPrice
+          : orderDetail.productDetails?.price ?? '0');
+      if (orderDetail.promo?.price != '' || orderDetail.promo?.price != null) {
+        context.read<OrdersBloc>().finalPriceController.text =
+            (price + double.parse(orderDetail.promo?.price ?? '0')).toString();
+      } else {
+        context.read<OrdersBloc>().finalPriceController.text = price.toString();
+      }
     });
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
