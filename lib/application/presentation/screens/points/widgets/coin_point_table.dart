@@ -40,17 +40,17 @@ class CoinPointTable extends StatelessWidget {
                   ),
                 ),
                 const Divider(),
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text('Pending Points', style: textHeadBoldBig),
-                      Text('50', style: textHeadBoldBig)
-                    ],
-                  ),
-                ),
+                // Padding(
+                //   padding:
+                //       const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
+                //   child: Row(
+                //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //     children: [
+                //       Text('Pending Points', style: textHeadBoldBig),
+                //       Text('50', style: textHeadBoldBig)
+                //     ],
+                //   ),
+                // ),
                 kHeight20,
                 SizedBox(
                   width: sWidth * 0.5,

@@ -54,7 +54,7 @@ class PickupPartnerListTile extends StatelessWidget {
                   ),
                   kWidth10,
                   Text(
-                    pickUpPerson.status ?? '',
+                    pickUpPerson.status == 'active' ? 'Active' : 'Blocked',
                     style: textHeadSemiBold1.copyWith(color: kGreyLight),
                   ),
                 ],

@@ -46,7 +46,7 @@ class OrdersListTileHome extends StatelessWidget {
             const Spacer(),
             StatusColoredBox(
               color: getStatusColor(orderDetail.status ?? ''),
-              text: orderDetail.status ?? '',
+              text: getFirstCapital(orderDetail.status),
             ),
             kWidth10
           ],

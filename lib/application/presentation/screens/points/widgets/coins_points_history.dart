@@ -96,7 +96,8 @@ class CoinsPointsHistory extends StatelessWidget {
                                                               .length >
                                                           18
                                                       ? '${data.productDetails!.name!.substring(0, 15)}..'
-                                                      : data.productDetails!.name!,
+                                                      : data.productDetails!
+                                                          .name!,
                                               style: textHeadRegular2,
                                             ),
                                           ),
@@ -109,9 +110,11 @@ class CoinsPointsHistory extends StatelessWidget {
                                           Row(
                                             children: [
                                               StatusColoredBox(
-                                                  text: data.status ?? '',
+                                                  text: getFirstCapital(
+                                                      data.status),
                                                   color: getStatusColor(
-                                                      data.status ?? '')),kWidth30
+                                                      data.status ?? '')),
+                                              kWidth30
                                             ],
                                           )
                                         ],

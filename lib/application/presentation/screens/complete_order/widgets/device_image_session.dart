@@ -42,7 +42,7 @@ class DeviceImagesSession extends StatelessWidget {
                     child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Device images', style: textHeadRegular2),
+                    Text('Device Images', style: textHeadRegular2),
                     kWidth10,
                     Icon(Icons.camera_outlined,
                         color: state.orderCompletionError &&

@@ -11,7 +11,7 @@ class CustomTextFormField extends StatelessWidget {
       required this.controller,
       required this.hintText,
       this.maxlength,
-      this.keyboardType,
+      this.keyboardType,this.textCapitalization=TextCapitalization.none,
       this.validate = Validate.none,
       this.borderColor = kGreyLight,
       this.isObscure = false});
@@ -23,6 +23,7 @@ class CustomTextFormField extends StatelessWidget {
   final bool isObscure;
   final int? maxlength;
   final Validate validate;
+  final TextCapitalization textCapitalization;
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +34,7 @@ class CustomTextFormField extends StatelessWidget {
       keyboardType: keyboardType,
       cursorColor: kBluePrimary,
       obscureText: isObscure,
+      textCapitalization: textCapitalization,
       decoration: InputDecoration(
         focusColor: kBluePrimary,
         focusedBorder: OutlineInputBorder(

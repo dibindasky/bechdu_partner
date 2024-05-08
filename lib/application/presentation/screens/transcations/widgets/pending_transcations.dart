@@ -34,7 +34,7 @@ class PendingTranscationSession extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text('${data.status} Transaction',
+                        Text('${getFirstCapital(data.status)} Transaction',
                             style: textHeadBoldBig),
                         kHeight10,
                         Container(
@@ -91,7 +91,7 @@ class PendingTranscationSession extends StatelessWidget {
                                       data.status == 'Pending'
                                           ? kEmpty
                                           : Text(
-                                              ' `${data.status ?? '-----'}',
+                                              ' ${getFirstCapital(data.status)}',
                                               style: textHeadSemiBold1.copyWith(
                                                   color:
                                                       getTranscationStatusColor(

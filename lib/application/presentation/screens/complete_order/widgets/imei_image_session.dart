@@ -26,7 +26,7 @@ class ImeiNumberPhotoSession extends StatelessWidget {
                     child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Imei Number Image', style: textHeadRegular2),
+                    Text('IMEI Number Image', style: textHeadRegular2),
                     kWidth10,
                     const Icon(Icons.camera_outlined)
                   ],

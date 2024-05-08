@@ -35,7 +35,9 @@ class ScreenAddPickUpPartner extends StatelessWidget {
                 TextFieldMaker(
                   headline: 'Name',
                   child: CustomTextFormField(
+                    textCapitalization: TextCapitalization.words,
                       validate: Validate.notNull,
+                      keyboardType: TextInputType.name,
                       controller:
                           context.read<PickupPartnerBloc>().nameControler,
                       hintText: 'Please enter name'),

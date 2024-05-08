@@ -91,7 +91,7 @@ class OrderDetailTopPart extends StatelessWidget {
           ),
           kHeight10,
           OrderCustomButtonBottom(
-              text: 'Complete',
+              text: 'Complete Order',
               image: iconCompleteCheck,
               onTap: () {
                 context.read<RequoteBloc>().finalPrice = '';

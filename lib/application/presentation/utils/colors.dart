@@ -19,6 +19,11 @@ const Color kRed = Colors.redAccent;
 const Color kRedDark = Color.fromARGB(255, 186, 26, 26);
 const Color kRedLight = Color.fromARGB(255, 255, 118, 118);
 
+String getFirstCapital(String? string) {
+  if (string == null || string == '') return '';
+  return string[0].toUpperCase() + string.substring(1);
+}
+
 // Set a default color or choose another color
 Color getStatusColor(String status) {
   switch (status) {
