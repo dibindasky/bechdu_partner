@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:bechdu_partner/application/business_logic/auth/auth_bloc.dart';
 import 'package:bechdu_partner/application/business_logic/role/role_bloc.dart';
 import 'package:bechdu_partner/application/presentation/routes/routes.dart';
+import 'package:bechdu_partner/application/presentation/utils/animations/shriking_animation.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:bechdu_partner/data/firebase_api/firebase_api.dart';
@@ -41,14 +42,15 @@ class _ScreenSplashState extends State<ScreenSplash> {
       },
       builder: (context, state) {
         return Scaffold(
-          backgroundColor: kBluePrimary,
+          backgroundColor: kWhite,
           body: Center(
             child: ClipRRect(
               borderRadius: kRadius5,
-              child: Text(
-                'BECHDU',
-                style: textHeadBoldBig.copyWith(color: kWhite),
-              ),
+              child: AnimatedGrowShrinkContainer(
+                  milliseconds: 1500,
+                  begin: 1.5,
+                  end: 0.0,
+                  child: Image.asset(iconBechdu)),
             ),
           ),
         );

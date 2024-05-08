@@ -1,7 +1,7 @@
 import 'package:bechdu_partner/application/business_logic/order/orders/orders_bloc.dart';
-import 'package:bechdu_partner/application/presentation/routes/routes.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
+import 'package:bechdu_partner/application/presentation/widgets/slidable_image_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -86,10 +86,17 @@ class DeviceImagesSession extends StatelessWidget {
                                 AspectRatio(
                                     aspectRatio: .8,
                                     child: InkWell(
-                                      onTap: () => Navigator.pushNamed(
-                                          context, Routes.imagePreviewPage,
-                                          arguments: state.deviceImages![index]
-                                              .fileImage.path),
+                                      onTap: () => Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                ScreenSlidablePhotoGallery(
+                                                    images: state.deviceImages!
+                                                        .map((e) =>
+                                                            e.base64Image)
+                                                        .toList(),
+                                                    initialIndex: index),
+                                          )),
                                       child: Image.file(
                                           state.deviceImages![index].fileImage,
                                           fit: BoxFit.cover),

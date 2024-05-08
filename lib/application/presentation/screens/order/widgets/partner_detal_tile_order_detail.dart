@@ -46,7 +46,7 @@ class PartnerDetailTile extends StatelessWidget {
                         status == 'cancelled'
                             ? 'Order Status'
                             : pickup?.pickUpPersonName == ''
-                                ? 'Assign pickup'
+                                ? 'Assign Pickup'
                                 : pickup?.pickUpPersonName ?? '',
                         style: textHeadBold1),
                   ),

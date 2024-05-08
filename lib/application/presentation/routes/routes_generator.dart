@@ -26,7 +26,8 @@ class RouteGenerator {
       case Routes.initial:
         return MaterialPageRoute(builder: (ctx) => const ScreenSplash());
       case Routes.signInPage:
-        return MaterialPageRoute(builder: (ctx) => const ScreenLogin());
+        return fadePageRoute(const ScreenLogin());
+      // return MaterialPageRoute(builder: (ctx) => const ScreenLogin());
       case Routes.otpPage:
         return arguments is bool
             ? MaterialPageRoute(builder: (ctx) => ScreenOTP(delete: arguments))
@@ -56,7 +57,8 @@ class RouteGenerator {
       case Routes.transcationPage:
         return MaterialPageRoute(builder: (ctx) => const ScreenTranscations());
       case Routes.homePage:
-        return MaterialPageRoute(builder: (ctx) => const ScreenHome());
+        return fadePageRoute(const ScreenHome());
+      // return MaterialPageRoute(builder: (ctx) => const ScreenHome());
 
       case Routes.pickUpProfilePage:
         return arguments is int
@@ -64,7 +66,8 @@ class RouteGenerator {
                 builder: (ctx) => ScreenPickUpPartnerProfile(index: arguments))
             : _errorScreen();
       case Routes.bottomBar:
-        return MaterialPageRoute(builder: (ctx) => const ScreenBottomBar());
+        return fadePageRoute(const ScreenBottomBar());
+      // return MaterialPageRoute(builder: (ctx) => const ScreenBottomBar());
       case Routes.orderScreen:
         return arguments is OrderDetail
             ? MaterialPageRoute(
@@ -90,4 +93,28 @@ class RouteGenerator {
       );
     });
   }
+}
+
+PageRouteBuilder fadePageRoute(Widget page) {
+  return PageRouteBuilder(
+    pageBuilder: (context, animation, secondaryAnimation) => page,
+    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+      const begin = 0.0;
+      const end = 1.0;
+      const curve = Curves.easeInOut;
+
+      final tween = Tween(begin: begin, end: end).chain(
+        CurveTween(curve: curve),
+      );
+
+      var opacityAnimation = animation.drive(tween);
+
+      return FadeTransition(
+        opacity: opacityAnimation,
+        child: child,
+      );
+    },
+    transitionDuration: const Duration(milliseconds: 500),
+    reverseTransitionDuration: const Duration(milliseconds: 500),
+  );
 }

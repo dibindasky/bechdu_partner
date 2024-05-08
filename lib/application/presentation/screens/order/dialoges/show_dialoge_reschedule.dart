@@ -150,6 +150,7 @@ class _ReshedulePopupState extends State<ReshedulePopup> {
                                   }
                                 });
                               },
+                              textCapitalization: TextCapitalization.sentences,
                               maxLines: 5,
                               decoration: const InputDecoration(
                                   border: InputBorder.none,
