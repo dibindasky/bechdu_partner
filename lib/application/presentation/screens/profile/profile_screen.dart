@@ -76,7 +76,7 @@ class ScreenProfile extends StatelessWidget {
                     onTap: () {
                       showCustomDialoge(
                           context: context,
-                          title: 'Are you sure want to Logout ?',
+                          title: 'Are you sure you want to logout ?',
                           buttonText: 'Log Out',
                           onTap: () {
                             context

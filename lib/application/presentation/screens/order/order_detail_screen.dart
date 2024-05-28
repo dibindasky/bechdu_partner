@@ -41,7 +41,9 @@ class ScreenOrderDetail extends StatelessWidget {
               'in first listner ${a++}===========****************************++++++++++++');
           showSnackBar(
               context: context,
-              message:partner? 'Order has been accepted by another partner.':'Order has been deassigned by partner',
+              message: partner
+                  ? 'Order has been accepted by another partner.'
+                  : 'Order has been deassigned by partner',
               color: kRed);
           if (partner) {
             Navigator.pop(context);
@@ -67,7 +69,8 @@ class ScreenOrderDetail extends StatelessWidget {
               ClipPath(
                 clipper: VerticalCurvesClipper(),
                 child: ColoredBox(
-                  color: kBluelight,
+                  // color: kBluelight,
+                  color: getStatusColor(this.orderDetail.status!),
                   child: SizedBox(width: sWidth, height: sHeight * 1.5),
                 ),
               ),
@@ -105,9 +108,6 @@ class ScreenOrderDetail extends StatelessWidget {
                           return BlocConsumer<OrdersBloc, OrdersState>(
                             listener: (context, state) {
                               if (state.message != null) {
-                                print(
-                                    'in second listner message =====****************************++++++++++++');
-
                                 showSnackBar(
                                     context: context,
                                     message: state.message!,

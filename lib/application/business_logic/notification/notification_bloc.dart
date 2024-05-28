@@ -45,7 +45,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     final phone = await SharedPref.getPhone();
     final result = await notificatonRepo.getNotifications(
         phone: phone!,
-        pageSizeQueryModel: PageSizeQueryModel(page: 1, pageSize: ++size));
+        pageSizeQueryModel: PageSizeQueryModel(page: 1, pageSize: size += 15));
     result.fold((l) => emit(state.copyWith(pageLoading: false)), (r) {
       emit(state.copyWith(
           pageLoading: false,

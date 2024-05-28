@@ -23,7 +23,6 @@ class SharedPref {
     log('get token =>()');
     final preferences = await _getPrefs();
     final accessToken = preferences.getString(accessKey);
-    log('accessToken =>() $accessToken');
     return TokenModel(accessToken: accessToken);
   }
 

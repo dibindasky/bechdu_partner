@@ -72,7 +72,7 @@ class ScreenSettings extends StatelessWidget {
                           onTap: () => showCustomDialoge(
                               context: context,
                               buttonColor: kRedDark,
-                              title: 'Are you sure want to delete account ?',
+                              title: 'Are you sure you want to Delete Account ?',
                               buttonText: 'Delete',
                               onTap: () {
                                 context

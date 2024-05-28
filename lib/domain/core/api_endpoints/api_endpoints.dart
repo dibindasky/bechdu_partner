@@ -1,6 +1,6 @@
 class ApiEndPoints {
   //base urls
-  static String baseUrl = 'https://api.bechdu.in/';
+  static String baseUrl = 'https://api.bechdu.in';
   static String baseUrlImage = 'https://api.bechdu.in/uploads/';
 
   // auth

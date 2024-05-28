@@ -162,6 +162,7 @@ class OrderService implements OrderRepo {
       final response = await _apiService.get(ApiEndPoints.getOrderDetails
           .replaceFirst('{partnerPhone}', phone)
           .replaceFirst('{orderID}', orderId));
+      log('getOrderDetails => success');
       return Right(OrderDetail.fromJson(response.data));
     } on DioException catch (e) {
       try {
@@ -171,6 +172,7 @@ class OrderService implements OrderRepo {
             ErrorResponseModel.fromJson(e.response?.data);
         return Left(Failure(message: error.error ?? errorMessage));
       } catch (e) {
+        log('getOrderDetails exception => $e');
         return Left(Failure(message: errorMessage));
       }
     } catch (e) {

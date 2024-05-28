@@ -64,7 +64,7 @@ class OrderDetailDiviceDetailsSession extends StatelessWidget {
                                         <Widget>[
                                               Text(
                                                   data.first.heading ?? '-----',
-                                                  style: textHeadBoldBig)
+                                                  style: textHeadBold1)
                                             ] +
                                             List.generate(
                                               data.length,
@@ -144,18 +144,19 @@ class OrderDetailDiviceDetailsSession extends StatelessWidget {
                                         (position) => Row(
                                           children: [
                                             Expanded(
+                                              flex: 1,
                                               child: position == 0
                                                   ? Text(
                                                       data.first.heading ??
                                                           '-----',
-                                                      style: textHeadBoldBig)
+                                                      style: textHeadBold1)
                                                   : kEmpty,
                                             ),
                                             Expanded(
+                                              flex: 1,
                                               child: Text(
-                                                  data[position].description ??
-                                                      '--- ---',
-                                                  style: textHeadBold1),
+                                                  '* ${data[position].description ?? '--- ---'}',
+                                                  style: textHeadRegular1),
                                             )
                                           ],
                                         ),
