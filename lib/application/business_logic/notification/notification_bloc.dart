@@ -57,9 +57,9 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   FutureOr<void> getNotificationsNext(GetNotificationsNext event, emit) async {
     emit(state.copyWith(pageLoading: true, hasError: false));
     final phone = await SharedPref.getPhone();
-    final result = await notificatonRepo.getNotifications(
+    final result = await notificatonRepo.getSortNotifications(
         phone: phone!,
-        pageSizeQueryModel: PageSizeQueryModel(page: 1, pageSize: size += 15));
+        notificationQuery: query.copyWith(page: 1,pageSize: size+=15));
     result.fold((l) => emit(state.copyWith(pageLoading: false)), (r) {
       emit(state.copyWith(
           pageLoading: false,

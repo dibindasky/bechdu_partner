@@ -143,7 +143,8 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
             message: l.message)),
         (r) => emit(state.copyWith(
             isLoading: false,
-            orderDetail: phone != r.partner?.partnerPhone
+            orderDetail: r.partner?.partnerPhone != '' &&
+                    phone != r.partner?.partnerPhone
                 ? r.copyWith(notification: true)
                 : r)));
   }

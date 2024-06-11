@@ -8,11 +8,15 @@ class CustomExpansionTile extends StatefulWidget {
       this.isExpandable = true,
       required this.children,
       required this.title,
+      this.expandLess = Icons.expand_less,
+      this.expandMore = Icons.expand_more,
       required this.subTitle});
   final List<Widget> children;
   final Widget title;
   final Widget subTitle;
   final bool isExpandable;
+  final IconData expandLess;
+  final IconData expandMore;
 
   @override
   State<CustomExpansionTile> createState() => _CustomExpansionTileState();
@@ -43,7 +47,7 @@ class _CustomExpansionTileState extends State<CustomExpansionTile> {
                     Expanded(child: widget.title),
                     widget.isExpandable
                         ? Icon(
-                            isExpanded ? Icons.expand_less : Icons.expand_more,
+                            isExpanded ? widget.expandLess : widget.expandMore,
                             color: kBlack,
                           )
                         : kEmpty,

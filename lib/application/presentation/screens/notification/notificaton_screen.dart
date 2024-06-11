@@ -6,6 +6,7 @@ import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:bechdu_partner/application/presentation/utils/refresh_indicator/refresh_indicator.dart';
 import 'package:bechdu_partner/application/presentation/utils/shimmer/shimmer_loader.dart';
 import 'package:bechdu_partner/application/presentation/utils/time/time_maker.dart';
+import 'package:bechdu_partner/application/presentation/widgets/custom_expansion_tile.dart';
 import 'package:bechdu_partner/domain/model/order/get_partner_order_response_model/order_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,6 +22,12 @@ class _ScreenNotificationState extends State<ScreenNotification> {
   final ScrollController controller = ScrollController();
   @override
   void initState() {
+    context
+        .read<NotificationBloc>()
+        .add(const NotificationEvent.getNotifications(reset: true));
+    if (partner) {
+      context.read<OrdersBloc>().add(const OrdersEvent.getNewOrder(call: true));
+    }
     controller.addListener(() {
       if (controller.position.pixels == controller.position.maxScrollExtent) {
         context
@@ -38,18 +45,9 @@ class _ScreenNotificationState extends State<ScreenNotification> {
     super.dispose();
   }
 
+  bool showExpansion = true;
   @override
   Widget build(BuildContext context) {
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      context
-          .read<NotificationBloc>()
-          .add(const NotificationEvent.getNotifications(reset: true));
-      if (partner) {
-        context
-            .read<OrdersBloc>()
-            .add(const OrdersEvent.getNewOrder(call: true));
-      }
-    });
     return Scaffold(
       appBar: AppBar(
         title: Text('Notifications', style: textHeadBoldBig2),
@@ -69,7 +67,12 @@ class _ScreenNotificationState extends State<ScreenNotification> {
 
                 return Column(
                   children: [
-                    const SortingTabs(),
+                    const CustomExpansionTile(
+                        expandMore: Icons.sort,
+                        // expandLess: Icons.arrow,
+                        title: SortingTabs(title: true),
+                        subTitle: kEmpty,
+                        children: [SortingTabs(title: false)]),
                     kHeight5,
                     Expanded(
                       child: RefreshIndicator(
@@ -87,7 +90,8 @@ class _ScreenNotificationState extends State<ScreenNotification> {
                         child: ListView.separated(
                           controller: controller,
                           itemCount: length,
-                          separatorBuilder: (context, index) => const Divider(thickness: 1,height: 1),
+                          separatorBuilder: (context, index) =>
+                              const Divider(thickness: 1, height: 1),
                           itemBuilder: (context, index) {
                             if (index == state.notificationList!.length) {
                               return ShimmerLoader(
@@ -95,7 +99,10 @@ class _ScreenNotificationState extends State<ScreenNotification> {
                             }
                             final data = state.notificationList![index];
                             final color = getStatusColor(data.type ?? "");
-                            return Container(color:data.status==false? kBluelight.withOpacity(0.5):kWhite,
+                            return Container(
+                              color: data.status == false
+                                  ? kBluelight.withOpacity(0.5)
+                                  : kWhite,
                               child: ListTile(
                                 minLeadingWidth: 40,
                                 isThreeLine: true,
@@ -115,7 +122,8 @@ class _ScreenNotificationState extends State<ScreenNotification> {
                                   } else {
                                     Navigator.pushNamed(
                                         context, Routes.orderScreen,
-                                        arguments: OrderDetail(id: data.orderId));
+                                        arguments:
+                                            OrderDetail(id: data.orderId));
                                   }
                                 },
                                 leading: Row(
@@ -174,7 +182,10 @@ class _ScreenNotificationState extends State<ScreenNotification> {
               } else {
                 return Column(
                   children: [
-                    const SortingTabs(),
+                    const CustomExpansionTile(
+                        title: SortingTabs(title: true),
+                        subTitle: kEmpty,
+                        children: [SortingTabs(title: false)]),
                     Expanded(
                       child: ErrorRefreshIndicator(
                           image: gifNoData,
@@ -201,15 +212,16 @@ class _ScreenNotificationState extends State<ScreenNotification> {
 }
 
 class SortingTabs extends StatelessWidget {
-  const SortingTabs({
-    super.key,
-  });
+  const SortingTabs({super.key, required this.title});
+
+  final bool title;
 
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<NotificationBloc, NotificationState>(
       builder: (context, state) {
         List<String> sortItem = context.read<NotificationBloc>().sortList;
+        sortItem = title ? sortItem.sublist(0, 2) : sortItem.sublist(2);
         return SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Padding(
@@ -217,18 +229,19 @@ class SortingTabs extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: List.generate(sortItem.length, (index) {
-                final selected = state.sortIndexs.contains(index);
+                final selected =
+                    state.sortIndexs.contains(title ? index : index + 2);
                 return GestureDetector(
                   onTap: () {
                     context
                         .read<NotificationBloc>()
-                        .add(NotificationEvent.sort(index));
+                        .add(NotificationEvent.sort(title ? index : index + 2));
                   },
                   child: Container(
-                    margin: const EdgeInsets.symmetric(
-                        vertical: 5, horizontal: 5),
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 5, horizontal: 10),
+                    margin:
+                        const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
                     decoration: BoxDecoration(
                         boxShadow: const [
                           BoxShadow(
