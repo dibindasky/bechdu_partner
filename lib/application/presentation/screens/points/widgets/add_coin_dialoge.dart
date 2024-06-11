@@ -252,7 +252,7 @@ class _AddCoinsDialogeState extends State<AddCoinsDialoge> {
                                                     .floorToDouble());
                                         RazorpayGateway(context).makePayment(
                                             epayModel: epayModel,
-                                            amount: 1,
+                                            amount: state.amountPayable!,
                                             description:
                                                 'payment for $coins coin',
                                             email:

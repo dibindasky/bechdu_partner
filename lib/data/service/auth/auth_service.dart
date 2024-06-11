@@ -73,7 +73,7 @@ class AuthService implements AuthRepo {
 
   @override
   Future<Either<Failure, SuccessResponseModel>> blockPartner(
-       {required OtpModel otpModel,required String phone}) async {
+      {required OtpModel otpModel, required String phone}) async {
     try {
       final response = await _apiService.put(
           ApiEndPoints.block.replaceFirst('{phone}', phone),

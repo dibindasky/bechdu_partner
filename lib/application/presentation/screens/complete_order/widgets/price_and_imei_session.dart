@@ -18,9 +18,6 @@ class PriceAndImeiSession extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      // put final price to controller
-      print('price =>${orderDetail.productDetails?.price}');
-      print('promo =>${orderDetail.promo?.price}');
       context.read<OrdersBloc>().finalPriceController.text = '';
       int price = int.parse(context.read<RequoteBloc>().finalPrice != ''
           ? context.read<RequoteBloc>().finalPrice

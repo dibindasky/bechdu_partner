@@ -5,6 +5,7 @@ import 'dart:typed_data';
 
 import 'package:injectable/injectable.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:uuid/uuid.dart';
 
 @injectable
@@ -32,22 +33,16 @@ class InvoiceMaker {
     return await file.writeAsBytes(pdfBuffer);
   }
 
-//   Future<void> saveToStorage(String base64Pdf, String fileName) async {
-//   final pdfBytes = base64Decode(base64Pdf);
-//   final status = await Permission.storage.request();
-//   if (!status.isGranted) {
-//     throw Exception('Storage permission denied');
-//   }
-//   try {
-//     await FileSaver.saveFile(
-//       '$fileName.pdf',
-//       pdfBytes,
-//       'application/pdf',
-//       DirectoryPaths.downloads,
-//     );
-//     print('PDF saved successfully!');
-//   } catch (error) {
-//     print('Error saving PDF: $error');
-//   }
-// }
+  Future<String> savePdfFile(String base64String, String fileName) async {
+    final bytes = base64Decode(base64String);
+    final dir = await getTemporaryDirectory();
+    final file = File('${dir.path}/$fileName.pdf');
+    await file.writeAsBytes(bytes);
+    return file.path;
+  }
+
+  Future<void> sharePdf(String base64String, String fileName,String text) async {
+    await Share.shareFiles([await savePdfFile(base64String, fileName)],
+        text: text);
+  }
 }

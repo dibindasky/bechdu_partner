@@ -41,7 +41,8 @@ void showDialogeCancel(context, orderId) {
                                       .read<OrdersBloc>()
                                       .cancelController,
                                   maxLines: 5,
-                                  textCapitalization: TextCapitalization.sentences,
+                                  textCapitalization:
+                                      TextCapitalization.sentences,
                                   decoration: const InputDecoration(
                                       border: InputBorder.none,
                                       hintText: 'Write here'),

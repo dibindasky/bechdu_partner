@@ -20,6 +20,7 @@ mixin _$OrdersEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
     required TResult Function(String orderId) getOrderDetail,
+    required TResult Function(String orderId) getOrderDetailNotification,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -41,6 +42,7 @@ mixin _$OrdersEvent {
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
+    required TResult Function(String orderId) downloadOrderInvoice,
     required TResult Function() reset,
   }) =>
       throw _privateConstructorUsedError;
@@ -48,6 +50,7 @@ mixin _$OrdersEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
     TResult? Function(String orderId)? getOrderDetail,
+    TResult? Function(String orderId)? getOrderDetailNotification,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -68,6 +71,7 @@ mixin _$OrdersEvent {
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
+    TResult? Function(String orderId)? downloadOrderInvoice,
     TResult? Function()? reset,
   }) =>
       throw _privateConstructorUsedError;
@@ -75,6 +79,7 @@ mixin _$OrdersEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
     TResult Function(String orderId)? getOrderDetail,
+    TResult Function(String orderId)? getOrderDetailNotification,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -95,6 +100,7 @@ mixin _$OrdersEvent {
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
+    TResult Function(String orderId)? downloadOrderInvoice,
     TResult Function()? reset,
     required TResult orElse(),
   }) =>
@@ -103,6 +109,8 @@ mixin _$OrdersEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
     required TResult Function(GetOrderDetail value) getOrderDetail,
+    required TResult Function(GetOrderDetailNotification value)
+        getOrderDetailNotification,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -122,6 +130,7 @@ mixin _$OrdersEvent {
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
+    required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
     required TResult Function(Reset value) reset,
   }) =>
       throw _privateConstructorUsedError;
@@ -129,6 +138,8 @@ mixin _$OrdersEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
     TResult? Function(GetOrderDetail value)? getOrderDetail,
+    TResult? Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -147,6 +158,7 @@ mixin _$OrdersEvent {
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult? Function(Reset value)? reset,
   }) =>
       throw _privateConstructorUsedError;
@@ -154,6 +166,8 @@ mixin _$OrdersEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
     TResult Function(GetOrderDetail value)? getOrderDetail,
+    TResult Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -172,6 +186,7 @@ mixin _$OrdersEvent {
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) =>
@@ -262,6 +277,7 @@ class _$AcceptOrderImpl implements AcceptOrder {
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
     required TResult Function(String orderId) getOrderDetail,
+    required TResult Function(String orderId) getOrderDetailNotification,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -283,6 +299,7 @@ class _$AcceptOrderImpl implements AcceptOrder {
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
+    required TResult Function(String orderId) downloadOrderInvoice,
     required TResult Function() reset,
   }) {
     return acceptOrder(orderId);
@@ -293,6 +310,7 @@ class _$AcceptOrderImpl implements AcceptOrder {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
     TResult? Function(String orderId)? getOrderDetail,
+    TResult? Function(String orderId)? getOrderDetailNotification,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -313,6 +331,7 @@ class _$AcceptOrderImpl implements AcceptOrder {
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
+    TResult? Function(String orderId)? downloadOrderInvoice,
     TResult? Function()? reset,
   }) {
     return acceptOrder?.call(orderId);
@@ -323,6 +342,7 @@ class _$AcceptOrderImpl implements AcceptOrder {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
     TResult Function(String orderId)? getOrderDetail,
+    TResult Function(String orderId)? getOrderDetailNotification,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -343,6 +363,7 @@ class _$AcceptOrderImpl implements AcceptOrder {
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
+    TResult Function(String orderId)? downloadOrderInvoice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -357,6 +378,8 @@ class _$AcceptOrderImpl implements AcceptOrder {
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
     required TResult Function(GetOrderDetail value) getOrderDetail,
+    required TResult Function(GetOrderDetailNotification value)
+        getOrderDetailNotification,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -376,6 +399,7 @@ class _$AcceptOrderImpl implements AcceptOrder {
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
+    required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
     required TResult Function(Reset value) reset,
   }) {
     return acceptOrder(this);
@@ -386,6 +410,8 @@ class _$AcceptOrderImpl implements AcceptOrder {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
     TResult? Function(GetOrderDetail value)? getOrderDetail,
+    TResult? Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -404,6 +430,7 @@ class _$AcceptOrderImpl implements AcceptOrder {
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult? Function(Reset value)? reset,
   }) {
     return acceptOrder?.call(this);
@@ -414,6 +441,8 @@ class _$AcceptOrderImpl implements AcceptOrder {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
     TResult Function(GetOrderDetail value)? getOrderDetail,
+    TResult Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -432,6 +461,7 @@ class _$AcceptOrderImpl implements AcceptOrder {
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -519,6 +549,7 @@ class _$GetOrderDetailImpl implements GetOrderDetail {
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
     required TResult Function(String orderId) getOrderDetail,
+    required TResult Function(String orderId) getOrderDetailNotification,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -540,6 +571,7 @@ class _$GetOrderDetailImpl implements GetOrderDetail {
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
+    required TResult Function(String orderId) downloadOrderInvoice,
     required TResult Function() reset,
   }) {
     return getOrderDetail(orderId);
@@ -550,6 +582,7 @@ class _$GetOrderDetailImpl implements GetOrderDetail {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
     TResult? Function(String orderId)? getOrderDetail,
+    TResult? Function(String orderId)? getOrderDetailNotification,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -570,6 +603,7 @@ class _$GetOrderDetailImpl implements GetOrderDetail {
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
+    TResult? Function(String orderId)? downloadOrderInvoice,
     TResult? Function()? reset,
   }) {
     return getOrderDetail?.call(orderId);
@@ -580,6 +614,7 @@ class _$GetOrderDetailImpl implements GetOrderDetail {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
     TResult Function(String orderId)? getOrderDetail,
+    TResult Function(String orderId)? getOrderDetailNotification,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -600,6 +635,7 @@ class _$GetOrderDetailImpl implements GetOrderDetail {
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
+    TResult Function(String orderId)? downloadOrderInvoice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -614,6 +650,8 @@ class _$GetOrderDetailImpl implements GetOrderDetail {
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
     required TResult Function(GetOrderDetail value) getOrderDetail,
+    required TResult Function(GetOrderDetailNotification value)
+        getOrderDetailNotification,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -633,6 +671,7 @@ class _$GetOrderDetailImpl implements GetOrderDetail {
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
+    required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
     required TResult Function(Reset value) reset,
   }) {
     return getOrderDetail(this);
@@ -643,6 +682,8 @@ class _$GetOrderDetailImpl implements GetOrderDetail {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
     TResult? Function(GetOrderDetail value)? getOrderDetail,
+    TResult? Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -661,6 +702,7 @@ class _$GetOrderDetailImpl implements GetOrderDetail {
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult? Function(Reset value)? reset,
   }) {
     return getOrderDetail?.call(this);
@@ -671,6 +713,8 @@ class _$GetOrderDetailImpl implements GetOrderDetail {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
     TResult Function(GetOrderDetail value)? getOrderDetail,
+    TResult Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -689,6 +733,7 @@ class _$GetOrderDetailImpl implements GetOrderDetail {
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -707,6 +752,280 @@ abstract class GetOrderDetail implements OrdersEvent {
   @JsonKey(ignore: true)
   _$$GetOrderDetailImplCopyWith<_$GetOrderDetailImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetOrderDetailNotificationImplCopyWith<$Res> {
+  factory _$$GetOrderDetailNotificationImplCopyWith(
+          _$GetOrderDetailNotificationImpl value,
+          $Res Function(_$GetOrderDetailNotificationImpl) then) =
+      __$$GetOrderDetailNotificationImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String orderId});
+}
+
+/// @nodoc
+class __$$GetOrderDetailNotificationImplCopyWithImpl<$Res>
+    extends _$OrdersEventCopyWithImpl<$Res, _$GetOrderDetailNotificationImpl>
+    implements _$$GetOrderDetailNotificationImplCopyWith<$Res> {
+  __$$GetOrderDetailNotificationImplCopyWithImpl(
+      _$GetOrderDetailNotificationImpl _value,
+      $Res Function(_$GetOrderDetailNotificationImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? orderId = null,
+  }) {
+    return _then(_$GetOrderDetailNotificationImpl(
+      orderId: null == orderId
+          ? _value.orderId
+          : orderId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetOrderDetailNotificationImpl implements GetOrderDetailNotification {
+  const _$GetOrderDetailNotificationImpl({required this.orderId});
+
+  @override
+  final String orderId;
+
+  @override
+  String toString() {
+    return 'OrdersEvent.getOrderDetailNotification(orderId: $orderId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetOrderDetailNotificationImpl &&
+            (identical(other.orderId, orderId) || other.orderId == orderId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, orderId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetOrderDetailNotificationImplCopyWith<_$GetOrderDetailNotificationImpl>
+      get copyWith => __$$GetOrderDetailNotificationImplCopyWithImpl<
+          _$GetOrderDetailNotificationImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String orderId) acceptOrder,
+    required TResult Function(String orderId) getOrderDetail,
+    required TResult Function(String orderId) getOrderDetailNotification,
+    required TResult Function(String orderId, String reason) cancelOrder,
+    required TResult Function(
+            String orderId, CompleteOrderModel completeOrderModel)
+        completeOrder,
+    required TResult Function(bool call) getNewOrder,
+    required TResult Function(bool call) getPartnerOrders,
+    required TResult Function(String orderId) removePickupPartner,
+    required TResult Function() refresPartnerOrders,
+    required TResult Function() refreshNewOrder,
+    required TResult Function(int tab) changeTab,
+    required TResult Function(PickUpPerson pickUpPerson, String orderId)
+        changePickupPartner,
+    required TResult Function() checkErrorCompleteOrder,
+    required TResult Function() addDiviceBill,
+    required TResult Function() removeDiviceBill,
+    required TResult Function() addImeiImage,
+    required TResult Function() removeImeiImage,
+    required TResult Function() addIdCardImage,
+    required TResult Function() removeIdCardImage,
+    required TResult Function() addDeviceImages,
+    required TResult Function(int index) removeDeviceImage,
+    required TResult Function(String orderId) downloadOrderInvoice,
+    required TResult Function() reset,
+  }) {
+    return getOrderDetailNotification(orderId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String orderId)? acceptOrder,
+    TResult? Function(String orderId)? getOrderDetail,
+    TResult? Function(String orderId)? getOrderDetailNotification,
+    TResult? Function(String orderId, String reason)? cancelOrder,
+    TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult? Function(bool call)? getNewOrder,
+    TResult? Function(bool call)? getPartnerOrders,
+    TResult? Function(String orderId)? removePickupPartner,
+    TResult? Function()? refresPartnerOrders,
+    TResult? Function()? refreshNewOrder,
+    TResult? Function(int tab)? changeTab,
+    TResult? Function(PickUpPerson pickUpPerson, String orderId)?
+        changePickupPartner,
+    TResult? Function()? checkErrorCompleteOrder,
+    TResult? Function()? addDiviceBill,
+    TResult? Function()? removeDiviceBill,
+    TResult? Function()? addImeiImage,
+    TResult? Function()? removeImeiImage,
+    TResult? Function()? addIdCardImage,
+    TResult? Function()? removeIdCardImage,
+    TResult? Function()? addDeviceImages,
+    TResult? Function(int index)? removeDeviceImage,
+    TResult? Function(String orderId)? downloadOrderInvoice,
+    TResult? Function()? reset,
+  }) {
+    return getOrderDetailNotification?.call(orderId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String orderId)? acceptOrder,
+    TResult Function(String orderId)? getOrderDetail,
+    TResult Function(String orderId)? getOrderDetailNotification,
+    TResult Function(String orderId, String reason)? cancelOrder,
+    TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult Function(bool call)? getNewOrder,
+    TResult Function(bool call)? getPartnerOrders,
+    TResult Function(String orderId)? removePickupPartner,
+    TResult Function()? refresPartnerOrders,
+    TResult Function()? refreshNewOrder,
+    TResult Function(int tab)? changeTab,
+    TResult Function(PickUpPerson pickUpPerson, String orderId)?
+        changePickupPartner,
+    TResult Function()? checkErrorCompleteOrder,
+    TResult Function()? addDiviceBill,
+    TResult Function()? removeDiviceBill,
+    TResult Function()? addImeiImage,
+    TResult Function()? removeImeiImage,
+    TResult Function()? addIdCardImage,
+    TResult Function()? removeIdCardImage,
+    TResult Function()? addDeviceImages,
+    TResult Function(int index)? removeDeviceImage,
+    TResult Function(String orderId)? downloadOrderInvoice,
+    TResult Function()? reset,
+    required TResult orElse(),
+  }) {
+    if (getOrderDetailNotification != null) {
+      return getOrderDetailNotification(orderId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(GetOrderDetail value) getOrderDetail,
+    required TResult Function(GetOrderDetailNotification value)
+        getOrderDetailNotification,
+    required TResult Function(CancelOrder value) cancelOrder,
+    required TResult Function(CompleteOrder value) completeOrder,
+    required TResult Function(GetNewOrder value) getNewOrder,
+    required TResult Function(GetPartnerOrders value) getPartnerOrders,
+    required TResult Function(RemovePickupPartner value) removePickupPartner,
+    required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
+    required TResult Function(RefreshNewOrder value) refreshNewOrder,
+    required TResult Function(ChangeTab value) changeTab,
+    required TResult Function(ChangePickupPartner value) changePickupPartner,
+    required TResult Function(CheckErrorCompleteOrder value)
+        checkErrorCompleteOrder,
+    required TResult Function(AddDiviceBill value) addDiviceBill,
+    required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddImeiImage value) addImeiImage,
+    required TResult Function(RemoveImeiImage value) removeImeiImage,
+    required TResult Function(AddIdCardImage value) addIdCardImage,
+    required TResult Function(RemoveIdCardImage value) removeIdCardImage,
+    required TResult Function(AddDeviceImages value) addDeviceImages,
+    required TResult Function(RemoveDeviceImage value) removeDeviceImage,
+    required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
+    required TResult Function(Reset value) reset,
+  }) {
+    return getOrderDetailNotification(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(GetOrderDetail value)? getOrderDetail,
+    TResult? Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
+    TResult? Function(CancelOrder value)? cancelOrder,
+    TResult? Function(CompleteOrder value)? completeOrder,
+    TResult? Function(GetNewOrder value)? getNewOrder,
+    TResult? Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult? Function(RemovePickupPartner value)? removePickupPartner,
+    TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
+    TResult? Function(ChangeTab value)? changeTab,
+    TResult? Function(ChangePickupPartner value)? changePickupPartner,
+    TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult? Function(AddDiviceBill value)? addDiviceBill,
+    TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddImeiImage value)? addImeiImage,
+    TResult? Function(RemoveImeiImage value)? removeImeiImage,
+    TResult? Function(AddIdCardImage value)? addIdCardImage,
+    TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult? Function(AddDeviceImages value)? addDeviceImages,
+    TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult? Function(Reset value)? reset,
+  }) {
+    return getOrderDetailNotification?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(GetOrderDetail value)? getOrderDetail,
+    TResult Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
+    TResult Function(CancelOrder value)? cancelOrder,
+    TResult Function(CompleteOrder value)? completeOrder,
+    TResult Function(GetNewOrder value)? getNewOrder,
+    TResult Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult Function(RemovePickupPartner value)? removePickupPartner,
+    TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult Function(RefreshNewOrder value)? refreshNewOrder,
+    TResult Function(ChangeTab value)? changeTab,
+    TResult Function(ChangePickupPartner value)? changePickupPartner,
+    TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult Function(AddDiviceBill value)? addDiviceBill,
+    TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddImeiImage value)? addImeiImage,
+    TResult Function(RemoveImeiImage value)? removeImeiImage,
+    TResult Function(AddIdCardImage value)? addIdCardImage,
+    TResult Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult Function(AddDeviceImages value)? addDeviceImages,
+    TResult Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult Function(Reset value)? reset,
+    required TResult orElse(),
+  }) {
+    if (getOrderDetailNotification != null) {
+      return getOrderDetailNotification(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetOrderDetailNotification implements OrdersEvent {
+  const factory GetOrderDetailNotification({required final String orderId}) =
+      _$GetOrderDetailNotificationImpl;
+
+  String get orderId;
+  @JsonKey(ignore: true)
+  _$$GetOrderDetailNotificationImplCopyWith<_$GetOrderDetailNotificationImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -783,6 +1102,7 @@ class _$CancelOrderImpl implements CancelOrder {
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
     required TResult Function(String orderId) getOrderDetail,
+    required TResult Function(String orderId) getOrderDetailNotification,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -804,6 +1124,7 @@ class _$CancelOrderImpl implements CancelOrder {
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
+    required TResult Function(String orderId) downloadOrderInvoice,
     required TResult Function() reset,
   }) {
     return cancelOrder(orderId, reason);
@@ -814,6 +1135,7 @@ class _$CancelOrderImpl implements CancelOrder {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
     TResult? Function(String orderId)? getOrderDetail,
+    TResult? Function(String orderId)? getOrderDetailNotification,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -834,6 +1156,7 @@ class _$CancelOrderImpl implements CancelOrder {
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
+    TResult? Function(String orderId)? downloadOrderInvoice,
     TResult? Function()? reset,
   }) {
     return cancelOrder?.call(orderId, reason);
@@ -844,6 +1167,7 @@ class _$CancelOrderImpl implements CancelOrder {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
     TResult Function(String orderId)? getOrderDetail,
+    TResult Function(String orderId)? getOrderDetailNotification,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -864,6 +1188,7 @@ class _$CancelOrderImpl implements CancelOrder {
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
+    TResult Function(String orderId)? downloadOrderInvoice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -878,6 +1203,8 @@ class _$CancelOrderImpl implements CancelOrder {
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
     required TResult Function(GetOrderDetail value) getOrderDetail,
+    required TResult Function(GetOrderDetailNotification value)
+        getOrderDetailNotification,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -897,6 +1224,7 @@ class _$CancelOrderImpl implements CancelOrder {
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
+    required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
     required TResult Function(Reset value) reset,
   }) {
     return cancelOrder(this);
@@ -907,6 +1235,8 @@ class _$CancelOrderImpl implements CancelOrder {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
     TResult? Function(GetOrderDetail value)? getOrderDetail,
+    TResult? Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -925,6 +1255,7 @@ class _$CancelOrderImpl implements CancelOrder {
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult? Function(Reset value)? reset,
   }) {
     return cancelOrder?.call(this);
@@ -935,6 +1266,8 @@ class _$CancelOrderImpl implements CancelOrder {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
     TResult Function(GetOrderDetail value)? getOrderDetail,
+    TResult Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -953,6 +1286,7 @@ class _$CancelOrderImpl implements CancelOrder {
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -1051,6 +1385,7 @@ class _$CompleteOrderImpl implements CompleteOrder {
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
     required TResult Function(String orderId) getOrderDetail,
+    required TResult Function(String orderId) getOrderDetailNotification,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -1072,6 +1407,7 @@ class _$CompleteOrderImpl implements CompleteOrder {
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
+    required TResult Function(String orderId) downloadOrderInvoice,
     required TResult Function() reset,
   }) {
     return completeOrder(orderId, completeOrderModel);
@@ -1082,6 +1418,7 @@ class _$CompleteOrderImpl implements CompleteOrder {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
     TResult? Function(String orderId)? getOrderDetail,
+    TResult? Function(String orderId)? getOrderDetailNotification,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -1102,6 +1439,7 @@ class _$CompleteOrderImpl implements CompleteOrder {
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
+    TResult? Function(String orderId)? downloadOrderInvoice,
     TResult? Function()? reset,
   }) {
     return completeOrder?.call(orderId, completeOrderModel);
@@ -1112,6 +1450,7 @@ class _$CompleteOrderImpl implements CompleteOrder {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
     TResult Function(String orderId)? getOrderDetail,
+    TResult Function(String orderId)? getOrderDetailNotification,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -1132,6 +1471,7 @@ class _$CompleteOrderImpl implements CompleteOrder {
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
+    TResult Function(String orderId)? downloadOrderInvoice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -1146,6 +1486,8 @@ class _$CompleteOrderImpl implements CompleteOrder {
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
     required TResult Function(GetOrderDetail value) getOrderDetail,
+    required TResult Function(GetOrderDetailNotification value)
+        getOrderDetailNotification,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -1165,6 +1507,7 @@ class _$CompleteOrderImpl implements CompleteOrder {
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
+    required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
     required TResult Function(Reset value) reset,
   }) {
     return completeOrder(this);
@@ -1175,6 +1518,8 @@ class _$CompleteOrderImpl implements CompleteOrder {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
     TResult? Function(GetOrderDetail value)? getOrderDetail,
+    TResult? Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -1193,6 +1538,7 @@ class _$CompleteOrderImpl implements CompleteOrder {
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult? Function(Reset value)? reset,
   }) {
     return completeOrder?.call(this);
@@ -1203,6 +1549,8 @@ class _$CompleteOrderImpl implements CompleteOrder {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
     TResult Function(GetOrderDetail value)? getOrderDetail,
+    TResult Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -1221,6 +1569,7 @@ class _$CompleteOrderImpl implements CompleteOrder {
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -1310,6 +1659,7 @@ class _$GetNewOrderImpl implements GetNewOrder {
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
     required TResult Function(String orderId) getOrderDetail,
+    required TResult Function(String orderId) getOrderDetailNotification,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -1331,6 +1681,7 @@ class _$GetNewOrderImpl implements GetNewOrder {
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
+    required TResult Function(String orderId) downloadOrderInvoice,
     required TResult Function() reset,
   }) {
     return getNewOrder(call);
@@ -1341,6 +1692,7 @@ class _$GetNewOrderImpl implements GetNewOrder {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
     TResult? Function(String orderId)? getOrderDetail,
+    TResult? Function(String orderId)? getOrderDetailNotification,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -1361,6 +1713,7 @@ class _$GetNewOrderImpl implements GetNewOrder {
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
+    TResult? Function(String orderId)? downloadOrderInvoice,
     TResult? Function()? reset,
   }) {
     return getNewOrder?.call(call);
@@ -1371,6 +1724,7 @@ class _$GetNewOrderImpl implements GetNewOrder {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
     TResult Function(String orderId)? getOrderDetail,
+    TResult Function(String orderId)? getOrderDetailNotification,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -1391,6 +1745,7 @@ class _$GetNewOrderImpl implements GetNewOrder {
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
+    TResult Function(String orderId)? downloadOrderInvoice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -1405,6 +1760,8 @@ class _$GetNewOrderImpl implements GetNewOrder {
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
     required TResult Function(GetOrderDetail value) getOrderDetail,
+    required TResult Function(GetOrderDetailNotification value)
+        getOrderDetailNotification,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -1424,6 +1781,7 @@ class _$GetNewOrderImpl implements GetNewOrder {
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
+    required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
     required TResult Function(Reset value) reset,
   }) {
     return getNewOrder(this);
@@ -1434,6 +1792,8 @@ class _$GetNewOrderImpl implements GetNewOrder {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
     TResult? Function(GetOrderDetail value)? getOrderDetail,
+    TResult? Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -1452,6 +1812,7 @@ class _$GetNewOrderImpl implements GetNewOrder {
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult? Function(Reset value)? reset,
   }) {
     return getNewOrder?.call(this);
@@ -1462,6 +1823,8 @@ class _$GetNewOrderImpl implements GetNewOrder {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
     TResult Function(GetOrderDetail value)? getOrderDetail,
+    TResult Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -1480,6 +1843,7 @@ class _$GetNewOrderImpl implements GetNewOrder {
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -1566,6 +1930,7 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
     required TResult Function(String orderId) getOrderDetail,
+    required TResult Function(String orderId) getOrderDetailNotification,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -1587,6 +1952,7 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
+    required TResult Function(String orderId) downloadOrderInvoice,
     required TResult Function() reset,
   }) {
     return getPartnerOrders(call);
@@ -1597,6 +1963,7 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
     TResult? Function(String orderId)? getOrderDetail,
+    TResult? Function(String orderId)? getOrderDetailNotification,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -1617,6 +1984,7 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
+    TResult? Function(String orderId)? downloadOrderInvoice,
     TResult? Function()? reset,
   }) {
     return getPartnerOrders?.call(call);
@@ -1627,6 +1995,7 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
     TResult Function(String orderId)? getOrderDetail,
+    TResult Function(String orderId)? getOrderDetailNotification,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -1647,6 +2016,7 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
+    TResult Function(String orderId)? downloadOrderInvoice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -1661,6 +2031,8 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
     required TResult Function(GetOrderDetail value) getOrderDetail,
+    required TResult Function(GetOrderDetailNotification value)
+        getOrderDetailNotification,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -1680,6 +2052,7 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
+    required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
     required TResult Function(Reset value) reset,
   }) {
     return getPartnerOrders(this);
@@ -1690,6 +2063,8 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
     TResult? Function(GetOrderDetail value)? getOrderDetail,
+    TResult? Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -1708,6 +2083,7 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult? Function(Reset value)? reset,
   }) {
     return getPartnerOrders?.call(this);
@@ -1718,6 +2094,8 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
     TResult Function(GetOrderDetail value)? getOrderDetail,
+    TResult Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -1736,6 +2114,7 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -1823,6 +2202,7 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
     required TResult Function(String orderId) getOrderDetail,
+    required TResult Function(String orderId) getOrderDetailNotification,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -1844,6 +2224,7 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
+    required TResult Function(String orderId) downloadOrderInvoice,
     required TResult Function() reset,
   }) {
     return removePickupPartner(orderId);
@@ -1854,6 +2235,7 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
     TResult? Function(String orderId)? getOrderDetail,
+    TResult? Function(String orderId)? getOrderDetailNotification,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -1874,6 +2256,7 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
+    TResult? Function(String orderId)? downloadOrderInvoice,
     TResult? Function()? reset,
   }) {
     return removePickupPartner?.call(orderId);
@@ -1884,6 +2267,7 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
     TResult Function(String orderId)? getOrderDetail,
+    TResult Function(String orderId)? getOrderDetailNotification,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -1904,6 +2288,7 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
+    TResult Function(String orderId)? downloadOrderInvoice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -1918,6 +2303,8 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
     required TResult Function(GetOrderDetail value) getOrderDetail,
+    required TResult Function(GetOrderDetailNotification value)
+        getOrderDetailNotification,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -1937,6 +2324,7 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
+    required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
     required TResult Function(Reset value) reset,
   }) {
     return removePickupPartner(this);
@@ -1947,6 +2335,8 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
     TResult? Function(GetOrderDetail value)? getOrderDetail,
+    TResult? Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -1965,6 +2355,7 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult? Function(Reset value)? reset,
   }) {
     return removePickupPartner?.call(this);
@@ -1975,6 +2366,8 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
     TResult Function(GetOrderDetail value)? getOrderDetail,
+    TResult Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -1993,6 +2386,7 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -2054,6 +2448,7 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
     required TResult Function(String orderId) getOrderDetail,
+    required TResult Function(String orderId) getOrderDetailNotification,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -2075,6 +2470,7 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
+    required TResult Function(String orderId) downloadOrderInvoice,
     required TResult Function() reset,
   }) {
     return refresPartnerOrders();
@@ -2085,6 +2481,7 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
     TResult? Function(String orderId)? getOrderDetail,
+    TResult? Function(String orderId)? getOrderDetailNotification,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -2105,6 +2502,7 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
+    TResult? Function(String orderId)? downloadOrderInvoice,
     TResult? Function()? reset,
   }) {
     return refresPartnerOrders?.call();
@@ -2115,6 +2513,7 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
     TResult Function(String orderId)? getOrderDetail,
+    TResult Function(String orderId)? getOrderDetailNotification,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -2135,6 +2534,7 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
+    TResult Function(String orderId)? downloadOrderInvoice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -2149,6 +2549,8 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
     required TResult Function(GetOrderDetail value) getOrderDetail,
+    required TResult Function(GetOrderDetailNotification value)
+        getOrderDetailNotification,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -2168,6 +2570,7 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
+    required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
     required TResult Function(Reset value) reset,
   }) {
     return refresPartnerOrders(this);
@@ -2178,6 +2581,8 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
     TResult? Function(GetOrderDetail value)? getOrderDetail,
+    TResult? Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -2196,6 +2601,7 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult? Function(Reset value)? reset,
   }) {
     return refresPartnerOrders?.call(this);
@@ -2206,6 +2612,8 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
     TResult Function(GetOrderDetail value)? getOrderDetail,
+    TResult Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -2224,6 +2632,7 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -2278,6 +2687,7 @@ class _$RefreshNewOrderImpl implements RefreshNewOrder {
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
     required TResult Function(String orderId) getOrderDetail,
+    required TResult Function(String orderId) getOrderDetailNotification,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -2299,6 +2709,7 @@ class _$RefreshNewOrderImpl implements RefreshNewOrder {
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
+    required TResult Function(String orderId) downloadOrderInvoice,
     required TResult Function() reset,
   }) {
     return refreshNewOrder();
@@ -2309,6 +2720,7 @@ class _$RefreshNewOrderImpl implements RefreshNewOrder {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
     TResult? Function(String orderId)? getOrderDetail,
+    TResult? Function(String orderId)? getOrderDetailNotification,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -2329,6 +2741,7 @@ class _$RefreshNewOrderImpl implements RefreshNewOrder {
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
+    TResult? Function(String orderId)? downloadOrderInvoice,
     TResult? Function()? reset,
   }) {
     return refreshNewOrder?.call();
@@ -2339,6 +2752,7 @@ class _$RefreshNewOrderImpl implements RefreshNewOrder {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
     TResult Function(String orderId)? getOrderDetail,
+    TResult Function(String orderId)? getOrderDetailNotification,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -2359,6 +2773,7 @@ class _$RefreshNewOrderImpl implements RefreshNewOrder {
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
+    TResult Function(String orderId)? downloadOrderInvoice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -2373,6 +2788,8 @@ class _$RefreshNewOrderImpl implements RefreshNewOrder {
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
     required TResult Function(GetOrderDetail value) getOrderDetail,
+    required TResult Function(GetOrderDetailNotification value)
+        getOrderDetailNotification,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -2392,6 +2809,7 @@ class _$RefreshNewOrderImpl implements RefreshNewOrder {
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
+    required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
     required TResult Function(Reset value) reset,
   }) {
     return refreshNewOrder(this);
@@ -2402,6 +2820,8 @@ class _$RefreshNewOrderImpl implements RefreshNewOrder {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
     TResult? Function(GetOrderDetail value)? getOrderDetail,
+    TResult? Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -2420,6 +2840,7 @@ class _$RefreshNewOrderImpl implements RefreshNewOrder {
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult? Function(Reset value)? reset,
   }) {
     return refreshNewOrder?.call(this);
@@ -2430,6 +2851,8 @@ class _$RefreshNewOrderImpl implements RefreshNewOrder {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
     TResult Function(GetOrderDetail value)? getOrderDetail,
+    TResult Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -2448,6 +2871,7 @@ class _$RefreshNewOrderImpl implements RefreshNewOrder {
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -2528,6 +2952,7 @@ class _$ChangeTabImpl implements ChangeTab {
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
     required TResult Function(String orderId) getOrderDetail,
+    required TResult Function(String orderId) getOrderDetailNotification,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -2549,6 +2974,7 @@ class _$ChangeTabImpl implements ChangeTab {
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
+    required TResult Function(String orderId) downloadOrderInvoice,
     required TResult Function() reset,
   }) {
     return changeTab(tab);
@@ -2559,6 +2985,7 @@ class _$ChangeTabImpl implements ChangeTab {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
     TResult? Function(String orderId)? getOrderDetail,
+    TResult? Function(String orderId)? getOrderDetailNotification,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -2579,6 +3006,7 @@ class _$ChangeTabImpl implements ChangeTab {
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
+    TResult? Function(String orderId)? downloadOrderInvoice,
     TResult? Function()? reset,
   }) {
     return changeTab?.call(tab);
@@ -2589,6 +3017,7 @@ class _$ChangeTabImpl implements ChangeTab {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
     TResult Function(String orderId)? getOrderDetail,
+    TResult Function(String orderId)? getOrderDetailNotification,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -2609,6 +3038,7 @@ class _$ChangeTabImpl implements ChangeTab {
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
+    TResult Function(String orderId)? downloadOrderInvoice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -2623,6 +3053,8 @@ class _$ChangeTabImpl implements ChangeTab {
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
     required TResult Function(GetOrderDetail value) getOrderDetail,
+    required TResult Function(GetOrderDetailNotification value)
+        getOrderDetailNotification,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -2642,6 +3074,7 @@ class _$ChangeTabImpl implements ChangeTab {
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
+    required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
     required TResult Function(Reset value) reset,
   }) {
     return changeTab(this);
@@ -2652,6 +3085,8 @@ class _$ChangeTabImpl implements ChangeTab {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
     TResult? Function(GetOrderDetail value)? getOrderDetail,
+    TResult? Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -2670,6 +3105,7 @@ class _$ChangeTabImpl implements ChangeTab {
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult? Function(Reset value)? reset,
   }) {
     return changeTab?.call(this);
@@ -2680,6 +3116,8 @@ class _$ChangeTabImpl implements ChangeTab {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
     TResult Function(GetOrderDetail value)? getOrderDetail,
+    TResult Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -2698,6 +3136,7 @@ class _$ChangeTabImpl implements ChangeTab {
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -2794,6 +3233,7 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
     required TResult Function(String orderId) getOrderDetail,
+    required TResult Function(String orderId) getOrderDetailNotification,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -2815,6 +3255,7 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
+    required TResult Function(String orderId) downloadOrderInvoice,
     required TResult Function() reset,
   }) {
     return changePickupPartner(pickUpPerson, orderId);
@@ -2825,6 +3266,7 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
     TResult? Function(String orderId)? getOrderDetail,
+    TResult? Function(String orderId)? getOrderDetailNotification,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -2845,6 +3287,7 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
+    TResult? Function(String orderId)? downloadOrderInvoice,
     TResult? Function()? reset,
   }) {
     return changePickupPartner?.call(pickUpPerson, orderId);
@@ -2855,6 +3298,7 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
     TResult Function(String orderId)? getOrderDetail,
+    TResult Function(String orderId)? getOrderDetailNotification,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -2875,6 +3319,7 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
+    TResult Function(String orderId)? downloadOrderInvoice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -2889,6 +3334,8 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
     required TResult Function(GetOrderDetail value) getOrderDetail,
+    required TResult Function(GetOrderDetailNotification value)
+        getOrderDetailNotification,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -2908,6 +3355,7 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
+    required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
     required TResult Function(Reset value) reset,
   }) {
     return changePickupPartner(this);
@@ -2918,6 +3366,8 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
     TResult? Function(GetOrderDetail value)? getOrderDetail,
+    TResult? Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -2936,6 +3386,7 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult? Function(Reset value)? reset,
   }) {
     return changePickupPartner?.call(this);
@@ -2946,6 +3397,8 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
     TResult Function(GetOrderDetail value)? getOrderDetail,
+    TResult Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -2964,6 +3417,7 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -3029,6 +3483,7 @@ class _$CheckErrorCompleteOrderImpl implements CheckErrorCompleteOrder {
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
     required TResult Function(String orderId) getOrderDetail,
+    required TResult Function(String orderId) getOrderDetailNotification,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -3050,6 +3505,7 @@ class _$CheckErrorCompleteOrderImpl implements CheckErrorCompleteOrder {
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
+    required TResult Function(String orderId) downloadOrderInvoice,
     required TResult Function() reset,
   }) {
     return checkErrorCompleteOrder();
@@ -3060,6 +3516,7 @@ class _$CheckErrorCompleteOrderImpl implements CheckErrorCompleteOrder {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
     TResult? Function(String orderId)? getOrderDetail,
+    TResult? Function(String orderId)? getOrderDetailNotification,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -3080,6 +3537,7 @@ class _$CheckErrorCompleteOrderImpl implements CheckErrorCompleteOrder {
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
+    TResult? Function(String orderId)? downloadOrderInvoice,
     TResult? Function()? reset,
   }) {
     return checkErrorCompleteOrder?.call();
@@ -3090,6 +3548,7 @@ class _$CheckErrorCompleteOrderImpl implements CheckErrorCompleteOrder {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
     TResult Function(String orderId)? getOrderDetail,
+    TResult Function(String orderId)? getOrderDetailNotification,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -3110,6 +3569,7 @@ class _$CheckErrorCompleteOrderImpl implements CheckErrorCompleteOrder {
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
+    TResult Function(String orderId)? downloadOrderInvoice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -3124,6 +3584,8 @@ class _$CheckErrorCompleteOrderImpl implements CheckErrorCompleteOrder {
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
     required TResult Function(GetOrderDetail value) getOrderDetail,
+    required TResult Function(GetOrderDetailNotification value)
+        getOrderDetailNotification,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -3143,6 +3605,7 @@ class _$CheckErrorCompleteOrderImpl implements CheckErrorCompleteOrder {
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
+    required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
     required TResult Function(Reset value) reset,
   }) {
     return checkErrorCompleteOrder(this);
@@ -3153,6 +3616,8 @@ class _$CheckErrorCompleteOrderImpl implements CheckErrorCompleteOrder {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
     TResult? Function(GetOrderDetail value)? getOrderDetail,
+    TResult? Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -3171,6 +3636,7 @@ class _$CheckErrorCompleteOrderImpl implements CheckErrorCompleteOrder {
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult? Function(Reset value)? reset,
   }) {
     return checkErrorCompleteOrder?.call(this);
@@ -3181,6 +3647,8 @@ class _$CheckErrorCompleteOrderImpl implements CheckErrorCompleteOrder {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
     TResult Function(GetOrderDetail value)? getOrderDetail,
+    TResult Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -3199,6 +3667,7 @@ class _$CheckErrorCompleteOrderImpl implements CheckErrorCompleteOrder {
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -3253,6 +3722,7 @@ class _$AddDiviceBillImpl implements AddDiviceBill {
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
     required TResult Function(String orderId) getOrderDetail,
+    required TResult Function(String orderId) getOrderDetailNotification,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -3274,6 +3744,7 @@ class _$AddDiviceBillImpl implements AddDiviceBill {
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
+    required TResult Function(String orderId) downloadOrderInvoice,
     required TResult Function() reset,
   }) {
     return addDiviceBill();
@@ -3284,6 +3755,7 @@ class _$AddDiviceBillImpl implements AddDiviceBill {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
     TResult? Function(String orderId)? getOrderDetail,
+    TResult? Function(String orderId)? getOrderDetailNotification,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -3304,6 +3776,7 @@ class _$AddDiviceBillImpl implements AddDiviceBill {
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
+    TResult? Function(String orderId)? downloadOrderInvoice,
     TResult? Function()? reset,
   }) {
     return addDiviceBill?.call();
@@ -3314,6 +3787,7 @@ class _$AddDiviceBillImpl implements AddDiviceBill {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
     TResult Function(String orderId)? getOrderDetail,
+    TResult Function(String orderId)? getOrderDetailNotification,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -3334,6 +3808,7 @@ class _$AddDiviceBillImpl implements AddDiviceBill {
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
+    TResult Function(String orderId)? downloadOrderInvoice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -3348,6 +3823,8 @@ class _$AddDiviceBillImpl implements AddDiviceBill {
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
     required TResult Function(GetOrderDetail value) getOrderDetail,
+    required TResult Function(GetOrderDetailNotification value)
+        getOrderDetailNotification,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -3367,6 +3844,7 @@ class _$AddDiviceBillImpl implements AddDiviceBill {
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
+    required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
     required TResult Function(Reset value) reset,
   }) {
     return addDiviceBill(this);
@@ -3377,6 +3855,8 @@ class _$AddDiviceBillImpl implements AddDiviceBill {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
     TResult? Function(GetOrderDetail value)? getOrderDetail,
+    TResult? Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -3395,6 +3875,7 @@ class _$AddDiviceBillImpl implements AddDiviceBill {
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult? Function(Reset value)? reset,
   }) {
     return addDiviceBill?.call(this);
@@ -3405,6 +3886,8 @@ class _$AddDiviceBillImpl implements AddDiviceBill {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
     TResult Function(GetOrderDetail value)? getOrderDetail,
+    TResult Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -3423,6 +3906,7 @@ class _$AddDiviceBillImpl implements AddDiviceBill {
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -3477,6 +3961,7 @@ class _$RemoveDiviceBillImpl implements RemoveDiviceBill {
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
     required TResult Function(String orderId) getOrderDetail,
+    required TResult Function(String orderId) getOrderDetailNotification,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -3498,6 +3983,7 @@ class _$RemoveDiviceBillImpl implements RemoveDiviceBill {
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
+    required TResult Function(String orderId) downloadOrderInvoice,
     required TResult Function() reset,
   }) {
     return removeDiviceBill();
@@ -3508,6 +3994,7 @@ class _$RemoveDiviceBillImpl implements RemoveDiviceBill {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
     TResult? Function(String orderId)? getOrderDetail,
+    TResult? Function(String orderId)? getOrderDetailNotification,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -3528,6 +4015,7 @@ class _$RemoveDiviceBillImpl implements RemoveDiviceBill {
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
+    TResult? Function(String orderId)? downloadOrderInvoice,
     TResult? Function()? reset,
   }) {
     return removeDiviceBill?.call();
@@ -3538,6 +4026,7 @@ class _$RemoveDiviceBillImpl implements RemoveDiviceBill {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
     TResult Function(String orderId)? getOrderDetail,
+    TResult Function(String orderId)? getOrderDetailNotification,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -3558,6 +4047,7 @@ class _$RemoveDiviceBillImpl implements RemoveDiviceBill {
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
+    TResult Function(String orderId)? downloadOrderInvoice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -3572,6 +4062,8 @@ class _$RemoveDiviceBillImpl implements RemoveDiviceBill {
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
     required TResult Function(GetOrderDetail value) getOrderDetail,
+    required TResult Function(GetOrderDetailNotification value)
+        getOrderDetailNotification,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -3591,6 +4083,7 @@ class _$RemoveDiviceBillImpl implements RemoveDiviceBill {
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
+    required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
     required TResult Function(Reset value) reset,
   }) {
     return removeDiviceBill(this);
@@ -3601,6 +4094,8 @@ class _$RemoveDiviceBillImpl implements RemoveDiviceBill {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
     TResult? Function(GetOrderDetail value)? getOrderDetail,
+    TResult? Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -3619,6 +4114,7 @@ class _$RemoveDiviceBillImpl implements RemoveDiviceBill {
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult? Function(Reset value)? reset,
   }) {
     return removeDiviceBill?.call(this);
@@ -3629,6 +4125,8 @@ class _$RemoveDiviceBillImpl implements RemoveDiviceBill {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
     TResult Function(GetOrderDetail value)? getOrderDetail,
+    TResult Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -3647,6 +4145,7 @@ class _$RemoveDiviceBillImpl implements RemoveDiviceBill {
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -3701,6 +4200,7 @@ class _$AddImeiImageImpl implements AddImeiImage {
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
     required TResult Function(String orderId) getOrderDetail,
+    required TResult Function(String orderId) getOrderDetailNotification,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -3722,6 +4222,7 @@ class _$AddImeiImageImpl implements AddImeiImage {
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
+    required TResult Function(String orderId) downloadOrderInvoice,
     required TResult Function() reset,
   }) {
     return addImeiImage();
@@ -3732,6 +4233,7 @@ class _$AddImeiImageImpl implements AddImeiImage {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
     TResult? Function(String orderId)? getOrderDetail,
+    TResult? Function(String orderId)? getOrderDetailNotification,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -3752,6 +4254,7 @@ class _$AddImeiImageImpl implements AddImeiImage {
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
+    TResult? Function(String orderId)? downloadOrderInvoice,
     TResult? Function()? reset,
   }) {
     return addImeiImage?.call();
@@ -3762,6 +4265,7 @@ class _$AddImeiImageImpl implements AddImeiImage {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
     TResult Function(String orderId)? getOrderDetail,
+    TResult Function(String orderId)? getOrderDetailNotification,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -3782,6 +4286,7 @@ class _$AddImeiImageImpl implements AddImeiImage {
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
+    TResult Function(String orderId)? downloadOrderInvoice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -3796,6 +4301,8 @@ class _$AddImeiImageImpl implements AddImeiImage {
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
     required TResult Function(GetOrderDetail value) getOrderDetail,
+    required TResult Function(GetOrderDetailNotification value)
+        getOrderDetailNotification,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -3815,6 +4322,7 @@ class _$AddImeiImageImpl implements AddImeiImage {
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
+    required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
     required TResult Function(Reset value) reset,
   }) {
     return addImeiImage(this);
@@ -3825,6 +4333,8 @@ class _$AddImeiImageImpl implements AddImeiImage {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
     TResult? Function(GetOrderDetail value)? getOrderDetail,
+    TResult? Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -3843,6 +4353,7 @@ class _$AddImeiImageImpl implements AddImeiImage {
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult? Function(Reset value)? reset,
   }) {
     return addImeiImage?.call(this);
@@ -3853,6 +4364,8 @@ class _$AddImeiImageImpl implements AddImeiImage {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
     TResult Function(GetOrderDetail value)? getOrderDetail,
+    TResult Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -3871,6 +4384,7 @@ class _$AddImeiImageImpl implements AddImeiImage {
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -3925,6 +4439,7 @@ class _$RemoveImeiImageImpl implements RemoveImeiImage {
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
     required TResult Function(String orderId) getOrderDetail,
+    required TResult Function(String orderId) getOrderDetailNotification,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -3946,6 +4461,7 @@ class _$RemoveImeiImageImpl implements RemoveImeiImage {
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
+    required TResult Function(String orderId) downloadOrderInvoice,
     required TResult Function() reset,
   }) {
     return removeImeiImage();
@@ -3956,6 +4472,7 @@ class _$RemoveImeiImageImpl implements RemoveImeiImage {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
     TResult? Function(String orderId)? getOrderDetail,
+    TResult? Function(String orderId)? getOrderDetailNotification,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -3976,6 +4493,7 @@ class _$RemoveImeiImageImpl implements RemoveImeiImage {
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
+    TResult? Function(String orderId)? downloadOrderInvoice,
     TResult? Function()? reset,
   }) {
     return removeImeiImage?.call();
@@ -3986,6 +4504,7 @@ class _$RemoveImeiImageImpl implements RemoveImeiImage {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
     TResult Function(String orderId)? getOrderDetail,
+    TResult Function(String orderId)? getOrderDetailNotification,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -4006,6 +4525,7 @@ class _$RemoveImeiImageImpl implements RemoveImeiImage {
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
+    TResult Function(String orderId)? downloadOrderInvoice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -4020,6 +4540,8 @@ class _$RemoveImeiImageImpl implements RemoveImeiImage {
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
     required TResult Function(GetOrderDetail value) getOrderDetail,
+    required TResult Function(GetOrderDetailNotification value)
+        getOrderDetailNotification,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -4039,6 +4561,7 @@ class _$RemoveImeiImageImpl implements RemoveImeiImage {
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
+    required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
     required TResult Function(Reset value) reset,
   }) {
     return removeImeiImage(this);
@@ -4049,6 +4572,8 @@ class _$RemoveImeiImageImpl implements RemoveImeiImage {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
     TResult? Function(GetOrderDetail value)? getOrderDetail,
+    TResult? Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -4067,6 +4592,7 @@ class _$RemoveImeiImageImpl implements RemoveImeiImage {
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult? Function(Reset value)? reset,
   }) {
     return removeImeiImage?.call(this);
@@ -4077,6 +4603,8 @@ class _$RemoveImeiImageImpl implements RemoveImeiImage {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
     TResult Function(GetOrderDetail value)? getOrderDetail,
+    TResult Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -4095,6 +4623,7 @@ class _$RemoveImeiImageImpl implements RemoveImeiImage {
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -4149,6 +4678,7 @@ class _$AddIdCardImageImpl implements AddIdCardImage {
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
     required TResult Function(String orderId) getOrderDetail,
+    required TResult Function(String orderId) getOrderDetailNotification,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -4170,6 +4700,7 @@ class _$AddIdCardImageImpl implements AddIdCardImage {
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
+    required TResult Function(String orderId) downloadOrderInvoice,
     required TResult Function() reset,
   }) {
     return addIdCardImage();
@@ -4180,6 +4711,7 @@ class _$AddIdCardImageImpl implements AddIdCardImage {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
     TResult? Function(String orderId)? getOrderDetail,
+    TResult? Function(String orderId)? getOrderDetailNotification,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -4200,6 +4732,7 @@ class _$AddIdCardImageImpl implements AddIdCardImage {
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
+    TResult? Function(String orderId)? downloadOrderInvoice,
     TResult? Function()? reset,
   }) {
     return addIdCardImage?.call();
@@ -4210,6 +4743,7 @@ class _$AddIdCardImageImpl implements AddIdCardImage {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
     TResult Function(String orderId)? getOrderDetail,
+    TResult Function(String orderId)? getOrderDetailNotification,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -4230,6 +4764,7 @@ class _$AddIdCardImageImpl implements AddIdCardImage {
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
+    TResult Function(String orderId)? downloadOrderInvoice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -4244,6 +4779,8 @@ class _$AddIdCardImageImpl implements AddIdCardImage {
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
     required TResult Function(GetOrderDetail value) getOrderDetail,
+    required TResult Function(GetOrderDetailNotification value)
+        getOrderDetailNotification,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -4263,6 +4800,7 @@ class _$AddIdCardImageImpl implements AddIdCardImage {
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
+    required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
     required TResult Function(Reset value) reset,
   }) {
     return addIdCardImage(this);
@@ -4273,6 +4811,8 @@ class _$AddIdCardImageImpl implements AddIdCardImage {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
     TResult? Function(GetOrderDetail value)? getOrderDetail,
+    TResult? Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -4291,6 +4831,7 @@ class _$AddIdCardImageImpl implements AddIdCardImage {
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult? Function(Reset value)? reset,
   }) {
     return addIdCardImage?.call(this);
@@ -4301,6 +4842,8 @@ class _$AddIdCardImageImpl implements AddIdCardImage {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
     TResult Function(GetOrderDetail value)? getOrderDetail,
+    TResult Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -4319,6 +4862,7 @@ class _$AddIdCardImageImpl implements AddIdCardImage {
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -4373,6 +4917,7 @@ class _$RemoveIdCardImageImpl implements RemoveIdCardImage {
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
     required TResult Function(String orderId) getOrderDetail,
+    required TResult Function(String orderId) getOrderDetailNotification,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -4394,6 +4939,7 @@ class _$RemoveIdCardImageImpl implements RemoveIdCardImage {
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
+    required TResult Function(String orderId) downloadOrderInvoice,
     required TResult Function() reset,
   }) {
     return removeIdCardImage();
@@ -4404,6 +4950,7 @@ class _$RemoveIdCardImageImpl implements RemoveIdCardImage {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
     TResult? Function(String orderId)? getOrderDetail,
+    TResult? Function(String orderId)? getOrderDetailNotification,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -4424,6 +4971,7 @@ class _$RemoveIdCardImageImpl implements RemoveIdCardImage {
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
+    TResult? Function(String orderId)? downloadOrderInvoice,
     TResult? Function()? reset,
   }) {
     return removeIdCardImage?.call();
@@ -4434,6 +4982,7 @@ class _$RemoveIdCardImageImpl implements RemoveIdCardImage {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
     TResult Function(String orderId)? getOrderDetail,
+    TResult Function(String orderId)? getOrderDetailNotification,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -4454,6 +5003,7 @@ class _$RemoveIdCardImageImpl implements RemoveIdCardImage {
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
+    TResult Function(String orderId)? downloadOrderInvoice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -4468,6 +5018,8 @@ class _$RemoveIdCardImageImpl implements RemoveIdCardImage {
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
     required TResult Function(GetOrderDetail value) getOrderDetail,
+    required TResult Function(GetOrderDetailNotification value)
+        getOrderDetailNotification,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -4487,6 +5039,7 @@ class _$RemoveIdCardImageImpl implements RemoveIdCardImage {
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
+    required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
     required TResult Function(Reset value) reset,
   }) {
     return removeIdCardImage(this);
@@ -4497,6 +5050,8 @@ class _$RemoveIdCardImageImpl implements RemoveIdCardImage {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
     TResult? Function(GetOrderDetail value)? getOrderDetail,
+    TResult? Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -4515,6 +5070,7 @@ class _$RemoveIdCardImageImpl implements RemoveIdCardImage {
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult? Function(Reset value)? reset,
   }) {
     return removeIdCardImage?.call(this);
@@ -4525,6 +5081,8 @@ class _$RemoveIdCardImageImpl implements RemoveIdCardImage {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
     TResult Function(GetOrderDetail value)? getOrderDetail,
+    TResult Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -4543,6 +5101,7 @@ class _$RemoveIdCardImageImpl implements RemoveIdCardImage {
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -4597,6 +5156,7 @@ class _$AddDeviceImagesImpl implements AddDeviceImages {
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
     required TResult Function(String orderId) getOrderDetail,
+    required TResult Function(String orderId) getOrderDetailNotification,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -4618,6 +5178,7 @@ class _$AddDeviceImagesImpl implements AddDeviceImages {
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
+    required TResult Function(String orderId) downloadOrderInvoice,
     required TResult Function() reset,
   }) {
     return addDeviceImages();
@@ -4628,6 +5189,7 @@ class _$AddDeviceImagesImpl implements AddDeviceImages {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
     TResult? Function(String orderId)? getOrderDetail,
+    TResult? Function(String orderId)? getOrderDetailNotification,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -4648,6 +5210,7 @@ class _$AddDeviceImagesImpl implements AddDeviceImages {
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
+    TResult? Function(String orderId)? downloadOrderInvoice,
     TResult? Function()? reset,
   }) {
     return addDeviceImages?.call();
@@ -4658,6 +5221,7 @@ class _$AddDeviceImagesImpl implements AddDeviceImages {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
     TResult Function(String orderId)? getOrderDetail,
+    TResult Function(String orderId)? getOrderDetailNotification,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -4678,6 +5242,7 @@ class _$AddDeviceImagesImpl implements AddDeviceImages {
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
+    TResult Function(String orderId)? downloadOrderInvoice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -4692,6 +5257,8 @@ class _$AddDeviceImagesImpl implements AddDeviceImages {
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
     required TResult Function(GetOrderDetail value) getOrderDetail,
+    required TResult Function(GetOrderDetailNotification value)
+        getOrderDetailNotification,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -4711,6 +5278,7 @@ class _$AddDeviceImagesImpl implements AddDeviceImages {
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
+    required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
     required TResult Function(Reset value) reset,
   }) {
     return addDeviceImages(this);
@@ -4721,6 +5289,8 @@ class _$AddDeviceImagesImpl implements AddDeviceImages {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
     TResult? Function(GetOrderDetail value)? getOrderDetail,
+    TResult? Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -4739,6 +5309,7 @@ class _$AddDeviceImagesImpl implements AddDeviceImages {
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult? Function(Reset value)? reset,
   }) {
     return addDeviceImages?.call(this);
@@ -4749,6 +5320,8 @@ class _$AddDeviceImagesImpl implements AddDeviceImages {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
     TResult Function(GetOrderDetail value)? getOrderDetail,
+    TResult Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -4767,6 +5340,7 @@ class _$AddDeviceImagesImpl implements AddDeviceImages {
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -4848,6 +5422,7 @@ class _$RemoveDeviceImageImpl implements RemoveDeviceImage {
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
     required TResult Function(String orderId) getOrderDetail,
+    required TResult Function(String orderId) getOrderDetailNotification,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -4869,6 +5444,7 @@ class _$RemoveDeviceImageImpl implements RemoveDeviceImage {
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
+    required TResult Function(String orderId) downloadOrderInvoice,
     required TResult Function() reset,
   }) {
     return removeDeviceImage(index);
@@ -4879,6 +5455,7 @@ class _$RemoveDeviceImageImpl implements RemoveDeviceImage {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
     TResult? Function(String orderId)? getOrderDetail,
+    TResult? Function(String orderId)? getOrderDetailNotification,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -4899,6 +5476,7 @@ class _$RemoveDeviceImageImpl implements RemoveDeviceImage {
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
+    TResult? Function(String orderId)? downloadOrderInvoice,
     TResult? Function()? reset,
   }) {
     return removeDeviceImage?.call(index);
@@ -4909,6 +5487,7 @@ class _$RemoveDeviceImageImpl implements RemoveDeviceImage {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
     TResult Function(String orderId)? getOrderDetail,
+    TResult Function(String orderId)? getOrderDetailNotification,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -4929,6 +5508,7 @@ class _$RemoveDeviceImageImpl implements RemoveDeviceImage {
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
+    TResult Function(String orderId)? downloadOrderInvoice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -4943,6 +5523,8 @@ class _$RemoveDeviceImageImpl implements RemoveDeviceImage {
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
     required TResult Function(GetOrderDetail value) getOrderDetail,
+    required TResult Function(GetOrderDetailNotification value)
+        getOrderDetailNotification,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -4962,6 +5544,7 @@ class _$RemoveDeviceImageImpl implements RemoveDeviceImage {
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
+    required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
     required TResult Function(Reset value) reset,
   }) {
     return removeDeviceImage(this);
@@ -4972,6 +5555,8 @@ class _$RemoveDeviceImageImpl implements RemoveDeviceImage {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
     TResult? Function(GetOrderDetail value)? getOrderDetail,
+    TResult? Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -4990,6 +5575,7 @@ class _$RemoveDeviceImageImpl implements RemoveDeviceImage {
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult? Function(Reset value)? reset,
   }) {
     return removeDeviceImage?.call(this);
@@ -5000,6 +5586,8 @@ class _$RemoveDeviceImageImpl implements RemoveDeviceImage {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
     TResult Function(GetOrderDetail value)? getOrderDetail,
+    TResult Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -5018,6 +5606,7 @@ class _$RemoveDeviceImageImpl implements RemoveDeviceImage {
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -5036,6 +5625,279 @@ abstract class RemoveDeviceImage implements OrdersEvent {
   @JsonKey(ignore: true)
   _$$RemoveDeviceImageImplCopyWith<_$RemoveDeviceImageImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DownloadOrderInvoiceImplCopyWith<$Res> {
+  factory _$$DownloadOrderInvoiceImplCopyWith(_$DownloadOrderInvoiceImpl value,
+          $Res Function(_$DownloadOrderInvoiceImpl) then) =
+      __$$DownloadOrderInvoiceImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String orderId});
+}
+
+/// @nodoc
+class __$$DownloadOrderInvoiceImplCopyWithImpl<$Res>
+    extends _$OrdersEventCopyWithImpl<$Res, _$DownloadOrderInvoiceImpl>
+    implements _$$DownloadOrderInvoiceImplCopyWith<$Res> {
+  __$$DownloadOrderInvoiceImplCopyWithImpl(_$DownloadOrderInvoiceImpl _value,
+      $Res Function(_$DownloadOrderInvoiceImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? orderId = null,
+  }) {
+    return _then(_$DownloadOrderInvoiceImpl(
+      orderId: null == orderId
+          ? _value.orderId
+          : orderId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DownloadOrderInvoiceImpl implements DownloadOrderInvoice {
+  const _$DownloadOrderInvoiceImpl({required this.orderId});
+
+  @override
+  final String orderId;
+
+  @override
+  String toString() {
+    return 'OrdersEvent.downloadOrderInvoice(orderId: $orderId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DownloadOrderInvoiceImpl &&
+            (identical(other.orderId, orderId) || other.orderId == orderId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, orderId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DownloadOrderInvoiceImplCopyWith<_$DownloadOrderInvoiceImpl>
+      get copyWith =>
+          __$$DownloadOrderInvoiceImplCopyWithImpl<_$DownloadOrderInvoiceImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String orderId) acceptOrder,
+    required TResult Function(String orderId) getOrderDetail,
+    required TResult Function(String orderId) getOrderDetailNotification,
+    required TResult Function(String orderId, String reason) cancelOrder,
+    required TResult Function(
+            String orderId, CompleteOrderModel completeOrderModel)
+        completeOrder,
+    required TResult Function(bool call) getNewOrder,
+    required TResult Function(bool call) getPartnerOrders,
+    required TResult Function(String orderId) removePickupPartner,
+    required TResult Function() refresPartnerOrders,
+    required TResult Function() refreshNewOrder,
+    required TResult Function(int tab) changeTab,
+    required TResult Function(PickUpPerson pickUpPerson, String orderId)
+        changePickupPartner,
+    required TResult Function() checkErrorCompleteOrder,
+    required TResult Function() addDiviceBill,
+    required TResult Function() removeDiviceBill,
+    required TResult Function() addImeiImage,
+    required TResult Function() removeImeiImage,
+    required TResult Function() addIdCardImage,
+    required TResult Function() removeIdCardImage,
+    required TResult Function() addDeviceImages,
+    required TResult Function(int index) removeDeviceImage,
+    required TResult Function(String orderId) downloadOrderInvoice,
+    required TResult Function() reset,
+  }) {
+    return downloadOrderInvoice(orderId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String orderId)? acceptOrder,
+    TResult? Function(String orderId)? getOrderDetail,
+    TResult? Function(String orderId)? getOrderDetailNotification,
+    TResult? Function(String orderId, String reason)? cancelOrder,
+    TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult? Function(bool call)? getNewOrder,
+    TResult? Function(bool call)? getPartnerOrders,
+    TResult? Function(String orderId)? removePickupPartner,
+    TResult? Function()? refresPartnerOrders,
+    TResult? Function()? refreshNewOrder,
+    TResult? Function(int tab)? changeTab,
+    TResult? Function(PickUpPerson pickUpPerson, String orderId)?
+        changePickupPartner,
+    TResult? Function()? checkErrorCompleteOrder,
+    TResult? Function()? addDiviceBill,
+    TResult? Function()? removeDiviceBill,
+    TResult? Function()? addImeiImage,
+    TResult? Function()? removeImeiImage,
+    TResult? Function()? addIdCardImage,
+    TResult? Function()? removeIdCardImage,
+    TResult? Function()? addDeviceImages,
+    TResult? Function(int index)? removeDeviceImage,
+    TResult? Function(String orderId)? downloadOrderInvoice,
+    TResult? Function()? reset,
+  }) {
+    return downloadOrderInvoice?.call(orderId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String orderId)? acceptOrder,
+    TResult Function(String orderId)? getOrderDetail,
+    TResult Function(String orderId)? getOrderDetailNotification,
+    TResult Function(String orderId, String reason)? cancelOrder,
+    TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult Function(bool call)? getNewOrder,
+    TResult Function(bool call)? getPartnerOrders,
+    TResult Function(String orderId)? removePickupPartner,
+    TResult Function()? refresPartnerOrders,
+    TResult Function()? refreshNewOrder,
+    TResult Function(int tab)? changeTab,
+    TResult Function(PickUpPerson pickUpPerson, String orderId)?
+        changePickupPartner,
+    TResult Function()? checkErrorCompleteOrder,
+    TResult Function()? addDiviceBill,
+    TResult Function()? removeDiviceBill,
+    TResult Function()? addImeiImage,
+    TResult Function()? removeImeiImage,
+    TResult Function()? addIdCardImage,
+    TResult Function()? removeIdCardImage,
+    TResult Function()? addDeviceImages,
+    TResult Function(int index)? removeDeviceImage,
+    TResult Function(String orderId)? downloadOrderInvoice,
+    TResult Function()? reset,
+    required TResult orElse(),
+  }) {
+    if (downloadOrderInvoice != null) {
+      return downloadOrderInvoice(orderId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(GetOrderDetail value) getOrderDetail,
+    required TResult Function(GetOrderDetailNotification value)
+        getOrderDetailNotification,
+    required TResult Function(CancelOrder value) cancelOrder,
+    required TResult Function(CompleteOrder value) completeOrder,
+    required TResult Function(GetNewOrder value) getNewOrder,
+    required TResult Function(GetPartnerOrders value) getPartnerOrders,
+    required TResult Function(RemovePickupPartner value) removePickupPartner,
+    required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
+    required TResult Function(RefreshNewOrder value) refreshNewOrder,
+    required TResult Function(ChangeTab value) changeTab,
+    required TResult Function(ChangePickupPartner value) changePickupPartner,
+    required TResult Function(CheckErrorCompleteOrder value)
+        checkErrorCompleteOrder,
+    required TResult Function(AddDiviceBill value) addDiviceBill,
+    required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddImeiImage value) addImeiImage,
+    required TResult Function(RemoveImeiImage value) removeImeiImage,
+    required TResult Function(AddIdCardImage value) addIdCardImage,
+    required TResult Function(RemoveIdCardImage value) removeIdCardImage,
+    required TResult Function(AddDeviceImages value) addDeviceImages,
+    required TResult Function(RemoveDeviceImage value) removeDeviceImage,
+    required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
+    required TResult Function(Reset value) reset,
+  }) {
+    return downloadOrderInvoice(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(GetOrderDetail value)? getOrderDetail,
+    TResult? Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
+    TResult? Function(CancelOrder value)? cancelOrder,
+    TResult? Function(CompleteOrder value)? completeOrder,
+    TResult? Function(GetNewOrder value)? getNewOrder,
+    TResult? Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult? Function(RemovePickupPartner value)? removePickupPartner,
+    TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
+    TResult? Function(ChangeTab value)? changeTab,
+    TResult? Function(ChangePickupPartner value)? changePickupPartner,
+    TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult? Function(AddDiviceBill value)? addDiviceBill,
+    TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddImeiImage value)? addImeiImage,
+    TResult? Function(RemoveImeiImage value)? removeImeiImage,
+    TResult? Function(AddIdCardImage value)? addIdCardImage,
+    TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult? Function(AddDeviceImages value)? addDeviceImages,
+    TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult? Function(Reset value)? reset,
+  }) {
+    return downloadOrderInvoice?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(GetOrderDetail value)? getOrderDetail,
+    TResult Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
+    TResult Function(CancelOrder value)? cancelOrder,
+    TResult Function(CompleteOrder value)? completeOrder,
+    TResult Function(GetNewOrder value)? getNewOrder,
+    TResult Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult Function(RemovePickupPartner value)? removePickupPartner,
+    TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult Function(RefreshNewOrder value)? refreshNewOrder,
+    TResult Function(ChangeTab value)? changeTab,
+    TResult Function(ChangePickupPartner value)? changePickupPartner,
+    TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult Function(AddDiviceBill value)? addDiviceBill,
+    TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddImeiImage value)? addImeiImage,
+    TResult Function(RemoveImeiImage value)? removeImeiImage,
+    TResult Function(AddIdCardImage value)? addIdCardImage,
+    TResult Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult Function(AddDeviceImages value)? addDeviceImages,
+    TResult Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult Function(Reset value)? reset,
+    required TResult orElse(),
+  }) {
+    if (downloadOrderInvoice != null) {
+      return downloadOrderInvoice(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DownloadOrderInvoice implements OrdersEvent {
+  const factory DownloadOrderInvoice({required final String orderId}) =
+      _$DownloadOrderInvoiceImpl;
+
+  String get orderId;
+  @JsonKey(ignore: true)
+  _$$DownloadOrderInvoiceImplCopyWith<_$DownloadOrderInvoiceImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -5078,6 +5940,7 @@ class _$ResetImpl implements Reset {
   TResult when<TResult extends Object?>({
     required TResult Function(String orderId) acceptOrder,
     required TResult Function(String orderId) getOrderDetail,
+    required TResult Function(String orderId) getOrderDetailNotification,
     required TResult Function(String orderId, String reason) cancelOrder,
     required TResult Function(
             String orderId, CompleteOrderModel completeOrderModel)
@@ -5099,6 +5962,7 @@ class _$ResetImpl implements Reset {
     required TResult Function() removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
+    required TResult Function(String orderId) downloadOrderInvoice,
     required TResult Function() reset,
   }) {
     return reset();
@@ -5109,6 +5973,7 @@ class _$ResetImpl implements Reset {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String orderId)? acceptOrder,
     TResult? Function(String orderId)? getOrderDetail,
+    TResult? Function(String orderId)? getOrderDetailNotification,
     TResult? Function(String orderId, String reason)? cancelOrder,
     TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -5129,6 +5994,7 @@ class _$ResetImpl implements Reset {
     TResult? Function()? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
+    TResult? Function(String orderId)? downloadOrderInvoice,
     TResult? Function()? reset,
   }) {
     return reset?.call();
@@ -5139,6 +6005,7 @@ class _$ResetImpl implements Reset {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String orderId)? acceptOrder,
     TResult Function(String orderId)? getOrderDetail,
+    TResult Function(String orderId)? getOrderDetailNotification,
     TResult Function(String orderId, String reason)? cancelOrder,
     TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
         completeOrder,
@@ -5159,6 +6026,7 @@ class _$ResetImpl implements Reset {
     TResult Function()? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
+    TResult Function(String orderId)? downloadOrderInvoice,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -5173,6 +6041,8 @@ class _$ResetImpl implements Reset {
   TResult map<TResult extends Object?>({
     required TResult Function(AcceptOrder value) acceptOrder,
     required TResult Function(GetOrderDetail value) getOrderDetail,
+    required TResult Function(GetOrderDetailNotification value)
+        getOrderDetailNotification,
     required TResult Function(CancelOrder value) cancelOrder,
     required TResult Function(CompleteOrder value) completeOrder,
     required TResult Function(GetNewOrder value) getNewOrder,
@@ -5192,6 +6062,7 @@ class _$ResetImpl implements Reset {
     required TResult Function(RemoveIdCardImage value) removeIdCardImage,
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
+    required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
     required TResult Function(Reset value) reset,
   }) {
     return reset(this);
@@ -5202,6 +6073,8 @@ class _$ResetImpl implements Reset {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AcceptOrder value)? acceptOrder,
     TResult? Function(GetOrderDetail value)? getOrderDetail,
+    TResult? Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult? Function(CancelOrder value)? cancelOrder,
     TResult? Function(CompleteOrder value)? completeOrder,
     TResult? Function(GetNewOrder value)? getNewOrder,
@@ -5220,6 +6093,7 @@ class _$ResetImpl implements Reset {
     TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult? Function(Reset value)? reset,
   }) {
     return reset?.call(this);
@@ -5230,6 +6104,8 @@ class _$ResetImpl implements Reset {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AcceptOrder value)? acceptOrder,
     TResult Function(GetOrderDetail value)? getOrderDetail,
+    TResult Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
     TResult Function(CancelOrder value)? cancelOrder,
     TResult Function(CompleteOrder value)? completeOrder,
     TResult Function(GetNewOrder value)? getNewOrder,
@@ -5248,6 +6124,7 @@ class _$ResetImpl implements Reset {
     TResult Function(RemoveIdCardImage value)? removeIdCardImage,
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -5277,6 +6154,9 @@ mixin _$OrdersState {
   bool get partnerOrdesRefreshLoading => throw _privateConstructorUsedError;
   bool get orderDetailError => throw _privateConstructorUsedError;
   bool get popOrderScreen => throw _privateConstructorUsedError;
+  bool get downloaded => throw _privateConstructorUsedError;
+  bool get downloading => throw _privateConstructorUsedError;
+  String? get orderInvoice => throw _privateConstructorUsedError;
   String? get message => throw _privateConstructorUsedError;
   ImageModel? get deviceBill => throw _privateConstructorUsedError;
   ImageModel? get idCard => throw _privateConstructorUsedError;
@@ -5312,6 +6192,9 @@ abstract class $OrdersStateCopyWith<$Res> {
       bool partnerOrdesRefreshLoading,
       bool orderDetailError,
       bool popOrderScreen,
+      bool downloaded,
+      bool downloading,
+      String? orderInvoice,
       String? message,
       ImageModel? deviceBill,
       ImageModel? idCard,
@@ -5349,6 +6232,9 @@ class _$OrdersStateCopyWithImpl<$Res, $Val extends OrdersState>
     Object? partnerOrdesRefreshLoading = null,
     Object? orderDetailError = null,
     Object? popOrderScreen = null,
+    Object? downloaded = null,
+    Object? downloading = null,
+    Object? orderInvoice = freezed,
     Object? message = freezed,
     Object? deviceBill = freezed,
     Object? idCard = freezed,
@@ -5412,6 +6298,18 @@ class _$OrdersStateCopyWithImpl<$Res, $Val extends OrdersState>
           ? _value.popOrderScreen
           : popOrderScreen // ignore: cast_nullable_to_non_nullable
               as bool,
+      downloaded: null == downloaded
+          ? _value.downloaded
+          : downloaded // ignore: cast_nullable_to_non_nullable
+              as bool,
+      downloading: null == downloading
+          ? _value.downloading
+          : downloading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      orderInvoice: freezed == orderInvoice
+          ? _value.orderInvoice
+          : orderInvoice // ignore: cast_nullable_to_non_nullable
+              as String?,
       message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -5474,6 +6372,9 @@ abstract class _$$InitialImplCopyWith<$Res>
       bool partnerOrdesRefreshLoading,
       bool orderDetailError,
       bool popOrderScreen,
+      bool downloaded,
+      bool downloading,
+      String? orderInvoice,
       String? message,
       ImageModel? deviceBill,
       ImageModel? idCard,
@@ -5509,6 +6410,9 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? partnerOrdesRefreshLoading = null,
     Object? orderDetailError = null,
     Object? popOrderScreen = null,
+    Object? downloaded = null,
+    Object? downloading = null,
+    Object? orderInvoice = freezed,
     Object? message = freezed,
     Object? deviceBill = freezed,
     Object? idCard = freezed,
@@ -5572,6 +6476,18 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.popOrderScreen
           : popOrderScreen // ignore: cast_nullable_to_non_nullable
               as bool,
+      downloaded: null == downloaded
+          ? _value.downloaded
+          : downloaded // ignore: cast_nullable_to_non_nullable
+              as bool,
+      downloading: null == downloading
+          ? _value.downloading
+          : downloading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      orderInvoice: freezed == orderInvoice
+          ? _value.orderInvoice
+          : orderInvoice // ignore: cast_nullable_to_non_nullable
+              as String?,
       message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -5629,6 +6545,9 @@ class _$InitialImpl implements _Initial {
       required this.partnerOrdesRefreshLoading,
       required this.orderDetailError,
       required this.popOrderScreen,
+      required this.downloaded,
+      required this.downloading,
+      this.orderInvoice,
       this.message,
       this.deviceBill,
       this.idCard,
@@ -5668,6 +6587,12 @@ class _$InitialImpl implements _Initial {
   final bool orderDetailError;
   @override
   final bool popOrderScreen;
+  @override
+  final bool downloaded;
+  @override
+  final bool downloading;
+  @override
+  final String? orderInvoice;
   @override
   final String? message;
   @override
@@ -5713,7 +6638,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'OrdersState(isLoading: $isLoading, hasError: $hasError, acceptOrderLoading: $acceptOrderLoading, acceptOrderError: $acceptOrderError, acceptOrder: $acceptOrder, cancelOrder: $cancelOrder, completeOrderLoading: $completeOrderLoading, orderCompleted: $orderCompleted, orderCompletionError: $orderCompletionError, newOrdesRefreshLoading: $newOrdesRefreshLoading, partnerOrdesRefreshLoading: $partnerOrdesRefreshLoading, orderDetailError: $orderDetailError, popOrderScreen: $popOrderScreen, message: $message, deviceBill: $deviceBill, idCard: $idCard, imeiImage: $imeiImage, deviceImages: $deviceImages, partnerOrders: $partnerOrders, newOrders: $newOrders, orderDetail: $orderDetail, orderTab: $orderTab)';
+    return 'OrdersState(isLoading: $isLoading, hasError: $hasError, acceptOrderLoading: $acceptOrderLoading, acceptOrderError: $acceptOrderError, acceptOrder: $acceptOrder, cancelOrder: $cancelOrder, completeOrderLoading: $completeOrderLoading, orderCompleted: $orderCompleted, orderCompletionError: $orderCompletionError, newOrdesRefreshLoading: $newOrdesRefreshLoading, partnerOrdesRefreshLoading: $partnerOrdesRefreshLoading, orderDetailError: $orderDetailError, popOrderScreen: $popOrderScreen, downloaded: $downloaded, downloading: $downloading, orderInvoice: $orderInvoice, message: $message, deviceBill: $deviceBill, idCard: $idCard, imeiImage: $imeiImage, deviceImages: $deviceImages, partnerOrders: $partnerOrders, newOrders: $newOrders, orderDetail: $orderDetail, orderTab: $orderTab)';
   }
 
   @override
@@ -5749,6 +6674,12 @@ class _$InitialImpl implements _Initial {
                 other.orderDetailError == orderDetailError) &&
             (identical(other.popOrderScreen, popOrderScreen) ||
                 other.popOrderScreen == popOrderScreen) &&
+            (identical(other.downloaded, downloaded) ||
+                other.downloaded == downloaded) &&
+            (identical(other.downloading, downloading) ||
+                other.downloading == downloading) &&
+            (identical(other.orderInvoice, orderInvoice) ||
+                other.orderInvoice == orderInvoice) &&
             (identical(other.message, message) || other.message == message) &&
             (identical(other.deviceBill, deviceBill) ||
                 other.deviceBill == deviceBill) &&
@@ -5783,6 +6714,9 @@ class _$InitialImpl implements _Initial {
         partnerOrdesRefreshLoading,
         orderDetailError,
         popOrderScreen,
+        downloaded,
+        downloading,
+        orderInvoice,
         message,
         deviceBill,
         idCard,
@@ -5816,6 +6750,9 @@ abstract class _Initial implements OrdersState {
       required final bool partnerOrdesRefreshLoading,
       required final bool orderDetailError,
       required final bool popOrderScreen,
+      required final bool downloaded,
+      required final bool downloading,
+      final String? orderInvoice,
       final String? message,
       final ImageModel? deviceBill,
       final ImageModel? idCard,
@@ -5852,6 +6789,12 @@ abstract class _Initial implements OrdersState {
   bool get orderDetailError;
   @override
   bool get popOrderScreen;
+  @override
+  bool get downloaded;
+  @override
+  bool get downloading;
+  @override
+  String? get orderInvoice;
   @override
   String? get message;
   @override

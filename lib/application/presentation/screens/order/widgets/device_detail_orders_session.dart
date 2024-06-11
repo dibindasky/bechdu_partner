@@ -18,7 +18,6 @@ class OrderDetailDiviceDetailsSession extends StatelessWidget {
   Widget build(BuildContext context) {
     if (productDetails != null && productDetails!.options != null) {
       for (Option opt in productDetails!.options!) {
-        print(opt.toJson());
         if (!deviceQuestions.containsKey(opt.heading)) {
           deviceQuestions[opt.heading ?? '----'] = [];
         }
@@ -56,7 +55,6 @@ class OrderDetailDiviceDetailsSession extends StatelessWidget {
                                       deviceQuestions.keys.toList()[index]] ??
                                   [];
                               if (data.first.value != null) {
-                                print('yes / no ');
                                 return Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,

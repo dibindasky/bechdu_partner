@@ -53,7 +53,6 @@ class RequoteBloc extends Bloc<RequoteEvent, RequoteState> {
     finalPrice = '';
     List<SelectedOption> list = [];
     for (var element in state.sections!) {
-      print("requote ==== ${element.options?.first.heading}");
       list.addAll(state.selectedAnswers[element.heading]!);
     }
     final result = await requoteService.getPrice(

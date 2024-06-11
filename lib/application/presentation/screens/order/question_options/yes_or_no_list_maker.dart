@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:bechdu_partner/application/business_logic/order/requote/requote_bloc.dart';
 import 'package:bechdu_partner/application/presentation/screens/order/question_options/yes_or_no_tile.dart';
 import 'package:bechdu_partner/application/presentation/screens/order/requote/answer_index_changer.dart';
@@ -42,7 +40,6 @@ class _YesOrNoListMakerState extends State<YesOrNoListMaker> {
                           .toList();
                       final selection =
                           answers.isEmpty ? null : answers.first.value;
-                      print('selection $index => $selection');
                       return YesOrNoTile(
                         onTap: () => setState(() {}),
                         state: state,

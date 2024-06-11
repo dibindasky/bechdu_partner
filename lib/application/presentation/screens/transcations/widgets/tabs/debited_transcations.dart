@@ -4,6 +4,7 @@ import 'package:bechdu_partner/application/presentation/routes/routes.dart';
 import 'package:bechdu_partner/application/presentation/screens/transcations/widgets/tabs/transcations_tile.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
+import 'package:bechdu_partner/application/presentation/utils/pdf/pdf_preview.dart';
 import 'package:bechdu_partner/application/presentation/utils/refresh_indicator/refresh_indicator.dart';
 import 'package:bechdu_partner/application/presentation/utils/shimmer/shimmer_loader.dart';
 import 'package:flutter/material.dart';
@@ -45,7 +46,8 @@ class _DebitedTranscationsListState extends State<DebitedTranscationsList> {
       listener: (context, state) {
         if (state.downloaded && state.invoice != null) {
           Navigator.pushNamed(context, Routes.pdfPage,
-              arguments: state.invoice!);
+              arguments: PreviewArguments(
+                  base64: state.invoice!, fileName: 'Transcation'));
         }
       },
       builder: (context, state) {

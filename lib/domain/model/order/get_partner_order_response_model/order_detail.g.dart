@@ -10,6 +10,7 @@ OrderDetail _$OrderDetailFromJson(Map<String, dynamic> json) => OrderDetail(
       user: json['user'] == null
           ? null
           : User.fromJson(json['user'] as Map<String, dynamic>),
+      notification: json['notification'] as bool? ?? false,
       payment: json['payment'] == null
           ? null
           : Payment.fromJson(json['payment'] as Map<String, dynamic>),
@@ -45,6 +46,7 @@ OrderDetail _$OrderDetailFromJson(Map<String, dynamic> json) => OrderDetail(
 
 Map<String, dynamic> _$OrderDetailToJson(OrderDetail instance) =>
     <String, dynamic>{
+      'notification': instance.notification,
       'user': instance.user,
       'payment': instance.payment,
       'pickUpDetails': instance.pickUpDetails,

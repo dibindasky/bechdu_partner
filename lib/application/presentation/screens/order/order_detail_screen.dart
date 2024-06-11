@@ -19,9 +19,11 @@ class ScreenOrderDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int a = 1;
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (orderDetail.status != 'new') {
+      if (orderDetail.notification) {
+        context.read<OrdersBloc>().add(
+            OrdersEvent.getOrderDetailNotification(orderId: orderDetail.id!));
+      } else if (orderDetail.status != 'new') {
         context
             .read<OrdersBloc>()
             .add(OrdersEvent.getOrderDetail(orderId: orderDetail.id!));
@@ -35,10 +37,7 @@ class ScreenOrderDetail extends StatelessWidget {
     return BlocConsumer<OrdersBloc, OrdersState>(
       listener: (context, state) {
         if (state.hasError &&
-            // state.orderDetailError &&
             state.message == "You can't perform this action") {
-          print(
-              'in first listner ${a++}===========****************************++++++++++++');
           showSnackBar(
               context: context,
               message: partner
@@ -54,9 +53,10 @@ class ScreenOrderDetail extends StatelessWidget {
         }
       },
       builder: (context, state) {
-        OrderDetail orderDetail = this.orderDetail.status != 'new'
-            ? state.orderDetail ?? OrderDetail()
-            : this.orderDetail;
+        OrderDetail orderDetail =
+            this.orderDetail.notification || this.orderDetail.status != 'new'
+                ? state.orderDetail ?? OrderDetail()
+                : this.orderDetail;
         return Scaffold(
           appBar: AppBar(
               title: Text(
@@ -69,13 +69,16 @@ class ScreenOrderDetail extends StatelessWidget {
               ClipPath(
                 clipper: VerticalCurvesClipper(),
                 child: ColoredBox(
-                  // color: kBluelight,
-                  color: getStatusColor(this.orderDetail.status!),
+                  color: kBluelight,
+                  // color: this.orderDetail.notification
+                  //     ? kBluelight
+                  //     : getStatusColor(this.orderDetail.status!),
                   child: SizedBox(width: sWidth, height: sHeight * 1.5),
                 ),
               ),
               (state.isLoading || state.orderDetail == null) &&
-                      this.orderDetail.status != 'new'
+                      (this.orderDetail.status != 'new' ||
+                          this.orderDetail.notification)
                   ? const Center(
                       child: CircularProgressIndicator(color: kBluePrimary))
                   : Padding(
@@ -151,7 +154,8 @@ class ScreenOrderDetail extends StatelessWidget {
                                     child: CircularProgressIndicator(
                                         color: kGreenPrimary));
                               }
-                              return orderDetail.status == 'new'
+                              return orderDetail.status == 'new' ||
+                                      orderDetail.notification
                                   // order details shown in blur for status new and canceled
                                   ? BlurredOrderDetails(
                                       orderDetail: orderDetail)

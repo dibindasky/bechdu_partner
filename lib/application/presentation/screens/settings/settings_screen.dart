@@ -22,7 +22,7 @@ class ScreenSettings extends StatelessWidget {
               child: Column(
             children: [
               kHeight50,
-              BellIconAnimation(child: Image.asset(iconBechdu), animate: true),
+              BellIconAnimation(animate: true, child: Image.asset(iconBechdu)),
               kHeight50,
               const Divider(),
               ListTile(
@@ -72,7 +72,8 @@ class ScreenSettings extends StatelessWidget {
                           onTap: () => showCustomDialoge(
                               context: context,
                               buttonColor: kRedDark,
-                              title: 'Are you sure you want to Delete Account ?',
+                              title:
+                                  'Are you sure you want to Delete Account ?',
                               buttonText: 'Delete',
                               onTap: () {
                                 context

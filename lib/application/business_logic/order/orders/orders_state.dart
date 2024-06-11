@@ -16,6 +16,9 @@ class OrdersState with _$OrdersState {
       required bool partnerOrdesRefreshLoading,
       required bool orderDetailError,
       required bool popOrderScreen,
+      required bool downloaded,
+      required bool downloading,
+      String? orderInvoice,
       String? message,
       ImageModel? deviceBill,
       ImageModel? idCard,
@@ -40,5 +43,7 @@ class OrdersState with _$OrdersState {
       acceptOrderError: false,
       completeOrderLoading: false,
       orderCompleted: false,
-      acceptOrderLoading: false);
+      acceptOrderLoading: false,
+      downloaded: false,
+      downloading: false);
 }

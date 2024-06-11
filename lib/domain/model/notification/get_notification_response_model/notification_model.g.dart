@@ -16,6 +16,7 @@ NotificationModel _$NotificationModelFromJson(Map<String, dynamic> json) =>
       timestamp: json['timestamp'] == null
           ? null
           : DateTime.parse(json['timestamp'] as String),
+      status: json['status'] as bool?,
     );
 
 Map<String, dynamic> _$NotificationModelToJson(NotificationModel instance) =>
@@ -26,4 +27,5 @@ Map<String, dynamic> _$NotificationModelToJson(NotificationModel instance) =>
       'orderID': instance.orderId,
       '_id': instance.id,
       'timestamp': instance.timestamp?.toIso8601String(),
+      'status': instance.status,
     };

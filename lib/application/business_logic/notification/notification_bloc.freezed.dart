@@ -21,6 +21,8 @@ mixin _$NotificationEvent {
     required TResult Function(bool reset) getNotifications,
     required TResult Function() getNotificationsNext,
     required TResult Function() resetLength,
+    required TResult Function(int index) sort,
+    required TResult Function(String id) markAsRead,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +30,8 @@ mixin _$NotificationEvent {
     TResult? Function(bool reset)? getNotifications,
     TResult? Function()? getNotificationsNext,
     TResult? Function()? resetLength,
+    TResult? Function(int index)? sort,
+    TResult? Function(String id)? markAsRead,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +39,8 @@ mixin _$NotificationEvent {
     TResult Function(bool reset)? getNotifications,
     TResult Function()? getNotificationsNext,
     TResult Function()? resetLength,
+    TResult Function(int index)? sort,
+    TResult Function(String id)? markAsRead,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +49,8 @@ mixin _$NotificationEvent {
     required TResult Function(GetNotifications value) getNotifications,
     required TResult Function(GetNotificationsNext value) getNotificationsNext,
     required TResult Function(ResetLength value) resetLength,
+    required TResult Function(Sort value) sort,
+    required TResult Function(MarkAsRead value) markAsRead,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +58,8 @@ mixin _$NotificationEvent {
     TResult? Function(GetNotifications value)? getNotifications,
     TResult? Function(GetNotificationsNext value)? getNotificationsNext,
     TResult? Function(ResetLength value)? resetLength,
+    TResult? Function(Sort value)? sort,
+    TResult? Function(MarkAsRead value)? markAsRead,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +67,8 @@ mixin _$NotificationEvent {
     TResult Function(GetNotifications value)? getNotifications,
     TResult Function(GetNotificationsNext value)? getNotificationsNext,
     TResult Function(ResetLength value)? resetLength,
+    TResult Function(Sort value)? sort,
+    TResult Function(MarkAsRead value)? markAsRead,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -148,6 +160,8 @@ class _$GetNotificationsImpl implements GetNotifications {
     required TResult Function(bool reset) getNotifications,
     required TResult Function() getNotificationsNext,
     required TResult Function() resetLength,
+    required TResult Function(int index) sort,
+    required TResult Function(String id) markAsRead,
   }) {
     return getNotifications(reset);
   }
@@ -158,6 +172,8 @@ class _$GetNotificationsImpl implements GetNotifications {
     TResult? Function(bool reset)? getNotifications,
     TResult? Function()? getNotificationsNext,
     TResult? Function()? resetLength,
+    TResult? Function(int index)? sort,
+    TResult? Function(String id)? markAsRead,
   }) {
     return getNotifications?.call(reset);
   }
@@ -168,6 +184,8 @@ class _$GetNotificationsImpl implements GetNotifications {
     TResult Function(bool reset)? getNotifications,
     TResult Function()? getNotificationsNext,
     TResult Function()? resetLength,
+    TResult Function(int index)? sort,
+    TResult Function(String id)? markAsRead,
     required TResult orElse(),
   }) {
     if (getNotifications != null) {
@@ -182,6 +200,8 @@ class _$GetNotificationsImpl implements GetNotifications {
     required TResult Function(GetNotifications value) getNotifications,
     required TResult Function(GetNotificationsNext value) getNotificationsNext,
     required TResult Function(ResetLength value) resetLength,
+    required TResult Function(Sort value) sort,
+    required TResult Function(MarkAsRead value) markAsRead,
   }) {
     return getNotifications(this);
   }
@@ -192,6 +212,8 @@ class _$GetNotificationsImpl implements GetNotifications {
     TResult? Function(GetNotifications value)? getNotifications,
     TResult? Function(GetNotificationsNext value)? getNotificationsNext,
     TResult? Function(ResetLength value)? resetLength,
+    TResult? Function(Sort value)? sort,
+    TResult? Function(MarkAsRead value)? markAsRead,
   }) {
     return getNotifications?.call(this);
   }
@@ -202,6 +224,8 @@ class _$GetNotificationsImpl implements GetNotifications {
     TResult Function(GetNotifications value)? getNotifications,
     TResult Function(GetNotificationsNext value)? getNotificationsNext,
     TResult Function(ResetLength value)? resetLength,
+    TResult Function(Sort value)? sort,
+    TResult Function(MarkAsRead value)? markAsRead,
     required TResult orElse(),
   }) {
     if (getNotifications != null) {
@@ -263,6 +287,8 @@ class _$GetNotificationsNextImpl implements GetNotificationsNext {
     required TResult Function(bool reset) getNotifications,
     required TResult Function() getNotificationsNext,
     required TResult Function() resetLength,
+    required TResult Function(int index) sort,
+    required TResult Function(String id) markAsRead,
   }) {
     return getNotificationsNext();
   }
@@ -273,6 +299,8 @@ class _$GetNotificationsNextImpl implements GetNotificationsNext {
     TResult? Function(bool reset)? getNotifications,
     TResult? Function()? getNotificationsNext,
     TResult? Function()? resetLength,
+    TResult? Function(int index)? sort,
+    TResult? Function(String id)? markAsRead,
   }) {
     return getNotificationsNext?.call();
   }
@@ -283,6 +311,8 @@ class _$GetNotificationsNextImpl implements GetNotificationsNext {
     TResult Function(bool reset)? getNotifications,
     TResult Function()? getNotificationsNext,
     TResult Function()? resetLength,
+    TResult Function(int index)? sort,
+    TResult Function(String id)? markAsRead,
     required TResult orElse(),
   }) {
     if (getNotificationsNext != null) {
@@ -297,6 +327,8 @@ class _$GetNotificationsNextImpl implements GetNotificationsNext {
     required TResult Function(GetNotifications value) getNotifications,
     required TResult Function(GetNotificationsNext value) getNotificationsNext,
     required TResult Function(ResetLength value) resetLength,
+    required TResult Function(Sort value) sort,
+    required TResult Function(MarkAsRead value) markAsRead,
   }) {
     return getNotificationsNext(this);
   }
@@ -307,6 +339,8 @@ class _$GetNotificationsNextImpl implements GetNotificationsNext {
     TResult? Function(GetNotifications value)? getNotifications,
     TResult? Function(GetNotificationsNext value)? getNotificationsNext,
     TResult? Function(ResetLength value)? resetLength,
+    TResult? Function(Sort value)? sort,
+    TResult? Function(MarkAsRead value)? markAsRead,
   }) {
     return getNotificationsNext?.call(this);
   }
@@ -317,6 +351,8 @@ class _$GetNotificationsNextImpl implements GetNotificationsNext {
     TResult Function(GetNotifications value)? getNotifications,
     TResult Function(GetNotificationsNext value)? getNotificationsNext,
     TResult Function(ResetLength value)? resetLength,
+    TResult Function(Sort value)? sort,
+    TResult Function(MarkAsRead value)? markAsRead,
     required TResult orElse(),
   }) {
     if (getNotificationsNext != null) {
@@ -371,6 +407,8 @@ class _$ResetLengthImpl implements ResetLength {
     required TResult Function(bool reset) getNotifications,
     required TResult Function() getNotificationsNext,
     required TResult Function() resetLength,
+    required TResult Function(int index) sort,
+    required TResult Function(String id) markAsRead,
   }) {
     return resetLength();
   }
@@ -381,6 +419,8 @@ class _$ResetLengthImpl implements ResetLength {
     TResult? Function(bool reset)? getNotifications,
     TResult? Function()? getNotificationsNext,
     TResult? Function()? resetLength,
+    TResult? Function(int index)? sort,
+    TResult? Function(String id)? markAsRead,
   }) {
     return resetLength?.call();
   }
@@ -391,6 +431,8 @@ class _$ResetLengthImpl implements ResetLength {
     TResult Function(bool reset)? getNotifications,
     TResult Function()? getNotificationsNext,
     TResult Function()? resetLength,
+    TResult Function(int index)? sort,
+    TResult Function(String id)? markAsRead,
     required TResult orElse(),
   }) {
     if (resetLength != null) {
@@ -405,6 +447,8 @@ class _$ResetLengthImpl implements ResetLength {
     required TResult Function(GetNotifications value) getNotifications,
     required TResult Function(GetNotificationsNext value) getNotificationsNext,
     required TResult Function(ResetLength value) resetLength,
+    required TResult Function(Sort value) sort,
+    required TResult Function(MarkAsRead value) markAsRead,
   }) {
     return resetLength(this);
   }
@@ -415,6 +459,8 @@ class _$ResetLengthImpl implements ResetLength {
     TResult? Function(GetNotifications value)? getNotifications,
     TResult? Function(GetNotificationsNext value)? getNotificationsNext,
     TResult? Function(ResetLength value)? resetLength,
+    TResult? Function(Sort value)? sort,
+    TResult? Function(MarkAsRead value)? markAsRead,
   }) {
     return resetLength?.call(this);
   }
@@ -425,6 +471,8 @@ class _$ResetLengthImpl implements ResetLength {
     TResult Function(GetNotifications value)? getNotifications,
     TResult Function(GetNotificationsNext value)? getNotificationsNext,
     TResult Function(ResetLength value)? resetLength,
+    TResult Function(Sort value)? sort,
+    TResult Function(MarkAsRead value)? markAsRead,
     required TResult orElse(),
   }) {
     if (resetLength != null) {
@@ -439,6 +487,307 @@ abstract class ResetLength implements NotificationEvent {
 }
 
 /// @nodoc
+abstract class _$$SortImplCopyWith<$Res> {
+  factory _$$SortImplCopyWith(
+          _$SortImpl value, $Res Function(_$SortImpl) then) =
+      __$$SortImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int index});
+}
+
+/// @nodoc
+class __$$SortImplCopyWithImpl<$Res>
+    extends _$NotificationEventCopyWithImpl<$Res, _$SortImpl>
+    implements _$$SortImplCopyWith<$Res> {
+  __$$SortImplCopyWithImpl(_$SortImpl _value, $Res Function(_$SortImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? index = null,
+  }) {
+    return _then(_$SortImpl(
+      null == index
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SortImpl implements Sort {
+  const _$SortImpl(this.index);
+
+  @override
+  final int index;
+
+  @override
+  String toString() {
+    return 'NotificationEvent.sort(index: $index)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SortImpl &&
+            (identical(other.index, index) || other.index == index));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, index);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SortImplCopyWith<_$SortImpl> get copyWith =>
+      __$$SortImplCopyWithImpl<_$SortImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(bool reset) getNotifications,
+    required TResult Function() getNotificationsNext,
+    required TResult Function() resetLength,
+    required TResult Function(int index) sort,
+    required TResult Function(String id) markAsRead,
+  }) {
+    return sort(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(bool reset)? getNotifications,
+    TResult? Function()? getNotificationsNext,
+    TResult? Function()? resetLength,
+    TResult? Function(int index)? sort,
+    TResult? Function(String id)? markAsRead,
+  }) {
+    return sort?.call(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(bool reset)? getNotifications,
+    TResult Function()? getNotificationsNext,
+    TResult Function()? resetLength,
+    TResult Function(int index)? sort,
+    TResult Function(String id)? markAsRead,
+    required TResult orElse(),
+  }) {
+    if (sort != null) {
+      return sort(index);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetNotifications value) getNotifications,
+    required TResult Function(GetNotificationsNext value) getNotificationsNext,
+    required TResult Function(ResetLength value) resetLength,
+    required TResult Function(Sort value) sort,
+    required TResult Function(MarkAsRead value) markAsRead,
+  }) {
+    return sort(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetNotifications value)? getNotifications,
+    TResult? Function(GetNotificationsNext value)? getNotificationsNext,
+    TResult? Function(ResetLength value)? resetLength,
+    TResult? Function(Sort value)? sort,
+    TResult? Function(MarkAsRead value)? markAsRead,
+  }) {
+    return sort?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetNotifications value)? getNotifications,
+    TResult Function(GetNotificationsNext value)? getNotificationsNext,
+    TResult Function(ResetLength value)? resetLength,
+    TResult Function(Sort value)? sort,
+    TResult Function(MarkAsRead value)? markAsRead,
+    required TResult orElse(),
+  }) {
+    if (sort != null) {
+      return sort(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Sort implements NotificationEvent {
+  const factory Sort(final int index) = _$SortImpl;
+
+  int get index;
+  @JsonKey(ignore: true)
+  _$$SortImplCopyWith<_$SortImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$MarkAsReadImplCopyWith<$Res> {
+  factory _$$MarkAsReadImplCopyWith(
+          _$MarkAsReadImpl value, $Res Function(_$MarkAsReadImpl) then) =
+      __$$MarkAsReadImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String id});
+}
+
+/// @nodoc
+class __$$MarkAsReadImplCopyWithImpl<$Res>
+    extends _$NotificationEventCopyWithImpl<$Res, _$MarkAsReadImpl>
+    implements _$$MarkAsReadImplCopyWith<$Res> {
+  __$$MarkAsReadImplCopyWithImpl(
+      _$MarkAsReadImpl _value, $Res Function(_$MarkAsReadImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$MarkAsReadImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$MarkAsReadImpl implements MarkAsRead {
+  const _$MarkAsReadImpl({required this.id});
+
+  @override
+  final String id;
+
+  @override
+  String toString() {
+    return 'NotificationEvent.markAsRead(id: $id)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$MarkAsReadImpl &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$MarkAsReadImplCopyWith<_$MarkAsReadImpl> get copyWith =>
+      __$$MarkAsReadImplCopyWithImpl<_$MarkAsReadImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(bool reset) getNotifications,
+    required TResult Function() getNotificationsNext,
+    required TResult Function() resetLength,
+    required TResult Function(int index) sort,
+    required TResult Function(String id) markAsRead,
+  }) {
+    return markAsRead(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(bool reset)? getNotifications,
+    TResult? Function()? getNotificationsNext,
+    TResult? Function()? resetLength,
+    TResult? Function(int index)? sort,
+    TResult? Function(String id)? markAsRead,
+  }) {
+    return markAsRead?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(bool reset)? getNotifications,
+    TResult Function()? getNotificationsNext,
+    TResult Function()? resetLength,
+    TResult Function(int index)? sort,
+    TResult Function(String id)? markAsRead,
+    required TResult orElse(),
+  }) {
+    if (markAsRead != null) {
+      return markAsRead(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetNotifications value) getNotifications,
+    required TResult Function(GetNotificationsNext value) getNotificationsNext,
+    required TResult Function(ResetLength value) resetLength,
+    required TResult Function(Sort value) sort,
+    required TResult Function(MarkAsRead value) markAsRead,
+  }) {
+    return markAsRead(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetNotifications value)? getNotifications,
+    TResult? Function(GetNotificationsNext value)? getNotificationsNext,
+    TResult? Function(ResetLength value)? resetLength,
+    TResult? Function(Sort value)? sort,
+    TResult? Function(MarkAsRead value)? markAsRead,
+  }) {
+    return markAsRead?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetNotifications value)? getNotifications,
+    TResult Function(GetNotificationsNext value)? getNotificationsNext,
+    TResult Function(ResetLength value)? resetLength,
+    TResult Function(Sort value)? sort,
+    TResult Function(MarkAsRead value)? markAsRead,
+    required TResult orElse(),
+  }) {
+    if (markAsRead != null) {
+      return markAsRead(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class MarkAsRead implements NotificationEvent {
+  const factory MarkAsRead({required final String id}) = _$MarkAsReadImpl;
+
+  String get id;
+  @JsonKey(ignore: true)
+  _$$MarkAsReadImplCopyWith<_$MarkAsReadImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$NotificationState {
   bool get isLoading => throw _privateConstructorUsedError;
   bool get pageLoading => throw _privateConstructorUsedError;
@@ -446,6 +795,7 @@ mixin _$NotificationState {
   int? get notiLength => throw _privateConstructorUsedError;
   int? get totalNotiLength => throw _privateConstructorUsedError;
   String? get message => throw _privateConstructorUsedError;
+  List<int> get sortIndexs => throw _privateConstructorUsedError;
   List<NotificationModel>? get notificationList =>
       throw _privateConstructorUsedError;
 
@@ -467,6 +817,7 @@ abstract class $NotificationStateCopyWith<$Res> {
       int? notiLength,
       int? totalNotiLength,
       String? message,
+      List<int> sortIndexs,
       List<NotificationModel>? notificationList});
 }
 
@@ -489,6 +840,7 @@ class _$NotificationStateCopyWithImpl<$Res, $Val extends NotificationState>
     Object? notiLength = freezed,
     Object? totalNotiLength = freezed,
     Object? message = freezed,
+    Object? sortIndexs = null,
     Object? notificationList = freezed,
   }) {
     return _then(_value.copyWith(
@@ -516,6 +868,10 @@ class _$NotificationStateCopyWithImpl<$Res, $Val extends NotificationState>
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String?,
+      sortIndexs: null == sortIndexs
+          ? _value.sortIndexs
+          : sortIndexs // ignore: cast_nullable_to_non_nullable
+              as List<int>,
       notificationList: freezed == notificationList
           ? _value.notificationList
           : notificationList // ignore: cast_nullable_to_non_nullable
@@ -539,6 +895,7 @@ abstract class _$$InitialImplCopyWith<$Res>
       int? notiLength,
       int? totalNotiLength,
       String? message,
+      List<int> sortIndexs,
       List<NotificationModel>? notificationList});
 }
 
@@ -559,6 +916,7 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? notiLength = freezed,
     Object? totalNotiLength = freezed,
     Object? message = freezed,
+    Object? sortIndexs = null,
     Object? notificationList = freezed,
   }) {
     return _then(_$InitialImpl(
@@ -586,6 +944,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String?,
+      sortIndexs: null == sortIndexs
+          ? _value._sortIndexs
+          : sortIndexs // ignore: cast_nullable_to_non_nullable
+              as List<int>,
       notificationList: freezed == notificationList
           ? _value._notificationList
           : notificationList // ignore: cast_nullable_to_non_nullable
@@ -604,8 +966,10 @@ class _$InitialImpl implements _Initial {
       this.notiLength,
       this.totalNotiLength,
       this.message,
+      required final List<int> sortIndexs,
       final List<NotificationModel>? notificationList})
-      : _notificationList = notificationList;
+      : _sortIndexs = sortIndexs,
+        _notificationList = notificationList;
 
   @override
   final bool isLoading;
@@ -619,6 +983,14 @@ class _$InitialImpl implements _Initial {
   final int? totalNotiLength;
   @override
   final String? message;
+  final List<int> _sortIndexs;
+  @override
+  List<int> get sortIndexs {
+    if (_sortIndexs is EqualUnmodifiableListView) return _sortIndexs;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_sortIndexs);
+  }
+
   final List<NotificationModel>? _notificationList;
   @override
   List<NotificationModel>? get notificationList {
@@ -632,7 +1004,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'NotificationState(isLoading: $isLoading, pageLoading: $pageLoading, hasError: $hasError, notiLength: $notiLength, totalNotiLength: $totalNotiLength, message: $message, notificationList: $notificationList)';
+    return 'NotificationState(isLoading: $isLoading, pageLoading: $pageLoading, hasError: $hasError, notiLength: $notiLength, totalNotiLength: $totalNotiLength, message: $message, sortIndexs: $sortIndexs, notificationList: $notificationList)';
   }
 
   @override
@@ -652,6 +1024,8 @@ class _$InitialImpl implements _Initial {
                 other.totalNotiLength == totalNotiLength) &&
             (identical(other.message, message) || other.message == message) &&
             const DeepCollectionEquality()
+                .equals(other._sortIndexs, _sortIndexs) &&
+            const DeepCollectionEquality()
                 .equals(other._notificationList, _notificationList));
   }
 
@@ -664,6 +1038,7 @@ class _$InitialImpl implements _Initial {
       notiLength,
       totalNotiLength,
       message,
+      const DeepCollectionEquality().hash(_sortIndexs),
       const DeepCollectionEquality().hash(_notificationList));
 
   @JsonKey(ignore: true)
@@ -681,6 +1056,7 @@ abstract class _Initial implements NotificationState {
       final int? notiLength,
       final int? totalNotiLength,
       final String? message,
+      required final List<int> sortIndexs,
       final List<NotificationModel>? notificationList}) = _$InitialImpl;
 
   @override
@@ -695,6 +1071,8 @@ abstract class _Initial implements NotificationState {
   int? get totalNotiLength;
   @override
   String? get message;
+  @override
+  List<int> get sortIndexs;
   @override
   List<NotificationModel>? get notificationList;
   @override

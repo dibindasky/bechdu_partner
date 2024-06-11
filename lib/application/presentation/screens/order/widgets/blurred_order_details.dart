@@ -41,7 +41,8 @@ class BlurredOrderDetails extends StatelessWidget {
                 isBlurred: true, productDetails: orderDetail.productDetails)
           ]),
         ),
-        SliderOrderAccepting(orderId: orderDetail.id!)
+        SliderOrderAccepting(
+            orderId: orderDetail.id!, showError: orderDetail.notification)
       ],
     );
   }

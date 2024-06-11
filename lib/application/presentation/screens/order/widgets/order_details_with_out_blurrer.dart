@@ -1,5 +1,6 @@
 import 'package:bechdu_partner/application/business_logic/pickup_partner/pickup_partner_bloc.dart';
 import 'package:bechdu_partner/application/presentation/screens/order/widgets/device_detail_orders_session.dart';
+import 'package:bechdu_partner/application/presentation/screens/order/widgets/download_invoice_order.dart';
 import 'package:bechdu_partner/application/presentation/screens/order/widgets/order_detail_image_and_price_session.dart';
 import 'package:bechdu_partner/application/presentation/screens/order/widgets/order_detail_top_potion.dart';
 import 'package:bechdu_partner/application/presentation/screens/order/widgets/partner_detal_tile_order_detail.dart';
@@ -53,6 +54,10 @@ class OrderDetailWithoutBlur extends StatelessWidget {
                 )
               : kEmpty,
           partner ? kHeight20 : kEmpty,
+          partner && orderDetail.status == 'Completed'
+              ? const OrderInvoiceDownload()
+              : kEmpty,
+          partner && orderDetail.status == 'Completed' ? kHeight20 : kEmpty,
           PickUpDetailOrderTile(
             isBlurred: orderDetail.status == 'cancelled',
             isUser: true,

@@ -46,7 +46,12 @@ class PickUpDetailOrderTile extends StatelessWidget {
                   show: isBlurred,
                   child: Wrap(
                     children: [
-                      Text(isUser ? 'Device Owner  ' :name==''?'Pickup ( Not Assigned )': 'Pickup Partner  ',
+                      Text(
+                          isUser
+                              ? 'Device Owner  '
+                              : name == ''
+                                  ? 'Pickup ( Not Assigned )'
+                                  : 'Pickup Partner  ',
                           style: textHeadRegular1),
                       Text(name, style: textHeadBold1),
                     ],

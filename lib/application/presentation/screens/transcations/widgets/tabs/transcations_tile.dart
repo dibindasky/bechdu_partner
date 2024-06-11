@@ -55,7 +55,8 @@ class _TranscationListTileState extends State<TranscationListTile> {
                         const Icon(Icons.calendar_month, color: kGreyLight),
                         kWidth10,
                         Expanded(
-                          child: Text(formatDateTime(widget.transcation.timestamp!),
+                          child: Text(
+                              formatDateTime(widget.transcation.timestamp!),
                               softWrap: true,
                               style:
                                   textHeadMedium1.copyWith(color: kGreyLight)),

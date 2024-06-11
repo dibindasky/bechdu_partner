@@ -32,6 +32,8 @@ class ApiEndPoints {
       '/partner/reschedule-order/{orderId}/{partnerPhone}';
   static String getQuestions = '/api/category/fetch-category-name/{category}';
   static String getPrice = '/product/calculate-price';
+  static String getOrderInvoice =
+      '/partner/generate-user-invoice/{partnerPhone}/{orderID}';
 
   // pickup partner managing
   static String addPickupPartner = '/partner/add-pickup-person/{phone}';
@@ -60,4 +62,8 @@ class ApiEndPoints {
 
   // notification
   static String getNotification = '/partner/notifications/{phone}';
+  static String getNotificationDetailOrder =
+      '/partner/get-single-orders/{phone}/{id}';
+  static String changeNotificationStatus =
+      '/partner/notificationStatus/{phone}/{id}';
 }

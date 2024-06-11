@@ -11,7 +11,8 @@ class CustomTextFormField extends StatelessWidget {
       required this.controller,
       required this.hintText,
       this.maxlength,
-      this.keyboardType,this.textCapitalization=TextCapitalization.none,
+      this.keyboardType,
+      this.textCapitalization = TextCapitalization.none,
       this.validate = Validate.none,
       this.borderColor = kGreyLight,
       this.isObscure = false});

@@ -6,6 +6,8 @@ class OrdersEvent with _$OrdersEvent {
       AcceptOrder;
   const factory OrdersEvent.getOrderDetail({required String orderId}) =
       GetOrderDetail;
+  const factory OrdersEvent.getOrderDetailNotification(
+      {required String orderId}) = GetOrderDetailNotification;
   const factory OrdersEvent.cancelOrder(
       {required String orderId, required String reason}) = CancelOrder;
   const factory OrdersEvent.completeOrder(
@@ -32,5 +34,6 @@ class OrdersEvent with _$OrdersEvent {
   const factory OrdersEvent.addDeviceImages() = AddDeviceImages;
   const factory OrdersEvent.removeDeviceImage({required int index}) =
       RemoveDeviceImage;
+  const factory OrdersEvent.downloadOrderInvoice({required String orderId}) = DownloadOrderInvoice;
   const factory OrdersEvent.reset() = Reset;
 }

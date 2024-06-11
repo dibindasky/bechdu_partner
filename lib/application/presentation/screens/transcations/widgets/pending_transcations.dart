@@ -12,7 +12,6 @@ class PendingTranscationSession extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<TranscationBloc, TranscationState>(
       builder: (context, state) {
-        print('manual transcation   =======${state.manuelTranscations}');
         if (state.isLoading) {
           return ShimmerLoader(
               itemCount: 1,

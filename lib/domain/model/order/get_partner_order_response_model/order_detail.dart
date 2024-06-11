@@ -12,6 +12,7 @@ part 'order_detail.g.dart';
 
 @JsonSerializable()
 class OrderDetail {
+  bool notification;
   User? user;
   Payment? payment;
   PickUpDetails? pickUpDetails;
@@ -30,6 +31,7 @@ class OrderDetail {
 
   OrderDetail({
     this.user,
+    this.notification = false,
     this.payment,
     this.pickUpDetails,
     this.productDetails,
@@ -51,6 +53,7 @@ class OrderDetail {
   Map<String, dynamic> toJson() => _$OrderDetailToJson(this);
 
   OrderDetail copyWith({
+    bool? notification,
     User? user,
     Payment? payment,
     PickUpDetails? pickUpDetails,
@@ -67,6 +70,7 @@ class OrderDetail {
     DateTime? updatedAt,
   }) {
     return OrderDetail(
+      notification: notification ?? this.notification,
       user: user ?? this.user,
       payment: payment ?? this.payment,
       pickUpDetails: pickUpDetails ?? this.pickUpDetails,

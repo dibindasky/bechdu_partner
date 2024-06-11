@@ -54,7 +54,8 @@ class PartnerDetailTile extends StatelessWidget {
                   Expanded(
                     child: status == 'cancelled' || status == 'Completed'
                         ? StatusColoredBox(
-                            text: getFirstCapital(status), color: getStatusColor(status))
+                            text: getFirstCapital(status),
+                            color: getStatusColor(status))
                         : StatusColoredBox(
                             text: pickup?.pickUpPersonName != ''
                                 ? 'DeAssign Partner'

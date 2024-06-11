@@ -16,7 +16,6 @@ class ImageGridMaker extends StatefulWidget {
 }
 
 class _ImageGridMakerState extends State<ImageGridMaker> {
-
   @override
   Widget build(BuildContext context) {
     return Expanded(

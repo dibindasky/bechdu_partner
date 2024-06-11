@@ -48,9 +48,9 @@ class RouteGenerator {
                 builder: (ctx) => ScreenCompleteOrder(orderDetail: arguments))
             : _errorScreen();
       case Routes.pdfPage:
-        return arguments is String
+        return arguments is PreviewArguments
             ? MaterialPageRoute(
-                builder: (ctx) => ScreenPdfPreview(base64: arguments))
+                builder: (ctx) => ScreenPdfPreview(argument: arguments))
             : _errorScreen();
       case Routes.profilePage:
         return MaterialPageRoute(builder: (ctx) => const ScreenProfile());

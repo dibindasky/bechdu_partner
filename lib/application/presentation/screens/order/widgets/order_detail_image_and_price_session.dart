@@ -20,7 +20,10 @@ class OrdersDetailImageAndPriceSession extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Material(elevation: 10,borderRadius: BorderRadius.circular(500),shadowColor: kBlack,
+        Material(
+          elevation: 10,
+          borderRadius: BorderRadius.circular(500),
+          shadowColor: kBlack,
           child: CircleAvatar(
             backgroundColor: kWhite,
             radius: sWidth * 0.20,
@@ -46,7 +49,10 @@ class OrdersDetailImageAndPriceSession extends StatelessWidget {
                   ),
                 ]),
               ),
-              Material(elevation: 8,borderRadius: BorderRadius.circular(100),shadowColor: kBlack,
+              Material(
+                elevation: 8,
+                borderRadius: BorderRadius.circular(100),
+                shadowColor: kBlack,
                 child: CircleAvatar(
                   radius: sWidth * 0.025,
                   backgroundImage: const AssetImage(iconNottoCoin),

@@ -82,7 +82,15 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   FutureOr<void> agreePolicy(AgreePolicy event, emit) {
-    emit(state.copyWith(agreePolicy: !state.agreePolicy, message: null));
+    emit(state.copyWith(
+      agreePolicy: !state.agreePolicy,
+      message: null,
+      otpVerificationError: false,
+      hasError: false,
+      agreePolicyError: false,
+      isLoading: false,
+      otpSend: false,
+    ));
   }
 
   FutureOr<void> log(Log event, emit) async {
@@ -103,7 +111,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     final userAgent = await DeviceInformation.getDeviceInformation();
     final token = await NotificationServices().getDeviceToken();
     final model = event.verifyOtpModel.copyWith(deviceToken: token);
-    print(model.toJson());
     final result =
         await authRepo.verifyOtp(verifyOtpModel: model, userAgent: userAgent);
     result.fold((l) {
@@ -118,7 +125,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           message: r.message,
           isLogin: true,
           role: r.role == 'Partner'));
-      print("login response => ${r.toJson()}");
       partner = r.role == 'Partner';
       await SharedPref.setRole(isPartner: r.role == 'Partner');
       await SharedPref.setLogin();

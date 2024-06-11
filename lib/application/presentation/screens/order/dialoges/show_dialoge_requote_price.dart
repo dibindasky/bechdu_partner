@@ -66,7 +66,7 @@ showDialogeRequote(context) {
                           children: [
                             Text('Old Price', style: textHeadBold1),
                             Text(
-                                '₹ ${state.orderDetail?.productDetails?.price??''}',
+                                '₹ ${state.orderDetail?.productDetails?.price ?? ''}',
                                 style: textHeadRegular1)
                           ],
                         ),

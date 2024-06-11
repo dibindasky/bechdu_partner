@@ -6,4 +6,6 @@ class NotificationEvent with _$NotificationEvent {
       GetNotifications;
   const factory NotificationEvent.getNotificationsNext() = GetNotificationsNext;
   const factory NotificationEvent.resetLength() = ResetLength;
+  const factory NotificationEvent.sort(int index) = Sort;
+  const factory NotificationEvent.markAsRead({required String id}) = MarkAsRead;
 }

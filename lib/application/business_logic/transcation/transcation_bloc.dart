@@ -163,6 +163,7 @@ class TranscationBloc extends Bloc<TranscationEvent, TranscationState> {
     emit(state.copyWith(
         gstError: false,
         message: null,
+        invoice: null,
         hasError: false,
         downloading: true,
         downloaded: false));
@@ -175,7 +176,6 @@ class TranscationBloc extends Bloc<TranscationEvent, TranscationState> {
             hasError: true,
             downloading: false,
             message: 'Error while generating invoice')), (r) {
-      // add(TranscationEvent.makePdf(buffer: r.base64String!));
       emit(state.copyWith(
           downloading: false, downloaded: true, invoice: r.base64String));
     });

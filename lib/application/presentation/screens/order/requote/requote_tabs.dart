@@ -12,7 +12,7 @@ class RequoteTabs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<RequoteBloc, RequoteState>(
-      buildWhen: (previous, current) => 
+      buildWhen: (previous, current) =>
           previous.requoteIndex != current.requoteIndex,
       builder: (context, state) {
         return PopScope(

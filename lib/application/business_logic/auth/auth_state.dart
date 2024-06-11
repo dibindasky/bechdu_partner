@@ -18,15 +18,15 @@ class AuthState with _$AuthState {
   }) = _Initial;
 
   factory AuthState.initial() => const AuthState(
-        isLoading: false,
-        hasError: false,
-        role: false,
-        otpSend: false,
-        agreePolicy: true,
-        agreePolicyError: false,
-        otpVerificationError: false,
-        isLogin: false,deleteLoading: false,
-        deleteSuccess: false,
-        deteteOtpSend: false
-      );
+      isLoading: false,
+      hasError: false,
+      role: false,
+      otpSend: false,
+      agreePolicy: true,
+      agreePolicyError: false,
+      otpVerificationError: false,
+      isLogin: false,
+      deleteLoading: false,
+      deleteSuccess: false,
+      deteteOtpSend: false);
 }

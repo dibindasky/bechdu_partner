@@ -9,15 +9,20 @@ class ScreenLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     sizeFinder(context);
-    return const Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            LoginPageFirstHalfContainer(),
-            kHeight20,
-            LoginPageSecondHalf()
-          ],
+    return Scaffold(
+      body: GestureDetector(
+        onTap: () {
+          FocusScope.of(context).unfocus();
+        },
+        child: const SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              LoginPageFirstHalfContainer(),
+              kHeight20,
+              LoginPageSecondHalf()
+            ],
+          ),
         ),
       ),
     );

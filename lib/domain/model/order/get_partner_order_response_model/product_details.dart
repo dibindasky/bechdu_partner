@@ -22,6 +22,7 @@ class ProductDetails {
       this.options,
       this.category}) {
     image = ApiEndPoints.baseUrlImage + image!.replaceAll(' ', '%20');
+    print(image);
   }
 
   factory ProductDetails.fromJson(Map<String, dynamic> json) {

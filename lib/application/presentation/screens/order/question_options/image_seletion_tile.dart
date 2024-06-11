@@ -34,7 +34,7 @@ class _GridTileQuestionState extends State<GridTileQuestion> {
 
   @override
   void didUpdateWidget(covariant GridTileQuestion oldWidget) {
-    if(widget.option.image != oldWidget.option.image){
+    if (widget.option.image != oldWidget.option.image) {
       convertedImg = base64.decode(widget.option.image!);
     }
     super.didUpdateWidget(oldWidget);
