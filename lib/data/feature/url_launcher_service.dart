@@ -28,4 +28,14 @@ class OpenLauncherFeature {
       log(e.toString());
     }
   }
+
+  static Future<void> launchWebPage({required String url})async{
+    if(url.isEmpty)return;
+   try {
+      url_launcher.launchUrl(Uri.parse(url));
+    } catch (e) {
+      log('cannot launch url');
+      log(e.toString());
+    }
+  }
 }

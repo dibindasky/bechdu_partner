@@ -1,8 +1,10 @@
+import 'package:bechdu_partner/application/business_logic/notification/notification_bloc.dart';
 import 'package:bechdu_partner/application/presentation/routes/routes.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:bechdu_partner/domain/model/order/get_partner_order_response_model/order_detail.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class PhoneDetailTile extends StatelessWidget {
   const PhoneDetailTile({
@@ -19,6 +21,9 @@ class PhoneDetailTile extends StatelessWidget {
         FocusScope.of(context).unfocus();
         Navigator.pushNamed(context, Routes.orderScreen,
             arguments: orderDetail);
+        context
+            .read<NotificationBloc>()
+            .add(const NotificationEvent.getNotifications(reset: true));
       },
       child: ClipRRect(
         borderRadius: kRadius5,

@@ -33,6 +33,9 @@ const phoneImageNetwork =
     'https://rukminim2.flixcart.com/image/416/416/kg8avm80/mobile/y/7/n/apple-iphone-12-dummyapplefsn-original-imafwg8dpyjvgg3j.jpeg?q=70&crop=false';
 const urlMapTest = 'https://www.google.com/maps?q=';
 
+const String termsAndConditions = 'https://bechdu.in/about-us';
+const String privacyPolicy = 'https://bechdu.in/about-us';
+
 double sHeight = 900;
 double sWidth = 400;
 

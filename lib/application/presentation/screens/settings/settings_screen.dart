@@ -4,6 +4,7 @@ import 'package:bechdu_partner/application/presentation/utils/animations/ringing
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:bechdu_partner/application/presentation/utils/dialoge/dialoge.dart';
+import 'package:bechdu_partner/data/feature/url_launcher_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -48,6 +49,9 @@ class ScreenSettings extends StatelessWidget {
                   child: Icon(Icons.terminal_sharp),
                 ),
                 title: Text('Terms And Conditions', style: textHeadRegular2),
+                onTap: () {
+                  OpenLauncherFeature.launchWebPage(url: termsAndConditions);
+                },
               ),
               const Divider(),
               // ListTile(
