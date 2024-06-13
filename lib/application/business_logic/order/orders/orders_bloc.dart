@@ -55,12 +55,18 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
     on<CheckErrorCompleteOrder>(checkErrorCompleteOrder);
     on<GetOrderDetail>(getOrderDetail);
     on<GetOrderDetailNotification>(getOrderDetailNotification);
+    on<ChangeNotificationStatusOrder>(changeNotificationStatusOrder);
     on<DownloadOrderInvoice>(downloadOrderInvoice);
     on<Reset>(reset);
   }
 
   FutureOr<void> reset(Reset event, emit) {
     emit(OrdersState.initial());
+  }
+
+  FutureOr<void> changeNotificationStatusOrder(ChangeNotificationStatusOrder event, emit) async{
+    final phone = await SharedPref.getPhone();
+    await _orderRepo.changeNotificationStatusOrder(orderID: event.orderId,phone: phone!);
   }
 
   FutureOr<void> downloadOrderInvoice(DownloadOrderInvoice event, emit) async {

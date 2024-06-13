@@ -43,6 +43,7 @@ mixin _$OrdersEvent {
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
+    required TResult Function(String orderId) changeNotificationStatusOrder,
     required TResult Function() reset,
   }) =>
       throw _privateConstructorUsedError;
@@ -72,6 +73,7 @@ mixin _$OrdersEvent {
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
+    TResult? Function(String orderId)? changeNotificationStatusOrder,
     TResult? Function()? reset,
   }) =>
       throw _privateConstructorUsedError;
@@ -101,6 +103,7 @@ mixin _$OrdersEvent {
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
+    TResult Function(String orderId)? changeNotificationStatusOrder,
     TResult Function()? reset,
     required TResult orElse(),
   }) =>
@@ -131,6 +134,8 @@ mixin _$OrdersEvent {
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
     required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
+    required TResult Function(ChangeNotificationStatusOrder value)
+        changeNotificationStatusOrder,
     required TResult Function(Reset value) reset,
   }) =>
       throw _privateConstructorUsedError;
@@ -159,6 +164,8 @@ mixin _$OrdersEvent {
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult? Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult? Function(Reset value)? reset,
   }) =>
       throw _privateConstructorUsedError;
@@ -187,6 +194,8 @@ mixin _$OrdersEvent {
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) =>
@@ -300,6 +309,7 @@ class _$AcceptOrderImpl implements AcceptOrder {
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
+    required TResult Function(String orderId) changeNotificationStatusOrder,
     required TResult Function() reset,
   }) {
     return acceptOrder(orderId);
@@ -332,6 +342,7 @@ class _$AcceptOrderImpl implements AcceptOrder {
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
+    TResult? Function(String orderId)? changeNotificationStatusOrder,
     TResult? Function()? reset,
   }) {
     return acceptOrder?.call(orderId);
@@ -364,6 +375,7 @@ class _$AcceptOrderImpl implements AcceptOrder {
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
+    TResult Function(String orderId)? changeNotificationStatusOrder,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -400,6 +412,8 @@ class _$AcceptOrderImpl implements AcceptOrder {
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
     required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
+    required TResult Function(ChangeNotificationStatusOrder value)
+        changeNotificationStatusOrder,
     required TResult Function(Reset value) reset,
   }) {
     return acceptOrder(this);
@@ -431,6 +445,8 @@ class _$AcceptOrderImpl implements AcceptOrder {
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult? Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult? Function(Reset value)? reset,
   }) {
     return acceptOrder?.call(this);
@@ -462,6 +478,8 @@ class _$AcceptOrderImpl implements AcceptOrder {
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -572,6 +590,7 @@ class _$GetOrderDetailImpl implements GetOrderDetail {
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
+    required TResult Function(String orderId) changeNotificationStatusOrder,
     required TResult Function() reset,
   }) {
     return getOrderDetail(orderId);
@@ -604,6 +623,7 @@ class _$GetOrderDetailImpl implements GetOrderDetail {
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
+    TResult? Function(String orderId)? changeNotificationStatusOrder,
     TResult? Function()? reset,
   }) {
     return getOrderDetail?.call(orderId);
@@ -636,6 +656,7 @@ class _$GetOrderDetailImpl implements GetOrderDetail {
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
+    TResult Function(String orderId)? changeNotificationStatusOrder,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -672,6 +693,8 @@ class _$GetOrderDetailImpl implements GetOrderDetail {
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
     required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
+    required TResult Function(ChangeNotificationStatusOrder value)
+        changeNotificationStatusOrder,
     required TResult Function(Reset value) reset,
   }) {
     return getOrderDetail(this);
@@ -703,6 +726,8 @@ class _$GetOrderDetailImpl implements GetOrderDetail {
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult? Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult? Function(Reset value)? reset,
   }) {
     return getOrderDetail?.call(this);
@@ -734,6 +759,8 @@ class _$GetOrderDetailImpl implements GetOrderDetail {
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -846,6 +873,7 @@ class _$GetOrderDetailNotificationImpl implements GetOrderDetailNotification {
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
+    required TResult Function(String orderId) changeNotificationStatusOrder,
     required TResult Function() reset,
   }) {
     return getOrderDetailNotification(orderId);
@@ -878,6 +906,7 @@ class _$GetOrderDetailNotificationImpl implements GetOrderDetailNotification {
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
+    TResult? Function(String orderId)? changeNotificationStatusOrder,
     TResult? Function()? reset,
   }) {
     return getOrderDetailNotification?.call(orderId);
@@ -910,6 +939,7 @@ class _$GetOrderDetailNotificationImpl implements GetOrderDetailNotification {
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
+    TResult Function(String orderId)? changeNotificationStatusOrder,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -946,6 +976,8 @@ class _$GetOrderDetailNotificationImpl implements GetOrderDetailNotification {
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
     required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
+    required TResult Function(ChangeNotificationStatusOrder value)
+        changeNotificationStatusOrder,
     required TResult Function(Reset value) reset,
   }) {
     return getOrderDetailNotification(this);
@@ -977,6 +1009,8 @@ class _$GetOrderDetailNotificationImpl implements GetOrderDetailNotification {
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult? Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult? Function(Reset value)? reset,
   }) {
     return getOrderDetailNotification?.call(this);
@@ -1008,6 +1042,8 @@ class _$GetOrderDetailNotificationImpl implements GetOrderDetailNotification {
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -1125,6 +1161,7 @@ class _$CancelOrderImpl implements CancelOrder {
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
+    required TResult Function(String orderId) changeNotificationStatusOrder,
     required TResult Function() reset,
   }) {
     return cancelOrder(orderId, reason);
@@ -1157,6 +1194,7 @@ class _$CancelOrderImpl implements CancelOrder {
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
+    TResult? Function(String orderId)? changeNotificationStatusOrder,
     TResult? Function()? reset,
   }) {
     return cancelOrder?.call(orderId, reason);
@@ -1189,6 +1227,7 @@ class _$CancelOrderImpl implements CancelOrder {
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
+    TResult Function(String orderId)? changeNotificationStatusOrder,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -1225,6 +1264,8 @@ class _$CancelOrderImpl implements CancelOrder {
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
     required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
+    required TResult Function(ChangeNotificationStatusOrder value)
+        changeNotificationStatusOrder,
     required TResult Function(Reset value) reset,
   }) {
     return cancelOrder(this);
@@ -1256,6 +1297,8 @@ class _$CancelOrderImpl implements CancelOrder {
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult? Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult? Function(Reset value)? reset,
   }) {
     return cancelOrder?.call(this);
@@ -1287,6 +1330,8 @@ class _$CancelOrderImpl implements CancelOrder {
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -1408,6 +1453,7 @@ class _$CompleteOrderImpl implements CompleteOrder {
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
+    required TResult Function(String orderId) changeNotificationStatusOrder,
     required TResult Function() reset,
   }) {
     return completeOrder(orderId, completeOrderModel);
@@ -1440,6 +1486,7 @@ class _$CompleteOrderImpl implements CompleteOrder {
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
+    TResult? Function(String orderId)? changeNotificationStatusOrder,
     TResult? Function()? reset,
   }) {
     return completeOrder?.call(orderId, completeOrderModel);
@@ -1472,6 +1519,7 @@ class _$CompleteOrderImpl implements CompleteOrder {
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
+    TResult Function(String orderId)? changeNotificationStatusOrder,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -1508,6 +1556,8 @@ class _$CompleteOrderImpl implements CompleteOrder {
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
     required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
+    required TResult Function(ChangeNotificationStatusOrder value)
+        changeNotificationStatusOrder,
     required TResult Function(Reset value) reset,
   }) {
     return completeOrder(this);
@@ -1539,6 +1589,8 @@ class _$CompleteOrderImpl implements CompleteOrder {
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult? Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult? Function(Reset value)? reset,
   }) {
     return completeOrder?.call(this);
@@ -1570,6 +1622,8 @@ class _$CompleteOrderImpl implements CompleteOrder {
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -1682,6 +1736,7 @@ class _$GetNewOrderImpl implements GetNewOrder {
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
+    required TResult Function(String orderId) changeNotificationStatusOrder,
     required TResult Function() reset,
   }) {
     return getNewOrder(call);
@@ -1714,6 +1769,7 @@ class _$GetNewOrderImpl implements GetNewOrder {
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
+    TResult? Function(String orderId)? changeNotificationStatusOrder,
     TResult? Function()? reset,
   }) {
     return getNewOrder?.call(call);
@@ -1746,6 +1802,7 @@ class _$GetNewOrderImpl implements GetNewOrder {
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
+    TResult Function(String orderId)? changeNotificationStatusOrder,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -1782,6 +1839,8 @@ class _$GetNewOrderImpl implements GetNewOrder {
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
     required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
+    required TResult Function(ChangeNotificationStatusOrder value)
+        changeNotificationStatusOrder,
     required TResult Function(Reset value) reset,
   }) {
     return getNewOrder(this);
@@ -1813,6 +1872,8 @@ class _$GetNewOrderImpl implements GetNewOrder {
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult? Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult? Function(Reset value)? reset,
   }) {
     return getNewOrder?.call(this);
@@ -1844,6 +1905,8 @@ class _$GetNewOrderImpl implements GetNewOrder {
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -1953,6 +2016,7 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
+    required TResult Function(String orderId) changeNotificationStatusOrder,
     required TResult Function() reset,
   }) {
     return getPartnerOrders(call);
@@ -1985,6 +2049,7 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
+    TResult? Function(String orderId)? changeNotificationStatusOrder,
     TResult? Function()? reset,
   }) {
     return getPartnerOrders?.call(call);
@@ -2017,6 +2082,7 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
+    TResult Function(String orderId)? changeNotificationStatusOrder,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -2053,6 +2119,8 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
     required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
+    required TResult Function(ChangeNotificationStatusOrder value)
+        changeNotificationStatusOrder,
     required TResult Function(Reset value) reset,
   }) {
     return getPartnerOrders(this);
@@ -2084,6 +2152,8 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult? Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult? Function(Reset value)? reset,
   }) {
     return getPartnerOrders?.call(this);
@@ -2115,6 +2185,8 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -2225,6 +2297,7 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
+    required TResult Function(String orderId) changeNotificationStatusOrder,
     required TResult Function() reset,
   }) {
     return removePickupPartner(orderId);
@@ -2257,6 +2330,7 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
+    TResult? Function(String orderId)? changeNotificationStatusOrder,
     TResult? Function()? reset,
   }) {
     return removePickupPartner?.call(orderId);
@@ -2289,6 +2363,7 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
+    TResult Function(String orderId)? changeNotificationStatusOrder,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -2325,6 +2400,8 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
     required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
+    required TResult Function(ChangeNotificationStatusOrder value)
+        changeNotificationStatusOrder,
     required TResult Function(Reset value) reset,
   }) {
     return removePickupPartner(this);
@@ -2356,6 +2433,8 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult? Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult? Function(Reset value)? reset,
   }) {
     return removePickupPartner?.call(this);
@@ -2387,6 +2466,8 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -2471,6 +2552,7 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
+    required TResult Function(String orderId) changeNotificationStatusOrder,
     required TResult Function() reset,
   }) {
     return refresPartnerOrders();
@@ -2503,6 +2585,7 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
+    TResult? Function(String orderId)? changeNotificationStatusOrder,
     TResult? Function()? reset,
   }) {
     return refresPartnerOrders?.call();
@@ -2535,6 +2618,7 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
+    TResult Function(String orderId)? changeNotificationStatusOrder,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -2571,6 +2655,8 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
     required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
+    required TResult Function(ChangeNotificationStatusOrder value)
+        changeNotificationStatusOrder,
     required TResult Function(Reset value) reset,
   }) {
     return refresPartnerOrders(this);
@@ -2602,6 +2688,8 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult? Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult? Function(Reset value)? reset,
   }) {
     return refresPartnerOrders?.call(this);
@@ -2633,6 +2721,8 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -2710,6 +2800,7 @@ class _$RefreshNewOrderImpl implements RefreshNewOrder {
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
+    required TResult Function(String orderId) changeNotificationStatusOrder,
     required TResult Function() reset,
   }) {
     return refreshNewOrder();
@@ -2742,6 +2833,7 @@ class _$RefreshNewOrderImpl implements RefreshNewOrder {
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
+    TResult? Function(String orderId)? changeNotificationStatusOrder,
     TResult? Function()? reset,
   }) {
     return refreshNewOrder?.call();
@@ -2774,6 +2866,7 @@ class _$RefreshNewOrderImpl implements RefreshNewOrder {
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
+    TResult Function(String orderId)? changeNotificationStatusOrder,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -2810,6 +2903,8 @@ class _$RefreshNewOrderImpl implements RefreshNewOrder {
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
     required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
+    required TResult Function(ChangeNotificationStatusOrder value)
+        changeNotificationStatusOrder,
     required TResult Function(Reset value) reset,
   }) {
     return refreshNewOrder(this);
@@ -2841,6 +2936,8 @@ class _$RefreshNewOrderImpl implements RefreshNewOrder {
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult? Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult? Function(Reset value)? reset,
   }) {
     return refreshNewOrder?.call(this);
@@ -2872,6 +2969,8 @@ class _$RefreshNewOrderImpl implements RefreshNewOrder {
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -2975,6 +3074,7 @@ class _$ChangeTabImpl implements ChangeTab {
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
+    required TResult Function(String orderId) changeNotificationStatusOrder,
     required TResult Function() reset,
   }) {
     return changeTab(tab);
@@ -3007,6 +3107,7 @@ class _$ChangeTabImpl implements ChangeTab {
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
+    TResult? Function(String orderId)? changeNotificationStatusOrder,
     TResult? Function()? reset,
   }) {
     return changeTab?.call(tab);
@@ -3039,6 +3140,7 @@ class _$ChangeTabImpl implements ChangeTab {
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
+    TResult Function(String orderId)? changeNotificationStatusOrder,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -3075,6 +3177,8 @@ class _$ChangeTabImpl implements ChangeTab {
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
     required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
+    required TResult Function(ChangeNotificationStatusOrder value)
+        changeNotificationStatusOrder,
     required TResult Function(Reset value) reset,
   }) {
     return changeTab(this);
@@ -3106,6 +3210,8 @@ class _$ChangeTabImpl implements ChangeTab {
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult? Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult? Function(Reset value)? reset,
   }) {
     return changeTab?.call(this);
@@ -3137,6 +3243,8 @@ class _$ChangeTabImpl implements ChangeTab {
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -3256,6 +3364,7 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
+    required TResult Function(String orderId) changeNotificationStatusOrder,
     required TResult Function() reset,
   }) {
     return changePickupPartner(pickUpPerson, orderId);
@@ -3288,6 +3397,7 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
+    TResult? Function(String orderId)? changeNotificationStatusOrder,
     TResult? Function()? reset,
   }) {
     return changePickupPartner?.call(pickUpPerson, orderId);
@@ -3320,6 +3430,7 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
+    TResult Function(String orderId)? changeNotificationStatusOrder,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -3356,6 +3467,8 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
     required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
+    required TResult Function(ChangeNotificationStatusOrder value)
+        changeNotificationStatusOrder,
     required TResult Function(Reset value) reset,
   }) {
     return changePickupPartner(this);
@@ -3387,6 +3500,8 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult? Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult? Function(Reset value)? reset,
   }) {
     return changePickupPartner?.call(this);
@@ -3418,6 +3533,8 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -3506,6 +3623,7 @@ class _$CheckErrorCompleteOrderImpl implements CheckErrorCompleteOrder {
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
+    required TResult Function(String orderId) changeNotificationStatusOrder,
     required TResult Function() reset,
   }) {
     return checkErrorCompleteOrder();
@@ -3538,6 +3656,7 @@ class _$CheckErrorCompleteOrderImpl implements CheckErrorCompleteOrder {
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
+    TResult? Function(String orderId)? changeNotificationStatusOrder,
     TResult? Function()? reset,
   }) {
     return checkErrorCompleteOrder?.call();
@@ -3570,6 +3689,7 @@ class _$CheckErrorCompleteOrderImpl implements CheckErrorCompleteOrder {
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
+    TResult Function(String orderId)? changeNotificationStatusOrder,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -3606,6 +3726,8 @@ class _$CheckErrorCompleteOrderImpl implements CheckErrorCompleteOrder {
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
     required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
+    required TResult Function(ChangeNotificationStatusOrder value)
+        changeNotificationStatusOrder,
     required TResult Function(Reset value) reset,
   }) {
     return checkErrorCompleteOrder(this);
@@ -3637,6 +3759,8 @@ class _$CheckErrorCompleteOrderImpl implements CheckErrorCompleteOrder {
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult? Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult? Function(Reset value)? reset,
   }) {
     return checkErrorCompleteOrder?.call(this);
@@ -3668,6 +3792,8 @@ class _$CheckErrorCompleteOrderImpl implements CheckErrorCompleteOrder {
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -3745,6 +3871,7 @@ class _$AddDiviceBillImpl implements AddDiviceBill {
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
+    required TResult Function(String orderId) changeNotificationStatusOrder,
     required TResult Function() reset,
   }) {
     return addDiviceBill();
@@ -3777,6 +3904,7 @@ class _$AddDiviceBillImpl implements AddDiviceBill {
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
+    TResult? Function(String orderId)? changeNotificationStatusOrder,
     TResult? Function()? reset,
   }) {
     return addDiviceBill?.call();
@@ -3809,6 +3937,7 @@ class _$AddDiviceBillImpl implements AddDiviceBill {
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
+    TResult Function(String orderId)? changeNotificationStatusOrder,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -3845,6 +3974,8 @@ class _$AddDiviceBillImpl implements AddDiviceBill {
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
     required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
+    required TResult Function(ChangeNotificationStatusOrder value)
+        changeNotificationStatusOrder,
     required TResult Function(Reset value) reset,
   }) {
     return addDiviceBill(this);
@@ -3876,6 +4007,8 @@ class _$AddDiviceBillImpl implements AddDiviceBill {
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult? Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult? Function(Reset value)? reset,
   }) {
     return addDiviceBill?.call(this);
@@ -3907,6 +4040,8 @@ class _$AddDiviceBillImpl implements AddDiviceBill {
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -3984,6 +4119,7 @@ class _$RemoveDiviceBillImpl implements RemoveDiviceBill {
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
+    required TResult Function(String orderId) changeNotificationStatusOrder,
     required TResult Function() reset,
   }) {
     return removeDiviceBill();
@@ -4016,6 +4152,7 @@ class _$RemoveDiviceBillImpl implements RemoveDiviceBill {
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
+    TResult? Function(String orderId)? changeNotificationStatusOrder,
     TResult? Function()? reset,
   }) {
     return removeDiviceBill?.call();
@@ -4048,6 +4185,7 @@ class _$RemoveDiviceBillImpl implements RemoveDiviceBill {
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
+    TResult Function(String orderId)? changeNotificationStatusOrder,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -4084,6 +4222,8 @@ class _$RemoveDiviceBillImpl implements RemoveDiviceBill {
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
     required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
+    required TResult Function(ChangeNotificationStatusOrder value)
+        changeNotificationStatusOrder,
     required TResult Function(Reset value) reset,
   }) {
     return removeDiviceBill(this);
@@ -4115,6 +4255,8 @@ class _$RemoveDiviceBillImpl implements RemoveDiviceBill {
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult? Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult? Function(Reset value)? reset,
   }) {
     return removeDiviceBill?.call(this);
@@ -4146,6 +4288,8 @@ class _$RemoveDiviceBillImpl implements RemoveDiviceBill {
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -4223,6 +4367,7 @@ class _$AddImeiImageImpl implements AddImeiImage {
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
+    required TResult Function(String orderId) changeNotificationStatusOrder,
     required TResult Function() reset,
   }) {
     return addImeiImage();
@@ -4255,6 +4400,7 @@ class _$AddImeiImageImpl implements AddImeiImage {
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
+    TResult? Function(String orderId)? changeNotificationStatusOrder,
     TResult? Function()? reset,
   }) {
     return addImeiImage?.call();
@@ -4287,6 +4433,7 @@ class _$AddImeiImageImpl implements AddImeiImage {
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
+    TResult Function(String orderId)? changeNotificationStatusOrder,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -4323,6 +4470,8 @@ class _$AddImeiImageImpl implements AddImeiImage {
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
     required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
+    required TResult Function(ChangeNotificationStatusOrder value)
+        changeNotificationStatusOrder,
     required TResult Function(Reset value) reset,
   }) {
     return addImeiImage(this);
@@ -4354,6 +4503,8 @@ class _$AddImeiImageImpl implements AddImeiImage {
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult? Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult? Function(Reset value)? reset,
   }) {
     return addImeiImage?.call(this);
@@ -4385,6 +4536,8 @@ class _$AddImeiImageImpl implements AddImeiImage {
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -4462,6 +4615,7 @@ class _$RemoveImeiImageImpl implements RemoveImeiImage {
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
+    required TResult Function(String orderId) changeNotificationStatusOrder,
     required TResult Function() reset,
   }) {
     return removeImeiImage();
@@ -4494,6 +4648,7 @@ class _$RemoveImeiImageImpl implements RemoveImeiImage {
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
+    TResult? Function(String orderId)? changeNotificationStatusOrder,
     TResult? Function()? reset,
   }) {
     return removeImeiImage?.call();
@@ -4526,6 +4681,7 @@ class _$RemoveImeiImageImpl implements RemoveImeiImage {
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
+    TResult Function(String orderId)? changeNotificationStatusOrder,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -4562,6 +4718,8 @@ class _$RemoveImeiImageImpl implements RemoveImeiImage {
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
     required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
+    required TResult Function(ChangeNotificationStatusOrder value)
+        changeNotificationStatusOrder,
     required TResult Function(Reset value) reset,
   }) {
     return removeImeiImage(this);
@@ -4593,6 +4751,8 @@ class _$RemoveImeiImageImpl implements RemoveImeiImage {
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult? Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult? Function(Reset value)? reset,
   }) {
     return removeImeiImage?.call(this);
@@ -4624,6 +4784,8 @@ class _$RemoveImeiImageImpl implements RemoveImeiImage {
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -4701,6 +4863,7 @@ class _$AddIdCardImageImpl implements AddIdCardImage {
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
+    required TResult Function(String orderId) changeNotificationStatusOrder,
     required TResult Function() reset,
   }) {
     return addIdCardImage();
@@ -4733,6 +4896,7 @@ class _$AddIdCardImageImpl implements AddIdCardImage {
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
+    TResult? Function(String orderId)? changeNotificationStatusOrder,
     TResult? Function()? reset,
   }) {
     return addIdCardImage?.call();
@@ -4765,6 +4929,7 @@ class _$AddIdCardImageImpl implements AddIdCardImage {
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
+    TResult Function(String orderId)? changeNotificationStatusOrder,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -4801,6 +4966,8 @@ class _$AddIdCardImageImpl implements AddIdCardImage {
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
     required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
+    required TResult Function(ChangeNotificationStatusOrder value)
+        changeNotificationStatusOrder,
     required TResult Function(Reset value) reset,
   }) {
     return addIdCardImage(this);
@@ -4832,6 +4999,8 @@ class _$AddIdCardImageImpl implements AddIdCardImage {
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult? Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult? Function(Reset value)? reset,
   }) {
     return addIdCardImage?.call(this);
@@ -4863,6 +5032,8 @@ class _$AddIdCardImageImpl implements AddIdCardImage {
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -4940,6 +5111,7 @@ class _$RemoveIdCardImageImpl implements RemoveIdCardImage {
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
+    required TResult Function(String orderId) changeNotificationStatusOrder,
     required TResult Function() reset,
   }) {
     return removeIdCardImage();
@@ -4972,6 +5144,7 @@ class _$RemoveIdCardImageImpl implements RemoveIdCardImage {
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
+    TResult? Function(String orderId)? changeNotificationStatusOrder,
     TResult? Function()? reset,
   }) {
     return removeIdCardImage?.call();
@@ -5004,6 +5177,7 @@ class _$RemoveIdCardImageImpl implements RemoveIdCardImage {
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
+    TResult Function(String orderId)? changeNotificationStatusOrder,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -5040,6 +5214,8 @@ class _$RemoveIdCardImageImpl implements RemoveIdCardImage {
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
     required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
+    required TResult Function(ChangeNotificationStatusOrder value)
+        changeNotificationStatusOrder,
     required TResult Function(Reset value) reset,
   }) {
     return removeIdCardImage(this);
@@ -5071,6 +5247,8 @@ class _$RemoveIdCardImageImpl implements RemoveIdCardImage {
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult? Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult? Function(Reset value)? reset,
   }) {
     return removeIdCardImage?.call(this);
@@ -5102,6 +5280,8 @@ class _$RemoveIdCardImageImpl implements RemoveIdCardImage {
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -5179,6 +5359,7 @@ class _$AddDeviceImagesImpl implements AddDeviceImages {
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
+    required TResult Function(String orderId) changeNotificationStatusOrder,
     required TResult Function() reset,
   }) {
     return addDeviceImages();
@@ -5211,6 +5392,7 @@ class _$AddDeviceImagesImpl implements AddDeviceImages {
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
+    TResult? Function(String orderId)? changeNotificationStatusOrder,
     TResult? Function()? reset,
   }) {
     return addDeviceImages?.call();
@@ -5243,6 +5425,7 @@ class _$AddDeviceImagesImpl implements AddDeviceImages {
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
+    TResult Function(String orderId)? changeNotificationStatusOrder,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -5279,6 +5462,8 @@ class _$AddDeviceImagesImpl implements AddDeviceImages {
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
     required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
+    required TResult Function(ChangeNotificationStatusOrder value)
+        changeNotificationStatusOrder,
     required TResult Function(Reset value) reset,
   }) {
     return addDeviceImages(this);
@@ -5310,6 +5495,8 @@ class _$AddDeviceImagesImpl implements AddDeviceImages {
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult? Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult? Function(Reset value)? reset,
   }) {
     return addDeviceImages?.call(this);
@@ -5341,6 +5528,8 @@ class _$AddDeviceImagesImpl implements AddDeviceImages {
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -5445,6 +5634,7 @@ class _$RemoveDeviceImageImpl implements RemoveDeviceImage {
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
+    required TResult Function(String orderId) changeNotificationStatusOrder,
     required TResult Function() reset,
   }) {
     return removeDeviceImage(index);
@@ -5477,6 +5667,7 @@ class _$RemoveDeviceImageImpl implements RemoveDeviceImage {
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
+    TResult? Function(String orderId)? changeNotificationStatusOrder,
     TResult? Function()? reset,
   }) {
     return removeDeviceImage?.call(index);
@@ -5509,6 +5700,7 @@ class _$RemoveDeviceImageImpl implements RemoveDeviceImage {
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
+    TResult Function(String orderId)? changeNotificationStatusOrder,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -5545,6 +5737,8 @@ class _$RemoveDeviceImageImpl implements RemoveDeviceImage {
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
     required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
+    required TResult Function(ChangeNotificationStatusOrder value)
+        changeNotificationStatusOrder,
     required TResult Function(Reset value) reset,
   }) {
     return removeDeviceImage(this);
@@ -5576,6 +5770,8 @@ class _$RemoveDeviceImageImpl implements RemoveDeviceImage {
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult? Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult? Function(Reset value)? reset,
   }) {
     return removeDeviceImage?.call(this);
@@ -5607,6 +5803,8 @@ class _$RemoveDeviceImageImpl implements RemoveDeviceImage {
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -5718,6 +5916,7 @@ class _$DownloadOrderInvoiceImpl implements DownloadOrderInvoice {
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
+    required TResult Function(String orderId) changeNotificationStatusOrder,
     required TResult Function() reset,
   }) {
     return downloadOrderInvoice(orderId);
@@ -5750,6 +5949,7 @@ class _$DownloadOrderInvoiceImpl implements DownloadOrderInvoice {
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
+    TResult? Function(String orderId)? changeNotificationStatusOrder,
     TResult? Function()? reset,
   }) {
     return downloadOrderInvoice?.call(orderId);
@@ -5782,6 +5982,7 @@ class _$DownloadOrderInvoiceImpl implements DownloadOrderInvoice {
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
+    TResult Function(String orderId)? changeNotificationStatusOrder,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -5818,6 +6019,8 @@ class _$DownloadOrderInvoiceImpl implements DownloadOrderInvoice {
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
     required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
+    required TResult Function(ChangeNotificationStatusOrder value)
+        changeNotificationStatusOrder,
     required TResult Function(Reset value) reset,
   }) {
     return downloadOrderInvoice(this);
@@ -5849,6 +6052,8 @@ class _$DownloadOrderInvoiceImpl implements DownloadOrderInvoice {
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult? Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult? Function(Reset value)? reset,
   }) {
     return downloadOrderInvoice?.call(this);
@@ -5880,6 +6085,8 @@ class _$DownloadOrderInvoiceImpl implements DownloadOrderInvoice {
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
@@ -5897,6 +6104,292 @@ abstract class DownloadOrderInvoice implements OrdersEvent {
   String get orderId;
   @JsonKey(ignore: true)
   _$$DownloadOrderInvoiceImplCopyWith<_$DownloadOrderInvoiceImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ChangeNotificationStatusOrderImplCopyWith<$Res> {
+  factory _$$ChangeNotificationStatusOrderImplCopyWith(
+          _$ChangeNotificationStatusOrderImpl value,
+          $Res Function(_$ChangeNotificationStatusOrderImpl) then) =
+      __$$ChangeNotificationStatusOrderImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String orderId});
+}
+
+/// @nodoc
+class __$$ChangeNotificationStatusOrderImplCopyWithImpl<$Res>
+    extends _$OrdersEventCopyWithImpl<$Res, _$ChangeNotificationStatusOrderImpl>
+    implements _$$ChangeNotificationStatusOrderImplCopyWith<$Res> {
+  __$$ChangeNotificationStatusOrderImplCopyWithImpl(
+      _$ChangeNotificationStatusOrderImpl _value,
+      $Res Function(_$ChangeNotificationStatusOrderImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? orderId = null,
+  }) {
+    return _then(_$ChangeNotificationStatusOrderImpl(
+      orderId: null == orderId
+          ? _value.orderId
+          : orderId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ChangeNotificationStatusOrderImpl
+    implements ChangeNotificationStatusOrder {
+  const _$ChangeNotificationStatusOrderImpl({required this.orderId});
+
+  @override
+  final String orderId;
+
+  @override
+  String toString() {
+    return 'OrdersEvent.changeNotificationStatusOrder(orderId: $orderId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChangeNotificationStatusOrderImpl &&
+            (identical(other.orderId, orderId) || other.orderId == orderId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, orderId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChangeNotificationStatusOrderImplCopyWith<
+          _$ChangeNotificationStatusOrderImpl>
+      get copyWith => __$$ChangeNotificationStatusOrderImplCopyWithImpl<
+          _$ChangeNotificationStatusOrderImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String orderId) acceptOrder,
+    required TResult Function(String orderId) getOrderDetail,
+    required TResult Function(String orderId) getOrderDetailNotification,
+    required TResult Function(String orderId, String reason) cancelOrder,
+    required TResult Function(
+            String orderId, CompleteOrderModel completeOrderModel)
+        completeOrder,
+    required TResult Function(bool call) getNewOrder,
+    required TResult Function(bool call) getPartnerOrders,
+    required TResult Function(String orderId) removePickupPartner,
+    required TResult Function() refresPartnerOrders,
+    required TResult Function() refreshNewOrder,
+    required TResult Function(int tab) changeTab,
+    required TResult Function(PickUpPerson pickUpPerson, String orderId)
+        changePickupPartner,
+    required TResult Function() checkErrorCompleteOrder,
+    required TResult Function() addDiviceBill,
+    required TResult Function() removeDiviceBill,
+    required TResult Function() addImeiImage,
+    required TResult Function() removeImeiImage,
+    required TResult Function() addIdCardImage,
+    required TResult Function() removeIdCardImage,
+    required TResult Function() addDeviceImages,
+    required TResult Function(int index) removeDeviceImage,
+    required TResult Function(String orderId) downloadOrderInvoice,
+    required TResult Function(String orderId) changeNotificationStatusOrder,
+    required TResult Function() reset,
+  }) {
+    return changeNotificationStatusOrder(orderId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String orderId)? acceptOrder,
+    TResult? Function(String orderId)? getOrderDetail,
+    TResult? Function(String orderId)? getOrderDetailNotification,
+    TResult? Function(String orderId, String reason)? cancelOrder,
+    TResult? Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult? Function(bool call)? getNewOrder,
+    TResult? Function(bool call)? getPartnerOrders,
+    TResult? Function(String orderId)? removePickupPartner,
+    TResult? Function()? refresPartnerOrders,
+    TResult? Function()? refreshNewOrder,
+    TResult? Function(int tab)? changeTab,
+    TResult? Function(PickUpPerson pickUpPerson, String orderId)?
+        changePickupPartner,
+    TResult? Function()? checkErrorCompleteOrder,
+    TResult? Function()? addDiviceBill,
+    TResult? Function()? removeDiviceBill,
+    TResult? Function()? addImeiImage,
+    TResult? Function()? removeImeiImage,
+    TResult? Function()? addIdCardImage,
+    TResult? Function()? removeIdCardImage,
+    TResult? Function()? addDeviceImages,
+    TResult? Function(int index)? removeDeviceImage,
+    TResult? Function(String orderId)? downloadOrderInvoice,
+    TResult? Function(String orderId)? changeNotificationStatusOrder,
+    TResult? Function()? reset,
+  }) {
+    return changeNotificationStatusOrder?.call(orderId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String orderId)? acceptOrder,
+    TResult Function(String orderId)? getOrderDetail,
+    TResult Function(String orderId)? getOrderDetailNotification,
+    TResult Function(String orderId, String reason)? cancelOrder,
+    TResult Function(String orderId, CompleteOrderModel completeOrderModel)?
+        completeOrder,
+    TResult Function(bool call)? getNewOrder,
+    TResult Function(bool call)? getPartnerOrders,
+    TResult Function(String orderId)? removePickupPartner,
+    TResult Function()? refresPartnerOrders,
+    TResult Function()? refreshNewOrder,
+    TResult Function(int tab)? changeTab,
+    TResult Function(PickUpPerson pickUpPerson, String orderId)?
+        changePickupPartner,
+    TResult Function()? checkErrorCompleteOrder,
+    TResult Function()? addDiviceBill,
+    TResult Function()? removeDiviceBill,
+    TResult Function()? addImeiImage,
+    TResult Function()? removeImeiImage,
+    TResult Function()? addIdCardImage,
+    TResult Function()? removeIdCardImage,
+    TResult Function()? addDeviceImages,
+    TResult Function(int index)? removeDeviceImage,
+    TResult Function(String orderId)? downloadOrderInvoice,
+    TResult Function(String orderId)? changeNotificationStatusOrder,
+    TResult Function()? reset,
+    required TResult orElse(),
+  }) {
+    if (changeNotificationStatusOrder != null) {
+      return changeNotificationStatusOrder(orderId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AcceptOrder value) acceptOrder,
+    required TResult Function(GetOrderDetail value) getOrderDetail,
+    required TResult Function(GetOrderDetailNotification value)
+        getOrderDetailNotification,
+    required TResult Function(CancelOrder value) cancelOrder,
+    required TResult Function(CompleteOrder value) completeOrder,
+    required TResult Function(GetNewOrder value) getNewOrder,
+    required TResult Function(GetPartnerOrders value) getPartnerOrders,
+    required TResult Function(RemovePickupPartner value) removePickupPartner,
+    required TResult Function(RefresPartnerOrders value) refresPartnerOrders,
+    required TResult Function(RefreshNewOrder value) refreshNewOrder,
+    required TResult Function(ChangeTab value) changeTab,
+    required TResult Function(ChangePickupPartner value) changePickupPartner,
+    required TResult Function(CheckErrorCompleteOrder value)
+        checkErrorCompleteOrder,
+    required TResult Function(AddDiviceBill value) addDiviceBill,
+    required TResult Function(RemoveDiviceBill value) removeDiviceBill,
+    required TResult Function(AddImeiImage value) addImeiImage,
+    required TResult Function(RemoveImeiImage value) removeImeiImage,
+    required TResult Function(AddIdCardImage value) addIdCardImage,
+    required TResult Function(RemoveIdCardImage value) removeIdCardImage,
+    required TResult Function(AddDeviceImages value) addDeviceImages,
+    required TResult Function(RemoveDeviceImage value) removeDeviceImage,
+    required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
+    required TResult Function(ChangeNotificationStatusOrder value)
+        changeNotificationStatusOrder,
+    required TResult Function(Reset value) reset,
+  }) {
+    return changeNotificationStatusOrder(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AcceptOrder value)? acceptOrder,
+    TResult? Function(GetOrderDetail value)? getOrderDetail,
+    TResult? Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
+    TResult? Function(CancelOrder value)? cancelOrder,
+    TResult? Function(CompleteOrder value)? completeOrder,
+    TResult? Function(GetNewOrder value)? getNewOrder,
+    TResult? Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult? Function(RemovePickupPartner value)? removePickupPartner,
+    TResult? Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult? Function(RefreshNewOrder value)? refreshNewOrder,
+    TResult? Function(ChangeTab value)? changeTab,
+    TResult? Function(ChangePickupPartner value)? changePickupPartner,
+    TResult? Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult? Function(AddDiviceBill value)? addDiviceBill,
+    TResult? Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult? Function(AddImeiImage value)? addImeiImage,
+    TResult? Function(RemoveImeiImage value)? removeImeiImage,
+    TResult? Function(AddIdCardImage value)? addIdCardImage,
+    TResult? Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult? Function(AddDeviceImages value)? addDeviceImages,
+    TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult? Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
+    TResult? Function(Reset value)? reset,
+  }) {
+    return changeNotificationStatusOrder?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AcceptOrder value)? acceptOrder,
+    TResult Function(GetOrderDetail value)? getOrderDetail,
+    TResult Function(GetOrderDetailNotification value)?
+        getOrderDetailNotification,
+    TResult Function(CancelOrder value)? cancelOrder,
+    TResult Function(CompleteOrder value)? completeOrder,
+    TResult Function(GetNewOrder value)? getNewOrder,
+    TResult Function(GetPartnerOrders value)? getPartnerOrders,
+    TResult Function(RemovePickupPartner value)? removePickupPartner,
+    TResult Function(RefresPartnerOrders value)? refresPartnerOrders,
+    TResult Function(RefreshNewOrder value)? refreshNewOrder,
+    TResult Function(ChangeTab value)? changeTab,
+    TResult Function(ChangePickupPartner value)? changePickupPartner,
+    TResult Function(CheckErrorCompleteOrder value)? checkErrorCompleteOrder,
+    TResult Function(AddDiviceBill value)? addDiviceBill,
+    TResult Function(RemoveDiviceBill value)? removeDiviceBill,
+    TResult Function(AddImeiImage value)? addImeiImage,
+    TResult Function(RemoveImeiImage value)? removeImeiImage,
+    TResult Function(AddIdCardImage value)? addIdCardImage,
+    TResult Function(RemoveIdCardImage value)? removeIdCardImage,
+    TResult Function(AddDeviceImages value)? addDeviceImages,
+    TResult Function(RemoveDeviceImage value)? removeDeviceImage,
+    TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
+    TResult Function(Reset value)? reset,
+    required TResult orElse(),
+  }) {
+    if (changeNotificationStatusOrder != null) {
+      return changeNotificationStatusOrder(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChangeNotificationStatusOrder implements OrdersEvent {
+  const factory ChangeNotificationStatusOrder({required final String orderId}) =
+      _$ChangeNotificationStatusOrderImpl;
+
+  String get orderId;
+  @JsonKey(ignore: true)
+  _$$ChangeNotificationStatusOrderImplCopyWith<
+          _$ChangeNotificationStatusOrderImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -5963,6 +6456,7 @@ class _$ResetImpl implements Reset {
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
+    required TResult Function(String orderId) changeNotificationStatusOrder,
     required TResult Function() reset,
   }) {
     return reset();
@@ -5995,6 +6489,7 @@ class _$ResetImpl implements Reset {
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
+    TResult? Function(String orderId)? changeNotificationStatusOrder,
     TResult? Function()? reset,
   }) {
     return reset?.call();
@@ -6027,6 +6522,7 @@ class _$ResetImpl implements Reset {
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
+    TResult Function(String orderId)? changeNotificationStatusOrder,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -6063,6 +6559,8 @@ class _$ResetImpl implements Reset {
     required TResult Function(AddDeviceImages value) addDeviceImages,
     required TResult Function(RemoveDeviceImage value) removeDeviceImage,
     required TResult Function(DownloadOrderInvoice value) downloadOrderInvoice,
+    required TResult Function(ChangeNotificationStatusOrder value)
+        changeNotificationStatusOrder,
     required TResult Function(Reset value) reset,
   }) {
     return reset(this);
@@ -6094,6 +6592,8 @@ class _$ResetImpl implements Reset {
     TResult? Function(AddDeviceImages value)? addDeviceImages,
     TResult? Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult? Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult? Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult? Function(Reset value)? reset,
   }) {
     return reset?.call(this);
@@ -6125,6 +6625,8 @@ class _$ResetImpl implements Reset {
     TResult Function(AddDeviceImages value)? addDeviceImages,
     TResult Function(RemoveDeviceImage value)? removeDeviceImage,
     TResult Function(DownloadOrderInvoice value)? downloadOrderInvoice,
+    TResult Function(ChangeNotificationStatusOrder value)?
+        changeNotificationStatusOrder,
     TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {

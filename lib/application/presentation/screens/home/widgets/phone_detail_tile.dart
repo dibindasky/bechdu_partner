@@ -1,4 +1,5 @@
 import 'package:bechdu_partner/application/business_logic/notification/notification_bloc.dart';
+import 'package:bechdu_partner/application/business_logic/order/orders/orders_bloc.dart';
 import 'package:bechdu_partner/application/presentation/routes/routes.dart';
 import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
@@ -24,6 +25,9 @@ class PhoneDetailTile extends StatelessWidget {
         context
             .read<NotificationBloc>()
             .add(const NotificationEvent.getNotifications(reset: true));
+        context.read<OrdersBloc>().add(
+            OrdersEvent.changeNotificationStatusOrder(
+                orderId: orderDetail.id!));
       },
       child: ClipRRect(
         borderRadius: kRadius5,

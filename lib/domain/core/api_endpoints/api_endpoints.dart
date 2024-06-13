@@ -34,6 +34,8 @@ class ApiEndPoints {
   static String getPrice = '/product/calculate-price';
   static String getOrderInvoice =
       '/partner/generate-user-invoice/{partnerPhone}/{orderID}';
+  static String changeNotificationStatusOrder =
+      '/partner/notificationStatus-order/{partnerPhone}/{orderID}';
 
   // pickup partner managing
   static String addPickupPartner = '/partner/add-pickup-person/{phone}';

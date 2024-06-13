@@ -206,7 +206,7 @@ class OrderService implements OrderRepo {
       return Left(Failure(message: errorMessage));
     }
   }
-  
+
   @override
   Future<Either<Failure, InvoiceResponseModel>> downloadOrderInvoice(
       {required String phone, required String id}) async {
@@ -228,6 +228,31 @@ class OrderService implements OrderRepo {
       }
     } catch (e) {
       log('downloadOrderInvoice exception => $e');
+      return Left(Failure(message: errorMessage));
+    }
+  }
+
+  @override
+  Future<Either<Failure, SuccessResponseModel>> changeNotificationStatusOrder(
+      {required String phone, required String orderID}) async {
+    try {
+      final response = await _apiService.put(ApiEndPoints
+          .changeNotificationStatusOrder
+          .replaceFirst('{partnerPhone}', phone)
+          .replaceFirst('{orderID}', orderID));
+      log('changeNotificationStatusOrder success data=> ${response.data}');
+      return Right(SuccessResponseModel());
+    } on DioException catch (e) {
+      try {
+        log('changeNotificationStatusOrder dio exception => $e');
+        ErrorResponseModel error =
+            ErrorResponseModel.fromJson(e.response?.data);
+        return Left(Failure(message: error.error ?? errorMessage));
+      } catch (e) {
+        return Left(Failure(message: errorMessage));
+      }
+    } catch (e) {
+      log('changeNotificationStatusOrder exception => $e');
       return Left(Failure(message: errorMessage));
     }
   }

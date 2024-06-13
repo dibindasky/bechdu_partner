@@ -28,6 +28,8 @@ abstract class OrderRepo {
       {required String phone, required String orderId});
   Future<Either<Failure, OrderDetail>> getOrderDetailNotification(
       {required String phone, required String orderID});
+  Future<Either<Failure, SuccessResponseModel>> changeNotificationStatusOrder(
+      {required String phone, required String orderID});
   Future<Either<Failure, InvoiceResponseModel>> downloadOrderInvoice(
       {required String phone, required String id});
 }
