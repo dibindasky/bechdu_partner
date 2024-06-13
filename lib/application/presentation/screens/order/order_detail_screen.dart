@@ -73,7 +73,9 @@ class ScreenOrderDetail extends StatelessWidget {
                   // color: this.orderDetail.notification
                   //     ? kBluelight
                   //     : getStatusColor(this.orderDetail.status!),
-                  child: SizedBox(width: sWidth, height: sHeight * 1.5),
+                  child: SizedBox(
+                      width: MediaQuery.of(context).size.width,
+                      height: MediaQuery.of(context).size.height * 1.5),
                 ),
               ),
               (state.isLoading || state.orderDetail == null) &&

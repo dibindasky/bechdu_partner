@@ -31,7 +31,8 @@ class RazorpayGateway {
     this.epayModel = epayModel;
     var options = {
       'key': keyId,
-      'amount': amount * 100, // Amount in paise
+      // 'amount': amount * 100, // Amount in paise
+      'amount': 1 * 100, // Amount in paise
       'name': 'Bechdu',
       'description': description,
       "entity": "order",
@@ -57,17 +58,17 @@ class RazorpayGateway {
     try {
       _razorpay.open(options);
     } on PlatformException catch (e) {
-      print('razorpay platform exception');
-      print(e.message);
+      debugPrint('razorpay platform exception');
+      debugPrint(e.message);
     } catch (e) {
-      print('razorpay exception');
-      print(e.toString());
+      debugPrint('razorpay exception');
+      debugPrint(e.toString());
     }
   }
 
   void _handlePaymentSuccess(PaymentSuccessResponse response) {
-    print('=========Payment successful: $response');
-    print('=========Payment successful: ${response.paymentId}');
+    debugPrint('=========Payment successful: $response');
+    debugPrint('=========Payment successful: ${response.paymentId}');
     this.epayModel.paymentId = response.paymentId ?? '';
     context
         .read<TranscationBloc>()
@@ -76,13 +77,13 @@ class RazorpayGateway {
   }
 
   void _handlePaymentError(PaymentFailureResponse response) {
-    print('==========Payment failed: $response');
+    debugPrint('==========Payment failed: $response');
     showSnackBar(context: context, message: 'Payement failed', color: kRedDark);
     Navigator.pop(context);
   }
 
   void _handleExternalWallet(ExternalWalletResponse response) {
-    print('=============External wallet selected: ${response.walletName}');
+    debugPrint('=============External wallet selected: ${response.walletName}');
     showSnackBar(context: context, message: 'Payement failed', color: kRedDark);
     Navigator.pop(context);
   }
