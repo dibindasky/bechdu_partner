@@ -41,6 +41,9 @@ class ScreenSettings extends StatelessWidget {
                   child: Icon(Icons.privacy_tip),
                 ),
                 title: Text('Privacy Poicy', style: textHeadRegular2),
+                onTap: () {
+                  OpenLauncherFeature.launchWebPage(url: privacyPolicy);
+                },
               ),
               const Divider(),
               ListTile(

@@ -5,6 +5,7 @@ import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:bechdu_partner/application/presentation/utils/snackbar/snack_show.dart';
 import 'package:bechdu_partner/application/presentation/widgets/custom_text_form_field.dart';
+import 'package:bechdu_partner/data/feature/url_launcher_service.dart';
 import 'package:bechdu_partner/domain/model/auth/phone_number_model/phone_number_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -60,7 +61,9 @@ class LoginPageSecondHalf extends StatelessWidget {
                       Text('By signing up I agree to the ',
                           style: textHeadMedium1),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          OpenLauncherFeature.launchWebPage(url:termsAndConditions);
+                        },
                         child: Text(
                           'Terms of use ',
                           style: textHeadMedium1.copyWith(color: kBluePrimary),
@@ -68,7 +71,9 @@ class LoginPageSecondHalf extends StatelessWidget {
                       ),
                       Text('and ', style: textHeadMedium1),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                           OpenLauncherFeature.launchWebPage(url:privacyPolicy);
+                        },
                         child: Text(
                           'Privacy Policy.',
                           style: textHeadMedium1.copyWith(color: kBluePrimary),

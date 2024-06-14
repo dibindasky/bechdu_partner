@@ -31,8 +31,8 @@ class RazorpayGateway {
     this.epayModel = epayModel;
     var options = {
       'key': keyId,
-      // 'amount': amount * 100, // Amount in paise
-      'amount': 1 * 100, // Amount in paise
+      'amount': amount * 100, // Amount in paise
+      // 'amount': 1 * 100, // Amount in paise
       'name': 'Bechdu',
       'description': description,
       "entity": "order",

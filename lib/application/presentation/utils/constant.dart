@@ -34,7 +34,7 @@ const phoneImageNetwork =
 const urlMapTest = 'https://www.google.com/maps?q=';
 
 const String termsAndConditions = 'https://bechdu.in/about-us';
-const String privacyPolicy = 'https://bechdu.in/about-us';
+const String privacyPolicy = 'https://bechdu.in/partner/privacy-policy';
 
 double sHeight = 900;
 double sWidth = 400;
