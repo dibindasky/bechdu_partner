@@ -1,3 +1,4 @@
+import 'package:bechdu_partner/application/business_logic/notification/notification_bloc.dart';
 import 'package:bechdu_partner/application/business_logic/order/orders/orders_bloc.dart';
 import 'package:bechdu_partner/application/business_logic/pickup_partner/pickup_partner_bloc.dart';
 import 'package:bechdu_partner/application/presentation/routes/routes.dart';
@@ -67,6 +68,8 @@ class _OrdersHistoryListState extends State<OrdersHistoryList> {
                 context
                     .read<PickupPartnerBloc>()
                     .add(const PickupPartnerEvent.getPartnerProfile());
+                context.read<NotificationBloc>().add(
+                    const NotificationEvent.getNotifications(reset: false));
               }
               context
                   .read<OrdersBloc>()

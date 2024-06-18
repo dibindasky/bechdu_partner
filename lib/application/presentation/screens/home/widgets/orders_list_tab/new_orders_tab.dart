@@ -1,3 +1,4 @@
+import 'package:bechdu_partner/application/business_logic/notification/notification_bloc.dart';
 import 'package:bechdu_partner/application/business_logic/order/orders/orders_bloc.dart';
 import 'package:bechdu_partner/application/business_logic/pickup_partner/pickup_partner_bloc.dart';
 import 'package:bechdu_partner/application/presentation/screens/home/widgets/home_orders_tile.dart';
@@ -61,6 +62,9 @@ class _NewOrdersListState extends State<NewOrdersList> {
               context
                   .read<OrdersBloc>()
                   .add(const OrdersEvent.getPartnerOrders(call: true));
+              context
+                  .read<NotificationBloc>()
+                  .add(const NotificationEvent.getNotifications(reset: false));
             },
             child: ListView.builder(
               controller: controller,
