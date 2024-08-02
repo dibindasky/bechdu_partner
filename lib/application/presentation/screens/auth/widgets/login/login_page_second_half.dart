@@ -62,7 +62,8 @@ class LoginPageSecondHalf extends StatelessWidget {
                           style: textHeadMedium1),
                       InkWell(
                         onTap: () {
-                          OpenLauncherFeature.launchWebPage(url:termsAndConditions);
+                          OpenLauncherFeature.launchWebPage(
+                              url: termsAndConditions);
                         },
                         child: Text(
                           'Terms of use ',
@@ -72,7 +73,7 @@ class LoginPageSecondHalf extends StatelessWidget {
                       Text('and ', style: textHeadMedium1),
                       InkWell(
                         onTap: () {
-                           OpenLauncherFeature.launchWebPage(url:privacyPolicy);
+                          OpenLauncherFeature.launchWebPage(url: privacyPolicy);
                         },
                         child: Text(
                           'Privacy Policy.',

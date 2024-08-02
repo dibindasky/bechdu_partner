@@ -41,7 +41,8 @@ class InvoiceMaker {
     return file.path;
   }
 
-  Future<void> sharePdf(String base64String, String fileName,String text) async {
+  Future<void> sharePdf(
+      String base64String, String fileName, String text) async {
     await Share.shareFiles([await savePdfFile(base64String, fileName)],
         text: text);
   }

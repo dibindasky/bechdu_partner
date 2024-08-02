@@ -10,21 +10,7 @@ import 'package:injectable/injectable.dart';
 class ApiService {
   final Dio _dio;
 
-  ApiService(this._dio) {
-    // dio.options.connectTimeout = const Duration(seconds: 3);
-    // dio.interceptors.add(InterceptorsWrapper(
-    //   onRequest: (options, handler) async {
-    //     final accessToken =
-    //         await SecureStorage.getToken().then((token) => token.accessToken);
-    //     dio.options.headers['Authorization'] = accessToken;
-    //     options.headers['Authorization'] = accessToken;
-    //     log(dio.options.headers);
-    //     log(options.headers);
-    //     return handler.next(options);
-    //   },
-    //   onError: (e, handler) async {},
-    // ));
-  }
+  ApiService(this._dio);
 
   Future<Response<dynamic>> get(
     String url, {

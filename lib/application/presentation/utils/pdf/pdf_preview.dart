@@ -18,7 +18,8 @@ class ScreenPdfPreview extends StatelessWidget {
         actions: [
           GestureDetector(
             onTap: () {
-              InvoiceMaker().sharePdf(argument.base64, argument.fileName, 'argument.fileName invoice');
+              InvoiceMaker().sharePdf(argument.base64, argument.fileName,
+                  'argument.fileName invoice');
             },
             child: const Icon(Icons.share_outlined),
           ),

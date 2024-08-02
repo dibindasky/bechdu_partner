@@ -46,7 +46,8 @@ class _CreditedTranscationsListState extends State<CreditedTranscationsList> {
       listener: (context, state) {
         if (state.downloaded && state.invoice != null) {
           Navigator.pushNamed(context, Routes.pdfPage,
-              arguments: PreviewArguments(base64: state.invoice!, fileName: 'Transcation'));
+              arguments: PreviewArguments(
+                  base64: state.invoice!, fileName: 'Transcation'));
         }
       },
       builder: (context, state) {

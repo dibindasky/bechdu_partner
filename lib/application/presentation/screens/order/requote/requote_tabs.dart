@@ -27,7 +27,7 @@ class _RequoteTabsState extends State<RequoteTabs> {
     super.dispose();
   }
 
-// variable responsible for controller assigning to singlechildscroll and 
+// variable responsible for controller assigning to singlechildscroll and
 // animation start from the second tab
   int check = 0;
 

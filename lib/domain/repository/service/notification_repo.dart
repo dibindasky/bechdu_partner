@@ -9,7 +9,8 @@ abstract class NotificatonRepo {
   Future<Either<Failure, GetNotificationResponseModel>> getNotifications(
       {required String phone, required PageSizeQueryModel pageSizeQueryModel});
   Future<Either<Failure, GetNotificationResponseModel>> getSortNotifications(
-      {required String phone, required NotificationSortQuery notificationQuery});
+      {required String phone,
+      required NotificationSortQuery notificationQuery});
   Future<Either<Failure, SuccessResponseModel>> changeNotificationStatus(
       {required String phone, required String orderID});
 }
