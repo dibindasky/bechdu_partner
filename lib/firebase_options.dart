@@ -51,7 +51,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyDwUL7XyYQpavUu5LO1VVL9c3APVlf68SA',
-    appId: '1:313232559854:android:eeb94378408ef25f86adff',
+    appId: '1:313232559854:android:358980f302cf5de786adff',
     messagingSenderId: '313232559854',
     projectId: 'bechdu-9649a',
     storageBucket: 'bechdu-9649a.appspot.com',
@@ -59,10 +59,10 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyCLto9ZkpxhEXAg2m3xc260I8nuw4RvO60',
-    appId: '1:313232559854:ios:837bcb8ee7bfca6786adff',
+    appId: '1:313232559854:ios:9d009cbe2e80426986adff',
     messagingSenderId: '313232559854',
     projectId: 'bechdu-9649a',
     storageBucket: 'bechdu-9649a.appspot.com',
-    iosBundleId: 'com.example.bechduPartner',
+    iosBundleId: 'com.bechduapp.partner',
   );
 }

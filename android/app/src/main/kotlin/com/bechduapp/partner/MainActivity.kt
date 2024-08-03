@@ -1,4 +1,4 @@
-package com.example.bechdu_partner
+package com.bechduapp.partner
 
 import io.flutter.embedding.android.FlutterActivity
 
