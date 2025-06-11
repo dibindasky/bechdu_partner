@@ -218,8 +218,10 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
   }
 
   FutureOr<void> removeIdCardImage(RemoveIdCardImage event, emit) async {
+    List<ImageModel> images = List.from(state.idCard ?? []);
+    images.removeAt(event.index);
     return emit(state.copyWith(
-        idCard: null,
+        idCard: images,
         downloaded: false,
         orderInvoice: null,
         message: null,
@@ -272,15 +274,17 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
 
   FutureOr<void> addIdCardImage(AddIdCardImage event, emit) async {
     final result = await imagePickerService.pickImage();
-    result.fold(
-        (l) => null,
-        (r) => emit(state.copyWith(
-            downloaded: false,
-            orderInvoice: null,
-            idCard: r,
-            popOrderScreen: false,
-            orderDetailError: false,
-            orderCompletionError: false)));
+    result.fold((l) => null, (r) {
+      List<ImageModel> images = List.from(state.idCard ?? []);
+      images.add(r);
+      return emit(state.copyWith(
+          downloaded: false,
+          orderInvoice: null,
+          idCard: images,
+          popOrderScreen: false,
+          orderDetailError: false,
+          orderCompletionError: false));
+    });
   }
 
   FutureOr<void> addDeviceImages(AddDeviceImages event, emit) async {

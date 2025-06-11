@@ -8,21 +8,20 @@ class DeviceInfo {
   String? imeiNumber;
   String? imeiImage;
   String? deviceBill;
-  String? idCard;
+  List<String>? idCard; // 🔄 Changed from String? to List<String>?
   List<String>? deviceImages;
 
   DeviceInfo({
     this.finalPrice,
     this.imeiNumber,
     this.deviceBill,
-    this.idCard,
+    this.idCard,          // ✅ Updated here
     this.deviceImages,
     this.imeiImage,
   });
 
-  factory DeviceInfo.fromJson(Map<String, dynamic> json) {
-    return _$DeviceInfoFromJson(json);
-  }
+  factory DeviceInfo.fromJson(Map<String, dynamic> json) =>
+      _$DeviceInfoFromJson(json);
 
   Map<String, dynamic> toJson() => _$DeviceInfoToJson(this);
 }

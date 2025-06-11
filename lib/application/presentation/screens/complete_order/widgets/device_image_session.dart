@@ -59,13 +59,12 @@ class DeviceImagesSession extends StatelessWidget {
                     ? AspectRatio(
                         aspectRatio: 1 / .5,
                         child: ListView.separated(
-                          separatorBuilder: (context, index) => kWidth20,
                           scrollDirection: Axis.horizontal,
-                          itemCount: state.deviceImages!.isNotEmpty
-                              ? state.deviceImages!.length + 1
-                              : state.deviceImages!.length,
+                          separatorBuilder: (_, __) => kWidth20,
+                          itemCount:state.deviceImages!.length + 1, // add button + all images
                           itemBuilder: (context, index) {
-                            if (index == state.deviceImages?.length) {
+                            // 📸 Add button always at index 0
+                            if (index == 0) {
                               return InkWell(
                                 onTap: () => context
                                     .read<OrdersBloc>()
@@ -81,33 +80,39 @@ class DeviceImagesSession extends StatelessWidget {
                                 ),
                               );
                             }
+
+                            final actualIndex = index - 1;
                             return Stack(
                               children: [
                                 AspectRatio(
-                                    aspectRatio: .8,
-                                    child: InkWell(
-                                      onTap: () => Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) =>
-                                                ScreenSlidablePhotoGallery(
-                                                    images: state.deviceImages!
-                                                        .map((e) =>
-                                                            e.base64Image)
-                                                        .toList(),
-                                                    initialIndex: index),
-                                          )),
-                                      child: Image.file(
-                                          state.deviceImages![index].fileImage,
-                                          fit: BoxFit.cover),
-                                    )),
+                                  aspectRatio: .8,
+                                  child: InkWell(
+                                    onTap: () => Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            ScreenSlidablePhotoGallery(
+                                          images:state. deviceImages!
+                                              .map((e) => e.base64Image)
+                                              .toList(),
+                                          initialIndex: actualIndex,
+                                        ),
+                                      ),
+                                    ),
+                                    child: Image.file(
+                                     state.deviceImages![actualIndex].fileImage,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
                                 Positioned(
                                   top: 3,
                                   right: 3,
                                   child: InkWell(
                                     onTap: () => context.read<OrdersBloc>().add(
-                                        OrdersEvent.removeDeviceImage(
-                                            index: index)),
+                                          OrdersEvent.removeDeviceImage(
+                                              index: actualIndex),
+                                        ),
                                     child: const CircleAvatar(
                                       backgroundColor: kBluePrimary,
                                       child: Icon(Icons.delete, color: kWhite),

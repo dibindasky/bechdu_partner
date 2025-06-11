@@ -10,7 +10,8 @@ DeviceInfo _$DeviceInfoFromJson(Map<String, dynamic> json) => DeviceInfo(
       finalPrice: json['finalPrice'] as String?,
       imeiNumber: json['imeiNumber'] as String?,
       deviceBill: json['deviceBill'] as String?,
-      idCard: json['idCard'] as String?,
+      idCard:
+          (json['idCard'] as List<dynamic>?)?.map((e) => e as String).toList(),
       deviceImages: (json['deviceImages'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
