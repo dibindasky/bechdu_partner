@@ -39,7 +39,7 @@ mixin _$OrdersEvent {
     required TResult Function() addImeiImage,
     required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
-    required TResult Function() removeIdCardImage,
+    required TResult Function(int index) removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
@@ -69,7 +69,7 @@ mixin _$OrdersEvent {
     TResult? Function()? addImeiImage,
     TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
-    TResult? Function()? removeIdCardImage,
+    TResult? Function(int index)? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
@@ -99,7 +99,7 @@ mixin _$OrdersEvent {
     TResult Function()? addImeiImage,
     TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
-    TResult Function()? removeIdCardImage,
+    TResult Function(int index)? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
@@ -305,7 +305,7 @@ class _$AcceptOrderImpl implements AcceptOrder {
     required TResult Function() addImeiImage,
     required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
-    required TResult Function() removeIdCardImage,
+    required TResult Function(int index) removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
@@ -338,7 +338,7 @@ class _$AcceptOrderImpl implements AcceptOrder {
     TResult? Function()? addImeiImage,
     TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
-    TResult? Function()? removeIdCardImage,
+    TResult? Function(int index)? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
@@ -371,7 +371,7 @@ class _$AcceptOrderImpl implements AcceptOrder {
     TResult Function()? addImeiImage,
     TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
-    TResult Function()? removeIdCardImage,
+    TResult Function(int index)? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
@@ -586,7 +586,7 @@ class _$GetOrderDetailImpl implements GetOrderDetail {
     required TResult Function() addImeiImage,
     required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
-    required TResult Function() removeIdCardImage,
+    required TResult Function(int index) removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
@@ -619,7 +619,7 @@ class _$GetOrderDetailImpl implements GetOrderDetail {
     TResult? Function()? addImeiImage,
     TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
-    TResult? Function()? removeIdCardImage,
+    TResult? Function(int index)? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
@@ -652,7 +652,7 @@ class _$GetOrderDetailImpl implements GetOrderDetail {
     TResult Function()? addImeiImage,
     TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
-    TResult Function()? removeIdCardImage,
+    TResult Function(int index)? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
@@ -869,7 +869,7 @@ class _$GetOrderDetailNotificationImpl implements GetOrderDetailNotification {
     required TResult Function() addImeiImage,
     required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
-    required TResult Function() removeIdCardImage,
+    required TResult Function(int index) removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
@@ -902,7 +902,7 @@ class _$GetOrderDetailNotificationImpl implements GetOrderDetailNotification {
     TResult? Function()? addImeiImage,
     TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
-    TResult? Function()? removeIdCardImage,
+    TResult? Function(int index)? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
@@ -935,7 +935,7 @@ class _$GetOrderDetailNotificationImpl implements GetOrderDetailNotification {
     TResult Function()? addImeiImage,
     TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
-    TResult Function()? removeIdCardImage,
+    TResult Function(int index)? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
@@ -1157,7 +1157,7 @@ class _$CancelOrderImpl implements CancelOrder {
     required TResult Function() addImeiImage,
     required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
-    required TResult Function() removeIdCardImage,
+    required TResult Function(int index) removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
@@ -1190,7 +1190,7 @@ class _$CancelOrderImpl implements CancelOrder {
     TResult? Function()? addImeiImage,
     TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
-    TResult? Function()? removeIdCardImage,
+    TResult? Function(int index)? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
@@ -1223,7 +1223,7 @@ class _$CancelOrderImpl implements CancelOrder {
     TResult Function()? addImeiImage,
     TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
-    TResult Function()? removeIdCardImage,
+    TResult Function(int index)? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
@@ -1449,7 +1449,7 @@ class _$CompleteOrderImpl implements CompleteOrder {
     required TResult Function() addImeiImage,
     required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
-    required TResult Function() removeIdCardImage,
+    required TResult Function(int index) removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
@@ -1482,7 +1482,7 @@ class _$CompleteOrderImpl implements CompleteOrder {
     TResult? Function()? addImeiImage,
     TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
-    TResult? Function()? removeIdCardImage,
+    TResult? Function(int index)? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
@@ -1515,7 +1515,7 @@ class _$CompleteOrderImpl implements CompleteOrder {
     TResult Function()? addImeiImage,
     TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
-    TResult Function()? removeIdCardImage,
+    TResult Function(int index)? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
@@ -1732,7 +1732,7 @@ class _$GetNewOrderImpl implements GetNewOrder {
     required TResult Function() addImeiImage,
     required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
-    required TResult Function() removeIdCardImage,
+    required TResult Function(int index) removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
@@ -1765,7 +1765,7 @@ class _$GetNewOrderImpl implements GetNewOrder {
     TResult? Function()? addImeiImage,
     TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
-    TResult? Function()? removeIdCardImage,
+    TResult? Function(int index)? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
@@ -1798,7 +1798,7 @@ class _$GetNewOrderImpl implements GetNewOrder {
     TResult Function()? addImeiImage,
     TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
-    TResult Function()? removeIdCardImage,
+    TResult Function(int index)? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
@@ -2012,7 +2012,7 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
     required TResult Function() addImeiImage,
     required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
-    required TResult Function() removeIdCardImage,
+    required TResult Function(int index) removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
@@ -2045,7 +2045,7 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
     TResult? Function()? addImeiImage,
     TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
-    TResult? Function()? removeIdCardImage,
+    TResult? Function(int index)? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
@@ -2078,7 +2078,7 @@ class _$GetPartnerOrdersImpl implements GetPartnerOrders {
     TResult Function()? addImeiImage,
     TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
-    TResult Function()? removeIdCardImage,
+    TResult Function(int index)? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
@@ -2293,7 +2293,7 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
     required TResult Function() addImeiImage,
     required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
-    required TResult Function() removeIdCardImage,
+    required TResult Function(int index) removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
@@ -2326,7 +2326,7 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
     TResult? Function()? addImeiImage,
     TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
-    TResult? Function()? removeIdCardImage,
+    TResult? Function(int index)? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
@@ -2359,7 +2359,7 @@ class _$RemovePickupPartnerImpl implements RemovePickupPartner {
     TResult Function()? addImeiImage,
     TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
-    TResult Function()? removeIdCardImage,
+    TResult Function(int index)? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
@@ -2548,7 +2548,7 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
     required TResult Function() addImeiImage,
     required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
-    required TResult Function() removeIdCardImage,
+    required TResult Function(int index) removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
@@ -2581,7 +2581,7 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
     TResult? Function()? addImeiImage,
     TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
-    TResult? Function()? removeIdCardImage,
+    TResult? Function(int index)? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
@@ -2614,7 +2614,7 @@ class _$RefresPartnerOrdersImpl implements RefresPartnerOrders {
     TResult Function()? addImeiImage,
     TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
-    TResult Function()? removeIdCardImage,
+    TResult Function(int index)? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
@@ -2796,7 +2796,7 @@ class _$RefreshNewOrderImpl implements RefreshNewOrder {
     required TResult Function() addImeiImage,
     required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
-    required TResult Function() removeIdCardImage,
+    required TResult Function(int index) removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
@@ -2829,7 +2829,7 @@ class _$RefreshNewOrderImpl implements RefreshNewOrder {
     TResult? Function()? addImeiImage,
     TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
-    TResult? Function()? removeIdCardImage,
+    TResult? Function(int index)? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
@@ -2862,7 +2862,7 @@ class _$RefreshNewOrderImpl implements RefreshNewOrder {
     TResult Function()? addImeiImage,
     TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
-    TResult Function()? removeIdCardImage,
+    TResult Function(int index)? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
@@ -3070,7 +3070,7 @@ class _$ChangeTabImpl implements ChangeTab {
     required TResult Function() addImeiImage,
     required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
-    required TResult Function() removeIdCardImage,
+    required TResult Function(int index) removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
@@ -3103,7 +3103,7 @@ class _$ChangeTabImpl implements ChangeTab {
     TResult? Function()? addImeiImage,
     TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
-    TResult? Function()? removeIdCardImage,
+    TResult? Function(int index)? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
@@ -3136,7 +3136,7 @@ class _$ChangeTabImpl implements ChangeTab {
     TResult Function()? addImeiImage,
     TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
-    TResult Function()? removeIdCardImage,
+    TResult Function(int index)? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
@@ -3360,7 +3360,7 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
     required TResult Function() addImeiImage,
     required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
-    required TResult Function() removeIdCardImage,
+    required TResult Function(int index) removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
@@ -3393,7 +3393,7 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
     TResult? Function()? addImeiImage,
     TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
-    TResult? Function()? removeIdCardImage,
+    TResult? Function(int index)? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
@@ -3426,7 +3426,7 @@ class _$ChangePickupPartnerImpl implements ChangePickupPartner {
     TResult Function()? addImeiImage,
     TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
-    TResult Function()? removeIdCardImage,
+    TResult Function(int index)? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
@@ -3619,7 +3619,7 @@ class _$CheckErrorCompleteOrderImpl implements CheckErrorCompleteOrder {
     required TResult Function() addImeiImage,
     required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
-    required TResult Function() removeIdCardImage,
+    required TResult Function(int index) removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
@@ -3652,7 +3652,7 @@ class _$CheckErrorCompleteOrderImpl implements CheckErrorCompleteOrder {
     TResult? Function()? addImeiImage,
     TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
-    TResult? Function()? removeIdCardImage,
+    TResult? Function(int index)? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
@@ -3685,7 +3685,7 @@ class _$CheckErrorCompleteOrderImpl implements CheckErrorCompleteOrder {
     TResult Function()? addImeiImage,
     TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
-    TResult Function()? removeIdCardImage,
+    TResult Function(int index)? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
@@ -3867,7 +3867,7 @@ class _$AddDiviceBillImpl implements AddDiviceBill {
     required TResult Function() addImeiImage,
     required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
-    required TResult Function() removeIdCardImage,
+    required TResult Function(int index) removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
@@ -3900,7 +3900,7 @@ class _$AddDiviceBillImpl implements AddDiviceBill {
     TResult? Function()? addImeiImage,
     TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
-    TResult? Function()? removeIdCardImage,
+    TResult? Function(int index)? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
@@ -3933,7 +3933,7 @@ class _$AddDiviceBillImpl implements AddDiviceBill {
     TResult Function()? addImeiImage,
     TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
-    TResult Function()? removeIdCardImage,
+    TResult Function(int index)? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
@@ -4115,7 +4115,7 @@ class _$RemoveDiviceBillImpl implements RemoveDiviceBill {
     required TResult Function() addImeiImage,
     required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
-    required TResult Function() removeIdCardImage,
+    required TResult Function(int index) removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
@@ -4148,7 +4148,7 @@ class _$RemoveDiviceBillImpl implements RemoveDiviceBill {
     TResult? Function()? addImeiImage,
     TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
-    TResult? Function()? removeIdCardImage,
+    TResult? Function(int index)? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
@@ -4181,7 +4181,7 @@ class _$RemoveDiviceBillImpl implements RemoveDiviceBill {
     TResult Function()? addImeiImage,
     TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
-    TResult Function()? removeIdCardImage,
+    TResult Function(int index)? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
@@ -4363,7 +4363,7 @@ class _$AddImeiImageImpl implements AddImeiImage {
     required TResult Function() addImeiImage,
     required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
-    required TResult Function() removeIdCardImage,
+    required TResult Function(int index) removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
@@ -4396,7 +4396,7 @@ class _$AddImeiImageImpl implements AddImeiImage {
     TResult? Function()? addImeiImage,
     TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
-    TResult? Function()? removeIdCardImage,
+    TResult? Function(int index)? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
@@ -4429,7 +4429,7 @@ class _$AddImeiImageImpl implements AddImeiImage {
     TResult Function()? addImeiImage,
     TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
-    TResult Function()? removeIdCardImage,
+    TResult Function(int index)? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
@@ -4611,7 +4611,7 @@ class _$RemoveImeiImageImpl implements RemoveImeiImage {
     required TResult Function() addImeiImage,
     required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
-    required TResult Function() removeIdCardImage,
+    required TResult Function(int index) removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
@@ -4644,7 +4644,7 @@ class _$RemoveImeiImageImpl implements RemoveImeiImage {
     TResult? Function()? addImeiImage,
     TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
-    TResult? Function()? removeIdCardImage,
+    TResult? Function(int index)? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
@@ -4677,7 +4677,7 @@ class _$RemoveImeiImageImpl implements RemoveImeiImage {
     TResult Function()? addImeiImage,
     TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
-    TResult Function()? removeIdCardImage,
+    TResult Function(int index)? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
@@ -4859,7 +4859,7 @@ class _$AddIdCardImageImpl implements AddIdCardImage {
     required TResult Function() addImeiImage,
     required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
-    required TResult Function() removeIdCardImage,
+    required TResult Function(int index) removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
@@ -4892,7 +4892,7 @@ class _$AddIdCardImageImpl implements AddIdCardImage {
     TResult? Function()? addImeiImage,
     TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
-    TResult? Function()? removeIdCardImage,
+    TResult? Function(int index)? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
@@ -4925,7 +4925,7 @@ class _$AddIdCardImageImpl implements AddIdCardImage {
     TResult Function()? addImeiImage,
     TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
-    TResult Function()? removeIdCardImage,
+    TResult Function(int index)? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
@@ -5053,6 +5053,8 @@ abstract class _$$RemoveIdCardImageImplCopyWith<$Res> {
   factory _$$RemoveIdCardImageImplCopyWith(_$RemoveIdCardImageImpl value,
           $Res Function(_$RemoveIdCardImageImpl) then) =
       __$$RemoveIdCardImageImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int index});
 }
 
 /// @nodoc
@@ -5062,26 +5064,51 @@ class __$$RemoveIdCardImageImplCopyWithImpl<$Res>
   __$$RemoveIdCardImageImplCopyWithImpl(_$RemoveIdCardImageImpl _value,
       $Res Function(_$RemoveIdCardImageImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? index = null,
+  }) {
+    return _then(_$RemoveIdCardImageImpl(
+      index: null == index
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$RemoveIdCardImageImpl implements RemoveIdCardImage {
-  const _$RemoveIdCardImageImpl();
+  const _$RemoveIdCardImageImpl({required this.index});
+
+  @override
+  final int index;
 
   @override
   String toString() {
-    return 'OrdersEvent.removeIdCardImage()';
+    return 'OrdersEvent.removeIdCardImage(index: $index)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$RemoveIdCardImageImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$RemoveIdCardImageImpl &&
+            (identical(other.index, index) || other.index == index));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, index);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RemoveIdCardImageImplCopyWith<_$RemoveIdCardImageImpl> get copyWith =>
+      __$$RemoveIdCardImageImplCopyWithImpl<_$RemoveIdCardImageImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -5107,14 +5134,14 @@ class _$RemoveIdCardImageImpl implements RemoveIdCardImage {
     required TResult Function() addImeiImage,
     required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
-    required TResult Function() removeIdCardImage,
+    required TResult Function(int index) removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
     required TResult Function(String orderId) changeNotificationStatusOrder,
     required TResult Function() reset,
   }) {
-    return removeIdCardImage();
+    return removeIdCardImage(index);
   }
 
   @override
@@ -5140,14 +5167,14 @@ class _$RemoveIdCardImageImpl implements RemoveIdCardImage {
     TResult? Function()? addImeiImage,
     TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
-    TResult? Function()? removeIdCardImage,
+    TResult? Function(int index)? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
     TResult? Function(String orderId)? changeNotificationStatusOrder,
     TResult? Function()? reset,
   }) {
-    return removeIdCardImage?.call();
+    return removeIdCardImage?.call(index);
   }
 
   @override
@@ -5173,7 +5200,7 @@ class _$RemoveIdCardImageImpl implements RemoveIdCardImage {
     TResult Function()? addImeiImage,
     TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
-    TResult Function()? removeIdCardImage,
+    TResult Function(int index)? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
@@ -5182,7 +5209,7 @@ class _$RemoveIdCardImageImpl implements RemoveIdCardImage {
     required TResult orElse(),
   }) {
     if (removeIdCardImage != null) {
-      return removeIdCardImage();
+      return removeIdCardImage(index);
     }
     return orElse();
   }
@@ -5293,7 +5320,13 @@ class _$RemoveIdCardImageImpl implements RemoveIdCardImage {
 }
 
 abstract class RemoveIdCardImage implements OrdersEvent {
-  const factory RemoveIdCardImage() = _$RemoveIdCardImageImpl;
+  const factory RemoveIdCardImage({required final int index}) =
+      _$RemoveIdCardImageImpl;
+
+  int get index;
+  @JsonKey(ignore: true)
+  _$$RemoveIdCardImageImplCopyWith<_$RemoveIdCardImageImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -5355,7 +5388,7 @@ class _$AddDeviceImagesImpl implements AddDeviceImages {
     required TResult Function() addImeiImage,
     required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
-    required TResult Function() removeIdCardImage,
+    required TResult Function(int index) removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
@@ -5388,7 +5421,7 @@ class _$AddDeviceImagesImpl implements AddDeviceImages {
     TResult? Function()? addImeiImage,
     TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
-    TResult? Function()? removeIdCardImage,
+    TResult? Function(int index)? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
@@ -5421,7 +5454,7 @@ class _$AddDeviceImagesImpl implements AddDeviceImages {
     TResult Function()? addImeiImage,
     TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
-    TResult Function()? removeIdCardImage,
+    TResult Function(int index)? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
@@ -5630,7 +5663,7 @@ class _$RemoveDeviceImageImpl implements RemoveDeviceImage {
     required TResult Function() addImeiImage,
     required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
-    required TResult Function() removeIdCardImage,
+    required TResult Function(int index) removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
@@ -5663,7 +5696,7 @@ class _$RemoveDeviceImageImpl implements RemoveDeviceImage {
     TResult? Function()? addImeiImage,
     TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
-    TResult? Function()? removeIdCardImage,
+    TResult? Function(int index)? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
@@ -5696,7 +5729,7 @@ class _$RemoveDeviceImageImpl implements RemoveDeviceImage {
     TResult Function()? addImeiImage,
     TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
-    TResult Function()? removeIdCardImage,
+    TResult Function(int index)? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
@@ -5912,7 +5945,7 @@ class _$DownloadOrderInvoiceImpl implements DownloadOrderInvoice {
     required TResult Function() addImeiImage,
     required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
-    required TResult Function() removeIdCardImage,
+    required TResult Function(int index) removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
@@ -5945,7 +5978,7 @@ class _$DownloadOrderInvoiceImpl implements DownloadOrderInvoice {
     TResult? Function()? addImeiImage,
     TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
-    TResult? Function()? removeIdCardImage,
+    TResult? Function(int index)? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
@@ -5978,7 +6011,7 @@ class _$DownloadOrderInvoiceImpl implements DownloadOrderInvoice {
     TResult Function()? addImeiImage,
     TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
-    TResult Function()? removeIdCardImage,
+    TResult Function(int index)? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
@@ -6197,7 +6230,7 @@ class _$ChangeNotificationStatusOrderImpl
     required TResult Function() addImeiImage,
     required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
-    required TResult Function() removeIdCardImage,
+    required TResult Function(int index) removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
@@ -6230,7 +6263,7 @@ class _$ChangeNotificationStatusOrderImpl
     TResult? Function()? addImeiImage,
     TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
-    TResult? Function()? removeIdCardImage,
+    TResult? Function(int index)? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
@@ -6263,7 +6296,7 @@ class _$ChangeNotificationStatusOrderImpl
     TResult Function()? addImeiImage,
     TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
-    TResult Function()? removeIdCardImage,
+    TResult Function(int index)? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
@@ -6452,7 +6485,7 @@ class _$ResetImpl implements Reset {
     required TResult Function() addImeiImage,
     required TResult Function() removeImeiImage,
     required TResult Function() addIdCardImage,
-    required TResult Function() removeIdCardImage,
+    required TResult Function(int index) removeIdCardImage,
     required TResult Function() addDeviceImages,
     required TResult Function(int index) removeDeviceImage,
     required TResult Function(String orderId) downloadOrderInvoice,
@@ -6485,7 +6518,7 @@ class _$ResetImpl implements Reset {
     TResult? Function()? addImeiImage,
     TResult? Function()? removeImeiImage,
     TResult? Function()? addIdCardImage,
-    TResult? Function()? removeIdCardImage,
+    TResult? Function(int index)? removeIdCardImage,
     TResult? Function()? addDeviceImages,
     TResult? Function(int index)? removeDeviceImage,
     TResult? Function(String orderId)? downloadOrderInvoice,
@@ -6518,7 +6551,7 @@ class _$ResetImpl implements Reset {
     TResult Function()? addImeiImage,
     TResult Function()? removeImeiImage,
     TResult Function()? addIdCardImage,
-    TResult Function()? removeIdCardImage,
+    TResult Function(int index)? removeIdCardImage,
     TResult Function()? addDeviceImages,
     TResult Function(int index)? removeDeviceImage,
     TResult Function(String orderId)? downloadOrderInvoice,
@@ -6661,7 +6694,7 @@ mixin _$OrdersState {
   String? get orderInvoice => throw _privateConstructorUsedError;
   String? get message => throw _privateConstructorUsedError;
   ImageModel? get deviceBill => throw _privateConstructorUsedError;
-  ImageModel? get idCard => throw _privateConstructorUsedError;
+  List<ImageModel>? get idCard => throw _privateConstructorUsedError;
   ImageModel? get imeiImage => throw _privateConstructorUsedError;
   List<ImageModel>? get deviceImages => throw _privateConstructorUsedError;
   List<OrderDetail>? get partnerOrders => throw _privateConstructorUsedError;
@@ -6699,7 +6732,7 @@ abstract class $OrdersStateCopyWith<$Res> {
       String? orderInvoice,
       String? message,
       ImageModel? deviceBill,
-      ImageModel? idCard,
+      List<ImageModel>? idCard,
       ImageModel? imeiImage,
       List<ImageModel>? deviceImages,
       List<OrderDetail>? partnerOrders,
@@ -6823,7 +6856,7 @@ class _$OrdersStateCopyWithImpl<$Res, $Val extends OrdersState>
       idCard: freezed == idCard
           ? _value.idCard
           : idCard // ignore: cast_nullable_to_non_nullable
-              as ImageModel?,
+              as List<ImageModel>?,
       imeiImage: freezed == imeiImage
           ? _value.imeiImage
           : imeiImage // ignore: cast_nullable_to_non_nullable
@@ -6879,7 +6912,7 @@ abstract class _$$InitialImplCopyWith<$Res>
       String? orderInvoice,
       String? message,
       ImageModel? deviceBill,
-      ImageModel? idCard,
+      List<ImageModel>? idCard,
       ImageModel? imeiImage,
       List<ImageModel>? deviceImages,
       List<OrderDetail>? partnerOrders,
@@ -6999,9 +7032,9 @@ class __$$InitialImplCopyWithImpl<$Res>
           : deviceBill // ignore: cast_nullable_to_non_nullable
               as ImageModel?,
       idCard: freezed == idCard
-          ? _value.idCard
+          ? _value._idCard
           : idCard // ignore: cast_nullable_to_non_nullable
-              as ImageModel?,
+              as List<ImageModel>?,
       imeiImage: freezed == imeiImage
           ? _value.imeiImage
           : imeiImage // ignore: cast_nullable_to_non_nullable
@@ -7052,14 +7085,15 @@ class _$InitialImpl implements _Initial {
       this.orderInvoice,
       this.message,
       this.deviceBill,
-      this.idCard,
+      final List<ImageModel>? idCard,
       this.imeiImage,
       final List<ImageModel>? deviceImages,
       final List<OrderDetail>? partnerOrders,
       final List<OrderDetail>? newOrders,
       this.orderDetail,
       required this.orderTab})
-      : _deviceImages = deviceImages,
+      : _idCard = idCard,
+        _deviceImages = deviceImages,
         _partnerOrders = partnerOrders,
         _newOrders = newOrders;
 
@@ -7099,8 +7133,16 @@ class _$InitialImpl implements _Initial {
   final String? message;
   @override
   final ImageModel? deviceBill;
+  final List<ImageModel>? _idCard;
   @override
-  final ImageModel? idCard;
+  List<ImageModel>? get idCard {
+    final value = _idCard;
+    if (value == null) return null;
+    if (_idCard is EqualUnmodifiableListView) return _idCard;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final ImageModel? imeiImage;
   final List<ImageModel>? _deviceImages;
@@ -7185,7 +7227,7 @@ class _$InitialImpl implements _Initial {
             (identical(other.message, message) || other.message == message) &&
             (identical(other.deviceBill, deviceBill) ||
                 other.deviceBill == deviceBill) &&
-            (identical(other.idCard, idCard) || other.idCard == idCard) &&
+            const DeepCollectionEquality().equals(other._idCard, _idCard) &&
             (identical(other.imeiImage, imeiImage) ||
                 other.imeiImage == imeiImage) &&
             const DeepCollectionEquality()
@@ -7221,7 +7263,7 @@ class _$InitialImpl implements _Initial {
         orderInvoice,
         message,
         deviceBill,
-        idCard,
+        const DeepCollectionEquality().hash(_idCard),
         imeiImage,
         const DeepCollectionEquality().hash(_deviceImages),
         const DeepCollectionEquality().hash(_partnerOrders),
@@ -7257,7 +7299,7 @@ abstract class _Initial implements OrdersState {
       final String? orderInvoice,
       final String? message,
       final ImageModel? deviceBill,
-      final ImageModel? idCard,
+      final List<ImageModel>? idCard,
       final ImageModel? imeiImage,
       final List<ImageModel>? deviceImages,
       final List<OrderDetail>? partnerOrders,
@@ -7302,7 +7344,7 @@ abstract class _Initial implements OrdersState {
   @override
   ImageModel? get deviceBill;
   @override
-  ImageModel? get idCard;
+  List<ImageModel>? get idCard;
   @override
   ImageModel? get imeiImage;
   @override

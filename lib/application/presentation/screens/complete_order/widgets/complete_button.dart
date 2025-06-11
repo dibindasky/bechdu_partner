@@ -59,7 +59,9 @@ class CompleteSubmitButton extends StatelessWidget {
                           deviceInfo: DeviceInfo(
                             imeiImage: state.imeiImage?.base64Image ?? '',
                             deviceBill: state.deviceBill!.base64Image,
-                            idCard: state.idCard!.base64Image,
+                            idCard: state.idCard!
+                                .map((e) => e.base64Image)
+                                .toList(),
                             finalPrice: context
                                 .read<OrdersBloc>()
                                 .finalPriceController
