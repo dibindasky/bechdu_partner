@@ -1,7 +1,7 @@
 class ApiEndPoints {
   //base urls
-  static String baseUrl = 'https://api.bechdu.in';
-  
+  // static String baseUrl = 'https://api.bechdu.in';
+  static const String baseUrl = 'https://bechdu-mern.onrender.com/';
   // static String baseUrl = 'https://3hr04lds-5000.inc1.devtunnels.ms/';
 
   static String baseUrlImage = 'https://api.bechdu.in/uploads/';

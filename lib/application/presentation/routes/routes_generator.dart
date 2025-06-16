@@ -13,6 +13,7 @@ import 'package:bechdu_partner/application/presentation/screens/pick_up_partner/
 import 'package:bechdu_partner/application/presentation/screens/points/points_screen.dart';
 import 'package:bechdu_partner/application/presentation/screens/profile/profile_screen.dart';
 import 'package:bechdu_partner/application/presentation/screens/settings/settings_screen.dart';
+import 'package:bechdu_partner/application/presentation/screens/settings/support_details.dart';
 import 'package:bechdu_partner/application/presentation/screens/splash/splash_screen.dart';
 import 'package:bechdu_partner/application/presentation/screens/transcations/transcations_screen.dart';
 import 'package:bechdu_partner/application/presentation/utils/pdf/pdf_preview.dart';
@@ -35,6 +36,11 @@ class RouteGenerator {
       case Routes.addPickUpPage:
         return MaterialPageRoute(
             builder: (ctx) => const ScreenAddPickUpPartner());
+            
+      case Routes.supportDetails:
+        return MaterialPageRoute(
+            builder: (ctx) => const SupportDetails());
+
       case Routes.partnersList:
         return MaterialPageRoute(
             builder: (ctx) => const ScreenPickUpPartnersList());
