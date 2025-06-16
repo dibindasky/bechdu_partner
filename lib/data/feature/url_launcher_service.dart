@@ -38,4 +38,22 @@ class OpenLauncherFeature {
       log(e.toString());
     }
   }
+    static Future<void> launchEmail({required String email}) async {
+    if (email.isEmpty) return;
+    try {
+      final Uri emailUri = Uri(
+        scheme: 'mailto',
+        path: email,
+      );
+      if (await url_launcher.canLaunchUrl(emailUri)) {
+        await url_launcher.launchUrl(emailUri);
+      } else {
+        throw 'Could not launch email';
+      }
+    } catch (e) {
+      log('cannot launch email');
+      log(e.toString());
+    }
+  }
+  
 }

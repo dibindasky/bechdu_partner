@@ -17,4 +17,5 @@ class Routes {
   static const String completeOrderPage = '/complete_order_page';
   static const String imagePreviewPage = '/image_preview_page';
   static const String slidableImagePreviewPage = '/slidable_image_preview';
+  static const String supportDetails = '/support_details';
 }

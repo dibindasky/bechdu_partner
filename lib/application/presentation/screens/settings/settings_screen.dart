@@ -7,6 +7,7 @@ import 'package:bechdu_partner/application/presentation/utils/dialoge/dialoge.da
 import 'package:bechdu_partner/data/feature/url_launcher_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ScreenSettings extends StatelessWidget {
   const ScreenSettings({super.key});
@@ -23,7 +24,7 @@ class ScreenSettings extends StatelessWidget {
               child: Column(
             children: [
               kHeight50,
-              BellIconAnimation(animate: true, child: Image.asset(iconBechdu)),
+              SizedBox(height:150.h,child: BellIconAnimation(animate: true, child: Image.asset(iconBechdu))),
               kHeight50,
               const Divider(),
               ListTile(
@@ -54,6 +55,17 @@ class ScreenSettings extends StatelessWidget {
                 title: Text('Terms And Conditions', style: textHeadRegular2),
                 onTap: () {
                   OpenLauncherFeature.launchWebPage(url: termsAndConditions);
+                },
+              ),
+              const Divider(),
+              ListTile(
+                leading: const CircleAvatar(
+                  backgroundColor: kWhite,
+                  child: Icon(Icons.terminal_sharp),
+                ),
+                title: Text('Support Details', style: textHeadRegular2),
+                onTap: () {
+                 Navigator.pushNamed(context, Routes.supportDetails);
                 },
               ),
               const Divider(),
