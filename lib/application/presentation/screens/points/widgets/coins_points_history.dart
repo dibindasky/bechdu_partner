@@ -102,7 +102,7 @@ class CoinsPointsHistory extends StatelessWidget {
                                             ),
                                           ),
                                           Text(
-                                            '₹ ${data.productDetails?.price ?? 0}',
+                                            '₹ ${data.deviceInfo?.finalPrice ?? data.productDetails?.price ?? 0}',
                                             style: textHeadRegularBig.copyWith(
                                                 color: kGreyLight),
                                           ),

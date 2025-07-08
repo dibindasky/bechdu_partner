@@ -50,7 +50,7 @@ class _ScreenSplashState extends State<ScreenSplash> {
                   milliseconds: 1500,
                   begin: 1.5,
                   end: 0.0,
-                  child: Image.asset(iconBechdu)),
+                  child: Image.asset(splashImage)),
             ),
           ),
         );
