@@ -28,7 +28,7 @@ class OrderDetailWithoutBlur extends StatelessWidget {
               coin: orderDetail.coins ?? '--',
               deviceName: orderDetail.productDetails?.name ?? '----',
               image: orderDetail.productDetails?.image ?? '',
-              price: orderDetail.productDetails?.price ?? '--'),
+              price: orderDetail.deviceInfo?.finalPrice ??orderDetail.productDetails?.price?? '--'),
           orderDetail.status == 'cancelled' || orderDetail.status == 'Completed'
               ? kEmpty
               : OrderDetailTopPart(orderDetail: orderDetail),

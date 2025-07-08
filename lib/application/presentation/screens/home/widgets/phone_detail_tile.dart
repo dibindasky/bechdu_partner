@@ -59,9 +59,10 @@ class PhoneDetailTile extends StatelessWidget {
                       Text(
                         orderDetail.productDetails?.name ?? '-----------',
                         style: textHeadRegular1,
-                      ),
+                      ),orderDetail.deviceInfo?.finalPrice?.isNotEmpty??false?
+                      Text('₹ ${orderDetail.deviceInfo?.finalPrice}',style: textHeadRegular1.copyWith(color: kGreyLight)):
                       Text(
-                        '₹ ${orderDetail.promo?.price == '' ? orderDetail.productDetails?.price : "${orderDetail.productDetails?.price} + ${orderDetail.promo?.price} \n(${orderDetail.promo?.code ?? ''})"}',
+                        '₹ ${ orderDetail.promo?.price == '' ? orderDetail.productDetails?.price : "${orderDetail.productDetails?.price} + ${orderDetail.promo?.price} \n(${orderDetail.promo?.code ?? ''})"}',
                         style: textHeadRegular1.copyWith(color: kGreyLight),
                       ),
                       Row(

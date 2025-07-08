@@ -10,6 +10,7 @@ const gilroyRegular = 'Gilroy-Regular';
 const gilroySemiBold = 'Gilroy-SemiBold';
 
 const iconBechdu = 'assets/images/bechdu_logo.png';
+const splashImage = 'assets/images/partner spash screen.png';
 
 const gifNoData = 'assets/images/Mobile Marketing (2).gif';
 
