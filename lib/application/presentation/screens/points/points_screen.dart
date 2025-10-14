@@ -3,7 +3,8 @@ import 'package:bechdu_partner/application/presentation/screens/points/widgets/c
 import 'package:bechdu_partner/application/presentation/screens/points/widgets/top_coin_points_avatar.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_windowmanager/flutter_windowmanager.dart';
+import 'package:secure_application/secure_application_controller.dart';
+import 'package:secure_application/secure_application_provider.dart';
 
 class ScreenPoints extends StatefulWidget {
   const ScreenPoints({super.key});
@@ -13,15 +14,17 @@ class ScreenPoints extends StatefulWidget {
 }
 
 class _ScreenPointsState extends State<ScreenPoints> {
+  late SecureApplicationController _secureController;
   @override
-  void initState() {
-    FlutterWindowManager.clearFlags(FlutterWindowManager.FLAG_SECURE);
-    super.initState();
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _secureController = SecureApplicationProvider.of(context)!;
+    _secureController.unlock(); // allows screenshots
   }
 
   @override
   void dispose() {
-    FlutterWindowManager.addFlags(FlutterWindowManager.FLAG_SECURE);
+    _secureController.lock(); // block again when leaving
     super.dispose();
   }
 

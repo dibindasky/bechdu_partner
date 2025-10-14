@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:bechdu_partner/data/feature/pdf_buffer.dart';
 import 'package:flutter/material.dart';
-import 'package:pdf_render/pdf_render_widgets.dart';
+import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 class ScreenPdfPreview extends StatelessWidget {
   const ScreenPdfPreview({super.key, required this.argument});
@@ -26,8 +26,8 @@ class ScreenPdfPreview extends StatelessWidget {
           kWidth20
         ],
       ),
-      body: PdfViewer.openData(base64Decode(argument.base64),
-          onError: (_) => const Center(
+      body: SfPdfViewer.memory(base64Decode(argument.base64),
+          onDocumentLoadFailed: (_) => const Center(
                 child: Text('Could not load invoice please try again'),
               )),
     );

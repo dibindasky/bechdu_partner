@@ -33,17 +33,29 @@ class InvoiceMaker {
     return await file.writeAsBytes(pdfBuffer);
   }
 
-  Future<String> savePdfFile(String base64String, String fileName) async {
+  // Future<String> savePdfFile(String base64String, String fileName) async {
+  //   final bytes = base64Decode(base64String);
+  //   final dir = await getTemporaryDirectory();
+  //   final file = File('${dir.path}/$fileName.pdf');
+  //   await file.writeAsBytes(bytes);
+  //   return file.path;
+  // }
+
+  // Future<void> sharePdf(
+  //     String base64String, String fileName, String text) async {
+  //   await Share.shareFiles([await savePdfFile(base64String, fileName)],
+  //       text: text);
+  // }
+  Future<XFile> savePdfFile(String base64String, String fileName) async {
     final bytes = base64Decode(base64String);
-    final dir = await getTemporaryDirectory();
-    final file = File('${dir.path}/$fileName.pdf');
+    final file = File('/some/temp/path/$fileName.pdf');
     await file.writeAsBytes(bytes);
-    return file.path;
+    return XFile(file.path); // <-- return XFile
   }
 
   Future<void> sharePdf(
       String base64String, String fileName, String text) async {
-    await Share.shareFiles([await savePdfFile(base64String, fileName)],
-        text: text);
+    final xfile = await savePdfFile(base64String, fileName);
+    await Share.shareXFiles([xfile], text: text);
   }
 }

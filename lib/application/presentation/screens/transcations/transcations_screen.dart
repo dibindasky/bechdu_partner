@@ -4,7 +4,9 @@ import 'package:bechdu_partner/application/presentation/screens/transcations/wid
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_windowmanager/flutter_windowmanager.dart';
+import 'package:secure_application/secure_application.dart';
+
+
 
 class ScreenTranscations extends StatefulWidget {
   const ScreenTranscations({super.key});
@@ -14,15 +16,17 @@ class ScreenTranscations extends StatefulWidget {
 }
 
 class _ScreenTranscationsState extends State<ScreenTranscations> {
+    late SecureApplicationController _secureController;
   @override
-  void initState() {
-    FlutterWindowManager.clearFlags(FlutterWindowManager.FLAG_SECURE);
-    super.initState();
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _secureController = SecureApplicationProvider.of(context)!;
+    _secureController.unlock(); // allows screenshots
   }
 
   @override
   void dispose() {
-    FlutterWindowManager.addFlags(FlutterWindowManager.FLAG_SECURE);
+    _secureController.lock(); // block again when leaving
     super.dispose();
   }
 
