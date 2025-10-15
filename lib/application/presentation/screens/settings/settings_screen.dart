@@ -24,7 +24,10 @@ class ScreenSettings extends StatelessWidget {
               child: Column(
             children: [
               kHeight50,
-              SizedBox(height:150.h,child: BellIconAnimation(animate: true, child: Image.asset(iconBechdu))),
+              SizedBox(
+                  height: 150.h,
+                  child: BellIconAnimation(
+                      animate: true, child: Image.asset(iconBechdu))),
               kHeight50,
               const Divider(),
               ListTile(
@@ -65,7 +68,7 @@ class ScreenSettings extends StatelessWidget {
                 ),
                 title: Text('Support Details', style: textHeadRegular2),
                 onTap: () {
-                 Navigator.pushNamed(context, Routes.supportDetails);
+                  Navigator.pushNamed(context, Routes.supportDetails);
                 },
               ),
               const Divider(),
@@ -118,7 +121,7 @@ class ScreenSettings extends StatelessWidget {
                     ),
               !partner ? kEmpty : const Divider(),
               kHeight50,
-              Text('version 1.0.0',
+              Text('version 1.0.9',
                   style: textHeadMedium1.copyWith(color: kGreyLight))
             ],
           )),
