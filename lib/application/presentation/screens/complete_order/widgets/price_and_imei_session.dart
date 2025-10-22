@@ -86,7 +86,8 @@ class PriceAndImeiSession extends StatelessWidget {
         Text('IMEI Number', style: textHeadRegular2),
         CustomTextFormField(
           keyboardType: TextInputType.number,
-          validate: Validate.notNull,
+          validate: Validate.imei,
+          maxlength: 15,
           controller: context.read<OrdersBloc>().imeiNumberController,
           hintText: 'IMEI Number',
         ),

@@ -2,8 +2,9 @@ import 'package:bechdu_partner/application/presentation/utils/colors.dart';
 import 'package:bechdu_partner/application/presentation/utils/constant.dart';
 import 'package:bechdu_partner/application/presentation/utils/validators/validators.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-enum Validate { phone, email, none, notNull }
+enum Validate { phone, email, none, notNull, imei }
 
 class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField(
@@ -36,6 +37,9 @@ class CustomTextFormField extends StatelessWidget {
       cursorColor: kBluePrimary,
       obscureText: isObscure,
       textCapitalization: textCapitalization,
+      inputFormatters: validate == Validate.imei || validate == Validate.phone
+          ? [FilteringTextInputFormatter.digitsOnly]
+          : [],
       decoration: InputDecoration(
         focusColor: kBluePrimary,
         focusedBorder: OutlineInputBorder(
@@ -67,6 +71,15 @@ class CustomTextFormField extends StatelessWidget {
             return 'Enter valid phone number (numeric characters only)';
           } else if (value.length != 10) {
             return 'Phone number should have exactly 10 digits';
+          } else {
+            return null;
+          }
+        } else if (Validate.imei == validate) {
+          // IMEI validation
+          if (!RegExp(r'^[0-9]+$').hasMatch(value!)) {
+            return 'IMEI should contain only digits';
+          } else if (value.length != 15) {
+            return 'IMEI number must be exactly 15 digits';
           } else {
             return null;
           }
